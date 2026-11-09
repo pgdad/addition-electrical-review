@@ -1,0 +1,134 @@
+Third floor, from sheet A.4 (north up, roughly to scale)
+R1
+R2
+A
+R3
+E
+R4
+B
+R5
+6
+B1
+B2
+B3
+B4
+B5
+OFFICE (WEST)
+18'11" x 12'4"
+OFFICE (EAST)
+14'0" wide, one room
+over the family room
+clipped
+clipped
+stairs
+down 16R
+closet
+attic
+attic
+small
+attic
+old house
+attic
+1
+4
+5
+C
+D
+SK
+P1
+P2
+P3
+P4
+P5
+P6
+P7
+P8
+P9
+P10
+P11
+P12
+P13
+P14
+P15
+P16
+P17
+H1
+H2
+H3
+H4
+H5
+2
+3
+6
+7
+8
+9
+10
+11
+12
+13
+L1
+L2
+L3
+L4
+L5
+L6
+L7
+L8
+L9
+S1
+S8
+S9
+S5
+S10
+S2
+S3
+S4
+S6
+S7
+Thick lines: exterior walls. Thin gray: knee walls (5 ft). Blue: windows.
+Dashed: clipped-ceiling strips. West strip: racks. East strip: bookshelves.
+Sheet A.4, north up, roughly to scale. Overall 42'6" wide.
+Arrow: passage across from R1, east through the small attic to the entry in the wall to the old house attic.
+R1 to R5: rack openings behind the west clipped strip. 6: same-size opening, no rack.
+B1 to B5 bookshelves. SK: sink with RO tap, flush to the south wall of its space; amber dot: leak sensor.
+Network
+1  R1: main network stack and fiber distribution; fiber in from the garage modem entry.
+2  UniFi AP, ceiling, east office.   3  UniFi AP, wall, west office east wall, south of the door.
+4  Floor Ethernet jack, east edge of the west clipped strip, across from R2.
+5  Floor Ethernet jack, west edge of the east clipped strip, across from B1.
+6  Wall Ethernet jack, west office south wall, east of the windows.
+7  PoE presence sensor, wall, west office east wall, north of the door, facing west.
+8  PoE presence sensor, same wall and spot, east office side, facing east.
+9, 10  PoE presence sensors, wall, east office north wall, one each side of the windows.
+11, 12  PoE presence sensors, wall, east office south wall, one each side of the window.
+13  PoE presence sensor, wall, south wall at the top of the stairs, facing north down the stairs.
+Power
+A  20A duplex outlet inside R2.   B  20A duplex outlet inside R4.   E  Spare 20A home run, boxed in R3 (dashed).
+C, D  Floor power outlets, about 2.5 ft south of floor Ethernet jacks 4 and 5.
+P1 to P5  West office wall outlets: north wall (2), west wall, south jog wall, south wall by the door.
+P6 to P12  East office wall outlets: north wall (2), west knee wall, clipped strip edges (2), south wall (2).
+P13, P14  Small attic, north and south ends.   P15  Old house attic side of the wall, just north of the doorway.
+P16  Beside S7.   P17  Just north of S4, above the sink.   Both GFCI, near the sink (SK).
+H1 to H5  High outlets near window tops for smart blinds: W office south (2), E office north (2), E office south (1).
+Lighting (proposed): Govee dimmable ceiling lights, Inovelli White Series switches
+L1, L2  West office, one in each half, level.  S1 at the top of the stairs, S2 by the office door (3-way pair).
+L3, L4, L5  East office, north, middle and south.  S3 on the east side of the shared door.
+L6  Small attic.  S4 in the east office, just north of the attic passage.
+L7  West office closet.  S5 on the office wall beside the closet.
+L8  Old house attic.  S6 on the small attic side of the entry, just north of it.
+L9  Short track light in the open space north of S4.  S7 at the north end of that space.
+Switches in smart bulb mode: lights keep constant power, switch dims them over Matter or Home Assistant.
+S8  Stair riser lights, top of the stairs beside S1. Pairs with S3 at the bottom, on the second floor.
+S9  Stair wall lights (L33, L34 on the 2nd floor), top of the stairs. Pairs with S15 at the bottom.
+S10  L35 ceiling light, west stair second leg (2nd floor), top of the stairs. Pairs with S17 at the bottom.
+Circuits (proposed)
+C1  20A dedicated: A (R2 rack).
+C2  20A dedicated: B (R4 rack).
+C3  20A west office: P1 to P5, H1, H2.
+C4  20A east office desks: C, D, P8, P9, P10.
+C5  20A east office perimeter: P6, P7, P11, P12, H3, H4, H5.
+C6  20A sink and attics: P16, P17 (GFCI), P13, P14, P15. Dual AFCI/GFCI breaker.
+C7  15A lighting: L1 to L9.
+C8  20A spare home run E to a box in R3, reachable for R1, R3 or R5 later.
+AFCI breakers on C3 to C8 per code; confirm racks C1, C2 with the electrician and inspector.

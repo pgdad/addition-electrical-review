@@ -1,0 +1,154 @@
+Garage level, from sheet A.2 (north up, roughly to scale)
+Existing house
+Balcony above
+Pergola above
+Deck
+Stairs up
+Stairs up
+Boiler
+Water heater
+4-car garage
+41'6" x 24'4", 9 ft ceiling
+Hallway
+2 fiber runs to 3rd fl (1, 18), one smurf tube
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+400A service in
+A
+B
+C
+D
+F
+E
+W/D
+L1
+L2
+L3
+L4
+L5
+L6
+L7
+L8
+L9
+L10
+L11
+L12
+L13
+L14
+L15
+L16
+S1
+S3
+S2
+S7
+S4
+S5
+S6
+P1
+P2
+P3
+P4
+P5
+P6
+P7
+P8
+P9
+P10
+P11
+P12
+O1
+O2
+EV1
+EV2
+O3
+O4
+G2
+20
+19
+P14
+P15
+P16
+P17
+P13
+G
+SP1
+SP2
+Devices
+1 Cable ingress, modem, fiber converter
+2 PoE switch, southwest corner
+3 Outdoor camera, facing west
+4 Outdoor camera, facing south
+5 Outdoor AP, facing south
+6 UniFi wall AP, mid west wall
+7 PoE switch, northwest corner
+8 Outdoor camera, north wall
+9 Ceiling camera, 3D printer area
+10 Ceiling camera, WashTower
+11 PoE jacks, 7 ft, between doors
+12 Presence sensor, west half
+13 Presence sensor, east half
+14 Hall sensor, north wall, faces south
+15 Presence sensor, over doorway
+16 PoE video doorbell
+A W/D outlet (washer; gas dryer)
+B Outdoor outlet, AirGradient
+C 20A circuit, computers, printers
+D Stair lights, 2 Matter controllers
+E, F 3-way switches, stair bottom (F: wall lights)
+Mini-splits on A.2 left off
+17 UniFi wall AP, hallway north wall
+18 Small PoE switch, fiber to 3rd fl
+Lighting
+L1-L8 Garage ceiling, 2 rows of 4
+L9, L10 Hallway ceiling
+L11, L15 Outside, flanking left door
+L12, L16 Outside, flanking right door
+L13 Deck door light
+L14 Under the stairs
+S1 + S2 L1-L8, 3-way
+S3 L11, L12, L15, L16, by hall door
+S4 + S7 L9, L10, 3-way (deck door, garage door)
+S5 L13, by deck door
+S6 L14, under-stair light
+Lights on one 15A circuit
+Outlets, openers, EV (proposed)
+P1, P2 Under stairs, network gear
+P3-P5 North wall, GFCI
+P6, P7 West wall, GFCI
+P8-P10 East wall, GFCI
+P11, P12 Ceiling, cord reels
+O1, O2 Wall openers + outlet
+EV1, EV2 Chargers, 60A 240V each
+C1 P1, P2, P13 20A dedicated
+C2 P3-P7 20A GFCI
+C3 P8-P10 20A GFCI
+C4 P11, P12, O1-O4 20A
+C5, C6 EV1, EV2 60A
+Grounding and surge (new)
+P13 High outlet beside switch 2 (C1)
+G, G2 Ground bars (SW, NW), bonded
+SP1 Surge, cameras 3, 4 and AP 5
+SP2 Surge, camera 8, on G2
+O3, O4 Ceiling outlets, trolley openers, centered on each door
+MP Main panel (red bar), north wall east of W/D; clear space in front
+Ceiling lights dimmable Govee; switches Inovelli in smart bulb mode
+P14-P17 Hallway east wall, evenly spaced, C7 20A
+S7 Hallway west wall by garage door, 3-way with S4
+19 PoE presence sensor, hallway east wall, watches garage doorway
+20 PoE presence sensor, hallway east wall at landing, sees up the stairs

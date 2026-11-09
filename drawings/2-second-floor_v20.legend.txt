@@ -1,0 +1,240 @@
+Second floor, from sheet A.3 (north up, roughly to scale)
+range
+sink
+DW
+2840
+2840
+4030T
+3020
+3020
+3050
+3050
+3068 dr
+HALL
+MEDIA RM
+17'1" x 12'4"
+FAMILY RM
+14'2" x 20'8"
+KITCHEN
+island
+BATH
+SAUNA
+W/D
+fridge
+shower
+BALCONY (outside)
+stair above
+closet
+up 16R
+down 15R
+to grade
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+A
+B
+C
+D
+F
+Network (purple)
+Power (amber)
+1 Hall sensor, above west stair landing
+2 Hall sensor, high NE corner, faces west
+3 Hall ceiling sensor, media door
+4 Hall ceiling sensor, kitchen door
+5, 6 Media ceiling sensors
+7 Projector wall, 4 PoE jacks
+8 PoE switch, SW closet
+9 UniFi wall AP, media west wall
+10 Kitchen sensor, sink and DW
+11 Sensor near hallway entry door
+12 Sensor near balcony door
+13 Bath ceiling sensor
+14 PoE video doorbell, balcony door
+15 UniFi ceiling AP, kitchen/family border
+A Projector wall, 4 outlets
+B Motorized screen, smart control
+C Closet outlet
+D Stair lights, controllers, 3-way
+Windows (blue), sizes from A.3
+Hall 2 x 2840, sauna 4030 tempered, media 2 x 3020 and a 3068 door, family 2 x 3050
+Closet door on media wall per A.3; range by fridge; sink and DW north of W/D
+L1
+L2
+L3
+L4
+L5
+L6
+L7
+L8
+L9
+L10
+L11
+fan
+L12
+L13
+L14
+L15
+L16
+L17
+L18
+L19
+L20
+L21
+L22
+L23
+L24
+S1
+S2
+S3
+S4
+S5
+S6
+S7
+S8
+S9
+S10
+S11
+S12
+S13
+L30
+L31
+L32
+L33
+L34
+S15
+S16
+Lighting (pink), dimmable Govee
+Switches (green), Inovelli
+L1-L6 Hall wall lights on the north wall
+L7 Stair up, light mid each riser
+L8 Stair down, light mid each riser
+L9, L10 Media ceiling at 25% and 75% of width
+L11 Media ceiling fan with light, center
+L12 Closet
+L13, L14 Kitchen ceiling
+L15 Island pendant
+L16 Kitchen under-cabinet, east counter
+L17, L18 Family room ceiling
+L19 Bath ceiling (fan separate)
+L20 Shower, wet rated
+L21 Sauna, sauna rated, on heater control
+L22 W/D
+L23, L24 Balcony wall lights by each door
+S1, S2 Hall 2-gang: L1-L3 and L4-L6
+S3 Stair up risers, bottom (top on 3rd fl)
+S4 Stair down risers, top (bottom on garage lvl)
+S5 Media ceiling lights, by hall door
+S6 Media fan and its light, beside S5
+S7 Closet, media side of its door
+S8 Kitchen ceiling and pendant, by hall door
+S9 Under-cabinet, beside S8
+S10 Family, by balcony door (L17, L18, L24)
+S11 Bath, by its door (L19, L20, fan)
+S12 W/D, kitchen side
+S13 Media, by balcony door (L23)
+E
+K
+M
+N
+G
+W
+J
+P1
+P2
+P3
+P4
+P5
+P6
+P7
+P8
+P9
+P10
+P11
+P12
+P13
+P14
+H1
+H2
+E Range, 50A 240V receptacle
+F Bidet GFCI
+G Sauna heater, 50A 240V, per its manual
+J Sauna light driver, 15A, in W/D closet
+&#160;&#160;&#160;(dashed: low-voltage DC run to sauna)
+K Fridge, 20A
+M DW and disposal, 20A
+N Microwave/hood combo above range, 20A
+W WashTower WKE100HVA, 30A 240V
+P15
+P22
+P16
+P17
+P18
+P19
+P20
+P21
+P23
+P24
+H3
+H4
+H5
+H6
+L25
+L26
+L27
+L28
+L29
+S14
+L25-L27 Under the stairs up, north/south run
+L28, L29 Balcony, high wall lights
+L30-L32 East stair wall lights; L33, L34 west stair, one per leg (S16, S15)
+S14 Under-stair lights, beside AP 9
+S15 West stair wall lights, bottom (top on 3rd fl S9)
+S16 East stair wall lights, top (bottom garage F)
+L28, L29 on S13 (my call)
+Outlets (red), blind outlets (teal)
+Circuits
+P1, P2 Hall, south wall
+P3-P6 Media room
+P7 Kitchen, west wall
+P8-P10, P21 Family room
+P11, P23, P24 Balcony, weatherproof GFCI
+P12, P13 Counter GFCI
+P14 Island GFCI
+P15, P22 Bath west wall, GFCI
+P16-P18 Under the stairs up
+P19, P20 Media, by S7
+H1, H2 Hall windows, high
+H3, H4 Media, each side of the 3020s
+H5, H6 Family, each side of the 3050s
+No blinds: sauna window, balcony doors
+C1 E range, 50A 240V
+C2 G sauna heater, 50A 240V
+C3 J sauna light driver, 15A
+C4 P12, P13 counter, 20A GFCI
+C5 P7, P14 kitchen, 20A GFCI
+C6 K fridge, 20A
+C7 M DW and disposal, 20A
+C8 N microwave, 20A
+C9 W WashTower, 30A 240V
+C10 F, P15, P22 bath, 20A GFCI
+C11 A, B, C, P3-P6 media, 20A
+C12 P1, P2, P8-P10, P21, H1-H6, 20A
+C13 P16-P20 under stairs, by S7, 20A
+C14 P11, P23, P24 balcony, 20A GFCI
+C15, C16 Lighting, 15A
+L35
+S17 L35 west stair ceiling, bottom (top 3rd fl S10)
+S17
