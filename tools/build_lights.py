@@ -172,7 +172,6 @@ OUTLETS = {
   ("H3", "Blind outlet, high on the south side of the west window", "blind", 7.0, "C2, 20A GFCI"),
   ("P6 P7", "Garage west wall, GFCI", "wall", 1.5, "C2, 20A GFCI"),
   ("P8 P9 P10", "Garage east wall, GFCI", "wall", 1.5, "C3, 20A GFCI"),
-  ("P11 P12", "Garage ceiling, cord reel, GFCI", "ceiling", GC, "C4, 20A GFCI"),
   ("O1 O2", "Wall (jackshaft) opener outlet, GFCI", "wall", 8.0, "C4, 20A GFCI"),
   ("O3 O4", "Ceiling outlet for a trolley opener, GFCI", "ceiling", GC, "C4, 20A GFCI"),
   ("EV1", "EV charger, hardwired", "hardwired", 4.0, "C5, 60A 240V"),

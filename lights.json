@@ -2268,32 +2268,6 @@
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
-   "key": "G:P11",
-   "id": "P11",
-   "level": "G",
-   "levelName": "Garage and hallway",
-   "room": "Garage ceiling, cord reel, GFCI",
-   "kind": "ceiling",
-   "x": 9.8,
-   "y": 9.42,
-   "z": 14.78,
-   "circuit": "C4, 20A GFCI",
-   "source": "drawings/1-garage-and-hallway_v20.svg"
-  },
-  {
-   "key": "G:P12",
-   "id": "P12",
-   "level": "G",
-   "levelName": "Garage and hallway",
-   "room": "Garage ceiling, cord reel, GFCI",
-   "kind": "ceiling",
-   "x": 32.69,
-   "y": 9.42,
-   "z": 20.14,
-   "circuit": "C4, 20A GFCI",
-   "source": "drawings/1-garage-and-hallway_v20.svg"
-  },
-  {
    "key": "G:O1",
    "id": "O1",
    "level": "G",
