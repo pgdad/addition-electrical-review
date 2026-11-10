@@ -231,7 +231,7 @@ OUTLETS = {
  "S": [
   ("B", "Space heater outlet, dressing room", "appliance", 1.5, "C1 heater, 20A"),
   ("P1", "Dressing room outlet, GFCI", "wall", 1.5, "C2, 20A GFCI"),
-  ("P2 P3 P4 P5 P6", "Shed outlet, GFCI", "wall", 1.5, "C2, 20A GFCI"),
+  ("P4 P6", "Shed outlet, GFCI", "wall", 1.5, "C2, 20A GFCI"),
  ],
 }
 HALL_OUTLETS = {"P14", "P15", "P16", "P17"}

@@ -127,9 +127,10 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Sauna lights (owner decision, Nov 10, 2026): L1 is strip lighting under the seating bench, like kitchen
   under-cabinet lights. Its control unit J fits a 15 x 11 in space, low on the dressing room north wall by
   the sauna door; the low-voltage wire runs low along the sauna north wall to the bench.
-- Doors drawn Nov 10, 2026 (owner request): porch door from the dressing room; sauna door at the north end
-  of the wall between the dressing room and the sauna. Widths (2'8" and 2'0") and swings (porch door out
-  onto the porch, sauna door out into the dressing room) are the designer's assumptions.
+- Doors (Nov 10, 2026): porch door from the dressing room, 2'8", hinged west, opening out onto the porch
+  (designer's assumption). Sauna door at the north end of the wall between the dressing room and the sauna,
+  hinged north and opening into the sauna room (owner decision); 2'0" width is assumed.
+- Shed outlets P2, P3 and P5 removed (owner decision, Nov 10, 2026). Remaining: P1 dressing room, P4, P6 shed.
 - Ground bar G is bonded to subpanel A's grounding bar and to the shed ground rods (Nov 10, 2026).
 - Lights: L1 sauna low-voltage (via control unit J), L2 dressing, L3, L4 shed, L5 porch (centered over the porch door). Switches S1, S2, S4 inside
   the porch door (currently drawn east of it; side not confirmed), S3 by the shed door.

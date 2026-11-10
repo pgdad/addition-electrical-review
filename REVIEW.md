@@ -252,13 +252,14 @@ The PDF wins for geometry; these are the differences found.
 ### Lighting control
 - Every light has a switch and each is at the door of the space it serves.
 - L5 is now centered over the porch door (moved from the east end of the porch).
-- Doors are now drawn (owner request, Nov 10, 2026): the porch door from the dressing room, 2'8" wide,
-  hinged west and opening out onto the porch; and the sauna door at the north end of the wall between the
-  dressing room and the sauna, 2'0" wide, hinged south and opening out into the dressing room. Widths and
-  swings are assumptions; a sauna door has to open outward from the hot room.
-- With the sauna door hinged south, its open leaf stays clear of S1, S2, S4 and control unit J on the short
-  north wall east of the porch door, which is also the porch door's latch side. That makes the east side
-  workable for the switches (open question 1).
+- Doors are now drawn (Nov 10, 2026): the porch door from the dressing room, 2'8" wide, hinged west and
+  opening out onto the porch (designer's assumption); and the sauna door at the north end of the wall
+  between the dressing room and the sauna, 2'0" wide, hinged north and opening into the sauna room (owner
+  decision).
+- *check*: sauna doors normally open outward from the hot room, so that someone who feels faint can push
+  their way out and nothing inside can block the door. Stove and sauna-building instructions usually ask
+  for this, and some inspectors do too. Confirm an inward-opening door is acceptable, and never fit a latch
+  that can jam.
 
 ### Code-oriented checks (check with the electrician/inspector)
 - **Feeder**: 60 A, 240 V is ample for a 20 A heater, one 20 A receptacle circuit and a lighting circuit.
@@ -267,8 +268,10 @@ The PDF wins for geometry; these are the differences found.
 - **Grounding electrode**: a detached building with a feeder needs its own electrode (normally two rods)
   connected to the subpanel's grounding bar. G is on the south wall and A on the north wall of the shed.
   Resolved on the drawing (Nov 10, 2026): G is now shown bonded to A's grounding bar as well as to the rods.
-- **Working clearance** at A: keep 30 in x 36 in clear in the shed. Switch 1 and P2 beside it are fine.
-- **GFCI**: P1 to P6 on GFCI C2 covers the accessory-building rule. If heater B is cord-connected, its
+- **Working clearance** at A: keep 30 in x 36 in clear in the shed. Shed outlets P2, P3 and P5 were removed (owner decision, Nov 10, 2026).
+  *should-fix*: network switch 1 now has no outlet near it; P2 was the closest. The nearest is P6, about 9 ft
+  away. Add a receptacle at the switch or feed it another way.
+- **GFCI**: P1, P4 and P6 on GFCI C2 covers the accessory-building rule. If heater B is cord-connected, its
   receptacle needs GFCI too.
 - **Sauna lights and control unit J** (owner decision, Nov 10, 2026): L1 is strip lighting under the seating
   bench, like under-cabinet lights. Control unit J sits in a 15 x 11 in space low on the dressing room north

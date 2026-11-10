@@ -3412,32 +3412,6 @@
    "source": "drawings/4-sauna-shed_v6.svg"
   },
   {
-   "key": "S:P2",
-   "id": "P2",
-   "level": "S",
-   "levelName": "Sauna / shed",
-   "room": "Shed outlet, GFCI",
-   "kind": "wall",
-   "x": -0.6,
-   "y": 1.5,
-   "z": 57.2,
-   "circuit": "C2, 20A GFCI",
-   "source": "drawings/4-sauna-shed_v6.svg"
-  },
-  {
-   "key": "S:P3",
-   "id": "P3",
-   "level": "S",
-   "levelName": "Sauna / shed",
-   "room": "Shed outlet, GFCI",
-   "kind": "wall",
-   "x": -11.4,
-   "y": 1.5,
-   "z": 57.2,
-   "circuit": "C2, 20A GFCI",
-   "source": "drawings/4-sauna-shed_v6.svg"
-  },
-  {
    "key": "S:P4",
    "id": "P4",
    "level": "S",
@@ -3447,19 +3421,6 @@
    "x": -11.4,
    "y": 1.5,
    "z": 63.2,
-   "circuit": "C2, 20A GFCI",
-   "source": "drawings/4-sauna-shed_v6.svg"
-  },
-  {
-   "key": "S:P5",
-   "id": "P5",
-   "level": "S",
-   "levelName": "Sauna / shed",
-   "room": "Shed outlet, GFCI",
-   "kind": "wall",
-   "x": -2.4,
-   "y": 1.5,
-   "z": 65.4,
    "circuit": "C2, 20A GFCI",
    "source": "drawings/4-sauna-shed_v6.svg"
   },

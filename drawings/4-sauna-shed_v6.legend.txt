@@ -19,10 +19,7 @@ A
 J
 B
 P1
-P2
-P3
 P4
-P5
 L1
 L2
 L3
@@ -49,13 +46,13 @@ A Subpanel, 60A 240V feeder (my pick)
 B Space heater, 20A dedicated
 J Sauna light control unit, low, dressing room
 P1 Dressing room outlet
-P2-P6 Shed outlets, GFCI
+P4, P6 Shed outlets, GFCI
 L1 Low-voltage lights under the sauna bench
 L2 Dressing room low lights
 L3-L5 Shed (L3, L4), porch (L5, over the door) lights
 S1, S2, S4 Dressing, sauna, porch (by door)
 S3 Shed lights, by the door
-Circuits: C1 B heater 20A; C2 P1-P6
+Circuits: C1 B heater 20A; C2 P1, P4, P6
 20A GFCI; C3 J, L1-L5 15A
 Dashed: low-voltage run from J, low
 G Ground bar by camera 2, bonded to A (green)
@@ -65,4 +62,5 @@ L1: strip lights under the seating bench, like under-cabinet lights, heat rated.
 the sauna north wall from J to the bench, away from the wood stove.
 G is bonded to subpanel A's grounding bar (green line along the east wall) and to the shed ground rods.
 Doors: porch door from the dressing room, 2'8", hinged west, opens out onto the porch. Sauna door at the north end
-of the wall between the dressing room and the sauna, 2'0", hinged south, opens out into the dressing room.
+of the wall between the dressing room and the sauna, 2'0", hinged north, opens into the sauna room (owner decision).
+Shed outlets P2, P3 and P5 removed (Nov 10, 2026). Remaining: P1 dressing room, P4 and P6 shed.
