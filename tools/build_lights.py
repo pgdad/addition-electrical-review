@@ -233,6 +233,34 @@ OUTLETS = {
 }
 HALL_OUTLETS = {"P14", "P15", "P16", "P17"}
 
+# ---- network: Wi-Fi access points and network switches (the numbered network items on each sheet).
+# level -> [(item number, kind ap|switch, name, where, height above the floor in ft (assumed), note)]
+NETWORK = {
+ "G": [
+  ("2", "switch", "PoE switch", "Garage southwest corner, high beside outlet P13", 7.0, "Feeds cameras 3 and 4, outdoor AP 5, AP 6, jacks 11, sensor 12"),
+  ("7", "switch", "PoE switch", "Garage northwest corner", 7.0, "Feeds cameras 8 and 9"),
+  ("18", "switch", "Small PoE switch", "Under the garage stairs", 3.0, "Fiber to the third-floor rack R1"),
+  ("5", "ap", "Outdoor AP", "Outside the garage south wall, facing south", 9.0, "Outdoor copper run; surge protector SP1"),
+  ("6", "ap", "UniFi wall AP", "Garage, mid west wall", 7.0, ""),
+  ("17", "ap", "UniFi wall AP", "Hallway north wall", 7.0, "Feeding switch not confirmed (probably 18)"),
+ ],
+ "2": [
+  ("8", "switch", "PoE switch", "Media closet, southwest", 5.0, "Carries most second-floor PoE drops"),
+  ("9", "ap", "UniFi wall AP", "Media room west wall", 7.0, ""),
+  ("15", "ap", "UniFi ceiling AP", "Kitchen / family room border", 8.9, ""),
+ ],
+ "3": [
+  ("1", "switch", "Rack R1: main network stack", "West clipped strip, rack R1", 3.0, "Core switches and fiber distribution; fiber in from the garage modem"),
+  ("2", "ap", "UniFi ceiling AP", "East office ceiling", 6.4, ""),
+  ("3", "ap", "UniFi wall AP", "West office east wall, south of the door", 6.0, ""),
+ ],
+ "S": [
+  ("1", "switch", "PoE switch", "Shed north wall", 5.0, "Fiber in from the garage"),
+  ("3", "ap", "Outdoor PoE AP", "Inside the shed north wall", 7.0, ""),
+ ],
+}
+HALL_NET = {"17"}
+
 def east_riser_points():     # one light mid each riser, garage slab -> 2nd floor (17 risers)
     rise, run = (F2 - 2.33) / 13, 10.1 / 13
     pts = [[40.83 - 0.04, 0.27, 6.91], [41.67 - 0.04, 0.81, 6.91]]                   # garage door steps (DN 2R on A.2)
@@ -304,6 +332,15 @@ def build():
                 base = 0.0 if kind in ("outdoor",) and lv == "G" or oid.startswith("MS") else (HALL_FLOOR if (lv == "G" and oid in HALL_OUTLETS) else FLOOR[lv])
                 outlets.append(dict(key=f"{lv}:{oid}", id=oid, level=lv, levelName=LEVEL_NAME[lv], room=desc, kind=kind,
                                     x=x, y=round(base + h, 2), z=z, circuit=cct, source=SOURCE[lv]))
+    network = []
+    for lv, rows in NETWORK.items():
+        for nid, kind, name, where, h, note in rows:
+            x, z = to_ft(lv, *dev[lv][nid]["pts"][0])
+            base = HALL_FLOOR if (lv == "G" and nid in HALL_NET) else FLOOR[lv]
+            rec = dict(key=f"{lv}:N{nid}", id=nid, level=lv, levelName=LEVEL_NAME[lv], kind=kind, name=name, room=where,
+                       x=x, y=round(base + h, 2), z=z, source=SOURCE[lv])
+            if note: rec["note"] = note
+            network.append(rec)
     for lv in SCALES:                                   # every plotted P#, O#, EV#, H#, MS# is in the outlet table
         plotted = {n for n in dev[lv] if re.fullmatch(r"(P|O|EV|H|MS)\d+", n)}
         have = {o["id"] for o in outlets if o["level"] == lv}
@@ -319,7 +356,7 @@ def build():
         axes="x = east, z = south, y = up; origin = garage NW exterior corner at the garage slab",
         scales={lv: dict(drawing=SOURCE[lv], px_per_ft_x=round(v[2], 3), px_per_ft_y=round(v[3], 3)) for lv, v in SCALES.items()},
         floors=dict(garage=0.0, hallway=HALL_FLOOR, second=F2, third=round(F3, 2), shed=0.0),
-        lights=lights, switches=switches, outlets=outlets)
+        lights=lights, switches=switches, outlets=outlets, network=network)
 
 if __name__ == "__main__":
     data = build()
