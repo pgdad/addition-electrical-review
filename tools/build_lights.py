@@ -258,7 +258,7 @@ HALL_OUTLETS = {"P14", "P15", "P16", "P17"}
 NETWORK = {
  "G": [
   ("2", "switch", "8-port PoE switch with a fiber port", "Garage southwest corner, high beside outlet P13", 7.0, "Feeds cameras 3 and 4, outdoor AP 5, AP 6 and jacks 11"),
-  ("7", "switch", "8-port PoE switch", "Garage northwest corner, north wall, beside outlet P20", 7.0, "Feeds cameras 8 and 9, sensor 12 and jacks 21"),
+  ("7", "switch", "8-port PoE switch with a fiber port", "Garage northwest corner, north wall, beside outlet P20", 7.0, "Feeds cameras 8 and 9, sensor 12 and jacks 21"),
   ("18", "switch", "8-port PoE switch with a fiber port", "Under the garage stairs", 3.0, "Fiber to the third-floor rack R1"),
   ("5", "ap", "Outdoor AP", "Outside the garage south wall, facing south", 9.0, "Outdoor copper run; surge protector SP1"),
   ("6", "ap", "UniFi wall AP", "Garage, mid west wall", 7.0, ""),
@@ -483,6 +483,7 @@ def build():
             rec = dict(key=f"{lv}:N{nid}", id=nid, level=lv, levelName=LEVEL_NAME[lv], kind=kind, name=name, room=where,
                        x=x, y=round(base + h, 2), z=z, source=SOURCE[lv])
             if note: rec["note"] = note
+            if kind == "sensor": rec["mount"] = "ceiling" if h >= 8.9 else "wall"   # ceiling units sit at ceiling height; the rest are high on a wall
             network.append(rec)
     # Ethernet runs (proposed): home runs from the level's switch, routed above the ceiling at ROUTE_H, with
     # plan waypoints (x, z) between the two ends. Length = 3D path + CABLE_SLACK, rounded up to 5 ft.

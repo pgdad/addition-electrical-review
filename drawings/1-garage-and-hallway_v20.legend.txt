@@ -94,7 +94,7 @@ Devices
 4 Outdoor camera, facing south
 5 Outdoor AP, facing south
 6 UniFi wall AP, mid west wall
-7 PoE switch (8-port), northwest corner
+7 PoE switch (8-port + fiber), northwest corner
 8 Outdoor camera, north wall
 9 Ceiling camera, 3D printer area
 10 Ceiling camera, WashTower

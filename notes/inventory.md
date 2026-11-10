@@ -8,7 +8,7 @@ Counted from `lights.json` (built from the drawings). Quantities only; models ar
 | Level | Switch | Ports | Where |
 |-------|--------|-------|-------|
 | Garage | 2 | 8-port PoE + fiber | Southwest corner |
-| Garage | 7 | 8-port PoE (needs a fiber port for its uplink; not yet stated on the drawing) | Northwest corner |
+| Garage | 7 | 8-port PoE + fiber | Northwest corner |
 | Garage | 18 | 8-port PoE + fiber | Under the stair |
 | Second floor | 8 | 16-port PoE + fiber | Media closet |
 | Second floor | 16 | 8-port PoE + fiber | Family room southeast corner |
@@ -42,6 +42,18 @@ The 15 aux switches each need a traveler to their main switch (15 three-way pair
 
 The two riser runs are counted as one entry each (one light per riser: 17 risers on the garage stair,
 16 on the west stair). They are listed on the second-floor sheet.
+
+## Presence sensors (23)
+
+| Level | Ceiling | Wall | Total |
+|-------|---------|------|-------|
+| Garage / hallway | 2 | 4 | 6 |
+| Second floor | 6 | 4 | 10 |
+| Third floor | 0 | 7 | 7 |
+| Shed | 0 | 0 | 0 |
+| **Total** | **8** | **15** | **23** |
+
+The same counts are shown live in the "Inventory" section at the bottom of `lights-3d.html`.
 
 ## Fiber segments (7)
 
