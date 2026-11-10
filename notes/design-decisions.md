@@ -77,7 +77,13 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   wall under the windows, P20 at the northwest corner, and P21 near the middle of the north wall but on the
   sloped ceiling above it, because that wall is very low. Now: P1, P4, P5, P18-P21.
 - Closet at the top of the stairs (owner decision, Nov 10, 2026): its door is on its north edge, off the
-  top landing; L7 is inside it; S5 moved to that north edge by the door and is on/off, not a dimmer.
+  top landing; L7 is inside it and is an ordinary (non-smart) light; S5 moved to that north edge by the
+  door and is on/off, not a dimmer.
+- Lighting review answers (owner decision, Nov 10, 2026): east office keeps the single switch S3; attic
+  lights L6 (S4) and L8 (S6) stay switched from one side; the four switches at the top of the stairs stay
+  separate. Reading nook light L10 is wall-mounted and cool to the touch (low ceiling), on the nook's north
+  wall east of the door; S11 is mounted low (3 ft) for children. Attic outlet P15 is on the old house attic
+  side of the wall.
 - Lights L1-L9 on S1-S7, L10 on S11; stair risers S8; stair wall lights S9; L35 (2nd-floor stair ceiling) S10.
 
 ## Sauna / shed outbuilding (drawing v6)

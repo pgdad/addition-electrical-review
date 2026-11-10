@@ -113,7 +113,7 @@ Lighting (proposed): Govee dimmable ceiling lights, Inovelli White Series switch
 L1, L2  West office, one in each half, level.  S1 at the top of the stairs, S2 by the office door (3-way pair).
 L3, L4, L5  East office, north, middle and south.  S3 on the east side of the shared door.
 L6  Small attic.  S4 in the east office, just north of the attic passage.
-L7  Closet at the top of the stairs.  S5 (on/off, not a dimmer) on the closet's north edge, east of its door.
+L7  Closet at the top of the stairs, ordinary (non-smart) light.  S5 (on/off, not a dimmer) on the closet's north edge, east of its door.
 L8  Old house attic.  S6 on the small attic side of the entry, just north of it.
 L9  Short track light in the open space north of S4.  S7 at the north end of that space.
 Switches in smart bulb mode: lights keep constant power, switch dims them over Matter or Home Assistant.
@@ -137,7 +137,7 @@ Hardwired, interconnected, battery backup (A.2 note 9); on a lighting circuit, c
 L10
 S11
 reading nook
-L10  Children's reading nook, south of the west office between the P4 wall and the rack strip.  S11 on the office side, just west of the nook door.
+L10  Children's reading nook: wall-mounted, cool-to-the-touch LED on its north wall east of the door (low ceiling).  S11 on the office side, just west of the nook door, mounted low (3 ft) for children.
 Nook: thin wall on the line of the rack-strip west wall; small door in its north wall. P5 moved east of the door; P4 moved to the office side of its wall.
 P18
 P18  West office wall outlet on the wall below the S1, S8, S9, S10 switch stack at the top of the stairs (C3).

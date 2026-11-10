@@ -24,7 +24,7 @@ How to read this:
 | 2 | must-fix | Second-floor kitchen and laundry: NEC 2023 extends GFCI to all kitchen receptacles and to listed appliances, so C1 (range receptacle E), C6 (fridge K), C7 (DW/disposal M), C8 (microwave N) and C9 (WashTower W) need checking, not just counters C4/C5. No AFCI is noted anywhere on the second floor (the third floor notes it). | second floor v20 |
 | 3 | must-fix | PoE doorbell 14 on the balcony is an outdoor copper run with no surge protector and no ground bar on that floor. Doorbell 16 (open question) is the same. PoE jacks 11 are plotted on the outside face of the jog wall; if they are outside they need protection too. | second floor v20: 14; garage v20: 16, 11 |
 | 4 | should-fix | With 8 ft doors under a 9'5" ceiling, both ceiling cord reels (P11, P12) hang in the path of the open doors. The south light row L5 to L8 is also above the open doors, which the owner accepts: those lights are for when the doors are closed. | garage v20 |
-| 5 | should-fix | Several lights can only be switched after crossing the dark: second-floor hall (S1/S2 mid-hall, 14 ft from the west stair and 8 ft from the east stair), family room (S10 only at the balcony door), media room (S5/S6 only at the hall door), third-floor east office (S3 only at the shared door, though the attic passage is a second entry), and attic lights L6 and L8. | second floor v20, third floor v32 |
+| 5 | should-fix | Several lights can only be switched after crossing the dark: second-floor hall (S1/S2 mid-hall, 14 ft from the west stair and 8 ft from the east stair), family room (S10 only at the balcony door) and media room (S5/S6 only at the hall door). The third-floor cases (east office S3, attic lights L6 and L8) are accepted by the owner. | second floor v20 |
 | 6 | should-fix | The second-floor "small" PoE switch 8 has about 17 PoE drops and roughly 75 to 105 W. No 5/8-port switch covers that. Garage switch 2 needs 7 PoE ports and about 78 W plus a fiber cage; switch 18 needs 7 to 8 ports. | second floor v20: 8; garage v20: 2, 18 |
 | 7 | should-fix | Hallway switches S4 and S5 are drawn on the east wall exactly across the east door opening, so there is no wall to mount them on. Move them to the wall beside the door. | garage v20: S4, S5 |
 | 8 | should-fix | S10 runs the family room ceiling lights L17, L18 together with outdoor balcony light L24, and balcony light L29 is on the far door's switch S13. Put all four balcony lights (L23, L24, L28, L29) on one balcony control at each door. | second floor v20: S10, S13 |
@@ -193,14 +193,15 @@ The PDF wins for geometry; these are the differences found.
 - Every light has a switch: L1/L2 on S1+S2, L3 to L5 on S3, L6 on S4, L7 on S5, L8 on S6, L9 on S7, and
   reading-nook light L10 on S11, which is on the office side beside the nook door.
 - S1 (top of stairs) and S2 (by the shared door) are at the two ends of the west office. Good.
-- **should-fix** (finding 5): the east office has two entries, the shared door and the attic passage, but only
-  S3 at the door. L6 (small attic) is switched from the office side only (S4) and L8 (old house attic) from the
-  small attic side only (S6), so walking in from the old house means crossing both in the dark.
-  Proposal: a second control for L3 to L5 at the passage, and make S4 and S6 two-ended.
-- *nice-to-have*: four switches (S1, S8, S9, S10) stack at the top of the stairs. Inovelli scenes could
-  fold S9 and S10 into one device.
-- S5 is now on the closet's north edge by its door and is a plain on/off switch (owner decision), so L7
-  needs an ordinary, non-smart lamp.
+- Accepted (owner decision, Nov 10, 2026): the east office keeps one switch, S3 at the shared door, although
+  the attic passage is a second entry; L6 stays on S4 (office side) and L8 on S6 (small attic side).
+- Accepted (owner decision): the four switches at the top of the stairs (S1, S8, S9, S10) stay separate.
+- S5 is on the closet's north edge by its door and is a plain on/off switch, and L7 is marked on the drawing
+  as an ordinary, non-smart light (owner decision).
+- Reading nook (owner decision): L10 is a wall-mounted, cool-to-the-touch LED on the nook's north wall,
+  because the ceiling is low, and S11 is mounted low (3 ft) so children can reach it.
+- *nice-to-have*: S11 is still a smart-bulb-mode switch, which keeps L10 powered. Either pick a smart
+  fixture or lamp for L10, or make S11 a plain on/off switch like S5.
 
 ### Code-oriented checks (check with the electrician/inspector)
 - **Racks in the eave** (R1 to R5): behind a 5 ft knee wall in a strip about 2.8 ft deep. Confirm the roofline
@@ -344,7 +345,7 @@ Total is about 290 to 320 W. Budgets are fine if each switch is picked for port 
 
 **Should-fix**
 4. Open doors in the path of cord reels P11, P12 (garage).
-5. Lights switched from the far side: hall, family, kitchen, media, east office, attics (floors 2 and 3).
+5. Lights switched from the far side: hall, family, kitchen, media (second floor).
 6. PoE switch sizing: 8, 2, 18; undrawn fiber links (network).
 7. S4/S5 drawn in the hallway's east door opening (garage).
 8. S10 mixes family lights with balcony L24; L29 on the far door's switch (second floor).
@@ -358,7 +359,7 @@ Total is about 290 to 320 W. Budgets are fine if each switch is picked for port 
 14. Label MP; rename device C; draw E/F green (garage).
 15. E in the door opening; scene button between the overhead doors (garage).
 16. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
-17. Color key on the third-floor sheet; four-gang at the top of the stairs (third floor).
+17. Color key on the third-floor sheet (third floor).
 18. "East walls in line" label (shed).
 19. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
 20. One AP too many in the middle of the building; outdoor coverage north and east.

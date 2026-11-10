@@ -85,10 +85,10 @@ LIGHTS = {
   "L4": ("East office", "ceiling", 8.0, "C7 lighting, 15A", ""),
   "L5": ("East office (south)", "ceiling", 8.0, "C7 lighting, 15A", ""),
   "L6": ("Small attic", "ceiling", 6.5, "C7 lighting, 15A", ""),
-  "L7": ("West office closet", "ceiling", 7.0, "C7 lighting, 15A", "Plotted 1.3 ft south of the closet outline"),
+  "L7": ("West office closet", "ceiling", 7.0, "C7 lighting, 15A", "Ordinary (non-smart) light, because S5 is a plain on/off switch"),
   "L8": ("Old house attic", "ceiling", 6.5, "C7 lighting, 15A", ""),
   "L9": ("East office sink nook", "ceiling", 7.0, "C7 lighting, 15A", "Short track light"),
-  "L10": ("Children's reading nook", "ceiling", 6.0, "C7 lighting, 15A", "Low sloped ceiling behind the 5 ft office wall (A.4 shows attic here); 6 ft height assumed"),
+  "L10": ("Children's reading nook", "wall", 4.5, "C7 lighting, 15A", "Wall-mounted, cool-to-the-touch LED on the nook's north wall (low sloped ceiling); 4.5 ft height assumed"),
  },
  "S": {
   "L1": ("Sauna room", "low-voltage", 6.5, "C3 (driver J, 15A)", "Heat rated, DC from driver J"),
@@ -140,7 +140,7 @@ SWITCHES = {
  ("3", "S8"): ("West office, top of the stairs", k("2", "L7")),
  ("3", "S9"): ("West office, top of the stairs", k("2", "L33", "L34")),
  ("3", "S10"): ("West office, top of the stairs", k("2", "L35")),
- ("3", "S11"): ("West office, beside the reading nook door", k("3", "L10")),
+ ("3", "S11"): ("West office, beside the reading nook door, mounted low at 3 ft", k("3", "L10")),
  ("S", "S1"): ("Dressing room, inside the porch door", k("S", "L2")),
  ("S", "S2"): ("Dressing room, inside the porch door", k("S", "L1")),
  ("S", "S4"): ("Dressing room, inside the porch door", k("S", "L5")),
@@ -287,7 +287,8 @@ def build():
         src = "S15" if key == "2:S17" else sid            # S17 is "above S15": same box position
         x, z = to_ft(lv, *dev[lv][src]["pts"][0])
         base = HALL_FLOOR if key in HALL_SWITCHES else FLOOR[lv]
-        y = base + (4.7 if key == "2:S17" else 4.0)
+        y = base + {"2:S17": 4.7, "3:S11": 3.0}.get(key, 4.0)    # S11 is low so children can reach it
+        if key == "3:S6": x = 47.4                      # sheet draws the small attic narrower than A.4; keep S6 on its east wall
         rec = dict(key=key, id=sid, level=lv, levelName=LEVEL_NAME[lv], room=room, x=x, y=round(y, 2), z=z,
                    controls=ctl, source=SOURCE[lv])
         if key in pair_of: rec["pairWith"], rec["pairColor"] = pair_of[key]
@@ -299,6 +300,7 @@ def build():
             for oid in ids.split():
                 src = {"3:P18": "S9"}.get(f"{lv}:{oid}", oid)      # P18 is drawn off the wall with a leader; it sits under the switches
                 x, z = to_ft(lv, *dev[lv][src]["pts"][0])
+                if f"{lv}:{oid}" == "3:P15": x = 48.0     # old house attic side of the wall (A.4 wall at 47.67 ft)
                 base = 0.0 if kind in ("outdoor",) and lv == "G" or oid.startswith("MS") else (HALL_FLOOR if (lv == "G" and oid in HALL_OUTLETS) else FLOOR[lv])
                 outlets.append(dict(key=f"{lv}:{oid}", id=oid, level=lv, levelName=LEVEL_NAME[lv], room=desc, kind=kind,
                                     x=x, y=round(base + h, 2), z=z, circuit=cct, source=SOURCE[lv]))

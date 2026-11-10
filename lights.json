@@ -1178,7 +1178,7 @@
    ],
    "circuit": "C7 lighting, 15A",
    "source": "drawings/3-third-floor_v32.svg",
-   "note": "Plotted 1.3 ft south of the closet outline"
+   "note": "Ordinary (non-smart) light, because S5 is a plain on/off switch"
   },
   {
    "key": "3:L8",
@@ -1231,16 +1231,16 @@
    "level": "3",
    "levelName": "Third floor",
    "room": "Children's reading nook",
-   "x": 18.73,
-   "y": 26.61,
-   "z": 14.72,
-   "type": "ceiling",
+   "x": 20.97,
+   "y": 25.11,
+   "z": 13.94,
+   "type": "wall",
    "switches": [
     "3:S11"
    ],
    "circuit": "C7 lighting, 15A",
    "source": "drawings/3-third-floor_v32.svg",
-   "note": "Low sloped ceiling behind the 5 ft office wall (A.4 shows attic here); 6 ft height assumed"
+   "note": "Wall-mounted, cool-to-the-touch LED on the nook's north wall (low sloped ceiling); 4.5 ft height assumed"
   },
   {
    "key": "S:L1",
@@ -1879,7 +1879,7 @@
    "level": "3",
    "levelName": "Third floor",
    "room": "Small attic, by the old-house entry",
-   "x": 46.28,
+   "x": 47.4,
    "y": 24.61,
    "z": 12.54,
    "controls": [
@@ -1960,9 +1960,9 @@
    "id": "S11",
    "level": "3",
    "levelName": "Third floor",
-   "room": "West office, beside the reading nook door",
+   "room": "West office, beside the reading nook door, mounted low at 3 ft",
    "x": 17.12,
-   "y": 24.61,
+   "y": 23.61,
    "z": 12.61,
    "controls": [
     "3:L10"
@@ -3249,7 +3249,7 @@
    "levelName": "Third floor",
    "room": "Old house attic side of the wall",
    "kind": "wall",
-   "x": 47.05,
+   "x": 48.0,
    "y": 22.11,
    "z": 12.68,
    "circuit": "C6 sink and attics, 20A AFCI/GFCI",
