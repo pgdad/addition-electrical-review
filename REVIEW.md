@@ -206,7 +206,9 @@ The PDF wins for geometry; these are the differences found.
 - **AFCI** is noted on C3 to C8 and "confirm" on rack circuits C1 and C2. Agree; ask the inspector.
 - **Sink SK**: P16 and P17 are GFCI. A sink beside network and office gear is fine with the leak sensor shown.
 - **Receptacle spacing**: the west office south wall under the three windows (10.3 ft) has no receptacle, and
-  Ethernet jack 6 there has no power beside it. Add one. *should-fix*.
+  Ethernet jack 6 there has no power beside it. Add one. With P2 and P3 removed and P1 moved to the east wall
+  (owner decision), the north and west walls have none either. The usual rule is no point along a wall more
+  than 6 ft from a receptacle, so check the whole room with the electrician/inspector. *should-fix*.
 - **Attics**: lights with a switch at the entry are there (S4, S6). P13 to P15 are on dual AFCI/GFCI C6.
 - **Smoke alarm**: A.4 shows one in the west office. Now drawn as SD1. A.4 has none in the east office;
   now that it is a full floored room, ask the inspector whether it needs its own.
@@ -342,7 +344,7 @@ Total is about 290 to 320 W. Budgets are fine if each switch is picked for port 
 8. S10 mixes family lights with balcony L24; L29 on the far door's switch (second floor).
 9. No counter receptacle south of the sink; island P14 position; wall spacing gaps (second floor).
 10. H4 has no wall; driver J behind the WashTower (second floor).
-11. Duplicate ID 6; no receptacle on the west office south wall (third floor).
+11. Duplicate ID 6; no receptacle on the west office south, north or west walls (third floor).
 12. Shed ground bar G to subpanel A bond not shown; driver J mounted high (shed).
 13. Outdoor receptacles: none by the deck door (garage).
 

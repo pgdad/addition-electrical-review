@@ -212,7 +212,7 @@ OUTLETS = {
   ("B", "Duplex outlet inside rack R4", "wall", 1.5, "C2 dedicated, 20A"),
   ("E", "Spare home run, boxed in rack R3", "wall", 1.5, "C8 spare, 20A"),
   ("C D", "Floor power outlet, east office", "floor", 0.1, "C4 east office desks, 20A"),
-  ("P1 P2 P3 P4 P5", "West office wall outlet", "wall", 1.5, "C3 west office, 20A"),
+  ("P1 P4 P5", "West office wall outlet", "wall", 1.5, "C3 west office, 20A"),
   ("P6 P7 P11 P12", "East office wall outlet", "wall", 1.5, "C5 east office perimeter, 20A"),
   ("P8 P9 P10", "East office wall outlet", "wall", 1.5, "C4 east office desks, 20A"),
   ("P13 P14", "Small attic", "wall", 1.5, "C6 sink and attics, 20A AFCI/GFCI"),
