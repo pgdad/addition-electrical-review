@@ -39,6 +39,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Door between the hallway and the old house (A.2), drawn Nov 10, 2026: 3068 in the hallway east wall,
   hinged north, swings into the hallway. S4 and S5 are a two-gang on the east wall at its south (latch)
   edge (owner decision).
+- Front door from the hallway to the deck (A.2), drawn Nov 10, 2026: 3068 in the hallway south wall, hinged
+  west, swings into the hallway.
 - S2 is on the west wall near the SW corner, directly west of where it was first drawn (owner decision, Nov 10, 2026).
 - Ethernet jacks 21 (owner decision, Nov 10, 2026): four data-only jacks on the north wall near switch 7, by
   outlet C. Switch 7 is an 8-port PoE switch with high outlet P20 beside it on C1. Ground bar G2 (with SP2) sits just south of the west window, about 5 ft from switch 7, and is the

@@ -86,6 +86,10 @@ The PDF wins for geometry; these are the differences found.
   earlier gap on the drawing was about 1 ft too far south.) S4 and S5, which were plotted in the opening, are
   now a two-gang on the east wall at the door's south (latch) edge. That spot is also beside the latch side
   of the deck door, so one box serves both doors.
+- The front door from the hallway to the deck is now drawn from A.2: a 3068 in the hallway south wall,
+  hinged on its west jamb and swinging into the hallway.
+- *nice-to-have*: doorbell 16 is plotted on the west (hinge) side of the front door. Move it to the east
+  (latch) side, by L13, where a visitor stands.
 - *nice-to-have*: E is plotted at z 6.3 ft, which is in the garage door opening (z 5.8 to 8.7 ft). A.2 leaves
   about 22 in of wall between the landing and that door, enough for a 2-gang with F above or beside E.
 - *nice-to-have*: nothing by the overhead doors controls L1 to L8 except S2 on the west wall near the SW corner.
