@@ -259,7 +259,8 @@ NETWORK = {
   ("3", "ap", "Outdoor PoE AP", "Inside the shed north wall", 7.0, ""),
  ],
 }
-# ---- Ethernet runs (proposed, third floor only so far): level -> (switch item, [(device item, cable, PoE W, plan waypoints, route)])
+# ---- Ethernet runs (proposed, third floor only so far): level -> (switch item, [(device item, cable, PoE W (0 = data only),
+# plan waypoints, route, optional route height in ft above the floor; negative = in the floor framing)])
 ROUTE_H, CABLE_SLACK = 7.0, 8.0     # ft above the floor for the horizontal run; ft of service loop (5 at the rack, 3 at the device)
 _N = "North bundle: up from R1, north above the wall between the offices"
 _S = "South bundle: up from R1, south above the rack strip to the south wall"
@@ -276,6 +277,20 @@ CABLES = {
   ("13", "Cat6", 3, [(24.05, 12.7), (3.84, 12.7)], "West above the nook wall and the west office ceiling to the closet, then north to the stair wall"),
  ]),
 }
+# Ethernet jacks (non-PoE data drops): level -> [(item, where, height above the floor in ft)]
+JACKS = {
+ "3": [("4", "Floor jack, east edge of the west clipped strip, across from R2", 0.1),
+       ("5", "Floor jack, west edge of the east clipped strip, across from B1", 0.1),
+       ("6", "Wall jack, west office south wall, east of the windows", 1.5)],
+}
+for _lv, _rows in JACKS.items():
+    for _i, _where, _h in _rows: NETWORK[_lv].append((_i, "jack", "Ethernet jack", _where, _h, "Data only, no PoE"))
+_F = "Floor run: down from R1 into the floor framing, south then east under the east office floor"
+CABLES["3"][1].extend([
+  ("4",  "Cat6A", 0, [(24.05, 16.12)], _F + ", up into the floor box", -0.6),
+  ("5",  "Cat6A", 0, [(24.05, 16.12)], _F + " to the far floor box", -0.6),
+  ("6",  "Cat6A", 0, [(24.05, 12.7), (14.12, 12.7)], "West bundle with sensor 13 above the west office ceiling, then south and down inside the south wall"),
+])
 HALL_NET = {"17", "14", "15", "19", "20"}
 # presence sensors (PoE ESP32 units): level -> [(item numbers, where, height above the floor in ft, assumed)]
 SENSORS = {
@@ -380,9 +395,9 @@ def build():
     cables = []
     for lv, (sw, rows) in CABLES.items():
         a = net_by[f"{lv}:N{sw}"]
-        for port, (nid, cat, watts, via, route) in enumerate(rows, 1):
+        for port, (nid, cat, watts, via, route, *rh) in enumerate(rows, 1):
             d = net_by[f"{lv}:N{nid}"]
-            h = FLOOR[lv] + ROUTE_H
+            h = FLOOR[lv] + (rh[0] if rh else ROUTE_H)
             pts = [(a["x"], a["y"], a["z"]), (a["x"], h, a["z"])] + [(x, h, z) for x, z in via] + [(d["x"], h, d["z"]), (d["x"], d["y"], d["z"])]
             run = sum(sum((p[i] - q[i]) ** 2 for i in range(3)) ** 0.5 for p, q in zip(pts, pts[1:]))
             length = int(-(-(run + CABLE_SLACK) // 5) * 5)

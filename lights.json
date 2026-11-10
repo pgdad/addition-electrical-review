@@ -3813,6 +3813,51 @@
    "cable": "3:C3"
   },
   {
+   "key": "3:N4",
+   "id": "4",
+   "level": "3",
+   "levelName": "Third floor",
+   "kind": "jack",
+   "name": "Ethernet jack",
+   "room": "Floor jack, east edge of the west clipped strip, across from R2",
+   "x": 28.66,
+   "y": 20.71,
+   "z": 16.12,
+   "source": "drawings/3-third-floor_v32.svg",
+   "note": "Data only, no PoE",
+   "cable": "3:C4"
+  },
+  {
+   "key": "3:N5",
+   "id": "5",
+   "level": "3",
+   "levelName": "Third floor",
+   "kind": "jack",
+   "name": "Ethernet jack",
+   "room": "Floor jack, west edge of the east clipped strip, across from B1",
+   "x": 34.97,
+   "y": 20.71,
+   "z": 16.12,
+   "source": "drawings/3-third-floor_v32.svg",
+   "note": "Data only, no PoE",
+   "cable": "3:C5"
+  },
+  {
+   "key": "3:N6",
+   "id": "6",
+   "level": "3",
+   "levelName": "Third floor",
+   "kind": "jack",
+   "name": "Ethernet jack",
+   "room": "Wall jack, west office south wall, east of the windows",
+   "x": 14.12,
+   "y": 22.11,
+   "z": 15.56,
+   "source": "drawings/3-third-floor_v32.svg",
+   "note": "Data only, no PoE",
+   "cable": "3:C6"
+  },
+  {
    "key": "3:N7",
    "id": "7",
    "level": "3",
@@ -4318,6 +4363,125 @@
      3.84,
      26.61,
      10.44
+    ]
+   ]
+  },
+  {
+   "key": "3:C4",
+   "level": "3",
+   "from": "3:N1",
+   "to": "3:N4",
+   "port": 10,
+   "cable": "Cat6A",
+   "poeW": 0,
+   "lengthFt": 20,
+   "route": "Floor run: down from R1 into the floor framing, south then east under the east office floor, up into the floor box",
+   "points": [
+    [
+     24.05,
+     23.61,
+     14.16
+    ],
+    [
+     24.05,
+     20.01,
+     14.16
+    ],
+    [
+     24.05,
+     20.01,
+     16.12
+    ],
+    [
+     28.66,
+     20.01,
+     16.12
+    ],
+    [
+     28.66,
+     20.71,
+     16.12
+    ]
+   ]
+  },
+  {
+   "key": "3:C5",
+   "level": "3",
+   "from": "3:N1",
+   "to": "3:N5",
+   "port": 11,
+   "cable": "Cat6A",
+   "poeW": 0,
+   "lengthFt": 30,
+   "route": "Floor run: down from R1 into the floor framing, south then east under the east office floor to the far floor box",
+   "points": [
+    [
+     24.05,
+     23.61,
+     14.16
+    ],
+    [
+     24.05,
+     20.01,
+     14.16
+    ],
+    [
+     24.05,
+     20.01,
+     16.12
+    ],
+    [
+     34.97,
+     20.01,
+     16.12
+    ],
+    [
+     34.97,
+     20.71,
+     16.12
+    ]
+   ]
+  },
+  {
+   "key": "3:C6",
+   "level": "3",
+   "from": "3:N1",
+   "to": "3:N6",
+   "port": 12,
+   "cable": "Cat6A",
+   "poeW": 0,
+   "lengthFt": 35,
+   "route": "West bundle with sensor 13 above the west office ceiling, then south and down inside the south wall",
+   "points": [
+    [
+     24.05,
+     23.61,
+     14.16
+    ],
+    [
+     24.05,
+     27.61,
+     14.16
+    ],
+    [
+     24.05,
+     27.61,
+     12.7
+    ],
+    [
+     14.12,
+     27.61,
+     12.7
+    ],
+    [
+     14.12,
+     27.61,
+     15.56
+    ],
+    [
+     14.12,
+     22.11,
+     15.56
     ]
    ]
   }
