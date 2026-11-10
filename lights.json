@@ -217,7 +217,7 @@
    ],
    "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Plotted on the balcony-pier line, 4.3 ft south of the door wall"
+   "note": "Mounted on the balcony pier"
   },
   {
    "key": "G:L15",
@@ -234,7 +234,7 @@
    ],
    "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Plotted on the balcony-pier line, 4.3 ft south of the door wall"
+   "note": "Mounted on the balcony pier"
   },
   {
    "key": "G:L12",
@@ -1297,7 +1297,7 @@
    "level": "S",
    "levelName": "Sauna / shed",
    "room": "Porch",
-   "x": -2.4,
+   "x": -9.1,
    "y": 7.5,
    "z": 43.52,
    "type": "outdoor",
@@ -1306,7 +1306,7 @@
    ],
    "circuit": "C3, 15A",
    "source": "drawings/4-sauna-shed_v6.svg",
-   "note": "Porch ceiling"
+   "note": "Porch ceiling, centered over the porch door"
   }
  ],
  "switches": [
@@ -1654,6 +1654,19 @@
     "2:L19",
     "2:L20"
    ],
+   "source": "drawings/2-second-floor_v20.svg",
+   "mode": "on/off"
+  },
+  {
+   "key": "2:S18",
+   "id": "S18",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Bath, by its door (fan only, no light)",
+   "x": 39.5,
+   "y": 14.46,
+   "z": 18.18,
+   "controls": [],
    "source": "drawings/2-second-floor_v20.svg",
    "mode": "on/off"
   },

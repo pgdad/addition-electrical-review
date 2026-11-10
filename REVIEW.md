@@ -60,8 +60,8 @@ The PDF wins for geometry; these are the differences found.
   (wall lights L30 to L32) on both drawings and in the notes.
 - Circuits (resolved): lighting is now C10 (15 A) and also feeds stair controllers D and alarms SD1/CO1;
   B is on C2, C on new dedicated C8, A on new laundry circuit C9.
-- L11 and L15 are plotted about 4.3 ft south of the west door wall, on the line of the balcony piers.
-  Confirm whether they mount on the piers or on the wall. *nice-to-have*.
+- L11 and L15 are plotted about 4.3 ft south of the west door wall because they mount on the balcony piers
+  (owner decision).
 
 ### Lighting control
 - Every light has a switch: L1 to L8 on S1+S2, L9/L10 on S4+S7, L11/L12/L15/L16 on S3, L13 on S5, L14 on S6.
@@ -148,9 +148,10 @@ The PDF wins for geometry; these are the differences found.
   which is what the residential code asks for, but the bottom is unlit. A step light or a light at the foot helps.
 - Resolved (owner decision): S6 (media fan and its light), S9 (under-cabinet L16) and S11 (bath L19, L20, fan)
   are now plain on/off switches, not dimmers and not smart-bulb mode.
-- *nice-to-have*: S11 still switches the bath lights and the fan together, and an on/off switch cuts power
-  to L19, L20 and the L11 fan light, so use ordinary (non-smart) lamps there. A separate fan switch or a
-  humidity control would let the fan run on after the lights are off.
+- Resolved (owner decision): the bath fan has its own on/off switch S18 below S11; S11 runs L19 and L20 only.
+- *nice-to-have*: S6 and S11 are on/off switches that cut power to the L11 fan light, L19 and L20, so use
+  ordinary (non-smart) lamps there. With the fan now on S18, S11 could go back to the standard smart-bulb
+  dimmer if you prefer.
 
 ### Code-oriented checks (check with the electrician/inspector)
 - **Bathroom**: C10 (bidet F, P15, P22) as a 20 A GFCI circuit for this one bathroom works. P15/P22 are
@@ -217,8 +218,7 @@ The PDF wins for geometry; these are the differences found.
 
 ### Lighting control
 - Every light has a switch and each is at the door of the space it serves.
-- *nice-to-have*: L5 is at the east end of the porch, 6.7 ft from the porch door. Center it on the door.
-- *nice-to-have*: no light on the 20 ft walk from the garage, and the shed door is on the far (south) side.
+- L5 is now centered over the porch door (moved from the east end of the porch).
 
 ### Code-oriented checks (check with the electrician/inspector)
 - **Feeder**: 60 A, 240 V is ample for a 20 A heater, one 20 A receptacle circuit and a lighting circuit.
@@ -346,10 +346,10 @@ Total is about 290 to 320 W. Budgets are fine if each switch is picked for port 
 
 **Nice-to-have**
 14. Label MP; rename device C; draw E/F green (garage).
-15. E in the door opening; scene button between the overhead doors; L11/L15 mounting (garage).
+15. E in the door opening; scene button between the overhead doors (garage).
 16. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
 17. Color key on the third-floor sheet; L7 symbol; five-gang at the top of the stairs (third floor).
-18. Porch light L5 centered on the door; path light to the sauna; "East walls in line" label (shed).
+18. "East walls in line" label (shed).
 19. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
 20. One AP too many in the middle of the building; outdoor coverage north and east.
 

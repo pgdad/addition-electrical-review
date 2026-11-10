@@ -9,7 +9,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Lighting standard: dimmable Govee ceiling lights; Inovelli White Series wall switches in smart-bulb mode
   (switches send scene/automation commands; the bulbs stay powered).
   Exception (owner decision, Nov 9, 2026): switches on non-smart loads are plain on/off, not dimmers and not
-  smart-bulb mode: second-floor S6 (media fan and its light), S9 (under-cabinet L16), S11 (bath L19, L20, fan).
+  smart-bulb mode: second-floor S6 (media fan and its light), S9 (under-cabinet L16), S11 (bath L19, L20) and S18 (bath fan, its own switch below S11).
 - Smoke/CO alarms: hardwired, interconnected, battery backup (A.2 note 9), drawn at the architect's
   locations as SD#/CO#: garage hallway SD1 + CO1, second-floor hall SD1 + CO1, third-floor west office SD1.
 - Presence sensors are mostly PoE ESP32 units; normally they drive the lights, wall switches are the fallback.
@@ -32,7 +32,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Under the stairs (west end): LG WashTower, electric washer + GAS dryer (builder notes say all-electric
   WKEX200HBA: unresolved conflict). Cable ingress, modem and converter behind it.
 - Lights: L1-L8 garage ceiling on S1+S2 3-way; L9, L10 hallway on S4+S7 3-way; L13 deck door on S5;
-  L14 under-stair on S6; outside L11/L15 flank the left door, L12/L16 the right door, all on S3 (proposed).
+  L14 under-stair on S6; outside L11/L15 flank the left door on the balcony piers, L12/L16 the right door, all on S3 (proposed).
   Garage lights are on switches only, not tied to the overhead doors.
 - Stairs garage -> 2nd floor: riser lights (L8 on the 2nd-floor drawing) on 3-way E (bottom) + 2nd-floor S4 (top).
   One light in every riser from the garage floor up (owner decision, Nov 9, 2026): 2 garage door steps,
@@ -51,7 +51,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 ## Second floor (sheet A.3, drawing v20) -- owner review in progress
 - Lights: L1-L6 hall (S1, S2); L7 stair-up risers (S3 bottom + 3rd-floor S8 top); L8 stair-down risers
   (S4 + garage E); L9-L11 media (S5, S6); L12 media closet (S7); L13-L15 kitchen (S8); L16 under-cabinet (S9);
-  L17, L18, L24 family/balcony (S10); L19, L20 + fan bath (S11); L21 sauna on the heater control (DC from
+  L17, L18, L24 family/balcony (S10); L19, L20 bath (S11), bath fan on its own switch S18; L21 sauna on the heater control (DC from
   driver J); L22 W/D closet (S12); L23 balcony (S13); L25-L29 per legend.
 - West stair to the 3rd floor: wall lights L33 (north leg) and L34 (west leg) on S15 (bottom) + 3rd-floor S9 (top);
   L35 ceiling light over the west (second) leg on S17 (bottom, above S15) + 3rd-floor S10 (top).
@@ -70,7 +70,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 ## Sauna / shed outbuilding (drawing v6)
 - 12 x 24 ft south of the garage: north half porch (12x3) + dressing room (west) + wood-burning sauna (east);
   south half shed, no door between. Fed 60A 240V and fiber from the garage SW corner.
-- Lights: L1 sauna low-voltage (via driver J), L2 dressing, L3, L4 shed, L5 porch. Switches S1, S2, S4 inside
+- Lights: L1 sauna low-voltage (via driver J), L2 dressing, L3, L4 shed, L5 porch (centered over the porch door). Switches S1, S2, S4 inside
   the porch door (currently drawn east of it; side not confirmed), S3 by the shed door.
 
 ## Open questions (not yet answered by the owner)

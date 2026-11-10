@@ -39,8 +39,8 @@ LIGHTS = {
   **{f"L{i}": ("4-car garage", "ceiling", G_CEIL, G_LIGHT_CCT, "") for i in range(1, 9)},
   "L9":  ("Hallway", "ceiling", HALL_FLOOR + 8.33, G_LIGHT_CCT, "Hallway ceiling is 8'4\" above its own floor (A.2)"),
   "L10": ("Hallway", "ceiling", HALL_FLOOR + 8.33, G_LIGHT_CCT, ""),
-  "L11": ("Outside, left (west) door", "outdoor", 6.5, G_LIGHT_CCT, "Plotted on the balcony-pier line, 4.3 ft south of the door wall"),
-  "L15": ("Outside, left (west) door", "outdoor", 6.5, G_LIGHT_CCT, "Plotted on the balcony-pier line, 4.3 ft south of the door wall"),
+  "L11": ("Outside, left (west) door", "outdoor", 6.5, G_LIGHT_CCT, "Mounted on the balcony pier"),
+  "L15": ("Outside, left (west) door", "outdoor", 6.5, G_LIGHT_CCT, "Mounted on the balcony pier"),
   "L12": ("Outside, right (east) door", "outdoor", 6.5, G_LIGHT_CCT, ""),
   "L16": ("Outside, right (east) door", "outdoor", 6.5, G_LIGHT_CCT, ""),
   "L13": ("Outside, deck door", "outdoor", HALL_FLOOR + 6.5, G_LIGHT_CCT, ""),
@@ -94,7 +94,7 @@ LIGHTS = {
   "L2": ("Dressing room", "wall", 2.5, "C3, 15A", "Legend says 'low lights'; drawn low on the wall as an assumption"),
   "L3": ("Shed", "ceiling", 8.0, "C3, 15A", ""),
   "L4": ("Shed", "ceiling", 8.0, "C3, 15A", ""),
-  "L5": ("Porch", "outdoor", 7.5, "C3, 15A", "Porch ceiling"),
+  "L5": ("Porch", "outdoor", 7.5, "C3, 15A", "Porch ceiling, centered over the porch door"),
  },
 }
 
@@ -122,6 +122,7 @@ SWITCHES = {
  ("2", "S9"): ("Kitchen, by the hall door", k("2", "L16")),
  ("2", "S10"): ("Family room, by the balcony door", k("2", "L17", "L18", "L24")),
  ("2", "S11"): ("Bath, by its door", k("2", "L19", "L20")),
+ ("2", "S18"): ("Bath, by its door (fan only, no light)", []),
  ("2", "S12"): ("Kitchen side of the W/D closet", k("2", "L22")),
  ("2", "S13"): ("Media room, by the balcony door", k("2", "L23", "L28", "L29")),
  ("2", "S14"): ("Media room west wall, beside AP 9", rng("2", 25, 27)),
@@ -210,7 +211,7 @@ def build():
         rec = dict(key=key, id=sid, level=lv, levelName=LEVEL_NAME[lv], room=room, x=x, y=round(y, 2), z=z,
                    controls=ctl, source=SOURCE[lv])
         if key in pair_of: rec["pairWith"], rec["pairColor"] = pair_of[key]
-        rec["mode"] = "on/off" if key in ("2:S6", "2:S9", "2:S11") else "smart-bulb dimmer"
+        rec["mode"] = "on/off" if key in ("2:S6", "2:S9", "2:S11", "2:S18") else "smart-bulb dimmer"
         switches.append(rec)
     # sanity: every plotted L# is in the data and vice versa
     for lv in SCALES:

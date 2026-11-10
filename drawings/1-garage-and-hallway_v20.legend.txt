@@ -117,7 +117,7 @@ Mini-splits on A.2 left off; power is MS1-MS4
 Lighting
 L1-L8 Garage ceiling, 2 rows of 4
 L9, L10 Hallway ceiling
-L11, L15 Outside, flanking left door
+L11, L15 Outside, flanking left door, on the balcony piers
 L12, L16 Outside, flanking right door
 L13 Deck door light
 L14 Under the stairs

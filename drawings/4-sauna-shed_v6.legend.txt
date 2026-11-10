@@ -52,7 +52,7 @@ P1 Dressing room outlet
 P2-P6 Shed outlets, GFCI
 L1 Low-voltage sauna lights, heat rated
 L2 Dressing room low lights
-L3-L5 Shed (L3, L4), porch (L5) lights
+L3-L5 Shed (L3, L4), porch (L5, over the door) lights
 S1, S2, S4 Dressing, sauna, porch (by door)
 S3 Shed lights, by the door
 Circuits: C1 B heater 20A; C2 P1-P6
