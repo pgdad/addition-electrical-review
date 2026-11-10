@@ -88,7 +88,7 @@ LIGHTS = {
   "L7": ("West office closet", "ceiling", 7.0, "C7 lighting, 15A", "Ordinary (non-smart) light, because S5 is a plain on/off switch"),
   "L8": ("Old house attic", "ceiling", 6.5, "C7 lighting, 15A", ""),
   "L9": ("East office sink nook", "ceiling", 7.0, "C7 lighting, 15A", "Short track light"),
-  "L10": ("Children's reading nook", "wall", 4.5, "C7 lighting, 15A", "Wall-mounted, cool-to-the-touch LED on the nook's north wall (low sloped ceiling); 4.5 ft height assumed"),
+  "L10": ("Children's reading nook", "wall", 4.5, "C7 lighting, 15A", "Wall-mounted, cool-to-the-touch LED on the nook's north wall (low sloped ceiling); smart fixture or smart lamp, since S11 is in smart-bulb mode; 4.5 ft height assumed"),
  },
  "S": {
   "L1": ("Sauna room", "low-voltage", 6.5, "C3 (driver J, 15A)", "Heat rated, DC from driver J"),

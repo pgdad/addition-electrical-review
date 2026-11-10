@@ -137,7 +137,7 @@ Hardwired, interconnected, battery backup (A.2 note 9); on a lighting circuit, c
 L10
 S11
 reading nook
-L10  Children's reading nook: wall-mounted, cool-to-the-touch LED on its north wall east of the door (low ceiling).  S11 on the office side, just west of the nook door, mounted low (3 ft) for children.
+L10  Children's reading nook: wall-mounted, cool-to-the-touch LED on its north wall east of the door (low ceiling).  S11 on the office side, just west of the nook door, mounted low (3 ft) for children; dimmer in smart-bulb mode, so L10 is a smart fixture or lamp.
 Nook: thin wall on the line of the rack-strip west wall; small door in its north wall. P5 moved east of the door; P4 moved to the office side of its wall.
 P18
 P18  West office wall outlet on the wall below the S1, S8, S9, S10 switch stack at the top of the stairs (C3).

@@ -82,7 +82,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Lighting review answers (owner decision, Nov 10, 2026): east office keeps the single switch S3; attic
   lights L6 (S4) and L8 (S6) stay switched from one side; the four switches at the top of the stairs stay
   separate. Reading nook light L10 is wall-mounted and cool to the touch (low ceiling), on the nook's north
-  wall east of the door; S11 is mounted low (3 ft) for children. Attic outlet P15 is on the old house attic
+  wall east of the door; S11 is mounted low (3 ft) for children and stays a
+  dimmer in smart-bulb mode, so L10 must be a smart fixture or take a smart lamp. Attic outlet P15 is on the old house attic
   side of the wall.
 - Lights L1-L9 on S1-S7, L10 on S11; stair risers S8; stair wall lights S9; L35 (2nd-floor stair ceiling) S10.
 

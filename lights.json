@@ -1240,7 +1240,7 @@
    ],
    "circuit": "C7 lighting, 15A",
    "source": "drawings/3-third-floor_v32.svg",
-   "note": "Wall-mounted, cool-to-the-touch LED on the nook's north wall (low sloped ceiling); 4.5 ft height assumed"
+   "note": "Wall-mounted, cool-to-the-touch LED on the nook's north wall (low sloped ceiling); smart fixture or smart lamp, since S11 is in smart-bulb mode; 4.5 ft height assumed"
   },
   {
    "key": "S:L1",

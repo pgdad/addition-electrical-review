@@ -200,8 +200,8 @@ The PDF wins for geometry; these are the differences found.
   as an ordinary, non-smart light (owner decision).
 - Reading nook (owner decision): L10 is a wall-mounted, cool-to-the-touch LED on the nook's north wall,
   because the ceiling is low, and S11 is mounted low (3 ft) so children can reach it.
-- *nice-to-have*: S11 is still a smart-bulb-mode switch, which keeps L10 powered. Either pick a smart
-  fixture or lamp for L10, or make S11 a plain on/off switch like S5.
+- S11 stays a dimmer in smart-bulb mode (owner decision, Nov 10, 2026), so L10 stays powered and must be a
+  smart fixture or take a smart lamp.
 
 ### Code-oriented checks (check with the electrician/inspector)
 - **Racks in the eave** (R1 to R5): behind a 5 ft knee wall in a strip about 2.8 ft deep. Confirm the roofline
