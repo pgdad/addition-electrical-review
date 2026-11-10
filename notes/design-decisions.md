@@ -132,6 +132,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   hinged north and opening out into the dressing room (owner decision); 2'0" width is assumed.
 - Shed outlets P2, P3 and P5 removed and P6 moved north on the east wall to where P2 was, by switch 1
   (owner decision, Nov 10, 2026). Now: P1 dressing room, P4 west wall, P6 east wall.
+- S1, S2, S4 and control unit J stay east of the porch door for now, although the open sauna door covers
+  them (owner decision, Nov 10, 2026).
 - Ground bar G is bonded to subpanel A's grounding bar and to the shed ground rods (Nov 10, 2026).
 - Lights: L1 sauna low-voltage (via control unit J), L2 dressing, L3, L4 shed, L5 porch (centered over the porch door). Switches S1, S2, S4 inside
   the porch door (currently drawn east of it; side not confirmed), S3 by the shed door.
