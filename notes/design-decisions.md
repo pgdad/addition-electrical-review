@@ -124,7 +124,11 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 ## Sauna / shed outbuilding (drawing v6)
 - 12 x 24 ft south of the garage: north half porch (12x3) + dressing room (west) + wood-burning sauna (east);
   south half shed, no door between. Fed 60A 240V and fiber from the garage SW corner.
-- Lights: L1 sauna low-voltage (via driver J), L2 dressing, L3, L4 shed, L5 porch (centered over the porch door). Switches S1, S2, S4 inside
+- Sauna lights (owner decision, Nov 10, 2026): L1 is strip lighting under the seating bench, like kitchen
+  under-cabinet lights. Its control unit J fits a 15 x 11 in space, low on the dressing room north wall by
+  the sauna door; the low-voltage wire runs low along the sauna north wall to the bench.
+- Ground bar G is bonded to subpanel A's grounding bar and to the shed ground rods (Nov 10, 2026).
+- Lights: L1 sauna low-voltage (via control unit J), L2 dressing, L3, L4 shed, L5 porch (centered over the porch door). Switches S1, S2, S4 inside
   the porch door (currently drawn east of it; side not confirmed), S3 by the shed door.
 
 ## Open questions (not yet answered by the owner)

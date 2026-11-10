@@ -29,7 +29,7 @@ How to read this:
 | 7 | should-fix | Second-floor kitchen: the 1.8 ft of counter south of the sink has no receptacle, island outlet P14 needs its position checked against the NEC 2023 island rule, and wall receptacle spacing runs long in a few places. | second floor v20: P12 to P14 |
 | 8 | should-fix | Blind outlet H4 is plotted on the balcony door opening and has no wall to sit on; put it above the window head. Sauna light driver J is in the W/D closet that the WashTower fills, so it cannot be reached. | second floor v20: H4, J |
 | 9 | should-fix | Third floor: ID 6 is used twice (network jack 6 and the empty rack opening), and ceiling outlet P21 only counts toward wall spacing if it is within 5.5 ft of the floor. | third floor v32: 6, P21 |
-| 10 | should-fix | Shed: the drawing should show ground bar G bonded to subpanel A's grounding bar, and light driver J is mounted high beside the sauna door, the warmest spot in the dressing room. | shed v6: G, A, J |
+| 10 | nice-to-have | Garage labelling: MP has no text on the plan, device C reads like a circuit number, and switches E and F are drawn amber instead of green. | garage v20: MP, C, E, F |
 
 ## PDF vs drawing geometry mismatches
 
@@ -259,13 +259,15 @@ The PDF wins for geometry; these are the differences found.
   and burial depth per the wiring method (18 in for PVC conduit).
 - **Grounding electrode**: a detached building with a feeder needs its own electrode (normally two rods)
   connected to the subpanel's grounding bar. G is on the south wall and A on the north wall of the shed.
-  The drawing should show G bonded to A's grounding bar, not just to a rod. **should-fix**.
+  Resolved on the drawing (Nov 10, 2026): G is now shown bonded to A's grounding bar as well as to the rods.
 - **Working clearance** at A: keep 30 in x 36 in clear in the shed. Switch 1 and P2 beside it are fine.
 - **GFCI**: P1 to P6 on GFCI C2 covers the accessory-building rule. If heater B is cord-connected, its
   receptacle needs GFCI too.
-- **Driver J**: "high, outside sauna" on the partition beside the sauna door is the warmest spot in the
-  dressing room. Mount it low or mid-height and check its ambient rating. The low-voltage run to L1 passes
-  through the hot room; use wire rated for sauna temperatures and keep it low and away from the stove.
+- **Sauna lights and control unit J** (owner decision, Nov 10, 2026): L1 is strip lighting under the seating
+  bench, like under-cabinet lights. Control unit J sits in a 15 x 11 in space low on the dressing room north
+  wall by the sauna door, and the low-voltage wire runs low along the sauna north wall to the bench, away
+  from the wood stove. Low on the wall is the coolest part of both rooms. Still check J's ambient rating and
+  use wire and fixtures rated for sauna temperatures.
 - **Network**: the link from the garage is fiber, so there is no copper between buildings. Camera 2 has SP
   on G. AP 3 is inside. A switch in an unheated shed needs a cold-rated model. Fiber and power can share a
   trench; give the fiber its own conduit with a pull string.
@@ -446,16 +448,15 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 7. No counter receptacle south of the sink; island P14 position; wall spacing gaps (second floor).
 8. H4 has no wall; driver J behind the WashTower (second floor).
 9. Duplicate ID 6; ceiling outlet P21 must stay within 5.5 ft of the floor to count (third floor).
-10. Shed ground bar G to subpanel A bond not shown; driver J mounted high (shed).
 
 **Nice-to-have**
-11. Label MP; rename device C; draw E/F green (garage).
-12. E in the door opening; scene button between the overhead doors (garage).
-13. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
-14. Color key on the third-floor sheet (third floor).
-15. "East walls in line" label (shed).
-16. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
-17. One AP too many in the middle of the building; outdoor coverage north and east.
+10. Label MP; rename device C; draw E/F green (garage).
+11. E in the door opening; scene button between the overhead doors (garage).
+12. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
+13. Color key on the third-floor sheet (third floor).
+14. "East walls in line" label (shed).
+15. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
+16. One AP too many in the middle of the building; outdoor coverage north and east.
 
 ## Scales used
 

@@ -47,16 +47,20 @@ Network and power
 3 Outdoor PoE AP, inside north wall
 A Subpanel, 60A 240V feeder (my pick)
 B Space heater, 20A dedicated
-J Sauna light driver, high, outside sauna
+J Sauna light control unit, low, dressing room
 P1 Dressing room outlet
 P2-P6 Shed outlets, GFCI
-L1 Low-voltage sauna lights, heat rated
+L1 Low-voltage lights under the sauna bench
 L2 Dressing room low lights
 L3-L5 Shed (L3, L4), porch (L5, over the door) lights
 S1, S2, S4 Dressing, sauna, porch (by door)
 S3 Shed lights, by the door
 Circuits: C1 B heater 20A; C2 P1-P6
 20A GFCI; C3 J, L1-L5 15A
-Dashed: low-voltage run from J
-G Ground bar by camera 2, to shed ground rod
+Dashed: low-voltage run from J, low
+G Ground bar by camera 2, bonded to A (green)
 SP Surge on camera 2 run, on G
+J: control unit for the sauna lights, in a 15 x 11 in space low on the dressing room north wall by the sauna door.
+L1: strip lights under the seating bench, like under-cabinet lights, heat rated. The low-voltage wire runs low along
+the sauna north wall from J to the bench, away from the wood stove.
+G is bonded to subpanel A's grounding bar (green line along the east wall) and to the shed ground rods.

@@ -1247,17 +1247,17 @@
    "id": "L1",
    "level": "S",
    "levelName": "Sauna / shed",
-   "room": "Sauna room",
-   "x": -4.2,
-   "y": 6.5,
-   "z": 48.4,
+   "room": "Sauna room, under the seating bench",
+   "x": -1.36,
+   "y": 1.5,
+   "z": 47.0,
    "type": "low-voltage",
    "switches": [
     "S:S2"
    ],
-   "circuit": "C3 (driver J, 15A)",
+   "circuit": "C3 (control unit J, 15A)",
    "source": "drawings/4-sauna-shed_v6.svg",
-   "note": "Heat rated, DC from driver J"
+   "note": "Strip lights under the bench, heat rated; low-voltage wire runs low along the sauna north wall from control unit J"
   },
   {
    "key": "S:L2",

@@ -91,7 +91,7 @@ LIGHTS = {
   "L10": ("Children's reading nook", "wall", 4.5, "C7 lighting, 15A", "Wall-mounted, cool-to-the-touch LED on the nook's north wall (low sloped ceiling); smart fixture or smart lamp, since S11 is in smart-bulb mode; 4.5 ft height assumed"),
  },
  "S": {
-  "L1": ("Sauna room", "low-voltage", 6.5, "C3 (driver J, 15A)", "Heat rated, DC from driver J"),
+  "L1": ("Sauna room, under the seating bench", "low-voltage", 1.5, "C3 (control unit J, 15A)", "Strip lights under the bench, heat rated; low-voltage wire runs low along the sauna north wall from control unit J"),
   "L2": ("Dressing room", "wall", 2.5, "C3, 15A", "Legend says 'low lights'; drawn low on the wall as an assumption"),
   "L3": ("Shed", "ceiling", 8.0, "C3, 15A", ""),
   "L4": ("Shed", "ceiling", 8.0, "C3, 15A", ""),
