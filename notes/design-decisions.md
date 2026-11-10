@@ -50,6 +50,10 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   laundry circuit C9 20A 120V; lighting is C10 15A and also feeds stair controllers D and alarms SD1, CO1.
 - Grounding: G by switch 2 (SW), G2 by switch 7 (NW), bonded to the addition ground; Ethernet surge
   protectors SP1 (items 3, 4, 5) on G and SP2 (item 8) on G2.
+  PoE doorbell 16 has surge protector SP3 at the switch 18 end of its cable, bonded to the service ground at
+  MP (owner decision, Nov 10, 2026).
+- Windows (A.2), drawn Nov 10, 2026: two 2840 on the north wall, centred 13'8" and 29'8" from the west
+  corner; one 2840 tempered on the west wall, centred 3'0" from the north corner.
 
 ## Second floor (sheet A.3, drawing v20) -- owner review in progress
 - Lights: L1-L6 hall (S1, S2); L7 stair-up risers (S3 bottom + 3rd-floor S8 top); L8 stair-down risers
@@ -102,7 +106,6 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Sauna/shed switches S1, S2, S4: east or west of the porch door?
 - Do wall jackshaft openers O1, O2 come off now that ceiling trolley outlets O3, O4 exist?
 - Which switch feeds hallway AP 17 (probably the new under-stair switch 18)?
-- Does PoE doorbell 16 get an Ethernet surge protector?
 - Are all four outside garage lights OK on one switch S3?
 - Blind outlets in the gaps between the west-office south windows?
 - Riser fiber path, edge switch locations, rack cooling, which switch feeds the 2nd-floor hall sensors.

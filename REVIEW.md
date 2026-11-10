@@ -22,7 +22,7 @@ How to read this:
 |---|------|---------|-------|
 | 1 | must-fix | Main panel MP is drawn on the north wall inside the footprint of the garage stair (x 36.7 to 39.7 ft). The stair soffit there is roughly 5 to 6 ft above the slab, below the 6.5 ft headroom a panel's working space needs. A.2 also shows a wall along the south side of that stair, so MP, the WashTower, modem 1, switch 18 and P1/P2 would be inside a 3'4" wide enclosed under-stair space. | garage v20: MP, W/D, 1, 18, L14 |
 | 2 | must-fix | Second-floor kitchen and laundry: NEC 2023 extends GFCI to all kitchen receptacles and to listed appliances, so C1 (range receptacle E), C6 (fridge K), C7 (DW/disposal M), C8 (microwave N) and C9 (WashTower W) need checking, not just counters C4/C5. No AFCI is noted anywhere on the second floor (the third floor notes it). | second floor v20 |
-| 3 | must-fix | PoE doorbell 14 on the balcony is an outdoor copper run with no surge protector and no ground bar on that floor. Doorbell 16 (open question) is the same. PoE jacks 11 are plotted on the outside face of the jog wall; if they are outside they need protection too. | second floor v20: 14; garage v20: 16, 11 |
+| 3 | must-fix | PoE doorbell 14 on the balcony is an outdoor copper run with no surge protector and no ground bar on that floor. Garage doorbell 16 now has surge protector SP3 (owner decision). PoE jacks 11 are plotted on the outside face of the jog wall; if they are outside they need protection too. | second floor v20: 14; garage v20: 11 |
 | 4 | should-fix | With 8 ft doors under a 9'5" ceiling, both ceiling cord reels (P11, P12) hang in the path of the open doors. The south light row L5 to L8 is also above the open doors, which the owner accepts: those lights are for when the doors are closed. | garage v20 |
 | 5 | should-fix | Several lights can only be switched after crossing the dark: second-floor hall (S1/S2 mid-hall, 14 ft from the west stair and 8 ft from the east stair), family room (S10 only at the balcony door) and media room (S5/S6 only at the hall door). The third-floor cases (east office S3, attic lights L6 and L8) are accepted by the owner. | second floor v20 |
 | 6 | should-fix | The second-floor "small" PoE switch 8 has about 17 PoE drops and roughly 75 to 105 W. No 5/8-port switch covers that. Garage switch 2 needs 7 PoE ports and about 78 W plus a fiber cage; switch 18 needs 7 to 8 ports. | second floor v20: 8; garage v20: 2, 18 |
@@ -61,6 +61,12 @@ The PDF wins for geometry; these are the differences found.
   (wall lights L30 to L32) on both drawings and in the notes.
 - Circuits (resolved): lighting is now C10 (15 A) and also feeds stair controllers D and alarms SD1/CO1;
   B is on C2, C on new dedicated C8, A on new laundry circuit C9.
+- Windows are now drawn from A.2: two 2840 units on the north wall (x 12.3 to 15.0 ft and 28.3 to 31.0 ft)
+  and one tempered 2840 on the west wall (z 1.7 to 4.4 ft).
+- **should-fix**: SP2 (z 2.3 to 3.5 ft) and ground bar G2 (z 3.8 to 5.0 ft) are plotted on the west window, and
+  switch 7 (z 1.2 ft) has only about 1 ft of wall between the corner and that window. Move the three to the
+  west wall just south of the window (z 4.6 to 6.5 ft, north of P6), or mount them on the north wall in the
+  corner beside C.
 - L11 and L15 are plotted about 4.3 ft south of the west door wall because they mount on the balcony piers
   (owner decision).
 
@@ -317,7 +323,7 @@ are drawn on `lights-3d.html` (3D and the third-floor 2D map, "Ethernet runs" fi
 |-----|-----------|
 | Garage cameras 3, 4, AP 5 | Yes, SP1 on G |
 | Garage camera 8 | Yes, SP2 on G2 |
-| Garage doorbell 16 | **No** (open question) |
+| Garage doorbell 16 | Yes, SP3 at the switch 18 end, bonded to the service ground at MP |
 | Garage jacks 11 | Plotted outdoors under the balcony; **no**, if they really are outside |
 | Second-floor doorbell 14 | **No**, and no ground bar on that floor |
 | Shed camera 2 | Yes, SP on G |
@@ -345,8 +351,8 @@ are drawn on `lights-3d.html` (3D and the third-floor 2D map, "Ethernet runs" fi
    If trolley openers stay, keep O1/O2 as ordinary GFCI wall receptacles at the jambs.
 3. **Which switch feeds hallway AP 17?** Switch 18, about 6 ft away. That brings 18 to 8 PoE devices, so it
    must be an 8-port PoE+ switch with a fiber uplink.
-4. **Does doorbell 16 get a surge protector?** Yes, at the switch 18 end, bonded to the service ground at MP.
-   Give second-floor doorbell 14 one as well.
+4. **Does doorbell 16 get a surge protector?** Resolved (owner decision, Nov 10, 2026): SP3 is drawn at the
+   switch 18 end, bonded to the service ground at MP. Give second-floor doorbell 14 one as well.
 5. **Are all four outside garage lights OK on S3?** Yes. They work as one scene and smart fixtures can still
    be grouped or scheduled. Add the same scene to S7 so they can be controlled from the hallway side.
 6. **Blind outlets in the gaps between the west-office south windows?** Not in the gaps: A.4 shows about
@@ -378,7 +384,7 @@ are drawn on `lights-3d.html` (3D and the third-floor 2D map, "Ethernet runs" fi
 **Must-fix**
 1. MP under the garage stair: headroom and working space (garage).
 2. GFCI/AFCI scope on second-floor kitchen, laundry and living circuits (second floor).
-3. Surge protection for doorbell 14, doorbell 16 and jacks 11 if outdoors (network).
+3. Surge protection for doorbell 14 and jacks 11 if outdoors (network).
 
 **Should-fix**
 4. Open doors in the path of cord reels P11, P12 (garage).

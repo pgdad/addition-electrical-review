@@ -105,7 +105,7 @@ Devices
 13 Presence sensor, east half
 14 Hall sensor, north wall, faces south
 15 Presence sensor, over doorway
-16 PoE video doorbell
+16 PoE video doorbell, surge SP3
 A W/D outlet (washer; gas dryer), C9 GFCI
 B Outdoor outlet, AirGradient, C2 GFCI, WR
 C Computers, printers outlet, C8 20A GFCI
@@ -178,3 +178,7 @@ MS1-MS4 Hardwired 240V 30A connections, one per mini-split condenser, at the fou
 MS1, MS2 north wall (24, 27.5 ft); MS3, MS4 west wall under the stair. C11-C14 30A 240V each, with disconnects
 P18, P19 Outdoor 125V 20A GFCI weather-resistant service outlets on C2: P18 north wall by MS1, P19 west wall by MS4
 Indoor mini-split units are fed from their condensers; no outlets for them.
+SP3
+Windows (blue), sizes from A.2: two 2840 on the north wall, centred 13.7 and 29.7 ft from the west wall;
+one 2840 (tempered) on the west wall, centred 3 ft from the north wall.
+SP3 Surge protector for PoE doorbell 16, at the switch 18 end of its cable, bonded to the service ground at MP.
