@@ -19,9 +19,10 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   Two fiber runs share one smurf tube up the riser (item 1 converter, item 18 under-stair switch).
   Fiber from R1 out to small 5/8-port PoE switches near APs, cameras and computers.
 - Mini-splits shown on the architect sheets are intentionally left off the drawings.
-  Their power is drawn (owner decision, Nov 10, 2026): three condensers outside the garage north wall, each
-  with its own hardwired 240V 30A connection (MS1-MS3 on new circuits C11-C13), plus one outdoor-rated
-  125V 20A GFCI outlet P18 beside them on C2. The indoor units need no outlets.
+  Their power is drawn (owner decision, Nov 10, 2026) at the four condenser positions on sheet A.2: two
+  outside the garage north wall (MS1, MS2) and two outside the west wall under the exterior stair (MS3, MS4),
+  each a hardwired 240V 30A connection on its own circuit (C11-C14), plus one outdoor-rated 125V 20A GFCI
+  outlet P18 at the NW corner on C2. The indoor units need no outlets.
 - Rough load estimate (proposed, not a code calc): 2nd floor ~115A, 3rd ~30-40A, ~150A combined;
   two 60A EV circuits ~96A continuous; fits in 400A.
 

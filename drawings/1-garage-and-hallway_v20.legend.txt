@@ -111,7 +111,7 @@ B Outdoor outlet, AirGradient, C2 GFCI, WR
 C Computers, printers outlet, C8 20A GFCI
 D Stair lights, 2 Matter controllers, on C10
 E, F 3-way switches, stair bottom (F: wall lights)
-Mini-splits on A.2 left off; power is MS1-MS3
+Mini-splits on A.2 left off; power is MS1-MS4
 17 UniFi wall AP, hallway north wall
 18 Small PoE switch, fiber to 3rd fl
 Lighting
@@ -171,8 +171,9 @@ EV2: north wall 26.4 ft from the west wall, between the boiler and P5, 1.7 ft we
 MS1
 MS2
 MS3
+MS4
 P18
-MS1-MS3 Hardwired 240V 30A connections, one per mini-split condenser, outside the north wall (19.5, 23, 26.5 ft)
-C11, C12, C13 MS1, MS2, MS3 30A 240V 2-pole each; outdoor disconnect within sight of each unit
-P18 Outdoor 125V 20A GFCI weather-resistant outlet, outside the north wall at 16.4 ft, on C2 (service outlet)
+MS1-MS4 Hardwired 240V 30A connections, one per mini-split condenser, at the four A.2 positions:
+MS1, MS2 north wall (24, 27.5 ft); MS3, MS4 west wall under the stair. C11-C14 30A 240V each, with disconnects
+P18 Outdoor 125V 20A GFCI weather-resistant outlet, north wall at the NW corner, on C2; within 25 ft of all four
 Indoor mini-split units are fed from their condensers; no outlets for them.
