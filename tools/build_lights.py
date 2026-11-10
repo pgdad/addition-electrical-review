@@ -212,6 +212,7 @@ OUTLETS = {
   ("B", "Duplex outlet inside rack R4", "wall", 1.5, "C2 dedicated, 20A"),
   ("E", "Spare home run, boxed in rack R3", "wall", 1.5, "C8 spare, 20A"),
   ("C D", "Floor power outlet, east office", "floor", 0.1, "C4 east office desks, 20A"),
+  ("P18", "West office, below the switch stack at the top of the stairs", "wall", 1.5, "C3 west office, 20A"),
   ("P1 P4 P5", "West office wall outlet", "wall", 1.5, "C3 west office, 20A"),
   ("P6 P7 P11 P12", "East office wall outlet", "wall", 1.5, "C5 east office perimeter, 20A"),
   ("P8 P9 P10", "East office wall outlet", "wall", 1.5, "C4 east office desks, 20A"),
@@ -293,7 +294,8 @@ def build():
     for lv, rows in OUTLETS.items():
         for ids, desc, kind, h, cct in rows:
             for oid in ids.split():
-                x, z = to_ft(lv, *dev[lv][oid]["pts"][0])
+                src = {"3:P18": "S9"}.get(f"{lv}:{oid}", oid)      # P18 is drawn off the wall with a leader; it sits under the switches
+                x, z = to_ft(lv, *dev[lv][src]["pts"][0])
                 base = 0.0 if kind in ("outdoor",) and lv == "G" or oid.startswith("MS") else (HALL_FLOOR if (lv == "G" and oid in HALL_OUTLETS) else FLOOR[lv])
                 outlets.append(dict(key=f"{lv}:{oid}", id=oid, level=lv, levelName=LEVEL_NAME[lv], room=desc, kind=kind,
                                     x=x, y=round(base + h, 2), z=z, circuit=cct, source=SOURCE[lv]))

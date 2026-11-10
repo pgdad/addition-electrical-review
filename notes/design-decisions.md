@@ -72,7 +72,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   west wall. Small door in its north wall from the west office; light L10 inside, switch S11 on the office
   side by the door. P5 moved east of the door; P4 moved to the office side of its wall.
 - West office outlets (owner decision, Nov 10, 2026): P1 moved to the east wall near S2; P2 and P3 removed
-  as not needed. Remaining: P1, P4, P5.
+  as not needed; P18 added on the wall below the S1/S8/S9/S10 switch stack. Now: P1, P4, P5, P18.
 - Lights L1-L9 on S1-S7, L10 on S11; stair risers S8; stair wall lights S9; L35 (2nd-floor stair ceiling) S10.
 
 ## Sauna / shed outbuilding (drawing v6)

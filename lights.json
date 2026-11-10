@@ -3035,6 +3035,19 @@
    "source": "drawings/3-third-floor_v32.svg"
   },
   {
+   "key": "3:P18",
+   "id": "P18",
+   "level": "3",
+   "levelName": "Third floor",
+   "room": "West office, below the switch stack at the top of the stairs",
+   "kind": "wall",
+   "x": 5.59,
+   "y": 22.11,
+   "z": 14.44,
+   "circuit": "C3 west office, 20A",
+   "source": "drawings/3-third-floor_v32.svg"
+  },
+  {
    "key": "3:P1",
    "id": "P1",
    "level": "3",
