@@ -182,8 +182,8 @@ The PDF wins for geometry; these are the differences found.
   - Owner decision (Nov 10, 2026): the hall/kitchen door opens out into the hall, the opposite of A.3, hinged
     on its west jamb with the handle on the east. S8 and S9 in the kitchen are no longer behind it, and the
     open leaf folds west, away from the east stair and switches S16 and S20.
-  - *check*: the 2'8" leaf spans most of the 3'4" hall while it is swinging, and folded back it reaches to
-    about 1 ft from outlet P2 and 1.6 ft from S2. Confirm with the inspector that a door may swing into the hall.
+  - *check*: the 2'8" leaf spans most of the 3'4" hall while it is swinging, and folded back against the wall it
+    covers outlet P2 and stops about 1 ft short of S2. Confirm with the inspector that a door may swing into the hall.
   - Resolved (owner decision): doorbell 14 moved out of the family/balcony door's swing to the wall north
     of the door; L29 was nudged north to make room.
   - A.3 draws the sauna door opening into the sauna. Sauna doors normally open outward; check the heater
