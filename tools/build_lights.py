@@ -219,7 +219,8 @@ OUTLETS = {
   ("P19 P20", "Media room, by S7", "wall", 1.5, "C13, 20A AFCI"),
   ("H1 H2", "Blind outlet, hall window, high", "blind", 7.5, "C12, 20A AFCI"),
   ("H3 H4", "Blind outlet, media windows, high", "blind", 7.5, "C12, 20A AFCI"),
-  ("H5 H6", "Blind outlet, family windows, high", "blind", 7.5, "C12, 20A AFCI"),
+  ("H5", "Blind outlet, family windows, high", "blind", 7.5, "C12, 20A AFCI"),
+  ("H6", "Blind outlet, family windows, high; duplex, also powers network switch 16", "blind", 7.5, "C12, 20A AFCI"),
  ],
  "3": [
   ("A", "Duplex outlet inside rack R2", "wall", 1.5, "C1 dedicated, 20A"),
@@ -261,7 +262,7 @@ NETWORK = {
  ],
  "2": [
   ("8", "switch", "16-port PoE switch with a fiber port", "Media closet, southwest", 5.0, "West half of the floor, the projector jacks and doorbell 14 (via SP1 on GB1)"),
-  ("16", "switch", "8-port PoE switch with a fiber port", "Family room, southeast corner, high by blind outlet H6", 7.0, "East half of the floor; powered from the H6 box (make it a duplex)"),
+  ("16", "switch", "8-port PoE switch with a fiber port", "Family room, southeast corner, high by blind outlet H6", 7.0, "East half of the floor; powered from blind outlet H6, which becomes a duplex (owner decision)"),
   ("14", "doorbell", "PoE video doorbell", "Balcony, on the wall north of the family room door", 4.0, "Outdoor copper run: surge protector SP1 on ground bar GB1 at switch 8"),
   ("9", "ap", "UniFi wall AP", "Media room west wall", 7.0, ""),
   ("15", "ap", "UniFi ceiling AP", "Kitchen / family room border", 8.9, ""),

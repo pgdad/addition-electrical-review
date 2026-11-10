@@ -85,8 +85,9 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   east stair (hall); S21 with S8 at the media/kitchen door, kitchen side. Media lights are split: S5 runs L9
   and S24 runs L10 (hall door, with S6); companions S22 (L9), S25 (L10), S23 (fan) are on the media side of
   the media/kitchen wall at the door's north edge. S13 is on the west side of the media/balcony door. S10 with L17, L18, L24 and S13 with L29 stay as drawn (owner decision).
-- Doors drawn from A.3 on Nov 10, 2026. The hall/kitchen door is hinged on its west jamb, the opposite of
-  A.3 (owner decision), so S8 and S9 are on its latch side.
+- Doors drawn from A.3 on Nov 10, 2026. The hall/kitchen door opens out into the hall, handle on the west
+  (left on the drawing), hinged east: the opposite swing to A.3 (owner decision).
+- Network switch 16 is powered from blind outlet H6, which becomes a duplex (owner decision, Nov 10, 2026).
 - Owner decisions, Nov 10, 2026: doorbell 14 on the wall north of the family/balcony door; S26 pairs with
   S10 at the north end of the family/bath wall; counter outlets P25, P26 south of the sink on C4; sauna light
   driver J on the bath north wall; switch 8 is a 16-port PoE switch; new network switch 16 in the family room
@@ -156,6 +157,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   the porch door (currently drawn east of it; side not confirmed), S3 by the shed door.
 
 ## Open questions (not yet answered by the owner)
+- Main panel location: deferred by the owner on Nov 10, 2026. Candidates: garage east wall south of S1/S3, or
+  the garage side of the stair wall east of the water heater. It cannot stay under the stair.
 - Sauna/shed switches S1, S2, S4: east or west of the porch door?
 - Do wall jackshaft openers O1, O2 come off now that ceiling trolley outlets O3, O4 exist?
 - Which switch feeds hallway AP 17 (probably the new under-stair switch 18)?

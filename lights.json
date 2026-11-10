@@ -3196,7 +3196,7 @@
    "id": "H6",
    "level": "2",
    "levelName": "Second floor",
-   "room": "Blind outlet, family windows, high",
+   "room": "Blind outlet, family windows, high; duplex, also powers network switch 16",
    "kind": "blind",
    "x": 35.42,
    "y": 17.96,
@@ -3880,7 +3880,7 @@
    "y": 17.46,
    "z": 23.1,
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "East half of the floor; powered from the H6 box (make it a duplex)",
+   "note": "East half of the floor; powered from blind outlet H6, which becomes a duplex (owner decision)",
    "fiber": "2:F16"
   },
   {

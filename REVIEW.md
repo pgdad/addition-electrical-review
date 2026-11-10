@@ -102,7 +102,9 @@ The PDF wins for geometry; these are the differences found.
   decision, Nov 10, 2026). O3 and O4 at 10.3 and 10.6 ft back are clear.
 
 ### Code-oriented checks (check with the electrician/inspector)
-- **Panel location** (finding 1). NEC 110.26 working space is 30 in wide, 36 in deep and 6.5 ft high and has
+- **Panel location** (finding 1). The owner has deferred the choice of location (Nov 10, 2026); the two
+  candidates are the garage east wall south of S1/S3 and the garage side of the stair wall east of the
+  water heater. NEC 110.26 working space is 30 in wide, 36 in deep and 6.5 ft high and has
   to stay clear; storage and a WashTower in the same under-stair space work against that. NEC 230.85 also
   requires an outdoor emergency disconnect for a dwelling service, which turns the indoor panels into
   feeder-supplied panels with separate neutrals and grounds. A 400 A service is normally two 200 A panels;
@@ -177,8 +179,12 @@ The PDF wins for geometry; these are the differences found.
   rooms), media to kitchen (2668, hinged north, opening into the kitchen; its gap was about 0.5 ft too far
   south and is corrected), media to balcony (3068, opening in), family to balcony (3068, opening out),
   closet, bath, sauna and the W/D closet bifold. What the doors show:
-  - Resolved (owner decision, Nov 10, 2026): the hall/kitchen door is now hinged on its west jamb, the
-    opposite of A.3, so S8 and S9 are on its latch side and no longer behind the open door.
+  - Owner decision (Nov 10, 2026): the hall/kitchen door opens out into the hall, the opposite of A.3, with
+    its handle on the west and hinges on the east. S8 and S9 in the kitchen are no longer behind it.
+  - **should-fix**: opening that way, the 2'8" leaf spans most of the 3'4" hall, and folded back it lies over
+    S16 and S20 at the head of the east stair, whose first riser is about 2.8 ft from the hinge. Check with
+    the inspector that a door may swing into the hall this close to the stair. Hinging it on the west instead
+    (handle on the east) would keep it away from the stair and those switches.
   - Resolved (owner decision): doorbell 14 moved out of the family/balcony door's swing to the wall north
     of the door; L29 was nudged north to make room.
   - A.3 draws the sauna door opening into the sauna. Sauna doors normally open outward; check the heater
@@ -398,8 +404,8 @@ doorbell; new switch 16 (8-port, family room southeast corner) takes the east ha
 
 - Totals: about 590 ft of copper; switch 8 about 95 W (35 W if the projector jacks draw no PoE), switch 16
   about 39 W.
-- Switch 16 has no outlet of its own. It is drawn high in the corner by blind outlet H6; make that box a
-  duplex so it feeds both the blind and the switch. *should-fix* until confirmed.
+- Switch 16 is powered from blind outlet H6 in the same corner, which becomes a duplex (owner decision,
+  Nov 10, 2026). H6 is on C12, so a trip on that general circuit also takes the switch down.
 - The family room ceiling is vaulted and the third-floor east office is floored over it, so the runs from
   switch 16 go in whatever framing space that leaves; lengths are estimates.
 - Sensor 2 in the hall's northeast corner is the longest reach from either switch. Garage switch 18 is
