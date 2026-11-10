@@ -20,15 +20,15 @@ How to read this:
 | # | Rank | Finding | Where |
 |---|------|---------|-------|
 | 1 | must-fix | Main panel MP is drawn on the north wall inside the footprint of the garage stair (x 36.7 to 39.7 ft). The stair soffit there is roughly 5 to 6 ft above the slab, below the 6.5 ft headroom a panel's working space needs. A.2 also shows a wall along the south side of that stair, so MP, the WashTower, modem 1, switch 18 and P1/P2 would be inside a 3'4" wide enclosed under-stair space. | garage v20: MP, W/D, 1, 18, L14 |
-| 2 | must-fix | The third-floor drawing puts a floor where sheet A.4 shows "OPEN TO FAMILY RM. BELOW" south of a guardrail (z > 13 ft). L5, floor jacks 4 and 5, floor outlets C and D, P9 to P12, sensors 11 and 12, H5, and the faces of racks R2 to R5 and bookshelves B1 to B5 all sit over or open onto that void. Either the loft is being floored over (a structural change the architect has to draw) or these devices have nowhere to go. | third floor v32 vs A.4 |
-| 3 | must-fix | GFCI is only called out on C2 and C3 in the garage. Under NEC 2023 every 125 to 250 V receptacle in a garage needs it, which takes in C1 (P1, P2, P13), C4 (cord reels P11, P12 and opener outlets O1 to O4), W/D outlet A, outlet C and outdoor outlet B. A, B, C and D also have no circuit assigned. | garage v20 |
-| 4 | must-fix | Second-floor kitchen and laundry: NEC 2023 extends GFCI to all kitchen receptacles and to listed appliances, so C1 (range receptacle E), C6 (fridge K), C7 (DW/disposal M), C8 (microwave N) and C9 (WashTower W) need checking, not just counters C4/C5. No AFCI is noted anywhere on the second floor (the third floor notes it). | second floor v20 |
-| 5 | must-fix | PoE doorbell 14 on the balcony is an outdoor copper run with no surge protector and no ground bar on that floor. Doorbell 16 (open question) is the same. PoE jacks 11 are plotted on the outside face of the jog wall; if they are outside they need protection too. | second floor v20: 14; garage v20: 16, 11 |
-| 6 | should-fix | Both EV chargers are drawn exactly on the two north-wall windows (EV1 x 13.7 ft vs window 12.4 to 15.1 ft; EV2 x 30.4 ft vs window 28.6 to 31.3 ft). | garage v20: EV1, EV2 |
-| 7 | should-fix | With 8 ft doors under a 9'5" ceiling, the open doors cover the south row of garage lights (L5 to L8) and both ceiling cord reels (P11, P12). | garage v20 |
-| 8 | should-fix | Several lights can only be switched after crossing the dark: second-floor hall (S1/S2 mid-hall, 14 ft from the west stair and 8 ft from the east stair), family room (S10 only at the balcony door), media room (S5/S6 only at the hall door), third-floor east office (S3 only at the shared door, though the attic passage is a second entry), and attic lights L6 and L8. | second floor v20, third floor v32 |
-| 9 | should-fix | The second-floor "small" PoE switch 8 has about 17 PoE drops and roughly 75 to 105 W. No 5/8-port switch covers that. Garage switch 2 needs 7 PoE ports and about 78 W plus a fiber cage; switch 18 needs 7 to 8 ports. | second floor v20: 8; garage v20: 2, 18 |
-| 10 | should-fix | Smart-bulb mode does not fit every load. The bath fan (S11), the media fan motor (S6), under-cabinet L16 (S9), riser LED controllers (D) and any non-Govee exterior fixture need real switching or their own controller. Hardwired smoke/CO alarms required by A.2 note 9 are on no device drawing. | all levels |
+| 2 | must-fix | GFCI is only called out on C2 and C3 in the garage. Under NEC 2023 every 125 to 250 V receptacle in a garage needs it, which takes in C1 (P1, P2, P13), C4 (cord reels P11, P12 and opener outlets O1 to O4), W/D outlet A, outlet C and outdoor outlet B. A, B, C and D also have no circuit assigned. | garage v20 |
+| 3 | must-fix | Second-floor kitchen and laundry: NEC 2023 extends GFCI to all kitchen receptacles and to listed appliances, so C1 (range receptacle E), C6 (fridge K), C7 (DW/disposal M), C8 (microwave N) and C9 (WashTower W) need checking, not just counters C4/C5. No AFCI is noted anywhere on the second floor (the third floor notes it). | second floor v20 |
+| 4 | must-fix | PoE doorbell 14 on the balcony is an outdoor copper run with no surge protector and no ground bar on that floor. Doorbell 16 (open question) is the same. PoE jacks 11 are plotted on the outside face of the jog wall; if they are outside they need protection too. | second floor v20: 14; garage v20: 16, 11 |
+| 5 | should-fix | Both EV chargers are drawn exactly on the two north-wall windows (EV1 x 13.7 ft vs window 12.4 to 15.1 ft; EV2 x 30.4 ft vs window 28.6 to 31.3 ft). | garage v20: EV1, EV2 |
+| 6 | should-fix | With 8 ft doors under a 9'5" ceiling, the open doors cover the south row of garage lights (L5 to L8) and both ceiling cord reels (P11, P12). | garage v20 |
+| 7 | should-fix | Several lights can only be switched after crossing the dark: second-floor hall (S1/S2 mid-hall, 14 ft from the west stair and 8 ft from the east stair), family room (S10 only at the balcony door), media room (S5/S6 only at the hall door), third-floor east office (S3 only at the shared door, though the attic passage is a second entry), and attic lights L6 and L8. | second floor v20, third floor v32 |
+| 8 | should-fix | The second-floor "small" PoE switch 8 has about 17 PoE drops and roughly 75 to 105 W. No 5/8-port switch covers that. Garage switch 2 needs 7 PoE ports and about 78 W plus a fiber cage; switch 18 needs 7 to 8 ports. | second floor v20: 8; garage v20: 2, 18 |
+| 9 | should-fix | Smart-bulb mode does not fit every load. The bath fan (S11), the media fan motor (S6), under-cabinet L16 (S9), riser LED controllers (D) and any non-Govee exterior fixture need real switching or their own controller. Hardwired smoke/CO alarms required by A.2 note 9 are on no device drawing. | all levels |
+| 10 | should-fix | Hallway switches S4 and S5 are drawn on the east wall exactly across the east door opening, so there is no wall to mount them on. Move them to the wall beside the door. | garage v20: S4, S5 |
 
 ## PDF vs drawing geometry mismatches
 
@@ -39,8 +39,8 @@ The PDF wins for geometry; these are the differences found.
 | Garage ceiling | A.2: 9'5" | Notes and v20: "9 ft" | 5 in. The 3D model uses 9'5". |
 | Hallway (breezeway) | A.2: 5'0" x 21'10", 8'4" ceiling, floor two risers above the garage slab | v20 draws it flush and about 5.5 ft wide | Hallway lights L9, L10 are on a lower ceiling than the garage lights. |
 | Garage stair | A.2: enclosed by a wall on its south side with the tankless water heater on that wall | v20: no wall drawn; W/D, MP, 1, 18, P1, P2, L14, D inside the footprint | See finding 1. |
-| Third-floor east room | A.4: "OFFICE/LOFT 14'0 x 12'7", guardrail, open to family room below | v32: one room 25 ft deep, "over the family room" | See finding 2. |
-| Family room ceiling | A.3: vaulted | v20: L17, L18 "family room ceiling" | Mounting height and fixture type depend on finding 2. |
+| Third-floor east room | A.4: "OFFICE/LOFT 14'0 x 12'7", guardrail, open to family room below | v32: one room 25 ft deep, "over the family room" | Owner decision: the area is floored over for more space, not left open, so v32 is correct. Sheet A.4 is out of date here; the architect needs to draw the added floor framing and drop the guardrail. |
+| Family room ceiling | A.3: vaulted | v20: L17, L18 "family room ceiling" | With the third floor carried over the family room the ceiling is flat, not vaulted. The 3D model uses 9 ft. A.3 needs the same update as A.4. |
 | Kitchen layout | A.3: pantry and fridge on the north wall, sink then range on the east wall | v20: fridge where the pantry is, range where the fridge is, sink and DW on the east wall | Recorded as an owner decision in the v20 legend. Range circuit E, hood N and DW circuit M follow the drawing. Confirm the architect knows. |
 | Third-floor closet light | A.4 closet ends about z 14.4 ft | v32: L7 plotted at z 15.7 ft, about 1.3 ft south of the closet's south wall line | L7 lands in the eave. Move the symbol into the closet. |
 | Outbuilding site note | Task brief: shed east wall in line with the garage **west** wall | v6 sketch shows that, but its label reads "East walls in line" | Fix the label. |
@@ -72,7 +72,7 @@ The PDF wins for geometry; these are the differences found.
   about 22 in of wall between the landing and that door, enough for a 2-gang with F above or beside E.
 - *nice-to-have*: nothing by the overhead doors controls L1 to L8 except S2 in the far SW corner.
   A scene button at jack location 11 between the doors would cover both.
-- **should-fix** (finding 7): the doors are 16080. An open 8 ft door sits about 8.5 ft up and reaches about
+- **should-fix** (finding 6): the doors are 16080. An open 8 ft door sits about 8.5 ft up and reaches about
   9.5 ft back from its wall, so the west door covers z 12.5 to 22 ft and the east door z 15.8 to 25.3 ft.
   L5 to L8 (z 18.7 ft) end up above the open doors, P12 (z 20.1 ft) and P11 (z 14.8 ft) hang into the door path.
   O3 and O4 at 10.3 and 10.6 ft back are correctly clear. Options: shift the south light row and both reels
@@ -86,13 +86,13 @@ The PDF wins for geometry; these are the differences found.
   the 2.9 ft red bar is barely two enclosures wide. Proposal: move MP out from under the stair, for example
   to the north wall just west of the stair (x about 28 to 32 ft, between EV2 and the stair), and keep the
   under-stair space for the modem and switch only.
-- **GFCI** (finding 3): all garage receptacles, including ceiling ones. Hallway P14 to P17 (C7) are in a
+- **GFCI** (finding 2): all garage receptacles, including ceiling ones. Hallway P14 to P17 (C7) are in a
   finished hallway, so AFCI is the question there rather than GFCI.
 - **Garage receptacles**: one per vehicle bay and a 20 A garage circuit with no other outlets are satisfied
   by C2 and C3. Opener and cord-reel circuit C4 is separate, which is right.
 - **EV circuits**: 60 A circuits at 48 A continuous are sized correctly (48 x 1.25 = 60). At that size the
   chargers are hardwired, and both count at full value in the service calculation unless a listed energy
-  management system limits them. Location: see finding 6. Shift each about 3 ft off the window or confirm
+  management system limits them. Location: see finding 5. Shift each about 3 ft off the window or confirm
   the sill is high enough to mount below it.
 - **Laundry under the stairs**: outlet A needs a 20 A laundry circuit with GFCI. See the WashTower open
   question for the 120 V vs 240 V conflict. A 74 in WashTower only fits under the west (high) end of the stair.
@@ -123,7 +123,7 @@ The PDF wins for geometry; these are the differences found.
 - Every light has a control. L21 (sauna) has no wall switch by design; it is on the heater control.
 - Stair pairs have a switch at each end: S3/S15/S17 at the foot of the west stair (x 10.6 to 12.1 ft, stair
   foot at x 9.6 ft) and S4/S16 at the head of the east stair (x 31.6 to 33.1 ft, first riser at x 33.8 ft).
-- **should-fix** (finding 8):
+- **should-fix** (finding 7):
   - Hall L1 to L6: S1/S2 are mid-hall at x 23.9 and 25.4 ft. Add hall control at both stairs. With Inovelli
     switches this can be a multi-tap scene on S3 and S4 instead of more boxes.
   - Family L17/L18: only S10 at the balcony door. Coming from the kitchen or the media door you cross the room.
@@ -134,7 +134,7 @@ The PDF wins for geometry; these are the differences found.
   S13 at the media door. Proposal: all four balcony lights (L23, L24, L28, L29) on one balcony control at each door.
 - *nice-to-have*: the exterior stair from grade to the balcony (16 risers) has only L28 at the top landing,
   which is what the residential code asks for, but the bottom is unlit. A step light or a light at the foot helps.
-- **should-fix** (finding 10): S11 lists L19, L20 and the fan. A fan needs a load-switching control or a
+- **should-fix** (finding 9): S11 lists L19, L20 and the fan. A fan needs a load-switching control or a
   humidity control, not a smart-bulb-mode switch. Same for the motor of L11 on S6 and for L16 on S9
   unless the under-cabinet strip is a smart fixture.
 
@@ -143,7 +143,7 @@ The PDF wins for geometry; these are the differences found.
   within 3 ft of the vanity at the SW corner. L20 is noted wet rated. Confirm the exhaust fan circuit.
 - **Kitchen circuits**: two small-appliance circuits exist (C4 counter, C5 P7 and island P14), fridge,
   microwave/hood and DW/disposal have their own. Check DW plus disposal on one 20 A against nameplates.
-  GFCI/AFCI scope: finding 4.
+  GFCI/AFCI scope: finding 3.
 - **Counter receptacles**: the 1.8 ft of counter south of the sink (over the DW) has no receptacle; a counter
   12 in or wider needs one. Island P14: NEC 2023 no longer allows an island receptacle on the side below the
   countertop; it must be on or above the top or a listed pop-up. *should-fix*.
@@ -176,7 +176,7 @@ The PDF wins for geometry; these are the differences found.
 ### Lighting control
 - Every light has a switch: L1/L2 on S1+S2, L3 to L5 on S3, L6 on S4, L7 on S5, L8 on S6, L9 on S7.
 - S1 (top of stairs) and S2 (by the shared door) are at the two ends of the west office. Good.
-- **should-fix** (finding 8): the east office has two entries, the shared door and the attic passage, but only
+- **should-fix** (finding 7): the east office has two entries, the shared door and the attic passage, but only
   S3 at the door. L6 (small attic) is switched from the office side only (S4) and L8 (old house attic) from the
   small attic side only (S6), so walking in from the old house means crossing both in the dark.
   Proposal: a second control for L3 to L5 at the passage, and make S4 and S6 two-ended.
@@ -192,7 +192,6 @@ The PDF wins for geometry; these are the differences found.
   Ethernet jack 6 there has no power beside it. Add one. *should-fix*.
 - **Attics**: lights with a switch at the entry are there (S4, S6). P13 to P15 are on dual AFCI/GFCI C6.
 - **Smoke alarm**: A.4 shows one in the west office. Not on this drawing.
-- Everything in finding 2 has to be settled before the east-office circuits C4 and C5 mean anything.
 
 ## Sauna / shed outbuilding (`4-sauna-shed_v6.svg`)
 
@@ -263,8 +262,8 @@ Total is about 290 to 320 W. Budgets are fine if each switch is picked for port 
 
 ### AP coverage
 - Third-floor AP 2 (x 31.9, z 13.6), second-floor AP 15 (x 28.8, z 16.6) and third-floor AP 3 (x 23.4, z 11.4)
-  are within about 8 ft of each other in plan. If the loft stays open to the family room, AP 2 and AP 15
-  share the same air. One of them can go, or AP 2 can move to the NE of the east office.
+  are within about 8 ft of each other in plan. With a floor between them AP 2 and AP 15
+  still overlap heavily. One of them can go, or AP 2 can move to the NE of the east office.
 - Likely weak spots: the north yard and the deck/pergola side (no outdoor AP faces either), the east end of
   the garage (AP 6 is on the west wall 40 ft away, AP 17 is behind the hallway wall), and the second-floor
   bath/sauna corner behind tile and foil.
@@ -278,7 +277,7 @@ Total is about 290 to 320 W. Budgets are fine if each switch is picked for port 
    with it. Use the latch side of the porch door if that also turns out to be the west side; if the door
    is hinged west, keep them west anyway and hinge the door east.
 2. **Do O1/O2 come off now that O3/O4 exist?** As opener outlets, yes: one opener type per door.
-   Before deleting them, decide the opener type with finding 7 in mind. A jackshaft opener with high-lift
+   Before deleting them, decide the opener type with finding 6 in mind. A jackshaft opener with high-lift
    track keeps the ceiling clear for lights and cord reels under a 9'5" ceiling; a trolley opener does not.
    If trolley openers stay, keep O1/O2 as ordinary GFCI wall receptacles at the jambs.
 3. **Which switch feeds hallway AP 17?** Switch 18, about 6 ft away. That brings 18 to 8 PoE devices, so it
@@ -315,34 +314,33 @@ Total is about 290 to 320 W. Budgets are fine if each switch is picked for port 
 
 **Must-fix**
 1. MP under the garage stair: headroom and working space (garage).
-2. Third-floor devices over the "open to below" area (third floor vs A.4).
-3. GFCI on every garage receptacle; circuits for A, B, C, D (garage).
-4. GFCI/AFCI scope on second-floor kitchen, laundry and living circuits (second floor).
-5. Surge protection for doorbell 14, doorbell 16 and jacks 11 if outdoors (network).
+2. GFCI on every garage receptacle; circuits for A, B, C, D (garage).
+3. GFCI/AFCI scope on second-floor kitchen, laundry and living circuits (second floor).
+4. Surge protection for doorbell 14, doorbell 16 and jacks 11 if outdoors (network).
 
 **Should-fix**
-6. EV1/EV2 on the north windows (garage).
-7. Open doors over L5 to L8, P11, P12 (garage).
-8. Lights switched from the far side: hall, family, kitchen, media, east office, attics (floors 2 and 3).
-9. PoE switch sizing: 8, 2, 18; undrawn fiber links (network).
-10. Non-smart loads on smart-bulb-mode switches; smoke/CO alarms missing from all drawings.
-11. S4/S5 drawn in the hallway's east door opening (garage).
-12. S10 mixes family lights with balcony L24; L29 on the far door's switch (second floor).
-13. No counter receptacle south of the sink; island P14 position; wall spacing gaps (second floor).
-14. H4 has no wall; driver J behind the WashTower (second floor).
-15. Duplicate ID 6; no receptacle on the west office south wall (third floor).
-16. Shed ground bar G to subpanel A bond not shown; driver J mounted high (shed).
-17. Outdoor receptacles: none on the north side or by the deck door; none near the north condensers (garage).
-18. Lighting and device circuits without numbers (garage).
+5. EV1/EV2 on the north windows (garage).
+6. Open doors over L5 to L8, P11, P12 (garage).
+7. Lights switched from the far side: hall, family, kitchen, media, east office, attics (floors 2 and 3).
+8. PoE switch sizing: 8, 2, 18; undrawn fiber links (network).
+9. Non-smart loads on smart-bulb-mode switches; smoke/CO alarms missing from all drawings.
+10. S4/S5 drawn in the hallway's east door opening (garage).
+11. S10 mixes family lights with balcony L24; L29 on the far door's switch (second floor).
+12. No counter receptacle south of the sink; island P14 position; wall spacing gaps (second floor).
+13. H4 has no wall; driver J behind the WashTower (second floor).
+14. Duplicate ID 6; no receptacle on the west office south wall (third floor).
+15. Shed ground bar G to subpanel A bond not shown; driver J mounted high (shed).
+16. Outdoor receptacles: none on the north side or by the deck door; none near the north condensers (garage).
+17. Lighting and device circuits without numbers (garage).
 
 **Nice-to-have**
-19. Label MP; rename device C; draw E/F green (garage).
-20. E in the door opening; scene button between the overhead doors; L11/L15 mounting (garage).
-21. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
-22. Color key on the third-floor sheet; L7 symbol; five-gang at the top of the stairs (third floor).
-23. Porch light L5 centered on the door; path light to the sauna; "East walls in line" label (shed).
-24. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
-25. One AP too many in the middle of the building; outdoor coverage north and east.
+18. Label MP; rename device C; draw E/F green (garage).
+19. E in the door opening; scene button between the overhead doors; L11/L15 mounting (garage).
+20. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
+21. Color key on the third-floor sheet; L7 symbol; five-gang at the top of the stairs (third floor).
+22. Porch light L5 centered on the door; path light to the sauna; "East walls in line" label (shed).
+23. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
+24. One AP too many in the middle of the building; outdoor coverage north and east.
 
 ## Scales used
 

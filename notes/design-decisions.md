@@ -48,6 +48,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 
 ## Third floor (sheet A.4, drawing v32) -- owner said "looks good" at v30
 - West office 18'11" x 12'4" with the stairs and a closet; east office 14'0" wide over the family room.
+- East office is fully floored over the family room for more space; the "open to family room below" on
+  sheet A.4 is superseded (owner decision, Nov 9, 2026).
 - Racks R1-R5 (20U) in the west clipped-ceiling strip, 6th opening empty; bookshelves B1-B5 opposite.
 - Lights L1-L9 on S1-S7; stair risers S8; stair wall lights S9; L35 (2nd-floor stair ceiling) S10.
 

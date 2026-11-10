@@ -706,7 +706,7 @@
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "A.3 shows a vaulted ceiling; 9 ft assumed"
+   "note": "Flat 9 ft ceiling under the third-floor east office"
   },
   {
    "key": "2:L18",
@@ -723,7 +723,7 @@
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "A.3 shows a vaulted ceiling; 9 ft assumed"
+   "note": "Flat 9 ft ceiling under the third-floor east office"
   },
   {
    "key": "2:L19",
@@ -1095,8 +1095,7 @@
     "3:S3"
    ],
    "circuit": "C7 lighting, 15A",
-   "source": "drawings/3-third-floor_v32.svg",
-   "note": "A.4 shows this area open to the family room below"
+   "source": "drawings/3-third-floor_v32.svg"
   },
   {
    "key": "3:L6",
