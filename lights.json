@@ -45,7 +45,7 @@
     "G:S1",
     "G:S2"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -62,7 +62,7 @@
     "G:S1",
     "G:S2"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -79,7 +79,7 @@
     "G:S1",
     "G:S2"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -96,7 +96,7 @@
     "G:S1",
     "G:S2"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -113,7 +113,7 @@
     "G:S1",
     "G:S2"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -130,7 +130,7 @@
     "G:S1",
     "G:S2"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -147,7 +147,7 @@
     "G:S1",
     "G:S2"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -164,7 +164,7 @@
     "G:S1",
     "G:S2"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -181,7 +181,7 @@
     "G:S4",
     "G:S7"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "note": "Hallway ceiling is 8'4\" above its own floor (A.2)"
   },
@@ -199,7 +199,7 @@
     "G:S4",
     "G:S7"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -215,7 +215,7 @@
    "switches": [
     "G:S3"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "note": "Plotted on the balcony-pier line, 4.3 ft south of the door wall"
   },
@@ -232,7 +232,7 @@
    "switches": [
     "G:S3"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "note": "Plotted on the balcony-pier line, 4.3 ft south of the door wall"
   },
@@ -249,7 +249,7 @@
    "switches": [
     "G:S3"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -265,7 +265,7 @@
    "switches": [
     "G:S3"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -281,7 +281,7 @@
    "switches": [
     "G:S5"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -297,7 +297,7 @@
    "switches": [
     "G:S6"
    ],
-   "circuit": "Garage lighting, 15A (one circuit, not numbered on v20)",
+   "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "note": "Mounted on the stair soffit; height follows the stair"
   },

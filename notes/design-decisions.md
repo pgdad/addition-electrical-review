@@ -37,6 +37,9 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Power: P1, P2, P13 on C1 20A (network); P3-P7 C2 GFCI; P8-P10 C3 GFCI; cord reels P11, P12, wall jackshaft
   openers O1, O2 and ceiling trolley-opener outlets O3, O4 on C4; EV1, EV2 60A 240V (C5, C6);
   hallway P14-P17 east wall on C7.
+  Added Nov 9, 2026 (owner decision): every garage receptacle circuit is GFCI (C1-C4 and the new C8, C9).
+  Outdoor outlet B on C2; outlet C (computers, printers) on new dedicated C8 20A; W/D outlet A on new
+  laundry circuit C9 20A 120V; lighting is C10 15A and also feeds stair controllers D and alarms SD1, CO1.
 - Grounding: G by switch 2 (SW), G2 by switch 7 (NW), bonded to the addition ground; Ethernet surge
   protectors SP1 (items 3, 4, 5) on G and SP2 (item 8) on G2.
 

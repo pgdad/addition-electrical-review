@@ -32,7 +32,7 @@ def west_leg_h(z):           # second leg rises going south from z=4.4 to z=10.2
 
 # ---- light metadata: id -> (room, type, height rule, circuit, note) --------------------------------
 # height rule: number = ft above that level's floor; callable(x, z) = absolute ft.
-G_LIGHT_CCT = "Garage lighting, 15A (one circuit, not numbered on v20)"
+G_LIGHT_CCT = "C10 garage lighting, 15A"
 L2_CCT = "C15/C16 lighting, 15A (split not given on v20)"
 LIGHTS = {
  "G": {
