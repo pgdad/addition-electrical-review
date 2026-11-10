@@ -26,10 +26,10 @@ How to read this:
 | 4 | should-fix | With 8 ft doors under a 9'5" ceiling, both ceiling cord reels (P11, P12) hang in the path of the open doors. The south light row L5 to L8, moved 2 ft north to z 16.7 ft, is still above the open doors, which the owner accepts: those lights are for when the doors are closed. | garage v20 |
 | 5 | should-fix | Several lights can only be switched after crossing the dark: second-floor hall (S1/S2 mid-hall, 14 ft from the west stair and 8 ft from the east stair), family room (S10 only at the balcony door) and media room (S5/S6 only at the hall door). The third-floor cases (east office S3, attic lights L6 and L8) are accepted by the owner. | second floor v20 |
 | 6 | should-fix | The second-floor "small" PoE switch 8 has about 17 PoE drops and roughly 75 to 105 W. No 5/8-port switch covers that. Garage switch 2 needs 6 PoE ports and about 75 W plus a fiber port; switch 18 needs 8 ports. | second floor v20: 8; garage v20: 2, 18 |
-| 7 | should-fix | Hallway switches S4 and S5 are drawn on the east wall exactly across the east door opening, so there is no wall to mount them on. Move them to the wall beside the door. | garage v20: S4, S5 |
-| 8 | should-fix | S10 runs the family room ceiling lights L17, L18 together with outdoor balcony light L24, and balcony light L29 is on the far door's switch S13. Put all four balcony lights (L23, L24, L28, L29) on one balcony control at each door. | second floor v20: S10, S13 |
-| 9 | should-fix | Second-floor kitchen: the 1.8 ft of counter south of the sink has no receptacle, island outlet P14 needs its position checked against the NEC 2023 island rule, and wall receptacle spacing runs long in a few places. | second floor v20: P12 to P14 |
-| 10 | should-fix | Blind outlet H4 is plotted on the balcony door opening and has no wall to sit on; put it above the window head. Sauna light driver J is in the W/D closet that the WashTower fills, so it cannot be reached. | second floor v20: H4, J |
+| 7 | should-fix | S10 runs the family room ceiling lights L17, L18 together with outdoor balcony light L24, and balcony light L29 is on the far door's switch S13. Put all four balcony lights (L23, L24, L28, L29) on one balcony control at each door. | second floor v20: S10, S13 |
+| 8 | should-fix | Second-floor kitchen: the 1.8 ft of counter south of the sink has no receptacle, island outlet P14 needs its position checked against the NEC 2023 island rule, and wall receptacle spacing runs long in a few places. | second floor v20: P12 to P14 |
+| 9 | should-fix | Blind outlet H4 is plotted on the balcony door opening and has no wall to sit on; put it above the window head. Sauna light driver J is in the W/D closet that the WashTower fills, so it cannot be reached. | second floor v20: H4, J |
+| 10 | should-fix | Third floor: ID 6 is used twice (network jack 6 and the empty rack opening), and ceiling outlet P21 only counts toward wall spacing if it is within 5.5 ft of the floor. | third floor v32: 6, P21 |
 
 ## PDF vs drawing geometry mismatches
 
@@ -80,10 +80,12 @@ The PDF wins for geometry; these are the differences found.
   side. S1 and S3 are a two-gang on the garage side at its south (latch) edge (owner decision, Nov 10, 2026).
   They sit beside the lower steps, so mount them at 4 ft above the hallway floor level, not the garage slab.
 - 3-way ends: S1 is beside the hall door and S2 on the west wall near the SW corner (moved there Nov 10, 2026), so both entries used on foot are covered.
-  S7 is on the hallway side of the garage door and S4 by the east door. The stair foot is 4 to 5 ft from S7. OK.
-- **should-fix**: S4 and S5 are drawn on the east wall exactly across the east door opening
-  (door z 17.8 to 20.7 ft, switches z 18.4 and 20.1 ft). Move them to the 2 ft of wall south of that door,
-  or to the south wall beside the deck door.
+  S7 is on the hallway side of the garage door and S4 by the old-house door. The stair foot is 4 to 5 ft from S7. OK.
+- Resolved (Nov 10, 2026): the door between the hallway and the old house is now drawn from A.2, a 3068 in
+  the hallway east wall at z 16.6 to 19.6 ft, hinged on its north jamb and swinging into the hallway. (The
+  earlier gap on the drawing was about 1 ft too far south.) S4 and S5, which were plotted in the opening, are
+  now a two-gang on the east wall at the door's south (latch) edge. That spot is also beside the latch side
+  of the deck door, so one box serves both doors.
 - *nice-to-have*: E is plotted at z 6.3 ft, which is in the garage door opening (z 5.8 to 8.7 ft). A.2 leaves
   about 22 in of wall between the landing and that door, enough for a 2-gang with F above or beside E.
 - *nice-to-have*: nothing by the overhead doors controls L1 to L8 except S2 on the west wall near the SW corner.
@@ -435,22 +437,21 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 4. Open doors in the path of cord reels P11, P12 (garage).
 5. Lights switched from the far side: hall, family, kitchen, media (second floor).
 6. PoE switch sizing: 8, 2, 18 (network).
-7. S4/S5 drawn in the hallway's east door opening (garage).
-8. S10 mixes family lights with balcony L24; L29 on the far door's switch (second floor).
-9. No counter receptacle south of the sink; island P14 position; wall spacing gaps (second floor).
-10. H4 has no wall; driver J behind the WashTower (second floor).
-11. Duplicate ID 6; ceiling outlet P21 must stay within 5.5 ft of the floor to count (third floor).
-12. Shed ground bar G to subpanel A bond not shown; driver J mounted high (shed).
-13. Outdoor receptacles: none by the deck door (garage).
+7. S10 mixes family lights with balcony L24; L29 on the far door's switch (second floor).
+8. No counter receptacle south of the sink; island P14 position; wall spacing gaps (second floor).
+9. H4 has no wall; driver J behind the WashTower (second floor).
+10. Duplicate ID 6; ceiling outlet P21 must stay within 5.5 ft of the floor to count (third floor).
+11. Shed ground bar G to subpanel A bond not shown; driver J mounted high (shed).
+12. Outdoor receptacles: none by the deck door (garage).
 
 **Nice-to-have**
-14. Label MP; rename device C; draw E/F green (garage).
-15. E in the door opening; scene button between the overhead doors (garage).
-16. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
-17. Color key on the third-floor sheet (third floor).
-18. "East walls in line" label (shed).
-19. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
-20. One AP too many in the middle of the building; outdoor coverage north and east.
+13. Label MP; rename device C; draw E/F green (garage).
+14. E in the door opening; scene button between the overhead doors (garage).
+15. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
+16. Color key on the third-floor sheet (third floor).
+17. "East walls in line" label (shed).
+18. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
+19. One AP too many in the middle of the building; outdoor coverage north and east.
 
 ## Scales used
 

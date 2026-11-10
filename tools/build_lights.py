@@ -106,9 +106,9 @@ SWITCHES = {
  ("G", "S1"): ("Garage side of the hall door, at its south (latch) edge, two-gang with S3", rng("G", 1, 8)),
  ("G", "S2"): ("Garage west wall, near the SW corner", rng("G", 1, 8)),
  ("G", "S3"): ("Garage side of the hall door, at its south (latch) edge, two-gang with S1", k("G", "L11", "L12", "L15", "L16")),
- ("G", "S4"): ("Hallway, east wall by the deck door", k("G", "L9", "L10")),
+ ("G", "S4"): ("Hallway east wall, south (latch) edge of the old-house door, two-gang with S5", k("G", "L9", "L10")),
  ("G", "S7"): ("Hallway, west wall by the garage door", k("G", "L9", "L10")),
- ("G", "S5"): ("Hallway, east wall by the deck door", k("G", "L13")),
+ ("G", "S5"): ("Hallway east wall, south (latch) edge of the old-house door, two-gang with S4", k("G", "L13")),
  ("G", "S6"): ("Garage, at the under-stair space", k("G", "L14")),
  ("G", "E"):  ("Hallway, foot of the stairs", k("2", "L8")),
  ("G", "F"):  ("Hallway, foot of the stairs", k("2", "L30", "L31", "L32")),
@@ -403,6 +403,7 @@ def build():
         x, z = to_ft(lv, *dev[lv][src]["pts"][0])
         base = HALL_FLOOR if key in HALL_SWITCHES else FLOOR[lv]
         y = base + {"2:S17": 4.7, "3:S11": 3.0}.get(key, 4.0)    # S11 is low so children can reach it
+        if key in ("G:S4", "G:S5"): x, z = 47.4, (20.0 if sid == "S4" else 20.5)  # two-gang on the east wall, just south of the door jamb at 19.6 ft
         if key in ("G:S1", "G:S3"): x, z = 42.2, (9.1 if sid == "S1" else 9.6)   # two-gang on the wall, just south of the door jamb at 8.7 ft
         if key == "3:S6": x = 47.4                      # sheet draws the small attic narrower than A.4; keep S6 on its east wall
         rec = dict(key=key, id=sid, level=lv, levelName=LEVEL_NAME[lv], room=room, x=x, y=round(y, 2), z=z,

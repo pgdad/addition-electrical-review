@@ -1398,10 +1398,10 @@
    "id": "S4",
    "level": "G",
    "levelName": "Garage and hallway",
-   "room": "Hallway, east wall by the deck door",
-   "x": 46.77,
+   "room": "Hallway east wall, south (latch) edge of the old-house door, two-gang with S5",
+   "x": 47.4,
    "y": 5.08,
-   "z": 20.14,
+   "z": 20.0,
    "controls": [
     "G:L9",
     "G:L10"
@@ -1434,10 +1434,10 @@
    "id": "S5",
    "level": "G",
    "levelName": "Garage and hallway",
-   "room": "Hallway, east wall by the deck door",
-   "x": 46.77,
+   "room": "Hallway east wall, south (latch) edge of the old-house door, two-gang with S4",
+   "x": 47.4,
    "y": 5.08,
-   "z": 18.41,
+   "z": 20.5,
    "controls": [
     "G:L13"
    ],
@@ -3660,7 +3660,7 @@
    "kind": "sensor",
    "name": "PoE presence sensor",
    "room": "Hallway, over the garage doorway",
-   "x": 45.23,
+   "x": 44.69,
    "y": 8.08,
    "z": 21.55,
    "source": "drawings/1-garage-and-hallway_v20.svg",
@@ -5026,12 +5026,12 @@
      21.55
     ],
     [
-     45.23,
+     44.69,
      8.8,
      21.55
     ],
     [
-     45.23,
+     44.69,
      8.08,
      21.55
     ]

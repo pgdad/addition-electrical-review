@@ -196,3 +196,5 @@ P20
 P20 High outlet on the north wall beside switch 7 (C1, GFCI), for the switch. Switch 7 is an 8-port PoE switch.
 Door between the garage and the hallway (A.2): 2868 solid core, 30 min rated, hinged on its north jamb, swings into
 the garage; 2 steps down on the garage side. S1 and S3 are a two-gang on the garage side at its south (latch) edge.
+Door between the hallway and the old house (A.2): 3068 in the hallway east wall, 16.6 to 19.6 ft from the north wall,
+hinged on its north jamb, swings into the hallway. S4 and S5 are a two-gang on the east wall at its south (latch) edge.

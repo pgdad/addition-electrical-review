@@ -36,6 +36,9 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   WKEX200HBA: unresolved conflict). Cable ingress, modem and converter behind it.
 - Door between the garage and the hallway (A.2), drawn Nov 10, 2026: 2868, hinged north, swings into the
   garage. S1 and S3 are a two-gang on the garage side at the door's south (latch) edge (owner decision).
+- Door between the hallway and the old house (A.2), drawn Nov 10, 2026: 3068 in the hallway east wall,
+  hinged north, swings into the hallway. S4 and S5 are a two-gang on the east wall at its south (latch)
+  edge (owner decision).
 - S2 is on the west wall near the SW corner, directly west of where it was first drawn (owner decision, Nov 10, 2026).
 - Ethernet jacks 21 (owner decision, Nov 10, 2026): four data-only jacks on the north wall near switch 7, by
   outlet C. Switch 7 is an 8-port PoE switch with high outlet P20 beside it on C1. Ground bar G2 (with SP2) sits just south of the west window, about 5 ft from switch 7, and is the
