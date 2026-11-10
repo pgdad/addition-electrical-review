@@ -62,5 +62,5 @@ L1: strip lights under the seating bench, like under-cabinet lights, heat rated.
 the sauna north wall from J to the bench, away from the wood stove.
 G is bonded to subpanel A's grounding bar (green line along the east wall) and to the shed ground rods.
 Doors: porch door from the dressing room, 2'8", hinged west, opens out onto the porch. Sauna door at the north end
-of the wall between the dressing room and the sauna, 2'0", hinged north, opens into the sauna room (owner decision).
-Shed outlets P2, P3 and P5 removed (Nov 10, 2026). Remaining: P1 dressing room, P4 and P6 shed.
+of the wall between the dressing room and the sauna, 2'0", hinged north, opens out into the dressing room (owner decision).
+Shed outlets P2, P3 and P5 removed (Nov 10, 2026). P6 moved north to where P2 was, by switch 1. Now: P1, P4, P6.

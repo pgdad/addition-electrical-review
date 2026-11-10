@@ -129,8 +129,9 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   the sauna door; the low-voltage wire runs low along the sauna north wall to the bench.
 - Doors (Nov 10, 2026): porch door from the dressing room, 2'8", hinged west, opening out onto the porch
   (designer's assumption). Sauna door at the north end of the wall between the dressing room and the sauna,
-  hinged north and opening into the sauna room (owner decision); 2'0" width is assumed.
-- Shed outlets P2, P3 and P5 removed (owner decision, Nov 10, 2026). Remaining: P1 dressing room, P4, P6 shed.
+  hinged north and opening out into the dressing room (owner decision); 2'0" width is assumed.
+- Shed outlets P2, P3 and P5 removed and P6 moved north on the east wall to where P2 was, by switch 1
+  (owner decision, Nov 10, 2026). Now: P1 dressing room, P4 west wall, P6 east wall.
 - Ground bar G is bonded to subpanel A's grounding bar and to the shed ground rods (Nov 10, 2026).
 - Lights: L1 sauna low-voltage (via control unit J), L2 dressing, L3, L4 shed, L5 porch (centered over the porch door). Switches S1, S2, S4 inside
   the porch door (currently drawn east of it; side not confirmed), S3 by the shed door.

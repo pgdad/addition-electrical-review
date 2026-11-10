@@ -3433,7 +3433,7 @@
    "kind": "wall",
    "x": -0.6,
    "y": 1.5,
-   "z": 63.2,
+   "z": 57.2,
    "circuit": "C2, 20A GFCI",
    "source": "drawings/4-sauna-shed_v6.svg"
   }

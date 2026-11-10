@@ -254,12 +254,12 @@ The PDF wins for geometry; these are the differences found.
 - L5 is now centered over the porch door (moved from the east end of the porch).
 - Doors are now drawn (Nov 10, 2026): the porch door from the dressing room, 2'8" wide, hinged west and
   opening out onto the porch (designer's assumption); and the sauna door at the north end of the wall
-  between the dressing room and the sauna, 2'0" wide, hinged north and opening into the sauna room (owner
-  decision).
-- *check*: sauna doors normally open outward from the hot room, so that someone who feels faint can push
-  their way out and nothing inside can block the door. Stove and sauna-building instructions usually ask
-  for this, and some inspectors do too. Confirm an inward-opening door is acceptable, and never fit a latch
-  that can jam.
+  between the dressing room and the sauna, 2'0" wide, hinged north and opening out into the dressing room
+  (owner decision).
+- *should-fix*: hinged north, the open sauna door lies along the short north wall east of the porch door,
+  about 7 in off it, and covers S1, S2 and S4 (control unit J is low and only needs occasional access).
+  Move the three switches to the north wall west of the porch door (open question 1), or to the dressing
+  room west wall beside that door.
 
 ### Code-oriented checks (check with the electrician/inspector)
 - **Feeder**: 60 A, 240 V is ample for a 20 A heater, one 20 A receptacle circuit and a lighting circuit.
@@ -268,9 +268,9 @@ The PDF wins for geometry; these are the differences found.
 - **Grounding electrode**: a detached building with a feeder needs its own electrode (normally two rods)
   connected to the subpanel's grounding bar. G is on the south wall and A on the north wall of the shed.
   Resolved on the drawing (Nov 10, 2026): G is now shown bonded to A's grounding bar as well as to the rods.
-- **Working clearance** at A: keep 30 in x 36 in clear in the shed. Shed outlets P2, P3 and P5 were removed (owner decision, Nov 10, 2026).
-  *should-fix*: network switch 1 now has no outlet near it; P2 was the closest. The nearest is P6, about 9 ft
-  away. Add a receptacle at the switch or feed it another way.
+- **Working clearance** at A: keep 30 in x 36 in clear in the shed. Shed outlets P2, P3 and P5 were removed and P6 moved north to
+  where P2 was (owner decision, Nov 10, 2026), so switch 1 has an outlet about 4 ft away. P6 is south of A's
+  working space; keep it that way.
 - **GFCI**: P1, P4 and P6 on GFCI C2 covers the accessory-building rule. If heater B is cord-connected, its
   receptacle needs GFCI too.
 - **Sauna lights and control unit J** (owner decision, Nov 10, 2026): L1 is strip lighting under the seating
