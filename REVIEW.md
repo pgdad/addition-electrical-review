@@ -534,6 +534,27 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 - The aux end of each 3-way pair and the Ethernet plans for all three floors are confirmed.
 - Shed feeder trench carries a second conduit for the fiber to shed switch 1.
 
+## Load estimate (Nov 10, 2026)
+
+An estimate from the circuits on the drawings, in amps at 240 V. It is not a code load calculation; the
+electrician does that from nameplates. Assumptions: 3 VA per sq ft of general load on 1,077 sq ft per floor;
+each EV charger at 48 A continuous; each mini-split condenser at 24 A (80% of its 30 A breaker, nameplates
+unknown); sauna heater at 40 A; range 12 kW; each dryer 5 kW; each rack circuit at 16 A; tankless water
+heater on gas. The old house is not included.
+
+| Level | Sum of breaker ratings | Estimated load, everything on |
+|-------|------------------------|-------------------------------|
+| Garage / hallway | 348 A | 233 A (EV 96 A, mini-splits 96 A, dryer 21 A, general and laundry 20 A) |
+| Second floor | 253 A | 166 A (range 50 A, sauna 40 A, WashTower 27 A, kitchen and other 49 A) |
+| Third floor | 78 A | 29 A (racks 16 A, general 13 A) |
+| Sauna / shed | 60 A feeder | 11 A (heater 8 A, general 3 A) |
+| **Total** | **738 A** | **438 A** |
+
+With the diversity a dwelling calculation allows (NEC 220.82 style: first 10 kVA at 100%, the rest at 40%,
+heating/cooling at 100%) the total is about **260 A**; keeping both EV chargers at full load on top of that
+gives about **315 A**. Both fit a 400 A service for the addition alone. Check with the electrician: the
+mini-split nameplates, whether the old house shares this service, and whether EV load management is wanted.
+
 ## Scales used
 
 | Drawing | Basis | Scale |

@@ -43,8 +43,9 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   outside the garage north wall (MS1, MS2) and two outside the west wall under the exterior stair (MS3, MS4),
   each a hardwired 240V 30A connection on its own circuit (C11-C14), plus one outdoor-rated 125V 20A GFCI
   service outlet per wall on C2: P18 on the north wall, P19 on the west wall. The indoor units need no outlets.
-- Rough load estimate (proposed, not a code calc): 2nd floor ~115A, 3rd ~30-40A, ~150A combined;
-  two 60A EV circuits ~96A continuous; fits in 400A.
+- Load estimate (Nov 10, 2026, not a code calc; table in REVIEW.md "Load estimate"): everything on, garage ~233A,
+  2nd floor ~166A, 3rd ~29A, shed ~11A, ~438A total; with dwelling diversity ~260A, ~315A with both EV
+  chargers at full load. Fits in 400A for the addition alone; old house not included.
 
 ## Garage and enclosed hallway (sheet A.2, drawing v20)
 - 41'6" x 24'4", 9 ft ceiling, two 16x8 doors on the south wall; balcony above west door, pergola above east door.
