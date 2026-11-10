@@ -82,8 +82,9 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 
 ## Second floor (sheet A.3, drawing v20) -- owner review in progress
 - Companion switches (owner decision, Nov 10, 2026): S19 with S1 at the west stair and S20 with S2 at the
-  east stair (hall); S21 with S8 at the media/kitchen door, kitchen side; S22 with S5 and S23 with S6 at the
-  same door, media side. S10 with L17, L18, L24 and S13 with L29 stay as drawn (owner decision).
+  east stair (hall); S21 with S8 at the media/kitchen door, kitchen side. Media lights are split: S5 runs L9
+  and S24 runs L10 (hall door, with S6); companions S22 (L9), S25 (L10), S23 (fan) are on the media side of
+  the media/kitchen wall at the door's north edge. S13 is on the west side of the media/balcony door. S10 with L17, L18, L24 and S13 with L29 stay as drawn (owner decision).
 - Doors drawn from A.3 on Nov 10, 2026.
 - Lights: L1-L6 hall (S1, S2); L7 stair-up risers (S3 bottom + 3rd-floor S8 top); L8 stair-down risers
   (S4 + garage E); L9-L11 media (S5, S6); L12 media closet (S7); L13-L15 kitchen (S8); L16 under-cabinet (S9);

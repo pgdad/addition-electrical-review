@@ -24,7 +24,7 @@ How to read this:
 | 2 | should-fix | The family room ceiling lights L17, L18 can only be switched from S10 at the balcony door; coming from the kitchen or the media door you cross the room first. (The hall, kitchen and media room now have companion switches S19 to S23.) | second floor v20: S10 |
 | 3 | should-fix | The second-floor "small" PoE switch 8 has about 17 PoE drops and roughly 75 to 105 W. No 5/8-port switch covers that. Garage switch 2 needs 6 PoE ports and about 75 W plus a fiber port. Garage switch 18 is settled: an 8-port PoE switch with a fiber port (owner decision), which its 8 PoE devices fill with no spare. | second floor v20: 8; garage v20: 2 |
 | 4 | should-fix | Second-floor kitchen: the 1.8 ft of counter south of the sink has no receptacle, island outlet P14 needs its position checked against the NEC 2023 island rule, and wall receptacle spacing runs long in a few places. | second floor v20: P12 to P14 |
-| 5 | should-fix | Blind outlet H4 is plotted on the balcony door opening and has no wall to sit on; put it above the window head. Sauna light driver J is in the W/D closet that the WashTower fills, so it cannot be reached. | second floor v20: H4, J |
+| 5 | should-fix | Sauna light driver J is in the W/D closet that the WashTower fills, so it cannot be reached. | second floor v20: J |
 | 6 | should-fix | Third floor: ID 6 is used twice (network jack 6 and the empty rack opening), and ceiling outlet P21 only counts toward wall spacing if it is within 5.5 ft of the floor. | third floor v32: 6, P21 |
 | 7 | nice-to-have | Garage labelling: MP has no text on the plan, device C reads like a circuit number, and switches E and F are drawn amber instead of green. | garage v20: MP, C, E, F |
 | 8 | nice-to-have | Garage hallway: switch E is plotted in the hallway door opening at the stair foot, and nothing by the overhead doors controls L1 to L8. | garage v20: E, F |
@@ -150,8 +150,8 @@ The PDF wins for geometry; these are the differences found.
   S15 with third-floor S9 (L33, L34), S16 with garage F (L30 to L32), S17 with third-floor S10 (L35).
 - *nice-to-have*: S17 is drawn mid-hall "above S15"; D (stair light controllers) is drawn in the stair run.
   Both need a real location. The under-stair space by P16 suits D.
-- *should-fix*: H4 has no wall to sit on. The east 3020 window ends 2 in from the balcony door, so H4 is
-  plotted on the door opening. Put it above the window head.
+- Resolved (Nov 10, 2026): H4 was plotted on the balcony door opening; it is now above the east end of the
+  east 3020 window.
 - *nice-to-have*: motorized screen B is plotted at the balcony door. When it is down it covers the door.
 
 ### Lighting control
@@ -162,8 +162,13 @@ The PDF wins for geometry; these are the differences found.
   - Hall: S19 pairs with S1 (L1 to L3) at the foot of the west stair, and S20 pairs with S2 (L4 to L6) at the
     head of the east stair. Each stair end lights its own half of the hall.
   - Kitchen: S21 pairs with S8 (L13 to L15) on the kitchen side of the media/kitchen door, at its latch edge.
-  - Media: S22 pairs with S5 (L9, L10) and S23 with S6 (fan L11, on/off) on the media side of that door, in
-    the corner of the south wall beside its latch edge. P5 was nudged about 1.4 ft west to make room.
+  - Media: L9 and L10 are on separate switches (owner decision): S5 runs L9 and new S24 runs L10, both by
+    the hall door with S6. Their companions S22 (L9), S25 (L10) and S23 (fan L11, on/off) are a three-gang
+    on the media side of the media/kitchen wall at the door's north edge. That is the hinge side, but the
+    door opens into the kitchen, so the switches stay clear.
+  - S13 moved to the west (latch) side of the media/balcony door (owner decision). A.3 shows only about
+    4 in of framing between the window and the door, so the box sits below the 3020 window, which is 2 ft
+    tall and high on the wall. Check the sill height leaves room for a box at 4 ft.
 - **should-fix** (finding 2): family L17/L18 have only S10 at the balcony door. Coming from the kitchen or
   the media door you cross the room. A scene on S21, which is on that side of the room, would cover it.
 - Accepted (owner decision, Nov 10, 2026): S10 runs family ceiling lights L17, L18 together with balcony
@@ -468,7 +473,7 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 2. Family room lights switched only from the balcony door (second floor).
 3. PoE switch sizing: 8, 2 (network).
 4. No counter receptacle south of the sink; island P14 position; wall spacing gaps (second floor).
-5. H4 has no wall; driver J behind the WashTower (second floor).
+5. Driver J behind the WashTower (second floor).
 6. Duplicate ID 6; ceiling outlet P21 must stay within 5.5 ft of the floor to count (third floor).
 
 **Nice-to-have**

@@ -116,7 +116,8 @@ SWITCHES = {
  ("2", "S2"): ("Hall, south wall", rng("2", 4, 6)),
  ("2", "S3"): ("Hall, foot of the west stair", k("2", "L7")),
  ("2", "S4"): ("Hall, head of the east stair", k("2", "L8")),
- ("2", "S5"): ("Media room, by the hall door", k("2", "L9", "L10")),
+ ("2", "S5"): ("Media room, by the hall door", k("2", "L9")),
+ ("2", "S24"): ("Media room, by the hall door, between S5 and S6", k("2", "L10")),
  ("2", "S6"): ("Media room, by the hall door", k("2", "L11")),
  ("2", "S7"): ("Media room, by the closet door", k("2", "L12")),
  ("2", "S8"): ("Kitchen, by the hall door", k("2", "L13", "L14", "L15")),
@@ -127,10 +128,11 @@ SWITCHES = {
  ("2", "S19"): ("Hall, foot of the west stair (companion to S1)", rng("2", 1, 3)),
  ("2", "S20"): ("Hall, head of the east stair (companion to S2)", rng("2", 4, 6)),
  ("2", "S21"): ("Kitchen side of the media/kitchen door, latch edge (companion to S8)", k("2", "L13", "L14", "L15")),
- ("2", "S22"): ("Media room, corner by the kitchen door (companion to S5)", k("2", "L9", "L10")),
- ("2", "S23"): ("Media room, corner by the kitchen door (companion to S6)", k("2", "L11")),
+ ("2", "S22"): ("Media room, east wall at the north edge of the kitchen door (companion to S5)", k("2", "L9")),
+ ("2", "S25"): ("Media room, east wall at the north edge of the kitchen door (companion to S24)", k("2", "L10")),
+ ("2", "S23"): ("Media room, east wall at the north edge of the kitchen door (companion to S6)", k("2", "L11")),
  ("2", "S12"): ("Kitchen side of the W/D closet", k("2", "L22")),
- ("2", "S13"): ("Media room, by the balcony door", k("2", "L23", "L28", "L29")),
+ ("2", "S13"): ("Media room, west (latch) side of the balcony door, below the window", k("2", "L23", "L28", "L29")),
  ("2", "S14"): ("Media room west wall, beside AP 9", rng("2", 25, 27)),
  ("2", "S15"): ("Hall, foot of the west stair", k("2", "L33", "L34")),
  ("2", "S16"): ("Hall, head of the east stair", k("2", "L30", "L31", "L32")),
@@ -158,7 +160,7 @@ PAIRS = [
  (["2:S3", "3:S8"], "#81c784"), (["2:S15", "3:S9"], "#f06292"),
  (["2:S17", "3:S10"], "#64b5f6"), (["3:S1", "3:S2"], "#e57373"),
  (["2:S1", "2:S19"], "#aed581"), (["2:S2", "2:S20"], "#4db6ac"), (["2:S8", "2:S21"], "#ffb74d"),
- (["2:S5", "2:S22"], "#9575cd"), (["2:S6", "2:S23"], "#a1887f"),
+ (["2:S5", "2:S22"], "#9575cd"), (["2:S6", "2:S23"], "#a1887f"), (["2:S24", "2:S25"], "#f48fb1"),
 ]
 HALL_SWITCHES = {"G:S4", "G:S5", "G:S7", "G:E", "G:F"}   # stand on the raised hallway floor
 

@@ -632,8 +632,8 @@
    "z": 9.01,
    "type": "ceiling",
    "switches": [
-    "2:S5",
-    "2:S22"
+    "2:S24",
+    "2:S25"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg"
@@ -1589,12 +1589,28 @@
    "y": 14.46,
    "z": 4.42,
    "controls": [
-    "2:L9",
-    "2:L10"
+    "2:L9"
    ],
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S22",
    "pairColor": "#9575cd",
+   "mode": "smart-bulb dimmer"
+  },
+  {
+   "key": "2:S24",
+   "id": "S24",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Media room, by the hall door, between S5 and S6",
+   "x": 18.1,
+   "y": 14.46,
+   "z": 5.42,
+   "controls": [
+    "2:L10"
+   ],
+   "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S25",
+   "pairColor": "#f48fb1",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1605,7 +1621,7 @@
    "room": "Media room, by the hall door",
    "x": 18.1,
    "y": 14.46,
-   "z": 5.42,
+   "z": 6.42,
    "controls": [
     "2:L11"
    ],
@@ -1771,13 +1787,12 @@
    "id": "S22",
    "level": "2",
    "levelName": "Second floor",
-   "room": "Media room, corner by the kitchen door (companion to S5)",
-   "x": 20.39,
+   "room": "Media room, east wall at the north edge of the kitchen door (companion to S5)",
+   "x": 20.47,
    "y": 14.46,
-   "z": 16.51,
+   "z": 12.88,
    "controls": [
-    "2:L9",
-    "2:L10"
+    "2:L9"
    ],
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S5",
@@ -1785,14 +1800,31 @@
    "mode": "smart-bulb dimmer"
   },
   {
+   "key": "2:S25",
+   "id": "S25",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Media room, east wall at the north edge of the kitchen door (companion to S24)",
+   "x": 20.47,
+   "y": 14.46,
+   "z": 11.88,
+   "controls": [
+    "2:L10"
+   ],
+   "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S24",
+   "pairColor": "#f48fb1",
+   "mode": "smart-bulb dimmer"
+  },
+  {
    "key": "2:S23",
    "id": "S23",
    "level": "2",
    "levelName": "Second floor",
-   "room": "Media room, corner by the kitchen door (companion to S6)",
-   "x": 18.93,
+   "room": "Media room, east wall at the north edge of the kitchen door (companion to S6)",
+   "x": 20.47,
    "y": 14.46,
-   "z": 16.51,
+   "z": 10.88,
    "controls": [
     "2:L11"
    ],
@@ -1821,10 +1853,10 @@
    "id": "S13",
    "level": "2",
    "levelName": "Second floor",
-   "room": "Media room, by the balcony door",
-   "x": 16.1,
+   "room": "Media room, west (latch) side of the balcony door, below the window",
+   "x": 10.94,
    "y": 14.46,
-   "z": 16.43,
+   "z": 16.51,
    "controls": [
     "2:L23",
     "2:L28",
@@ -3090,9 +3122,9 @@
    "levelName": "Second floor",
    "room": "Blind outlet, media windows, high",
    "kind": "blind",
-   "x": 13.77,
+   "x": 11.06,
    "y": 17.96,
-   "z": 15.68,
+   "z": 15.55,
    "circuit": "C12, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },

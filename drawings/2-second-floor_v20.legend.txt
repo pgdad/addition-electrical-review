@@ -136,7 +136,7 @@ L23, L24 Balcony wall lights by each door
 S1, S2 Hall 2-gang: L1-L3, L4-L6 (with S19, S20)
 S3 Stair up risers, bottom (top on 3rd fl)
 S4 Stair down risers, top (bottom on garage lvl)
-S5 Media ceiling lights, by hall door (with S22)
+S5 Media ceiling L9, by hall door (L10 on S24)
 S6 Media fan and its light, beside S5 (on/off)
 S7 Closet, media side of its door
 S8 Kitchen ceiling and pendant, by hall door (S21)
@@ -144,7 +144,7 @@ S9 Under-cabinet, beside S8 (on/off)
 S10 Family, by balcony door (L17, L18, L24)
 S11 Bath lights, by its door (L19, L20), on/off
 S12 W/D, kitchen side
-S13 Media, by balcony door (L23)
+S13 Media, west of balcony door (L23)
 E
 K
 M
@@ -260,6 +260,11 @@ S22
 S23
 Companion switches (added Nov 10, 2026): S19 with S1 (L1-L3) at the foot of the west stair; S20 with S2 (L4-L6) at the head
 of the east stair; S21 with S8 (kitchen L13-L15) on the kitchen side of the media/kitchen door; S22 with S5 (media L9, L10)
-and S23 with S6 (media fan L11, on/off) on the media side of that door, in the corner by its latch edge.
+and S23 with S6 (media fan L11, on/off) on the media side of that wall, just north of the door.
 Doors (A.3): hall to media and hall to kitchen 2668, hinged east; media to kitchen 2668, hinged north, opens into the kitchen;
 media to balcony 3068, opens in; family to balcony 3068, opens out; closet 2668; bath 2468; sauna 2468; W/D closet bifold.
+S24
+S25
+Media lights split (Nov 10, 2026): S5 runs L9 and new S24 runs L10, both by the hall door with S6. Their companions
+S22 (L9), S25 (L10) and S23 (fan) are a three-gang on the media side of the media/kitchen wall, at the door's north edge.
+S13 moved to the west (latch) side of the balcony door, below the 3020 window. H4 moved above that window's east end.
