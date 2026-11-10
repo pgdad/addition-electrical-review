@@ -160,6 +160,14 @@ The PDF wins for geometry; these are the differences found.
 - Every light has a control. L21 (sauna) has no wall switch by design; it is on the heater control.
 - Stair pairs have a switch at each end: S3/S15/S17 at the foot of the west stair (x 10.6 to 12.1 ft, stair
   foot at x 9.6 ft) and S4/S16 at the head of the east stair (x 31.6 to 33.1 ft, first riser at x 33.8 ft).
+- 3-way pairs use an Inovelli main switch plus an Inovelli aux switch with a traveler (owner decision, Nov 10, 2026).
+  All 15 pairs are covered: garage S1/S2, S4/S7; stairs E/S4, F/S16, S3/S8, S15/S9, S17/S10; second floor
+  S1/S19, S2/S20, S8/S21, S5/S22, S6/S23, S24/S25, S10/S26; third floor S1/S2. The aux end of each pair is
+  listed on each drawing and is a proposal: the five stair mains are kept together in the second-floor gang.
+  *Check with the electrician:* a 3-conductor cable (traveler plus neutral) between the two boxes of each
+  pair, one traveler per pair (five separate travelers on the stair runs), the aux neutral taken from the
+  same circuit as its main, and each main switch set to "aux switch" multi-way mode. The aux model must
+  be the one Inovelli lists for the White Series; an ordinary 3-way toggle will not work with it.
 - Companion switches (owner decision, Nov 10, 2026):
   - Hall: S19 pairs with S1 (L1 to L3) at the foot of the west stair, and S20 pairs with S2 (L4 to L6) at the
     head of the east stair. Each stair end lights its own half of the hall.

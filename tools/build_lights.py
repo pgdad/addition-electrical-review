@@ -163,6 +163,11 @@ PAIRS = [
  (["2:S1", "2:S19"], "#aed581"), (["2:S2", "2:S20"], "#4db6ac"), (["2:S8", "2:S21"], "#ffb74d"),
  (["2:S5", "2:S22"], "#9575cd"), (["2:S6", "2:S23"], "#a1887f"), (["2:S24", "2:S25"], "#f48fb1"), (["2:S10", "2:S26"], "#90caf9"),
 ]
+# One switch of every 3-way pair is an Inovelli aux switch (owner decision, Nov 10, 2026); the other is the
+# Inovelli main switch that holds the load (or runs the smart bulbs). A traveler runs between the two boxes.
+AUX = {"G:S2", "G:S7", "G:E", "G:F", "3:S8", "3:S9", "3:S10", "3:S2",
+       "2:S19", "2:S20", "2:S21", "2:S22", "2:S23", "2:S25", "2:S26"}
+assert all(sum(m in AUX for m in members) == 1 for members, _ in PAIRS)
 HALL_SWITCHES = {"G:S4", "G:S5", "G:S7", "G:E", "G:F"}   # stand on the raised hallway floor
 
 # ---- outlets: (ids, description, kind, height above the floor in ft, circuit). Heights are assumptions:
@@ -451,7 +456,8 @@ def build():
         rec = dict(key=key, id=sid, level=lv, levelName=LEVEL_NAME[lv], room=room, x=x, y=round(y, 2), z=z,
                    controls=ctl, source=SOURCE[lv])
         if key in pair_of: rec["pairWith"], rec["pairColor"] = pair_of[key]
-        rec["mode"] = "on/off" if key in ("2:S6", "2:S9", "2:S11", "2:S18", "2:S23", "3:S5") else "smart-bulb dimmer"
+        if key in pair_of: rec["role"] = "aux" if key in AUX else "main"
+        rec["mode"] = "Inovelli aux switch, traveler to the main switch" if key in AUX else "on/off" if key in ("2:S6", "2:S9", "2:S11", "2:S18", "2:S23", "3:S5") else "smart-bulb dimmer"
         switches.append(rec)
     outlets = []
     for lv, rows in OUTLETS.items():

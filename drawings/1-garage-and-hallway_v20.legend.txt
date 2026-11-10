@@ -204,3 +204,6 @@ Doorbell 16 moved to the east (latch) side of the front door; L13 centred over t
 P21
 P21 Outdoor GFCI weather-resistant outlet with an in-use cover, outside the hallway south wall just west of the front
 door, serving the deck. On hallway circuit C7.   Switch 18 is an 8-port PoE switch with a fiber port.
+3-way pairs (Nov 10, 2026): one switch of each pair is an Inovelli aux switch, with a traveler wire to the Inovelli main switch.
+Aux: S2 (main S1), S7 (main S4), E (main is second-floor S4), F (main is second-floor S16). Run 3-conductor cable
+(traveler + neutral) between the two boxes of each pair; E and F each need their own traveler up the stair.

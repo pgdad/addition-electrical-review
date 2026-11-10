@@ -6,6 +6,11 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 
 ## Whole building
 - Service: 400A, entering at main panel MP on the garage north wall, just east of the W/D under the stairs.
+- 3-way pairs (owner decision, Nov 10, 2026): in every 3-way pair, on all floors, one switch is an Inovelli
+  aux switch and the other is the Inovelli main switch; a traveler wire runs between the two boxes.
+  Which end is the aux is proposed, not owner-confirmed: garage S2 (main S1), S7 (main S4), E (main 2F S4),
+  F (main 2F S16); second floor S19 (S1), S20 (S2), S21 (S8), S22 (S5), S23 (S6), S25 (S24), S26 (S10);
+  third floor S2 (S1), S8 (2F S3), S9 (2F S15), S10 (2F S17). The shed has no 3-way pairs.
 - Lighting standard: dimmable Govee ceiling lights; Inovelli White Series wall switches in smart-bulb mode
   (switches send scene/automation commands; the bulbs stay powered).
   Exception (owner decision, Nov 9, 2026): switches on non-smart loads are plain on/off, not dimmers and not

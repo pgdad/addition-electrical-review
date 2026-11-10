@@ -1364,6 +1364,7 @@
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "pairWith": "G:S2",
    "pairColor": "#ff8a3d",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1388,7 +1389,8 @@
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "pairWith": "G:S1",
    "pairColor": "#ff8a3d",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "G:S3",
@@ -1424,6 +1426,7 @@
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "pairWith": "G:S7",
    "pairColor": "#4dd0e1",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1442,7 +1445,8 @@
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "pairWith": "G:S4",
    "pairColor": "#4dd0e1",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "G:S5",
@@ -1489,7 +1493,8 @@
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "pairWith": "2:S4",
    "pairColor": "#ffd54f",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "G:F",
@@ -1508,7 +1513,8 @@
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "pairWith": "2:S16",
    "pairColor": "#ba68c8",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "2:S1",
@@ -1527,6 +1533,7 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S19",
    "pairColor": "#aed581",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1546,6 +1553,7 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S20",
    "pairColor": "#4db6ac",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1563,6 +1571,7 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "3:S8",
    "pairColor": "#81c784",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1580,6 +1589,7 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "G:E",
    "pairColor": "#ffd54f",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1597,6 +1607,7 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S22",
    "pairColor": "#9575cd",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1614,6 +1625,7 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S25",
    "pairColor": "#f48fb1",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1631,6 +1643,7 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S23",
    "pairColor": "#a1887f",
+   "role": "main",
    "mode": "on/off"
   },
   {
@@ -1665,6 +1678,7 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S21",
    "pairColor": "#ffb74d",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1699,6 +1713,7 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S26",
    "pairColor": "#90caf9",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1747,7 +1762,8 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S1",
    "pairColor": "#aed581",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "2:S20",
@@ -1766,7 +1782,8 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S2",
    "pairColor": "#4db6ac",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "2:S21",
@@ -1785,7 +1802,8 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S8",
    "pairColor": "#ffb74d",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "2:S22",
@@ -1802,7 +1820,8 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S5",
    "pairColor": "#9575cd",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "2:S25",
@@ -1819,7 +1838,8 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S24",
    "pairColor": "#f48fb1",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "2:S26",
@@ -1838,7 +1858,8 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S10",
    "pairColor": "#90caf9",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "2:S23",
@@ -1855,7 +1876,8 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S6",
    "pairColor": "#a1887f",
-   "mode": "on/off"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "2:S12",
@@ -1922,6 +1944,7 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "3:S9",
    "pairColor": "#f06292",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1941,6 +1964,7 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "G:F",
    "pairColor": "#ba68c8",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1958,6 +1982,7 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "3:S10",
    "pairColor": "#64b5f6",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1976,6 +2001,7 @@
    "source": "drawings/3-third-floor_v32.svg",
    "pairWith": "3:S2",
    "pairColor": "#e57373",
+   "role": "main",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1994,7 +2020,8 @@
    "source": "drawings/3-third-floor_v32.svg",
    "pairWith": "3:S1",
    "pairColor": "#e57373",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "3:S3",
@@ -2088,7 +2115,8 @@
    "source": "drawings/3-third-floor_v32.svg",
    "pairWith": "2:S3",
    "pairColor": "#81c784",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "3:S9",
@@ -2106,7 +2134,8 @@
    "source": "drawings/3-third-floor_v32.svg",
    "pairWith": "2:S15",
    "pairColor": "#f06292",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "3:S10",
@@ -2123,7 +2152,8 @@
    "source": "drawings/3-third-floor_v32.svg",
    "pairWith": "2:S17",
    "pairColor": "#64b5f6",
-   "mode": "smart-bulb dimmer"
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "3:S11",
