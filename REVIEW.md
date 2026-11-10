@@ -102,16 +102,16 @@ The PDF wins for geometry; these are the differences found.
   service clearance with the installer.
 - **Laundry under the stairs**: outlet A is now on laundry circuit C9 (20 A, 120 V, GFCI). See the WashTower open
   question for the 120 V vs 240 V conflict. A 74 in WashTower only fits under the west (high) end of the stair.
-- **Outdoor receptacles**: B (south) and now P18 (north wall at the NW corner, which also serves as
-  the condensers' service receptacle) are at grade. Nothing serves the deck side.
+- **Outdoor receptacles**: B (south), P18 (north) and P19 (west) are at grade; P18 and P19 also serve as
+  the condensers' service receptacles. Nothing serves the deck side.
   Proposal: add a GFCI weather-resistant outlet by the deck door. *should-fix*.
 - **Mini-splits** are left off on purpose. Their power is now drawn at the four condenser positions on A.2:
   MS1 and MS2 outside the north wall (x about 24 and 27.5 ft) and MS3 and MS4 outside the west wall under
   the exterior stair (z about 12 and 15.5 ft), each a hardwired 240 V, 30 A connection on its own circuit
-  (C11 to C14). Outdoor GFCI outlet P18 (125 V, 20 A, on C2) at the NW corner is the service receptacle.
+  (C11 to C14). Outdoor GFCI outlets P18 (north wall, x about 20.5 ft) and P19 (west wall, z about 17.5 ft),
+  both 125 V, 20 A on C2, are the service receptacles, one beside each pair.
   The indoor units are fed from the condensers. Check with the electrician: confirm 30 A against each
-  unit's nameplate maximum breaker size, put a disconnect within sight of each condenser, confirm P18 is
-  within 25 ft of all four, and add the four circuits (up to 120 A of breakers) to the load estimate.
+  unit's nameplate maximum breaker size, put a disconnect within sight of each condenser, and add the four circuits (up to 120 A of breakers) to the load estimate.
 - **Smoke/CO**: A.2 note 9 requires hardwired interconnected alarms and shows a smoke and a CO alarm in the
   hallway. Now drawn as SD1 and CO1 on the hallway ceiling (about 2.5 ft north of the A.2 spot to clear
   other symbols). Check with the inspector whether the garage itself needs a heat alarm.

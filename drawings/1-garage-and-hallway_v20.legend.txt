@@ -136,7 +136,7 @@ P11, P12 Ceiling, cord reels, GFCI
 O1, O2 Wall openers + outlet, GFCI
 EV1, EV2 Chargers, 60A 240V each, clear of windows
 C1 P1, P2, P13 20A dedicated, GFCI
-C2 P3-P7, B, P18 20A GFCI
+C2 P3-P7, B, P18, P19 20A GFCI
 C3 P8-P10 20A GFCI
 C4 P11, P12, O1-O4 20A GFCI
 C5, C6 EV1, EV2 60A
@@ -173,7 +173,8 @@ MS2
 MS3
 MS4
 P18
+P19
 MS1-MS4 Hardwired 240V 30A connections, one per mini-split condenser, at the four A.2 positions:
 MS1, MS2 north wall (24, 27.5 ft); MS3, MS4 west wall under the stair. C11-C14 30A 240V each, with disconnects
-P18 Outdoor 125V 20A GFCI weather-resistant outlet, north wall at the NW corner, on C2; within 25 ft of all four
+P18, P19 Outdoor 125V 20A GFCI weather-resistant service outlets on C2: P18 north wall by MS1, P19 west wall by MS4
 Indoor mini-split units are fed from their condensers; no outlets for them.

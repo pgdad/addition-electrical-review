@@ -22,7 +22,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   Their power is drawn (owner decision, Nov 10, 2026) at the four condenser positions on sheet A.2: two
   outside the garage north wall (MS1, MS2) and two outside the west wall under the exterior stair (MS3, MS4),
   each a hardwired 240V 30A connection on its own circuit (C11-C14), plus one outdoor-rated 125V 20A GFCI
-  outlet P18 at the NW corner on C2. The indoor units need no outlets.
+  service outlet per wall on C2: P18 on the north wall, P19 on the west wall. The indoor units need no outlets.
 - Rough load estimate (proposed, not a code calc): 2nd floor ~115A, 3rd ~30-40A, ~150A combined;
   two 60A EV circuits ~96A continuous; fits in 400A.
 
@@ -43,7 +43,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   moved off the north windows Nov 9, 2026: EV1 at 9.5 ft and EV2 at 26.4 ft from the west wall;
   hallway P14-P17 east wall on C7.
   Added Nov 9, 2026 (owner decision): every garage receptacle circuit is GFCI (C1-C4 and the new C8, C9).
-  Outdoor outlets B and P18 on C2; outlet C (computers, printers) on new dedicated C8 20A; W/D outlet A on new
+  Outdoor outlets B, P18 and P19 on C2; outlet C (computers, printers) on new dedicated C8 20A; W/D outlet A on new
   laundry circuit C9 20A 120V; lighting is C10 15A and also feeds stair controllers D and alarms SD1, CO1.
 - Grounding: G by switch 2 (SW), G2 by switch 7 (NW), bonded to the addition ground; Ethernet surge
   protectors SP1 (items 3, 4, 5) on G and SP2 (item 8) on G2.
