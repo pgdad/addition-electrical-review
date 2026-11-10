@@ -117,7 +117,7 @@ L34
 S15
 S16
 Lighting (pink), dimmable Govee
-Switches (green), Inovelli
+Switches (green), Inovelli; S6, S9, S11 on/off, not dimmers
 L1-L6 Hall wall lights on the north wall
 L7 Stair up, light mid each riser
 L8 Stair down, light mid each riser
@@ -137,12 +137,12 @@ S1, S2 Hall 2-gang: L1-L3 and L4-L6
 S3 Stair up risers, bottom (top on 3rd fl)
 S4 Stair down risers, top (bottom on garage lvl)
 S5 Media ceiling lights, by hall door
-S6 Media fan and its light, beside S5
+S6 Media fan and its light, beside S5 (on/off)
 S7 Closet, media side of its door
 S8 Kitchen ceiling and pendant, by hall door
-S9 Under-cabinet, beside S8
+S9 Under-cabinet, beside S8 (on/off)
 S10 Family, by balcony door (L17, L18, L24)
-S11 Bath, by its door (L19, L20, fan)
+S11 Bath, by its door (L19, L20, fan), on/off
 S12 W/D, kitchen side
 S13 Media, by balcony door (L23)
 E
@@ -238,3 +238,9 @@ C15, C16 Lighting, 15A
 L35
 S17 L35 west stair ceiling, bottom (top 3rd fl S10)
 S17
+CO1
+SD1
+Smoke and CO alarms (added from sheet A.3)
+SD1 Smoke alarm, hall ceiling, mid hall
+CO1 Carbon monoxide alarm, hall ceiling, beside SD1
+Hardwired, interconnected, battery backup (A.2 note 9); on a lighting circuit, confirm with electrician

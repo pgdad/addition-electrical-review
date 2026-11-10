@@ -132,3 +132,7 @@ C6  20A sink and attics: P16, P17 (GFCI), P13, P14, P15. Dual AFCI/GFCI breaker.
 C7  15A lighting: L1 to L9.
 C8  20A spare home run E to a box in R3, reachable for R1, R3 or R5 later.
 AFCI breakers on C3 to C8 per code; confirm racks C1, C2 with the electrician and inspector.
+SD1
+Smoke alarm (added from sheet A.4)
+SD1  Smoke alarm, west office ceiling.
+Hardwired, interconnected, battery backup (A.2 note 9); on a lighting circuit, confirm with electrician.

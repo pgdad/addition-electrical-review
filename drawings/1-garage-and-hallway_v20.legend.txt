@@ -152,3 +152,9 @@ P14-P17 Hallway east wall, evenly spaced, C7 20A
 S7 Hallway west wall by garage door, 3-way with S4
 19 PoE presence sensor, hallway east wall, watches garage doorway
 20 PoE presence sensor, hallway east wall at landing, sees up the stairs
+SD1
+CO1
+Smoke and CO alarms (added from sheet A.2)
+SD1 Smoke alarm, hallway ceiling
+CO1 Carbon monoxide alarm, hallway ceiling, beside SD1
+Hardwired, interconnected, battery backup (A.2 note 9); on a lighting circuit, confirm with electrician

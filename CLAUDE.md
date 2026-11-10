@@ -7,7 +7,7 @@ You are reviewing a homeowner's electrical, lighting and low-voltage design for 
 - plans/A2-garage-first-floor.pdf, A3-second-floor.pdf, A4-third-floor.pdf: the architect's sheets
   (dimensions, walls, windows, doors, stairs). Treat these as the geometry reference.
 - drawings/*.svg: the device plans (one per level, north up, roughly to scale). Color key:
-  green = switches (S#, or letters E, F), pink = lights (L#), amber = power/panels/equipment,
+  green = switches (S#, or letters E, F), pink = lights (L#), amber = power/panels/equipment (amber pills SD#/CO# = smoke and CO alarms),
   red = outlets (P#, O#, EV#), teal = blind outlets (H#), purple = network (numbers), blue = windows.
 - drawings/*.legend.txt: every text label pulled out of each SVG (quick to grep).
 - notes/design-decisions.md: the owner's decisions, what is only proposed, and open questions.

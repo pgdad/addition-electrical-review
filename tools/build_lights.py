@@ -201,6 +201,7 @@ def build():
         rec = dict(key=key, id=sid, level=lv, levelName=LEVEL_NAME[lv], room=room, x=x, y=round(y, 2), z=z,
                    controls=ctl, source=SOURCE[lv])
         if key in pair_of: rec["pairWith"], rec["pairColor"] = pair_of[key]
+        rec["mode"] = "on/off" if key in ("2:S6", "2:S9", "2:S11") else "smart-bulb dimmer"
         switches.append(rec)
     # sanity: every plotted L# is in the data and vice versa
     for lv in SCALES:

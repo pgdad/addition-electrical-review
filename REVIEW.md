@@ -1,7 +1,8 @@
 # Laine addition: electrical, lighting and network review
 
 Reviewed Nov 9, 2026 against `plans/A2`, `A3`, `A4` (architect, geometry reference), the four device
-drawings in `drawings/` and `notes/design-decisions.md`. Nothing in `drawings/` was changed.
+drawings in `drawings/` and `notes/design-decisions.md`. The drawings were not changed during the review. Afterwards, at the
+owner's request, smoke/CO alarms (SD#, CO#) and on/off notes for S6, S9, S11 were added to them.
 
 How to read this:
 
@@ -27,8 +28,8 @@ How to read this:
 | 6 | should-fix | With 8 ft doors under a 9'5" ceiling, the open doors cover the south row of garage lights (L5 to L8) and both ceiling cord reels (P11, P12). | garage v20 |
 | 7 | should-fix | Several lights can only be switched after crossing the dark: second-floor hall (S1/S2 mid-hall, 14 ft from the west stair and 8 ft from the east stair), family room (S10 only at the balcony door), media room (S5/S6 only at the hall door), third-floor east office (S3 only at the shared door, though the attic passage is a second entry), and attic lights L6 and L8. | second floor v20, third floor v32 |
 | 8 | should-fix | The second-floor "small" PoE switch 8 has about 17 PoE drops and roughly 75 to 105 W. No 5/8-port switch covers that. Garage switch 2 needs 7 PoE ports and about 78 W plus a fiber cage; switch 18 needs 7 to 8 ports. | second floor v20: 8; garage v20: 2, 18 |
-| 9 | should-fix | Smart-bulb mode does not fit every load. The bath fan (S11), the media fan motor (S6), under-cabinet L16 (S9), riser LED controllers (D) and any non-Govee exterior fixture need real switching or their own controller. Hardwired smoke/CO alarms required by A.2 note 9 are on no device drawing. | all levels |
-| 10 | should-fix | Hallway switches S4 and S5 are drawn on the east wall exactly across the east door opening, so there is no wall to mount them on. Move them to the wall beside the door. | garage v20: S4, S5 |
+| 9 | should-fix | Hallway switches S4 and S5 are drawn on the east wall exactly across the east door opening, so there is no wall to mount them on. Move them to the wall beside the door. | garage v20: S4, S5 |
+| 10 | should-fix | S10 runs the family room ceiling lights L17, L18 together with outdoor balcony light L24, and balcony light L29 is on the far door's switch S13. Put all four balcony lights (L23, L24, L28, L29) on one balcony control at each door. | second floor v20: S10, S13 |
 
 ## PDF vs drawing geometry mismatches
 
@@ -102,7 +103,8 @@ The PDF wins for geometry; these are the differences found.
 - **Mini-splits** are left off on purpose, but their circuits, disconnects and loads still belong in the
   panel schedule and the load estimate.
 - **Smoke/CO**: A.2 note 9 requires hardwired interconnected alarms and shows a smoke and a CO alarm in the
-  hallway. Not on this drawing. *should-fix*.
+  hallway. Now drawn as SD1 and CO1 on the hallway ceiling (about 2.5 ft north of the A.2 spot to clear
+  other symbols). Check with the inspector whether the garage itself needs a heat alarm.
 - **Grounding**: G and G2 are noted as bonded to the addition ground. Check that this means the service
   grounding electrode system (intersystem bonding termination), and that the coax entry at device 1 has its
   ground block bonded to the same point.
@@ -134,9 +136,11 @@ The PDF wins for geometry; these are the differences found.
   S13 at the media door. Proposal: all four balcony lights (L23, L24, L28, L29) on one balcony control at each door.
 - *nice-to-have*: the exterior stair from grade to the balcony (16 risers) has only L28 at the top landing,
   which is what the residential code asks for, but the bottom is unlit. A step light or a light at the foot helps.
-- **should-fix** (finding 9): S11 lists L19, L20 and the fan. A fan needs a load-switching control or a
-  humidity control, not a smart-bulb-mode switch. Same for the motor of L11 on S6 and for L16 on S9
-  unless the under-cabinet strip is a smart fixture.
+- Resolved (owner decision): S6 (media fan and its light), S9 (under-cabinet L16) and S11 (bath L19, L20, fan)
+  are now plain on/off switches, not dimmers and not smart-bulb mode.
+- *nice-to-have*: S11 still switches the bath lights and the fan together, and an on/off switch cuts power
+  to L19, L20 and the L11 fan light, so use ordinary (non-smart) lamps there. A separate fan switch or a
+  humidity control would let the fan run on after the lights are off.
 
 ### Code-oriented checks (check with the electrician/inspector)
 - **Bathroom**: C10 (bidet F, P15, P22) as a 20 A GFCI circuit for this one bathroom works. P15/P22 are
@@ -159,7 +163,7 @@ The PDF wins for geometry; these are the differences found.
   outside the closet. *should-fix*.
 - **Balcony**: P11, P23, P24 on GFCI circuit C14 satisfy the balcony receptacle rule.
 - **AFCI**: note it on C4 to C8 and C11 to C16 (dual-function breakers cover the GFCI ones).
-- **Smoke/CO**: A.3 shows both in the hall. Not on this drawing.
+- **Smoke/CO**: A.3 shows both in the hall. Now drawn as SD1 and CO1 on the hall ceiling.
 - **Panel**: about 16 second-floor and 8 third-floor home runs go down through the rated garage ceiling to MP.
   A 125 A subpanel on this floor would cut that to one feeder. *nice-to-have*; not in a clothes closet or bathroom.
 
@@ -191,7 +195,8 @@ The PDF wins for geometry; these are the differences found.
 - **Receptacle spacing**: the west office south wall under the three windows (10.3 ft) has no receptacle, and
   Ethernet jack 6 there has no power beside it. Add one. *should-fix*.
 - **Attics**: lights with a switch at the entry are there (S4, S6). P13 to P15 are on dual AFCI/GFCI C6.
-- **Smoke alarm**: A.4 shows one in the west office. Not on this drawing.
+- **Smoke alarm**: A.4 shows one in the west office. Now drawn as SD1. A.4 has none in the east office;
+  now that it is a full floored room, ask the inspector whether it needs its own.
 
 ## Sauna / shed outbuilding (`4-sauna-shed_v6.svg`)
 
@@ -323,24 +328,23 @@ Total is about 290 to 320 W. Budgets are fine if each switch is picked for port 
 6. Open doors over L5 to L8, P11, P12 (garage).
 7. Lights switched from the far side: hall, family, kitchen, media, east office, attics (floors 2 and 3).
 8. PoE switch sizing: 8, 2, 18; undrawn fiber links (network).
-9. Non-smart loads on smart-bulb-mode switches; smoke/CO alarms missing from all drawings.
-10. S4/S5 drawn in the hallway's east door opening (garage).
-11. S10 mixes family lights with balcony L24; L29 on the far door's switch (second floor).
-12. No counter receptacle south of the sink; island P14 position; wall spacing gaps (second floor).
-13. H4 has no wall; driver J behind the WashTower (second floor).
-14. Duplicate ID 6; no receptacle on the west office south wall (third floor).
-15. Shed ground bar G to subpanel A bond not shown; driver J mounted high (shed).
-16. Outdoor receptacles: none on the north side or by the deck door; none near the north condensers (garage).
-17. Lighting and device circuits without numbers (garage).
+9. S4/S5 drawn in the hallway's east door opening (garage).
+10. S10 mixes family lights with balcony L24; L29 on the far door's switch (second floor).
+11. No counter receptacle south of the sink; island P14 position; wall spacing gaps (second floor).
+12. H4 has no wall; driver J behind the WashTower (second floor).
+13. Duplicate ID 6; no receptacle on the west office south wall (third floor).
+14. Shed ground bar G to subpanel A bond not shown; driver J mounted high (shed).
+15. Outdoor receptacles: none on the north side or by the deck door; none near the north condensers (garage).
+16. Lighting and device circuits without numbers (garage).
 
 **Nice-to-have**
-18. Label MP; rename device C; draw E/F green (garage).
-19. E in the door opening; scene button between the overhead doors; L11/L15 mounting (garage).
-20. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
-21. Color key on the third-floor sheet; L7 symbol; five-gang at the top of the stairs (third floor).
-22. Porch light L5 centered on the door; path light to the sauna; "East walls in line" label (shed).
-23. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
-24. One AP too many in the middle of the building; outdoor coverage north and east.
+17. Label MP; rename device C; draw E/F green (garage).
+18. E in the door opening; scene button between the overhead doors; L11/L15 mounting (garage).
+19. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
+20. Color key on the third-floor sheet; L7 symbol; five-gang at the top of the stairs (third floor).
+21. Porch light L5 centered on the door; path light to the sauna; "East walls in line" label (shed).
+22. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
+23. One AP too many in the middle of the building; outdoor coverage north and east.
 
 ## Scales used
 
