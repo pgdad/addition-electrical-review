@@ -134,7 +134,7 @@ P6, P7 West wall, GFCI
 P8-P10 East wall, GFCI
 P11, P12 Ceiling, cord reels, GFCI
 O1, O2 Wall openers + outlet, GFCI
-EV1, EV2 Chargers, 60A 240V each
+EV1, EV2 Chargers, 60A 240V each, clear of windows
 C1 P1, P2, P13 20A dedicated, GFCI
 C2 P3-P7, B 20A GFCI
 C3 P8-P10 20A GFCI
@@ -166,3 +166,5 @@ C9 A laundry 20A 120V, GFCI (washer + gas dryer; an all-electric WashTower needs
 C10 Lighting 15A: L1-L16, stair controllers D (hardwired), alarms SD1, CO1
 All garage receptacle circuits C1-C4, C8, C9 are GFCI at the breaker, so the reset is reachable;
 B also weather-resistant with an in-use cover. EV1, EV2 hardwired. Hallway C7: AFCI, ask the inspector.
+EV1: north wall 9.5 ft from the west wall, 2.5 ft west of the west window.
+EV2: north wall 26.4 ft from the west wall, between the boiler and P5, 1.7 ft west of the east window.

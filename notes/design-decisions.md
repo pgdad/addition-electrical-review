@@ -35,7 +35,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   2 hallway steps and the 13-riser flight, 17 in all, as one run.
   Stair wall lights L30-L32 on 3-way F (bottom, just north of E) + 2nd-floor S16 (top).
 - Power: P1, P2, P13 on C1 20A (network); P3-P7 C2 GFCI; P8-P10 C3 GFCI; cord reels P11, P12, wall jackshaft
-  openers O1, O2 and ceiling trolley-opener outlets O3, O4 on C4; EV1, EV2 60A 240V (C5, C6);
+  openers O1, O2 and ceiling trolley-opener outlets O3, O4 on C4; EV1, EV2 60A 240V (C5, C6),
+  moved off the north windows Nov 9, 2026: EV1 at 9.5 ft and EV2 at 26.4 ft from the west wall;
   hallway P14-P17 east wall on C7.
   Added Nov 9, 2026 (owner decision): every garage receptacle circuit is GFCI (C1-C4 and the new C8, C9).
   Outdoor outlet B on C2; outlet C (computers, printers) on new dedicated C8 20A; W/D outlet A on new
