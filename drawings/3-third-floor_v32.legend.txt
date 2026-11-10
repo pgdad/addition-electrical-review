@@ -123,7 +123,7 @@ S10  L35 ceiling light, west stair second leg (2nd floor), top of the stairs. Pa
 Circuits (proposed)
 C1  20A dedicated: A (R2 rack).
 C2  20A dedicated: B (R4 rack).
-C3  20A west office: P1, P4, P5, P18, H1, H2.
+C3  20A west office: P1, P4, P5, P18 to P21, H1, H2.
 C4  20A east office desks: C, D, P8, P9, P10.
 C5  20A east office perimeter: P6, P7, P11, P12, H3, H4, H5.
 C6  20A sink and attics: P16, P17 (GFCI), P13, P14, P15. Dual AFCI/GFCI breaker.
@@ -141,3 +141,9 @@ L10  Children's reading nook, south of the west office between the P4 wall and t
 Nook: thin wall on the line of the rack-strip west wall; small door in its north wall. P5 moved east of the door; P4 moved to the office side of its wall.
 P18
 P18  West office wall outlet on the wall below the S1, S8, S9, S10 switch stack at the top of the stairs (C3).
+P19
+P20
+P21
+P19  West office south wall, mid-wall under the windows (C3).   P20  West office north wall at the northwest corner (C3).
+P21  West office, mid north wall, on the sloped ceiling just above the low (5 ft) wall (C3). Keep it within 5.5 ft of the floor so it counts.
+P5 moved further east along its wall, toward the shared door.
