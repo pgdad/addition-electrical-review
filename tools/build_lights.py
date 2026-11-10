@@ -259,7 +259,23 @@ NETWORK = {
   ("3", "ap", "Outdoor PoE AP", "Inside the shed north wall", 7.0, ""),
  ],
 }
-HALL_NET = {"17"}
+HALL_NET = {"17", "14", "15", "19", "20"}
+# presence sensors (PoE ESP32 units): level -> [(item numbers, where, height above the floor in ft, assumed)]
+SENSORS = {
+ "G": [("12", "Garage ceiling, west half", 9.3), ("13", "Garage ceiling, east half", 9.3),
+       ("14", "Hallway north wall, faces south", 7.0), ("15", "Hallway, over the garage doorway", 7.0),
+       ("19", "Hallway east wall, watches the garage doorway", 7.0), ("20", "Hallway east wall at the landing, sees up the stairs", 7.0)],
+ "2": [("1", "Hall, above the west stair landing", 7.0), ("2", "Hall, high northeast corner, faces west", 8.0),
+       ("3", "Hall ceiling, media door", 8.9), ("4", "Hall ceiling, kitchen door", 8.9), ("5 6", "Media room ceiling", 8.9),
+       ("10", "Kitchen, sink and dishwasher", 8.9), ("11", "Near the hallway entry door", 7.0), ("12", "Near the balcony door", 7.0),
+       ("13", "Bath ceiling", 8.9)],
+ "3": [("7", "West office east wall, north of the door, facing west", 6.0), ("8", "East office side of the same wall, facing east", 6.0),
+       ("9 10", "East office north wall, beside the windows", 6.0), ("11 12", "East office south wall, beside the window", 6.0),
+       ("13", "South wall at the top of the stairs, facing north down the stairs", 6.0)],
+}
+for _lv, _rows in SENSORS.items():
+    for _ids, _where, _h in _rows:
+        for _i in _ids.split(): NETWORK[_lv].append((_i, "sensor", "PoE presence sensor", _where, _h, ""))
 
 def east_riser_points():     # one light mid each riser, garage slab -> 2nd floor (17 risers)
     rise, run = (F2 - 2.33) / 13, 10.1 / 13
