@@ -129,10 +129,15 @@ C3  20A west office: P1 to P5, H1, H2.
 C4  20A east office desks: C, D, P8, P9, P10.
 C5  20A east office perimeter: P6, P7, P11, P12, H3, H4, H5.
 C6  20A sink and attics: P16, P17 (GFCI), P13, P14, P15. Dual AFCI/GFCI breaker.
-C7  15A lighting: L1 to L9.
+C7  15A lighting: L1 to L10.
 C8  20A spare home run E to a box in R3, reachable for R1, R3 or R5 later.
 AFCI breakers on C3 to C8 per code; confirm racks C1, C2 with the electrician and inspector.
 SD1
 Smoke alarm (added from sheet A.4)
 SD1  Smoke alarm, west office ceiling.
 Hardwired, interconnected, battery backup (A.2 note 9); on a lighting circuit, confirm with electrician.
+L10
+S11
+reading nook
+L10  Children's reading nook, south of the west office between the P4 wall and the rack strip.  S11 on the office side, just west of the nook door.
+Nook: thin wall on the line of the rack-strip west wall; small door in its north wall. P5 moved east of the door; P4 moved to the office side of its wall.

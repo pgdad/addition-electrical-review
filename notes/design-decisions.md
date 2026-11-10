@@ -67,7 +67,11 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - East office is fully floored over the family room for more space; the "open to family room below" on
   sheet A.4 is superseded (owner decision, Nov 9, 2026).
 - Racks R1-R5 (20U) in the west clipped-ceiling strip, 6th opening empty; bookshelves B1-B5 opposite.
-- Lights L1-L9 on S1-S7; stair risers S8; stair wall lights S9; L35 (2nd-floor stair ceiling) S10.
+- Children's reading nook (owner decision, Nov 10, 2026): the low space south of the west office, between the
+  P4 wall and the rack strip, is sectioned off from the racks by a thin wall on the line of the rack-strip
+  west wall. Small door in its north wall from the west office; light L10 inside, switch S11 on the office
+  side by the door. P5 moved east of the door; P4 moved to the office side of its wall.
+- Lights L1-L9 on S1-S7, L10 on S11; stair risers S8; stair wall lights S9; L35 (2nd-floor stair ceiling) S10.
 
 ## Sauna / shed outbuilding (drawing v6)
 - 12 x 24 ft south of the garage: north half porch (12x3) + dressing room (west) + wood-burning sauna (east);

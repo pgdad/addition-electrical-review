@@ -88,6 +88,7 @@ LIGHTS = {
   "L7": ("West office closet", "ceiling", 7.0, "C7 lighting, 15A", "Plotted 1.3 ft south of the closet outline"),
   "L8": ("Old house attic", "ceiling", 6.5, "C7 lighting, 15A", ""),
   "L9": ("East office sink nook", "ceiling", 7.0, "C7 lighting, 15A", "Short track light"),
+  "L10": ("Children's reading nook", "ceiling", 6.0, "C7 lighting, 15A", "Low sloped ceiling behind the 5 ft office wall (A.4 shows attic here); 6 ft height assumed"),
  },
  "S": {
   "L1": ("Sauna room", "low-voltage", 6.5, "C3 (driver J, 15A)", "Heat rated, DC from driver J"),
@@ -139,6 +140,7 @@ SWITCHES = {
  ("3", "S8"): ("West office, top of the stairs", k("2", "L7")),
  ("3", "S9"): ("West office, top of the stairs", k("2", "L33", "L34")),
  ("3", "S10"): ("West office, top of the stairs", k("2", "L35")),
+ ("3", "S11"): ("West office, beside the reading nook door", k("3", "L10")),
  ("S", "S1"): ("Dressing room, inside the porch door", k("S", "L2")),
  ("S", "S2"): ("Dressing room, inside the porch door", k("S", "L1")),
  ("S", "S4"): ("Dressing room, inside the porch door", k("S", "L5")),

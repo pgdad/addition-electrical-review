@@ -43,6 +43,7 @@ The PDF wins for geometry; these are the differences found.
 | Third-floor east room | A.4: "OFFICE/LOFT 14'0 x 12'7", guardrail, open to family room below | v32: one room 25 ft deep, "over the family room" | Owner decision: the area is floored over for more space, not left open, so v32 is correct. Sheet A.4 is out of date here; the architect needs to draw the added floor framing and drop the guardrail. |
 | Family room ceiling | A.3: vaulted | v20: L17, L18 "family room ceiling" | With the third floor carried over the family room the ceiling is flat, not vaulted. The 3D model uses 9 ft. A.3 needs the same update as A.4. |
 | Kitchen layout | A.3: pantry and fridge on the north wall, sink then range on the east wall | v20: fridge where the pantry is, range where the fridge is, sink and DW on the east wall | Recorded as an owner decision in the v20 legend. Range circuit E, hood N and DW circuit M follow the drawing. Confirm the architect knows. |
+| Third-floor reading nook | A.4: the space south of the west office jog (about 5.6 x 4 ft) is unfinished attic behind the office's 5'0" wall, reached through a 22 x 30 attic access panel in that wall | v32 originally drew it outside the outline; it is now the children's reading nook with L10, S11 and a small door | Finishing it is a change for the architect: floor, insulation line and the low sloped ceiling. The nook door lands about where A.4 puts the attic access panel, so the attic beyond needs another way in. The 3D model places the nook's east wall at x 21.2 ft (A.4); the drawing has it at 21.9 ft. |
 | Third-floor closet light | A.4 closet ends about z 14.4 ft | v32: L7 plotted at z 15.7 ft, about 1.3 ft south of the closet's south wall line | L7 lands in the eave. Move the symbol into the closet. |
 | Outbuilding site note | Task brief: shed east wall in line with the garage **west** wall | v6 sketch shows that, but its label reads "East walls in line" | Fix the label. |
 | Exterior stair | A.2 plan: "UP 15R (verify)"; A.2 stair data: grade to balcony 16 risers | Not on device drawings | Architect's own inconsistency; affects stair light count only. |
@@ -189,7 +190,8 @@ The PDF wins for geometry; these are the differences found.
 - L7: see the mismatch table.
 
 ### Lighting control
-- Every light has a switch: L1/L2 on S1+S2, L3 to L5 on S3, L6 on S4, L7 on S5, L8 on S6, L9 on S7.
+- Every light has a switch: L1/L2 on S1+S2, L3 to L5 on S3, L6 on S4, L7 on S5, L8 on S6, L9 on S7, and
+  reading-nook light L10 on S11, which is on the office side beside the nook door.
 - S1 (top of stairs) and S2 (by the shared door) are at the two ends of the west office. Good.
 - **should-fix** (finding 5): the east office has two entries, the shared door and the attic passage, but only
   S3 at the door. L6 (small attic) is switched from the office side only (S4) and L8 (old house attic) from the

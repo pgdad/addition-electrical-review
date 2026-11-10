@@ -1226,6 +1226,23 @@
    ]
   },
   {
+   "key": "3:L10",
+   "id": "L10",
+   "level": "3",
+   "levelName": "Third floor",
+   "room": "Children's reading nook",
+   "x": 18.73,
+   "y": 26.61,
+   "z": 14.72,
+   "type": "ceiling",
+   "switches": [
+    "3:S11"
+   ],
+   "circuit": "C7 lighting, 15A",
+   "source": "drawings/3-third-floor_v32.svg",
+   "note": "Low sloped ceiling behind the 5 ft office wall (A.4 shows attic here); 6 ft height assumed"
+  },
+  {
    "key": "S:L1",
    "id": "L1",
    "level": "S",
@@ -1936,6 +1953,21 @@
    "source": "drawings/3-third-floor_v32.svg",
    "pairWith": "2:S17",
    "pairColor": "#64b5f6",
+   "mode": "smart-bulb dimmer"
+  },
+  {
+   "key": "3:S11",
+   "id": "S11",
+   "level": "3",
+   "levelName": "Third floor",
+   "room": "West office, beside the reading nook door",
+   "x": 17.12,
+   "y": 24.61,
+   "z": 12.61,
+   "controls": [
+    "3:L10"
+   ],
+   "source": "drawings/3-third-floor_v32.svg",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -3048,9 +3080,9 @@
    "levelName": "Third floor",
    "room": "West office wall outlet",
    "kind": "wall",
-   "x": 15.94,
+   "x": 15.24,
    "y": 22.11,
-   "z": 15.14,
+   "z": 14.79,
    "circuit": "C3 west office, 20A",
    "source": "drawings/3-third-floor_v32.svg"
   },
@@ -3061,7 +3093,7 @@
    "levelName": "Third floor",
    "room": "West office wall outlet",
    "kind": "wall",
-   "x": 19.71,
+   "x": 20.97,
    "y": 22.11,
    "z": 12.68,
    "circuit": "C3 west office, 20A",
