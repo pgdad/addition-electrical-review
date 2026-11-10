@@ -105,8 +105,13 @@ The PDF wins for geometry; these are the differences found.
 - **Outdoor receptacles**: B is the only one at grade. A dwelling needs one at the front and one at the back,
   and a service receptacle within 25 ft of the mini-split condensers A.2 shows on the north wall.
   Proposal: add a GFCI weather-resistant outlet on the north wall and one by the deck door. *should-fix*.
-- **Mini-splits** are left off on purpose, but their circuits, disconnects and loads still belong in the
-  panel schedule and the load estimate.
+- **Mini-splits** are left off on purpose. Their north-wall power is now drawn as MS1, an outdoor 240 V
+  outlet at x 26 ft between the two condensers A.2 shows, on new circuit C11. Check with the electrician:
+  condensers are normally hardwired through a disconnect within sight of each unit and often need a
+  circuit each, so one outlet for two units depends on the nameplates; size C11 from them and add it to
+  the load estimate. Outdoor outlets of this size generally need GFCI under NEC 2023. A.2 also shows
+  mini-split units on the west wall, which MS1 does not serve. MS1 is not the 120 V service receptacle
+  the condensers also need nearby.
 - **Smoke/CO**: A.2 note 9 requires hardwired interconnected alarms and shows a smoke and a CO alarm in the
   hallway. Now drawn as SD1 and CO1 on the hallway ceiling (about 2.5 ft north of the A.2 spot to clear
   other symbols). Check with the inspector whether the garage itself needs a heat alarm.

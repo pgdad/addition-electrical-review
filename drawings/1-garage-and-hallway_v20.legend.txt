@@ -111,7 +111,7 @@ B Outdoor outlet, AirGradient, C2 GFCI, WR
 C Computers, printers outlet, C8 20A GFCI
 D Stair lights, 2 Matter controllers, on C10
 E, F 3-way switches, stair bottom (F: wall lights)
-Mini-splits on A.2 left off
+Mini-splits on A.2 left off; their outlet is MS1
 17 UniFi wall AP, hallway north wall
 18 Small PoE switch, fiber to 3rd fl
 Lighting
@@ -168,3 +168,6 @@ All garage receptacle circuits C1-C4, C8, C9 are GFCI at the breaker, so the res
 B also weather-resistant with an in-use cover. EV1, EV2 hardwired. Hallway C7: AFCI, ask the inspector.
 EV1: north wall 9.5 ft from the west wall, 2.5 ft west of the west window.
 EV2: north wall 26.4 ft from the west wall, between the boiler and P5, 1.7 ft west of the east window.
+MS1
+MS1 Outdoor 240V outlet for the mini-split units, outside the north wall at 26 ft, weatherproof, GFCI, C11
+C11 240V 2-pole, sized from the unit nameplates; disconnect within sight of each unit (check with electrician)
