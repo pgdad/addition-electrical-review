@@ -102,16 +102,15 @@ The PDF wins for geometry; these are the differences found.
   service clearance with the installer.
 - **Laundry under the stairs**: outlet A is now on laundry circuit C9 (20 A, 120 V, GFCI). See the WashTower open
   question for the 120 V vs 240 V conflict. A 74 in WashTower only fits under the west (high) end of the stair.
-- **Outdoor receptacles**: B is the only one at grade. A dwelling needs one at the front and one at the back,
-  and a service receptacle within 25 ft of the mini-split condensers A.2 shows on the north wall.
-  Proposal: add a GFCI weather-resistant outlet on the north wall and one by the deck door. *should-fix*.
-- **Mini-splits** are left off on purpose. Their north-wall power is now drawn as MS1, an outdoor 240 V
-  outlet at x 26 ft between the two condensers A.2 shows, on new circuit C11. Check with the electrician:
-  condensers are normally hardwired through a disconnect within sight of each unit and often need a
-  circuit each, so one outlet for two units depends on the nameplates; size C11 from them and add it to
-  the load estimate. Outdoor outlets of this size generally need GFCI under NEC 2023. A.2 also shows
-  mini-split units on the west wall, which MS1 does not serve. MS1 is not the 120 V service receptacle
-  the condensers also need nearby.
+- **Outdoor receptacles**: B (south) and now P18 (north wall, beside the condensers, which also serves as
+  their service receptacle) are at grade. Nothing serves the deck side.
+  Proposal: add a GFCI weather-resistant outlet by the deck door. *should-fix*.
+- **Mini-splits** are left off on purpose. Their power is now drawn: three condensers outside the north wall,
+  each with a hardwired 240 V, 30 A connection (MS1 to MS3 on new circuits C11 to C13), and outdoor GFCI
+  outlet P18 (125 V, 20 A, on C2) as the service receptacle. The indoor units are fed from the condensers.
+  Check with the electrician: confirm 30 A against each unit's nameplate maximum breaker size, put a
+  disconnect within sight of each condenser, and add the three circuits to the load estimate. A.2 shows
+  two condensers on the north wall and more on the west wall, so tell the architect about the layout.
 - **Smoke/CO**: A.2 note 9 requires hardwired interconnected alarms and shows a smoke and a CO alarm in the
   hallway. Now drawn as SD1 and CO1 on the hallway ceiling (about 2.5 ft north of the A.2 spot to clear
   other symbols). Check with the inspector whether the garage itself needs a heat alarm.
@@ -342,7 +341,7 @@ Total is about 290 to 320 W. Budgets are fine if each switch is picked for port 
 10. H4 has no wall; driver J behind the WashTower (second floor).
 11. Duplicate ID 6; no receptacle on the west office south wall (third floor).
 12. Shed ground bar G to subpanel A bond not shown; driver J mounted high (shed).
-13. Outdoor receptacles: none on the north side or by the deck door; none near the north condensers (garage).
+13. Outdoor receptacles: none by the deck door (garage).
 
 **Nice-to-have**
 14. Label MP; rename device C; draw E/F green (garage).

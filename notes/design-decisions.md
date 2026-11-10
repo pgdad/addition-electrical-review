@@ -19,8 +19,9 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   Two fiber runs share one smurf tube up the riser (item 1 converter, item 18 under-stair switch).
   Fiber from R1 out to small 5/8-port PoE switches near APs, cameras and computers.
 - Mini-splits shown on the architect sheets are intentionally left off the drawings.
-  Their power is drawn (owner decision, Nov 10, 2026): outdoor 240V outlet MS1 on the outside of the garage
-  north wall, between the two condensers A.2 shows there, on new circuit C11.
+  Their power is drawn (owner decision, Nov 10, 2026): three condensers outside the garage north wall, each
+  with its own hardwired 240V 30A connection (MS1-MS3 on new circuits C11-C13), plus one outdoor-rated
+  125V 20A GFCI outlet P18 beside them on C2. The indoor units need no outlets.
 - Rough load estimate (proposed, not a code calc): 2nd floor ~115A, 3rd ~30-40A, ~150A combined;
   two 60A EV circuits ~96A continuous; fits in 400A.
 
@@ -41,7 +42,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   moved off the north windows Nov 9, 2026: EV1 at 9.5 ft and EV2 at 26.4 ft from the west wall;
   hallway P14-P17 east wall on C7.
   Added Nov 9, 2026 (owner decision): every garage receptacle circuit is GFCI (C1-C4 and the new C8, C9).
-  Outdoor outlet B on C2; outlet C (computers, printers) on new dedicated C8 20A; W/D outlet A on new
+  Outdoor outlets B and P18 on C2; outlet C (computers, printers) on new dedicated C8 20A; W/D outlet A on new
   laundry circuit C9 20A 120V; lighting is C10 15A and also feeds stair controllers D and alarms SD1, CO1.
 - Grounding: G by switch 2 (SW), G2 by switch 7 (NW), bonded to the addition ground; Ethernet surge
   protectors SP1 (items 3, 4, 5) on G and SP2 (item 8) on G2.
