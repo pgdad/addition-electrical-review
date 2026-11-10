@@ -106,14 +106,14 @@ Devices
 14 Hall sensor, north wall, faces south
 15 Presence sensor, over doorway
 16 PoE video doorbell, surge SP3
-A W/D outlet (washer; gas dryer), C9 GFCI
+A W/D: 120V (C9) + 240V 30A (C15) + gas stub
 B Outdoor outlet, AirGradient, C2 GFCI, WR
 C Computers, printers outlet, C8 20A GFCI
 D Stair lights, 2 Matter controllers, on C10
 E, F 3-way switches, stair bottom (F: wall lights)
 Mini-splits on A.2 left off; power is MS1-MS4
 17 UniFi wall AP, hallway north wall
-18 Small PoE switch, fiber to 3rd fl
+18 PoE switch (8-port + fiber), fiber to 3rd fl
 Lighting
 L1-L8 Garage ceiling, 2 rows of 4
 L9, L10 Hallway ceiling
@@ -148,7 +148,7 @@ SP2 Surge, camera 8, on G2
 O3, O4 Ceiling outlets, trolley openers, centered on each door, GFCI
 MP Main panel (red bar), north wall east of W/D; clear space in front
 Ceiling lights dimmable Govee; switches Inovelli in smart bulb mode
-P14-P17 Hallway east wall, evenly spaced, C7 20A
+P14-P17 Hallway east wall, evenly spaced, C7 20A; P21 on C7
 S7 Hallway west wall by garage door, 3-way with S4
 19 PoE presence sensor, hallway east wall, watches garage doorway
 20 PoE presence sensor, hallway east wall at landing, sees up the stairs
@@ -162,7 +162,7 @@ Stair riser lights (small pink dots): one mid each riser from the garage floor t
 2 garage door steps + 2 hallway steps + 13-riser flight = 17; one run with 2nd-floor L8, on E + 2nd-floor S4, controllers D
 Circuits added, GFCI (Nov 2026)
 C8 C (computers, printers) 20A dedicated, GFCI
-C9 A laundry 20A 120V, GFCI (washer + gas dryer; an all-electric WashTower needs 30A 240V instead)
+C9 A laundry 20A 120V, GFCI. C15 A dryer 30A 240V. Both run, plus a gas stub, so either WashTower fits.
 C10 Lighting 15A: L1-L16, stair controllers D (hardwired), alarms SD1, CO1
 All garage receptacle circuits C1-C4, C8, C9 are GFCI at the breaker, so the reset is reachable;
 B also weather-resistant with an in-use cover. EV1, EV2 hardwired. Hallway C7: AFCI, ask the inspector.
@@ -203,3 +203,6 @@ the hallway. Its latch side is east, next to S4 and S5.
 G3
 G3 Ground bar under the stair by switch 18, bonded to the service ground at MP; SP3 lands on it.
 Doorbell 16 moved to the east (latch) side of the front door; L13 centred over the door. 16 is wired to switch 18 (PoE).
+P21
+P21 Outdoor GFCI weather-resistant outlet with an in-use cover, outside the hallway south wall just west of the front
+door, serving the deck. On hallway circuit C7.   Switch 18 is an 8-port PoE switch with a fiber port.

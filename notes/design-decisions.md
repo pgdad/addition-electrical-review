@@ -33,7 +33,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - 41'6" x 24'4", 9 ft ceiling, two 16x8 doors on the south wall; balcony above west door, pergola above east door.
 - "Breezeway" on the plan is an enclosed hallway ending at the stairs up to the 2nd floor over the garage.
 - Under the stairs (west end): LG WashTower, electric washer + GAS dryer (builder notes say all-electric
-  WKEX200HBA: unresolved conflict). Cable ingress, modem and converter behind it.
+  WKEX200HBA). Owner decision, Nov 10, 2026: run both the 20A 120V laundry circuit C9 and a 30A 240V dryer
+  circuit C15, plus the gas stub, so either model fits. Cable ingress, modem and converter behind it.
 - Door between the garage and the hallway (A.2), drawn Nov 10, 2026: 2868, hinged north, swings into the
   garage. S1 and S3 are a two-gang on the garage side at the door's south (latch) edge (owner decision).
 - Door between the hallway and the old house (A.2), drawn Nov 10, 2026: 3068 in the hallway east wall,
@@ -41,6 +42,9 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   edge (owner decision).
 - Front door from the hallway to the deck (A.2), drawn Nov 10, 2026: 3068 in the hallway south wall, hinged
   west, swings into the hallway.
+- Outdoor outlet P21 (owner decision, Nov 10, 2026): GFCI weather-resistant, on the deck just west of the
+  front door, on hallway circuit C7.
+- Switch 18 is an 8-port PoE switch with a fiber port (owner decision, Nov 10, 2026).
 - S2 is on the west wall near the SW corner, directly west of where it was first drawn (owner decision, Nov 10, 2026).
 - Ethernet jacks 21 (owner decision, Nov 10, 2026): four data-only jacks on the north wall near switch 7, by
   outlet C. Switch 7 is an 8-port PoE switch with high outlet P20 beside it on C1. Ground bar G2 (with SP2) sits just south of the west window, about 5 ft from switch 7, and is the
@@ -130,4 +134,3 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Are all four outside garage lights OK on one switch S3?
 - Blind outlets in the gaps between the west-office south windows?
 - Riser fiber path, edge switch locations, rack cooling, which switch feeds the 2nd-floor hall sensors.
-- WashTower model conflict (gas vs all-electric dryer).

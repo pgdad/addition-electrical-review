@@ -2038,12 +2038,12 @@
    "id": "A",
    "level": "G",
    "levelName": "Garage and hallway",
-   "room": "W/D outlet under the stairs (washer; gas dryer), GFCI",
+   "room": "W/D outlets under the stairs: 120V 20A and 240V 30A, plus a gas stub, so either WashTower model fits",
    "kind": "appliance",
    "x": 35.59,
    "y": 3.0,
    "z": 1.2,
-   "circuit": "C9 laundry, 20A 120V GFCI",
+   "circuit": "C9 laundry 20A 120V GFCI and C15 dryer 30A 240V",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -2421,6 +2421,19 @@
    "y": 2.58,
    "z": 15.3,
    "circuit": "C7, 20A",
+   "source": "drawings/1-garage-and-hallway_v20.svg"
+  },
+  {
+   "key": "G:P21",
+   "id": "P21",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "room": "Outdoor outlet on the deck, west of the front door, GFCI weather-resistant",
+   "kind": "outdoor",
+   "x": 43.3,
+   "y": 2.6,
+   "z": 23.1,
+   "circuit": "C7, 20A; GFCI receptacle",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -3527,7 +3540,7 @@
    "level": "G",
    "levelName": "Garage and hallway",
    "kind": "switch",
-   "name": "Small PoE switch",
+   "name": "8-port PoE switch with a fiber port",
    "room": "Under the garage stairs",
    "x": 41.15,
    "y": 3.0,
