@@ -75,12 +75,16 @@ The PDF wins for geometry; these are the differences found.
 
 ### Lighting control
 - Every light has a switch: L1 to L8 on S1+S2, L9/L10 on S4+S7, L11/L12/L15/L16 on S3, L13 on S5, L14 on S6.
-- 3-way ends: S1 is inside the hall door and S2 on the west wall near the SW corner (moved there Nov 10, 2026), so both entries used on foot are covered.
+- The door between the garage and the hallway is now drawn from A.2: a 2868 solid-core 30-minute door at
+  z 5.8 to 8.7 ft, hinged on its north jamb and swinging into the garage, with two steps down on the garage
+  side. S1 and S3 are a two-gang on the garage side at its south (latch) edge (owner decision, Nov 10, 2026).
+  They sit beside the lower steps, so mount them at 4 ft above the hallway floor level, not the garage slab.
+- 3-way ends: S1 is beside the hall door and S2 on the west wall near the SW corner (moved there Nov 10, 2026), so both entries used on foot are covered.
   S7 is on the hallway side of the garage door and S4 by the east door. The stair foot is 4 to 5 ft from S7. OK.
 - **should-fix**: S4 and S5 are drawn on the east wall exactly across the east door opening
   (door z 17.8 to 20.7 ft, switches z 18.4 and 20.1 ft). Move them to the 2 ft of wall south of that door,
   or to the south wall beside the deck door.
-- *nice-to-have*: E is plotted at z 6.3 ft, which is in the garage door opening (z 5.5 to 8.3 ft). A.2 leaves
+- *nice-to-have*: E is plotted at z 6.3 ft, which is in the garage door opening (z 5.8 to 8.7 ft). A.2 leaves
   about 22 in of wall between the landing and that door, enough for a 2-gang with F above or beside E.
 - *nice-to-have*: nothing by the overhead doors controls L1 to L8 except S2 on the west wall near the SW corner.
   A scene button at jack location 11 between the doors would cover both.

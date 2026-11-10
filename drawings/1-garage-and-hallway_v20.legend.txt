@@ -122,7 +122,7 @@ L12, L16 Outside, flanking right door
 L13 Deck door light
 L14 Under the stairs
 S1 + S2 L1-L8, 3-way
-S3 L11, L12, L15, L16, by hall door
+S3 L11, L12, L15, L16, by hall door with S1
 S4 + S7 L9, L10, 3-way (deck door, garage door)
 S5 L13, by deck door
 S6 L14, under-stair light
@@ -194,3 +194,5 @@ G2 ground bar and SP2 moved just south of the west window, 5 ft from switch 7. G
 surge protectors on outdoor Ethernet cables added later.
 P20
 P20 High outlet on the north wall beside switch 7 (C1, GFCI), for the switch. Switch 7 is an 8-port PoE switch.
+Door between the garage and the hallway (A.2): 2868 solid core, 30 min rated, hinged on its north jamb, swings into
+the garage; 2 steps down on the garage side. S1 and S3 are a two-gang on the garage side at its south (latch) edge.
