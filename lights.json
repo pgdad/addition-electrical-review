@@ -2112,6 +2112,19 @@
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
+   "key": "G:P20",
+   "id": "P20",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "room": "High outlet on the north wall beside network switch 7, GFCI",
+   "kind": "wall",
+   "x": 2.0,
+   "y": 7.0,
+   "z": 0.3,
+   "circuit": "C1 dedicated, 20A GFCI",
+   "source": "drawings/1-garage-and-hallway_v20.svg"
+  },
+  {
    "key": "G:P3",
    "id": "P3",
    "level": "G",
@@ -3499,8 +3512,8 @@
    "level": "G",
    "levelName": "Garage and hallway",
    "kind": "switch",
-   "name": "PoE switch",
-   "room": "Garage northwest corner",
+   "name": "8-port PoE switch",
+   "room": "Garage northwest corner, north wall, beside outlet P20",
    "x": 1.2,
    "y": 7.0,
    "z": 1.2,
@@ -3574,12 +3587,12 @@
    "levelName": "Garage and hallway",
    "kind": "jack",
    "name": "Ethernet jack",
-   "room": "Two Ethernet jacks on the north wall by outlet C, near switch 7",
+   "room": "Four Ethernet jacks on the north wall by outlet C, near switch 7",
    "x": 4.27,
    "y": 1.5,
    "z": 0.3,
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Two jacks, data only, no PoE",
+   "note": "Four jacks, data only, no PoE",
    "cable": "G:C21"
   },
   {
@@ -4743,10 +4756,10 @@
    "to": "G:N21",
    "cable": "Cat6A",
    "poeW": 0,
-   "count": 2,
-   "port": "2-3",
+   "count": 4,
+   "port": "2-5",
    "lengthFt": 25,
-   "route": "Up from switch 7, a few feet east inside the north wall, down to the jack plate",
+   "route": "Up from switch 7, a few feet east inside the north wall, down to the jack plates",
    "points": [
     [
      1.2,

@@ -96,7 +96,7 @@ Devices
 4 Outdoor camera, facing south
 5 Outdoor AP, facing south
 6 UniFi wall AP, mid west wall
-7 PoE switch, northwest corner
+7 PoE switch (8-port), northwest corner
 8 Outdoor camera, north wall
 9 Ceiling camera, 3D printer area
 10 Ceiling camera, WashTower
@@ -135,7 +135,7 @@ P8-P10 East wall, GFCI
 P11, P12 Ceiling, cord reels, GFCI
 O1, O2 Wall openers + outlet, GFCI
 EV1, EV2 Chargers, 60A 240V each, clear of windows
-C1 P1, P2, P13 20A dedicated, GFCI
+C1 P1, P2, P13, P20 20A dedicated, GFCI
 C2 P3-P7, B, P18, P19, H1-H3 20A GFCI
 C3 P8-P10 20A GFCI
 C4 P11, P12, O1-O4 20A GFCI
@@ -189,6 +189,8 @@ H1, H2, H3 Blind outlets (teal), high beside the top of each window, on its left
 H1, H2 west of the two north windows, H3 south of the west window. On C2 (GFCI).
 L1-L8 moved 2 ft north (Nov 10, 2026): rows now 7.2 and 16.7 ft from the north wall, further from the doors.
 21
-21 Two Ethernet jacks (data only), north wall by outlet C, wired to switch 7.
+21 Four Ethernet jacks (data only), north wall by outlet C in the northwest corner, wired to switch 7.
 G2 ground bar and SP2 moved just south of the west window, 5 ft from switch 7. G2 has spare positions for
 surge protectors on outdoor Ethernet cables added later.
+P20
+P20 High outlet on the north wall beside switch 7 (C1, GFCI), for the switch. Switch 7 is an 8-port PoE switch.

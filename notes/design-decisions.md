@@ -35,8 +35,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Under the stairs (west end): LG WashTower, electric washer + GAS dryer (builder notes say all-electric
   WKEX200HBA: unresolved conflict). Cable ingress, modem and converter behind it.
 - S2 is on the west wall near the SW corner, directly west of where it was first drawn (owner decision, Nov 10, 2026).
-- Ethernet jacks 21 (owner decision, Nov 10, 2026): two data-only jacks on the north wall near switch 7, by
-  outlet C. Ground bar G2 (with SP2) sits just south of the west window, about 5 ft from switch 7, and is the
+- Ethernet jacks 21 (owner decision, Nov 10, 2026): four data-only jacks on the north wall near switch 7, by
+  outlet C. Switch 7 is an 8-port PoE switch with high outlet P20 beside it on C1. Ground bar G2 (with SP2) sits just south of the west window, about 5 ft from switch 7, and is the
   bar for surge protectors on outdoor Ethernet cables added later.
 - Garage Ethernet (proposed, Nov 10, 2026, not yet confirmed): sensor 12 on switch 7; APs 5, 6 and jacks 11 on
   switch 2; AP 17 and sensors 13, 14, 15, 19, 20 on switch 18. Details in REVIEW.md ("Garage Ethernet plan").
@@ -52,7 +52,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   One light in every riser from the garage floor up (owner decision, Nov 9, 2026): 2 garage door steps,
   2 hallway steps and the 13-riser flight, 17 in all, as one run.
   Stair wall lights L30-L32 on 3-way F (bottom, just north of E) + 2nd-floor S16 (top).
-- Power: P1, P2, P13 on C1 20A (network); P3-P7 C2 GFCI; P8-P10 C3 GFCI; cord reels P11, P12, wall jackshaft
+- Power: P1, P2, P13, P20 on C1 20A (network); P3-P7 C2 GFCI; P8-P10 C3 GFCI; cord reels P11, P12, wall jackshaft
   openers O1, O2 and ceiling trolley-opener outlets O3, O4 on C4; EV1, EV2 60A 240V (C5, C6),
   moved off the north windows Nov 9, 2026: EV1 at 9.5 ft and EV2 at 26.4 ft from the west wall;
   hallway P14-P17 east wall on C7.

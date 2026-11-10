@@ -166,6 +166,7 @@ OUTLETS = {
   ("C", "Computers and printers outlet, GFCI", "wall", 1.5, "C8 dedicated, 20A GFCI"),
   ("P1 P2", "Under the stairs, network gear, GFCI", "wall", 1.5, "C1 dedicated, 20A GFCI"),
   ("P13", "High outlet beside network switch 2, GFCI", "wall", 7.0, "C1 dedicated, 20A GFCI"),
+  ("P20", "High outlet on the north wall beside network switch 7, GFCI", "wall", 7.0, "C1 dedicated, 20A GFCI"),
   ("P3 P4 P5", "Garage north wall, GFCI", "wall", 1.5, "C2, 20A GFCI"),
   ("H1 H2", "Blind outlet, high on the west side of a north window", "blind", 7.0, "C2, 20A GFCI"),
   ("H3", "Blind outlet, high on the south side of the west window", "blind", 7.0, "C2, 20A GFCI"),
@@ -240,7 +241,7 @@ HALL_OUTLETS = {"P14", "P15", "P16", "P17"}
 NETWORK = {
  "G": [
   ("2", "switch", "PoE switch", "Garage southwest corner, high beside outlet P13", 7.0, "Feeds cameras 3 and 4, outdoor AP 5, AP 6 and jacks 11"),
-  ("7", "switch", "PoE switch", "Garage northwest corner", 7.0, "Feeds cameras 8 and 9, sensor 12 and jacks 21"),
+  ("7", "switch", "8-port PoE switch", "Garage northwest corner, north wall, beside outlet P20", 7.0, "Feeds cameras 8 and 9, sensor 12 and jacks 21"),
   ("18", "switch", "Small PoE switch", "Under the garage stairs", 3.0, "Fiber to the third-floor rack R1"),
   ("5", "ap", "Outdoor AP", "Outside the garage south wall, facing south", 9.0, "Outdoor copper run; surge protector SP1"),
   ("6", "ap", "UniFi wall AP", "Garage, mid west wall", 7.0, ""),
@@ -288,7 +289,7 @@ CABLES = {
   ]),
   ("7", [
    ("12", "Cat6", 3, [(11.81, 1.2)], "Up from switch 7, east along the north wall, then out across the ceiling"),
-   ("21", "Cat6A", 0, [(1.2, 0.3)], "Up from switch 7, a few feet east inside the north wall, down to the jack plate", None, 2),
+   ("21", "Cat6A", 0, [(1.2, 0.3)], "Up from switch 7, a few feet east inside the north wall, down to the jack plates", None, 4),
   ]),
   ("18", [
    ("17", "Cat6A", 13, [(41.15, 1.12)], "Up from switch 18, east through the stair wall into the hallway north wall"),
@@ -319,7 +320,7 @@ JACKS = {
        ("5", "Floor jack, west edge of the east clipped strip, across from B1", 0.1),
        ("6", "Wall jack, west office south wall, east of the windows", 1.5)],
 }
-JACKS["G"] = [("21", "Two Ethernet jacks on the north wall by outlet C, near switch 7", 1.5, "Two jacks, data only, no PoE"),
+JACKS["G"] = [("21", "Four Ethernet jacks on the north wall by outlet C, near switch 7", 1.5, "Four jacks, data only, no PoE"),
               ("11", "Two PoE jacks at 7 ft, on the wall between the overhead doors", 7.0, "Two jacks, PoE available (15 W each assumed); outdoor face of the wall, so surge protection applies")]
 for _lv, _rows in JACKS.items():
     for _i, _where, _h, *_note in _rows: NETWORK[_lv].append((_i, "jack", "Ethernet jack", _where, _h, _note[0] if _note else "Data only, no PoE"))
@@ -415,6 +416,7 @@ def build():
                 src = {"3:P18": "S9"}.get(f"{lv}:{oid}", oid)      # P18 is drawn off the wall with a leader; it sits under the switches
                 x, z = to_ft(lv, *dev[lv][src]["pts"][0])
                 if f"{lv}:{oid}" == "3:P15": x = 48.0     # old house attic side of the wall (A.4 wall at 47.67 ft)
+                if (lv, oid) == ("G", "P20"): x, z = 2.0, 0.3   # drawn below switch 7; it is on the north wall beside it
                 if lv == "G" and oid in ("H1", "H2"): z = 0.3   # drawn on the wall line; inside face of the north wall
                 if lv == "G" and oid == "H3": x = 0.3           # drawn outside the wall line to clear G2; inside face of the west wall
                 base = 0.0 if kind in ("outdoor",) and lv == "G" or oid.startswith("MS") else (HALL_FLOOR if (lv == "G" and oid in HALL_OUTLETS) else FLOOR[lv])
