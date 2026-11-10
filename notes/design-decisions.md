@@ -31,6 +31,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   L14 under-stair on S6; outside L11/L15 flank the left door, L12/L16 the right door, all on S3 (proposed).
   Garage lights are on switches only, not tied to the overhead doors.
 - Stairs garage -> 2nd floor: riser lights (L8 on the 2nd-floor drawing) on 3-way E (bottom) + 2nd-floor S4 (top).
+  One light in every riser from the garage floor up (owner decision, Nov 9, 2026): 2 garage door steps,
+  2 hallway steps and the 13-riser flight, 17 in all, as one run.
   Stair wall lights L30-L32 on 3-way F (bottom, just north of E) + 2nd-floor S16 (top).
 - Power: P1, P2, P13 on C1 20A (network); P3-P7 C2 GFCI; P8-P10 C3 GFCI; cord reels P11, P12, wall jackshaft
   openers O1, O2 and ceiling trolley-opener outlets O3, O4 on C4; EV1, EV2 60A 240V (C5, C6);

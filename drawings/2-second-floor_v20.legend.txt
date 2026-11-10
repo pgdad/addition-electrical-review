@@ -120,7 +120,7 @@ Lighting (pink), dimmable Govee
 Switches (green), Inovelli; S6, S9, S11 on/off, not dimmers
 L1-L6 Hall wall lights on the north wall
 L7 Stair up, light mid each riser
-L8 Stair down, light mid each riser
+L8 Stair down, light mid each riser, all 17 to garage floor
 L9, L10 Media ceiling at 25% and 75% of width
 L11 Media ceiling fan with light, center
 L12 Closet

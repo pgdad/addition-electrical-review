@@ -49,7 +49,7 @@ LIGHTS = {
  "2": {
   **{f"L{i}": ("Hall", "wall", 6.5, L2_CCT, "North wall") for i in range(1, 7)},
   "L7":  ("West stair up to 3rd floor", "riser", None, L2_CCT, "Riser lights; 14 drawn for 16 risers"),
-  "L8":  ("East stair down to garage", "riser", None, L2_CCT, "Riser lights; 7 drawn for 15 risers"),
+  "L8":  ("East stair down to garage", "riser", None, L2_CCT, "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17)"),
   "L9":  ("Media room", "ceiling", 9.0, L2_CCT, ""),
   "L10": ("Media room", "ceiling", 9.0, L2_CCT, ""),
   "L11": ("Media room", "ceiling", 8.2, L2_CCT, "Ceiling fan with light"),
@@ -152,6 +152,13 @@ PAIRS = [
 ]
 HALL_SWITCHES = {"G:S4", "G:S5", "G:S7", "G:E", "G:F"}   # stand on the raised hallway floor
 
+def east_riser_points():     # one light mid each riser, garage slab -> 2nd floor (17 risers)
+    rise, run = (F2 - 2.33) / 13, 10.1 / 13
+    pts = [[40.83 - 0.04, 0.27, 6.91], [41.67 - 0.04, 0.81, 6.91]]                   # garage door steps (DN 2R on A.2)
+    pts += [[44.85, HALL_FLOOR + 0.31, 5.23 + 0.04], [44.85, HALL_FLOOR + 0.94, 4.4 + 0.04]]   # hallway steps to the landing
+    pts += [[42.5 - i * run + 0.04, 2.33 + (i + 0.5) * rise, 2.17] for i in range(13)]   # flight west along the north wall
+    return [[round(v, 2) for v in p] for p in pts]
+
 def build():
     lights, switches = [], []
     dev = {lv: devices(lv) for lv in SCALES}
@@ -163,7 +170,9 @@ def build():
             d = dev[lv][lid]
             pts_ft = [to_ft(lv, *p) for p in d["pts"]]
             points = None
-            if typ == "riser":
+            if lid == "L8" and lv == "2":
+                points = east_riser_points()
+            elif typ == "riser":
                 points = []
                 for (x, z) in pts_ft:
                     if lid == "L8": y = east_stair_h(x) - 0.3

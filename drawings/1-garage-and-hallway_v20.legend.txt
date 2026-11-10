@@ -158,3 +158,5 @@ Smoke and CO alarms (added from sheet A.2)
 SD1 Smoke alarm, hallway ceiling
 CO1 Carbon monoxide alarm, hallway ceiling, beside SD1
 Hardwired, interconnected, battery backup (A.2 note 9); on a lighting circuit, confirm with electrician
+Stair riser lights (small pink dots): one mid each riser from the garage floor to the 2nd floor
+2 garage door steps + 2 hallway steps + 13-riser flight = 17; one run with 2nd-floor L8, on E + 2nd-floor S4, controllers D
