@@ -3505,7 +3505,7 @@
    "y": 7.0,
    "z": 1.2,
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Feeds cameras 8 and 9 and sensor 12",
+   "note": "Feeds cameras 8 and 9, sensor 12 and jacks 21",
    "fiber": "G:F7"
   },
   {
@@ -3566,6 +3566,21 @@
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "note": "Feeding switch not confirmed (probably 18)",
    "cable": "G:C17"
+  },
+  {
+   "key": "G:N21",
+   "id": "21",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "kind": "jack",
+   "name": "Ethernet jack",
+   "room": "Two Ethernet jacks on the north wall by outlet C, near switch 7",
+   "x": 4.27,
+   "y": 1.5,
+   "z": 0.3,
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "note": "Two jacks, data only, no PoE",
+   "cable": "G:C21"
   },
   {
    "key": "G:N11",
@@ -4718,6 +4733,45 @@
      11.81,
      9.3,
      4.26
+    ]
+   ]
+  },
+  {
+   "key": "G:C21",
+   "level": "G",
+   "from": "G:N7",
+   "to": "G:N21",
+   "cable": "Cat6A",
+   "poeW": 0,
+   "count": 2,
+   "port": "2-3",
+   "lengthFt": 25,
+   "route": "Up from switch 7, a few feet east inside the north wall, down to the jack plate",
+   "points": [
+    [
+     1.2,
+     7.0,
+     1.2
+    ],
+    [
+     1.2,
+     8.8,
+     1.2
+    ],
+    [
+     1.2,
+     8.8,
+     0.3
+    ],
+    [
+     4.27,
+     8.8,
+     0.3
+    ],
+    [
+     4.27,
+     1.5,
+     0.3
     ]
    ]
   },

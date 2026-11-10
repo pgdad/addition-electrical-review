@@ -188,3 +188,7 @@ H3
 H1, H2, H3 Blind outlets (teal), high beside the top of each window, on its left seen from inside:
 H1, H2 west of the two north windows, H3 south of the west window. On C2 (GFCI).
 L1-L8 moved 2 ft north (Nov 10, 2026): rows now 7.2 and 16.7 ft from the north wall, further from the doors.
+21
+21 Two Ethernet jacks (data only), north wall by outlet C, wired to switch 7.
+G2 ground bar and SP2 moved just south of the west window, 5 ft from switch 7. G2 has spare positions for
+surge protectors on outdoor Ethernet cables added later.

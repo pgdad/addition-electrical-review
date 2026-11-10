@@ -240,7 +240,7 @@ HALL_OUTLETS = {"P14", "P15", "P16", "P17"}
 NETWORK = {
  "G": [
   ("2", "switch", "PoE switch", "Garage southwest corner, high beside outlet P13", 7.0, "Feeds cameras 3 and 4, outdoor AP 5, AP 6 and jacks 11"),
-  ("7", "switch", "PoE switch", "Garage northwest corner", 7.0, "Feeds cameras 8 and 9 and sensor 12"),
+  ("7", "switch", "PoE switch", "Garage northwest corner", 7.0, "Feeds cameras 8 and 9, sensor 12 and jacks 21"),
   ("18", "switch", "Small PoE switch", "Under the garage stairs", 3.0, "Fiber to the third-floor rack R1"),
   ("5", "ap", "Outdoor AP", "Outside the garage south wall, facing south", 9.0, "Outdoor copper run; surge protector SP1"),
   ("6", "ap", "UniFi wall AP", "Garage, mid west wall", 7.0, ""),
@@ -288,6 +288,7 @@ CABLES = {
   ]),
   ("7", [
    ("12", "Cat6", 3, [(11.81, 1.2)], "Up from switch 7, east along the north wall, then out across the ceiling"),
+   ("21", "Cat6A", 0, [(1.2, 0.3)], "Up from switch 7, a few feet east inside the north wall, down to the jack plate", None, 2),
   ]),
   ("18", [
    ("17", "Cat6A", 13, [(41.15, 1.12)], "Up from switch 18, east through the stair wall into the hallway north wall"),
@@ -318,7 +319,8 @@ JACKS = {
        ("5", "Floor jack, west edge of the east clipped strip, across from B1", 0.1),
        ("6", "Wall jack, west office south wall, east of the windows", 1.5)],
 }
-JACKS["G"] = [("11", "Two PoE jacks at 7 ft, on the wall between the overhead doors", 7.0, "Two jacks, PoE available (15 W each assumed); outdoor face of the wall, so surge protection applies")]
+JACKS["G"] = [("21", "Two Ethernet jacks on the north wall by outlet C, near switch 7", 1.5, "Two jacks, data only, no PoE"),
+              ("11", "Two PoE jacks at 7 ft, on the wall between the overhead doors", 7.0, "Two jacks, PoE available (15 W each assumed); outdoor face of the wall, so surge protection applies")]
 for _lv, _rows in JACKS.items():
     for _i, _where, _h, *_note in _rows: NETWORK[_lv].append((_i, "jack", "Ethernet jack", _where, _h, _note[0] if _note else "Data only, no PoE"))
 _F = "Floor run: down from R1 into the floor framing, south then east under the east office floor"
@@ -422,6 +424,7 @@ def build():
     for lv, rows in NETWORK.items():
         for nid, kind, name, where, h, note in rows:
             x, z = to_ft(lv, *dev[lv][nid]["pts"][0])
+            if (lv, nid) == ("G", "21"): z = 0.3            # drawn below C to clear it; it is on the north wall
             base = HALL_FLOOR if (lv == "G" and nid in HALL_NET) else FLOOR[lv]
             rec = dict(key=f"{lv}:N{nid}", id=nid, level=lv, levelName=LEVEL_NAME[lv], kind=kind, name=name, room=where,
                        x=x, y=round(base + h, 2), z=z, source=SOURCE[lv])

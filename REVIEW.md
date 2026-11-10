@@ -66,10 +66,10 @@ The PDF wins for geometry; these are the differences found.
 - Blind outlets H1 to H3 (owner decision) are high beside the top of each window on its left seen from
   inside: H1 and H2 west of the north windows, H3 south of the west window, on C2 (GFCI). H2 is above P5 and
   beside EV2, and H3 shares its bit of wall with G2; they are at different heights, so this works.
-- **should-fix**: SP2 (z 2.3 to 3.5 ft) and ground bar G2 (z 3.8 to 5.0 ft) are plotted on the west window, and
-  switch 7 (z 1.2 ft) has only about 1 ft of wall between the corner and that window. Move the three to the
-  west wall just south of the window (z 4.6 to 6.5 ft, north of P6), or mount them on the north wall in the
-  corner beside C.
+- Resolved (Nov 10, 2026): ground bar G2 and surge protector SP2 were plotted on the west window; they are
+  now just south of it (z 4.8 to 6.0 ft), about 5 ft from switch 7. G2 is the ground bar for any outdoor
+  Ethernet cables added later at this corner. Switch 7 stays in the corner; mount it on the north wall, since
+  the west wall has only about 1 ft between the corner and the window.
 - L11 and L15 are plotted about 4.3 ft south of the west door wall because they mount on the balcony piers
   (owner decision).
 
@@ -269,7 +269,7 @@ ceiling AP 21 W (PoE+), PoE doorbell 10 W, ESP32 presence sensor 3 W, spare PoE 
 | Switch | Devices assumed on it | PoE ports | Estimated W | Comment |
 |--------|-----------------------|-----------|-------------|---------|
 | Garage 2 (SW) | cameras 3, 4; outdoor AP 5; AP 6; jacks 11 (2) | 6 | 75 | Needs 8 PoE ports, about 100 W and a fiber (SFP) port. |
-| Garage 7 (NW) | camera 8; camera 9; sensor 12; outlet C computers (no PoE) | 3 | 16 | Fine for a small switch with a fiber (SFP) port. |
+| Garage 7 (NW) | camera 8; camera 9; sensor 12; jacks 21 (2, no PoE) | 3 (5 ports in all) | 16 | Fine for a small switch with a fiber (SFP) port. |
 | Garage 18 (under stair) | camera 10; sensors 13, 14, 15, 19, 20; AP 17; doorbell 16 | 8 | 44 | 8 PoE ports plus SFP. Too many ports for a 5-port. |
 | Second floor 8 (SW closet) | sensors 1 to 6, 10 to 13; AP 9; AP 15; doorbell 14; jacks 7 (4) | 17 | 75 (105 if two jacks at 7 draw PoE) | Not a small switch. See below. |
 | Third floor R1 | AP 2; AP 3; sensors 7 to 13; jacks 4, 5, 6 | 12 | 56 | The aggregation switch beside it takes the five fiber uplinks (garage 2, 7, 18, second-floor 8, shed 1) plus the modem converter fiber: at least 6 SFP ports. |
@@ -339,6 +339,7 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 | 2 | 2 | AP 6, west wall | Cat6A | 25 ft | 13 W |
 | 2 | 3-4 | Jacks 11 (two), between the doors | 2 x Cat6A | 2 x 35 ft | 30 W |
 | 7 (NW corner) | 1 | Sensor 12, ceiling west half | Cat6 | 25 ft | 3 W |
+| 7 | 2-3 | Jacks 21 (two), north wall by outlet C | 2 x Cat6A | 2 x 25 ft | none |
 | 18 (under stair) | 1 | AP 17, hallway north wall | Cat6A | 25 ft | 13 W |
 | 18 | 2 | Sensor 13, ceiling east half | Cat6 | 30 ft | 3 W |
 | 18 | 3 | Sensor 14, hallway north wall | Cat6 | 20 ft | 3 W |
@@ -349,7 +350,8 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 - Sensor 12 moved from switch 2 to switch 7: it is 11 ft from 7 and 19 ft from 2, and 7 has spare ports.
 - Cameras 3, 4, 8, 9, 10 and doorbell 16 also land on these switches (see the PoE table) but are not drawn
   on the page.
-- Jacks 11 are the only Ethernet jacks on this level. The drawing calls them PoE jacks, so 15 W each is
+- Jacks 21 (owner decision) are two data-only jacks on the north wall by computer outlet C. Jacks 11 are
+  the other jacks on this level. The drawing calls those PoE jacks, so 15 W each is
   allowed for. They are plotted on the outside face of the wall between the doors; if they really are
   outdoors they still need surge protection (finding 3).
 - The hallway runs from switch 18 cross the stairwell at the hallway's north end; route them in the wall
