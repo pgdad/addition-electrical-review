@@ -32,10 +32,10 @@ Hallway
 400A service in
 A
 B
-C
+P22
 D
-F
-E
+S9
+S8
 W/D
 L1
 L2
@@ -89,7 +89,7 @@ SP1
 SP2
 Devices
 1 Cable ingress, modem, fiber converter
-2 PoE switch, southwest corner
+2 PoE switch (8-port + fiber), southwest corner
 3 Outdoor camera, facing west
 4 Outdoor camera, facing south
 5 Outdoor AP, facing south
@@ -106,11 +106,11 @@ Devices
 16 PoE video doorbell, surge SP3
 A W/D: 120V (C9) + 240V 30A (C15) + gas stub
 B Outdoor outlet, AirGradient, C2 GFCI, WR
-C Computers, printers outlet, C8 20A GFCI
+P22 Computers, printers outlet, C8 20A GFCI
 D Stair lights, 2 Matter controllers, on C10
-E, F 3-way switches, stair bottom (F: wall lights)
+S8, S9 3-way aux switches, stair foot (S9: wall lights)
 Mini-splits on A.2 left off; power is MS1-MS4
-17 UniFi wall AP, hallway north wall
+17 UniFi wall AP, hallway north wall, on switch 18
 18 PoE switch (8-port + fiber), fiber to 3rd fl
 Lighting
 L1-L8 Garage ceiling, 2 rows of 4
@@ -157,9 +157,9 @@ SD1 Smoke alarm, hallway ceiling
 CO1 Carbon monoxide alarm, hallway ceiling, beside SD1
 Hardwired, interconnected, battery backup (A.2 note 9); on a lighting circuit, confirm with electrician
 Stair riser lights (small pink dots): one mid each riser from the garage floor to the 2nd floor
-2 garage door steps + 2 hallway steps + 13-riser flight = 17; one run with 2nd-floor L8, on E + 2nd-floor S4, controllers D
+2 garage door steps + 2 hallway steps + 13-riser flight = 17; one run with 2nd-floor L8, on S8 + 2nd-floor S4, controllers D
 Circuits added, GFCI (Nov 2026)
-C8 C (computers, printers) 20A dedicated, GFCI
+C8 P22 (computers, printers) 20A dedicated, GFCI
 C9 A laundry 20A 120V, GFCI. C15 A dryer 30A 240V. Both run, plus a gas stub, so either WashTower fits.
 C10 Lighting 15A: L1-L16, stair controllers D (hardwired), alarms SD1, CO1
 All garage receptacle circuits C1-C4, C8, C9 are GFCI at the breaker, so the reset is reachable;
@@ -187,7 +187,7 @@ H1, H2, H3 Blind outlets (teal), high beside the top of each window, on its left
 H1, H2 west of the two north windows, H3 south of the west window. On C2 (GFCI).
 L1-L8 moved 2 ft north (Nov 10, 2026): rows now 7.2 and 16.7 ft from the north wall, further from the doors.
 21
-21 Four Ethernet jacks (data only), north wall by outlet C in the northwest corner, wired to switch 7.
+21 Four Ethernet jacks (data only), north wall by outlet P22 in the northwest corner, wired to switch 7.
 G2 ground bar and SP2 moved just south of the west window, 5 ft from switch 7. G2 has spare positions for
 surge protectors on outdoor Ethernet cables added later.
 P20
@@ -205,5 +205,10 @@ P21
 P21 Outdoor GFCI weather-resistant outlet with an in-use cover, outside the hallway south wall just west of the front
 door, serving the deck. On hallway circuit C7.   Switch 18 is an 8-port PoE switch with a fiber port.
 3-way pairs (Nov 10, 2026): one switch of each pair is an Inovelli aux switch, with a traveler wire to the Inovelli main switch.
-Aux: S2 (main S1), S7 (main S4), E (main is second-floor S4), F (main is second-floor S16). Run 3-conductor cable
-(traveler + neutral) between the two boxes of each pair; E and F each need their own traveler up the stair.
+Aux: S2 (main S1), S7 (main S4), S8 (main is second-floor S4), S9 (main is second-floor S16). Run 3-conductor cable
+(traveler + neutral) between the two boxes of each pair; S8 and S9 each need their own traveler up the stair.
+MP
+Renamed (Nov 10, 2026): stair-foot switches E, F are now S8, S9 (green), a two-gang on the hallway west wall just north of
+the garage door, clear of the door opening. Outlet C is now P22 (red). MP is labelled at the red bar; its location is still open.
+O1, O2 wall opener outlets stay; ceiling outlets O3, O4 are spares, just in case. All outside garage lights stay on S3.
+Shed feeder: lay a second conduit beside the feeder conduit for the fiber to shed switch 1.

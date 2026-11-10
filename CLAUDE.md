@@ -7,7 +7,7 @@ You are reviewing a homeowner's electrical, lighting and low-voltage design for 
 - plans/A2-garage-first-floor.pdf, A3-second-floor.pdf, A4-third-floor.pdf: the architect's sheets
   (dimensions, walls, windows, doors, stairs). Treat these as the geometry reference.
 - drawings/*.svg: the device plans (one per level, north up, roughly to scale). Color key:
-  green = switches (S#, or letters E, F), pink = lights (L#), amber = power/panels/equipment (amber pills SD#/CO# = smoke and CO alarms),
+  green = switches (S#), pink = lights (L#), amber = power/panels/equipment (amber pills SD#/CO# = smoke and CO alarms),
   red = outlets (P#, O#, EV#), teal = blind outlets (H#), purple = network (numbers), blue = windows.
 - drawings/*.legend.txt: every text label pulled out of each SVG (quick to grep).
 - notes/design-decisions.md: the owner's decisions, what is only proposed, and open questions.
@@ -18,7 +18,7 @@ Parse SVG coordinates for device positions; do not guess positions from the lege
 ## Task 1: review
 Write REVIEW.md. For each level, check and report:
 1. Consistency: every device in a legend appears on the drawing and vice versa; IDs unique per level;
-   cross-level pairs agree (2nd-floor S3/S4/S15/S16/S17 with garage E/F and 3rd-floor S8/S9/S10).
+   cross-level pairs agree (2nd-floor S3/S4/S15/S16/S17 with garage S8/S9 and 3rd-floor S8/S9/S10).
 2. Lighting control: every light has a switch; every 3-way pair has one switch at each end of the
    stair or room it serves; nothing is controlled from a spot you can't reach without crossing the dark area.
 3. Code-oriented sanity checks (NEC 2023, Ohio residential): GFCI/AFCI where required, bathroom and
@@ -41,7 +41,7 @@ opens by double-click in a browser:
 - Place every light (L#) at its drawing position, at ceiling height for ceiling lights, ~6.5 ft for wall
   lights, at riser height for stair riser lights, under-cabinet height for L16. Convert SVG coordinates
   to feet using each drawing's own labeled dimensions; write the scale you derived in a comment.
-- Place every switch (S#, E, F) at 4 ft, and draw a thin line from each switch to the lights it controls;
+- Place every switch (S#) at 4 ft, and draw a thin line from each switch to the lights it controls;
   3-way pairs share a color.
 - UI: orbit/zoom; checkboxes to show/hide each level; click a light or switch to see its ID, room,
   controlling switches and circuit; a toggle that "turns on" lights (emissive + point light) per switch

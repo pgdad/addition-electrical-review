@@ -110,8 +110,8 @@ SWITCHES = {
  ("G", "S7"): ("Hallway, west wall by the garage door", k("G", "L9", "L10")),
  ("G", "S5"): ("Hallway east wall, south (latch) edge of the old-house door, two-gang with S4", k("G", "L13")),
  ("G", "S6"): ("Garage, at the under-stair space", k("G", "L14")),
- ("G", "E"):  ("Hallway, foot of the stairs", k("2", "L8")),
- ("G", "F"):  ("Hallway, foot of the stairs", k("2", "L30", "L31", "L32")),
+ ("G", "S8"):  ("Hallway west wall at the foot of the stairs, north of the garage door", k("2", "L8")),
+ ("G", "S9"):  ("Hallway west wall at the foot of the stairs, north of the garage door", k("2", "L30", "L31", "L32")),
  ("2", "S1"): ("Hall, south wall", rng("2", 1, 3)),
  ("2", "S2"): ("Hall, south wall", rng("2", 4, 6)),
  ("2", "S3"): ("Hall, foot of the west stair", k("2", "L7")),
@@ -137,7 +137,7 @@ SWITCHES = {
  ("2", "S14"): ("Media room west wall, beside AP 9", rng("2", 25, 27)),
  ("2", "S15"): ("Hall, foot of the west stair", k("2", "L33", "L34")),
  ("2", "S16"): ("Hall, head of the east stair", k("2", "L30", "L31", "L32")),
- ("2", "S17"): ("Hall, foot of the west stair (above S15)", k("2", "L35")),
+ ("2", "S17"): ("Hall, foot of the west stair", k("2", "L35")),
  ("3", "S1"): ("West office, top of the stairs", k("3", "L1", "L2")),
  ("3", "S2"): ("West office, by the shared door", k("3", "L1", "L2")),
  ("3", "S3"): ("East office, by the shared door", k("3", "L3", "L4", "L5")),
@@ -157,7 +157,7 @@ SWITCHES = {
 # 3-way pairs (one colour per pair in the model)
 PAIRS = [
  (["G:S1", "G:S2"], "#ff8a3d"), (["G:S4", "G:S7"], "#4dd0e1"),
- (["G:E", "2:S4"], "#ffd54f"), (["G:F", "2:S16"], "#ba68c8"),
+ (["G:S8", "2:S4"], "#ffd54f"), (["G:S9", "2:S16"], "#ba68c8"),
  (["2:S3", "3:S8"], "#81c784"), (["2:S15", "3:S9"], "#f06292"),
  (["2:S17", "3:S10"], "#64b5f6"), (["3:S1", "3:S2"], "#e57373"),
  (["2:S1", "2:S19"], "#aed581"), (["2:S2", "2:S20"], "#4db6ac"), (["2:S8", "2:S21"], "#ffb74d"),
@@ -165,10 +165,10 @@ PAIRS = [
 ]
 # One switch of every 3-way pair is an Inovelli aux switch (owner decision, Nov 10, 2026); the other is the
 # Inovelli main switch that holds the load (or runs the smart bulbs). A traveler runs between the two boxes.
-AUX = {"G:S2", "G:S7", "G:E", "G:F", "3:S8", "3:S9", "3:S10", "3:S2",
+AUX = {"G:S2", "G:S7", "G:S8", "G:S9", "3:S8", "3:S9", "3:S10", "3:S2",
        "2:S19", "2:S20", "2:S21", "2:S22", "2:S23", "2:S25", "2:S26"}
 assert all(sum(m in AUX for m in members) == 1 for members, _ in PAIRS)
-HALL_SWITCHES = {"G:S4", "G:S5", "G:S7", "G:E", "G:F"}   # stand on the raised hallway floor
+HALL_SWITCHES = {"G:S4", "G:S5", "G:S7", "G:S8", "G:S9"}   # stand on the raised hallway floor
 
 # ---- outlets: (ids, description, kind, height above the floor in ft, circuit). Heights are assumptions:
 # 1.5 ft wall, 3.7 ft counter, ceiling height for ceiling outlets, 7 ft or so for blind outlets.
@@ -178,7 +178,7 @@ OUTLETS = {
  "G": [
   ("A", "W/D outlets under the stairs: 120V 20A and 240V 30A, plus a gas stub, so either WashTower model fits", "appliance", 3.0, "C9 laundry 20A 120V GFCI and C15 dryer 30A 240V"),
   ("B", "Outdoor outlet, AirGradient, GFCI weather-resistant", "outdoor", 1.5, "C2, 20A GFCI"),
-  ("C", "Computers and printers outlet, GFCI", "wall", 1.5, "C8 dedicated, 20A GFCI"),
+  ("P22", "Computers and printers outlet, GFCI", "wall", 1.5, "C8 dedicated, 20A GFCI"),
   ("P1 P2", "Under the stairs, network gear, GFCI", "wall", 1.5, "C1 dedicated, 20A GFCI"),
   ("P13", "High outlet beside network switch 2, GFCI", "wall", 7.0, "C1 dedicated, 20A GFCI"),
   ("P20", "High outlet on the north wall beside network switch 7, GFCI", "wall", 7.0, "C1 dedicated, 20A GFCI"),
@@ -257,13 +257,13 @@ HALL_OUTLETS = {"P14", "P15", "P16", "P17"}
 # level -> [(item number, kind ap|switch, name, where, height above the floor in ft (assumed), note)]
 NETWORK = {
  "G": [
-  ("2", "switch", "PoE switch", "Garage southwest corner, high beside outlet P13", 7.0, "Feeds cameras 3 and 4, outdoor AP 5, AP 6 and jacks 11"),
+  ("2", "switch", "8-port PoE switch with a fiber port", "Garage southwest corner, high beside outlet P13", 7.0, "Feeds cameras 3 and 4, outdoor AP 5, AP 6 and jacks 11"),
   ("7", "switch", "8-port PoE switch", "Garage northwest corner, north wall, beside outlet P20", 7.0, "Feeds cameras 8 and 9, sensor 12 and jacks 21"),
   ("18", "switch", "8-port PoE switch with a fiber port", "Under the garage stairs", 3.0, "Fiber to the third-floor rack R1"),
   ("5", "ap", "Outdoor AP", "Outside the garage south wall, facing south", 9.0, "Outdoor copper run; surge protector SP1"),
   ("6", "ap", "UniFi wall AP", "Garage, mid west wall", 7.0, ""),
   ("16", "doorbell", "PoE video doorbell", "Outside the front door, on its east (latch) side", 4.0, "Outdoor copper run: surge protector SP3 on ground bar G3 at switch 18"),
-  ("17", "ap", "UniFi wall AP", "Hallway north wall", 7.0, "Feeding switch not confirmed (probably 18)"),
+  ("17", "ap", "UniFi wall AP", "Hallway north wall", 7.0, "Fed from switch 18"),
  ],
  "2": [
   ("8", "switch", "16-port PoE switch with a fiber port", "Media closet, southwest", 5.0, "West half of the floor, the projector jacks and doorbell 14 (via SP1 on GB1)"),
@@ -364,7 +364,7 @@ FIBER_SLACK = 15.0
 JACKS = {
  "3": [("4", "Floor jack, east edge of the west clipped strip, across from R2", 0.1),
        ("5", "Floor jack, west edge of the east clipped strip, across from B1", 0.1),
-       ("6", "Wall jack, west office south wall, east of the windows", 1.5)],
+       ("14", "Wall jack, west office south wall, east of the windows", 1.5)],
 }
 JACKS["2"] = [("7", "Four PoE jacks on the projector wall (media north wall)", 1.5, "Four jacks, PoE available (15 W each assumed)")]
 JACKS["G"] = [("21", "Four Ethernet jacks on the north wall by outlet C, near switch 7", 1.5, "Four jacks, data only, no PoE"),
@@ -375,7 +375,7 @@ _F = "Floor run: down from R1 into the floor framing, south then east under the 
 CABLES["3"][0][1].extend([
   ("4",  "Cat6A", 0, [(24.05, 16.12)], _F + ", up into the floor box", -0.6),
   ("5",  "Cat6A", 0, [(24.05, 16.12)], _F + " to the far floor box", -0.6),
-  ("6",  "Cat6A", 0, [(24.05, 12.7), (14.12, 12.7)], "West bundle with sensor 13 above the west office ceiling, then south and down inside the south wall"),
+  ("14", "Cat6A", 0, [(24.05, 12.7), (14.12, 12.7)], "West bundle with sensor 13 above the west office ceiling, then south and down inside the south wall"),
 ])
 HALL_NET = {"17", "14", "15", "16", "19", "20"}
 # presence sensors (PoE ESP32 units): level -> [(item numbers, where, height above the floor in ft, assumed)]
@@ -446,10 +446,10 @@ def build():
         for m in members: pair_of[m] = ([x for x in members if x != m][0], color)
     for (lv, sid), (room, ctl) in SWITCHES.items():
         key = f"{lv}:{sid}"
-        src = "S15" if key == "2:S17" else sid            # S17 is "above S15": same box position
+        src = sid
         x, z = to_ft(lv, *dev[lv][src]["pts"][0])
         base = HALL_FLOOR if key in HALL_SWITCHES else FLOOR[lv]
-        y = base + {"2:S17": 4.7, "3:S11": 3.0}.get(key, 4.0)    # S11 is low so children can reach it
+        y = base + {"3:S11": 3.0}.get(key, 4.0)    # S11 is low so children can reach it
         if key in ("G:S4", "G:S5"): x, z = 47.4, (20.0 if sid == "S4" else 20.5)  # two-gang on the east wall, just south of the door jamb at 19.6 ft
         if key in ("G:S1", "G:S3"): x, z = 42.2, (9.1 if sid == "S1" else 9.6)   # two-gang on the wall, just south of the door jamb at 8.7 ft
         if key == "3:S6": x = 47.4                      # sheet draws the small attic narrower than A.4; keep S6 on its east wall
@@ -526,7 +526,7 @@ def build():
     for lv in SCALES:
         plotted = {n for n in dev[lv] if re.fullmatch(r"L\d+", n)}
         assert plotted == set(LIGHTS[lv]), (lv, plotted ^ set(LIGHTS[lv]))
-        sw = {n for n, d in dev[lv].items() if re.fullmatch(r"S\d+", n)} | ({"E", "F"} if lv == "G" else set())
+        sw = {n for n, d in dev[lv].items() if re.fullmatch(r"S\d+", n)}
         assert sw == {s for (l, s) in SWITCHES if l == lv}, (lv, sw ^ {s for (l, s) in SWITCHES if l == lv})
     return dict(
         units="feet",

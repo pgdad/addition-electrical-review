@@ -8,9 +8,21 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Service: 400A, entering at main panel MP on the garage north wall, just east of the W/D under the stairs.
 - 3-way pairs (owner decision, Nov 10, 2026): in every 3-way pair, on all floors, one switch is an Inovelli
   aux switch and the other is the Inovelli main switch; a traveler wire runs between the two boxes.
-  Which end is the aux is proposed, not owner-confirmed: garage S2 (main S1), S7 (main S4), E (main 2F S4),
-  F (main 2F S16); second floor S19 (S1), S20 (S2), S21 (S8), S22 (S5), S23 (S6), S25 (S24), S26 (S10);
+  Which end is the aux is confirmed by the owner (Nov 10, 2026): garage S2 (main S1), S7 (main S4), S8 (main 2F S4),
+  S9 (main 2F S16); second floor S19 (S1), S20 (S2), S21 (S8), S22 (S5), S23 (S6), S25 (S24), S26 (S10);
   third floor S2 (S1), S8 (2F S3), S9 (2F S15), S10 (2F S17). The shed has no 3-way pairs.
+- Owner decisions, Nov 10, 2026 (second round):
+  - Garage switch 2 is an 8-port PoE switch with a fiber port. Switch 18 feeds AP 17.
+  - Renames: garage stair-foot switches E, F are now S8, S9 (two-gang on the hallway west wall just north of the
+    garage door); garage outlet C is now P22; third-floor wall jack 6 is now 14. Older notes below may still
+    use the old names.
+  - Second floor: S3, S15, S17, S19 are a four-gang row on the hall south wall at the west stair foot; P1 just
+    east of them; stair controllers D on the hall north wall. Island outlet P14 position is left to the
+    builder/electrician. The second-floor subpanel idea is a note to the electrician only.
+  - O1/O2 wall opener outlets stay; O3/O4 are spares, just in case. All outside garage lights on S3.
+  - No blind outlets in the gaps between the west-office south windows. AP count and coverage accepted as is.
+  - Ethernet plans for the garage, second and third floors are confirmed.
+  - The shed feeder trench gets a second conduit for the fiber.
 - Lighting standard: dimmable Govee ceiling lights; Inovelli White Series wall switches in smart-bulb mode
   (switches send scene/automation commands; the bulbs stay powered).
   Exception (owner decision, Nov 9, 2026): switches on non-smart loads are plain on/off, not dimmers and not
@@ -56,7 +68,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   bar for surge protectors on outdoor Ethernet cables added later.
 - PoE jacks 11 are inside the garage, on the east face of the short north-south wall between the overhead
   doors (owner decision, Nov 10, 2026).
-- Garage Ethernet (proposed, Nov 10, 2026, not yet confirmed): sensor 12 on switch 7; APs 5, 6 and jacks 11 on
+- Garage Ethernet (confirmed by the owner, Nov 10, 2026): sensor 12 on switch 7; APs 5, 6 and jacks 11 on
   switch 2; AP 17 and sensors 13, 14, 15, 19, 20 on switch 18. Details in REVIEW.md ("Garage Ethernet plan").
 - Lights: L1-L8 garage ceiling on S1+S2 3-way; L9, L10 hallway on S4+S7 3-way; L13 deck door on S5;
   L14 under-stair on S6; outside L11/L15 flank the left door on the balcony piers, L12/L16 the right door, all on S3 (proposed).
@@ -97,7 +109,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   S10 at the north end of the family/bath wall; counter outlets P25, P26 south of the sink on C4; sauna light
   driver J on the bath north wall; switch 8 is a 16-port PoE switch; new network switch 16 in the family room
   southeast corner. Every network switch has a fiber connection to the third-floor switch in R1.
-- Second-floor Ethernet (proposed, not yet confirmed): west half, projector jacks and doorbell on switch 8;
+- Second-floor Ethernet (confirmed by the owner, Nov 10, 2026): west half, projector jacks and doorbell on switch 8;
   east half on switch 16. Details in REVIEW.md ("Second-floor Ethernet plan").
 - Lights: L1-L6 hall (S1, S2); L7 stair-up risers (S3 bottom + 3rd-floor S8 top); L8 stair-down risers
   (S4 + garage E); L9-L11 media (S5, S6); L12 media closet (S7); L13-L15 kitchen (S8); L16 under-cabinet (S9);
@@ -139,7 +151,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   side of the wall.
 - Lights L1-L9 on S1-S7, L10 on S11; stair risers S8; stair wall lights S9; L35 (2nd-floor stair ceiling) S10.
 
-- Ethernet (proposed, Nov 10, 2026, not yet confirmed): APs 2, 3 and presence sensors 7 to 13 are home runs
+- Ethernet (confirmed by the owner, Nov 10, 2026): APs 2, 3 and presence sensors 7 to 13 are home runs
   from one PoE switch in rack R1: Cat6A to the APs, Cat6 to the sensors, plus data-only (non-PoE) Cat6A runs to
   Ethernet jacks 4, 5 and 6; about 360 ft in all. Routes and
   lengths are in REVIEW.md ("Third-floor Ethernet plan") and drawn on lights-3d.html.
@@ -165,8 +177,4 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Main panel location: deferred by the owner on Nov 10, 2026. Candidates: garage east wall south of S1/S3, or
   the garage side of the stair wall east of the water heater. It cannot stay under the stair.
 - Sauna/shed switches S1, S2, S4: east or west of the porch door?
-- Do wall jackshaft openers O1, O2 come off now that ceiling trolley outlets O3, O4 exist?
-- Which switch feeds hallway AP 17 (probably the new under-stair switch 18)?
-- Are all four outside garage lights OK on one switch S3?
-- Blind outlets in the gaps between the west-office south windows?
 - Riser fiber path, edge switch locations, rack cooling, which switch feeds the 2nd-floor hall sensors.

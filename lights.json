@@ -510,7 +510,7 @@
    "z": 3.04,
    "type": "riser",
    "switches": [
-    "G:E",
+    "G:S8",
     "2:S4"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
@@ -983,7 +983,7 @@
    "z": 0.67,
    "type": "wall",
    "switches": [
-    "G:F",
+    "G:S9",
     "2:S16"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
@@ -1001,7 +1001,7 @@
    "z": 0.67,
    "type": "wall",
    "switches": [
-    "G:F",
+    "G:S9",
     "2:S16"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
@@ -1019,7 +1019,7 @@
    "z": 0.67,
    "type": "wall",
    "switches": [
-    "G:F",
+    "G:S9",
     "2:S16"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
@@ -1479,14 +1479,14 @@
    "mode": "smart-bulb dimmer"
   },
   {
-   "key": "G:E",
-   "id": "E",
+   "key": "G:S8",
+   "id": "S8",
    "level": "G",
    "levelName": "Garage and hallway",
-   "room": "Hallway, foot of the stairs",
-   "x": 43.54,
+   "room": "Hallway west wall at the foot of the stairs, north of the garage door",
+   "x": 43.4,
    "y": 5.08,
-   "z": 6.27,
+   "z": 4.58,
    "controls": [
     "2:L8"
    ],
@@ -1497,14 +1497,14 @@
    "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
-   "key": "G:F",
-   "id": "F",
+   "key": "G:S9",
+   "id": "S9",
    "level": "G",
    "levelName": "Garage and hallway",
-   "room": "Hallway, foot of the stairs",
-   "x": 43.54,
+   "room": "Hallway west wall at the foot of the stairs, north of the garage door",
+   "x": 43.4,
    "y": 5.08,
-   "z": 4.49,
+   "z": 3.54,
    "controls": [
     "2:L30",
     "2:L31",
@@ -1562,7 +1562,7 @@
    "level": "2",
    "levelName": "Second floor",
    "room": "Hall, foot of the west stair",
-   "x": 10.6,
+   "x": 10.44,
    "y": 14.46,
    "z": 3.25,
    "controls": [
@@ -1587,7 +1587,7 @@
     "2:L8"
    ],
    "source": "drawings/2-second-floor_v20.svg",
-   "pairWith": "G:E",
+   "pairWith": "G:S8",
    "pairColor": "#ffd54f",
    "role": "main",
    "mode": "smart-bulb dimmer"
@@ -1751,9 +1751,9 @@
    "level": "2",
    "levelName": "Second floor",
    "room": "Hall, foot of the west stair (companion to S1)",
-   "x": 10.85,
+   "x": 14.6,
    "y": 14.46,
-   "z": 2.17,
+   "z": 3.25,
    "controls": [
     "2:L1",
     "2:L2",
@@ -1934,7 +1934,7 @@
    "level": "2",
    "levelName": "Second floor",
    "room": "Hall, foot of the west stair",
-   "x": 12.1,
+   "x": 11.85,
    "y": 14.46,
    "z": 3.25,
    "controls": [
@@ -1962,7 +1962,7 @@
     "2:L32"
    ],
    "source": "drawings/2-second-floor_v20.svg",
-   "pairWith": "G:F",
+   "pairWith": "G:S9",
    "pairColor": "#ba68c8",
    "role": "main",
    "mode": "smart-bulb dimmer"
@@ -1972,9 +1972,9 @@
    "id": "S17",
    "level": "2",
    "levelName": "Second floor",
-   "room": "Hall, foot of the west stair (above S15)",
-   "x": 12.1,
-   "y": 15.16,
+   "room": "Hall, foot of the west stair",
+   "x": 13.27,
+   "y": 14.46,
    "z": 3.25,
    "controls": [
     "2:L35"
@@ -2260,8 +2260,8 @@
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
-   "key": "G:C",
-   "id": "C",
+   "key": "G:P22",
+   "id": "P22",
    "level": "G",
    "levelName": "Garage and hallway",
    "room": "Computers and printers outlet, GFCI",
@@ -2825,7 +2825,7 @@
    "levelName": "Second floor",
    "room": "Hall, south wall",
    "kind": "wall",
-   "x": 13.52,
+   "x": 16.02,
    "y": 11.96,
    "z": 3.25,
    "circuit": "C12, 20A AFCI",
@@ -3671,7 +3671,7 @@
    "level": "G",
    "levelName": "Garage and hallway",
    "kind": "switch",
-   "name": "PoE switch",
+   "name": "8-port PoE switch with a fiber port",
    "room": "Garage southwest corner, high beside outlet P13",
    "x": 1.2,
    "y": 7.0,
@@ -3766,7 +3766,7 @@
    "y": 8.08,
    "z": 1.12,
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Feeding switch not confirmed (probably 18)",
+   "note": "Fed from switch 18",
    "cable": "G:C17"
   },
   {
@@ -4184,8 +4184,8 @@
    "cable": "3:C5"
   },
   {
-   "key": "3:N6",
-   "id": "6",
+   "key": "3:N14",
+   "id": "14",
    "level": "3",
    "levelName": "Third floor",
    "kind": "jack",
@@ -4196,7 +4196,7 @@
    "z": 15.56,
    "source": "drawings/3-third-floor_v32.svg",
    "note": "Data only, no PoE",
-   "cable": "3:C6"
+   "cable": "3:C14"
   },
   {
    "key": "3:N7",
@@ -4796,10 +4796,10 @@
    ]
   },
   {
-   "key": "3:C6",
+   "key": "3:C14",
    "level": "3",
    "from": "3:N1",
-   "to": "3:N6",
+   "to": "3:N14",
    "cable": "Cat6A",
    "poeW": 0,
    "count": 1,

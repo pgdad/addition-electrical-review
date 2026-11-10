@@ -16,20 +16,15 @@ How to read this:
 - Ranking: **must-fix** = likely to fail inspection, be unbuildable as drawn, or be unsafe;
   **should-fix** = works but will annoy or cost money later; **nice-to-have** = drawing hygiene and comfort.
 
-## Top 10 findings
+## Open findings
+
+The owner settled most of the earlier findings on Nov 10, 2026; they are listed under "Settled on Nov 10, 2026" near the end.
 
 | # | Rank | Finding | Where |
 |---|------|---------|-------|
 | 1 | must-fix | Main panel MP is drawn on the north wall inside the footprint of the garage stair (x 36.7 to 39.7 ft). The stair soffit there is roughly 5 to 6 ft above the slab, below the 6.5 ft headroom a panel's working space needs. A.2 also shows a wall along the south side of that stair, so MP, the WashTower, modem 1, switch 18 and P1/P2 would be inside a 3'4" wide enclosed under-stair space. | garage v20: MP, W/D, 1, 18, L14 |
-| 2 | should-fix | Garage PoE switch 2 needs 6 PoE ports, about 75 W and a fiber port. The other switches are settled: garage 7 (8-port), garage 18 (8-port plus fiber), second-floor 8 (16-port) and the new second-floor 16 (8-port plus fiber). | garage v20: 2 |
-| 3 | should-fix | Second-floor kitchen: island outlet P14 needs its position checked against the NEC 2023 island rule, and wall receptacle spacing runs long in a few places. (The counter south of the sink now has P25 and P26.) | second floor v20: P14 |
-| 4 | should-fix | Third floor: ID 6 is used twice (network jack 6 and the empty rack opening), and ceiling outlet P21 only counts toward wall spacing if it is within 5.5 ft of the floor. | third floor v32: 6, P21 |
-| 5 | nice-to-have | Garage labelling: MP has no text on the plan, device C reads like a circuit number, and switches E and F are drawn amber instead of green. | garage v20: MP, C, E, F |
-| 6 | nice-to-have | Garage hallway: switch E is plotted in the hallway door opening at the stair foot, and nothing by the overhead doors controls L1 to L8. | garage v20: E, F |
-| 7 | nice-to-have | Second floor: S17 and stair controller D need real locations, motorized screen B covers the balcony door when down, and the exterior stair is unlit at the bottom. | second floor v20: S17, D, B |
-| 8 | nice-to-have | Third-floor sheet colors do not follow the key: blind outlets H1 to H5 are purple, network items are teal, blue and coral, and power items A to E are red. | third floor v32 |
-| 9 | nice-to-have | Shed site sketch is labelled "East walls in line", but it is the shed's east wall in line with the garage's west wall. | shed v6 |
-| 10 | nice-to-have | A 125 A subpanel on the second floor would replace about 24 home runs through the rated garage ceiling with one feeder. | second floor v20 |
+| 2 | nice-to-have | Garage: nothing by the overhead doors controls L1 to L8 (S2 is on the west wall near the SW corner). A scene button between the doors would cover it. | garage v20: S2 |
+| 3 | nice-to-have | Second floor: motorized screen B covers the balcony door when it is down, and the exterior stair is unlit at the bottom. | second floor v20: B |
 
 ## PDF vs drawing geometry mismatches
 
@@ -51,13 +46,10 @@ The PDF wins for geometry; these are the differences found.
 ## Garage and hallway (`1-garage-and-hallway_v20.svg`)
 
 ### Consistency
-- Every plotted ID has a legend row and every legend row has a symbol, with one exception: **MP** has a
-  legend row but no "MP" text on the plan (it is the unlabeled red bar). *nice-to-have*: label it.
-- IDs are unique. Two naming collisions are worth cleaning up (*nice-to-have*):
-  device **C** ("20A circuit, computers, printers") reads like a circuit number next to C1 to C7, and
-  switches **E** and **F** are drawn amber although the color key says switches are green.
-  The second floor reuses the letters E (range) and F (bidet), so "garage E/F" needs the level every time.
-- Cross-level pairs agree: E pairs with second-floor S4 (riser lights L8) and F with second-floor S16
+- Every plotted ID has a legend row and every legend row has a symbol. MP is now labelled at the red bar.
+- IDs are unique. Resolved (Nov 10, 2026): outlet C is renamed P22 and drawn red; stair-foot switches E and F
+  are renamed S8 and S9 and drawn green.
+- Cross-level pairs agree: S8 pairs with second-floor S4 (riser lights L8) and S9 with second-floor S16
   (wall lights L30 to L32) on both drawings and in the notes.
 - Circuits (resolved): lighting is now C10 (15 A) and also feeds stair controllers D and alarms SD1/CO1;
   B is on C2, C on new dedicated C8, A on new laundry circuit C9.
@@ -90,8 +82,8 @@ The PDF wins for geometry; these are the differences found.
   hinged on its west jamb and swinging into the hallway.
 - Resolved (owner decision, Nov 10, 2026): doorbell 16 is on the east (latch) side of the front door, and
   L13 is centred over the door to make room for it.
-- *nice-to-have*: E is plotted at z 6.3 ft, which is in the garage door opening (z 5.8 to 8.7 ft). A.2 leaves
-  about 22 in of wall between the landing and that door, enough for a 2-gang with F above or beside E.
+- Resolved (Nov 10, 2026): S8 and S9 are a two-gang on the hallway west wall between the landing and the garage
+  door, clear of the door opening.
 - *nice-to-have*: nothing by the overhead doors controls L1 to L8 except S2 on the west wall near the SW corner.
   A scene button at jack location 11 between the doors would cover both.
 - Overhead doors: the doors are 16080. An open 8 ft door sits about 8.5 ft up and reaches about 9.5 ft back
@@ -148,10 +140,10 @@ The PDF wins for geometry; these are the differences found.
 
 ### Consistency
 - All plotted IDs have legend rows and the reverse; IDs are unique on this level.
-- Cross-level pairs agree in both directions: S3 with third-floor S8 (L7), S4 with garage E (L8),
-  S15 with third-floor S9 (L33, L34), S16 with garage F (L30 to L32), S17 with third-floor S10 (L35).
-- *nice-to-have*: S17 is drawn mid-hall "above S15"; D (stair light controllers) is drawn in the stair run.
-  Both need a real location. The under-stair space by P16 suits D.
+- Cross-level pairs agree in both directions: S3 with third-floor S8 (L7), S4 with garage S8 (L8),
+  S15 with third-floor S9 (L33, L34), S16 with garage S9 (L30 to L32), S17 with third-floor S10 (L35).
+- Resolved (Nov 10, 2026): S3, S15, S17 and S19 are a four-gang row on the hall south wall at the stair foot,
+  with P1 just east of them; controllers D are on the hall north wall at the stair foot.
 - Resolved (Nov 10, 2026): H4 was plotted on the balcony door opening; it is now above the east end of the
   east 3020 window.
 - *nice-to-have*: motorized screen B is plotted at the balcony door. When it is down it covers the door.
@@ -161,9 +153,9 @@ The PDF wins for geometry; these are the differences found.
 - Stair pairs have a switch at each end: S3/S15/S17 at the foot of the west stair (x 10.6 to 12.1 ft, stair
   foot at x 9.6 ft) and S4/S16 at the head of the east stair (x 31.6 to 33.1 ft, first riser at x 33.8 ft).
 - 3-way pairs use an Inovelli main switch plus an Inovelli aux switch with a traveler (owner decision, Nov 10, 2026).
-  All 15 pairs are covered: garage S1/S2, S4/S7; stairs E/S4, F/S16, S3/S8, S15/S9, S17/S10; second floor
+  All 15 pairs are covered: garage S1/S2, S4/S7; stairs S8/S4, S9/S16, S3/S8, S15/S9, S17/S10; second floor
   S1/S19, S2/S20, S8/S21, S5/S22, S6/S23, S24/S25, S10/S26; third floor S1/S2. The aux end of each pair is
-  listed on each drawing and is a proposal: the five stair mains are kept together in the second-floor gang.
+  listed on each drawing and is confirmed by the owner: the five stair mains are kept together in the second-floor gang.
   *Check with the electrician:* a 3-conductor cable (traveler plus neutral) between the two boxes of each
   pair, one traveler per pair (five separate travelers on the stair runs), the aux neutral taken from the
   same circuit as its main, and each main switch set to "aux switch" multi-way mode. The aux model must
@@ -232,15 +224,14 @@ The PDF wins for geometry; these are the differences found.
 - **AFCI**: now noted on C3 to C8, C11 to C13, C15 and C16 (dual-function breakers cover the GFCI ones).
 - **Smoke/CO**: A.3 shows both in the hall. Now drawn as SD1 and CO1 on the hall ceiling.
 - **Panel**: about 16 second-floor and 8 third-floor home runs go down through the rated garage ceiling to MP.
-  A 125 A subpanel on this floor would cut that to one feeder. *nice-to-have*; not in a clothes closet or bathroom.
+  A 125 A subpanel on this floor would cut that to one feeder. Left as a note to the electrician (owner decision, Nov 10, 2026); not in a clothes closet or bathroom.
 
 ## Third floor (`3-third-floor_v32.svg`)
 
 ### Consistency
-- **should-fix**: ID **6** is used twice: network item 6 (wall Ethernet jack, south wall) and the empty
-  rack opening labeled "6". Rename the opening (R6 or "spare").
-- *nice-to-have*: colors do not follow the key on this sheet. Blind outlets H1 to H5 are purple, network
-  items are teal, blue and coral, and power items A to E are red.
+- Resolved (Nov 10, 2026): the wall Ethernet jack is renamed 14, so ID 6 is only the empty rack opening.
+- Resolved (Nov 10, 2026): colours now follow the key. Blind outlets are teal, network items purple and
+  power items A to E amber.
 - Cross-level pairs agree: S8 with second-floor S3, S9 with S15, S10 with S17.
 - L7: see the mismatch table.
 
@@ -295,6 +286,8 @@ The PDF wins for geometry; these are the differences found.
   room west wall beside that door.
 
 ### Code-oriented checks (check with the electrician/inspector)
+- **Fiber** (owner decision, Nov 10, 2026): the feeder trench carries a second conduit for the fiber to shed
+  switch 1. Check with the electrician: separation between the power and data conduits in the shared trench.
 - **Feeder**: 60 A, 240 V is ample for a 20 A heater, one 20 A receptacle circuit and a lighting circuit.
   It needs four wires (separate neutral and ground), a disconnect at the building (a main breaker in A),
   and burial depth per the wiring method (18 in for PVC conduit).
@@ -334,7 +327,7 @@ ceiling AP 21 W (PoE+), PoE doorbell 10 W, ESP32 presence sensor 3 W, spare PoE 
 
 Total is about 290 to 320 W. Budgets are fine if each switch is picked for port count, not just watts.
 
-### Third-floor Ethernet plan (proposed, Nov 10, 2026)
+### Third-floor Ethernet plan (confirmed by the owner, Nov 10, 2026)
 Every third-floor AP, presence sensor and Ethernet jack (jacks are data only, no PoE) is a home run from one PoE switch in rack R1 (network item 1).
 All twelve drops are within about 25 ft of R1 in plan, so no edge switch is needed on this floor. The runs
 are drawn on `lights-3d.html` (3D and the third-floor 2D map, "Ethernet runs" filter) and listed in
@@ -353,10 +346,10 @@ are drawn on `lights-3d.html` (3D and the third-floor 2D map, "Ethernet runs" fi
 | 9 | Sensor 13, top of the west stair | Cat6 | 40 ft | 3 W | West above the nook wall and west office ceiling to the closet |
 | 10 | Jack 4, floor box across from R2 | Cat6A | 20 ft | none | Floor run: down from R1 into the floor framing, south then east |
 | 11 | Jack 5, floor box across from B1 | Cat6A | 30 ft | none | Floor run, continuing east under the east office floor |
-| 12 | Jack 6, west office south wall | Cat6A | 35 ft | none | West bundle with sensor 13, then south and down inside the wall |
+| 12 | Jack 14, west office south wall | Cat6A | 35 ft | none | West bundle with sensor 13, then south and down inside the wall |
 
 - Three bundles leave R1: north above the wall between the offices (6 cables), south above the rack strip
-  (2 cables) and west above the west office ceiling (2 cables: sensor 13 and jack 6). AP 2 goes straight
+  (2 cables) and west above the west office ceiling (2 cables: sensor 13 and jack 14). AP 2 goes straight
   east on its own. Floor jacks 4 and 5 run in the floor framing under the east office; check which way the
   joists run before settling that route.
 - Lengths are estimates: the path above the ceiling at about 7 ft plus the drops and 8 ft of service loop
@@ -387,7 +380,7 @@ are drawn on `lights-3d.html` (3D and the third-floor 2D map, "Ethernet runs" fi
 - The riser now carries four garage-side fibers (2, 7, 18, shed) plus the converter fiber, so size the
   conduit for five duplex cables and a pull string.
 
-### Second-floor Ethernet plan (proposed, Nov 10, 2026)
+### Second-floor Ethernet plan (confirmed by the owner, Nov 10, 2026)
 Two switches split the floor: switch 8 (16-port, SW closet) takes the west half, the projector jacks and the
 doorbell; new switch 16 (8-port, family room southeast corner) takes the east half. Runs are drawn on
 `lights-3d.html` and listed in `lights.json` under `cables`.
@@ -418,7 +411,7 @@ doorbell; new switch 16 (8-port, family room southeast corner) takes the east ha
 - Sensor 2 in the hall's northeast corner is the longest reach from either switch. Garage switch 18 is
   directly below it and full, so it stays on switch 16.
 
-### Garage Ethernet plan (proposed, Nov 10, 2026)
+### Garage Ethernet plan (confirmed by the owner, Nov 10, 2026)
 Each garage and hallway AP, presence sensor and jack goes to the nearest of the three switches. The runs
 are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 
@@ -428,7 +421,7 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 | 2 | 2 | AP 6, west wall | Cat6A | 25 ft | 13 W |
 | 2 | 3-4 | Jacks 11 (two), between the doors | 2 x Cat6A | 2 x 35 ft | 30 W |
 | 7 (NW corner) | 1 | Sensor 12, ceiling west half | Cat6 | 25 ft | 3 W |
-| 7 | 2-5 | Jacks 21 (four), north wall by outlet C | 4 x Cat6A | 4 x 25 ft | none |
+| 7 | 2-5 | Jacks 21 (four), north wall by outlet P22 | 4 x Cat6A | 4 x 25 ft | none |
 | 18 (under stair) | 1 | AP 17, hallway north wall | Cat6A | 25 ft | 13 W |
 | 18 | 2 | Sensor 13, ceiling east half | Cat6 | 30 ft | 3 W |
 | 18 | 3 | Sensor 14, hallway north wall | Cat6 | 20 ft | 3 W |
@@ -439,7 +432,7 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 
 - Sensor 12 moved from switch 2 to switch 7: it is 11 ft from 7 and 19 ft from 2, and 7 has spare ports.
 - Cameras 3, 4, 8, 9 and 10 also land on these switches (see the PoE table) but are not drawn on the page.
-- Jacks 21 (owner decision) are four data-only jacks on the north wall by computer outlet C. Switch 7 is
+- Jacks 21 (owner decision) are four data-only jacks on the north wall by computer outlet P22. Switch 7 is
   an 8-port PoE switch (owner decision) with its own high outlet P20 beside it on network circuit C1.
   With cameras 8 and 9 it uses 7 of the 8 ports, so the fiber uplink needs a separate SFP port. Jacks 11 are
   the other jacks on this level. The drawing calls those PoE jacks, so 15 W each is
@@ -475,17 +468,17 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
    corner shared with the sauna door, which has to swing out into that corner and brings heat and steam
    with it. Use the latch side of the porch door if that also turns out to be the west side; if the door
    is hinged west, keep them west anyway and hinge the door east.
-2. **Do O1/O2 come off now that O3/O4 exist?** As opener outlets, yes: one opener type per door.
+2. **Do O1/O2 come off now that O3/O4 exist?** Answered (Nov 10, 2026): O1/O2 stay and O3/O4 are spares, just in case. Earlier advice: as opener outlets, yes: one opener type per door.
    Before deleting them, decide the opener type. A jackshaft opener with high-lift
    track keeps the ceiling clear for the lights under a 9'5" ceiling; a trolley opener does not.
    If trolley openers stay, keep O1/O2 as ordinary GFCI wall receptacles at the jambs.
-3. **Which switch feeds hallway AP 17?** Switch 18, about 6 ft away. That brings 18 to 8 PoE devices, so it
+3. **Which switch feeds hallway AP 17?** Answered (Nov 10, 2026): switch 18, about 6 ft away. That brings 18 to 8 PoE devices, so it
    must be an 8-port PoE+ switch with a fiber uplink.
 4. **Does doorbell 16 get a surge protector?** Resolved (owner decision, Nov 10, 2026): SP3 is drawn at the
    switch 18 end, bonded to the service ground at MP. Second-floor doorbell 14 now has SP1 on ground bar GB1 as well.
-5. **Are all four outside garage lights OK on S3?** Yes. They work as one scene and smart fixtures can still
+5. **Are all four outside garage lights OK on S3?** Answered (Nov 10, 2026): yes, one switch is what the owner wants. They work as one scene and smart fixtures can still
    be grouped or scheduled. Add the same scene to S7 so they can be controlled from the hallway side.
-6. **Blind outlets in the gaps between the west-office south windows?** Not in the gaps: A.4 shows about
+6. **Blind outlets in the gaps between the west-office south windows?** Answered (Nov 10, 2026): no. Earlier advice, not in the gaps: A.4 shows about
    6 in of framing between the 2846 units, which is solid studs with no room for a box. Put one high outlet
    above the head of each gap instead, so each of the three blinds has an outlet within reach
    (H1 and H2 alone leave the middle blind without one).
@@ -515,19 +508,31 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 **Must-fix**
 1. MP under the garage stair: headroom and working space (garage).
 
-**Should-fix**
-2. PoE switch sizing: garage switch 2 (network).
-3. Island P14 position; wall spacing gaps (second floor).
-4. Duplicate ID 6; ceiling outlet P21 must stay within 5.5 ft of the floor to count (third floor).
-
 **Nice-to-have**
-5. Label MP; rename device C; draw E/F green (garage).
-6. E in the door opening; scene button between the overhead doors (garage).
-7. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
-8. Color key on the third-floor sheet (third floor).
-9. "East walls in line" label (shed).
-10. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
-11. One AP too many in the middle of the building; outdoor coverage north and east.
+2. Scene button between the overhead doors for L1 to L8 (garage).
+3. Screen B over the balcony door; light at the foot of the exterior stair (second floor).
+
+## Settled on Nov 10, 2026 (owner decisions)
+
+- Garage switch 2 is an 8-port PoE switch with a fiber port.
+- Kitchen island outlet P14: position left to the builder/electrician.
+- Third floor: wall jack 6 is renamed 14, so 6 is only the empty rack opening. P21 carries a note to mount it
+  within 5.5 ft of the floor.
+- Garage labelling: MP is labelled at the red bar, outlet C is now P22 (red), and stair-foot switches E and F
+  are now S8 and S9 (green).
+- S8 and S9 (formerly E, F) are a two-gang on the hallway west wall just north of the garage door, out of the
+  door opening.
+- Second floor: S3, S15, S17 and S19 are one four-gang row on the hall south wall at the foot of the west
+  stair (P1 moved just east of them); stair light controllers D are on the hall north wall at the stair foot.
+- Third-floor sheet colours follow the key: blind outlets teal, network purple, power items A to E amber.
+  Shapes that used to render black (racks, bookshelves, sensors) now take their colours.
+- Shed site sketch label now reads "Shed east wall in line with garage west wall".
+- Second-floor subpanel: left as a note to the electrician (on the second-floor sheet).
+- AP count and outdoor coverage: accepted as designed.
+- O1/O2 wall opener outlets stay; O3/O4 ceiling outlets are spares. All outside garage lights stay on S3.
+  No blind outlets in the gaps between the west-office south windows. Switch 18 feeds AP 17.
+- The aux end of each 3-way pair and the Ethernet plans for all three floors are confirmed.
+- Shed feeder trench carries a second conduit for the fiber to shed switch 1.
 
 ## Scales used
 

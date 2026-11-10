@@ -67,7 +67,7 @@ Power (amber)
 A Projector wall, 4 outlets
 B Motorized screen, smart control
 C Closet outlet
-D Stair lights, controllers, 3-way
+D Stair lights, 2 Matter controllers
 Windows (blue), sizes from A.3
 Hall 2 x 2840, sauna 4030 tempered, media 2 x 3020 and a 3068 door, family 2 x 3050
 Closet door on media wall per A.3; range by fridge; sink and DW north of W/D
@@ -202,7 +202,7 @@ L28, L29 Balcony, high wall lights
 L30-L32 East stair wall lights; L33, L34 west stair, one per leg (S16, S15)
 S14 Under-stair lights, beside AP 9
 S15 West stair wall lights, bottom (top on 3rd fl S9)
-S16 East stair wall lights, top (bottom garage F)
+S16 East stair wall lights, top (bottom garage S9)
 L28, L29 on S13 (my call)
 Outlets (red), blind outlets (teal)
 Circuits
@@ -279,5 +279,9 @@ family/bath wall. P25, P26 counter outlets south of the sink (C4). Sauna light d
 Both switches uplink by fiber to the third-floor switch in R1.
 3-way pairs (Nov 10, 2026): one switch of each pair is an Inovelli aux switch, with a traveler wire to the Inovelli main switch.
 Aux: S19 (main S1), S20 (S2), S21 (S8), S22 (S5), S23 (S6), S25 (S24), S26 (S10). Stair switches S3, S4, S15, S16, S17 are
-the mains; their aux switches are garage E (S4), F (S16) and third-floor S8 (S3), S9 (S15), S10 (S17).
+the mains; their aux switches are garage S8 (S4), S9 (S16) and third-floor S8 (S3), S9 (S15), S10 (S17).
 Run 3-conductor cable (traveler + neutral) between the two boxes of each pair; one traveler per pair.
+West stair foot (Nov 10, 2026): S3, S15, S17 and S19 are one four-gang row on the hall south wall; outlet P1 moved just east
+of them. Stair light controllers D are on the hall north wall at the stair foot. Garage stair-foot switches E, F are now S8, S9.
+Note to the electrician: a 125 A subpanel on this floor would replace about 24 home runs through the rated garage ceiling
+with one feeder. Island outlet P14: position left to the builder/electrician.

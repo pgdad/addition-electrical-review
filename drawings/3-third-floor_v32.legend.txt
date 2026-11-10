@@ -57,7 +57,7 @@ H4
 H5
 2
 3
-6
+14
 7
 8
 9
@@ -95,7 +95,7 @@ Network
 2  UniFi AP, ceiling, east office.   3  UniFi AP, wall, west office east wall, south of the door.
 4  Floor Ethernet jack, east edge of the west clipped strip, across from R2.
 5  Floor Ethernet jack, west edge of the east clipped strip, across from B1.
-6  Wall Ethernet jack, west office south wall, east of the windows.
+14  Wall Ethernet jack (was 6), west office south wall, east of the windows.
 7  PoE presence sensor, wall, west office east wall, north of the door, facing west.
 8  PoE presence sensor, same wall and spot, east office side, facing east.
 9, 10  PoE presence sensors, wall, east office north wall, one each side of the windows.
@@ -151,3 +151,5 @@ Closet: door in its north edge, off the top stair landing (dashed gap); thin lin
 3-way pairs (Nov 10, 2026): one switch of each pair is an Inovelli aux switch, with a traveler wire to the Inovelli main switch.
 Aux: S2 (main S1); S8, S9, S10 at the top of the stair (mains are second-floor S3, S15, S17). Run 3-conductor cable
 (traveler + neutral) between the two boxes of each pair; S8, S9 and S10 each need their own traveler down the stair.
+Colours follow the key (Nov 10, 2026): blind outlets H1-H5 teal; network items, APs and sensors purple; power items A-E amber.
+Wall jack 6 is renamed 14 (6 stays the empty rack opening). P21: mount within 5.5 ft of the floor so it counts toward wall spacing.
