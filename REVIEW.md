@@ -25,7 +25,7 @@ How to read this:
 | 3 | must-fix | PoE doorbell 14 on the balcony is an outdoor copper run with no surge protector and no ground bar on that floor. Garage doorbell 16 now has surge protector SP3 (owner decision). PoE jacks 11 are plotted on the outside face of the jog wall; if they are outside they need protection too. | second floor v20: 14; garage v20: 11 |
 | 4 | should-fix | With 8 ft doors under a 9'5" ceiling, both ceiling cord reels (P11, P12) hang in the path of the open doors. The south light row L5 to L8, moved 2 ft north to z 16.7 ft, is still above the open doors, which the owner accepts: those lights are for when the doors are closed. | garage v20 |
 | 5 | should-fix | Several lights can only be switched after crossing the dark: second-floor hall (S1/S2 mid-hall, 14 ft from the west stair and 8 ft from the east stair), family room (S10 only at the balcony door) and media room (S5/S6 only at the hall door). The third-floor cases (east office S3, attic lights L6 and L8) are accepted by the owner. | second floor v20 |
-| 6 | should-fix | The second-floor "small" PoE switch 8 has about 17 PoE drops and roughly 75 to 105 W. No 5/8-port switch covers that. Garage switch 2 needs 7 PoE ports and about 78 W plus a fiber cage; switch 18 needs 7 to 8 ports. | second floor v20: 8; garage v20: 2, 18 |
+| 6 | should-fix | The second-floor "small" PoE switch 8 has about 17 PoE drops and roughly 75 to 105 W. No 5/8-port switch covers that. Garage switch 2 needs 6 PoE ports and about 75 W plus a fiber port; switch 18 needs 8 ports. | second floor v20: 8; garage v20: 2, 18 |
 | 7 | should-fix | Hallway switches S4 and S5 are drawn on the east wall exactly across the east door opening, so there is no wall to mount them on. Move them to the wall beside the door. | garage v20: S4, S5 |
 | 8 | should-fix | S10 runs the family room ceiling lights L17, L18 together with outdoor balcony light L24, and balcony light L29 is on the far door's switch S13. Put all four balcony lights (L23, L24, L28, L29) on one balcony control at each door. | second floor v20: S10, S13 |
 | 9 | should-fix | Second-floor kitchen: the 1.8 ft of counter south of the sink has no receptacle, island outlet P14 needs its position checked against the NEC 2023 island rule, and wall receptacle spacing runs long in a few places. | second floor v20: P12 to P14 |
@@ -75,14 +75,14 @@ The PDF wins for geometry; these are the differences found.
 
 ### Lighting control
 - Every light has a switch: L1 to L8 on S1+S2, L9/L10 on S4+S7, L11/L12/L15/L16 on S3, L13 on S5, L14 on S6.
-- 3-way ends: S1 is inside the hall door and S2 in the SW corner, so both entries used on foot are covered.
+- 3-way ends: S1 is inside the hall door and S2 on the west wall near the SW corner (moved there Nov 10, 2026), so both entries used on foot are covered.
   S7 is on the hallway side of the garage door and S4 by the east door. The stair foot is 4 to 5 ft from S7. OK.
 - **should-fix**: S4 and S5 are drawn on the east wall exactly across the east door opening
   (door z 17.8 to 20.7 ft, switches z 18.4 and 20.1 ft). Move them to the 2 ft of wall south of that door,
   or to the south wall beside the deck door.
 - *nice-to-have*: E is plotted at z 6.3 ft, which is in the garage door opening (z 5.5 to 8.3 ft). A.2 leaves
   about 22 in of wall between the landing and that door, enough for a 2-gang with F above or beside E.
-- *nice-to-have*: nothing by the overhead doors controls L1 to L8 except S2 in the far SW corner.
+- *nice-to-have*: nothing by the overhead doors controls L1 to L8 except S2 on the west wall near the SW corner.
   A scene button at jack location 11 between the doors would cover both.
 - **should-fix** (finding 4): the doors are 16080. An open 8 ft door sits about 8.5 ft up and reaches about
   9.5 ft back from its wall, so the west door covers z 12.5 to 22 ft and the east door z 15.8 to 25.3 ft.
@@ -268,11 +268,11 @@ ceiling AP 21 W (PoE+), PoE doorbell 10 W, ESP32 presence sensor 3 W, spare PoE 
 
 | Switch | Devices assumed on it | PoE ports | Estimated W | Comment |
 |--------|-----------------------|-----------|-------------|---------|
-| Garage 2 (SW) | cameras 3, 4; outdoor AP 5; AP 6; jacks 11 (2); sensor 12 | 7 | 78 | Needs 8 PoE ports, about 100 W and an SFP cage. |
-| Garage 7 (NW) | camera 8; camera 9; outlet C computers (no PoE) | 2 | 13 | Fine for a small switch. How is 7 uplinked: fiber or copper from 2? |
+| Garage 2 (SW) | cameras 3, 4; outdoor AP 5; AP 6; jacks 11 (2) | 6 | 75 | Needs 8 PoE ports, about 100 W and a fiber (SFP) port. |
+| Garage 7 (NW) | camera 8; camera 9; sensor 12; outlet C computers (no PoE) | 3 | 16 | Fine for a small switch with a fiber (SFP) port. |
 | Garage 18 (under stair) | camera 10; sensors 13, 14, 15, 19, 20; AP 17; doorbell 16 | 8 | 44 | 8 PoE ports plus SFP. Too many ports for a 5-port. |
 | Second floor 8 (SW closet) | sensors 1 to 6, 10 to 13; AP 9; AP 15; doorbell 14; jacks 7 (4) | 17 | 75 (105 if two jacks at 7 draw PoE) | Not a small switch. See below. |
-| Third floor R1 | AP 2; AP 3; sensors 7 to 13; jacks 4, 5, 6 | 12 | 56 | Also needs fiber ports for 1, 18, 2, 8 and the shed: at least 5 SFP. |
+| Third floor R1 | AP 2; AP 3; sensors 7 to 13; jacks 4, 5, 6 | 12 | 56 | The aggregation switch beside it takes the five fiber uplinks (garage 2, 7, 18, second-floor 8, shed 1) plus the modem converter fiber: at least 6 SFP ports. |
 | Shed 1 | camera 2; AP 3 | 2 | 23 | Fine. Cold-rated. |
 
 Total is about 290 to 320 W. Budgets are fine if each switch is picked for port count, not just watts.
@@ -320,8 +320,40 @@ are drawn on `lights-3d.html` (3D and the third-floor 2D map, "Ethernet runs" fi
 - The riser starts on the north wall under the garage stair (x 37 to 41 ft). Directly above is the east
   stairwell and then the east office north wall. R1 is at x 24 ft, z 14 ft on the third floor, so the run
   needs about 20 ft of horizontal travel on the third floor. See the open question for a route.
-- Not shown anywhere: fiber to garage switches 2 and 7, to second-floor switch 8, and the garage end of the
-  shed fiber. *should-fix*: draw them.
+- Owner decision (Nov 10, 2026): every network switch uplinks by fiber to the aggregation switch that sits
+  with the main switch in R1. The five uplinks are now drawn on `lights-3d.html` (orange lines) and listed
+  in `lights.json` under `fibers`; they are not yet on the SVG drawings. Estimated lengths with 15 ft of
+  slack: garage 18 about 75 ft, garage 7 about 110 ft, garage 2 about 130 ft, shed 1 about 185 ft (buried
+  conduit to the garage SW corner, then with the switch 2 fiber), second-floor 8 about 50 ft (straight up
+  into R1 from below the rack strip). Pre-terminated duplex single-mode (OS2) LC works for all of them.
+- The riser now carries four garage-side fibers (2, 7, 18, shed) plus the converter fiber, so size the
+  conduit for five duplex cables and a pull string.
+
+### Garage Ethernet plan (proposed, Nov 10, 2026)
+Each garage and hallway AP, presence sensor and jack goes to the nearest of the three switches. The runs
+are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
+
+| Switch | Port | Device | Cable | Length | PoE |
+|--------|------|--------|-------|--------|-----|
+| 2 (SW corner) | 1 | Outdoor AP 5 (via SP1) | Cat6A | 20 ft | 13 W |
+| 2 | 2 | AP 6, west wall | Cat6A | 25 ft | 13 W |
+| 2 | 3-4 | Jacks 11 (two), between the doors | 2 x Cat6A | 2 x 35 ft | 30 W |
+| 7 (NW corner) | 1 | Sensor 12, ceiling west half | Cat6 | 25 ft | 3 W |
+| 18 (under stair) | 1 | AP 17, hallway north wall | Cat6A | 25 ft | 13 W |
+| 18 | 2 | Sensor 13, ceiling east half | Cat6 | 30 ft | 3 W |
+| 18 | 3 | Sensor 14, hallway north wall | Cat6 | 20 ft | 3 W |
+| 18 | 4 | Sensor 20, hallway landing | Cat6 | 25 ft | 3 W |
+| 18 | 5 | Sensor 19, hallway east wall | Cat6 | 30 ft | 3 W |
+| 18 | 6 | Sensor 15, over the doorway | Cat6 | 45 ft | 3 W |
+
+- Sensor 12 moved from switch 2 to switch 7: it is 11 ft from 7 and 19 ft from 2, and 7 has spare ports.
+- Cameras 3, 4, 8, 9, 10 and doorbell 16 also land on these switches (see the PoE table) but are not drawn
+  on the page.
+- Jacks 11 are the only Ethernet jacks on this level. The drawing calls them PoE jacks, so 15 W each is
+  allowed for. They are plotted on the outside face of the wall between the doors; if they really are
+  outdoors they still need surge protection (finding 3).
+- The hallway runs from switch 18 cross the stairwell at the hallway's north end; route them in the wall
+  and under the landing rather than across the open stair.
 
 ### Surge protection on outdoor copper
 | Run | Protected? |
@@ -394,7 +426,7 @@ are drawn on `lights-3d.html` (3D and the third-floor 2D map, "Ethernet runs" fi
 **Should-fix**
 4. Open doors in the path of cord reels P11, P12 (garage).
 5. Lights switched from the far side: hall, family, kitchen, media (second floor).
-6. PoE switch sizing: 8, 2, 18; undrawn fiber links (network).
+6. PoE switch sizing: 8, 2, 18 (network).
 7. S4/S5 drawn in the hallway's east door opening (garage).
 8. S10 mixes family lights with balcony L24; L29 on the far door's switch (second floor).
 9. No counter receptacle south of the sink; island P14 position; wall spacing gaps (second floor).

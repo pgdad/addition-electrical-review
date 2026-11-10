@@ -19,6 +19,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Network: cable modem under the garage stairs -> media converter -> fiber up to rack R1 on the third floor.
   Two fiber runs share one smurf tube up the riser (item 1 converter, item 18 under-stair switch).
   Fiber from R1 out to small 5/8-port PoE switches near APs, cameras and computers.
+  Every network switch (garage 2, 7, 18, second-floor 8, shed 1) uplinks by fiber to the aggregation switch
+  that sits with the main switch in R1 (owner decision, Nov 10, 2026).
 - Mini-splits shown on the architect sheets are intentionally left off the drawings.
   Their power is drawn (owner decision, Nov 10, 2026) at the four condenser positions on sheet A.2: two
   outside the garage north wall (MS1, MS2) and two outside the west wall under the exterior stair (MS3, MS4),
@@ -32,6 +34,9 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - "Breezeway" on the plan is an enclosed hallway ending at the stairs up to the 2nd floor over the garage.
 - Under the stairs (west end): LG WashTower, electric washer + GAS dryer (builder notes say all-electric
   WKEX200HBA: unresolved conflict). Cable ingress, modem and converter behind it.
+- S2 is on the west wall near the SW corner, directly west of where it was first drawn (owner decision, Nov 10, 2026).
+- Garage Ethernet (proposed, Nov 10, 2026, not yet confirmed): sensor 12 on switch 7; APs 5, 6 and jacks 11 on
+  switch 2; AP 17 and sensors 13, 14, 15, 19, 20 on switch 18. Details in REVIEW.md ("Garage Ethernet plan").
 - Lights: L1-L8 garage ceiling on S1+S2 3-way; L9, L10 hallway on S4+S7 3-way; L13 deck door on S5;
   L14 under-stair on S6; outside L11/L15 flank the left door on the balcony piers, L12/L16 the right door, all on S3 (proposed).
   Garage lights are on switches only, not tied to the overhead doors.

@@ -104,7 +104,7 @@ def k(level, *ids): return [f"{level}:{i}" for i in ids]
 def rng(level, a, b): return [f"{level}:L{i}" for i in range(a, b + 1)]
 SWITCHES = {
  ("G", "S1"): ("Garage, inside the hall door", rng("G", 1, 8)),
- ("G", "S2"): ("Garage, SW corner", rng("G", 1, 8)),
+ ("G", "S2"): ("Garage west wall, near the SW corner", rng("G", 1, 8)),
  ("G", "S3"): ("Garage, inside the hall door", k("G", "L11", "L12", "L15", "L16")),
  ("G", "S4"): ("Hallway, east wall by the deck door", k("G", "L9", "L10")),
  ("G", "S7"): ("Hallway, west wall by the garage door", k("G", "L9", "L10")),
@@ -239,8 +239,8 @@ HALL_OUTLETS = {"P14", "P15", "P16", "P17"}
 # level -> [(item number, kind ap|switch, name, where, height above the floor in ft (assumed), note)]
 NETWORK = {
  "G": [
-  ("2", "switch", "PoE switch", "Garage southwest corner, high beside outlet P13", 7.0, "Feeds cameras 3 and 4, outdoor AP 5, AP 6, jacks 11, sensor 12"),
-  ("7", "switch", "PoE switch", "Garage northwest corner", 7.0, "Feeds cameras 8 and 9"),
+  ("2", "switch", "PoE switch", "Garage southwest corner, high beside outlet P13", 7.0, "Feeds cameras 3 and 4, outdoor AP 5, AP 6 and jacks 11"),
+  ("7", "switch", "PoE switch", "Garage northwest corner", 7.0, "Feeds cameras 8 and 9 and sensor 12"),
   ("18", "switch", "Small PoE switch", "Under the garage stairs", 3.0, "Fiber to the third-floor rack R1"),
   ("5", "ap", "Outdoor AP", "Outside the garage south wall, facing south", 9.0, "Outdoor copper run; surge protector SP1"),
   ("6", "ap", "UniFi wall AP", "Garage, mid west wall", 7.0, ""),
@@ -252,7 +252,7 @@ NETWORK = {
   ("15", "ap", "UniFi ceiling AP", "Kitchen / family room border", 8.9, ""),
  ],
  "3": [
-  ("1", "switch", "Rack R1: main network stack", "West clipped strip, rack R1", 3.0, "Core switches and fiber distribution; fiber in from the garage modem"),
+  ("1", "switch", "Rack R1: main switch and fiber aggregation switch", "West clipped strip, rack R1", 3.0, "Every other network switch uplinks here by fiber; fiber in from the garage modem"),
   ("2", "ap", "UniFi ceiling AP", "East office ceiling", 6.4, ""),
   ("3", "ap", "UniFi wall AP", "West office east wall, south of the door", 6.0, ""),
  ],
@@ -263,11 +263,11 @@ NETWORK = {
 }
 # ---- Ethernet runs (proposed, third floor only so far): level -> (switch item, [(device item, cable, PoE W (0 = data only),
 # plan waypoints, route, optional route height in ft above the floor; negative = in the floor framing)])
-ROUTE_H, CABLE_SLACK = 7.0, 8.0     # ft above the floor for the horizontal run; ft of service loop (5 at the rack, 3 at the device)
+ROUTE_H, CABLE_SLACK = {"3": 7.0, "G": 8.8}, 8.0     # per level: ft above the floor for the horizontal run; ft of service loop (5 at the rack, 3 at the device)
 _N = "North bundle: up from R1, north above the wall between the offices"
 _S = "South bundle: up from R1, south above the rack strip to the south wall"
 CABLES = {
- "3": ("1", [
+ "3": [("1", [
   ("2",  "Cat6A", 21, [(24.05, 13.59)], "Straight east above the east office ceiling"),
   ("3",  "Cat6A", 13, [(24.6, 14.16), (24.6, 11.35)], _N + ", drop to the AP"),
   ("7",  "Cat6", 3, [(24.6, 14.16), (24.6, 5.4)], _N + ", over the door header, drop on the west face"),
@@ -277,18 +277,52 @@ CABLES = {
   ("11", "Cat6", 3, [(24.6, 14.16), (24.6, 24.17)], _S + ", then east"),
   ("12", "Cat6", 3, [(24.6, 14.16), (24.6, 24.17)], _S + ", then east past the window"),
   ("13", "Cat6", 3, [(24.05, 12.7), (3.84, 12.7)], "West above the nook wall and the west office ceiling to the closet, then north to the stair wall"),
- ]),
+ ])],
+ # Garage: each device goes to the nearest of the three switches. Cameras 3, 4, 8, 9, 10 and doorbell 16 also land on
+ # these switches (see the PoE table in REVIEW.md) but are not drawn on the page.
+ "G": [
+  ("2", [
+   ("5",  "Cat6A", 13, [(4.18, 20.75)], "Up from switch 2, east along the south wall, out through the wall to the AP (surge protector SP1)"),
+   ("6",  "Cat6A", 13, [], "Up from switch 2, north along the west wall, drop to the AP"),
+   ("11", "Cat6A", 15, [(1.2, 21.6), (20.96, 21.6)], "Up from switch 2, east along the south wall above the west door to the wall between the doors", None, 2),
+  ]),
+  ("7", [
+   ("12", "Cat6", 3, [(11.81, 1.2)], "Up from switch 7, east along the north wall, then out across the ceiling"),
+  ]),
+  ("18", [
+   ("17", "Cat6A", 13, [(41.15, 1.12)], "Up from switch 18, east through the stair wall into the hallway north wall"),
+   ("13", "Cat6", 3, [(41.15, 4.26)], "Up from switch 18, out of the under-stair space, west across the garage ceiling"),
+   ("14", "Cat6", 3, [(41.15, 1.12)], "Up from switch 18, east through the stair wall to the hallway north wall"),
+   ("20", "Cat6", 3, [(41.15, 3.28)], "Up from switch 18, east across the landing to the hallway east wall"),
+   ("19", "Cat6", 3, [(41.15, 2.2), (47.4, 2.2)], "Hallway bundle: east to the hallway east wall, then south along it"),
+   ("15", "Cat6", 3, [(41.15, 2.2), (47.4, 2.2), (47.4, 21.55)], "Hallway bundle: east to the hallway east wall, south along it, then west to the doorway"),
+  ]),
+ ],
 }
+# ---- fiber uplinks (owner decision): every network switch runs fiber to the aggregation switch in rack R1 on the third floor.
+# (switch level, switch item, [(level, x, height above that level's floor (None = switch height), z), ...] ending at R1, route)
+RISER = (39.5, 0.6)              # under the garage stair, up the north wall beside the east stairwell
+_UP = [("G", *RISER[:1], 8.8, RISER[1]), ("3", RISER[0], 7.0, RISER[1]), ("3", 24.6, 7.0, 0.6), ("3", 24.6, 7.0, 14.16)]
+FIBER = [
+ ("G", "18", [("G", 41.15, 8.8, 1.46)] + _UP, "Up from switch 18 to the riser beside it, up the north wall to the third-floor north eave, west, then south above the office wall to R1"),
+ ("G", "7",  [("G", 1.2, 8.8, 1.2), ("G", 1.2, 8.8, 0.6)] + _UP, "East along the garage north wall to the riser, then up and across the third floor to R1"),
+ ("G", "2",  [("G", 1.2, 8.8, 20.75), ("G", 0.6, 8.8, 20.75), ("G", 0.6, 8.8, 0.6)] + _UP, "North along the garage west wall, east along the north wall to the riser, then up to R1"),
+ ("S", "1",  [("S", -0.5, 5.0, 54.64), ("S", -0.5, -2.0, 54.64), ("G", -0.5, -2.0, 21.4), ("G", 0.6, -2.0, 21.4), ("G", 0.6, 8.8, 21.4), ("G", 0.6, 8.8, 0.6)] + _UP,
+  "Buried conduit from the shed to the garage SW corner, up inside, then with the switch 2 fiber to the riser and R1"),
+ ("2", "8",  [("2", 2.19, 8.6, 15.71), ("2", 24.05, 8.6, 15.71), ("2", 24.05, 8.6, 14.16)], "East above the second-floor ceiling to below the rack strip, then straight up through the floor into R1"),
+]
+FIBER_SLACK = 15.0
 # Ethernet jacks (non-PoE data drops): level -> [(item, where, height above the floor in ft)]
 JACKS = {
  "3": [("4", "Floor jack, east edge of the west clipped strip, across from R2", 0.1),
        ("5", "Floor jack, west edge of the east clipped strip, across from B1", 0.1),
        ("6", "Wall jack, west office south wall, east of the windows", 1.5)],
 }
+JACKS["G"] = [("11", "Two PoE jacks at 7 ft, on the wall between the overhead doors", 7.0, "Two jacks, PoE available (15 W each assumed); outdoor face of the wall, so surge protection applies")]
 for _lv, _rows in JACKS.items():
-    for _i, _where, _h in _rows: NETWORK[_lv].append((_i, "jack", "Ethernet jack", _where, _h, "Data only, no PoE"))
+    for _i, _where, _h, *_note in _rows: NETWORK[_lv].append((_i, "jack", "Ethernet jack", _where, _h, _note[0] if _note else "Data only, no PoE"))
 _F = "Floor run: down from R1 into the floor framing, south then east under the east office floor"
-CABLES["3"][1].extend([
+CABLES["3"][0][1].extend([
   ("4",  "Cat6A", 0, [(24.05, 16.12)], _F + ", up into the floor box", -0.6),
   ("5",  "Cat6A", 0, [(24.05, 16.12)], _F + " to the far floor box", -0.6),
   ("6",  "Cat6A", 0, [(24.05, 12.7), (14.12, 12.7)], "West bundle with sensor 13 above the west office ceiling, then south and down inside the south wall"),
@@ -397,17 +431,36 @@ def build():
     # plan waypoints (x, z) between the two ends. Length = 3D path + CABLE_SLACK, rounded up to 5 ft.
     net_by = {n["key"]: n for n in network}
     cables = []
-    for lv, (sw, rows) in CABLES.items():
+    for lv, sw, rows in [(lv, sw, rows) for lv, groups in CABLES.items() for sw, rows in groups]:
         a = net_by[f"{lv}:N{sw}"]
-        for port, (nid, cat, watts, via, route, *rh) in enumerate(rows, 1):
+        port = 0
+        for nid, cat, watts, via, route, *opt in rows:
             d = net_by[f"{lv}:N{nid}"]
-            h = FLOOR[lv] + (rh[0] if rh else ROUTE_H)
+            count = opt[1] if len(opt) > 1 else 1
+            port += 1
+            h = FLOOR[lv] + (opt[0] if opt and opt[0] is not None else ROUTE_H[lv])
             pts = [(a["x"], a["y"], a["z"]), (a["x"], h, a["z"])] + [(x, h, z) for x, z in via] + [(d["x"], h, d["z"]), (d["x"], d["y"], d["z"])]
             run = sum(sum((p[i] - q[i]) ** 2 for i in range(3)) ** 0.5 for p, q in zip(pts, pts[1:]))
             length = int(-(-(run + CABLE_SLACK) // 5) * 5)
-            cables.append(dict(key=f"{lv}:C{nid}", level=lv, **{"from": a["key"], "to": d["key"]}, port=port, cable=cat, poeW=watts,
+            cables.append(dict(key=f"{lv}:C{nid}", level=lv, **{"from": a["key"], "to": d["key"]}, cable=cat, poeW=watts * count, count=count,
+                               port=str(port) if count == 1 else f"{port}-{port + count - 1}",
                                lengthFt=length, route=route, points=[[round(v, 2) for v in p] for p in pts]))
+            port += count - 1
             d["cable"] = cables[-1]["key"]
+    # fiber uplinks: explicit path, each point tagged with the level whose map it is drawn on
+    agg = net_by["3:N1"]
+    fibers = []
+    for lv, sw, path, route in FIBER:
+        a = net_by[f"{lv}:N{sw}"]
+        tagged = [(lv, a["x"], a["y"], a["z"])] + [(l, x, FLOOR[l] + h, z) for l, x, h, z in path] + [("3", agg["x"], agg["y"], agg["z"])]
+        pts = [t[1:] for t in tagged]
+        run = sum(sum((p[i] - q[i]) ** 2 for i in range(3)) ** 0.5 for p, q in zip(pts, pts[1:]))
+        plan = {}
+        for l, x, y, z in tagged: plan.setdefault(l, []).append([round(x, 2), round(z, 2)])
+        fibers.append(dict(key=f"{lv}:F{sw}", **{"from": a["key"], "to": agg["key"]}, cable="Fiber, duplex single-mode (OS2), LC",
+                           lengthFt=int(-(-(run + FIBER_SLACK) // 5) * 5), route=route, levels=sorted(plan), plan=plan,
+                           points=[[round(v, 2) for v in p] for p in pts]))
+        a["fiber"] = fibers[-1]["key"]
     for lv in SCALES:                                   # every plotted P#, O#, EV#, H#, MS# is in the outlet table
         plotted = {n for n in dev[lv] if re.fullmatch(r"(P|O|EV|H|MS)\d+", n)}
         have = {o["id"] for o in outlets if o["level"] == lv}
@@ -423,7 +476,7 @@ def build():
         axes="x = east, z = south, y = up; origin = garage NW exterior corner at the garage slab",
         scales={lv: dict(drawing=SOURCE[lv], px_per_ft_x=round(v[2], 3), px_per_ft_y=round(v[3], 3)) for lv, v in SCALES.items()},
         floors=dict(garage=0.0, hallway=HALL_FLOOR, second=F2, third=round(F3, 2), shed=0.0),
-        lights=lights, switches=switches, outlets=outlets, network=network, cables=cables)
+        lights=lights, switches=switches, outlets=outlets, network=network, cables=cables, fibers=fibers)
 
 if __name__ == "__main__":
     data = build()

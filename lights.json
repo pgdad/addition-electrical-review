@@ -1356,10 +1356,10 @@
    "id": "S2",
    "level": "G",
    "levelName": "Garage and hallway",
-   "room": "Garage, SW corner",
-   "x": 3.23,
+   "room": "Garage west wall, near the SW corner",
+   "x": 1.07,
    "y": 4.0,
-   "z": 19.11,
+   "z": 19.06,
    "controls": [
     "G:L1",
     "G:L2",
@@ -3490,7 +3490,8 @@
    "y": 7.0,
    "z": 20.75,
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Feeds cameras 3 and 4, outdoor AP 5, AP 6, jacks 11, sensor 12"
+   "note": "Feeds cameras 3 and 4, outdoor AP 5, AP 6 and jacks 11",
+   "fiber": "G:F2"
   },
   {
    "key": "G:N7",
@@ -3504,7 +3505,8 @@
    "y": 7.0,
    "z": 1.2,
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Feeds cameras 8 and 9"
+   "note": "Feeds cameras 8 and 9 and sensor 12",
+   "fiber": "G:F7"
   },
   {
    "key": "G:N18",
@@ -3518,7 +3520,8 @@
    "y": 3.0,
    "z": 1.46,
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Fiber to the third-floor rack R1"
+   "note": "Fiber to the third-floor rack R1",
+   "fiber": "G:F18"
   },
   {
    "key": "G:N5",
@@ -3532,7 +3535,8 @@
    "y": 9.0,
    "z": 23.57,
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Outdoor copper run; surge protector SP1"
+   "note": "Outdoor copper run; surge protector SP1",
+   "cable": "G:C5"
   },
   {
    "key": "G:N6",
@@ -3545,7 +3549,8 @@
    "x": 1.2,
    "y": 7.0,
    "z": 11.1,
-   "source": "drawings/1-garage-and-hallway_v20.svg"
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "cable": "G:C6"
   },
   {
    "key": "G:N17",
@@ -3559,7 +3564,23 @@
    "y": 8.08,
    "z": 1.12,
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Feeding switch not confirmed (probably 18)"
+   "note": "Feeding switch not confirmed (probably 18)",
+   "cable": "G:C17"
+  },
+  {
+   "key": "G:N11",
+   "id": "11",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "kind": "jack",
+   "name": "Ethernet jack",
+   "room": "Two PoE jacks at 7 ft, on the wall between the overhead doors",
+   "x": 20.96,
+   "y": 7.0,
+   "z": 23.4,
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "note": "Two jacks, PoE available (15 W each assumed); outdoor face of the wall, so surge protection applies",
+   "cable": "G:C11"
   },
   {
    "key": "G:N12",
@@ -3572,7 +3593,8 @@
    "x": 11.81,
    "y": 9.3,
    "z": 4.26,
-   "source": "drawings/1-garage-and-hallway_v20.svg"
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "cable": "G:C12"
   },
   {
    "key": "G:N13",
@@ -3585,7 +3607,8 @@
    "x": 28.8,
    "y": 9.3,
    "z": 4.26,
-   "source": "drawings/1-garage-and-hallway_v20.svg"
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "cable": "G:C13"
   },
   {
    "key": "G:N14",
@@ -3598,7 +3621,8 @@
    "x": 45.23,
    "y": 8.08,
    "z": 1.12,
-   "source": "drawings/1-garage-and-hallway_v20.svg"
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "cable": "G:C14"
   },
   {
    "key": "G:N15",
@@ -3611,7 +3635,8 @@
    "x": 45.23,
    "y": 8.08,
    "z": 21.55,
-   "source": "drawings/1-garage-and-hallway_v20.svg"
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "cable": "G:C15"
   },
   {
    "key": "G:N19",
@@ -3624,7 +3649,8 @@
    "x": 46.94,
    "y": 8.08,
    "z": 7.95,
-   "source": "drawings/1-garage-and-hallway_v20.svg"
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "cable": "G:C19"
   },
   {
    "key": "G:N20",
@@ -3637,7 +3663,8 @@
    "x": 46.94,
    "y": 8.08,
    "z": 3.28,
-   "source": "drawings/1-garage-and-hallway_v20.svg"
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "cable": "G:C20"
   },
   {
    "key": "2:N8",
@@ -3651,7 +3678,8 @@
    "y": 15.46,
    "z": 15.71,
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "Carries most second-floor PoE drops"
+   "note": "Carries most second-floor PoE drops",
+   "fiber": "2:F8"
   },
   {
    "key": "2:N9",
@@ -3815,13 +3843,13 @@
    "level": "3",
    "levelName": "Third floor",
    "kind": "switch",
-   "name": "Rack R1: main network stack",
+   "name": "Rack R1: main switch and fiber aggregation switch",
    "room": "West clipped strip, rack R1",
    "x": 24.05,
    "y": 23.61,
    "z": 14.16,
    "source": "drawings/3-third-floor_v32.svg",
-   "note": "Core switches and fiber distribution; fiber in from the garage modem"
+   "note": "Every other network switch uplinks here by fiber; fiber in from the garage modem"
   },
   {
    "key": "3:N2",
@@ -4006,7 +4034,8 @@
    "y": 5.0,
    "z": 54.64,
    "source": "drawings/4-sauna-shed_v6.svg",
-   "note": "Fiber in from the garage"
+   "note": "Fiber in from the garage",
+   "fiber": "S:F1"
   },
   {
    "key": "S:N3",
@@ -4028,9 +4057,10 @@
    "level": "3",
    "from": "3:N1",
    "to": "3:N2",
-   "port": 1,
    "cable": "Cat6A",
    "poeW": 21,
+   "count": 1,
+   "port": "1",
    "lengthFt": 25,
    "route": "Straight east above the east office ceiling",
    "points": [
@@ -4066,9 +4096,10 @@
    "level": "3",
    "from": "3:N1",
    "to": "3:N3",
-   "port": 2,
    "cable": "Cat6A",
    "poeW": 13,
+   "count": 1,
+   "port": "2",
    "lengthFt": 20,
    "route": "North bundle: up from R1, north above the wall between the offices, drop to the AP",
    "points": [
@@ -4109,9 +4140,10 @@
    "level": "3",
    "from": "3:N1",
    "to": "3:N7",
-   "port": 3,
    "cable": "Cat6",
    "poeW": 3,
+   "count": 1,
+   "port": "3",
    "lengthFt": 25,
    "route": "North bundle: up from R1, north above the wall between the offices, over the door header, drop on the west face",
    "points": [
@@ -4152,9 +4184,10 @@
    "level": "3",
    "from": "3:N1",
    "to": "3:N8",
-   "port": 4,
    "cable": "Cat6",
    "poeW": 3,
+   "count": 1,
+   "port": "4",
    "lengthFt": 25,
    "route": "North bundle: up from R1, north above the wall between the offices, over the door header, drop on the east face",
    "points": [
@@ -4195,9 +4228,10 @@
    "level": "3",
    "from": "3:N1",
    "to": "3:N9",
-   "port": 5,
    "cable": "Cat6",
    "poeW": 3,
+   "count": 1,
+   "port": "5",
    "lengthFt": 35,
    "route": "North bundle: up from R1, north above the wall between the offices to the north wall, then east",
    "points": [
@@ -4238,9 +4272,10 @@
    "level": "3",
    "from": "3:N1",
    "to": "3:N10",
-   "port": 6,
    "cable": "Cat6",
    "poeW": 3,
+   "count": 1,
+   "port": "6",
    "lengthFt": 40,
    "route": "North bundle: up from R1, north above the wall between the offices to the north wall, then east past the windows",
    "points": [
@@ -4281,9 +4316,10 @@
    "level": "3",
    "from": "3:N1",
    "to": "3:N11",
-   "port": 7,
    "cable": "Cat6",
    "poeW": 3,
+   "count": 1,
+   "port": "7",
    "lengthFt": 30,
    "route": "South bundle: up from R1, south above the rack strip to the south wall, then east",
    "points": [
@@ -4324,9 +4360,10 @@
    "level": "3",
    "from": "3:N1",
    "to": "3:N12",
-   "port": 8,
    "cable": "Cat6",
    "poeW": 3,
+   "count": 1,
+   "port": "8",
    "lengthFt": 35,
    "route": "South bundle: up from R1, south above the rack strip to the south wall, then east past the window",
    "points": [
@@ -4367,9 +4404,10 @@
    "level": "3",
    "from": "3:N1",
    "to": "3:N13",
-   "port": 9,
    "cable": "Cat6",
    "poeW": 3,
+   "count": 1,
+   "port": "9",
    "lengthFt": 40,
    "route": "West above the nook wall and the west office ceiling to the closet, then north to the stair wall",
    "points": [
@@ -4410,9 +4448,10 @@
    "level": "3",
    "from": "3:N1",
    "to": "3:N4",
-   "port": 10,
    "cable": "Cat6A",
    "poeW": 0,
+   "count": 1,
+   "port": "10",
    "lengthFt": 20,
    "route": "Floor run: down from R1 into the floor framing, south then east under the east office floor, up into the floor box",
    "points": [
@@ -4448,9 +4487,10 @@
    "level": "3",
    "from": "3:N1",
    "to": "3:N5",
-   "port": 11,
    "cable": "Cat6A",
    "poeW": 0,
+   "count": 1,
+   "port": "11",
    "lengthFt": 30,
    "route": "Floor run: down from R1 into the floor framing, south then east under the east office floor to the far floor box",
    "points": [
@@ -4486,9 +4526,10 @@
    "level": "3",
    "from": "3:N1",
    "to": "3:N6",
-   "port": 12,
    "cable": "Cat6A",
    "poeW": 0,
+   "count": 1,
+   "port": "12",
    "lengthFt": 35,
    "route": "West bundle with sensor 13 above the west office ceiling, then south and down inside the south wall",
    "points": [
@@ -4521,6 +4562,885 @@
      14.12,
      22.11,
      15.56
+    ]
+   ]
+  },
+  {
+   "key": "G:C5",
+   "level": "G",
+   "from": "G:N2",
+   "to": "G:N5",
+   "cable": "Cat6A",
+   "poeW": 13,
+   "count": 1,
+   "port": "1",
+   "lengthFt": 20,
+   "route": "Up from switch 2, east along the south wall, out through the wall to the AP (surge protector SP1)",
+   "points": [
+    [
+     1.2,
+     7.0,
+     20.75
+    ],
+    [
+     1.2,
+     8.8,
+     20.75
+    ],
+    [
+     4.18,
+     8.8,
+     20.75
+    ],
+    [
+     4.18,
+     8.8,
+     23.57
+    ],
+    [
+     4.18,
+     9.0,
+     23.57
+    ]
+   ]
+  },
+  {
+   "key": "G:C6",
+   "level": "G",
+   "from": "G:N2",
+   "to": "G:N6",
+   "cable": "Cat6A",
+   "poeW": 13,
+   "count": 1,
+   "port": "2",
+   "lengthFt": 25,
+   "route": "Up from switch 2, north along the west wall, drop to the AP",
+   "points": [
+    [
+     1.2,
+     7.0,
+     20.75
+    ],
+    [
+     1.2,
+     8.8,
+     20.75
+    ],
+    [
+     1.2,
+     8.8,
+     11.1
+    ],
+    [
+     1.2,
+     7.0,
+     11.1
+    ]
+   ]
+  },
+  {
+   "key": "G:C11",
+   "level": "G",
+   "from": "G:N2",
+   "to": "G:N11",
+   "cable": "Cat6A",
+   "poeW": 30,
+   "count": 2,
+   "port": "3-4",
+   "lengthFt": 35,
+   "route": "Up from switch 2, east along the south wall above the west door to the wall between the doors",
+   "points": [
+    [
+     1.2,
+     7.0,
+     20.75
+    ],
+    [
+     1.2,
+     8.8,
+     20.75
+    ],
+    [
+     1.2,
+     8.8,
+     21.6
+    ],
+    [
+     20.96,
+     8.8,
+     21.6
+    ],
+    [
+     20.96,
+     8.8,
+     23.4
+    ],
+    [
+     20.96,
+     7.0,
+     23.4
+    ]
+   ]
+  },
+  {
+   "key": "G:C12",
+   "level": "G",
+   "from": "G:N7",
+   "to": "G:N12",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "1",
+   "lengthFt": 25,
+   "route": "Up from switch 7, east along the north wall, then out across the ceiling",
+   "points": [
+    [
+     1.2,
+     7.0,
+     1.2
+    ],
+    [
+     1.2,
+     8.8,
+     1.2
+    ],
+    [
+     11.81,
+     8.8,
+     1.2
+    ],
+    [
+     11.81,
+     8.8,
+     4.26
+    ],
+    [
+     11.81,
+     9.3,
+     4.26
+    ]
+   ]
+  },
+  {
+   "key": "G:C17",
+   "level": "G",
+   "from": "G:N18",
+   "to": "G:N17",
+   "cable": "Cat6A",
+   "poeW": 13,
+   "count": 1,
+   "port": "1",
+   "lengthFt": 25,
+   "route": "Up from switch 18, east through the stair wall into the hallway north wall",
+   "points": [
+    [
+     41.15,
+     3.0,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     1.12
+    ],
+    [
+     46.94,
+     8.8,
+     1.12
+    ],
+    [
+     46.94,
+     8.08,
+     1.12
+    ]
+   ]
+  },
+  {
+   "key": "G:C13",
+   "level": "G",
+   "from": "G:N18",
+   "to": "G:N13",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "2",
+   "lengthFt": 30,
+   "route": "Up from switch 18, out of the under-stair space, west across the garage ceiling",
+   "points": [
+    [
+     41.15,
+     3.0,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     4.26
+    ],
+    [
+     28.8,
+     8.8,
+     4.26
+    ],
+    [
+     28.8,
+     9.3,
+     4.26
+    ]
+   ]
+  },
+  {
+   "key": "G:C14",
+   "level": "G",
+   "from": "G:N18",
+   "to": "G:N14",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "3",
+   "lengthFt": 20,
+   "route": "Up from switch 18, east through the stair wall to the hallway north wall",
+   "points": [
+    [
+     41.15,
+     3.0,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     1.12
+    ],
+    [
+     45.23,
+     8.8,
+     1.12
+    ],
+    [
+     45.23,
+     8.08,
+     1.12
+    ]
+   ]
+  },
+  {
+   "key": "G:C20",
+   "level": "G",
+   "from": "G:N18",
+   "to": "G:N20",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "4",
+   "lengthFt": 25,
+   "route": "Up from switch 18, east across the landing to the hallway east wall",
+   "points": [
+    [
+     41.15,
+     3.0,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     3.28
+    ],
+    [
+     46.94,
+     8.8,
+     3.28
+    ],
+    [
+     46.94,
+     8.08,
+     3.28
+    ]
+   ]
+  },
+  {
+   "key": "G:C19",
+   "level": "G",
+   "from": "G:N18",
+   "to": "G:N19",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "5",
+   "lengthFt": 30,
+   "route": "Hallway bundle: east to the hallway east wall, then south along it",
+   "points": [
+    [
+     41.15,
+     3.0,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     2.2
+    ],
+    [
+     47.4,
+     8.8,
+     2.2
+    ],
+    [
+     46.94,
+     8.8,
+     7.95
+    ],
+    [
+     46.94,
+     8.08,
+     7.95
+    ]
+   ]
+  },
+  {
+   "key": "G:C15",
+   "level": "G",
+   "from": "G:N18",
+   "to": "G:N15",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "6",
+   "lengthFt": 45,
+   "route": "Hallway bundle: east to the hallway east wall, south along it, then west to the doorway",
+   "points": [
+    [
+     41.15,
+     3.0,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     2.2
+    ],
+    [
+     47.4,
+     8.8,
+     2.2
+    ],
+    [
+     47.4,
+     8.8,
+     21.55
+    ],
+    [
+     45.23,
+     8.8,
+     21.55
+    ],
+    [
+     45.23,
+     8.08,
+     21.55
+    ]
+   ]
+  }
+ ],
+ "fibers": [
+  {
+   "key": "G:F18",
+   "from": "G:N18",
+   "to": "3:N1",
+   "cable": "Fiber, duplex single-mode (OS2), LC",
+   "lengthFt": 75,
+   "route": "Up from switch 18 to the riser beside it, up the north wall to the third-floor north eave, west, then south above the office wall to R1",
+   "levels": [
+    "3",
+    "G"
+   ],
+   "plan": {
+    "G": [
+     [
+      41.15,
+      1.46
+     ],
+     [
+      41.15,
+      1.46
+     ],
+     [
+      39.5,
+      0.6
+     ]
+    ],
+    "3": [
+     [
+      39.5,
+      0.6
+     ],
+     [
+      24.6,
+      0.6
+     ],
+     [
+      24.6,
+      14.16
+     ],
+     [
+      24.05,
+      14.16
+     ]
+    ]
+   },
+   "points": [
+    [
+     41.15,
+     3.0,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     1.46
+    ],
+    [
+     39.5,
+     8.8,
+     0.6
+    ],
+    [
+     39.5,
+     27.61,
+     0.6
+    ],
+    [
+     24.6,
+     27.61,
+     0.6
+    ],
+    [
+     24.6,
+     27.61,
+     14.16
+    ],
+    [
+     24.05,
+     23.61,
+     14.16
+    ]
+   ]
+  },
+  {
+   "key": "G:F7",
+   "from": "G:N7",
+   "to": "3:N1",
+   "cable": "Fiber, duplex single-mode (OS2), LC",
+   "lengthFt": 110,
+   "route": "East along the garage north wall to the riser, then up and across the third floor to R1",
+   "levels": [
+    "3",
+    "G"
+   ],
+   "plan": {
+    "G": [
+     [
+      1.2,
+      1.2
+     ],
+     [
+      1.2,
+      1.2
+     ],
+     [
+      1.2,
+      0.6
+     ],
+     [
+      39.5,
+      0.6
+     ]
+    ],
+    "3": [
+     [
+      39.5,
+      0.6
+     ],
+     [
+      24.6,
+      0.6
+     ],
+     [
+      24.6,
+      14.16
+     ],
+     [
+      24.05,
+      14.16
+     ]
+    ]
+   },
+   "points": [
+    [
+     1.2,
+     7.0,
+     1.2
+    ],
+    [
+     1.2,
+     8.8,
+     1.2
+    ],
+    [
+     1.2,
+     8.8,
+     0.6
+    ],
+    [
+     39.5,
+     8.8,
+     0.6
+    ],
+    [
+     39.5,
+     27.61,
+     0.6
+    ],
+    [
+     24.6,
+     27.61,
+     0.6
+    ],
+    [
+     24.6,
+     27.61,
+     14.16
+    ],
+    [
+     24.05,
+     23.61,
+     14.16
+    ]
+   ]
+  },
+  {
+   "key": "G:F2",
+   "from": "G:N2",
+   "to": "3:N1",
+   "cable": "Fiber, duplex single-mode (OS2), LC",
+   "lengthFt": 130,
+   "route": "North along the garage west wall, east along the north wall to the riser, then up to R1",
+   "levels": [
+    "3",
+    "G"
+   ],
+   "plan": {
+    "G": [
+     [
+      1.2,
+      20.75
+     ],
+     [
+      1.2,
+      20.75
+     ],
+     [
+      0.6,
+      20.75
+     ],
+     [
+      0.6,
+      0.6
+     ],
+     [
+      39.5,
+      0.6
+     ]
+    ],
+    "3": [
+     [
+      39.5,
+      0.6
+     ],
+     [
+      24.6,
+      0.6
+     ],
+     [
+      24.6,
+      14.16
+     ],
+     [
+      24.05,
+      14.16
+     ]
+    ]
+   },
+   "points": [
+    [
+     1.2,
+     7.0,
+     20.75
+    ],
+    [
+     1.2,
+     8.8,
+     20.75
+    ],
+    [
+     0.6,
+     8.8,
+     20.75
+    ],
+    [
+     0.6,
+     8.8,
+     0.6
+    ],
+    [
+     39.5,
+     8.8,
+     0.6
+    ],
+    [
+     39.5,
+     27.61,
+     0.6
+    ],
+    [
+     24.6,
+     27.61,
+     0.6
+    ],
+    [
+     24.6,
+     27.61,
+     14.16
+    ],
+    [
+     24.05,
+     23.61,
+     14.16
+    ]
+   ]
+  },
+  {
+   "key": "S:F1",
+   "from": "S:N1",
+   "to": "3:N1",
+   "cable": "Fiber, duplex single-mode (OS2), LC",
+   "lengthFt": 185,
+   "route": "Buried conduit from the shed to the garage SW corner, up inside, then with the switch 2 fiber to the riser and R1",
+   "levels": [
+    "3",
+    "G",
+    "S"
+   ],
+   "plan": {
+    "S": [
+     [
+      -3.0,
+      54.64
+     ],
+     [
+      -0.5,
+      54.64
+     ],
+     [
+      -0.5,
+      54.64
+     ]
+    ],
+    "G": [
+     [
+      -0.5,
+      21.4
+     ],
+     [
+      0.6,
+      21.4
+     ],
+     [
+      0.6,
+      21.4
+     ],
+     [
+      0.6,
+      0.6
+     ],
+     [
+      39.5,
+      0.6
+     ]
+    ],
+    "3": [
+     [
+      39.5,
+      0.6
+     ],
+     [
+      24.6,
+      0.6
+     ],
+     [
+      24.6,
+      14.16
+     ],
+     [
+      24.05,
+      14.16
+     ]
+    ]
+   },
+   "points": [
+    [
+     -3.0,
+     5.0,
+     54.64
+    ],
+    [
+     -0.5,
+     5.0,
+     54.64
+    ],
+    [
+     -0.5,
+     -2.0,
+     54.64
+    ],
+    [
+     -0.5,
+     -2.0,
+     21.4
+    ],
+    [
+     0.6,
+     -2.0,
+     21.4
+    ],
+    [
+     0.6,
+     8.8,
+     21.4
+    ],
+    [
+     0.6,
+     8.8,
+     0.6
+    ],
+    [
+     39.5,
+     8.8,
+     0.6
+    ],
+    [
+     39.5,
+     27.61,
+     0.6
+    ],
+    [
+     24.6,
+     27.61,
+     0.6
+    ],
+    [
+     24.6,
+     27.61,
+     14.16
+    ],
+    [
+     24.05,
+     23.61,
+     14.16
+    ]
+   ]
+  },
+  {
+   "key": "2:F8",
+   "from": "2:N8",
+   "to": "3:N1",
+   "cable": "Fiber, duplex single-mode (OS2), LC",
+   "lengthFt": 50,
+   "route": "East above the second-floor ceiling to below the rack strip, then straight up through the floor into R1",
+   "levels": [
+    "2",
+    "3"
+   ],
+   "plan": {
+    "2": [
+     [
+      2.19,
+      15.71
+     ],
+     [
+      2.19,
+      15.71
+     ],
+     [
+      24.05,
+      15.71
+     ],
+     [
+      24.05,
+      14.16
+     ]
+    ],
+    "3": [
+     [
+      24.05,
+      14.16
+     ]
+    ]
+   },
+   "points": [
+    [
+     2.19,
+     15.46,
+     15.71
+    ],
+    [
+     2.19,
+     19.06,
+     15.71
+    ],
+    [
+     24.05,
+     19.06,
+     15.71
+    ],
+    [
+     24.05,
+     19.06,
+     14.16
+    ],
+    [
+     24.05,
+     23.61,
+     14.16
     ]
    ]
   }
