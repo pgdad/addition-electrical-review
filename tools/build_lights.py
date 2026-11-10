@@ -153,6 +153,80 @@ PAIRS = [
 ]
 HALL_SWITCHES = {"G:S4", "G:S5", "G:S7", "G:E", "G:F"}   # stand on the raised hallway floor
 
+# ---- outlets: (ids, description, kind, height above the floor in ft, circuit). Heights are assumptions:
+# 1.5 ft wall, 3.7 ft counter, ceiling height for ceiling outlets, 7 ft or so for blind outlets.
+# kind: wall | counter | ceiling | floor | outdoor | blind | appliance | hardwired
+GC = 9.42
+OUTLETS = {
+ "G": [
+  ("A", "W/D outlet under the stairs (washer; gas dryer), GFCI", "appliance", 3.0, "C9 laundry, 20A 120V GFCI"),
+  ("B", "Outdoor outlet, AirGradient, GFCI weather-resistant", "outdoor", 1.5, "C2, 20A GFCI"),
+  ("C", "Computers and printers outlet, GFCI", "wall", 1.5, "C8 dedicated, 20A GFCI"),
+  ("P1 P2", "Under the stairs, network gear, GFCI", "wall", 1.5, "C1 dedicated, 20A GFCI"),
+  ("P13", "High outlet beside network switch 2, GFCI", "wall", 7.0, "C1 dedicated, 20A GFCI"),
+  ("P3 P4 P5", "Garage north wall, GFCI", "wall", 1.5, "C2, 20A GFCI"),
+  ("P6 P7", "Garage west wall, GFCI", "wall", 1.5, "C2, 20A GFCI"),
+  ("P8 P9 P10", "Garage east wall, GFCI", "wall", 1.5, "C3, 20A GFCI"),
+  ("P11 P12", "Garage ceiling, cord reel, GFCI", "ceiling", GC, "C4, 20A GFCI"),
+  ("O1 O2", "Wall (jackshaft) opener outlet, GFCI", "wall", 8.0, "C4, 20A GFCI"),
+  ("O3 O4", "Ceiling outlet for a trolley opener, GFCI", "ceiling", GC, "C4, 20A GFCI"),
+  ("EV1", "EV charger, hardwired", "hardwired", 4.0, "C5, 60A 240V"),
+  ("EV2", "EV charger, hardwired", "hardwired", 4.0, "C6, 60A 240V"),
+  ("P14 P15 P16 P17", "Hallway east wall", "wall", 1.5, "C7, 20A"),
+  ("MS1", "Mini-split condenser, hardwired, north wall", "hardwired", 2.0, "C11, 30A 240V"),
+  ("MS2", "Mini-split condenser, hardwired, north wall", "hardwired", 2.0, "C12, 30A 240V"),
+  ("MS3", "Mini-split condenser, hardwired, west wall", "hardwired", 2.0, "C13, 30A 240V"),
+  ("MS4", "Mini-split condenser, hardwired, west wall", "hardwired", 2.0, "C14, 30A 240V"),
+  ("P18", "Outdoor service outlet, north wall, GFCI weather-resistant", "outdoor", 1.5, "C2, 20A GFCI"),
+  ("P19", "Outdoor service outlet, west wall, GFCI weather-resistant", "outdoor", 1.5, "C2, 20A GFCI"),
+ ],
+ "2": [
+  ("A", "Projector wall, 4 outlets", "wall", 1.5, "C11 media, 20A"),
+  ("B", "Motorized screen, smart control", "appliance", 8.0, "C11 media, 20A"),
+  ("C", "Media closet outlet", "wall", 1.5, "C11 media, 20A"),
+  ("E", "Range receptacle", "appliance", 0.5, "C1, 50A 240V"),
+  ("F", "Bidet outlet, GFCI", "wall", 1.5, "C10 bath, 20A GFCI"),
+  ("G", "Sauna heater, hardwired per its manual", "hardwired", 1.0, "C2, 50A 240V"),
+  ("K", "Fridge", "appliance", 3.5, "C6, 20A"),
+  ("M", "Dishwasher and disposal", "appliance", 1.5, "C7, 20A"),
+  ("N", "Microwave/hood above the range", "appliance", 6.0, "C8, 20A"),
+  ("W", "WashTower WKE100HVA", "appliance", 3.0, "C9, 30A 240V"),
+  ("P1 P2", "Hall, south wall", "wall", 1.5, "C12, 20A"),
+  ("P3 P4 P5 P6", "Media room", "wall", 1.5, "C11 media, 20A"),
+  ("P7", "Kitchen, west wall, GFCI", "wall", 1.5, "C5 kitchen, 20A GFCI"),
+  ("P8 P9 P10 P21", "Family room", "wall", 1.5, "C12, 20A"),
+  ("P11 P23 P24", "Balcony, weatherproof GFCI", "outdoor", 1.5, "C14 balcony, 20A GFCI"),
+  ("P12 P13", "Kitchen counter, GFCI", "counter", 3.7, "C4 counter, 20A GFCI"),
+  ("P14", "Kitchen island, GFCI", "counter", 3.0, "C5 kitchen, 20A GFCI"),
+  ("P15 P22", "Bath west wall, GFCI", "counter", 3.5, "C10 bath, 20A GFCI"),
+  ("P16 P17 P18", "Under the stairs up", "wall", 1.5, "C13, 20A"),
+  ("P19 P20", "Media room, by S7", "wall", 1.5, "C13, 20A"),
+  ("H1 H2", "Blind outlet, hall window, high", "blind", 7.5, "C12, 20A"),
+  ("H3 H4", "Blind outlet, media windows, high", "blind", 7.5, "C12, 20A"),
+  ("H5 H6", "Blind outlet, family windows, high", "blind", 7.5, "C12, 20A"),
+ ],
+ "3": [
+  ("A", "Duplex outlet inside rack R2", "wall", 1.5, "C1 dedicated, 20A"),
+  ("B", "Duplex outlet inside rack R4", "wall", 1.5, "C2 dedicated, 20A"),
+  ("E", "Spare home run, boxed in rack R3", "wall", 1.5, "C8 spare, 20A"),
+  ("C D", "Floor power outlet, east office", "floor", 0.1, "C4 east office desks, 20A"),
+  ("P1 P2 P3 P4 P5", "West office wall outlet", "wall", 1.5, "C3 west office, 20A"),
+  ("P6 P7 P11 P12", "East office wall outlet", "wall", 1.5, "C5 east office perimeter, 20A"),
+  ("P8 P9 P10", "East office wall outlet", "wall", 1.5, "C4 east office desks, 20A"),
+  ("P13 P14", "Small attic", "wall", 1.5, "C6 sink and attics, 20A AFCI/GFCI"),
+  ("P15", "Old house attic side of the wall", "wall", 1.5, "C6 sink and attics, 20A AFCI/GFCI"),
+  ("P16 P17", "Near the sink, GFCI", "counter", 3.7, "C6 sink and attics, 20A AFCI/GFCI"),
+  ("H1 H2", "Blind outlet, west office south windows, high", "blind", 6.5, "C3 west office, 20A"),
+  ("H3 H4 H5", "Blind outlet, east office windows, high", "blind", 6.5, "C5 east office perimeter, 20A"),
+ ],
+ "S": [
+  ("B", "Space heater outlet, dressing room", "appliance", 1.5, "C1 heater, 20A"),
+  ("P1", "Dressing room outlet, GFCI", "wall", 1.5, "C2, 20A GFCI"),
+  ("P2 P3 P4 P5 P6", "Shed outlet, GFCI", "wall", 1.5, "C2, 20A GFCI"),
+ ],
+}
+HALL_OUTLETS = {"P14", "P15", "P16", "P17"}
+
 def east_riser_points():     # one light mid each riser, garage slab -> 2nd floor (17 risers)
     rise, run = (F2 - 2.33) / 13, 10.1 / 13
     pts = [[40.83 - 0.04, 0.27, 6.91], [41.67 - 0.04, 0.81, 6.91]]                   # garage door steps (DN 2R on A.2)
@@ -213,6 +287,18 @@ def build():
         if key in pair_of: rec["pairWith"], rec["pairColor"] = pair_of[key]
         rec["mode"] = "on/off" if key in ("2:S6", "2:S9", "2:S11", "2:S18") else "smart-bulb dimmer"
         switches.append(rec)
+    outlets = []
+    for lv, rows in OUTLETS.items():
+        for ids, desc, kind, h, cct in rows:
+            for oid in ids.split():
+                x, z = to_ft(lv, *dev[lv][oid]["pts"][0])
+                base = 0.0 if kind in ("outdoor",) and lv == "G" or oid.startswith("MS") else (HALL_FLOOR if (lv == "G" and oid in HALL_OUTLETS) else FLOOR[lv])
+                outlets.append(dict(key=f"{lv}:{oid}", id=oid, level=lv, levelName=LEVEL_NAME[lv], room=desc, kind=kind,
+                                    x=x, y=round(base + h, 2), z=z, circuit=cct, source=SOURCE[lv]))
+    for lv in SCALES:                                   # every plotted P#, O#, EV#, H#, MS# is in the outlet table
+        plotted = {n for n in dev[lv] if re.fullmatch(r"(P|O|EV|H|MS)\d+", n)}
+        have = {o["id"] for o in outlets if o["level"] == lv}
+        assert plotted <= have, (lv, plotted - have)
     # sanity: every plotted L# is in the data and vice versa
     for lv in SCALES:
         plotted = {n for n in dev[lv] if re.fullmatch(r"L\d+", n)}
@@ -224,7 +310,7 @@ def build():
         axes="x = east, z = south, y = up; origin = garage NW exterior corner at the garage slab",
         scales={lv: dict(drawing=SOURCE[lv], px_per_ft_x=round(v[2], 3), px_per_ft_y=round(v[3], 3)) for lv, v in SCALES.items()},
         floors=dict(garage=0.0, hallway=HALL_FLOOR, second=F2, third=round(F3, 2), shed=0.0),
-        lights=lights, switches=switches)
+        lights=lights, switches=switches, outlets=outlets)
 
 if __name__ == "__main__":
     data = build()
