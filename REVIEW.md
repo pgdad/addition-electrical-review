@@ -252,6 +252,13 @@ The PDF wins for geometry; these are the differences found.
 ### Lighting control
 - Every light has a switch and each is at the door of the space it serves.
 - L5 is now centered over the porch door (moved from the east end of the porch).
+- Doors are now drawn (owner request, Nov 10, 2026): the porch door from the dressing room, 2'8" wide,
+  hinged west and opening out onto the porch; and the sauna door at the north end of the wall between the
+  dressing room and the sauna, 2'0" wide, hinged south and opening out into the dressing room. Widths and
+  swings are assumptions; a sauna door has to open outward from the hot room.
+- With the sauna door hinged south, its open leaf stays clear of S1, S2, S4 and control unit J on the short
+  north wall east of the porch door, which is also the porch door's latch side. That makes the east side
+  workable for the switches (open question 1).
 
 ### Code-oriented checks (check with the electrician/inspector)
 - **Feeder**: 60 A, 240 V is ample for a 20 A heater, one 20 A receptacle circuit and a lighting circuit.

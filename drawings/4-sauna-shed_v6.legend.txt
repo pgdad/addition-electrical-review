@@ -64,3 +64,5 @@ J: control unit for the sauna lights, in a 15 x 11 in space low on the dressing 
 L1: strip lights under the seating bench, like under-cabinet lights, heat rated. The low-voltage wire runs low along
 the sauna north wall from J to the bench, away from the wood stove.
 G is bonded to subpanel A's grounding bar (green line along the east wall) and to the shed ground rods.
+Doors: porch door from the dressing room, 2'8", hinged west, opens out onto the porch. Sauna door at the north end
+of the wall between the dressing room and the sauna, 2'0", hinged south, opens out into the dressing room.
