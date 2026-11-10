@@ -22,7 +22,7 @@ How to read this:
 |---|------|---------|-------|
 | 1 | must-fix | Main panel MP is drawn on the north wall inside the footprint of the garage stair (x 36.7 to 39.7 ft). The stair soffit there is roughly 5 to 6 ft above the slab, below the 6.5 ft headroom a panel's working space needs. A.2 also shows a wall along the south side of that stair, so MP, the WashTower, modem 1, switch 18 and P1/P2 would be inside a 3'4" wide enclosed under-stair space. | garage v20: MP, W/D, 1, 18, L14 |
 | 2 | must-fix | Second-floor kitchen and laundry: NEC 2023 extends GFCI to all kitchen receptacles and to listed appliances, so C1 (range receptacle E), C6 (fridge K), C7 (DW/disposal M), C8 (microwave N) and C9 (WashTower W) need checking, not just counters C4/C5. No AFCI is noted anywhere on the second floor (the third floor notes it). | second floor v20 |
-| 3 | must-fix | PoE doorbell 14 on the balcony is an outdoor copper run with no surge protector and no ground bar on that floor. Garage doorbell 16 now has surge protector SP3 (owner decision). PoE jacks 11 are plotted on the outside face of the jog wall; if they are outside they need protection too. | second floor v20: 14; garage v20: 11 |
+| 3 | must-fix | PoE doorbell 14 on the balcony is an outdoor copper run with no surge protector and no ground bar on that floor. Garage doorbell 16 now has surge protector SP3 (owner decision). Garage PoE jacks 11 are now inside, on the east face of the wall between the doors (owner decision), so they need none. | second floor v20: 14 |
 | 4 | should-fix | With 8 ft doors under a 9'5" ceiling, both ceiling cord reels (P11, P12) hang in the path of the open doors. The south light row L5 to L8, moved 2 ft north to z 16.7 ft, is still above the open doors, which the owner accepts: those lights are for when the doors are closed. | garage v20 |
 | 5 | should-fix | Several lights can only be switched after crossing the dark: second-floor hall (S1/S2 mid-hall, 14 ft from the west stair and 8 ft from the east stair), family room (S10 only at the balcony door) and media room (S5/S6 only at the hall door). The third-floor cases (east office S3, attic lights L6 and L8) are accepted by the owner. | second floor v20 |
 | 6 | should-fix | The second-floor "small" PoE switch 8 has about 17 PoE drops and roughly 75 to 105 W. No 5/8-port switch covers that. Garage switch 2 needs 6 PoE ports and about 75 W plus a fiber port; switch 18 needs 8 ports. | second floor v20: 8; garage v20: 2, 18 |
@@ -354,8 +354,8 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
   an 8-port PoE switch (owner decision) with its own high outlet P20 beside it on network circuit C1.
   With cameras 8 and 9 it uses 7 of the 8 ports, so the fiber uplink needs a separate SFP port. Jacks 11 are
   the other jacks on this level. The drawing calls those PoE jacks, so 15 W each is
-  allowed for. They are plotted on the outside face of the wall between the doors; if they really are
-  outdoors they still need surge protection (finding 3).
+  allowed for. They are inside the garage, on the east face of the short wall between the doors (owner
+  decision, Nov 10, 2026), so they need no surge protector.
 - The hallway runs from switch 18 cross the stairwell at the hallway's north end; route them in the wall
   and under the landing rather than across the open stair.
 
@@ -365,7 +365,7 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 | Garage cameras 3, 4, AP 5 | Yes, SP1 on G |
 | Garage camera 8 | Yes, SP2 on G2 |
 | Garage doorbell 16 | Yes, SP3 at the switch 18 end, bonded to the service ground at MP |
-| Garage jacks 11 | Plotted outdoors under the balcony; **no**, if they really are outside |
+| Garage jacks 11 | Indoor (east face of the wall between the doors), not needed |
 | Second-floor doorbell 14 | **No**, and no ground bar on that floor |
 | Shed camera 2 | Yes, SP on G |
 | Shed AP 3 | Indoor, not needed |
@@ -425,7 +425,7 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 **Must-fix**
 1. MP under the garage stair: headroom and working space (garage).
 2. GFCI/AFCI scope on second-floor kitchen, laundry and living circuits (second floor).
-3. Surge protection for doorbell 14 and jacks 11 if outdoors (network).
+3. Surge protection for doorbell 14 (network).
 
 **Should-fix**
 4. Open doors in the path of cord reels P11, P12 (garage).

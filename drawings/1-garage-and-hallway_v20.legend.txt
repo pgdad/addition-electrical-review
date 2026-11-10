@@ -100,7 +100,7 @@ Devices
 8 Outdoor camera, north wall
 9 Ceiling camera, 3D printer area
 10 Ceiling camera, WashTower
-11 PoE jacks, 7 ft, between doors
+11 PoE jacks, 7 ft, inside, east face of wall between doors
 12 Presence sensor, west half
 13 Presence sensor, east half
 14 Hall sensor, north wall, faces south

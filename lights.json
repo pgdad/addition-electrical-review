@@ -3602,12 +3602,12 @@
    "levelName": "Garage and hallway",
    "kind": "jack",
    "name": "Ethernet jack",
-   "room": "Two PoE jacks at 7 ft, on the wall between the overhead doors",
-   "x": 20.96,
+   "room": "Two PoE jacks at 7 ft, inside the garage on the east face of the short wall between the overhead doors",
+   "x": 22.06,
    "y": 7.0,
-   "z": 23.4,
+   "z": 22.65,
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Two jacks, PoE available (15 W each assumed); outdoor face of the wall, so surge protection applies",
+   "note": "Two jacks, PoE available (15 W each assumed); indoors, so no surge protector needed",
    "cable": "G:C11"
   },
   {
@@ -4676,7 +4676,7 @@
    "count": 2,
    "port": "3-4",
    "lengthFt": 35,
-   "route": "Up from switch 2, east along the south wall above the west door to the wall between the doors",
+   "route": "Up from switch 2, east along the south wall above the west door, through to the east face of the wall between the doors",
    "points": [
     [
      1.2,
@@ -4694,19 +4694,19 @@
      21.6
     ],
     [
-     20.96,
+     21.6,
      8.8,
      21.6
     ],
     [
-     20.96,
+     22.06,
      8.8,
-     23.4
+     22.65
     ],
     [
-     20.96,
+     22.06,
      7.0,
-     23.4
+     22.65
     ]
    ]
   },

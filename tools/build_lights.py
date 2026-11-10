@@ -285,7 +285,7 @@ CABLES = {
   ("2", [
    ("5",  "Cat6A", 13, [(4.18, 20.75)], "Up from switch 2, east along the south wall, out through the wall to the AP (surge protector SP1)"),
    ("6",  "Cat6A", 13, [], "Up from switch 2, north along the west wall, drop to the AP"),
-   ("11", "Cat6A", 15, [(1.2, 21.6), (20.96, 21.6)], "Up from switch 2, east along the south wall above the west door to the wall between the doors", None, 2),
+   ("11", "Cat6A", 15, [(1.2, 21.6), (21.6, 21.6)], "Up from switch 2, east along the south wall above the west door, through to the east face of the wall between the doors", None, 2),
   ]),
   ("7", [
    ("12", "Cat6", 3, [(11.81, 1.2)], "Up from switch 7, east along the north wall, then out across the ceiling"),
@@ -321,7 +321,7 @@ JACKS = {
        ("6", "Wall jack, west office south wall, east of the windows", 1.5)],
 }
 JACKS["G"] = [("21", "Four Ethernet jacks on the north wall by outlet C, near switch 7", 1.5, "Four jacks, data only, no PoE"),
-              ("11", "Two PoE jacks at 7 ft, on the wall between the overhead doors", 7.0, "Two jacks, PoE available (15 W each assumed); outdoor face of the wall, so surge protection applies")]
+              ("11", "Two PoE jacks at 7 ft, inside the garage on the east face of the short wall between the overhead doors", 7.0, "Two jacks, PoE available (15 W each assumed); indoors, so no surge protector needed")]
 for _lv, _rows in JACKS.items():
     for _i, _where, _h, *_note in _rows: NETWORK[_lv].append((_i, "jack", "Ethernet jack", _where, _h, _note[0] if _note else "Data only, no PoE"))
 _F = "Floor run: down from R1 into the floor framing, south then east under the east office floor"

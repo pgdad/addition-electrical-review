@@ -38,6 +38,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Ethernet jacks 21 (owner decision, Nov 10, 2026): four data-only jacks on the north wall near switch 7, by
   outlet C. Switch 7 is an 8-port PoE switch with high outlet P20 beside it on C1. Ground bar G2 (with SP2) sits just south of the west window, about 5 ft from switch 7, and is the
   bar for surge protectors on outdoor Ethernet cables added later.
+- PoE jacks 11 are inside the garage, on the east face of the short north-south wall between the overhead
+  doors (owner decision, Nov 10, 2026).
 - Garage Ethernet (proposed, Nov 10, 2026, not yet confirmed): sensor 12 on switch 7; APs 5, 6 and jacks 11 on
   switch 2; AP 17 and sensors 13, 14, 15, 19, 20 on switch 18. Details in REVIEW.md ("Garage Ethernet plan").
 - Lights: L1-L8 garage ceiling on S1+S2 3-way; L9, L10 hallway on S4+S7 3-way; L13 deck door on S5;
