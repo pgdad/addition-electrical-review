@@ -85,8 +85,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   east stair (hall); S21 with S8 at the media/kitchen door, kitchen side. Media lights are split: S5 runs L9
   and S24 runs L10 (hall door, with S6); companions S22 (L9), S25 (L10), S23 (fan) are on the media side of
   the media/kitchen wall at the door's north edge. S13 is on the west side of the media/balcony door. S10 with L17, L18, L24 and S13 with L29 stay as drawn (owner decision).
-- Doors drawn from A.3 on Nov 10, 2026. The hall/kitchen door opens out into the hall, handle on the west
-  (left on the drawing), hinged east: the opposite swing to A.3 (owner decision).
+- Doors drawn from A.3 on Nov 10, 2026. The hall/kitchen door opens out into the hall, hinged on its west
+  jamb, handle on the east: the opposite swing to A.3 (owner decision).
 - Network switch 16 is powered from blind outlet H6, which becomes a duplex (owner decision, Nov 10, 2026).
 - Owner decisions, Nov 10, 2026: doorbell 14 on the wall north of the family/balcony door; S26 pairs with
   S10 at the north end of the family/bath wall; counter outlets P25, P26 south of the sink on C4; sauna light
