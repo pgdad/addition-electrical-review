@@ -21,15 +21,15 @@ How to read this:
 | # | Rank | Finding | Where |
 |---|------|---------|-------|
 | 1 | must-fix | Main panel MP is drawn on the north wall inside the footprint of the garage stair (x 36.7 to 39.7 ft). The stair soffit there is roughly 5 to 6 ft above the slab, below the 6.5 ft headroom a panel's working space needs. A.2 also shows a wall along the south side of that stair, so MP, the WashTower, modem 1, switch 18 and P1/P2 would be inside a 3'4" wide enclosed under-stair space. | garage v20: MP, W/D, 1, 18, L14 |
-| 2 | should-fix | Several lights can only be switched after crossing the dark: second-floor hall (S1/S2 mid-hall, 14 ft from the west stair and 8 ft from the east stair), family room (S10 only at the balcony door) and media room (S5/S6 only at the hall door). The third-floor cases (east office S3, attic lights L6 and L8) are accepted by the owner. | second floor v20 |
+| 2 | should-fix | The family room ceiling lights L17, L18 can only be switched from S10 at the balcony door; coming from the kitchen or the media door you cross the room first. (The hall, kitchen and media room now have companion switches S19 to S23.) | second floor v20: S10 |
 | 3 | should-fix | The second-floor "small" PoE switch 8 has about 17 PoE drops and roughly 75 to 105 W. No 5/8-port switch covers that. Garage switch 2 needs 6 PoE ports and about 75 W plus a fiber port. Garage switch 18 is settled: an 8-port PoE switch with a fiber port (owner decision), which its 8 PoE devices fill with no spare. | second floor v20: 8; garage v20: 2 |
-| 4 | should-fix | S10 runs the family room ceiling lights L17, L18 together with outdoor balcony light L24, and balcony light L29 is on the far door's switch S13. Put all four balcony lights (L23, L24, L28, L29) on one balcony control at each door. | second floor v20: S10, S13 |
-| 5 | should-fix | Second-floor kitchen: the 1.8 ft of counter south of the sink has no receptacle, island outlet P14 needs its position checked against the NEC 2023 island rule, and wall receptacle spacing runs long in a few places. | second floor v20: P12 to P14 |
-| 6 | should-fix | Blind outlet H4 is plotted on the balcony door opening and has no wall to sit on; put it above the window head. Sauna light driver J is in the W/D closet that the WashTower fills, so it cannot be reached. | second floor v20: H4, J |
-| 7 | should-fix | Third floor: ID 6 is used twice (network jack 6 and the empty rack opening), and ceiling outlet P21 only counts toward wall spacing if it is within 5.5 ft of the floor. | third floor v32: 6, P21 |
-| 8 | nice-to-have | Garage labelling: MP has no text on the plan, device C reads like a circuit number, and switches E and F are drawn amber instead of green. | garage v20: MP, C, E, F |
-| 9 | nice-to-have | Garage hallway: switch E is plotted in the hallway door opening at the stair foot, and nothing by the overhead doors controls L1 to L8. | garage v20: E, F |
-| 10 | nice-to-have | Second floor: S17 and stair controller D need real locations, motorized screen B covers the balcony door when down, and the exterior stair is unlit at the bottom. | second floor v20: S17, D, B |
+| 4 | should-fix | Second-floor kitchen: the 1.8 ft of counter south of the sink has no receptacle, island outlet P14 needs its position checked against the NEC 2023 island rule, and wall receptacle spacing runs long in a few places. | second floor v20: P12 to P14 |
+| 5 | should-fix | Blind outlet H4 is plotted on the balcony door opening and has no wall to sit on; put it above the window head. Sauna light driver J is in the W/D closet that the WashTower fills, so it cannot be reached. | second floor v20: H4, J |
+| 6 | should-fix | Third floor: ID 6 is used twice (network jack 6 and the empty rack opening), and ceiling outlet P21 only counts toward wall spacing if it is within 5.5 ft of the floor. | third floor v32: 6, P21 |
+| 7 | nice-to-have | Garage labelling: MP has no text on the plan, device C reads like a circuit number, and switches E and F are drawn amber instead of green. | garage v20: MP, C, E, F |
+| 8 | nice-to-have | Garage hallway: switch E is plotted in the hallway door opening at the stair foot, and nothing by the overhead doors controls L1 to L8. | garage v20: E, F |
+| 9 | nice-to-have | Second floor: S17 and stair controller D need real locations, motorized screen B covers the balcony door when down, and the exterior stair is unlit at the bottom. | second floor v20: S17, D, B |
+| 10 | nice-to-have | Third-floor sheet colors do not follow the key: blind outlets H1 to H5 are purple, network items are teal, blue and coral, and power items A to E are red. | third floor v32 |
 
 ## PDF vs drawing geometry mismatches
 
@@ -158,15 +158,27 @@ The PDF wins for geometry; these are the differences found.
 - Every light has a control. L21 (sauna) has no wall switch by design; it is on the heater control.
 - Stair pairs have a switch at each end: S3/S15/S17 at the foot of the west stair (x 10.6 to 12.1 ft, stair
   foot at x 9.6 ft) and S4/S16 at the head of the east stair (x 31.6 to 33.1 ft, first riser at x 33.8 ft).
-- **should-fix** (finding 2):
-  - Hall L1 to L6: S1/S2 are mid-hall at x 23.9 and 25.4 ft. Add hall control at both stairs. With Inovelli
-    switches this can be a multi-tap scene on S3 and S4 instead of more boxes.
-  - Family L17/L18: only S10 at the balcony door. Coming from the kitchen or the media door you cross the room.
-  - Kitchen L13 to L15: only S8 at the hall door, nothing at the media door.
-  - Media L9/L10 and fan L11: only S5/S6 at the hall door, nothing at the balcony door or the family door.
-- **should-fix**: S10 runs family ceiling lights L17, L18 and outdoor balcony light L24 together. The balcony
-  light cannot be on without the room lights on the fallback switch. L29 is beside the family door but is on
-  S13 at the media door. Proposal: all four balcony lights (L23, L24, L28, L29) on one balcony control at each door.
+- Companion switches (owner decision, Nov 10, 2026):
+  - Hall: S19 pairs with S1 (L1 to L3) at the foot of the west stair, and S20 pairs with S2 (L4 to L6) at the
+    head of the east stair. Each stair end lights its own half of the hall.
+  - Kitchen: S21 pairs with S8 (L13 to L15) on the kitchen side of the media/kitchen door, at its latch edge.
+  - Media: S22 pairs with S5 (L9, L10) and S23 with S6 (fan L11, on/off) on the media side of that door, in
+    the corner of the south wall beside its latch edge. P5 was nudged about 1.4 ft west to make room.
+- **should-fix** (finding 2): family L17/L18 have only S10 at the balcony door. Coming from the kitchen or
+  the media door you cross the room. A scene on S21, which is on that side of the room, would cover it.
+- Accepted (owner decision, Nov 10, 2026): S10 runs family ceiling lights L17, L18 together with balcony
+  light L24, and L29 stays on S13.
+- Doors are now drawn from A.3: hall to media and hall to kitchen (2668, hinged east, opening into the
+  rooms), media to kitchen (2668, hinged north, opening into the kitchen; its gap was about 0.5 ft too far
+  south and is corrected), media to balcony (3068, opening in), family to balcony (3068, opening out),
+  closet, bath, sauna and the W/D closet bifold. What the doors show:
+  - **should-fix**: S8 and S9 are on the hinge side of the hall/kitchen door, in the 1.3 ft of wall between
+    the door and the fridge. With the door open they are behind it. Move them to the latch (west) side.
+  - *nice-to-have*: doorbell 14 is plotted in the swing of the family/balcony door, which opens outward.
+    Put it on the wall north of the door, by L29.
+  - A.3 draws the sauna door opening into the sauna. Sauna doors normally open outward; check the heater
+    manual and the inspector.
+  - S5/S6 (latch side of the media door) and S11/S18 (latch side of the bath door) are well placed.
 - *nice-to-have*: the exterior stair from grade to the balcony (16 risers) has only L28 at the top landing,
   which is what the residential code asks for, but the bottom is unlit. A step light or a light at the foot helps.
 - Resolved (owner decision): S6 (media fan and its light), S9 (under-cabinet L16) and S11 (bath L19, L20, fan)
@@ -453,21 +465,20 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 1. MP under the garage stair: headroom and working space (garage).
 
 **Should-fix**
-2. Lights switched from the far side: hall, family, kitchen, media (second floor).
+2. Family room lights switched only from the balcony door (second floor).
 3. PoE switch sizing: 8, 2 (network).
-4. S10 mixes family lights with balcony L24; L29 on the far door's switch (second floor).
-5. No counter receptacle south of the sink; island P14 position; wall spacing gaps (second floor).
-6. H4 has no wall; driver J behind the WashTower (second floor).
-7. Duplicate ID 6; ceiling outlet P21 must stay within 5.5 ft of the floor to count (third floor).
+4. No counter receptacle south of the sink; island P14 position; wall spacing gaps (second floor).
+5. H4 has no wall; driver J behind the WashTower (second floor).
+6. Duplicate ID 6; ceiling outlet P21 must stay within 5.5 ft of the floor to count (third floor).
 
 **Nice-to-have**
-8. Label MP; rename device C; draw E/F green (garage).
-9. E in the door opening; scene button between the overhead doors (garage).
-10. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
-11. Color key on the third-floor sheet (third floor).
-12. "East walls in line" label (shed).
-13. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
-14. One AP too many in the middle of the building; outdoor coverage north and east.
+7. Label MP; rename device C; draw E/F green (garage).
+8. E in the door opening; scene button between the overhead doors (garage).
+9. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
+10. Color key on the third-floor sheet (third floor).
+11. "East walls in line" label (shed).
+12. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
+13. One AP too many in the middle of the building; outdoor coverage north and east.
 
 ## Scales used
 

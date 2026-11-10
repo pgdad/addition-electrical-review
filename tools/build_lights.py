@@ -124,6 +124,11 @@ SWITCHES = {
  ("2", "S10"): ("Family room, by the balcony door", k("2", "L17", "L18", "L24")),
  ("2", "S11"): ("Bath, by its door", k("2", "L19", "L20")),
  ("2", "S18"): ("Bath, by its door (fan only, no light)", []),
+ ("2", "S19"): ("Hall, foot of the west stair (companion to S1)", rng("2", 1, 3)),
+ ("2", "S20"): ("Hall, head of the east stair (companion to S2)", rng("2", 4, 6)),
+ ("2", "S21"): ("Kitchen side of the media/kitchen door, latch edge (companion to S8)", k("2", "L13", "L14", "L15")),
+ ("2", "S22"): ("Media room, corner by the kitchen door (companion to S5)", k("2", "L9", "L10")),
+ ("2", "S23"): ("Media room, corner by the kitchen door (companion to S6)", k("2", "L11")),
  ("2", "S12"): ("Kitchen side of the W/D closet", k("2", "L22")),
  ("2", "S13"): ("Media room, by the balcony door", k("2", "L23", "L28", "L29")),
  ("2", "S14"): ("Media room west wall, beside AP 9", rng("2", 25, 27)),
@@ -152,6 +157,8 @@ PAIRS = [
  (["G:E", "2:S4"], "#ffd54f"), (["G:F", "2:S16"], "#ba68c8"),
  (["2:S3", "3:S8"], "#81c784"), (["2:S15", "3:S9"], "#f06292"),
  (["2:S17", "3:S10"], "#64b5f6"), (["3:S1", "3:S2"], "#e57373"),
+ (["2:S1", "2:S19"], "#aed581"), (["2:S2", "2:S20"], "#4db6ac"), (["2:S8", "2:S21"], "#ffb74d"),
+ (["2:S5", "2:S22"], "#9575cd"), (["2:S6", "2:S23"], "#a1887f"),
 ]
 HALL_SWITCHES = {"G:S4", "G:S5", "G:S7", "G:E", "G:F"}   # stand on the raised hallway floor
 
@@ -411,7 +418,7 @@ def build():
         rec = dict(key=key, id=sid, level=lv, levelName=LEVEL_NAME[lv], room=room, x=x, y=round(y, 2), z=z,
                    controls=ctl, source=SOURCE[lv])
         if key in pair_of: rec["pairWith"], rec["pairColor"] = pair_of[key]
-        rec["mode"] = "on/off" if key in ("2:S6", "2:S9", "2:S11", "2:S18", "3:S5") else "smart-bulb dimmer"
+        rec["mode"] = "on/off" if key in ("2:S6", "2:S9", "2:S11", "2:S18", "2:S23", "3:S5") else "smart-bulb dimmer"
         switches.append(rec)
     outlets = []
     for lv, rows in OUTLETS.items():

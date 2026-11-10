@@ -133,13 +133,13 @@ L20 Shower, wet rated
 L21 Sauna, sauna rated, on heater control
 L22 W/D
 L23, L24 Balcony wall lights by each door
-S1, S2 Hall 2-gang: L1-L3 and L4-L6
+S1, S2 Hall 2-gang: L1-L3, L4-L6 (with S19, S20)
 S3 Stair up risers, bottom (top on 3rd fl)
 S4 Stair down risers, top (bottom on garage lvl)
-S5 Media ceiling lights, by hall door
+S5 Media ceiling lights, by hall door (with S22)
 S6 Media fan and its light, beside S5 (on/off)
 S7 Closet, media side of its door
-S8 Kitchen ceiling and pendant, by hall door
+S8 Kitchen ceiling and pendant, by hall door (S21)
 S9 Under-cabinet, beside S8 (on/off)
 S10 Family, by balcony door (L17, L18, L24)
 S11 Bath lights, by its door (L19, L20), on/off
@@ -253,3 +253,13 @@ microwave and WashTower; AFCI on every 120V 15A and 20A circuit except bath C10 
 breakers where both apply. Sauna heater C2 per its manual. Confirm with the electrician and inspector.
 SP1 Surge protector for PoE doorbell 14, at the switch 8 end of its cable in the SW closet, on ground bar GB1.
 GB1 Ground bar in the SW closet by switch 8, bonded down to garage ground bar G in the corner directly below.
+S19
+S20
+S21
+S22
+S23
+Companion switches (added Nov 10, 2026): S19 with S1 (L1-L3) at the foot of the west stair; S20 with S2 (L4-L6) at the head
+of the east stair; S21 with S8 (kitchen L13-L15) on the kitchen side of the media/kitchen door; S22 with S5 (media L9, L10)
+and S23 with S6 (media fan L11, on/off) on the media side of that door, in the corner by its latch edge.
+Doors (A.3): hall to media and hall to kitchen 2668, hinged east; media to kitchen 2668, hinged north, opens into the kitchen;
+media to balcony 3068, opens in; family to balcony 3068, opens out; closet 2668; bath 2468; sauna 2468; W/D closet bifold.

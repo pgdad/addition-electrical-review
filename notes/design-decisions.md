@@ -81,6 +81,10 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   corner; one 2840 tempered on the west wall, centred 3'0" from the north corner.
 
 ## Second floor (sheet A.3, drawing v20) -- owner review in progress
+- Companion switches (owner decision, Nov 10, 2026): S19 with S1 at the west stair and S20 with S2 at the
+  east stair (hall); S21 with S8 at the media/kitchen door, kitchen side; S22 with S5 and S23 with S6 at the
+  same door, media side. S10 with L17, L18, L24 and S13 with L29 stay as drawn (owner decision).
+- Doors drawn from A.3 on Nov 10, 2026.
 - Lights: L1-L6 hall (S1, S2); L7 stair-up risers (S3 bottom + 3rd-floor S8 top); L8 stair-down risers
   (S4 + garage E); L9-L11 media (S5, S6); L12 media closet (S7); L13-L15 kitchen (S8); L16 under-cabinet (S9);
   L17, L18, L24 family/balcony (S10); L19, L20 bath (S11), bath fan on its own switch S18; L21 sauna on the heater control (DC from

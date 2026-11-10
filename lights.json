@@ -312,7 +312,8 @@
    "z": 0.67,
    "type": "wall",
    "switches": [
-    "2:S1"
+    "2:S1",
+    "2:S19"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg",
@@ -329,7 +330,8 @@
    "z": 0.67,
    "type": "wall",
    "switches": [
-    "2:S1"
+    "2:S1",
+    "2:S19"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg",
@@ -346,7 +348,8 @@
    "z": 0.67,
    "type": "wall",
    "switches": [
-    "2:S1"
+    "2:S1",
+    "2:S19"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg",
@@ -363,7 +366,8 @@
    "z": 0.67,
    "type": "wall",
    "switches": [
-    "2:S2"
+    "2:S2",
+    "2:S20"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg",
@@ -380,7 +384,8 @@
    "z": 0.67,
    "type": "wall",
    "switches": [
-    "2:S2"
+    "2:S2",
+    "2:S20"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg",
@@ -397,7 +402,8 @@
    "z": 0.67,
    "type": "wall",
    "switches": [
-    "2:S2"
+    "2:S2",
+    "2:S20"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg",
@@ -609,7 +615,8 @@
    "z": 9.01,
    "type": "ceiling",
    "switches": [
-    "2:S5"
+    "2:S5",
+    "2:S22"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg"
@@ -625,7 +632,8 @@
    "z": 9.01,
    "type": "ceiling",
    "switches": [
-    "2:S5"
+    "2:S5",
+    "2:S22"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg"
@@ -641,7 +649,8 @@
    "z": 10.84,
    "type": "ceiling",
    "switches": [
-    "2:S6"
+    "2:S6",
+    "2:S23"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg",
@@ -674,7 +683,8 @@
    "z": 10.01,
    "type": "ceiling",
    "switches": [
-    "2:S8"
+    "2:S8",
+    "2:S21"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg"
@@ -690,7 +700,8 @@
    "z": 10.42,
    "type": "ceiling",
    "switches": [
-    "2:S8"
+    "2:S8",
+    "2:S21"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg"
@@ -706,7 +717,8 @@
    "z": 10.34,
    "type": "ceiling",
    "switches": [
-    "2:S8"
+    "2:S8",
+    "2:S21"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg",
@@ -1510,6 +1522,8 @@
     "2:L3"
    ],
    "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S19",
+   "pairColor": "#aed581",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1527,6 +1541,8 @@
     "2:L6"
    ],
    "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S20",
+   "pairColor": "#4db6ac",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1577,6 +1593,8 @@
     "2:L10"
    ],
    "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S22",
+   "pairColor": "#9575cd",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1592,6 +1610,8 @@
     "2:L11"
    ],
    "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S23",
+   "pairColor": "#a1887f",
    "mode": "on/off"
   },
   {
@@ -1624,6 +1644,8 @@
     "2:L15"
    ],
    "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S21",
+   "pairColor": "#ffb74d",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1685,6 +1707,98 @@
    "z": 18.18,
    "controls": [],
    "source": "drawings/2-second-floor_v20.svg",
+   "mode": "on/off"
+  },
+  {
+   "key": "2:S19",
+   "id": "S19",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Hall, foot of the west stair (companion to S1)",
+   "x": 10.85,
+   "y": 14.46,
+   "z": 2.17,
+   "controls": [
+    "2:L1",
+    "2:L2",
+    "2:L3"
+   ],
+   "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S1",
+   "pairColor": "#aed581",
+   "mode": "smart-bulb dimmer"
+  },
+  {
+   "key": "2:S20",
+   "id": "S20",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Hall, head of the east stair (companion to S2)",
+   "x": 31.59,
+   "y": 14.46,
+   "z": 2.0,
+   "controls": [
+    "2:L4",
+    "2:L5",
+    "2:L6"
+   ],
+   "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S2",
+   "pairColor": "#4db6ac",
+   "mode": "smart-bulb dimmer"
+  },
+  {
+   "key": "2:S21",
+   "id": "S21",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Kitchen side of the media/kitchen door, latch edge (companion to S8)",
+   "x": 22.1,
+   "y": 14.46,
+   "z": 16.68,
+   "controls": [
+    "2:L13",
+    "2:L14",
+    "2:L15"
+   ],
+   "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S8",
+   "pairColor": "#ffb74d",
+   "mode": "smart-bulb dimmer"
+  },
+  {
+   "key": "2:S22",
+   "id": "S22",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Media room, corner by the kitchen door (companion to S5)",
+   "x": 20.39,
+   "y": 14.46,
+   "z": 16.51,
+   "controls": [
+    "2:L9",
+    "2:L10"
+   ],
+   "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S5",
+   "pairColor": "#9575cd",
+   "mode": "smart-bulb dimmer"
+  },
+  {
+   "key": "2:S23",
+   "id": "S23",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Media room, corner by the kitchen door (companion to S6)",
+   "x": 18.93,
+   "y": 14.46,
+   "z": 16.51,
+   "controls": [
+    "2:L11"
+   ],
+   "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S6",
+   "pairColor": "#a1887f",
    "mode": "on/off"
   },
   {
@@ -2677,7 +2791,7 @@
    "levelName": "Second floor",
    "room": "Media room",
    "kind": "wall",
-   "x": 18.93,
+   "x": 17.51,
    "y": 11.96,
    "z": 16.59,
    "circuit": "C11 media, 20A AFCI",
