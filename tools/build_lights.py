@@ -367,7 +367,7 @@ JACKS = {
        ("14", "Wall jack, west office south wall, east of the windows", 1.5)],
 }
 JACKS["2"] = [("7", "Four PoE jacks on the projector wall (media north wall)", 1.5, "Four jacks, PoE available (15 W each assumed)")]
-JACKS["G"] = [("21", "Four Ethernet jacks on the north wall by outlet C, near switch 7", 1.5, "Four jacks, data only, no PoE"),
+JACKS["G"] = [("21", "Four Ethernet jacks on the north wall by outlet P22, near switch 7", 1.5, "Four jacks, data only, no PoE"),
               ("11", "Two PoE jacks at 7 ft, inside the garage on the east face of the short wall between the overhead doors", 7.0, "Two jacks, PoE available (15 W each assumed); indoors, so no surge protector needed")]
 for _lv, _rows in JACKS.items():
     for _i, _where, _h, *_note in _rows: NETWORK[_lv].append((_i, "jack", "Ethernet jack", _where, _h, _note[0] if _note else "Data only, no PoE"))
