@@ -130,6 +130,7 @@ SWITCHES = {
  ("2", "S21"): ("Kitchen side of the media/kitchen door, latch edge (companion to S8)", k("2", "L13", "L14", "L15")),
  ("2", "S22"): ("Media room, east wall at the north edge of the kitchen door (companion to S5)", k("2", "L9")),
  ("2", "S25"): ("Media room, east wall at the north edge of the kitchen door (companion to S24)", k("2", "L10")),
+ ("2", "S26"): ("Family room, north end of the wall shared with the bath (companion to S10)", k("2", "L17", "L18", "L24")),
  ("2", "S23"): ("Media room, east wall at the north edge of the kitchen door (companion to S6)", k("2", "L11")),
  ("2", "S12"): ("Kitchen side of the W/D closet", k("2", "L22")),
  ("2", "S13"): ("Media room, west (latch) side of the balcony door, below the window", k("2", "L23", "L28", "L29")),
@@ -160,7 +161,7 @@ PAIRS = [
  (["2:S3", "3:S8"], "#81c784"), (["2:S15", "3:S9"], "#f06292"),
  (["2:S17", "3:S10"], "#64b5f6"), (["3:S1", "3:S2"], "#e57373"),
  (["2:S1", "2:S19"], "#aed581"), (["2:S2", "2:S20"], "#4db6ac"), (["2:S8", "2:S21"], "#ffb74d"),
- (["2:S5", "2:S22"], "#9575cd"), (["2:S6", "2:S23"], "#a1887f"), (["2:S24", "2:S25"], "#f48fb1"),
+ (["2:S5", "2:S22"], "#9575cd"), (["2:S6", "2:S23"], "#a1887f"), (["2:S24", "2:S25"], "#f48fb1"), (["2:S10", "2:S26"], "#90caf9"),
 ]
 HALL_SWITCHES = {"G:S4", "G:S5", "G:S7", "G:E", "G:F"}   # stand on the raised hallway floor
 
@@ -211,6 +212,7 @@ OUTLETS = {
   ("P8 P9 P10 P21", "Family room", "wall", 1.5, "C12, 20A AFCI"),
   ("P11 P23 P24", "Balcony, weatherproof GFCI", "outdoor", 1.5, "C14 balcony, 20A GFCI"),
   ("P12 P13", "Kitchen counter, GFCI", "counter", 3.7, "C4 counter, 20A GFCI + AFCI"),
+  ("P25 P26", "Kitchen counter south of the sink, GFCI", "counter", 3.7, "C4 counter, 20A GFCI + AFCI"),
   ("P14", "Kitchen island, GFCI", "counter", 3.0, "C5 kitchen, 20A GFCI + AFCI"),
   ("P15 P22", "Bath west wall, GFCI", "counter", 3.5, "C10 bath, 20A GFCI"),
   ("P16 P17 P18", "Under the stairs up", "wall", 1.5, "C13, 20A AFCI"),
@@ -258,7 +260,9 @@ NETWORK = {
   ("17", "ap", "UniFi wall AP", "Hallway north wall", 7.0, "Feeding switch not confirmed (probably 18)"),
  ],
  "2": [
-  ("8", "switch", "PoE switch", "Media closet, southwest", 5.0, "Carries most second-floor PoE drops"),
+  ("8", "switch", "16-port PoE switch with a fiber port", "Media closet, southwest", 5.0, "West half of the floor, the projector jacks and doorbell 14 (via SP1 on GB1)"),
+  ("16", "switch", "8-port PoE switch with a fiber port", "Family room, southeast corner, high by blind outlet H6", 7.0, "East half of the floor; powered from the H6 box (make it a duplex)"),
+  ("14", "doorbell", "PoE video doorbell", "Balcony, on the wall north of the family room door", 4.0, "Outdoor copper run: surge protector SP1 on ground bar GB1 at switch 8"),
   ("9", "ap", "UniFi wall AP", "Media room west wall", 7.0, ""),
   ("15", "ap", "UniFi ceiling AP", "Kitchen / family room border", 8.9, ""),
  ],
@@ -274,7 +278,7 @@ NETWORK = {
 }
 # ---- Ethernet runs (proposed, third floor only so far): level -> (switch item, [(device item, cable, PoE W (0 = data only),
 # plan waypoints, route, optional route height in ft above the floor; negative = in the floor framing)])
-ROUTE_H, CABLE_SLACK = {"3": 7.0, "G": 8.8}, 8.0     # per level: ft above the floor for the horizontal run; ft of service loop (5 at the rack, 3 at the device)
+ROUTE_H, CABLE_SLACK = {"3": 7.0, "G": 8.8, "2": 8.6}, 8.0     # per level: ft above the floor for the horizontal run; ft of service loop (5 at the rack, 3 at the device)
 _N = "North bundle: up from R1, north above the wall between the offices"
 _S = "South bundle: up from R1, south above the rack strip to the south wall"
 CABLES = {
@@ -312,6 +316,29 @@ CABLES = {
   ]),
  ],
 }
+# Second floor (proposed): west half on switch 8 in the SW closet, east half on switch 16 in the family room SE corner.
+_W8 = "Up from switch 8 in the closet, "
+_E16 = "Up from switch 16, "
+CABLES["2"] = [
+  ("8", [
+   ("9",  "Cat6A", 13, [(2.19, 10.82)], _W8 + "north in the closet wall, drop to the AP on the media west wall"),
+   ("1",  "Cat6", 3, [(1.0, 15.71)], _W8 + "north along the west wall of the stairwell to the landing"),
+   ("5",  "Cat6", 3, [(8.1, 15.71)], _W8 + "east above the media ceiling, then north"),
+   ("6",  "Cat6", 3, [(16.86, 15.71)], _W8 + "east above the media ceiling, then north"),
+   ("3",  "Cat6", 3, [(19.96, 15.71)], _W8 + "east above the media ceiling, then north into the hall ceiling"),
+   ("7",  "Cat6A", 15, [(13.49, 15.71)], _W8 + "east above the media ceiling, north to the projector wall, down inside it", None, 4),
+   ("14", "Cat6", 10, [(2.19, 16.5), (20.9, 16.5)], "From SP1 at switch 8 east along the media south wall, out to the balcony, along the wall to the doorbell"),
+  ]),
+  ("16", [
+   ("15", "Cat6A", 21, [(28.75, 23.2)], _E16 + "west above the family room ceiling, then north to the AP"),
+   ("12", "Cat6", 3, [(26.23, 23.2)], _E16 + "west along the south wall, then north"),
+   ("13", "Cat6", 3, [(38.45, 23.2)], _E16 + "east through the wall into the bath ceiling"),
+   ("10", "Cat6", 3, [(35.3, 10.14)], _E16 + "north above the family room and kitchen ceilings, then east"),
+   ("11", "Cat6", 3, [(35.3, 6.09)], _E16 + "north above the kitchen ceiling, then west"),
+   ("4",  "Cat6", 3, [(35.3, 2.2)], _E16 + "north to the hall ceiling, then west to the kitchen door"),
+   ("2",  "Cat6", 3, [(35.3, 0.85)], _E16 + "north to the hall north wall, then east above the stair to the corner"),
+  ]),
+]
 # ---- fiber uplinks (owner decision): every network switch runs fiber to the aggregation switch in rack R1 on the third floor.
 # (switch level, switch item, [(level, x, height above that level's floor (None = switch height), z), ...] ending at R1, route)
 RISER = (39.5, 0.6)              # under the garage stair, up the north wall beside the east stairwell
@@ -322,6 +349,8 @@ FIBER = [
  ("G", "2",  [("G", 1.2, 8.8, 20.75), ("G", 0.6, 8.8, 20.75), ("G", 0.6, 8.8, 0.6)] + _UP, "North along the garage west wall, east along the north wall to the riser, then up to R1"),
  ("S", "1",  [("S", -0.5, 5.0, 54.64), ("S", -0.5, -2.0, 54.64), ("G", -0.5, -2.0, 21.4), ("G", 0.6, -2.0, 21.4), ("G", 0.6, 8.8, 21.4), ("G", 0.6, 8.8, 0.6)] + _UP,
   "Buried conduit from the shed to the garage SW corner, up inside, then with the switch 2 fiber to the riser and R1"),
+ ("2", "16", [("2", 35.3, 8.6, 23.2), ("3", 35.3, -0.6, 24.8), ("3", 24.6, -0.6, 24.8), ("3", 24.6, -0.6, 14.16)],
+  "Up the family room southeast corner into the third-floor floor framing, west along the south wall, north under the rack strip, up into R1"),
  ("2", "8",  [("2", 2.19, 8.6, 15.71), ("2", 24.05, 8.6, 15.71), ("2", 24.05, 8.6, 14.16)], "East above the second-floor ceiling to below the rack strip, then straight up through the floor into R1"),
 ]
 FIBER_SLACK = 15.0
@@ -331,6 +360,7 @@ JACKS = {
        ("5", "Floor jack, west edge of the east clipped strip, across from B1", 0.1),
        ("6", "Wall jack, west office south wall, east of the windows", 1.5)],
 }
+JACKS["2"] = [("7", "Four PoE jacks on the projector wall (media north wall)", 1.5, "Four jacks, PoE available (15 W each assumed)")]
 JACKS["G"] = [("21", "Four Ethernet jacks on the north wall by outlet C, near switch 7", 1.5, "Four jacks, data only, no PoE"),
               ("11", "Two PoE jacks at 7 ft, inside the garage on the east face of the short wall between the overhead doors", 7.0, "Two jacks, PoE available (15 W each assumed); indoors, so no surge protector needed")]
 for _lv, _rows in JACKS.items():
@@ -429,6 +459,7 @@ def build():
                 src = {"3:P18": "S9"}.get(f"{lv}:{oid}", oid)      # P18 is drawn off the wall with a leader; it sits under the switches
                 x, z = to_ft(lv, *dev[lv][src]["pts"][0])
                 if f"{lv}:{oid}" == "3:P15": x = 48.0     # old house attic side of the wall (A.4 wall at 47.67 ft)
+                if lv == "2" and oid in ("P25", "P26"): x = 42.2   # drawn on the wall line; they are on the counter backsplash
                 if (lv, oid) == ("G", "P21"): x, z = 43.3, 23.1  # outside face of the hallway south wall, west of the front door
                 if (lv, oid) == ("G", "P20"): x, z = 2.0, 0.3   # drawn below switch 7; it is on the north wall beside it
                 if lv == "G" and oid in ("H1", "H2"): z = 0.3   # drawn on the wall line; inside face of the north wall

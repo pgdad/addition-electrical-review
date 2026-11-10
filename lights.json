@@ -764,7 +764,8 @@
    "z": 19.18,
    "type": "ceiling",
    "switches": [
-    "2:S10"
+    "2:S10",
+    "2:S26"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg",
@@ -781,7 +782,8 @@
    "z": 19.18,
    "type": "ceiling",
    "switches": [
-    "2:S10"
+    "2:S10",
+    "2:S26"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg",
@@ -879,7 +881,8 @@
    "z": 23.52,
    "type": "outdoor",
    "switches": [
-    "2:S10"
+    "2:S10",
+    "2:S26"
    ],
    "circuit": "C15/C16 lighting, 15A (split not given on v20)",
    "source": "drawings/2-second-floor_v20.svg"
@@ -958,9 +961,9 @@
    "level": "2",
    "levelName": "Second floor",
    "room": "Balcony, by family door",
-   "x": 20.6,
+   "x": 20.64,
    "y": 18.46,
-   "z": 19.26,
+   "z": 17.85,
    "type": "outdoor",
    "switches": [
     "2:S13"
@@ -1694,6 +1697,8 @@
     "2:L24"
    ],
    "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S26",
+   "pairColor": "#90caf9",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -1814,6 +1819,25 @@
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "2:S24",
    "pairColor": "#f48fb1",
+   "mode": "smart-bulb dimmer"
+  },
+  {
+   "key": "2:S26",
+   "id": "S26",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Family room, north end of the wall shared with the bath (companion to S10)",
+   "x": 35.42,
+   "y": 14.46,
+   "z": 17.26,
+   "controls": [
+    "2:L17",
+    "2:L18",
+    "2:L24"
+   ],
+   "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S10",
+   "pairColor": "#90caf9",
    "mode": "smart-bulb dimmer"
   },
   {
@@ -2973,6 +2997,32 @@
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
+   "key": "2:P25",
+   "id": "P25",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Kitchen counter south of the sink, GFCI",
+   "kind": "counter",
+   "x": 42.2,
+   "y": 14.16,
+   "z": 11.76,
+   "circuit": "C4 counter, 20A GFCI + AFCI",
+   "source": "drawings/2-second-floor_v20.svg"
+  },
+  {
+   "key": "2:P26",
+   "id": "P26",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Kitchen counter south of the sink, GFCI",
+   "kind": "counter",
+   "x": 42.2,
+   "y": 14.16,
+   "z": 12.59,
+   "circuit": "C4 counter, 20A GFCI + AFCI",
+   "source": "drawings/2-second-floor_v20.svg"
+  },
+  {
    "key": "2:P14",
    "id": "P14",
    "level": "2",
@@ -3809,14 +3859,44 @@
    "level": "2",
    "levelName": "Second floor",
    "kind": "switch",
-   "name": "PoE switch",
+   "name": "16-port PoE switch with a fiber port",
    "room": "Media closet, southwest",
    "x": 2.19,
    "y": 15.46,
    "z": 15.71,
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "Carries most second-floor PoE drops",
+   "note": "West half of the floor, the projector jacks and doorbell 14 (via SP1 on GB1)",
    "fiber": "2:F8"
+  },
+  {
+   "key": "2:N16",
+   "id": "16",
+   "level": "2",
+   "levelName": "Second floor",
+   "kind": "switch",
+   "name": "8-port PoE switch with a fiber port",
+   "room": "Family room, southeast corner, high by blind outlet H6",
+   "x": 35.25,
+   "y": 17.46,
+   "z": 23.1,
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "East half of the floor; powered from the H6 box (make it a duplex)",
+   "fiber": "2:F16"
+  },
+  {
+   "key": "2:N14",
+   "id": "14",
+   "level": "2",
+   "levelName": "Second floor",
+   "kind": "doorbell",
+   "name": "PoE video doorbell",
+   "room": "Balcony, on the wall north of the family room door",
+   "x": 20.01,
+   "y": 14.46,
+   "z": 19.47,
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Outdoor copper run: surge protector SP1 on ground bar GB1 at switch 8",
+   "cable": "2:C14"
   },
   {
    "key": "2:N9",
@@ -3829,7 +3909,8 @@
    "x": 4.38,
    "y": 17.46,
    "z": 10.82,
-   "source": "drawings/2-second-floor_v20.svg"
+   "source": "drawings/2-second-floor_v20.svg",
+   "cable": "2:C9"
   },
   {
    "key": "2:N15",
@@ -3842,7 +3923,23 @@
    "x": 28.75,
    "y": 19.36,
    "z": 16.55,
-   "source": "drawings/2-second-floor_v20.svg"
+   "source": "drawings/2-second-floor_v20.svg",
+   "cable": "2:C15"
+  },
+  {
+   "key": "2:N7",
+   "id": "7",
+   "level": "2",
+   "levelName": "Second floor",
+   "kind": "jack",
+   "name": "Ethernet jack",
+   "room": "Four PoE jacks on the projector wall (media north wall)",
+   "x": 13.49,
+   "y": 11.96,
+   "z": 4.56,
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Four jacks, PoE available (15 W each assumed)",
+   "cable": "2:C7"
   },
   {
    "key": "2:N1",
@@ -3855,7 +3952,8 @@
    "x": 1.01,
    "y": 17.46,
    "z": 1.08,
-   "source": "drawings/2-second-floor_v20.svg"
+   "source": "drawings/2-second-floor_v20.svg",
+   "cable": "2:C1"
   },
   {
    "key": "2:N2",
@@ -3868,7 +3966,8 @@
    "x": 41.65,
    "y": 18.46,
    "z": 0.85,
-   "source": "drawings/2-second-floor_v20.svg"
+   "source": "drawings/2-second-floor_v20.svg",
+   "cable": "2:C2"
   },
   {
    "key": "2:N3",
@@ -3881,7 +3980,8 @@
    "x": 19.96,
    "y": 19.36,
    "z": 2.2,
-   "source": "drawings/2-second-floor_v20.svg"
+   "source": "drawings/2-second-floor_v20.svg",
+   "cable": "2:C3"
   },
   {
    "key": "2:N4",
@@ -3894,7 +3994,8 @@
    "x": 30.02,
    "y": 19.36,
    "z": 2.2,
-   "source": "drawings/2-second-floor_v20.svg"
+   "source": "drawings/2-second-floor_v20.svg",
+   "cable": "2:C4"
   },
   {
    "key": "2:N5",
@@ -3907,7 +4008,8 @@
    "x": 8.1,
    "y": 19.36,
    "z": 10.82,
-   "source": "drawings/2-second-floor_v20.svg"
+   "source": "drawings/2-second-floor_v20.svg",
+   "cable": "2:C5"
   },
   {
    "key": "2:N6",
@@ -3920,7 +4022,8 @@
    "x": 16.86,
    "y": 19.36,
    "z": 10.82,
-   "source": "drawings/2-second-floor_v20.svg"
+   "source": "drawings/2-second-floor_v20.svg",
+   "cable": "2:C6"
   },
   {
    "key": "2:N10",
@@ -3933,7 +4036,8 @@
    "x": 39.13,
    "y": 19.36,
    "z": 10.14,
-   "source": "drawings/2-second-floor_v20.svg"
+   "source": "drawings/2-second-floor_v20.svg",
+   "cable": "2:C10"
   },
   {
    "key": "2:N11",
@@ -3946,7 +4050,8 @@
    "x": 26.91,
    "y": 17.46,
    "z": 6.09,
-   "source": "drawings/2-second-floor_v20.svg"
+   "source": "drawings/2-second-floor_v20.svg",
+   "cable": "2:C11"
   },
   {
    "key": "2:N12",
@@ -3959,7 +4064,8 @@
    "x": 26.23,
    "y": 17.46,
    "z": 21.11,
-   "source": "drawings/2-second-floor_v20.svg"
+   "source": "drawings/2-second-floor_v20.svg",
+   "cable": "2:C12"
   },
   {
    "key": "2:N13",
@@ -3972,7 +4078,8 @@
    "x": 38.45,
    "y": 19.36,
    "z": 21.61,
-   "source": "drawings/2-second-floor_v20.svg"
+   "source": "drawings/2-second-floor_v20.svg",
+   "cable": "2:C13"
   },
   {
    "key": "3:N1",
@@ -5194,6 +5301,557 @@
      23.78
     ]
    ]
+  },
+  {
+   "key": "2:C9",
+   "level": "2",
+   "from": "2:N8",
+   "to": "2:N9",
+   "cable": "Cat6A",
+   "poeW": 13,
+   "count": 1,
+   "port": "1",
+   "lengthFt": 25,
+   "route": "Up from switch 8 in the closet, north in the closet wall, drop to the AP on the media west wall",
+   "points": [
+    [
+     2.19,
+     15.46,
+     15.71
+    ],
+    [
+     2.19,
+     19.06,
+     15.71
+    ],
+    [
+     2.19,
+     19.06,
+     10.82
+    ],
+    [
+     4.38,
+     19.06,
+     10.82
+    ],
+    [
+     4.38,
+     17.46,
+     10.82
+    ]
+   ]
+  },
+  {
+   "key": "2:C1",
+   "level": "2",
+   "from": "2:N8",
+   "to": "2:N1",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "2",
+   "lengthFt": 30,
+   "route": "Up from switch 8 in the closet, north along the west wall of the stairwell to the landing",
+   "points": [
+    [
+     2.19,
+     15.46,
+     15.71
+    ],
+    [
+     2.19,
+     19.06,
+     15.71
+    ],
+    [
+     1.0,
+     19.06,
+     15.71
+    ],
+    [
+     1.01,
+     19.06,
+     1.08
+    ],
+    [
+     1.01,
+     17.46,
+     1.08
+    ]
+   ]
+  },
+  {
+   "key": "2:C5",
+   "level": "2",
+   "from": "2:N8",
+   "to": "2:N5",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "3",
+   "lengthFt": 25,
+   "route": "Up from switch 8 in the closet, east above the media ceiling, then north",
+   "points": [
+    [
+     2.19,
+     15.46,
+     15.71
+    ],
+    [
+     2.19,
+     19.06,
+     15.71
+    ],
+    [
+     8.1,
+     19.06,
+     15.71
+    ],
+    [
+     8.1,
+     19.06,
+     10.82
+    ],
+    [
+     8.1,
+     19.36,
+     10.82
+    ]
+   ]
+  },
+  {
+   "key": "2:C6",
+   "level": "2",
+   "from": "2:N8",
+   "to": "2:N6",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "4",
+   "lengthFt": 35,
+   "route": "Up from switch 8 in the closet, east above the media ceiling, then north",
+   "points": [
+    [
+     2.19,
+     15.46,
+     15.71
+    ],
+    [
+     2.19,
+     19.06,
+     15.71
+    ],
+    [
+     16.86,
+     19.06,
+     15.71
+    ],
+    [
+     16.86,
+     19.06,
+     10.82
+    ],
+    [
+     16.86,
+     19.36,
+     10.82
+    ]
+   ]
+  },
+  {
+   "key": "2:C3",
+   "level": "2",
+   "from": "2:N8",
+   "to": "2:N3",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "5",
+   "lengthFt": 45,
+   "route": "Up from switch 8 in the closet, east above the media ceiling, then north into the hall ceiling",
+   "points": [
+    [
+     2.19,
+     15.46,
+     15.71
+    ],
+    [
+     2.19,
+     19.06,
+     15.71
+    ],
+    [
+     19.96,
+     19.06,
+     15.71
+    ],
+    [
+     19.96,
+     19.06,
+     2.2
+    ],
+    [
+     19.96,
+     19.36,
+     2.2
+    ]
+   ]
+  },
+  {
+   "key": "2:C7",
+   "level": "2",
+   "from": "2:N8",
+   "to": "2:N7",
+   "cable": "Cat6A",
+   "poeW": 60,
+   "count": 4,
+   "port": "6-9",
+   "lengthFt": 45,
+   "route": "Up from switch 8 in the closet, east above the media ceiling, north to the projector wall, down inside it",
+   "points": [
+    [
+     2.19,
+     15.46,
+     15.71
+    ],
+    [
+     2.19,
+     19.06,
+     15.71
+    ],
+    [
+     13.49,
+     19.06,
+     15.71
+    ],
+    [
+     13.49,
+     19.06,
+     4.56
+    ],
+    [
+     13.49,
+     11.96,
+     4.56
+    ]
+   ]
+  },
+  {
+   "key": "2:C14",
+   "level": "2",
+   "from": "2:N8",
+   "to": "2:N14",
+   "cable": "Cat6",
+   "poeW": 10,
+   "count": 1,
+   "port": "10",
+   "lengthFt": 40,
+   "route": "From SP1 at switch 8 east along the media south wall, out to the balcony, along the wall to the doorbell",
+   "points": [
+    [
+     2.19,
+     15.46,
+     15.71
+    ],
+    [
+     2.19,
+     19.06,
+     15.71
+    ],
+    [
+     2.19,
+     19.06,
+     16.5
+    ],
+    [
+     20.9,
+     19.06,
+     16.5
+    ],
+    [
+     20.01,
+     19.06,
+     19.47
+    ],
+    [
+     20.01,
+     14.46,
+     19.47
+    ]
+   ]
+  },
+  {
+   "key": "2:C15",
+   "level": "2",
+   "from": "2:N16",
+   "to": "2:N15",
+   "cable": "Cat6A",
+   "poeW": 21,
+   "count": 1,
+   "port": "1",
+   "lengthFt": 25,
+   "route": "Up from switch 16, west above the family room ceiling, then north to the AP",
+   "points": [
+    [
+     35.25,
+     17.46,
+     23.1
+    ],
+    [
+     35.25,
+     19.06,
+     23.1
+    ],
+    [
+     28.75,
+     19.06,
+     23.2
+    ],
+    [
+     28.75,
+     19.06,
+     16.55
+    ],
+    [
+     28.75,
+     19.36,
+     16.55
+    ]
+   ]
+  },
+  {
+   "key": "2:C12",
+   "level": "2",
+   "from": "2:N16",
+   "to": "2:N12",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "2",
+   "lengthFt": 25,
+   "route": "Up from switch 16, west along the south wall, then north",
+   "points": [
+    [
+     35.25,
+     17.46,
+     23.1
+    ],
+    [
+     35.25,
+     19.06,
+     23.1
+    ],
+    [
+     26.23,
+     19.06,
+     23.2
+    ],
+    [
+     26.23,
+     19.06,
+     21.11
+    ],
+    [
+     26.23,
+     17.46,
+     21.11
+    ]
+   ]
+  },
+  {
+   "key": "2:C13",
+   "level": "2",
+   "from": "2:N16",
+   "to": "2:N13",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "3",
+   "lengthFt": 15,
+   "route": "Up from switch 16, east through the wall into the bath ceiling",
+   "points": [
+    [
+     35.25,
+     17.46,
+     23.1
+    ],
+    [
+     35.25,
+     19.06,
+     23.1
+    ],
+    [
+     38.45,
+     19.06,
+     23.2
+    ],
+    [
+     38.45,
+     19.06,
+     21.61
+    ],
+    [
+     38.45,
+     19.36,
+     21.61
+    ]
+   ]
+  },
+  {
+   "key": "2:C10",
+   "level": "2",
+   "from": "2:N16",
+   "to": "2:N10",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "4",
+   "lengthFt": 30,
+   "route": "Up from switch 16, north above the family room and kitchen ceilings, then east",
+   "points": [
+    [
+     35.25,
+     17.46,
+     23.1
+    ],
+    [
+     35.25,
+     19.06,
+     23.1
+    ],
+    [
+     35.3,
+     19.06,
+     10.14
+    ],
+    [
+     39.13,
+     19.06,
+     10.14
+    ],
+    [
+     39.13,
+     19.36,
+     10.14
+    ]
+   ]
+  },
+  {
+   "key": "2:C11",
+   "level": "2",
+   "from": "2:N16",
+   "to": "2:N11",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "5",
+   "lengthFt": 40,
+   "route": "Up from switch 16, north above the kitchen ceiling, then west",
+   "points": [
+    [
+     35.25,
+     17.46,
+     23.1
+    ],
+    [
+     35.25,
+     19.06,
+     23.1
+    ],
+    [
+     35.3,
+     19.06,
+     6.09
+    ],
+    [
+     26.91,
+     19.06,
+     6.09
+    ],
+    [
+     26.91,
+     17.46,
+     6.09
+    ]
+   ]
+  },
+  {
+   "key": "2:C4",
+   "level": "2",
+   "from": "2:N16",
+   "to": "2:N4",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "6",
+   "lengthFt": 40,
+   "route": "Up from switch 16, north to the hall ceiling, then west to the kitchen door",
+   "points": [
+    [
+     35.25,
+     17.46,
+     23.1
+    ],
+    [
+     35.25,
+     19.06,
+     23.1
+    ],
+    [
+     35.3,
+     19.06,
+     2.2
+    ],
+    [
+     30.02,
+     19.06,
+     2.2
+    ],
+    [
+     30.02,
+     19.36,
+     2.2
+    ]
+   ]
+  },
+  {
+   "key": "2:C2",
+   "level": "2",
+   "from": "2:N16",
+   "to": "2:N2",
+   "cable": "Cat6",
+   "poeW": 3,
+   "count": 1,
+   "port": "7",
+   "lengthFt": 40,
+   "route": "Up from switch 16, north to the hall north wall, then east above the stair to the corner",
+   "points": [
+    [
+     35.25,
+     17.46,
+     23.1
+    ],
+    [
+     35.25,
+     19.06,
+     23.1
+    ],
+    [
+     35.3,
+     19.06,
+     0.85
+    ],
+    [
+     41.65,
+     19.06,
+     0.85
+    ],
+    [
+     41.65,
+     18.46,
+     0.85
+    ]
+   ]
   }
  ],
  "fibers": [
@@ -5595,6 +6253,80 @@
     [
      24.6,
      27.61,
+     14.16
+    ],
+    [
+     24.05,
+     23.61,
+     14.16
+    ]
+   ]
+  },
+  {
+   "key": "2:F16",
+   "from": "2:N16",
+   "to": "3:N1",
+   "cable": "Fiber, duplex single-mode (OS2), LC",
+   "lengthFt": 45,
+   "route": "Up the family room southeast corner into the third-floor floor framing, west along the south wall, north under the rack strip, up into R1",
+   "levels": [
+    "2",
+    "3"
+   ],
+   "plan": {
+    "2": [
+     [
+      35.25,
+      23.1
+     ],
+     [
+      35.3,
+      23.2
+     ]
+    ],
+    "3": [
+     [
+      35.3,
+      24.8
+     ],
+     [
+      24.6,
+      24.8
+     ],
+     [
+      24.6,
+      14.16
+     ],
+     [
+      24.05,
+      14.16
+     ]
+    ]
+   },
+   "points": [
+    [
+     35.25,
+     17.46,
+     23.1
+    ],
+    [
+     35.3,
+     19.06,
+     23.2
+    ],
+    [
+     35.3,
+     20.01,
+     24.8
+    ],
+    [
+     24.6,
+     20.01,
+     24.8
+    ],
+    [
+     24.6,
+     20.01,
      14.16
     ],
     [

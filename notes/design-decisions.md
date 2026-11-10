@@ -19,7 +19,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Network: cable modem under the garage stairs -> media converter -> fiber up to rack R1 on the third floor.
   Two fiber runs share one smurf tube up the riser (item 1 converter, item 18 under-stair switch).
   Fiber from R1 out to small 5/8-port PoE switches near APs, cameras and computers.
-  Every network switch (garage 2, 7, 18, second-floor 8, shed 1) uplinks by fiber to the aggregation switch
+  Every network switch (garage 2, 7, 18, second-floor 8 and 16, shed 1) uplinks by fiber to the aggregation switch
   that sits with the main switch in R1 (owner decision, Nov 10, 2026).
 - Mini-splits shown on the architect sheets are intentionally left off the drawings.
   Their power is drawn (owner decision, Nov 10, 2026) at the four condenser positions on sheet A.2: two
@@ -85,7 +85,14 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   east stair (hall); S21 with S8 at the media/kitchen door, kitchen side. Media lights are split: S5 runs L9
   and S24 runs L10 (hall door, with S6); companions S22 (L9), S25 (L10), S23 (fan) are on the media side of
   the media/kitchen wall at the door's north edge. S13 is on the west side of the media/balcony door. S10 with L17, L18, L24 and S13 with L29 stay as drawn (owner decision).
-- Doors drawn from A.3 on Nov 10, 2026.
+- Doors drawn from A.3 on Nov 10, 2026. The hall/kitchen door is hinged on its west jamb, the opposite of
+  A.3 (owner decision), so S8 and S9 are on its latch side.
+- Owner decisions, Nov 10, 2026: doorbell 14 on the wall north of the family/balcony door; S26 pairs with
+  S10 at the north end of the family/bath wall; counter outlets P25, P26 south of the sink on C4; sauna light
+  driver J on the bath north wall; switch 8 is a 16-port PoE switch; new network switch 16 in the family room
+  southeast corner. Every network switch has a fiber connection to the third-floor switch in R1.
+- Second-floor Ethernet (proposed, not yet confirmed): west half, projector jacks and doorbell on switch 8;
+  east half on switch 16. Details in REVIEW.md ("Second-floor Ethernet plan").
 - Lights: L1-L6 hall (S1, S2); L7 stair-up risers (S3 bottom + 3rd-floor S8 top); L8 stair-down risers
   (S4 + garage E); L9-L11 media (S5, S6); L12 media closet (S7); L13-L15 kitchen (S8); L16 under-cabinet (S9);
   L17, L18, L24 family/balcony (S10); L19, L20 bath (S11), bath fan on its own switch S18; L21 sauna on the heater control (DC from
