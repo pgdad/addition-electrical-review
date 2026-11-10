@@ -274,7 +274,7 @@
    "level": "G",
    "levelName": "Garage and hallway",
    "room": "Outside, deck door",
-   "x": 47.11,
+   "x": 45.39,
    "y": 7.58,
    "z": 24.12,
    "type": "outdoor",
@@ -3566,6 +3566,21 @@
    "cable": "G:C6"
   },
   {
+   "key": "G:N16",
+   "id": "16",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "kind": "doorbell",
+   "name": "PoE video doorbell",
+   "room": "Outside the front door, on its east (latch) side",
+   "x": 47.46,
+   "y": 5.08,
+   "z": 23.78,
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "note": "Outdoor copper run: surge protector SP3 on ground bar G3 at switch 18",
+   "cable": "G:C16"
+  },
+  {
    "key": "G:N17",
    "id": "17",
    "level": "G",
@@ -5034,6 +5049,55 @@
      44.69,
      8.08,
      21.55
+    ]
+   ]
+  },
+  {
+   "key": "G:C16",
+   "level": "G",
+   "from": "G:N18",
+   "to": "G:N16",
+   "cable": "Cat6",
+   "poeW": 10,
+   "count": 1,
+   "port": "7",
+   "lengthFt": 50,
+   "route": "From SP3 at switch 18 with the hallway bundle down the east wall, out through the south wall beside the front door",
+   "points": [
+    [
+     41.15,
+     3.0,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     2.2
+    ],
+    [
+     47.4,
+     8.8,
+     2.2
+    ],
+    [
+     47.4,
+     8.8,
+     22.5
+    ],
+    [
+     47.46,
+     8.8,
+     23.78
+    ],
+    [
+     47.46,
+     5.08,
+     23.78
     ]
    ]
   }

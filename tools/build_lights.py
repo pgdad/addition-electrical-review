@@ -245,6 +245,7 @@ NETWORK = {
   ("18", "switch", "Small PoE switch", "Under the garage stairs", 3.0, "Fiber to the third-floor rack R1"),
   ("5", "ap", "Outdoor AP", "Outside the garage south wall, facing south", 9.0, "Outdoor copper run; surge protector SP1"),
   ("6", "ap", "UniFi wall AP", "Garage, mid west wall", 7.0, ""),
+  ("16", "doorbell", "PoE video doorbell", "Outside the front door, on its east (latch) side", 4.0, "Outdoor copper run: surge protector SP3 on ground bar G3 at switch 18"),
   ("17", "ap", "UniFi wall AP", "Hallway north wall", 7.0, "Feeding switch not confirmed (probably 18)"),
  ],
  "2": [
@@ -298,6 +299,7 @@ CABLES = {
    ("20", "Cat6", 3, [(41.15, 3.28)], "Up from switch 18, east across the landing to the hallway east wall"),
    ("19", "Cat6", 3, [(41.15, 2.2), (47.4, 2.2)], "Hallway bundle: east to the hallway east wall, then south along it"),
    ("15", "Cat6", 3, [(41.15, 2.2), (47.4, 2.2), (47.4, 21.55)], "Hallway bundle: east to the hallway east wall, south along it, then west to the doorway"),
+   ("16", "Cat6", 10, [(41.15, 2.2), (47.4, 2.2), (47.4, 22.5)], "From SP3 at switch 18 with the hallway bundle down the east wall, out through the south wall beside the front door"),
   ]),
  ],
 }
@@ -330,7 +332,7 @@ CABLES["3"][0][1].extend([
   ("5",  "Cat6A", 0, [(24.05, 16.12)], _F + " to the far floor box", -0.6),
   ("6",  "Cat6A", 0, [(24.05, 12.7), (14.12, 12.7)], "West bundle with sensor 13 above the west office ceiling, then south and down inside the south wall"),
 ])
-HALL_NET = {"17", "14", "15", "19", "20"}
+HALL_NET = {"17", "14", "15", "16", "19", "20"}
 # presence sensors (PoE ESP32 units): level -> [(item numbers, where, height above the floor in ft, assumed)]
 SENSORS = {
  "G": [("12", "Garage ceiling, west half", 9.3), ("13", "Garage ceiling, east half", 9.3),

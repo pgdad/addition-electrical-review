@@ -88,8 +88,8 @@ The PDF wins for geometry; these are the differences found.
   of the deck door, so one box serves both doors.
 - The front door from the hallway to the deck is now drawn from A.2: a 3068 in the hallway south wall,
   hinged on its west jamb and swinging into the hallway.
-- *nice-to-have*: doorbell 16 is plotted on the west (hinge) side of the front door. Move it to the east
-  (latch) side, by L13, where a visitor stands.
+- Resolved (owner decision, Nov 10, 2026): doorbell 16 is on the east (latch) side of the front door, and
+  L13 is centred over the door to make room for it.
 - *nice-to-have*: E is plotted at z 6.3 ft, which is in the garage door opening (z 5.8 to 8.7 ft). A.2 leaves
   about 22 in of wall between the landing and that door, enough for a 2-gang with F above or beside E.
 - *nice-to-have*: nothing by the overhead doors controls L1 to L8 except S2 on the west wall near the SW corner.
@@ -137,7 +137,8 @@ The PDF wins for geometry; these are the differences found.
 - **Smoke/CO**: A.2 note 9 requires hardwired interconnected alarms and shows a smoke and a CO alarm in the
   hallway. Now drawn as SD1 and CO1 on the hallway ceiling (about 2.5 ft north of the A.2 spot to clear
   other symbols). Check with the inspector whether the garage itself needs a heat alarm.
-- **Grounding**: G and G2 are noted as bonded to the addition ground. Check that this means the service
+- **Grounding**: G3 is a new ground bar under the stair by switch 18 for SP3 (doorbell 16); bond it to the
+  service ground at MP with a short, straight conductor. G and G2 are noted as bonded to the addition ground. Check that this means the service
   grounding electrode system (intersystem bonding termination), and that the coax entry at device 1 has its
   ground block bonded to the same point.
 
@@ -356,10 +357,10 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 | 18 | 4 | Sensor 20, hallway landing | Cat6 | 25 ft | 3 W |
 | 18 | 5 | Sensor 19, hallway east wall | Cat6 | 30 ft | 3 W |
 | 18 | 6 | Sensor 15, over the doorway | Cat6 | 45 ft | 3 W |
+| 18 | 7 | Doorbell 16, front door east side (via SP3 on G3) | Cat6 | 50 ft | 10 W |
 
 - Sensor 12 moved from switch 2 to switch 7: it is 11 ft from 7 and 19 ft from 2, and 7 has spare ports.
-- Cameras 3, 4, 8, 9, 10 and doorbell 16 also land on these switches (see the PoE table) but are not drawn
-  on the page.
+- Cameras 3, 4, 8, 9 and 10 also land on these switches (see the PoE table) but are not drawn on the page.
 - Jacks 21 (owner decision) are four data-only jacks on the north wall by computer outlet C. Switch 7 is
   an 8-port PoE switch (owner decision) with its own high outlet P20 beside it on network circuit C1.
   With cameras 8 and 9 it uses 7 of the 8 ports, so the fiber uplink needs a separate SFP port. Jacks 11 are
@@ -374,7 +375,7 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 |-----|-----------|
 | Garage cameras 3, 4, AP 5 | Yes, SP1 on G |
 | Garage camera 8 | Yes, SP2 on G2 |
-| Garage doorbell 16 | Yes, SP3 at the switch 18 end, bonded to the service ground at MP |
+| Garage doorbell 16 | Yes, SP3 at the switch 18 end, on ground bar G3 (bonded to the service ground at MP) |
 | Garage jacks 11 | Indoor (east face of the wall between the doors), not needed |
 | Second-floor doorbell 14 | **No**, and no ground bar on that floor |
 | Shed camera 2 | Yes, SP on G |
