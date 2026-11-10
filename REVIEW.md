@@ -266,6 +266,39 @@ ceiling AP 21 W (PoE+), PoE doorbell 10 W, ESP32 presence sensor 3 W, spare PoE 
 
 Total is about 290 to 320 W. Budgets are fine if each switch is picked for port count, not just watts.
 
+### Third-floor Ethernet plan (proposed, Nov 10, 2026)
+Every third-floor AP and presence sensor is a home run from one PoE switch in rack R1 (network item 1).
+All nine devices are within about 25 ft of R1 in plan, so no edge switch is needed on this floor. The runs
+are drawn on `lights-3d.html` (3D and the third-floor 2D map, "Ethernet runs" filter) and listed in
+`lights.json` under `cables`.
+
+| Port | Device | Cable | Length | PoE | Route from R1 |
+|------|--------|-------|--------|-----|---------------|
+| 1 | AP 2, east office ceiling | Cat6A | 25 ft | 21 W | Straight east above the east office ceiling |
+| 2 | AP 3, west office east wall | Cat6A | 20 ft | 13 W | North bundle, drop to the AP |
+| 3 | Sensor 7, west face of the shared wall | Cat6 | 25 ft | 3 W | North bundle, over the door header |
+| 4 | Sensor 8, east face of the shared wall | Cat6 | 25 ft | 3 W | North bundle, over the door header |
+| 5 | Sensor 9, east office north wall | Cat6 | 35 ft | 3 W | North bundle to the north wall, then east |
+| 6 | Sensor 10, east office north wall | Cat6 | 40 ft | 3 W | North bundle, then east past the windows |
+| 7 | Sensor 11, east office south wall | Cat6 | 30 ft | 3 W | South bundle, then east |
+| 8 | Sensor 12, east office south wall | Cat6 | 35 ft | 3 W | South bundle, then east past the window |
+| 9 | Sensor 13, top of the west stair | Cat6 | 40 ft | 3 W | West above the nook wall and west office ceiling to the closet |
+
+- Three bundles leave R1: north above the wall between the offices (6 cables), south above the rack strip
+  (2 cables) and west above the west office ceiling (1 cable). AP 2 goes straight east on its own.
+- Lengths are estimates: the path above the ceiling at about 7 ft plus the drops and 8 ft of service loop
+  (5 ft at the rack, 3 ft at the device), rounded up to 5 ft. Total about 275 ft, so one 500 ft box of Cat6
+  and a short Cat6A reel cover it. Every run is far under the 328 ft limit.
+- Switch in R1: 9 PoE ports and about 55 W for these devices, 12 ports and about 56 W with jacks 4, 5 and 6.
+  A 16-port PoE+ switch with a budget of 100 W or more leaves spare ports; the fiber uplinks need their own
+  SFP ports (see the PoE table).
+- Cat6A for the two APs allows multi-gigabit later; the sensors only need Cat6. Pull one spare cable to each
+  AP while the ceiling is open.
+- Check with the electrician/inspector: keep the data cables out of the holes and boxes used for power
+  cable, keep them a few inches away from parallel power runs, and firestop the top-plate holes.
+- The ceiling route assumes there is a reachable space above the third-floor ceiling. If the roof framing
+  leaves none, run the bundles inside the knee-wall and eave spaces instead; lengths grow by a few feet.
+
 ### Fiber paths
 - Two runs (1 and 18) share one smurf tube up the riser. That is a single point of damage but acceptable;
   pull two spare strands and leave a pull string.

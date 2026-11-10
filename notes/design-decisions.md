@@ -87,6 +87,10 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   side of the wall.
 - Lights L1-L9 on S1-S7, L10 on S11; stair risers S8; stair wall lights S9; L35 (2nd-floor stair ceiling) S10.
 
+- Ethernet (proposed, Nov 10, 2026, not yet confirmed): APs 2, 3 and presence sensors 7 to 13 are home runs
+  from one PoE switch in rack R1: Cat6A to the APs, Cat6 to the sensors, about 275 ft in all. Routes and
+  lengths are in REVIEW.md ("Third-floor Ethernet plan") and drawn on lights-3d.html.
+
 ## Sauna / shed outbuilding (drawing v6)
 - 12 x 24 ft south of the garage: north half porch (12x3) + dressing room (west) + wood-burning sauna (east);
   south half shed, no door between. Fed 60A 240V and fiber from the garage SW corner.

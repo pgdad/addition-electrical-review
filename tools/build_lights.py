@@ -259,6 +259,23 @@ NETWORK = {
   ("3", "ap", "Outdoor PoE AP", "Inside the shed north wall", 7.0, ""),
  ],
 }
+# ---- Ethernet runs (proposed, third floor only so far): level -> (switch item, [(device item, cable, PoE W, plan waypoints, route)])
+ROUTE_H, CABLE_SLACK = 7.0, 8.0     # ft above the floor for the horizontal run; ft of service loop (5 at the rack, 3 at the device)
+_N = "North bundle: up from R1, north above the wall between the offices"
+_S = "South bundle: up from R1, south above the rack strip to the south wall"
+CABLES = {
+ "3": ("1", [
+  ("2",  "Cat6A", 21, [(24.05, 13.59)], "Straight east above the east office ceiling"),
+  ("3",  "Cat6A", 13, [(24.6, 14.16), (24.6, 11.35)], _N + ", drop to the AP"),
+  ("7",  "Cat6", 3, [(24.6, 14.16), (24.6, 5.4)], _N + ", over the door header, drop on the west face"),
+  ("8",  "Cat6", 3, [(24.6, 14.16), (24.6, 5.4)], _N + ", over the door header, drop on the east face"),
+  ("9",  "Cat6", 3, [(24.6, 14.16), (24.6, 1.06)], _N + " to the north wall, then east"),
+  ("10", "Cat6", 3, [(24.6, 14.16), (24.6, 1.06)], _N + " to the north wall, then east past the windows"),
+  ("11", "Cat6", 3, [(24.6, 14.16), (24.6, 24.17)], _S + ", then east"),
+  ("12", "Cat6", 3, [(24.6, 14.16), (24.6, 24.17)], _S + ", then east past the window"),
+  ("13", "Cat6", 3, [(24.05, 12.7), (3.84, 12.7)], "West above the nook wall and the west office ceiling to the closet, then north to the stair wall"),
+ ]),
+}
 HALL_NET = {"17", "14", "15", "19", "20"}
 # presence sensors (PoE ESP32 units): level -> [(item numbers, where, height above the floor in ft, assumed)]
 SENSORS = {
@@ -357,6 +374,21 @@ def build():
                        x=x, y=round(base + h, 2), z=z, source=SOURCE[lv])
             if note: rec["note"] = note
             network.append(rec)
+    # Ethernet runs (proposed): home runs from the level's switch, routed above the ceiling at ROUTE_H, with
+    # plan waypoints (x, z) between the two ends. Length = 3D path + CABLE_SLACK, rounded up to 5 ft.
+    net_by = {n["key"]: n for n in network}
+    cables = []
+    for lv, (sw, rows) in CABLES.items():
+        a = net_by[f"{lv}:N{sw}"]
+        for port, (nid, cat, watts, via, route) in enumerate(rows, 1):
+            d = net_by[f"{lv}:N{nid}"]
+            h = FLOOR[lv] + ROUTE_H
+            pts = [(a["x"], a["y"], a["z"]), (a["x"], h, a["z"])] + [(x, h, z) for x, z in via] + [(d["x"], h, d["z"]), (d["x"], d["y"], d["z"])]
+            run = sum(sum((p[i] - q[i]) ** 2 for i in range(3)) ** 0.5 for p, q in zip(pts, pts[1:]))
+            length = int(-(-(run + CABLE_SLACK) // 5) * 5)
+            cables.append(dict(key=f"{lv}:C{nid}", level=lv, **{"from": a["key"], "to": d["key"]}, port=port, cable=cat, poeW=watts,
+                               lengthFt=length, route=route, points=[[round(v, 2) for v in p] for p in pts]))
+            d["cable"] = cables[-1]["key"]
     for lv in SCALES:                                   # every plotted P#, O#, EV#, H#, MS# is in the outlet table
         plotted = {n for n in dev[lv] if re.fullmatch(r"(P|O|EV|H|MS)\d+", n)}
         have = {o["id"] for o in outlets if o["level"] == lv}
@@ -372,7 +404,7 @@ def build():
         axes="x = east, z = south, y = up; origin = garage NW exterior corner at the garage slab",
         scales={lv: dict(drawing=SOURCE[lv], px_per_ft_x=round(v[2], 3), px_per_ft_y=round(v[3], 3)) for lv, v in SCALES.items()},
         floors=dict(garage=0.0, hallway=HALL_FLOOR, second=F2, third=round(F3, 2), shed=0.0),
-        lights=lights, switches=switches, outlets=outlets, network=network)
+        lights=lights, switches=switches, outlets=outlets, network=network, cables=cables)
 
 if __name__ == "__main__":
     data = build()

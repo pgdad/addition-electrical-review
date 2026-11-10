@@ -3795,7 +3795,8 @@
    "x": 31.93,
    "y": 27.01,
    "z": 13.59,
-   "source": "drawings/3-third-floor_v32.svg"
+   "source": "drawings/3-third-floor_v32.svg",
+   "cable": "3:C2"
   },
   {
    "key": "3:N3",
@@ -3808,7 +3809,8 @@
    "x": 23.35,
    "y": 26.61,
    "z": 11.35,
-   "source": "drawings/3-third-floor_v32.svg"
+   "source": "drawings/3-third-floor_v32.svg",
+   "cable": "3:C3"
   },
   {
    "key": "3:N7",
@@ -3821,7 +3823,8 @@
    "x": 23.7,
    "y": 26.61,
    "z": 5.4,
-   "source": "drawings/3-third-floor_v32.svg"
+   "source": "drawings/3-third-floor_v32.svg",
+   "cable": "3:C7"
   },
   {
    "key": "3:N8",
@@ -3834,7 +3837,8 @@
    "x": 25.8,
    "y": 26.61,
    "z": 5.4,
-   "source": "drawings/3-third-floor_v32.svg"
+   "source": "drawings/3-third-floor_v32.svg",
+   "cable": "3:C8"
   },
   {
    "key": "3:N9",
@@ -3847,7 +3851,8 @@
    "x": 28.1,
    "y": 26.61,
    "z": 1.06,
-   "source": "drawings/3-third-floor_v32.svg"
+   "source": "drawings/3-third-floor_v32.svg",
+   "cable": "3:C9"
   },
   {
    "key": "3:N10",
@@ -3860,7 +3865,8 @@
    "x": 35.72,
    "y": 26.61,
    "z": 1.06,
-   "source": "drawings/3-third-floor_v32.svg"
+   "source": "drawings/3-third-floor_v32.svg",
+   "cable": "3:C10"
   },
   {
    "key": "3:N11",
@@ -3873,7 +3879,8 @@
    "x": 29.92,
    "y": 26.61,
    "z": 24.17,
-   "source": "drawings/3-third-floor_v32.svg"
+   "source": "drawings/3-third-floor_v32.svg",
+   "cable": "3:C11"
   },
   {
    "key": "3:N12",
@@ -3886,7 +3893,8 @@
    "x": 33.91,
    "y": 26.61,
    "z": 24.17,
-   "source": "drawings/3-third-floor_v32.svg"
+   "source": "drawings/3-third-floor_v32.svg",
+   "cable": "3:C12"
   },
   {
    "key": "3:N13",
@@ -3899,7 +3907,8 @@
    "x": 3.84,
    "y": 26.61,
    "z": 10.44,
-   "source": "drawings/3-third-floor_v32.svg"
+   "source": "drawings/3-third-floor_v32.svg",
+   "cable": "3:C13"
   },
   {
    "key": "S:N1",
@@ -3927,6 +3936,390 @@
    "y": 7.0,
    "z": 54.64,
    "source": "drawings/4-sauna-shed_v6.svg"
+  }
+ ],
+ "cables": [
+  {
+   "key": "3:C2",
+   "level": "3",
+   "from": "3:N1",
+   "to": "3:N2",
+   "port": 1,
+   "cable": "Cat6A",
+   "poeW": 21,
+   "lengthFt": 25,
+   "route": "Straight east above the east office ceiling",
+   "points": [
+    [
+     24.05,
+     23.61,
+     14.16
+    ],
+    [
+     24.05,
+     27.61,
+     14.16
+    ],
+    [
+     24.05,
+     27.61,
+     13.59
+    ],
+    [
+     31.93,
+     27.61,
+     13.59
+    ],
+    [
+     31.93,
+     27.01,
+     13.59
+    ]
+   ]
+  },
+  {
+   "key": "3:C3",
+   "level": "3",
+   "from": "3:N1",
+   "to": "3:N3",
+   "port": 2,
+   "cable": "Cat6A",
+   "poeW": 13,
+   "lengthFt": 20,
+   "route": "North bundle: up from R1, north above the wall between the offices, drop to the AP",
+   "points": [
+    [
+     24.05,
+     23.61,
+     14.16
+    ],
+    [
+     24.05,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     11.35
+    ],
+    [
+     23.35,
+     27.61,
+     11.35
+    ],
+    [
+     23.35,
+     26.61,
+     11.35
+    ]
+   ]
+  },
+  {
+   "key": "3:C7",
+   "level": "3",
+   "from": "3:N1",
+   "to": "3:N7",
+   "port": 3,
+   "cable": "Cat6",
+   "poeW": 3,
+   "lengthFt": 25,
+   "route": "North bundle: up from R1, north above the wall between the offices, over the door header, drop on the west face",
+   "points": [
+    [
+     24.05,
+     23.61,
+     14.16
+    ],
+    [
+     24.05,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     5.4
+    ],
+    [
+     23.7,
+     27.61,
+     5.4
+    ],
+    [
+     23.7,
+     26.61,
+     5.4
+    ]
+   ]
+  },
+  {
+   "key": "3:C8",
+   "level": "3",
+   "from": "3:N1",
+   "to": "3:N8",
+   "port": 4,
+   "cable": "Cat6",
+   "poeW": 3,
+   "lengthFt": 25,
+   "route": "North bundle: up from R1, north above the wall between the offices, over the door header, drop on the east face",
+   "points": [
+    [
+     24.05,
+     23.61,
+     14.16
+    ],
+    [
+     24.05,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     5.4
+    ],
+    [
+     25.8,
+     27.61,
+     5.4
+    ],
+    [
+     25.8,
+     26.61,
+     5.4
+    ]
+   ]
+  },
+  {
+   "key": "3:C9",
+   "level": "3",
+   "from": "3:N1",
+   "to": "3:N9",
+   "port": 5,
+   "cable": "Cat6",
+   "poeW": 3,
+   "lengthFt": 35,
+   "route": "North bundle: up from R1, north above the wall between the offices to the north wall, then east",
+   "points": [
+    [
+     24.05,
+     23.61,
+     14.16
+    ],
+    [
+     24.05,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     1.06
+    ],
+    [
+     28.1,
+     27.61,
+     1.06
+    ],
+    [
+     28.1,
+     26.61,
+     1.06
+    ]
+   ]
+  },
+  {
+   "key": "3:C10",
+   "level": "3",
+   "from": "3:N1",
+   "to": "3:N10",
+   "port": 6,
+   "cable": "Cat6",
+   "poeW": 3,
+   "lengthFt": 40,
+   "route": "North bundle: up from R1, north above the wall between the offices to the north wall, then east past the windows",
+   "points": [
+    [
+     24.05,
+     23.61,
+     14.16
+    ],
+    [
+     24.05,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     1.06
+    ],
+    [
+     35.72,
+     27.61,
+     1.06
+    ],
+    [
+     35.72,
+     26.61,
+     1.06
+    ]
+   ]
+  },
+  {
+   "key": "3:C11",
+   "level": "3",
+   "from": "3:N1",
+   "to": "3:N11",
+   "port": 7,
+   "cable": "Cat6",
+   "poeW": 3,
+   "lengthFt": 30,
+   "route": "South bundle: up from R1, south above the rack strip to the south wall, then east",
+   "points": [
+    [
+     24.05,
+     23.61,
+     14.16
+    ],
+    [
+     24.05,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     24.17
+    ],
+    [
+     29.92,
+     27.61,
+     24.17
+    ],
+    [
+     29.92,
+     26.61,
+     24.17
+    ]
+   ]
+  },
+  {
+   "key": "3:C12",
+   "level": "3",
+   "from": "3:N1",
+   "to": "3:N12",
+   "port": 8,
+   "cable": "Cat6",
+   "poeW": 3,
+   "lengthFt": 35,
+   "route": "South bundle: up from R1, south above the rack strip to the south wall, then east past the window",
+   "points": [
+    [
+     24.05,
+     23.61,
+     14.16
+    ],
+    [
+     24.05,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     14.16
+    ],
+    [
+     24.6,
+     27.61,
+     24.17
+    ],
+    [
+     33.91,
+     27.61,
+     24.17
+    ],
+    [
+     33.91,
+     26.61,
+     24.17
+    ]
+   ]
+  },
+  {
+   "key": "3:C13",
+   "level": "3",
+   "from": "3:N1",
+   "to": "3:N13",
+   "port": 9,
+   "cable": "Cat6",
+   "poeW": 3,
+   "lengthFt": 40,
+   "route": "West above the nook wall and the west office ceiling to the closet, then north to the stair wall",
+   "points": [
+    [
+     24.05,
+     23.61,
+     14.16
+    ],
+    [
+     24.05,
+     27.61,
+     14.16
+    ],
+    [
+     24.05,
+     27.61,
+     12.7
+    ],
+    [
+     3.84,
+     27.61,
+     12.7
+    ],
+    [
+     3.84,
+     27.61,
+     10.44
+    ],
+    [
+     3.84,
+     26.61,
+     10.44
+    ]
+   ]
   }
  ]
 }
