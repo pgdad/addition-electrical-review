@@ -62,7 +62,7 @@ Power (amber)
 11 Sensor near hallway entry door
 12 Sensor near balcony door
 13 Bath ceiling sensor
-14 PoE video doorbell, balcony door
+14 PoE video doorbell, balcony door, surge SP1
 15 UniFi ceiling AP, kitchen/family border
 A Projector wall, 4 outlets
 B Motorized screen, smart control
@@ -220,21 +220,21 @@ H1, H2 Hall windows, high
 H3, H4 Media, each side of the 3020s
 H5, H6 Family, each side of the 3050s
 No blinds: sauna window, balcony doors
-C1 E range, 50A 240V
+C1 E range, 50A 240V, GFCI
 C2 G sauna heater, 50A 240V
-C3 J sauna light driver, 15A
-C4 P12, P13 counter, 20A GFCI
-C5 P7, P14 kitchen, 20A GFCI
-C6 K fridge, 20A
-C7 M DW and disposal, 20A
-C8 N microwave, 20A
-C9 W WashTower, 30A 240V
+C3 J sauna light driver, 15A, AFCI
+C4 P12, P13 counter, 20A GFCI + AFCI
+C5 P7, P14 kitchen, 20A GFCI + AFCI
+C6 K fridge, 20A GFCI + AFCI
+C7 M DW and disposal, 20A GFCI + AFCI
+C8 N microwave, 20A GFCI + AFCI
+C9 W WashTower, 30A 240V, GFCI
 C10 F, P15, P22 bath, 20A GFCI
-C11 A, B, C, P3-P6 media, 20A
-C12 P1, P2, P8-P10, P21, H1-H6, 20A
-C13 P16-P20 under stairs, by S7, 20A
+C11 A, B, C, P3-P6 media, 20A AFCI
+C12 P1, P2, P8-P10, P21, H1-H6, 20A AFCI
+C13 P16-P20 under stairs, by S7, 20A AFCI
 C14 P11, P23, P24 balcony, 20A GFCI
-C15, C16 Lighting, 15A
+C15, C16 Lighting, 15A AFCI
 L35
 S17 L35 west stair ceiling, bottom (top 3rd fl S10)
 S17
@@ -246,3 +246,10 @@ CO1 Carbon monoxide alarm, hall ceiling, beside SD1
 Hardwired, interconnected, battery backup (A.2 note 9); on a lighting circuit, confirm with electrician
 S18
 S18 Bath fan, its own on/off switch, just below S11
+SP1
+GB1
+GFCI and AFCI (NEC 2023): GFCI on every kitchen and laundry circuit including the range, fridge, dishwasher/disposal,
+microwave and WashTower; AFCI on every 120V 15A and 20A circuit except bath C10 and balcony C14. Use dual-function
+breakers where both apply. Sauna heater C2 per its manual. Confirm with the electrician and inspector.
+SP1 Surge protector for PoE doorbell 14, at the switch 8 end of its cable in the SW closet, on ground bar GB1.
+GB1 Ground bar in the SW closet by switch 8, bonded down to garage ground bar G in the corner directly below.

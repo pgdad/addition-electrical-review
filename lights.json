@@ -2355,7 +2355,7 @@
    "x": 46.68,
    "y": 2.58,
    "z": 6.48,
-   "circuit": "C7, 20A",
+   "circuit": "C7, 20A GFCI + AFCI",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -2368,7 +2368,7 @@
    "x": 46.68,
    "y": 2.58,
    "z": 9.42,
-   "circuit": "C7, 20A",
+   "circuit": "C7, 20A GFCI + AFCI",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -2381,7 +2381,7 @@
    "x": 46.68,
    "y": 2.58,
    "z": 12.36,
-   "circuit": "C7, 20A",
+   "circuit": "C7, 20A GFCI + AFCI",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -2394,7 +2394,7 @@
    "x": 46.68,
    "y": 2.58,
    "z": 15.3,
-   "circuit": "C7, 20A",
+   "circuit": "C7, 20A GFCI + AFCI",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
@@ -2498,7 +2498,7 @@
    "x": 15.17,
    "y": 11.96,
    "z": 4.56,
-   "circuit": "C11 media, 20A",
+   "circuit": "C11 media, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2511,7 +2511,7 @@
    "x": 12.48,
    "y": 18.46,
    "z": 16.04,
-   "circuit": "C11 media, 20A",
+   "circuit": "C11 media, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2524,7 +2524,7 @@
    "x": 2.86,
    "y": 11.96,
    "z": 13.52,
-   "circuit": "C11 media, 20A",
+   "circuit": "C11 media, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2537,7 +2537,7 @@
    "x": 37.5,
    "y": 10.96,
    "z": 7.25,
-   "circuit": "C1, 50A 240V",
+   "circuit": "C1, 50A 240V GFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2576,7 +2576,7 @@
    "x": 34.25,
    "y": 13.96,
    "z": 7.25,
-   "circuit": "C6, 20A",
+   "circuit": "C6, 20A GFCI + AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2589,7 +2589,7 @@
    "x": 39.92,
    "y": 11.96,
    "z": 11.51,
-   "circuit": "C7, 20A",
+   "circuit": "C7, 20A GFCI + AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2602,7 +2602,7 @@
    "x": 38.34,
    "y": 16.46,
    "z": 4.5,
-   "circuit": "C8, 20A",
+   "circuit": "C8, 20A GFCI + AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2615,7 +2615,7 @@
    "x": 40.25,
    "y": 13.46,
    "z": 15.18,
-   "circuit": "C9, 30A 240V",
+   "circuit": "C9, 30A 240V GFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2628,7 +2628,7 @@
    "x": 13.52,
    "y": 11.96,
    "z": 3.25,
-   "circuit": "C12, 20A",
+   "circuit": "C12, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2641,7 +2641,7 @@
    "x": 28.09,
    "y": 11.96,
    "z": 3.25,
-   "circuit": "C12, 20A",
+   "circuit": "C12, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2654,7 +2654,7 @@
    "x": 4.61,
    "y": 11.96,
    "z": 5.42,
-   "circuit": "C11 media, 20A",
+   "circuit": "C11 media, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2667,7 +2667,7 @@
    "x": 4.61,
    "y": 11.96,
    "z": 8.34,
-   "circuit": "C11 media, 20A",
+   "circuit": "C11 media, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2680,7 +2680,7 @@
    "x": 18.93,
    "y": 11.96,
    "z": 16.59,
-   "circuit": "C11 media, 20A",
+   "circuit": "C11 media, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2693,7 +2693,7 @@
    "x": 20.68,
    "y": 11.96,
    "z": 7.5,
-   "circuit": "C11 media, 20A",
+   "circuit": "C11 media, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2706,7 +2706,7 @@
    "x": 21.76,
    "y": 11.96,
    "z": 7.5,
-   "circuit": "C5 kitchen, 20A GFCI",
+   "circuit": "C5 kitchen, 20A GFCI + AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2719,7 +2719,7 @@
    "x": 21.76,
    "y": 11.96,
    "z": 17.68,
-   "circuit": "C12, 20A",
+   "circuit": "C12, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2732,7 +2732,7 @@
    "x": 25.59,
    "y": 11.96,
    "z": 24.85,
-   "circuit": "C12, 20A",
+   "circuit": "C12, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2745,7 +2745,7 @@
    "x": 35.67,
    "y": 11.96,
    "z": 20.85,
-   "circuit": "C12, 20A",
+   "circuit": "C12, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2758,7 +2758,7 @@
    "x": 31.84,
    "y": 11.96,
    "z": 24.68,
-   "circuit": "C12, 20A",
+   "circuit": "C12, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2810,7 +2810,7 @@
    "x": 39.83,
    "y": 14.16,
    "z": 4.84,
-   "circuit": "C4 counter, 20A GFCI",
+   "circuit": "C4 counter, 20A GFCI + AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2823,7 +2823,7 @@
    "x": 41.83,
    "y": 14.16,
    "z": 7.5,
-   "circuit": "C4 counter, 20A GFCI",
+   "circuit": "C4 counter, 20A GFCI + AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2836,7 +2836,7 @@
    "x": 33.59,
    "y": 13.46,
    "z": 12.84,
-   "circuit": "C5 kitchen, 20A GFCI",
+   "circuit": "C5 kitchen, 20A GFCI + AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2875,7 +2875,7 @@
    "x": 3.02,
    "y": 11.96,
    "z": 6.0,
-   "circuit": "C13, 20A",
+   "circuit": "C13, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2888,7 +2888,7 @@
    "x": 3.02,
    "y": 11.96,
    "z": 8.09,
-   "circuit": "C13, 20A",
+   "circuit": "C13, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2901,7 +2901,7 @@
    "x": 3.02,
    "y": 11.96,
    "z": 10.17,
-   "circuit": "C13, 20A",
+   "circuit": "C13, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2914,7 +2914,7 @@
    "x": 5.52,
    "y": 11.96,
    "z": 16.51,
-   "circuit": "C13, 20A",
+   "circuit": "C13, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2927,7 +2927,7 @@
    "x": 6.85,
    "y": 11.96,
    "z": 16.51,
-   "circuit": "C13, 20A",
+   "circuit": "C13, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2940,7 +2940,7 @@
    "x": 13.68,
    "y": 17.96,
    "z": 1.0,
-   "circuit": "C12, 20A",
+   "circuit": "C12, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2953,7 +2953,7 @@
    "x": 29.67,
    "y": 17.96,
    "z": 1.0,
-   "circuit": "C12, 20A",
+   "circuit": "C12, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2966,7 +2966,7 @@
    "x": 5.27,
    "y": 17.96,
    "z": 15.68,
-   "circuit": "C12, 20A",
+   "circuit": "C12, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2979,7 +2979,7 @@
    "x": 13.77,
    "y": 17.96,
    "z": 15.68,
-   "circuit": "C12, 20A",
+   "circuit": "C12, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -2992,7 +2992,7 @@
    "x": 28.18,
    "y": 17.96,
    "z": 24.6,
-   "circuit": "C12, 20A",
+   "circuit": "C12, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -3005,7 +3005,7 @@
    "x": 35.42,
    "y": 17.96,
    "z": 24.6,
-   "circuit": "C12, 20A",
+   "circuit": "C12, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {

@@ -89,6 +89,11 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   L35 ceiling light over the west (second) leg on S17 (bottom, above S15) + 3rd-floor S10 (top).
   Stair wall lights are separate from the riser lights, with switches at both ends.
 - East stair wall lights L30-L32 on S16 (top, by S4) + garage F (bottom).
+- GFCI/AFCI (owner decision, Nov 10, 2026): GFCI on every kitchen and laundry circuit including the range,
+  fridge, dishwasher/disposal, microwave and WashTower; AFCI on every 120V 15A/20A circuit except bath C10
+  and balcony C14.
+- PoE doorbell 14 has surge protector SP1 at the switch 8 end, on ground bar GB1 in the SW closet, bonded
+  down to garage ground bar G directly below (owner decision, Nov 10, 2026).
 - Big loads: range 50A, sauna heater 50A, WashTower WKE100HVA 30A 240V, hood/microwave 20A.
 - Unplanned yet: family room devices, balcony network.
 
