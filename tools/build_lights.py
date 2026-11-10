@@ -167,6 +167,8 @@ OUTLETS = {
   ("P1 P2", "Under the stairs, network gear, GFCI", "wall", 1.5, "C1 dedicated, 20A GFCI"),
   ("P13", "High outlet beside network switch 2, GFCI", "wall", 7.0, "C1 dedicated, 20A GFCI"),
   ("P3 P4 P5", "Garage north wall, GFCI", "wall", 1.5, "C2, 20A GFCI"),
+  ("H1 H2", "Blind outlet, high on the west side of a north window", "blind", 7.0, "C2, 20A GFCI"),
+  ("H3", "Blind outlet, high on the south side of the west window", "blind", 7.0, "C2, 20A GFCI"),
   ("P6 P7", "Garage west wall, GFCI", "wall", 1.5, "C2, 20A GFCI"),
   ("P8 P9 P10", "Garage east wall, GFCI", "wall", 1.5, "C3, 20A GFCI"),
   ("P11 P12", "Garage ceiling, cord reel, GFCI", "ceiling", GC, "C4, 20A GFCI"),
@@ -377,6 +379,8 @@ def build():
                 src = {"3:P18": "S9"}.get(f"{lv}:{oid}", oid)      # P18 is drawn off the wall with a leader; it sits under the switches
                 x, z = to_ft(lv, *dev[lv][src]["pts"][0])
                 if f"{lv}:{oid}" == "3:P15": x = 48.0     # old house attic side of the wall (A.4 wall at 47.67 ft)
+                if lv == "G" and oid in ("H1", "H2"): z = 0.3   # drawn on the wall line; inside face of the north wall
+                if lv == "G" and oid == "H3": x = 0.3           # drawn outside the wall line to clear G2; inside face of the west wall
                 base = 0.0 if kind in ("outdoor",) and lv == "G" or oid.startswith("MS") else (HALL_FLOOR if (lv == "G" and oid in HALL_OUTLETS) else FLOOR[lv])
                 outlets.append(dict(key=f"{lv}:{oid}", id=oid, level=lv, levelName=LEVEL_NAME[lv], room=desc, kind=kind,
                                     x=x, y=round(base + h, 2), z=z, circuit=cct, source=SOURCE[lv]))

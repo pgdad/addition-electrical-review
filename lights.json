@@ -39,7 +39,7 @@
    "room": "4-car garage",
    "x": 5.3,
    "y": 9.42,
-   "z": 9.16,
+   "z": 7.17,
    "type": "ceiling",
    "switches": [
     "G:S1",
@@ -56,7 +56,7 @@
    "room": "4-car garage",
    "x": 15.93,
    "y": 9.42,
-   "z": 9.16,
+   "z": 7.17,
    "type": "ceiling",
    "switches": [
     "G:S1",
@@ -73,7 +73,7 @@
    "room": "4-car garage",
    "x": 26.55,
    "y": 9.42,
-   "z": 9.16,
+   "z": 7.17,
    "type": "ceiling",
    "switches": [
     "G:S1",
@@ -90,7 +90,7 @@
    "room": "4-car garage",
    "x": 37.18,
    "y": 9.42,
-   "z": 9.16,
+   "z": 7.17,
    "type": "ceiling",
    "switches": [
     "G:S1",
@@ -107,7 +107,7 @@
    "room": "4-car garage",
    "x": 5.3,
    "y": 9.42,
-   "z": 18.67,
+   "z": 16.68,
    "type": "ceiling",
    "switches": [
     "G:S1",
@@ -124,7 +124,7 @@
    "room": "4-car garage",
    "x": 15.93,
    "y": 9.42,
-   "z": 18.67,
+   "z": 16.68,
    "type": "ceiling",
    "switches": [
     "G:S1",
@@ -141,7 +141,7 @@
    "room": "4-car garage",
    "x": 26.55,
    "y": 9.42,
-   "z": 18.67,
+   "z": 16.68,
    "type": "ceiling",
    "switches": [
     "G:S1",
@@ -158,7 +158,7 @@
    "room": "4-car garage",
    "x": 37.18,
    "y": 9.42,
-   "z": 18.67,
+   "z": 16.68,
    "type": "ceiling",
    "switches": [
     "G:S1",
@@ -2147,6 +2147,45 @@
    "x": 27.07,
    "y": 1.5,
    "z": 1.12,
+   "circuit": "C2, 20A GFCI",
+   "source": "drawings/1-garage-and-hallway_v20.svg"
+  },
+  {
+   "key": "G:H1",
+   "id": "H1",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "room": "Blind outlet, high on the west side of a north window",
+   "kind": "blind",
+   "x": 11.65,
+   "y": 7.0,
+   "z": 0.3,
+   "circuit": "C2, 20A GFCI",
+   "source": "drawings/1-garage-and-hallway_v20.svg"
+  },
+  {
+   "key": "G:H2",
+   "id": "H2",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "room": "Blind outlet, high on the west side of a north window",
+   "kind": "blind",
+   "x": 27.68,
+   "y": 7.0,
+   "z": 0.3,
+   "circuit": "C2, 20A GFCI",
+   "source": "drawings/1-garage-and-hallway_v20.svg"
+  },
+  {
+   "key": "G:H3",
+   "id": "H3",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "room": "Blind outlet, high on the south side of the west window",
+   "kind": "blind",
+   "x": 0.3,
+   "y": 7.0,
+   "z": 4.92,
    "circuit": "C2, 20A GFCI",
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },

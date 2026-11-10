@@ -136,7 +136,7 @@ P11, P12 Ceiling, cord reels, GFCI
 O1, O2 Wall openers + outlet, GFCI
 EV1, EV2 Chargers, 60A 240V each, clear of windows
 C1 P1, P2, P13 20A dedicated, GFCI
-C2 P3-P7, B, P18, P19 20A GFCI
+C2 P3-P7, B, P18, P19, H1-H3 20A GFCI
 C3 P8-P10 20A GFCI
 C4 P11, P12, O1-O4 20A GFCI
 C5, C6 EV1, EV2 60A
@@ -182,3 +182,9 @@ SP3
 Windows (blue), sizes from A.2: two 2840 on the north wall, centred 13.7 and 29.7 ft from the west wall;
 one 2840 (tempered) on the west wall, centred 3 ft from the north wall.
 SP3 Surge protector for PoE doorbell 16, at the switch 18 end of its cable, bonded to the service ground at MP.
+H1
+H2
+H3
+H1, H2, H3 Blind outlets (teal), high beside the top of each window, on its left seen from inside:
+H1, H2 west of the two north windows, H3 south of the west window. On C2 (GFCI).
+L1-L8 moved 2 ft north (Nov 10, 2026): rows now 7.2 and 16.7 ft from the north wall, further from the doors.

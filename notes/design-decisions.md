@@ -35,8 +35,11 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Lights: L1-L8 garage ceiling on S1+S2 3-way; L9, L10 hallway on S4+S7 3-way; L13 deck door on S5;
   L14 under-stair on S6; outside L11/L15 flank the left door on the balcony piers, L12/L16 the right door, all on S3 (proposed).
   Garage lights are on switches only, not tied to the overhead doors.
-  South row L5-L8 stays where it is although the open doors cover it: it is for when the doors are closed
-  (owner decision, Nov 10, 2026).
+  South row L5-L8 stays under the open doors: it is for when the doors are closed (owner decision,
+  Nov 10, 2026). Both rows L1-L8 were then moved 2 ft north, away from the garage doors: now 7.2 and 16.7 ft
+  from the north wall.
+- Blind outlets H1-H3 (owner decision, Nov 10, 2026): one high beside the top of each garage window, on its
+  left seen from inside (H1, H2 west of the north windows, H3 south of the west window), on C2.
 - Stairs garage -> 2nd floor: riser lights (L8 on the 2nd-floor drawing) on 3-way E (bottom) + 2nd-floor S4 (top).
   One light in every riser from the garage floor up (owner decision, Nov 9, 2026): 2 garage door steps,
   2 hallway steps and the 13-riser flight, 17 in all, as one run.
