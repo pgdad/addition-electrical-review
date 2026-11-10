@@ -134,7 +134,7 @@ SWITCHES = {
  ("3", "S2"): ("West office, by the shared door", k("3", "L1", "L2")),
  ("3", "S3"): ("East office, by the shared door", k("3", "L3", "L4", "L5")),
  ("3", "S4"): ("East office, north of the attic passage", k("3", "L6")),
- ("3", "S5"): ("West office, beside the closet", k("3", "L7")),
+ ("3", "S5"): ("Top stair landing, north edge of the closet by its door", k("3", "L7")),
  ("3", "S6"): ("Small attic, by the old-house entry", k("3", "L8")),
  ("3", "S7"): ("Sink nook, north end", k("3", "L9")),
  ("3", "S8"): ("West office, top of the stairs", k("2", "L7")),
@@ -291,7 +291,7 @@ def build():
         rec = dict(key=key, id=sid, level=lv, levelName=LEVEL_NAME[lv], room=room, x=x, y=round(y, 2), z=z,
                    controls=ctl, source=SOURCE[lv])
         if key in pair_of: rec["pairWith"], rec["pairColor"] = pair_of[key]
-        rec["mode"] = "on/off" if key in ("2:S6", "2:S9", "2:S11", "2:S18") else "smart-bulb dimmer"
+        rec["mode"] = "on/off" if key in ("2:S6", "2:S9", "2:S11", "2:S18", "3:S5") else "smart-bulb dimmer"
         switches.append(rec)
     outlets = []
     for lv, rows in OUTLETS.items():

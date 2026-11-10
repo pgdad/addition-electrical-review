@@ -1169,9 +1169,9 @@
    "level": "3",
    "levelName": "Third floor",
    "room": "West office closet",
-   "x": 2.51,
+   "x": 1.18,
    "y": 27.61,
-   "z": 15.7,
+   "z": 13.31,
    "type": "ceiling",
    "switches": [
     "3:S5"
@@ -1863,15 +1863,15 @@
    "id": "S5",
    "level": "3",
    "levelName": "Third floor",
-   "room": "West office, beside the closet",
-   "x": 5.59,
+   "room": "Top stair landing, north edge of the closet by its door",
+   "x": 4.61,
    "y": 24.61,
-   "z": 16.47,
+   "z": 11.46,
    "controls": [
     "3:L7"
    ],
    "source": "drawings/3-third-floor_v32.svg",
-   "mode": "smart-bulb dimmer"
+   "mode": "on/off"
   },
   {
    "key": "3:S6",

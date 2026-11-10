@@ -44,7 +44,7 @@ The PDF wins for geometry; these are the differences found.
 | Family room ceiling | A.3: vaulted | v20: L17, L18 "family room ceiling" | With the third floor carried over the family room the ceiling is flat, not vaulted. The 3D model uses 9 ft. A.3 needs the same update as A.4. |
 | Kitchen layout | A.3: pantry and fridge on the north wall, sink then range on the east wall | v20: fridge where the pantry is, range where the fridge is, sink and DW on the east wall | Recorded as an owner decision in the v20 legend. Range circuit E, hood N and DW circuit M follow the drawing. Confirm the architect knows. |
 | Third-floor reading nook | A.4: the space south of the west office jog (about 5.6 x 4 ft) is unfinished attic behind the office's 5'0" wall, reached through a 22 x 30 attic access panel in that wall | v32 originally drew it outside the outline; it is now the children's reading nook with L10, S11 and a small door | Finishing it is a change for the architect: floor, insulation line and the low sloped ceiling. The nook door lands about where A.4 puts the attic access panel, so the attic beyond needs another way in. The 3D model places the nook's east wall at x 21.2 ft (A.4); the drawing has it at 21.9 ft. |
-| Third-floor closet light | A.4 closet ends about z 14.4 ft | v32: L7 plotted at z 15.7 ft, about 1.3 ft south of the closet's south wall line | L7 lands in the eave. Move the symbol into the closet. |
+| Third-floor closet light | A.4 closet ends about z 14.4 ft | v32 had L7 plotted about 1.3 ft south of the closet's south wall line | Resolved: L7 is now drawn inside the closet. |
 | Outbuilding site note | Task brief: shed east wall in line with the garage **west** wall | v6 sketch shows that, but its label reads "East walls in line" | Fix the label. |
 | Exterior stair | A.2 plan: "UP 15R (verify)"; A.2 stair data: grade to balcony 16 risers | Not on device drawings | Architect's own inconsistency; affects stair light count only. |
 
@@ -197,8 +197,10 @@ The PDF wins for geometry; these are the differences found.
   S3 at the door. L6 (small attic) is switched from the office side only (S4) and L8 (old house attic) from the
   small attic side only (S6), so walking in from the old house means crossing both in the dark.
   Proposal: a second control for L3 to L5 at the passage, and make S4 and S6 two-ended.
-- *nice-to-have*: five switches (S1, S8, S9, S10, S5) stack at the top of the stairs. Inovelli scenes could
+- *nice-to-have*: four switches (S1, S8, S9, S10) stack at the top of the stairs. Inovelli scenes could
   fold S9 and S10 into one device.
+- S5 is now on the closet's north edge by its door and is a plain on/off switch (owner decision), so L7
+  needs an ordinary, non-smart lamp.
 
 ### Code-oriented checks (check with the electrician/inspector)
 - **Racks in the eave** (R1 to R5): behind a 5 ft knee wall in a strip about 2.8 ft deep. Confirm the roofline
@@ -356,7 +358,7 @@ Total is about 290 to 320 W. Budgets are fine if each switch is picked for port 
 14. Label MP; rename device C; draw E/F green (garage).
 15. E in the door opening; scene button between the overhead doors (garage).
 16. S17 and D need real locations; screen B over the balcony door; light at the foot of the exterior stair (second floor).
-17. Color key on the third-floor sheet; L7 symbol; five-gang at the top of the stairs (third floor).
+17. Color key on the third-floor sheet; four-gang at the top of the stairs (third floor).
 18. "East walls in line" label (shed).
 19. A second-floor subpanel instead of about 24 home runs through the garage ceiling.
 20. One AP too many in the middle of the building; outdoor coverage north and east.

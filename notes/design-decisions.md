@@ -9,7 +9,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Lighting standard: dimmable Govee ceiling lights; Inovelli White Series wall switches in smart-bulb mode
   (switches send scene/automation commands; the bulbs stay powered).
   Exception (owner decision, Nov 9, 2026): switches on non-smart loads are plain on/off, not dimmers and not
-  smart-bulb mode: second-floor S6 (media fan and its light), S9 (under-cabinet L16), S11 (bath L19, L20) and S18 (bath fan, its own switch below S11).
+  smart-bulb mode: second-floor S6 (media fan and its light), S9 (under-cabinet L16), S11 (bath L19, L20) and S18 (bath fan, its own switch below S11),
+  and third-floor S5 (closet light L7).
 - Smoke/CO alarms: hardwired, interconnected, battery backup (A.2 note 9), drawn at the architect's
   locations as SD#/CO#: garage hallway SD1 + CO1, second-floor hall SD1 + CO1, third-floor west office SD1.
 - Presence sensors are mostly PoE ESP32 units; normally they drive the lights, wall switches are the fallback.
@@ -75,6 +76,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   as not needed; P18 added on the wall below the S1/S8/S9/S10 switch stack. Then P5 moved further east; P19 added mid south
   wall under the windows, P20 at the northwest corner, and P21 near the middle of the north wall but on the
   sloped ceiling above it, because that wall is very low. Now: P1, P4, P5, P18-P21.
+- Closet at the top of the stairs (owner decision, Nov 10, 2026): its door is on its north edge, off the
+  top landing; L7 is inside it; S5 moved to that north edge by the door and is on/off, not a dimmer.
 - Lights L1-L9 on S1-S7, L10 on S11; stair risers S8; stair wall lights S9; L35 (2nd-floor stair ceiling) S10.
 
 ## Sauna / shed outbuilding (drawing v6)

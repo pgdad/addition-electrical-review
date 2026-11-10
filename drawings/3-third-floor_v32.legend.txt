@@ -113,7 +113,7 @@ Lighting (proposed): Govee dimmable ceiling lights, Inovelli White Series switch
 L1, L2  West office, one in each half, level.  S1 at the top of the stairs, S2 by the office door (3-way pair).
 L3, L4, L5  East office, north, middle and south.  S3 on the east side of the shared door.
 L6  Small attic.  S4 in the east office, just north of the attic passage.
-L7  West office closet.  S5 on the office wall beside the closet.
+L7  Closet at the top of the stairs.  S5 (on/off, not a dimmer) on the closet's north edge, east of its door.
 L8  Old house attic.  S6 on the small attic side of the entry, just north of it.
 L9  Short track light in the open space north of S4.  S7 at the north end of that space.
 Switches in smart bulb mode: lights keep constant power, switch dims them over Matter or Home Assistant.
@@ -147,3 +147,4 @@ P21
 P19  West office south wall, mid-wall under the windows (C3).   P20  West office north wall at the northwest corner (C3).
 P21  West office, mid north wall, on the sloped ceiling just above the low (5 ft) wall (C3). Keep it within 5.5 ft of the floor so it counts.
 P5 moved further east along its wall, toward the shared door.
+Closet: door in its north edge, off the top stair landing (dashed gap); thin line marks that edge on the 3D/2D page.
