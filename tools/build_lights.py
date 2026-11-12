@@ -330,6 +330,7 @@ CABLES = {
   ("7", [
    ("12", "Cat6", 3, [(11.81, 1.2)], "Up from switch 7, east along the north wall, then out across the ceiling"),
    ("21", "Cat6A", 0, [(1.2, 0.3)], "Up from switch 7, a few feet east inside the north wall, down to the jack plates", None, 4),
+   ("22", "Cat6A", 0, [(1.2, 0.3)], "Up from switch 7, east along the north wall above the window, down inside the wall to the jack plate between the chargers", None, 2),
   ]),
   ("18", [
    ("17", "Cat6A", 13, [(41.15, 1.12)], "Up from switch 18, east through the stair wall into the hallway north wall"),
@@ -354,6 +355,7 @@ CABLES["2"] = [
    ("3",  "Cat6", 3, [(19.96, 15.71)], _W8 + "east above the media ceiling, then north into the hall ceiling"),
    ("7",  "Cat6A", 15, [(13.49, 15.71)], _W8 + "east above the media ceiling, north to the projector wall, down inside it", None, 4),
    ("14", "Cat6", 10, [(2.19, 16.5), (20.9, 16.5)], "From SP1 at switch 8 east along the media south wall, out to the balcony, along the wall to the doorbell"),
+   ("17", "Cat6A", 0, [(3.9, 15.71)], _W8 + "east to the media west wall, north above the ceiling, down inside the wall to the jack plate", None, 2),
   ]),
   ("16", [
    ("15", "Cat6A", 21, [(28.75, 23.2)], _E16 + "west above the family room ceiling, then north to the AP"),
@@ -382,20 +384,22 @@ FIBER = [
 FIBER_SLACK = 15.0
 # Ethernet jacks (non-PoE data drops): level -> [(item, where, height above the floor in ft)]
 JACKS = {
- "3": [("4", "Floor jack, east edge of the west clipped strip, across from R2", 0.1),
-       ("5", "Floor jack, west edge of the east clipped strip, across from B1", 0.1),
-       ("14", "Wall jack, west office south wall, east of the windows", 1.5)],
+ "3": [("4", "Two floor jacks, east edge of the west clipped strip, across from R2", 0.1, "Two jacks, data only, no PoE"),
+       ("5", "Two floor jacks, west edge of the east clipped strip, across from B1", 0.1, "Two jacks, data only, no PoE"),
+       ("14", "Two wall jacks, west office south wall, east of the windows", 1.5, "Two jacks, data only, no PoE")],
 }
-JACKS["2"] = [("7", "Four PoE jacks on the projector wall (media north wall)", 1.5, "Four jacks, PoE available (15 W each assumed)")]
+JACKS["2"] = [("7", "Four PoE jacks on the projector wall (media north wall)", 1.5, "Four jacks, PoE available (15 W each assumed)"),
+              ("17", "Two Ethernet jacks on the media room west wall, between outlets P3 and P4, for AV equipment", 1.5, "Two jacks, data only, no PoE")]
 JACKS["G"] = [("21", "Four Ethernet jacks on the north wall by outlet P22, near switch 7", 1.5, "Four jacks, data only, no PoE"),
+              ("22", "Two Ethernet jacks on the north wall between EV chargers EV1 and EV2, one for each charger", 4.0, "Two jacks, data only, no PoE"),
               ("11", "Two PoE jacks at 7 ft, inside the garage on the east face of the short wall between the overhead doors", 7.0, "Two jacks, PoE available (15 W each assumed); indoors, so no surge protector needed")]
 for _lv, _rows in JACKS.items():
     for _i, _where, _h, *_note in _rows: NETWORK[_lv].append((_i, "jack", "Ethernet jack", _where, _h, _note[0] if _note else "Data only, no PoE"))
 _F = "Floor run: down from R1 into the floor framing, south then east under the east office floor"
 CABLES["3"][0][1].extend([
-  ("4",  "Cat6A", 0, [(24.05, 16.12)], _F + ", up into the floor box", -0.6),
-  ("5",  "Cat6A", 0, [(24.05, 16.12)], _F + " to the far floor box", -0.6),
-  ("14", "Cat6A", 0, [(24.05, 12.7), (14.12, 12.7)], "West bundle with sensor 13 above the west office ceiling, then south and down inside the south wall"),
+  ("4",  "Cat6A", 0, [(24.05, 16.12)], _F + ", up into the floor box", -0.6, 2),
+  ("5",  "Cat6A", 0, [(24.05, 16.12)], _F + " to the far floor box", -0.6, 2),
+  ("14", "Cat6A", 0, [(24.05, 12.7), (14.12, 12.7)], "West bundle with sensor 13 above the west office ceiling, then south and down inside the south wall", None, 2),
 ])
 HALL_NET = {"17", "14", "15", "16", "19", "20"}
 # presence sensors (PoE ESP32 units): level -> [(item numbers, where, height above the floor in ft, assumed)]

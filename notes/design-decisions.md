@@ -68,6 +68,10 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   front door, on hallway circuit C7.
 - Switch 18 is an 8-port PoE switch with a fiber port (owner decision, Nov 10, 2026).
 - S2 is on the west wall near the SW corner, directly west of where it was first drawn (owner decision, Nov 10, 2026).
+- Ethernet jacks added (owner decision, Nov 12, 2026), two jacks per location: third-floor floor boxes 4 and 5 and
+  wall jack 14 become doubles; second-floor jacks 17 on the media room west wall between P3 and P4 for AV
+  equipment (wall is the reviewer's pick, not named by the owner), on switch 8; garage jacks 22 on the north wall
+  between EV1 and EV2 at about 4 ft, on switch 7. Open point: switch 7 then needs 9 copper ports with cameras 8, 9.
 - Ethernet jacks 21 (owner decision, Nov 10, 2026): four data-only jacks on the north wall near switch 7, by
   outlet C. Switch 7 is an 8-port PoE switch with high outlet P20 beside it on C1. Ground bar G2 (with SP2) sits just south of the west window, about 5 ft from switch 7, and is the
   bar for surge protectors on outdoor Ethernet cables added later.
@@ -179,7 +183,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 
 - Ethernet (confirmed by the owner, Nov 10, 2026): APs 2, 3 and presence sensors 7 to 13 are home runs
   from one PoE switch in rack R1: Cat6A to the APs, Cat6 to the sensors, plus data-only (non-PoE) Cat6A runs to
-  Ethernet jacks 4, 5 and 6; about 360 ft in all. Routes and
+  Ethernet jacks 4, 5 and 14 (two jacks each since Nov 12, 2026). Routes and
   lengths are in REVIEW.md ("Third-floor Ethernet plan") and drawn on lights-3d.html.
 
 ## Sauna / shed outbuilding (drawing v6)

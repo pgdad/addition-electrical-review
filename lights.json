@@ -3970,6 +3970,21 @@
    "cable": "G:C21"
   },
   {
+   "key": "G:N22",
+   "id": "22",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "kind": "jack",
+   "name": "Ethernet jack",
+   "room": "Two Ethernet jacks on the north wall between EV chargers EV1 and EV2, one for each charger",
+   "x": 16.53,
+   "y": 4.0,
+   "z": 1.2,
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "note": "Two jacks, data only, no PoE",
+   "cable": "G:C22"
+  },
+  {
    "key": "G:N11",
    "id": "11",
    "level": "G",
@@ -4161,6 +4176,21 @@
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Four jacks, PoE available (15 W each assumed)",
    "cable": "2:C7"
+  },
+  {
+   "key": "2:N17",
+   "id": "17",
+   "level": "2",
+   "levelName": "Second floor",
+   "kind": "jack",
+   "name": "Ethernet jack",
+   "room": "Two Ethernet jacks on the media room west wall, between outlets P3 and P4, for AV equipment",
+   "x": 4.61,
+   "y": 11.96,
+   "z": 6.88,
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Two jacks, data only, no PoE",
+   "cable": "2:C17"
   },
   {
    "key": "2:N1",
@@ -4361,12 +4391,12 @@
    "levelName": "Third floor",
    "kind": "jack",
    "name": "Ethernet jack",
-   "room": "Floor jack, east edge of the west clipped strip, across from R2",
+   "room": "Two floor jacks, east edge of the west clipped strip, across from R2",
    "x": 28.66,
    "y": 20.71,
    "z": 16.12,
    "source": "drawings/3-third-floor_v32.svg",
-   "note": "Data only, no PoE",
+   "note": "Two jacks, data only, no PoE",
    "cable": "3:C4"
   },
   {
@@ -4376,12 +4406,12 @@
    "levelName": "Third floor",
    "kind": "jack",
    "name": "Ethernet jack",
-   "room": "Floor jack, west edge of the east clipped strip, across from B1",
+   "room": "Two floor jacks, west edge of the east clipped strip, across from B1",
    "x": 34.97,
    "y": 20.71,
    "z": 16.12,
    "source": "drawings/3-third-floor_v32.svg",
-   "note": "Data only, no PoE",
+   "note": "Two jacks, data only, no PoE",
    "cable": "3:C5"
   },
   {
@@ -4391,12 +4421,12 @@
    "levelName": "Third floor",
    "kind": "jack",
    "name": "Ethernet jack",
-   "room": "Wall jack, west office south wall, east of the windows",
+   "room": "Two wall jacks, west office south wall, east of the windows",
    "x": 14.12,
    "y": 22.11,
    "z": 15.56,
    "source": "drawings/3-third-floor_v32.svg",
-   "note": "Data only, no PoE",
+   "note": "Two jacks, data only, no PoE",
    "cable": "3:C14"
   },
   {
@@ -4932,8 +4962,8 @@
    "to": "3:N4",
    "cable": "Cat6A",
    "poeW": 0,
-   "count": 1,
-   "port": "10",
+   "count": 2,
+   "port": "10-11",
    "lengthFt": 20,
    "route": "Floor run: down from R1 into the floor framing, south then east under the east office floor, up into the floor box",
    "points": [
@@ -4971,8 +5001,8 @@
    "to": "3:N5",
    "cable": "Cat6A",
    "poeW": 0,
-   "count": 1,
-   "port": "11",
+   "count": 2,
+   "port": "12-13",
    "lengthFt": 30,
    "route": "Floor run: down from R1 into the floor framing, south then east under the east office floor to the far floor box",
    "points": [
@@ -5010,8 +5040,8 @@
    "to": "3:N14",
    "cable": "Cat6A",
    "poeW": 0,
-   "count": 1,
-   "port": "12",
+   "count": 2,
+   "port": "14-15",
    "lengthFt": 35,
    "route": "West bundle with sensor 13 above the west office ceiling, then south and down inside the south wall",
    "points": [
@@ -5239,6 +5269,45 @@
      4.27,
      1.5,
      0.3
+    ]
+   ]
+  },
+  {
+   "key": "G:C22",
+   "level": "G",
+   "from": "G:N7",
+   "to": "G:N22",
+   "cable": "Cat6A",
+   "poeW": 0,
+   "count": 2,
+   "port": "6-7",
+   "lengthFt": 35,
+   "route": "Up from switch 7, east along the north wall above the window, down inside the wall to the jack plate between the chargers",
+   "points": [
+    [
+     1.2,
+     7.0,
+     1.2
+    ],
+    [
+     1.2,
+     8.8,
+     1.2
+    ],
+    [
+     1.2,
+     8.8,
+     0.3
+    ],
+    [
+     16.53,
+     8.8,
+     1.2
+    ],
+    [
+     16.53,
+     4.0,
+     1.2
     ]
    ]
   },
@@ -5815,6 +5884,45 @@
      20.01,
      14.46,
      19.47
+    ]
+   ]
+  },
+  {
+   "key": "2:C17",
+   "level": "2",
+   "from": "2:N8",
+   "to": "2:N17",
+   "cable": "Cat6A",
+   "poeW": 0,
+   "count": 2,
+   "port": "11-12",
+   "lengthFt": 30,
+   "route": "Up from switch 8 in the closet, east to the media west wall, north above the ceiling, down inside the wall to the jack plate",
+   "points": [
+    [
+     2.19,
+     15.46,
+     15.71
+    ],
+    [
+     2.19,
+     19.06,
+     15.71
+    ],
+    [
+     3.9,
+     19.06,
+     15.71
+    ],
+    [
+     4.61,
+     19.06,
+     6.88
+    ],
+    [
+     4.61,
+     11.96,
+     6.88
     ]
    ]
   },

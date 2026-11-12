@@ -213,3 +213,5 @@ the garage door, clear of the door opening. Outlet C is now P22 (red). MP is lab
 O1, O2 wall opener outlets stay; ceiling outlets O3, O4 are spares, just in case. All outside garage lights stay on S3.
 Shed feeder: lay a second conduit beside the feeder conduit for the fiber to shed switch 1.
 F1 Feeder to shed subpanel A, 60A 240V, 2-pole breaker in MP (owner agreed, Nov 12, 2026). Feeders are numbered F, not C.
+22
+22 Two Ethernet jacks (data only), north wall between EV1 and EV2, about 4 ft high, one per charger; wired to switch 7 (Nov 12, 2026).

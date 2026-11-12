@@ -94,9 +94,9 @@ B1 to B5 bookshelves. SK: sink with RO tap, flush to the south wall of its space
 Network
 1  R1: main network stack and fiber distribution; fiber in from the garage modem entry.
 2  UniFi AP, ceiling, east office.   3  UniFi AP, wall, west office east wall, south of the door.
-4  Floor Ethernet jack, east edge of the west clipped strip, across from R2.
-5  Floor Ethernet jack, west edge of the east clipped strip, across from B1.
-14  Wall Ethernet jack (was 6), west office south wall, east of the windows.
+4  Two floor Ethernet jacks, east edge of the west clipped strip, across from R2.
+5  Two floor Ethernet jacks, west edge of the east clipped strip, across from B1.
+14  Two wall Ethernet jacks (was 6), west office south wall, east of the windows.
 7  PoE presence sensor, wall, west office east wall, north of the door, facing west.
 8  PoE presence sensor, same wall and spot, east office side, facing east.
 9, 10  PoE presence sensors, wall, east office north wall, one each side of the windows.

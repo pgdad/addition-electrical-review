@@ -341,14 +341,23 @@ ceiling AP 21 W (PoE+), PoE doorbell 10 W, ESP32 presence sensor 3 W, spare PoE 
 | Switch | Devices assumed on it | PoE ports | Estimated W | Comment |
 |--------|-----------------------|-----------|-------------|---------|
 | Garage 2 (SW) | cameras 3, 4; outdoor AP 5; AP 6; jacks 11 (2) | 6 | 75 | Needs 8 PoE ports, about 100 W and a fiber (SFP) port. |
-| Garage 7 (NW) | camera 8; camera 9; sensor 12; jacks 21 (4, no PoE) | 3 (7 ports in all) | 16 | 8-port PoE switch (owner decision); the fiber uplink needs an SFP port besides the 8. |
+| Garage 7 (NW) | camera 8; camera 9; sensor 12; jacks 21 (4, no PoE); jacks 22 (2, no PoE, at the EV chargers) | 3 (9 ports in all) | 16 | Nine ports with the two cameras: one more than the 8-port switch the owner chose. Use a 16-port here, or move a camera to switch 2. The fiber uplink needs an SFP port besides. |
 | Garage 18 (under stair) | camera 10; sensors 13, 14, 15, 19, 20; AP 17; doorbell 16 | 8 | 44 | 8 PoE ports plus SFP. Too many ports for a 5-port. |
-| Second floor 8 (SW closet) | sensors 1, 3, 5, 6; AP 9; doorbell 14; jacks 7 (4) | 10 | 95 (35 if the jacks draw no PoE) | 16-port PoE switch with a fiber port (owner decision). Six ports spare. |
+| Second floor 8 (SW closet) | sensors 1, 3, 5, 6; AP 9; doorbell 14; jacks 7 (4); jacks 17 (2, no PoE) | 10 (12 ports in all) | 95 (35 if the jacks draw no PoE) | 16-port PoE switch with a fiber port (owner decision). Four ports spare. |
 | Second floor 16 (family SE corner) | sensors 2, 4, 10, 11, 12, 13; AP 15 | 7 | 39 | New (owner decision): 8-port PoE switch with a fiber port. One port spare. |
-| Third floor R1 | AP 2; AP 3; sensors 7 to 13; jacks 4, 5, 6 | 12 | 56 | The aggregation switch beside it takes the six fiber uplinks (garage 2, 7, 18, second-floor 8 and 16, shed 1) plus the modem converter fiber: at least 7 SFP ports. |
+| Third floor R1 | AP 2; AP 3; sensors 7 to 13; jacks 4, 5, 14 (two each, no PoE) | 9 (15 ports in all) | 56 | The aggregation switch beside it takes the six fiber uplinks (garage 2, 7, 18, second-floor 8 and 16, shed 1) plus the modem converter fiber: at least 7 SFP ports. |
 | Shed 1 | camera 2; AP 3 | 2 | 23 | Fine. Cold-rated. |
 
 Total is about 290 to 320 W. Budgets are fine if each switch is picked for port count, not just watts.
+
+### Ethernet jacks added on Nov 12, 2026 (owner decision)
+- Third floor: floor boxes 4 and 5 and wall jack 14 each become two jacks. R1's main switch now has 15 copper
+  ports in the plan, so size it as a 24-port, not a 16-port.
+- Second floor: jacks 17 (two) on the media room west wall between P3 and P4, for AV equipment, on switch 8. The
+  owner did not name the wall; the west wall is the reviewer's pick because it is the short run from the closet.
+- Garage: jacks 22 (two) on the north wall between EV1 and EV2, about 4 ft high, one per charger, on switch 7.
+  With cameras 8 and 9, switch 7 then needs nine copper ports: one more than an 8-port. Use a 16-port switch
+  there or move one camera to switch 2 (six ports used).
 
 ### Third-floor Ethernet plan (confirmed by the owner, Nov 10, 2026)
 Every third-floor AP, presence sensor and Ethernet jack (jacks are data only, no PoE) is a home run from one PoE switch in rack R1 (network item 1).
@@ -367,9 +376,9 @@ are drawn on `lights-3d.html` (3D and the third-floor 2D map, "Ethernet runs" fi
 | 7 | Sensor 11, east office south wall | Cat6 | 30 ft | 3 W | South bundle, then east |
 | 8 | Sensor 12, east office south wall | Cat6 | 35 ft | 3 W | South bundle, then east past the window |
 | 9 | Sensor 13, top of the west stair | Cat6 | 40 ft | 3 W | West above the nook wall and west office ceiling to the closet |
-| 10 | Jack 4, floor box across from R2 | Cat6A | 20 ft | none | Floor run: down from R1 into the floor framing, south then east |
-| 11 | Jack 5, floor box across from B1 | Cat6A | 30 ft | none | Floor run, continuing east under the east office floor |
-| 12 | Jack 14, west office south wall | Cat6A | 35 ft | none | West bundle with sensor 13, then south and down inside the wall |
+| 10-11 | Jacks 4 (two), floor box across from R2 | 2 x Cat6A | 2 x 20 ft | none | Floor run: down from R1 into the floor framing, south then east |
+| 12-13 | Jacks 5 (two), floor box across from B1 | 2 x Cat6A | 2 x 30 ft | none | Floor run, continuing east under the east office floor |
+| 14-15 | Jacks 14 (two), west office south wall | 2 x Cat6A | 2 x 35 ft | none | West bundle with sensor 13, then south and down inside the wall |
 
 - Three bundles leave R1: north above the wall between the offices (6 cables), south above the rack strip
   (2 cables) and west above the west office ceiling (2 cables: sensor 13 and jack 14). AP 2 goes straight
@@ -417,6 +426,7 @@ doorbell; new switch 16 (8-port, family room southeast corner) takes the east ha
 | 8 | 5 | Sensor 3, hall ceiling at the media door | Cat6 | 45 ft | 3 W |
 | 8 | 6-9 | Jacks 7 (four), projector wall | 4 x Cat6A | 4 x 45 ft | 60 W |
 | 8 | 10 | Doorbell 14, balcony (via SP1 on GB1) | Cat6 | 40 ft | 10 W |
+| 8 | 11-12 | Jacks 17 (two), media west wall between P3 and P4 (added Nov 12, 2026) | 2 x Cat6A | 2 x 30 ft | none |
 | 16 (family SE) | 1 | AP 15, kitchen/family ceiling | Cat6A | 25 ft | 21 W |
 | 16 | 2 | Sensor 12, near the balcony door | Cat6 | 25 ft | 3 W |
 | 16 | 3 | Sensor 13, bath ceiling | Cat6 | 15 ft | 3 W |
@@ -445,6 +455,7 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 | 2 | 3-4 | Jacks 11 (two), between the doors | 2 x Cat6A | 2 x 35 ft | 30 W |
 | 7 (NW corner) | 1 | Sensor 12, ceiling west half | Cat6 | 25 ft | 3 W |
 | 7 | 2-5 | Jacks 21 (four), north wall by outlet P22 | 4 x Cat6A | 4 x 25 ft | none |
+| 7 | 6-7 | Jacks 22 (two), north wall between EV1 and EV2 (added Nov 12, 2026) | 2 x Cat6A | 2 x 35 ft | none |
 | 18 (under stair) | 1 | AP 17, hallway north wall | Cat6A | 25 ft | 13 W |
 | 18 | 2 | Sensor 13, ceiling east half | Cat6 | 30 ft | 3 W |
 | 18 | 3 | Sensor 14, hallway north wall | Cat6 | 20 ft | 3 W |
