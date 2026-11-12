@@ -315,7 +315,7 @@
     "2:S1",
     "2:S19"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "North wall"
   },
@@ -333,7 +333,7 @@
     "2:S1",
     "2:S19"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "North wall"
   },
@@ -351,7 +351,7 @@
     "2:S1",
     "2:S19"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "North wall"
   },
@@ -369,7 +369,7 @@
     "2:S2",
     "2:S20"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "North wall"
   },
@@ -387,7 +387,7 @@
     "2:S2",
     "2:S20"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "North wall"
   },
@@ -405,7 +405,7 @@
     "2:S2",
     "2:S20"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "North wall"
   },
@@ -423,7 +423,7 @@
     "2:S3",
     "3:S8"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Riser lights; 14 drawn for 16 risers",
    "points": [
@@ -513,7 +513,7 @@
     "G:S8",
     "2:S4"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17)",
    "points": [
@@ -618,7 +618,7 @@
     "2:S5",
     "2:S22"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -635,7 +635,7 @@
     "2:S24",
     "2:S25"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -652,7 +652,7 @@
     "2:S6",
     "2:S23"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Ceiling fan with light"
   },
@@ -669,7 +669,7 @@
    "switches": [
     "2:S7"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -686,7 +686,7 @@
     "2:S8",
     "2:S21"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath)",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -703,7 +703,7 @@
     "2:S8",
     "2:S21"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath)",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -720,7 +720,7 @@
     "2:S8",
     "2:S21"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Pendant, hung to about 6.5 ft"
   },
@@ -737,7 +737,7 @@
    "switches": [
     "2:S27"
    ],
-   "circuit": "C15/C16 lighting, 15A (via dimming controller T in the island)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath), via dimming controller T in the island",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"
   },
@@ -754,7 +754,7 @@
    "switches": [
     "2:S27"
    ],
-   "circuit": "C15/C16 lighting, 15A (via dimming controller T in the island)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath), via dimming controller T in the island",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"
   },
@@ -771,7 +771,7 @@
    "switches": [
     "2:S27"
    ],
-   "circuit": "C15/C16 lighting, 15A (via dimming controller T in the island)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath), via dimming controller T in the island",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"
   },
@@ -788,7 +788,7 @@
    "switches": [
     "2:S27"
    ],
-   "circuit": "C15/C16 lighting, 15A (via dimming controller T in the island)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath), via dimming controller T in the island",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"
   },
@@ -805,7 +805,7 @@
    "switches": [
     "2:S9"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Strip under the upper cabinets",
    "points": [
@@ -835,7 +835,7 @@
     "2:S10",
     "2:S26"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Flat 9 ft ceiling under the third-floor east office"
   },
@@ -853,7 +853,7 @@
     "2:S10",
     "2:S26"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Flat 9 ft ceiling under the third-floor east office"
   },
@@ -870,7 +870,7 @@
    "switches": [
     "2:S11"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath)",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -886,7 +886,7 @@
    "switches": [
     "2:S11"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Wet rated"
   },
@@ -919,7 +919,7 @@
    "switches": [
     "2:S12"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath)",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -935,7 +935,7 @@
    "switches": [
     "2:S13"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -952,7 +952,7 @@
     "2:S10",
     "2:S26"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath)",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -968,7 +968,7 @@
    "switches": [
     "2:S14"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "On the stair soffit"
   },
@@ -985,7 +985,7 @@
    "switches": [
     "2:S14"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "On the stair soffit"
   },
@@ -1002,7 +1002,7 @@
    "switches": [
     "2:S14"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "On the stair soffit"
   },
@@ -1019,7 +1019,7 @@
    "switches": [
     "2:S13"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "High wall light"
   },
@@ -1036,7 +1036,7 @@
    "switches": [
     "2:S13"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "High wall light"
   },
@@ -1054,7 +1054,7 @@
     "G:S9",
     "2:S16"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "6.5 ft above the tread below it"
   },
@@ -1072,7 +1072,7 @@
     "G:S9",
     "2:S16"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "6.5 ft above the tread below it"
   },
@@ -1090,7 +1090,7 @@
     "G:S9",
     "2:S16"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "6.5 ft above the tread below it"
   },
@@ -1108,7 +1108,7 @@
     "2:S15",
     "3:S9"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "6.5 ft above the tread below it"
   },
@@ -1126,7 +1126,7 @@
     "2:S15",
     "3:S9"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "6.5 ft above the tread below it"
   },
@@ -1144,7 +1144,7 @@
     "2:S17",
     "3:S10"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Ceiling above the second leg (third-floor ceiling height)"
   },
@@ -1162,7 +1162,7 @@
     "2:S17",
     "3:S10"
    ],
-   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Ceiling above the landing where the stair turns (third-floor ceiling height)"
   },
@@ -2866,9 +2866,9 @@
    "levelName": "Second floor",
    "room": "Sauna heater, hardwired per its manual",
    "kind": "hardwired",
-   "x": 47.25,
+   "x": 43.54,
    "y": 11.46,
-   "z": 11.67,
+   "z": 6.25,
    "circuit": "C2, 50A 240V",
    "source": "drawings/2-second-floor_v20.svg"
   },

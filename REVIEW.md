@@ -219,6 +219,12 @@ The PDF wins for geometry; these are the differences found.
 - **Wall receptacle spacing** (6 ft from a door edge, 12 ft apart) measures long in a few places: kitchen north
   wall west of the hall door (7.8 ft of wall, none), family room stub south of the balcony door (7 ft to P9),
   media north wall between P3 and A (13 ft), and 6.5 ft from door edges to P6 and P7. *should-fix* at rough-in.
+- **Lighting circuits split (owner decision, Nov 12, 2026)**: C15 carries the kitchen, family room and bath/shower
+  lights (L13-L20, L22, L24, L36-L39), C16 all the rest (L1-L12, L23, L25-L35, L40). Every switch stays on one
+  circuit. Both are far below 15 A with LED loads.
+- **Sauna heater G moved (owner decision, Nov 12, 2026)**: now on the sauna west wall, near the north end. That
+  wall backs onto the kitchen counter (P13, P27, L16); check with the electrician that the heater's clearances
+  and the 50 A cable route in that wall follow the manual.
 - **Sauna heater G**: 50 A, 240 V "per its manual" is the right approach; the manual also sets wire
   temperature rating, control location, GFCI or no GFCI and clearances. G is 1.5 ft from the door, as A.3
   shows; check the heater's door-side clearance. A disconnect within sight or a lockable breaker is the usual ask.

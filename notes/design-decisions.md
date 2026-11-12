@@ -126,6 +126,12 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   kick, one centred on each side (north, east, south, west), about 4 in. above the floor. Proposed, not yet confirmed
   by the owner: dimming controller T inside the island (Matter, same kind as stair controller D) and their own
   switch S27 below S8/S9 by the hall door.
+- Lighting circuits (owner decision, Nov 12, 2026): C15 = everything in the kitchen, family room and bath/shower
+  (L13-L20, L22, L24, L36-L39); C16 = all the rest (hall, media room, both stairs, under-stair, balcony:
+  L1-L12, L23, L25-L35, L40). L22 (W/D closet) and L24 (balcony light on family-room switch S10) are put on C15
+  so no switch spans both circuits; that part is the reviewer's reading, not stated by the owner.
+- Sauna heater G (owner decision, Nov 12, 2026): on the sauna west wall, just south of the thin line near the
+  north end of the room (was on the east wall).
 - West stair to the 3rd floor: wall lights L33 (north leg) and L34 (west leg) on S15 (bottom) + 3rd-floor S9 (top);
   L35 ceiling light over the west (second) leg on S17 (bottom, above S15) + 3rd-floor S10 (top).
   L40 (owner, Nov 12, 2026): second ceiling light, above the corner landing where the stair turns, on the same

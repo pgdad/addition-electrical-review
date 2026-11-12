@@ -105,6 +105,14 @@ LIGHTS = {
 }
 
 # ---- switches: (level, id) -> (room, [controlled light keys]) ---------------------------------------
+# Second-floor lighting split (owner, Nov 12, 2026): C15 = kitchen, family room, bath and shower; C16 = everything else.
+# L22 (W/D closet off the kitchen) and L24 (balcony light on family-room switch S10) go with C15 so no switch spans both circuits.
+_C15 = {"L13", "L14", "L15", "L16", "L17", "L18", "L19", "L20", "L22", "L24", "L36", "L37", "L38", "L39"}
+for _id, _v in list(LIGHTS["2"].items()):
+    if _v[3].startswith("C15/C16"):
+        _c = "C15 lighting, 15A AFCI (kitchen, family room, bath)" if _id in _C15 else "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)"
+        LIGHTS["2"][_id] = _v[:3] + (_c + (", via dimming controller T in the island" if "controller T" in _v[3] else ""),) + _v[4:]
+
 def k(level, *ids): return [f"{level}:{i}" for i in ids]
 def rng(level, a, b): return [f"{level}:L{i}" for i in range(a, b + 1)]
 SWITCHES = {
