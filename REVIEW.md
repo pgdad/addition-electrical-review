@@ -150,6 +150,11 @@ The PDF wins for geometry; these are the differences found.
 
 ### Lighting control
 - Every light has a control. L21 (sauna) has no wall switch by design; it is on the heater control.
+- Kitchen island floor lights (Nov 12, 2026): L36-L39 are low-voltage dimmable toe-kick lights, one on each side
+  of the island, on new switch S27 below S8/S9 by the hall door, through dimming controller T inside the island.
+  The switch and controller are my proposal; the owner asked only for the lights. Check with the electrician: the
+  controller needs an accessible, ventilated spot in the island, and its supply comes up through the floor with
+  the feed for island outlet P14.
 - Stair pairs have a switch at each end: S3/S15/S17 at the foot of the west stair (x 10.6 to 12.1 ft, stair
   foot at x 9.6 ft) and S4/S16 at the head of the east stair (x 31.6 to 33.1 ft, first riser at x 33.8 ft).
 - 3-way pairs use an Inovelli main switch plus an Inovelli aux switch with a traveler (owner decision, Nov 10, 2026).

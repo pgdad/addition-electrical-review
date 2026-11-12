@@ -288,3 +288,12 @@ with one feeder. Island outlet P14: position left to the builder/electrician.
 P27
 Nov 12, 2026: counter outlet P27 added in the northeast corner (east wall, C4) to close the gap between P12 and P13.
 Fridge outlet K and range receptacle E are drawn on the north wall behind the appliances.
+L36
+L37
+L38
+L39
+S27
+T
+Nov 12, 2026: island floor lights L36 (north), L37 (east), L38 (south), L39 (west): low-voltage dimmable lights in the
+island toe kick, about 4 in. above the floor, one centred on each side. Fed from dimming controller T inside the island
+(Matter, same kind as D; lighting circuit C15/C16). Switch S27, below S8 and S9 by the hall door, controls all four.

@@ -725,6 +725,74 @@
    "note": "Pendant, hung to about 6.5 ft"
   },
   {
+   "key": "2:L36",
+   "id": "L36",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Kitchen island, north side",
+   "x": 34.57,
+   "y": 10.81,
+   "z": 8.92,
+   "type": "low-voltage",
+   "switches": [
+    "2:S27"
+   ],
+   "circuit": "C15/C16 lighting, 15A (via dimming controller T in the island)",
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"
+  },
+  {
+   "key": "2:L37",
+   "id": "L37",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Kitchen island, east side",
+   "x": 36.63,
+   "y": 10.81,
+   "z": 11.49,
+   "type": "low-voltage",
+   "switches": [
+    "2:S27"
+   ],
+   "circuit": "C15/C16 lighting, 15A (via dimming controller T in the island)",
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"
+  },
+  {
+   "key": "2:L38",
+   "id": "L38",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Kitchen island, south side",
+   "x": 34.57,
+   "y": 10.81,
+   "z": 14.05,
+   "type": "low-voltage",
+   "switches": [
+    "2:S27"
+   ],
+   "circuit": "C15/C16 lighting, 15A (via dimming controller T in the island)",
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"
+  },
+  {
+   "key": "2:L39",
+   "id": "L39",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Kitchen island, west side",
+   "x": 32.51,
+   "y": 10.81,
+   "z": 11.49,
+   "type": "low-voltage",
+   "switches": [
+    "2:S27"
+   ],
+   "circuit": "C15/C16 lighting, 15A (via dimming controller T in the island)",
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"
+  },
+  {
    "key": "2:L16",
    "id": "L16",
    "level": "2",
@@ -1695,6 +1763,24 @@
    ],
    "source": "drawings/2-second-floor_v20.svg",
    "mode": "on/off"
+  },
+  {
+   "key": "2:S27",
+   "id": "S27",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Kitchen, by the hall door, below S9",
+   "x": 31.59,
+   "y": 14.46,
+   "z": 6.42,
+   "controls": [
+    "2:L36",
+    "2:L37",
+    "2:L38",
+    "2:L39"
+   ],
+   "source": "drawings/2-second-floor_v20.svg",
+   "mode": "smart-bulb dimmer"
   },
   {
    "key": "2:S10",

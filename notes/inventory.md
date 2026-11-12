@@ -18,30 +18,31 @@ Counted from `lights.json` (built from the drawings). Quantities only; models ar
 
 Totals by size: five 8-port, one 16-port, three not yet sized.
 
-## Light switches (50)
+## Light switches (51)
 
 | Level | Dimmer (smart-bulb mode) | On/off | Aux | Total |
 |-------|--------------------------|--------|-----|-------|
 | Garage / hallway | 5 | 0 | 4 | 9 |
-| Second floor | 15 | 4 | 7 | 26 |
+| Second floor | 16 | 4 | 7 | 27 |
 | Third floor | 6 | 1 | 4 | 11 |
 | Shed | 4 | 0 | 0 | 4 |
-| **Total** | **30** | **5** | **15** | **50** |
+| **Total** | **31** | **5** | **15** | **51** |
 
 The 15 aux switches each need a traveler to their main switch (15 three-way pairs).
 
-## Light fixtures (66 entries)
+## Light fixtures (70 entries)
 
-| Level | Ceiling | Wall | Outdoor | Stair riser runs | Under-cabinet | Low-voltage (sauna) | Total |
+| Level | Ceiling | Wall | Outdoor | Stair riser runs | Under-cabinet | Low-voltage | Total |
 |-------|---------|------|---------|------------------|---------------|---------------------|-------|
 | Garage / hallway | 11 | 0 | 5 | 0 | 0 | 0 | 16 |
-| Second floor | 16 | 11 | 4 | 2 | 1 | 1 | 35 |
+| Second floor | 16 | 11 | 4 | 2 | 1 | 5 | 39 |
 | Third floor | 9 | 1 | 0 | 0 | 0 | 0 | 10 |
 | Shed | 2 | 1 | 1 | 0 | 0 | 1 | 5 |
-| **Total** | **38** | **13** | **10** | **2** | **1** | **2** | **66** |
+| **Total** | **38** | **13** | **10** | **2** | **1** | **6** | **70** |
 
 The two riser runs are counted as one entry each (one light per riser: 17 risers on the garage stair,
 16 on the west stair). They are listed on the second-floor sheet.
+Low-voltage: the two sauna lights (second floor L21, shed L1) and the four island floor lights L36-L39 (Nov 12, 2026).
 
 ## Presence sensors (23)
 

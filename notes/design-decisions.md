@@ -118,6 +118,10 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   (S4 + garage E); L9-L11 media (S5, S6); L12 media closet (S7); L13-L15 kitchen (S8); L16 under-cabinet (S9);
   L17, L18, L24 family/balcony (S10); L19, L20 bath (S11), bath fan on its own switch S18; L21 sauna on the heater control (DC from
   driver J); L22 W/D closet (S12); L23 balcony (S13); L25-L29 per legend.
+- Kitchen island floor lights (owner, Nov 12, 2026): L36-L39, four low-voltage dimmable lights in the island toe
+  kick, one centred on each side (north, east, south, west), about 4 in. above the floor. Proposed, not yet confirmed
+  by the owner: dimming controller T inside the island (Matter, same kind as stair controller D) and their own
+  switch S27 below S8/S9 by the hall door.
 - West stair to the 3rd floor: wall lights L33 (north leg) and L34 (west leg) on S15 (bottom) + 3rd-floor S9 (top);
   L35 ceiling light over the west (second) leg on S17 (bottom, above S15) + 3rd-floor S10 (top).
   Stair wall lights are separate from the riser lights, with switches at both ends.
