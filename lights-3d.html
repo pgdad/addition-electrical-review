@@ -48,11 +48,11 @@
   .map.no-lights .mlt, .map.no-lights .mltl, .map.no-lights .mwire, .map.no-switches .mwire,
   .map.no-switches .msw, .map.no-switches .mswl, .map.no-outlets .mout, .map.no-outlets .moutl { display:none; }
   .map.no-tables table { display:none; }
-  #cktlist { display:grid; grid-template-columns:repeat(auto-fill, minmax(430px, 1fr)); gap:12px; margin-top:28px; }
-  #cktlist > .ckth { grid-column:1 / -1; } #cktlist > h2.ckth { font-size:16px; margin:0; } #cktlist > h3.ckth { font-size:14px; margin:10px 0 0; }
-  #cktlist .map { margin:0; } #cktlist .map h3 { font-size:13px; } #cktlist .map svg { width:100%; } #cktlist .map table { flex-basis:100%; }
-  #cktlist .cdev { cursor:pointer; }
-  .map.no-clabels .clabel, .map.no-cothers .cother, .map.no-crooms .mroom { display:none; }
+  .cgrid { display:grid; grid-template-columns:repeat(auto-fill, minmax(430px, 1fr)); gap:12px; margin-top:28px; }
+  .cgrid > .ckth { grid-column:1 / -1; } .cgrid > h2.ckth { font-size:16px; margin:0; } .cgrid > h3.ckth { font-size:14px; margin:10px 0 0; }
+  .cgrid .map { margin:0; } .cgrid .map h3 { font-size:13px; } .cgrid .map svg { width:100%; } .cgrid .map table { flex-basis:100%; }
+  .cgrid .cdev { cursor:pointer; }
+  .map.no-clabels .clabel, .map.no-cothers .cother, .map.no-crooms .mroom, .map.no-ccables .ccable { display:none; }
   .inv .wrap > div { flex:1 1 380px; } .inv h4 { margin:10px 0 4px; font-size:13px; } .inv table { width:100%; } .inv tr.tot td { font-weight:600; border-top:1px solid var(--line); }
   .inv td.n, .inv th.n { text-align:right; }
   .map h3 { display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px; }
@@ -65,8 +65,8 @@
   @media print {
     @page { size:landscape; margin:10mm; }
     html, body { height:auto !important; overflow:visible !important; background:#fff !important; color:#000 !important; }
-    body.printing > :not(#maps), body.printing #maps > :not(#maplist):not(#cktlist), body.printing #maplist > :not(.pf), body.printing #cktlist > :not(.pf), #printdlg, .map h3 button { display:none !important; }
-    body.printing #maps { padding:0; border:0; } body.printing #cktlist { display:block; margin:0; }
+    body.printing > :not(#maps), body.printing #maps > :not(#maplist):not(.cgrid), body.printing #maplist > :not(.pf), body.printing .cgrid > :not(.pf), #printdlg, .map h3 button { display:none !important; }
+    body.printing #maps { padding:0; border:0; } body.printing .cgrid { display:block; margin:0; }
     body.printing .map { margin:0; padding:0; border:0; outline:0; background:#fff; color:#000; }
     body.printing .map .wrap { display:block; }
     body.printing .map svg { display:block; width:100%; max-height:165mm; filter:invert(1) hue-rotate(180deg); break-inside:avoid; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
@@ -183,7 +183,8 @@
   <div class="bar"><span>Plan view of every switch, light, outlet, Wi-Fi access point, network switch and presence sensor and Ethernet jack, north up. Dashed network lines are PoE runs, dotted ones are data only, solid orange ones are fiber uplinks to rack R1 on the third floor. Click a switch or a table row to toggle it; click an outlet, AP, network switch or sensor for its details. The Show filters in the side panel apply here too. Levels:</span>
     <span id="mapfilter"></span> <button id="mkreport" title="One PDF with every diagram on its own page, the tables, the written notes and the inventory">Full report (PDF)&hellip;</button> <button id="mapsup">Back to 3D &uarr;</button></div>
   <div id="maplist"></div>
-  <div id="cktlist"></div>
+  <div id="cktlist" class="cgrid"></div>
+  <div id="netlist" class="cgrid"></div>
   <div id="inventory" class="map inv"></div>
 </section>
 <div id="report"></div>
@@ -586,11 +587,12 @@ buildInventory();
 const PRINT_ITEMS = [['lights', 'Lights'], ['switches', 'Switches'], ['outlets', 'Outlets'], ['aps', 'Wi-Fi APs'],
   ['netsw', 'Network switches, presence sensors, Ethernet jacks'], ['cables', 'Network cables: Ethernet and fiber'], ['tables', 'Tables below the diagram']];
 const CKT_ITEMS = [['clabels', 'Device labels'], ['cothers', 'Devices on other circuits (small grey dots)'], ['crooms', 'Room names'], ['tables', 'Device table below the diagram']];
+const NET_ITEMS = [CKT_ITEMS[0], ['ccables', 'Cable routes'], ['cothers', 'Network devices on other switches (small grey dots)'], CKT_ITEMS[2], ['tables', 'Port table below the diagram']];
 let printFig = null;
 const pesc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 function closePrint() {
   if (!printFig) return;
-  printFig.classList.remove('pf', 'no-tables', ...CKT_ITEMS.map(i => 'no-' + i[0])); printFig = null;
+  printFig.classList.remove('pf', 'no-tables', ...CKT_ITEMS.map(i => 'no-' + i[0]), 'no-ccables'); printFig = null;
   document.getElementById('printdlg').close(); applyFilters();          // back to the page-wide filters
 }
 function openPrint(fig, name, items = PRINT_ITEMS) {
@@ -784,6 +786,50 @@ const mapSwEls = {}, mapRowEls = {}, mapLtEls = {}, mapFigs = {}, mapGeo = {};
   document.querySelectorAll('[data-mapfilter]').forEach(b => b.addEventListener('change', () =>
     list.querySelectorAll(`[data-cktlevel="${b.dataset.mapfilter}"]`).forEach(e => e.hidden = !b.checked)));
 }
+// ---------- network switch diagrams: one plan per network switch, with the devices and cable runs on it ----------
+{
+  const hex = c => '#' + c.toString(16).padStart(6, '0'), list = document.getElementById('netlist');
+  const PRE = { ap:'AP ', switch:'SW ', sensor:'PS ', jack:'J ', doorbell:'DB ' };
+  const sym = (N, x, y) => { const c = hex(NET_COLOR[N.kind]);
+    return N.kind === 'doorbell' ? `<rect x="${x - 4}" y="${y - 6}" width="8" height="12" rx="2" fill="${c}" stroke="#0c0f14" stroke-width="0.8"/>`
+      : N.kind === 'ap' ? `<circle cx="${x}" cy="${y}" r="10" fill="none" stroke="${c}" stroke-width="1.4" opacity="0.7"/><circle cx="${x}" cy="${y}" r="5" fill="${c}" stroke="#0c0f14" stroke-width="0.8"/>`
+      : N.kind === 'jack' ? `<rect x="${x - 5}" y="${y - 5}" width="10" height="10" fill="#141820" stroke="${c}" stroke-width="2"/>`
+      : N.kind === 'sensor' ? `<path d="M${x} ${y - 7}L${x + 7} ${y + 5}L${x - 7} ${y + 5}Z" fill="${c}" stroke="#0c0f14" stroke-width="0.8"/>`
+      : `<rect x="${x - 7}" y="${y - 7}" width="14" height="14" transform="rotate(45 ${x} ${y})" fill="${c}" stroke="#0c0f14" stroke-width="0.8"/>`; };
+  const allCabs = Object.values(cableByKey), allFibs = Object.values(fiberByKey);
+  list.innerHTML = `<h2 class="ckth">Network switch diagrams (2D)</h2><div class="ckth muted">One plan per network switch, with the devices cabled to it and their cable routes; network devices on other switches are small grey dots. Dashed lines are PoE runs, dotted ones are data only, solid orange ones are fiber. Cameras are not in the cable plan yet, so they are not drawn. Each diagram has its own Print / PDF button.</div>`;
+  for (const [lv, name] of LEVELS) {
+    const sws = NETS.filter(n => n.level === lv && n.kind === 'switch'); if (!sws.length) continue;
+    const P = PLAN[lv], { x0, z0, wpx, hpx, K } = mapGeo[lv], X = x => ((x - x0) * K).toFixed(1), Y = z => ((z - z0) * K).toFixed(1), base = planBase(P, X, Y);
+    const head = document.createElement('h3'); head.className = 'ckth'; head.dataset.cktlevel = lv; head.textContent = `${name}: ${sws.length} network switch${sws.length > 1 ? 'es' : ''}`; list.appendChild(head);
+    for (const W of sws) {
+      const cabs = allCabs.filter(c => c.from === W.key), mine = new Set([W.key, ...cabs.map(c => c.to)]);
+      const fibs = allFibs.filter(f => (f.from === W.key || f.to === W.key) && f.plan[lv]), ports = cabs.reduce((a, c) => a + (c.count || 1), 0);
+      const lab = (x, y, t, c) => `<text class="clabel" x="${x}" y="${y}" text-anchor="middle" font-size="12" font-weight="700" fill="${c}">${pesc(t)}</text>`;
+      let g = base + NETS.filter(n => n.level === lv && !mine.has(n.key)).map(n => `<circle class="cother" cx="${X(n.x)}" cy="${Y(n.z)}" r="2" fill="#4a5568"/>`).join('');
+      for (const C of cabs) if (C.level === lv) g += `<polyline class="ccable" points="${C.points.map(p => X(p[0]) + ',' + Y(p[2])).join(' ')}" fill="none" stroke="${hex(NET_COLOR[C.toKind])}" stroke-width="1.6" stroke-dasharray="${C.poeW ? '6 3' : '2 3'}" opacity="0.9"/>`;
+      for (const F of fibs) g += `<polyline class="ccable" points="${F.plan[lv].map(p => X(p[0]) + ',' + Y(p[1])).join(' ')}" fill="none" stroke="${hex(FIBER_COLOR)}" stroke-width="2" opacity="0.9"/>`;
+      for (const N of [...cabs.map(c => netByKey[c.to]).filter(n => n.level === lv), W]) {
+        const x = +X(N.x), y = +Y(N.z), big = N.kind === 'ap' || N.kind === 'switch';
+        g += `<g class="cdev" data-key="${N.key}">${sym(N, x, y)}<title>${pesc(N.name + ' ' + N.id + ': ' + N.room)}</title></g>` + lab(x, y + (big ? 24 : 19), PRE[N.kind] + N.id, hex(NET_COLOR[N.kind]));
+      }
+      const rows = cabs.map(C => `<tr><td>${C.port}</td><td>${pesc(tagNet(C.to))}</td><td>${pesc(netByKey[C.to].room)}</td><td>${C.count > 1 ? C.count + ' x ' : ''}${C.cable}</td><td>${C.count > 1 ? C.count + ' x ' : ''}${C.lengthFt} ft</td><td>${C.poeW ? (C.count > 1 ? C.count + ' x ' : '') + C.poeW + ' W' : 'none'}</td><td>${pesc(C.route)}</td></tr>`).join('')
+        + allFibs.filter(f => f.from === W.key || f.to === W.key).map(F => `<tr><td>fiber</td><td>${pesc(F.from === W.key ? 'Uplink to ' + netByKey[F.to].name : 'Uplink from ' + tagNet(F.from) + ' (' + netByKey[F.from].levelName + ')')}</td><td>${pesc(F.from === W.key ? 'Third floor' : netByKey[F.from].room)}</td><td>${pesc(F.cable)}</td><td>${F.lengthFt} ft</td><td>none</td><td>${pesc(F.route)}</td></tr>`).join('');
+      const total = cabs.length ? `<tr><td></td><td>Total copper: ${ports} port${ports > 1 ? 's' : ''}</td><td></td><td></td><td>${cabs.reduce((a, c) => a + c.lengthFt * (c.count || 1), 0)} ft</td><td>${cabs.reduce((a, c) => a + c.poeW * (c.count || 1), 0)} W</td><td></td></tr>` : '';
+      const fig = document.createElement('div'); fig.className = 'map cmap'; fig.dataset.cktlevel = lv; fig.dataset.netsw = W.key;
+      const title = `${name}, network switch ${W.id} (${W.name}): ${cabs.length ? ports + ' copper port' + (ports > 1 ? 's' : '') + ' used by the cable plan' : 'no cable runs in the plan yet'}`;
+      fig.innerHTML = `<h3><span>${pesc(title)}</span> <button class="mprint" title="Choose what to include, check it on the diagram, then print or save as PDF">Print / PDF&hellip;</button></h3><div class="wrap">`
+        + `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${wpx.toFixed(0)} ${hpx.toFixed(0)}" role="img" aria-label="${pesc(name + ' network switch ' + W.id)}">${g}</svg>`
+        + `<table><thead><tr><th>Port</th><th>Device</th><th>Where</th><th>Cable</th><th>Length</th><th>PoE</th><th>Route (Ethernet runs are proposed)</th></tr></thead><tbody>${rows}${total}</tbody></table></div>`;
+      list.appendChild(fig);
+      fig.querySelector('.mprint').addEventListener('click', () => openPrint(fig, name + ' network switch ' + W.id, NET_ITEMS));
+      fig.querySelectorAll('.cdev').forEach(e => e.addEventListener('click', () => select('network', e.dataset.key)));
+    }
+  }
+  document.querySelectorAll('[data-mapfilter]').forEach(b => b.addEventListener('change', () =>
+    list.querySelectorAll(`[data-cktlevel="${b.dataset.mapfilter}"]`).forEach(e => e.hidden = !b.checked)));
+}
+
 // ---------- full PDF report: every diagram alone on its own page in colour with a legend, text on separate pages ----------
 const NOTES = JSON.parse(document.getElementById('notes-data').textContent);
 function mdToHtml(md) {                             // small Markdown subset: headings, bullets (one nested level), tables, paragraphs, **bold**, `code`
@@ -842,6 +888,7 @@ function buildReport(parts) {
     + `<p>Every diagram is on its own page, north up, with its legend below it. Tables and written notes are on separate pages. Code items in this report are points to check with the electrician and the inspector, not rulings.</p><h3>Contents</h3><ul>`
     + (parts.maps ? `<li>Level plans: ${LEVELS.map(l => pesc(l[1])).join(', ')}, each followed by its switch and cable tables</li>` : '')
     + (parts.circuits ? `<li>Circuit diagrams: ${document.querySelectorAll('#cktlist .cmap').length} circuits, one page each, followed by the device tables for each level</li>` : '')
+    + (parts.switches ? `<li>Network switch diagrams: ${document.querySelectorAll('#netlist .cmap').length} switches, one page each, followed by the port tables for each level</li>` : '')
     + (parts.notes ? '<li>Written notes: owner decisions and instructions, open findings, load estimate</li>' : '') + (parts.inventory ? '<li>Inventory</li>' : '') + '</ul></div>';
   if (parts.maps) for (const [lv, name] of LEVELS) {
     const fig = mapFigs[lv], kinds = new Set(NETS.filter(n => n.level === lv).map(n => n.kind)), outs = (DATA.outlets || []).filter(o => o.level === lv);
@@ -862,13 +909,23 @@ function buildReport(parts) {
     }
     h += `<div class="rp-text"><h2>${pesc(name)}: devices by circuit</h2>` + figs.map(f => `<h3>${pesc(f.querySelector('h3 span').textContent)}</h3>` + f.querySelector('table').outerHTML).join('') + '</div>';
   }
+  if (parts.switches) for (const [lv, name] of LEVELS) {
+    const figs = [...document.querySelectorAll(`#netlist .cmap[data-cktlevel="${lv}"]`)]; if (!figs.length) continue;
+    for (const fig of figs) {
+      const kinds = new Set([...fig.querySelectorAll('.cdev')].map(e => netByKey[e.dataset.key].kind)), W = netByKey[fig.dataset.netsw], cabs = Object.values(cableByKey).filter(c => c.from === W.key);
+      const leg = [LEG.nsw, ...(kinds.has('ap') ? [LEG.ap] : []), ...(kinds.has('sensor') ? [LEG.sensor] : []), ...(kinds.has('jack') ? [LEG.jack] : []), ...(kinds.has('doorbell') ? [LEG.bell] : []),
+        ...(cabs.some(c => c.poeW) ? [LEG.poe] : []), ...(cabs.some(c => !c.poeW) ? [LEG.data] : []), LEG.fiber, [LEG.other[0], 'Network device on another switch'], LEG.wall, LEG.part, LEG.dash, ...(PLAN[lv].windows ? [LEG.win] : [])];
+      h += img(fig.querySelector('h3 span').textContent, fig.querySelector('svg'), leg);
+    }
+    h += `<div class="rp-text"><h2>${pesc(name)}: network switch ports</h2>` + figs.map(f => `<h3>${pesc(f.querySelector('h3 span').textContent)}</h3>` + f.querySelector('table').outerHTML).join('') + '</div>';
+  }
   if (parts.notes) h += `<div class="rp-text"><h1>Written notes</h1>${mdToHtml(NOTES.decisions || '')}</div><div class="rp-text">${mdToHtml(NOTES.findings || '')}${mdToHtml(NOTES.load || '')}</div>`;
   if (parts.inventory) h += `<div class="rp-text">${document.getElementById('inventory').innerHTML.replace('<h3>Inventory</h3>', '<h1>Inventory</h1>')}</div>`;
   rep.innerHTML = h;
 }
 document.getElementById('mkreport').onclick = () => {
   if (printFig) closePrint();
-  const dlg = document.getElementById('printdlg'), PARTS = [['maps', 'Level plans with their switch and cable tables'], ['circuits', 'Circuit diagrams with their device tables'], ['notes', 'Written notes: owner decisions, open findings, load estimate'], ['inventory', 'Inventory']];
+  const dlg = document.getElementById('printdlg'), PARTS = [['maps', 'Level plans with their switch and cable tables'], ['circuits', 'Circuit diagrams with their device tables'], ['switches', 'Network switch diagrams with their port tables'], ['notes', 'Written notes: owner decisions, open findings, load estimate'], ['inventory', 'Inventory']];
   dlg.innerHTML = `<h4>Full report (PDF)</h4><div class="muted">Every diagram goes on its own page in colour with a legend; text and tables go on separate pages. Plans are landscape, the shed is portrait.</div>`
     + PARTS.map(([k, t]) => `<label class="chk"><input type="checkbox" data-rk="${k}" checked> ${t}</label>`).join('')
     + `<div class="btns"><button id="rp-go" style="margin-left:auto">Create report / Save as PDF</button><button id="rp-x">Close</button></div><p>In the print window choose "Save as PDF" as the destination and leave the layout setting alone; the report sets the orientation of each page itself.</p>`;
