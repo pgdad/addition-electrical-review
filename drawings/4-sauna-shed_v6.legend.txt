@@ -65,3 +65,4 @@ Doors: porch door from the dressing room, 2'8", hinged west, opens out onto the 
 of the wall between the dressing room and the sauna, 2'0", hinged north, opens out into the dressing room (owner decision).
 Shed outlets P2, P3 and P5 removed (Nov 10, 2026). P6 moved north to where P2 was, by switch 1. Now: P1, P4, P6.
 Feeder trench from the garage: two conduits, one for the 60A feeder and a separate one for the fiber to switch 1.
+Switch 1 feeds Wi-Fi AP 3 and camera 2 by Ethernet (owner decision, Nov 12, 2026); camera 2 via surge protector SP on G.

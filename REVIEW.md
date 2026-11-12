@@ -452,9 +452,13 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 | 2 (SW corner) | 1 | Outdoor AP 5 (via SP1) | Cat6A | 20 ft | 13 W |
 | 2 | 2 | AP 6, west wall | Cat6A | 25 ft | 13 W |
 | 2 | 3-4 | Jacks 11 (two), between the doors | 2 x Cat6A | 2 x 35 ft | 30 W |
+| 2 | 5 | Camera 3, outside the southwest corner (via SP1) | Cat6 | 15 ft | 8 W |
+| 2 | 6 | Camera 4, outside the south wall (via SP1) | Cat6 | 15 ft | 8 W |
 | 7 (NW corner) | 1 | Sensor 12, ceiling west half | Cat6 | 25 ft | 3 W |
 | 7 | 2-5 | Jacks 21 (four), north wall by outlet P22 | 4 x Cat6A | 4 x 25 ft | none |
 | 7 | 6-7 | Jacks 22 (two), north wall between EV1 and EV2 (added Nov 12, 2026) | 2 x Cat6A | 2 x 35 ft | none |
+| 7 | 8 | Camera 8, outside the north wall (via SP2 on G2) | Cat6 | 20 ft | 8 W |
+| 7 | 9 | Camera 9, ceiling, 3D printer area | Cat6 | 30 ft | 5 W |
 | 18 (under stair) | 1 | AP 17, hallway north wall | Cat6A | 25 ft | 13 W |
 | 18 | 2 | Sensor 13, ceiling east half | Cat6 | 30 ft | 3 W |
 | 18 | 3 | Sensor 14, hallway north wall | Cat6 | 20 ft | 3 W |
@@ -462,9 +466,14 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 | 18 | 5 | Sensor 19, hallway east wall | Cat6 | 30 ft | 3 W |
 | 18 | 6 | Sensor 15, over the doorway | Cat6 | 45 ft | 3 W |
 | 18 | 7 | Doorbell 16, front door east side (via SP3 on G3) | Cat6 | 50 ft | 10 W |
+| 18 | 8 | Camera 10, ceiling by the WashTower | Cat6 | 30 ft | 5 W |
 
 - Sensor 12 moved from switch 2 to switch 7: it is 11 ft from 7 and 19 ft from 2, and 7 has spare ports.
-- Cameras 3, 4, 8, 9 and 10 also land on these switches (see the PoE table) but are not drawn on the page.
+- Cameras 3, 4, 8, 9 and 10 are in the cable plan and drawn on the page (owner decision, Nov 12, 2026). Switch 18
+  now uses all 8 of its copper ports; any further device under the stair needs a 16-port there.
+- Shed (owner decision, Nov 12, 2026): shed switch 1 feeds Wi-Fi AP 3 (port 1, Cat6A, 20 ft, 15 W) and outdoor
+  camera 2 (port 2, Cat6, 25 ft, 8 W, via surge protector SP on ground bar G). A 5-port PoE switch with a fiber
+  port is enough there; pick a cold-rated one.
 - Jacks 21 (owner decision) are four data-only jacks on the north wall by computer outlet P22. Switch 7 is
   a 16-port PoE switch with a fiber port (owner decision, Nov 12, 2026; was 8-port) with its own high outlet P20
   beside it on network circuit C1. With cameras 8 and 9 and jacks 22 it uses 9 ports. Jacks 11 are

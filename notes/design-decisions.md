@@ -68,6 +68,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   front door, on hallway circuit C7.
 - Switch 18 is an 8-port PoE switch with a fiber port (owner decision, Nov 10, 2026).
 - S2 is on the west wall near the SW corner, directly west of where it was first drawn (owner decision, Nov 10, 2026).
+- Cameras in the cable plan (owner decision, Nov 12, 2026): garage cameras 3 and 4 on switch 2, 8 and 9 on
+  switch 7, 10 on switch 18; shed camera 2 and shed Wi-Fi AP 3 on shed switch 1.
 - Ethernet jacks added (owner decision, Nov 12, 2026), two jacks per location: third-floor floor boxes 4 and 5 and
   wall jack 14 become doubles; second-floor jacks 17 high on the media room south wall beside blind outlet H3
   (about 7.5 ft), on switch 8; garage jacks 22 on the north wall between EV1 and EV2 at about 4 ft, on switch 7.

@@ -216,3 +216,4 @@ F1 Feeder to shed subpanel A, 60A 240V, 2-pole breaker in MP (owner agreed, Nov 
 22
 22 Two Ethernet jacks (data only), north wall between EV1 and EV2, about 4 ft high, one per charger; wired to switch 7 (Nov 12, 2026).
 Switch 7 is now a 16-port PoE switch with a fiber port (owner decision, Nov 12, 2026): 9 copper ports are used.
+Cameras 3, 4 are wired to switch 2, cameras 8, 9 to switch 7 and camera 10 to switch 18 (owner decision, Nov 12, 2026).

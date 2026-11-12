@@ -14,7 +14,7 @@ Counted from `lights.json` (built from the drawings). Quantities only; models ar
 | Second floor | 16 | 8-port PoE + fiber | Family room southeast corner |
 | Third floor | Main switch in R1 | Not set; 15 copper ports are used by the plan, so 24-port PoE | Rack R1 |
 | Third floor | Fiber aggregation switch in R1 | Not set; at least 7 fiber (SFP) ports | Rack R1 |
-| Shed | 1 | Not set; 2 PoE devices (camera, AP) plus fiber in | North wall |
+| Shed | 1 | Not set; feeds AP 3 and camera 2, plus fiber in (5-port PoE is enough) | North wall |
 
 Totals by size: four 8-port, two 16-port, three not yet sized.
 
@@ -53,6 +53,14 @@ Low-voltage: the two sauna lights (second floor L21, shed L1) and the four islan
 | Third floor | 0 | 7 | 7 |
 | Shed | 0 | 0 | 0 |
 | **Total** | **8** | **15** | **23** |
+
+## Cameras (6)
+
+| Level | Outdoor | Indoor | Total |
+|-------|---------|--------|-------|
+| Garage / hallway | 3 | 2 | 5 |
+| Sauna / shed | 1 | 0 | 1 |
+| **Total** | **4** | **2** | **6** |
 
 The same counts are shown live in the "Inventory" section at the bottom of `lights-3d.html`.
 

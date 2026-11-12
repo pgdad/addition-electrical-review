@@ -3955,6 +3955,79 @@
    "cable": "G:C17"
   },
   {
+   "key": "G:N3",
+   "id": "3",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "kind": "camera",
+   "name": "Outdoor PoE camera",
+   "room": "Outside the garage southwest corner, facing west",
+   "x": -1.05,
+   "y": 9.0,
+   "z": 23.0,
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "note": "Outdoor copper run; surge protector SP1",
+   "cable": "G:C3"
+  },
+  {
+   "key": "G:N4",
+   "id": "4",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "kind": "camera",
+   "name": "Outdoor PoE camera",
+   "room": "Outside the garage south wall, facing south",
+   "x": 2.17,
+   "y": 9.0,
+   "z": 23.57,
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "note": "Outdoor copper run; surge protector SP1",
+   "cable": "G:C4"
+  },
+  {
+   "key": "G:N8",
+   "id": "8",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "kind": "camera",
+   "name": "Outdoor PoE camera",
+   "room": "Outside the garage north wall",
+   "x": 6.18,
+   "y": 9.0,
+   "z": -1.21,
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "note": "Outdoor copper run; surge protector SP2 on ground bar G2",
+   "cable": "G:C8"
+  },
+  {
+   "key": "G:N9",
+   "id": "9",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "kind": "camera",
+   "name": "Indoor ceiling PoE camera",
+   "room": "Garage ceiling, 3D printer area",
+   "x": 10.2,
+   "y": 9.3,
+   "z": 7.48,
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "cable": "G:C9"
+  },
+  {
+   "key": "G:N10",
+   "id": "10",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "kind": "camera",
+   "name": "Indoor ceiling PoE camera",
+   "room": "Garage ceiling, by the WashTower",
+   "x": 31.89,
+   "y": 9.3,
+   "z": 7.07,
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "cable": "G:C10"
+  },
+  {
    "key": "G:N21",
    "id": "21",
    "level": "G",
@@ -4560,7 +4633,23 @@
    "x": -9.2,
    "y": 7.0,
    "z": 54.64,
-   "source": "drawings/4-sauna-shed_v6.svg"
+   "source": "drawings/4-sauna-shed_v6.svg",
+   "cable": "S:C3"
+  },
+  {
+   "key": "S:N2",
+   "id": "2",
+   "level": "S",
+   "levelName": "Sauna / shed",
+   "kind": "camera",
+   "name": "Outdoor PoE camera",
+   "room": "Outside the shed south wall",
+   "x": -2.8,
+   "y": 8.0,
+   "z": 66.72,
+   "source": "drawings/4-sauna-shed_v6.svg",
+   "note": "Outdoor copper run; surge protector SP on ground bar G",
+   "cable": "S:C2"
   }
  ],
  "cables": [
@@ -5195,6 +5284,84 @@
    ]
   },
   {
+   "key": "G:C3",
+   "level": "G",
+   "from": "G:N2",
+   "to": "G:N3",
+   "cable": "Cat6",
+   "poeW": 8,
+   "count": 1,
+   "port": "5",
+   "lengthFt": 15,
+   "route": "From SP1 at switch 2 out through the south wall, west round the corner to the camera",
+   "points": [
+    [
+     1.2,
+     7.0,
+     20.75
+    ],
+    [
+     1.2,
+     8.8,
+     20.75
+    ],
+    [
+     1.2,
+     8.8,
+     23.0
+    ],
+    [
+     -1.05,
+     8.8,
+     23.0
+    ],
+    [
+     -1.05,
+     9.0,
+     23.0
+    ]
+   ]
+  },
+  {
+   "key": "G:C4",
+   "level": "G",
+   "from": "G:N2",
+   "to": "G:N4",
+   "cable": "Cat6",
+   "poeW": 8,
+   "count": 1,
+   "port": "6",
+   "lengthFt": 15,
+   "route": "From SP1 at switch 2 east along the south wall, out through the wall to the camera",
+   "points": [
+    [
+     1.2,
+     7.0,
+     20.75
+    ],
+    [
+     1.2,
+     8.8,
+     20.75
+    ],
+    [
+     2.17,
+     8.8,
+     20.75
+    ],
+    [
+     2.17,
+     8.8,
+     23.57
+    ],
+    [
+     2.17,
+     9.0,
+     23.57
+    ]
+   ]
+  },
+  {
    "key": "G:C12",
    "level": "G",
    "from": "G:N7",
@@ -5308,6 +5475,84 @@
      16.53,
      4.0,
      1.2
+    ]
+   ]
+  },
+  {
+   "key": "G:C8",
+   "level": "G",
+   "from": "G:N7",
+   "to": "G:N8",
+   "cable": "Cat6",
+   "poeW": 8,
+   "count": 1,
+   "port": "8",
+   "lengthFt": 20,
+   "route": "From SP2 on G2 east along the north wall, out through the wall to the camera",
+   "points": [
+    [
+     1.2,
+     7.0,
+     1.2
+    ],
+    [
+     1.2,
+     8.8,
+     1.2
+    ],
+    [
+     6.18,
+     8.8,
+     1.2
+    ],
+    [
+     6.18,
+     8.8,
+     -1.21
+    ],
+    [
+     6.18,
+     9.0,
+     -1.21
+    ]
+   ]
+  },
+  {
+   "key": "G:C9",
+   "level": "G",
+   "from": "G:N7",
+   "to": "G:N9",
+   "cable": "Cat6",
+   "poeW": 5,
+   "count": 1,
+   "port": "9",
+   "lengthFt": 30,
+   "route": "Up from switch 7, east along the north wall, then south across the ceiling",
+   "points": [
+    [
+     1.2,
+     7.0,
+     1.2
+    ],
+    [
+     1.2,
+     8.8,
+     1.2
+    ],
+    [
+     10.2,
+     8.8,
+     1.2
+    ],
+    [
+     10.2,
+     8.8,
+     7.48
+    ],
+    [
+     10.2,
+     9.3,
+     7.48
     ]
    ]
   },
@@ -5606,6 +5851,118 @@
      47.46,
      5.08,
      23.78
+    ]
+   ]
+  },
+  {
+   "key": "G:C10",
+   "level": "G",
+   "from": "G:N18",
+   "to": "G:N10",
+   "cable": "Cat6",
+   "poeW": 5,
+   "count": 1,
+   "port": "8",
+   "lengthFt": 30,
+   "route": "Up from switch 18, out of the under-stair space, west across the garage ceiling",
+   "points": [
+    [
+     41.15,
+     3.0,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     1.46
+    ],
+    [
+     41.15,
+     8.8,
+     4.26
+    ],
+    [
+     31.89,
+     8.8,
+     7.07
+    ],
+    [
+     31.89,
+     9.3,
+     7.07
+    ]
+   ]
+  },
+  {
+   "key": "S:C3",
+   "level": "S",
+   "from": "S:N1",
+   "to": "S:N3",
+   "cable": "Cat6A",
+   "poeW": 15,
+   "count": 1,
+   "port": "1",
+   "lengthFt": 20,
+   "route": "Up from switch 1, west above the ceiling along the partition wall, drop to the AP",
+   "points": [
+    [
+     -3.0,
+     5.0,
+     54.64
+    ],
+    [
+     -3.0,
+     7.5,
+     54.64
+    ],
+    [
+     -9.2,
+     7.5,
+     54.64
+    ],
+    [
+     -9.2,
+     7.0,
+     54.64
+    ]
+   ]
+  },
+  {
+   "key": "S:C2",
+   "level": "S",
+   "from": "S:N1",
+   "to": "S:N2",
+   "cable": "Cat6",
+   "poeW": 8,
+   "count": 1,
+   "port": "2",
+   "lengthFt": 25,
+   "route": "Up from switch 1, south above the shed ceiling, out through the south wall to the camera (surge protector SP on ground bar G)",
+   "points": [
+    [
+     -3.0,
+     5.0,
+     54.64
+    ],
+    [
+     -3.0,
+     7.5,
+     54.64
+    ],
+    [
+     -2.8,
+     7.5,
+     54.64
+    ],
+    [
+     -2.8,
+     7.5,
+     66.72
+    ],
+    [
+     -2.8,
+     8.0,
+     66.72
     ]
    ]
   },

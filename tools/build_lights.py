@@ -284,6 +284,11 @@ NETWORK = {
   ("6", "ap", "UniFi wall AP", "Garage, mid west wall", 7.0, ""),
   ("16", "doorbell", "PoE video doorbell", "Outside the front door, on its east (latch) side", 4.0, "Outdoor copper run: surge protector SP3 on ground bar G3 at switch 18"),
   ("17", "ap", "UniFi wall AP", "Hallway north wall", 7.0, "Fed from switch 18"),
+  ("3", "camera", "Outdoor PoE camera", "Outside the garage southwest corner, facing west", 9.0, "Outdoor copper run; surge protector SP1"),
+  ("4", "camera", "Outdoor PoE camera", "Outside the garage south wall, facing south", 9.0, "Outdoor copper run; surge protector SP1"),
+  ("8", "camera", "Outdoor PoE camera", "Outside the garage north wall", 9.0, "Outdoor copper run; surge protector SP2 on ground bar G2"),
+  ("9", "camera", "Indoor ceiling PoE camera", "Garage ceiling, 3D printer area", 9.3, ""),
+  ("10", "camera", "Indoor ceiling PoE camera", "Garage ceiling, by the WashTower", 9.3, ""),
  ],
  "2": [
   ("8", "switch", "16-port PoE switch with a fiber port", "Media closet, southwest", 5.0, "West half of the floor, the projector jacks and doorbell 14 (via SP1 on GB1)"),
@@ -300,11 +305,12 @@ NETWORK = {
  "S": [
   ("1", "switch", "PoE switch", "Shed north wall", 5.0, "Fiber in from the garage"),
   ("3", "ap", "Outdoor PoE AP", "Inside the shed north wall", 7.0, ""),
+  ("2", "camera", "Outdoor PoE camera", "Outside the shed south wall", 8.0, "Outdoor copper run; surge protector SP on ground bar G"),
  ],
 }
 # ---- Ethernet runs (proposed, third floor only so far): level -> (switch item, [(device item, cable, PoE W (0 = data only),
 # plan waypoints, route, optional route height in ft above the floor; negative = in the floor framing)])
-ROUTE_H, CABLE_SLACK = {"3": 7.0, "G": 8.8, "2": 8.6}, 8.0     # per level: ft above the floor for the horizontal run; ft of service loop (5 at the rack, 3 at the device)
+ROUTE_H, CABLE_SLACK = {"3": 7.0, "G": 8.8, "2": 8.6, "S": 7.5}, 8.0     # per level: ft above the floor for the horizontal run; ft of service loop (5 at the rack, 3 at the device)
 _N = "North bundle: up from R1, north above the wall between the offices"
 _S = "South bundle: up from R1, south above the rack strip to the south wall"
 CABLES = {
@@ -319,18 +325,21 @@ CABLES = {
   ("12", "Cat6", 3, [(24.6, 14.16), (24.6, 24.17)], _S + ", then east past the window"),
   ("13", "Cat6", 3, [(24.05, 12.7), (3.84, 12.7)], "West above the nook wall and the west office ceiling to the closet, then north to the stair wall"),
  ])],
- # Garage: each device goes to the nearest of the three switches. Cameras 3, 4, 8, 9, 10 and doorbell 16 also land on
- # these switches (see the PoE table in REVIEW.md) but are not drawn on the page.
+ # Garage: each device goes to the nearest of the three switches. Cameras were added to the plan on Nov 12, 2026.
  "G": [
   ("2", [
    ("5",  "Cat6A", 13, [(4.18, 20.75)], "Up from switch 2, east along the south wall, out through the wall to the AP (surge protector SP1)"),
    ("6",  "Cat6A", 13, [], "Up from switch 2, north along the west wall, drop to the AP"),
    ("11", "Cat6A", 15, [(1.2, 21.6), (21.6, 21.6)], "Up from switch 2, east along the south wall above the west door, through to the east face of the wall between the doors", None, 2),
+   ("3",  "Cat6", 8, [(1.2, 23.0)], "From SP1 at switch 2 out through the south wall, west round the corner to the camera"),
+   ("4",  "Cat6", 8, [(2.17, 20.75)], "From SP1 at switch 2 east along the south wall, out through the wall to the camera"),
   ]),
   ("7", [
    ("12", "Cat6", 3, [(11.81, 1.2)], "Up from switch 7, east along the north wall, then out across the ceiling"),
    ("21", "Cat6A", 0, [(1.2, 0.3)], "Up from switch 7, a few feet east inside the north wall, down to the jack plates", None, 4),
    ("22", "Cat6A", 0, [(1.2, 0.3)], "Up from switch 7, east along the north wall above the window, down inside the wall to the jack plate between the chargers", None, 2),
+   ("8",  "Cat6", 8, [(6.18, 1.2)], "From SP2 on G2 east along the north wall, out through the wall to the camera"),
+   ("9",  "Cat6", 5, [(10.2, 1.2)], "Up from switch 7, east along the north wall, then south across the ceiling"),
   ]),
   ("18", [
    ("17", "Cat6A", 13, [(41.15, 1.12)], "Up from switch 18, east through the stair wall into the hallway north wall"),
@@ -340,9 +349,15 @@ CABLES = {
    ("19", "Cat6", 3, [(41.15, 2.2), (47.4, 2.2)], "Hallway bundle: east to the hallway east wall, then south along it"),
    ("15", "Cat6", 3, [(41.15, 2.2), (47.4, 2.2), (47.4, 21.55)], "Hallway bundle: east to the hallway east wall, south along it, then west to the doorway"),
    ("16", "Cat6", 10, [(41.15, 2.2), (47.4, 2.2), (47.4, 22.5)], "From SP3 at switch 18 with the hallway bundle down the east wall, out through the south wall beside the front door"),
+   ("10", "Cat6", 5, [(41.15, 4.26)], "Up from switch 18, out of the under-stair space, west across the garage ceiling"),
   ]),
  ],
 }
+# Shed (owner decision, Nov 12, 2026): AP 3 and camera 2 on shed switch 1.
+CABLES["S"] = [("1", [
+   ("3", "Cat6A", 15, [], "Up from switch 1, west above the ceiling along the partition wall, drop to the AP"),
+   ("2", "Cat6", 8, [(-2.8, 54.64)], "Up from switch 1, south above the shed ceiling, out through the south wall to the camera (surge protector SP on ground bar G)"),
+])]
 # Second floor (proposed): west half on switch 8 in the SW closet, east half on switch 16 in the family room SE corner.
 _W8 = "Up from switch 8 in the closet, "
 _E16 = "Up from switch 16, "
