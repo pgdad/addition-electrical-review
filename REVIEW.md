@@ -179,11 +179,9 @@ The PDF wins for geometry; these are the differences found.
   rooms), media to kitchen (2668, hinged north, opening into the kitchen; its gap was about 0.5 ft too far
   south and is corrected), media to balcony (3068, opening in), family to balcony (3068, opening out),
   closet, bath, sauna and the W/D closet bifold. What the doors show:
-  - Owner decision (Nov 10, 2026): the hall/kitchen door opens out into the hall, the opposite of A.3, hinged
-    on its west jamb with the handle on the east. S8 and S9 in the kitchen are no longer behind it, and the
-    open leaf folds west, away from the east stair and switches S16 and S20.
-  - *check*: the 2'8" leaf spans most of the 3'4" hall while it is swinging, and folded back against the wall it
-    covers outlet P2 and stops about 1 ft short of S2. Confirm with the inspector that a door may swing into the hall.
+  - Owner decision (Nov 12, 2026): the hall/kitchen door opens into the kitchen, hinged on its west jamb with
+    the handle on the east. It no longer swings into the 3'4" hall or covers hall outlet P2. S8 and S9 are on
+    the latch side, about 7 in east of the opening, so the open leaf does not cover them.
   - Resolved (owner decision): doorbell 14 moved out of the family/balcony door's swing to the wall north
     of the door; L29 was nudged north to make room.
   - A.3 draws the sauna door opening into the sauna. Sauna doors normally open outward; check the heater

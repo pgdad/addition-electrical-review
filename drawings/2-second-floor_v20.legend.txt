@@ -272,7 +272,7 @@ S26
 P25
 P26
 16
-Nov 10, 2026: hall/kitchen door opens out into the hall, hinged west, handle on the east. Doorbell 14 moved to the wall
+Nov 10, 2026: hall/kitchen door opens into the kitchen (Nov 12), hinged west, handle on the east. Doorbell 14 moved to the wall
 north of the family/balcony door (L29 nudged north). S26 pairs with S10 for family L17, L18, L24, at the north end of the
 family/bath wall. P25, P26 counter outlets south of the sink (C4). Sauna light driver J moved to the bath north wall.
 16 PoE switch (8-port + fiber), high in the family room southeast corner, powered from H6 (duplex). Switch 8: 16-port PoE.
