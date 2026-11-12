@@ -212,3 +212,4 @@ Renamed (Nov 10, 2026): stair-foot switches E, F are now S8, S9 (green), a two-g
 the garage door, clear of the door opening. Outlet C is now P22 (red). MP is labelled at the red bar; its location is still open.
 O1, O2 wall opener outlets stay; ceiling outlets O3, O4 are spares, just in case. All outside garage lights stay on S3.
 Shed feeder: lay a second conduit beside the feeder conduit for the fiber to shed switch 1.
+F1 Feeder to shed subpanel A, 60A 240V, 2-pole breaker in MP (owner agreed, Nov 12, 2026). Feeders are numbered F, not C.

@@ -42,7 +42,7 @@ Network and power
 1 PoE switch, fiber in, shed north wall
 2 PoE camera, outside south wall
 3 Outdoor PoE AP, inside north wall
-A Subpanel, 60A 240V feeder (my pick)
+A Subpanel, 60A 240V feeder F1 (my pick)
 B Space heater, 20A dedicated
 J Sauna light control unit, low, dressing room
 P1 Dressing room outlet

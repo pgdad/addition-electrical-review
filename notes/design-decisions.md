@@ -130,6 +130,9 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   (L13-L20, L22, L24, L36-L39); C16 = all the rest (hall, media room, both stairs, under-stair, balcony:
   L1-L12, L23, L25-L35, L40). L22 (W/D closet) and L24 (balcony light on family-room switch S10) are put on C15
   so no switch spans both circuits; that part is the reviewer's reading, not stated by the owner.
+- Circuit assignments (owner agreed, Nov 12, 2026): bath fan switch S18 and island controller T on C15; stair
+  light controllers D on C16; sauna light driver J stays on its own C3. Feeders are numbered F: F1 is the 60 A
+  feeder from main panel MP to shed subpanel A; F2 (125 A) is reserved for a second-floor subpanel if one is added.
 - Sauna heater G (owner decision, Nov 12, 2026): on the sauna west wall, just south of the thin line near the
   north end of the room (was on the east wall).
 - West stair to the 3rd floor: wall lights L33 (north leg) and L34 (west leg) on S15 (bottom) + 3rd-floor S9 (top);

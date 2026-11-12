@@ -302,3 +302,5 @@ Nov 12, 2026: second west stair ceiling light L40 above the corner landing, on t
 Nov 12, 2026: sauna heater G moved to the sauna west wall, just south of the thin line near the north end of the room.
 Lighting split (owner, Nov 12, 2026): C15 = kitchen, family room, bath and shower: L13-L20, L22, L24, L36-L39 (S8-S12, S21, S26,
 S27, controller T). C16 = all the rest: hall, media room, both stairs, under-stair, balcony: L1-L12, L23, L25-L35, L40.
+Circuits (owner agreed, Nov 12, 2026): bath fan switch S18 and island controller T on C15; stair light controllers D on C16;
+sauna light driver J stays on its own circuit C3. If a second-floor subpanel is added, its feeder is F2 (125A) from MP.

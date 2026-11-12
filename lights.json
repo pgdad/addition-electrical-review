@@ -1847,7 +1847,8 @@
    "z": 18.18,
    "controls": [],
    "source": "drawings/2-second-floor_v20.svg",
-   "mode": "on/off"
+   "mode": "on/off",
+   "circuit": "C15 lighting, 15A AFCI"
   },
   {
    "key": "2:S19",
@@ -2870,6 +2871,45 @@
    "y": 11.46,
    "z": 6.25,
    "circuit": "C2, 50A 240V",
+   "source": "drawings/2-second-floor_v20.svg"
+  },
+  {
+   "key": "2:J",
+   "id": "J",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Sauna light driver (feeds L21)",
+   "kind": "hardwired",
+   "x": 41.5,
+   "y": 15.46,
+   "z": 17.26,
+   "circuit": "C3, 15A AFCI",
+   "source": "drawings/2-second-floor_v20.svg"
+  },
+  {
+   "key": "2:D",
+   "id": "D",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Stair light controllers, 2 Matter controllers (feed riser lights L7, L8), hall north wall at the west stair foot",
+   "kind": "hardwired",
+   "x": 9.61,
+   "y": 11.46,
+   "z": 0.83,
+   "circuit": "C16 lighting, 15A AFCI",
+   "source": "drawings/2-second-floor_v20.svg"
+  },
+  {
+   "key": "2:T",
+   "id": "T",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Island floor-light dimming controller (feeds L36-L39), inside the island",
+   "kind": "hardwired",
+   "x": 35.34,
+   "y": 11.46,
+   "z": 12.76,
+   "circuit": "C15 lighting, 15A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {

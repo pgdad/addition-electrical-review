@@ -221,6 +221,9 @@ OUTLETS = {
   ("E", "Range receptacle", "appliance", 0.5, "C1, 50A 240V GFCI"),
   ("F", "Bidet outlet, GFCI", "wall", 1.5, "C10 bath, 20A GFCI"),
   ("G", "Sauna heater, hardwired per its manual", "hardwired", 1.0, "C2, 50A 240V"),
+  ("J", "Sauna light driver (feeds L21)", "hardwired", 5.0, "C3, 15A AFCI"),
+  ("D", "Stair light controllers, 2 Matter controllers (feed riser lights L7, L8), hall north wall at the west stair foot", "hardwired", 1.0, "C16 lighting, 15A AFCI"),
+  ("T", "Island floor-light dimming controller (feeds L36-L39), inside the island", "hardwired", 1.0, "C15 lighting, 15A AFCI"),
   ("K", "Fridge", "appliance", 3.5, "C6, 20A GFCI + AFCI"),
   ("M", "Dishwasher and disposal", "appliance", 1.5, "C7, 20A GFCI + AFCI"),
   ("N", "Microwave/hood above the range", "appliance", 6.0, "C8, 20A GFCI + AFCI"),
@@ -474,6 +477,7 @@ def build():
         if key in pair_of: rec["pairWith"], rec["pairColor"] = pair_of[key]
         if key in pair_of: rec["role"] = "aux" if key in AUX else "main"
         rec["mode"] = "Inovelli aux switch, traveler to the main switch" if key in AUX else "on/off" if key in ("2:S6", "2:S9", "2:S11", "2:S18", "2:S23", "3:S5") else "smart-bulb dimmer"
+        if key == "2:S18": rec["circuit"] = "C15 lighting, 15A AFCI"      # bath fan, with the bath lights (owner agreed, Nov 12, 2026)
         switches.append(rec)
     outlets = []
     for lv, rows in OUTLETS.items():
