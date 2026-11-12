@@ -48,6 +48,11 @@
   .map.no-lights .mlt, .map.no-lights .mltl, .map.no-lights .mwire, .map.no-switches .mwire,
   .map.no-switches .msw, .map.no-switches .mswl, .map.no-outlets .mout, .map.no-outlets .moutl { display:none; }
   .map.no-tables table { display:none; }
+  #cktlist { display:grid; grid-template-columns:repeat(auto-fill, minmax(430px, 1fr)); gap:12px; margin-top:28px; }
+  #cktlist > .ckth { grid-column:1 / -1; } #cktlist > h2.ckth { font-size:16px; margin:0; } #cktlist > h3.ckth { font-size:14px; margin:10px 0 0; }
+  #cktlist .map { margin:0; } #cktlist .map h3 { font-size:13px; } #cktlist .map svg { width:100%; } #cktlist .map table { flex-basis:100%; }
+  #cktlist .cdev { cursor:pointer; }
+  .map.no-clabels .clabel, .map.no-cothers .cother, .map.no-crooms .mroom { display:none; }
   .inv .wrap > div { flex:1 1 380px; } .inv h4 { margin:10px 0 4px; font-size:13px; } .inv table { width:100%; } .inv tr.tot td { font-weight:600; border-top:1px solid var(--line); }
   .inv td.n, .inv th.n { text-align:right; }
   .map h3 { display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px; }
@@ -60,8 +65,8 @@
   @media print {
     @page { size:landscape; margin:10mm; }
     html, body { height:auto !important; overflow:visible !important; background:#fff !important; color:#000 !important; }
-    body.printing > :not(#maps), body.printing #maps > :not(#maplist), body.printing #maplist > :not(.pf), #printdlg, .map h3 button { display:none !important; }
-    body.printing #maps { padding:0; border:0; }
+    body.printing > :not(#maps), body.printing #maps > :not(#maplist):not(#cktlist), body.printing #maplist > :not(.pf), body.printing #cktlist > :not(.pf), #printdlg, .map h3 button { display:none !important; }
+    body.printing #maps { padding:0; border:0; } body.printing #cktlist { display:block; margin:0; }
     body.printing .map { margin:0; padding:0; border:0; outline:0; background:#fff; color:#000; }
     body.printing .map .wrap { display:block; }
     body.printing .map svg { display:block; width:100%; max-height:165mm; filter:invert(1) hue-rotate(180deg); break-inside:avoid; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
@@ -156,6 +161,7 @@
   <div class="bar"><span>Plan view of every switch, light, outlet, Wi-Fi access point, network switch and presence sensor and Ethernet jack, north up. Dashed network lines are PoE runs, dotted ones are data only, solid orange ones are fiber uplinks to rack R1 on the third floor. Click a switch or a table row to toggle it; click an outlet, AP, network switch or sensor for its details. The Show filters in the side panel apply here too. Levels:</span>
     <span id="mapfilter"></span> <button id="mapsup">Back to 3D &uarr;</button></div>
   <div id="maplist"></div>
+  <div id="cktlist"></div>
   <div id="inventory" class="map inv"></div>
 </section>
 
@@ -553,19 +559,20 @@ buildInventory();
 // ---------- print popup: pick what goes on one 2D map, see it on the map, then print (save as PDF) ----------
 const PRINT_ITEMS = [['lights', 'Lights'], ['switches', 'Switches'], ['outlets', 'Outlets'], ['aps', 'Wi-Fi APs'],
   ['netsw', 'Network switches, presence sensors, Ethernet jacks'], ['cables', 'Network cables: Ethernet and fiber'], ['tables', 'Tables below the diagram']];
+const CKT_ITEMS = [['clabels', 'Device labels'], ['cothers', 'Devices on other circuits (small grey dots)'], ['crooms', 'Room names'], ['tables', 'Device table below the diagram']];
 let printFig = null;
 const pesc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 function closePrint() {
   if (!printFig) return;
-  printFig.classList.remove('pf', 'no-tables'); printFig = null;
+  printFig.classList.remove('pf', 'no-tables', ...CKT_ITEMS.map(i => 'no-' + i[0])); printFig = null;
   document.getElementById('printdlg').close(); applyFilters();          // back to the page-wide filters
 }
-function openPrint(fig, name) {
+function openPrint(fig, name, items = PRINT_ITEMS) {
   const dlg = document.getElementById('printdlg');
   if (printFig && printFig !== fig) closePrint();
   printFig = fig; fig.classList.add('pf');
   dlg.innerHTML = `<h4>Print ${pesc(name)}</h4><div class="muted">Tick what to include. The diagram updates as you choose.</div>`
-    + PRINT_ITEMS.map(([k, t]) => `<label class="chk"><input type="checkbox" data-pk="${k}" ${fig.classList.contains('no-' + k) ? '' : 'checked'}> ${t}</label>`).join('')
+    + items.map(([k, t]) => `<label class="chk"><input type="checkbox" data-pk="${k}" ${fig.classList.contains('no-' + k) ? '' : 'checked'}> ${t}</label>`).join('')
     + `<div class="btns"><button id="pd-all">All</button><button id="pd-none">None</button><button id="pd-go" style="margin-left:auto">Print / Save as PDF</button><button id="pd-x">Close</button></div>`
     + `<p>In the print window choose "Save as PDF" as the destination. Closing this box returns the diagram to the page filters.</p>`;
   const boxes = [...dlg.querySelectorAll('[data-pk]')];
@@ -606,7 +613,21 @@ const PLAN = {                                 // feet, same world frame; outlin
   S: { doors:[[-10.44,45, -7.76,45, 0,-1], [-6,45.6, -6,47.6, -1,0]], solid:[[[-12,45],[0,45],[0,66],[-12,66]]], dashed:[[[-12,42],[0,42],[0,45],[-12,45]]],
        segs:[[-12,54, 0,54], [-6,45, -6,54]],
        labels:[['Porch',-6,43.6],['Dressing',-9,51],['Sauna',-3,51],['Shed',-6,61]] } };
-const mapSwEls = {}, mapRowEls = {}, mapLtEls = {}, mapFigs = {};
+function planBase(P, X, Y) {                    // outline, partitions, windows, fixtures, doors and room names of one level
+  const poly = (pts, extra) => `<polygon points="${pts.map(([x, z]) => X(x) + ',' + Y(z)).join(' ')}" fill="none" ${extra}/>`;
+  return P.dashed.map(q => poly(q, 'stroke="#55607a" stroke-width="1.2" stroke-dasharray="5 4"')).join('')
+          + P.solid.map(q => poly(q, 'stroke="#aeb9cc" stroke-width="2.5"')).join('')
+          + P.segs.map(([a, b, c, d]) => `<line x1="${X(a)}" y1="${Y(b)}" x2="${X(c)}" y2="${Y(d)}" stroke="#6f7b8c" stroke-width="1.2"/>`).join('')
+          + (P.windows || []).map(([a, b, c, d]) => `<line x1="${X(a)}" y1="${Y(b)}" x2="${X(c)}" y2="${Y(d)}" stroke="#64b5f6" stroke-width="5"><title>Window (architect sheet)</title></line>`).join('')
+          + (P.fixtures || []).map(([a, b, c, d, t, tip]) => `<rect x="${X(a)}" y="${Y(b)}" width="${(X(c) - X(a)).toFixed(1)}" height="${(Y(d) - Y(b)).toFixed(1)}" fill="#2a3140" stroke="#8d99ab" stroke-width="1"><title>${pesc(tip)}</title></rect><text x="${((+X(a) + +X(c)) / 2).toFixed(1)}" y="${(+Y(d) + 10).toFixed(1)}" text-anchor="middle" font-size="8" fill="#8d99ab">${pesc(t)}</text>`).join('')
+          + (P.doors || []).map(([hx, hz, jx, jz, dx, dz]) => {         // door: hinge point, other jamb, direction the open leaf points; gap, leaf, swing arc
+              const H = [+X(hx), +Y(hz)], J = [+X(jx), +Y(jz)], r = Math.hypot(J[0] - H[0], J[1] - H[1]), T = [H[0] + dx * r, H[1] + dz * r];
+              const cw = (T[0] - H[0]) * (J[1] - H[1]) - (T[1] - H[1]) * (J[0] - H[0]) > 0 ? 1 : 0;
+              return `<line x1="${H[0]}" y1="${H[1]}" x2="${J[0]}" y2="${J[1]}" stroke="#141820" stroke-width="5"/><line x1="${H[0]}" y1="${H[1]}" x2="${T[0]}" y2="${T[1]}" stroke="#aeb9cc" stroke-width="1.5"/>`
+                + `<path d="M${T[0]} ${T[1]}A${r} ${r} 0 0 ${cw} ${J[0]} ${J[1]}" fill="none" stroke="#6f7b8c" stroke-width="1"><title>Door (sheet A.2)</title></path>`; }).join('')
+          + P.labels.map(([t, x, z, rot]) => `<text class="mroom" x="${X(x)}" y="${Y(z)}" text-anchor="middle" font-size="12" fill="#6f7b8c"${rot ? ` transform="rotate(90 ${X(x)} ${Y(z)})"` : ''}>${pesc(t)}</text>`).join('');
+}
+const mapSwEls = {}, mapRowEls = {}, mapLtEls = {}, mapFigs = {}, mapGeo = {};
 {
   const K = 15, esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;');
   const hex = c => '#' + c.toString(16).padStart(6, '0');
@@ -616,18 +637,8 @@ const mapSwEls = {}, mapRowEls = {}, mapLtEls = {}, mapFigs = {};
     const x0 = Math.min(...all.map(p => p[0])) - 2.5, z0 = Math.min(...all.map(p => p[1])) - 2.5;
     const wpx = (Math.max(...all.map(p => p[0])) + 2.5 - x0) * K, hpx = (Math.max(...all.map(p => p[1])) + 2.5 - z0) * K;
     const X = x => ((x - x0) * K).toFixed(1), Y = z => ((z - z0) * K).toFixed(1);
-    const poly = (pts, extra) => `<polygon points="${pts.map(([x, z]) => X(x) + ',' + Y(z)).join(' ')}" fill="none" ${extra}/>`;
-    let g = P.dashed.map(q => poly(q, 'stroke="#55607a" stroke-width="1.2" stroke-dasharray="5 4"')).join('')
-          + P.solid.map(q => poly(q, 'stroke="#aeb9cc" stroke-width="2.5"')).join('')
-          + P.segs.map(([a, b, c, d]) => `<line x1="${X(a)}" y1="${Y(b)}" x2="${X(c)}" y2="${Y(d)}" stroke="#6f7b8c" stroke-width="1.2"/>`).join('')
-          + (P.windows || []).map(([a, b, c, d]) => `<line x1="${X(a)}" y1="${Y(b)}" x2="${X(c)}" y2="${Y(d)}" stroke="#64b5f6" stroke-width="5"><title>Window (architect sheet)</title></line>`).join('')
-          + (P.fixtures || []).map(([a, b, c, d, t, tip]) => `<rect x="${X(a)}" y="${Y(b)}" width="${(X(c) - X(a)).toFixed(1)}" height="${(Y(d) - Y(b)).toFixed(1)}" fill="#2a3140" stroke="#8d99ab" stroke-width="1"><title>${esc(tip)}</title></rect><text x="${((+X(a) + +X(c)) / 2).toFixed(1)}" y="${(+Y(d) + 10).toFixed(1)}" text-anchor="middle" font-size="8" fill="#8d99ab">${esc(t)}</text>`).join('')
-          + (P.doors || []).map(([hx, hz, jx, jz, dx, dz]) => {         // door: hinge point, other jamb, direction the open leaf points; gap, leaf, swing arc
-              const H = [+X(hx), +Y(hz)], J = [+X(jx), +Y(jz)], r = Math.hypot(J[0] - H[0], J[1] - H[1]), T = [H[0] + dx * r, H[1] + dz * r];
-              const cw = (T[0] - H[0]) * (J[1] - H[1]) - (T[1] - H[1]) * (J[0] - H[0]) > 0 ? 1 : 0;
-              return `<line x1="${H[0]}" y1="${H[1]}" x2="${J[0]}" y2="${J[1]}" stroke="#141820" stroke-width="5"/><line x1="${H[0]}" y1="${H[1]}" x2="${T[0]}" y2="${T[1]}" stroke="#aeb9cc" stroke-width="1.5"/>`
-                + `<path d="M${T[0]} ${T[1]}A${r} ${r} 0 0 ${cw} ${J[0]} ${J[1]}" fill="none" stroke="#6f7b8c" stroke-width="1"><title>Door (sheet A.2)</title></path>`; }).join('')
-          + P.labels.map(([t, x, z, rot]) => `<text x="${X(x)}" y="${Y(z)}" text-anchor="middle" font-size="12" fill="#6f7b8c"${rot ? ` transform="rotate(90 ${X(x)} ${Y(z)})"` : ''}>${esc(t)}</text>`).join('');
+    mapGeo[lv] = { x0, z0, wpx, hpx, K };
+    let g = planBase(P, X, Y);
     for (const S of sws) for (const lk of S.controls) {            // thin line to each light on this level
       const L = lightByKey[lk]; if (!L || L.level !== lv) continue;
       g += `<line class="mwire" x1="${X(S.x)}" y1="${Y(S.z)}" x2="${X(L.x)}" y2="${Y(L.z)}" stroke="${S.pairColor || '#7c8794'}" stroke-width="1" opacity="0.55"/>`;
@@ -687,6 +698,64 @@ const mapSwEls = {}, mapRowEls = {}, mapLtEls = {}, mapFigs = {};
   document.getElementById('showmaps').addEventListener('change', e => sec.hidden = !e.target.checked);
   document.getElementById('mapsdown').onclick = () => { const c = document.getElementById('showmaps'); if (!c.checked) c.click(); sec.scrollIntoView({ behavior:'smooth' }); };
   document.getElementById('mapsup').onclick = () => scrollTo({ top:0, behavior:'smooth' });
+}
+// ---------- circuit diagrams: one plan per circuit per level, with its own print popup ----------
+{
+  const hex = c => '#' + c.toString(16).padStart(6, '0');
+  const keysOf = t => String(t || '').match(/C\d+(?:\/C\d+)?/g) || [];          // "C9 laundry ... and C15 dryer" is on two circuits
+  const list = document.getElementById('cktlist');
+  list.innerHTML = `<h2 class="ckth">Circuit diagrams (2D)</h2><div class="ckth muted">One plan per circuit on each level, with the devices on that circuit drawn large and everything else on the level as small grey dots. Light switches are shown with the lighting circuit of the lights they control. Circuit numbers restart on each level and come from the drawings' circuit lists. Each diagram has its own Print / PDF button.</div>`;
+  for (const [lv, name] of LEVELS) {
+    const P = PLAN[lv], { x0, z0, wpx, hpx, K } = mapGeo[lv];
+    const X = x => ((x - x0) * K).toFixed(1), Y = z => ((z - z0) * K).toFixed(1);
+    const ckts = {};                                                              // key -> { texts, items }
+    const add = (k, text, kind, o) => { const c = ckts[k] ||= { texts:new Set(), items:[] }; if (text) c.texts.add(text); c.items.push([kind, o]); };
+    for (const L of DATA.lights) if (L.level === lv) for (const k of keysOf(L.circuit)) add(k, L.circuit, 'light', L);
+    for (const O of DATA.outlets || []) if (O.level === lv) for (const k of keysOf(O.circuit)) add(k, O.circuit, 'outlet', O);
+    for (const S of DATA.switches) {                                              // a switch follows the lights it controls, also across levels
+      const seen = new Set();
+      for (const lk of S.controls) { const L = lightByKey[lk]; if (!L || L.level !== lv) continue; for (const k of keysOf(L.circuit)) if (!seen.has(k)) { seen.add(k); add(k, '', 'switch', S); } }
+    }
+    const here = [...DATA.lights, ...(DATA.outlets || []), ...DATA.switches].filter(o => o.level === lv);
+    const base = planBase(P, X, Y);
+    const keys = Object.keys(ckts).sort((a, b) => parseInt(a.slice(1)) - parseInt(b.slice(1)));
+    const head = document.createElement('h3'); head.className = 'ckth'; head.dataset.cktlevel = lv; head.textContent = `${name}: ${keys.length} circuits`; list.appendChild(head);
+    for (const k of keys) {
+      const C = ckts[k], mine = new Set(C.items.map(([, o]) => o.key)), title = [...C.texts].sort((a, b) => a.length - b.length)[0] || k;
+      let g = base + here.filter(o => !mine.has(o.key)).map(o => `<circle class="cother" cx="${X(o.x)}" cy="${Y(o.z)}" r="2" fill="#4a5568"/>`).join('');
+      const lab = (x, y, t) => `<text class="clabel" x="${x}" y="${y}" text-anchor="middle" font-size="12" font-weight="700" fill="#e6e9ee">${pesc(t)}</text>`;
+      for (const [kind, o] of C.items) {
+        if (o.level !== lv) continue;                                             // on another level: table only
+        const x = +X(o.x), y = +Y(o.z), tip = `<title>${pesc(o.id + ': ' + o.room)}</title>`;
+        if (kind === 'light') {
+          const pts = ptsOf(o), col = hex(TYPE_COLOR[o.type]), strip = o.points && o.type !== 'riser';
+          g += `<g class="cdev" data-kind="light" data-key="${o.key}">` + (strip ? `<line x1="${X(pts[0][0])}" y1="${Y(pts[0][2])}" x2="${X(pts[1][0])}" y2="${Y(pts[1][2])}" stroke="${col}" stroke-width="5"/>`
+            : pts.map(p => `<circle cx="${X(p[0])}" cy="${Y(p[2])}" r="${o.type === 'riser' ? 3 : 7}" fill="${col}" fill-opacity="0.45" stroke="${col}" stroke-width="1.5"/>`).join('')) + tip + '</g>';
+          const lp = strip ? [x, y] : [+X(pts[0][0]), +Y(pts[0][2])]; g += lab(lp[0], lp[1] + 20, o.id);
+        } else if (kind === 'outlet') {
+          g += `<g class="cdev" data-kind="outlet" data-key="${o.key}"><rect x="${x - 5}" y="${y - 5}" width="10" height="10" rx="1.5" fill="${hex(outletColor(o))}" stroke="#0c0f14" stroke-width="1"/>${tip}</g>` + lab(x, y - 9, o.id);
+        } else {
+          g += `<g class="cdev" data-kind="switch" data-key="${o.key}"><rect x="${x - 6}" y="${y - 6}" width="12" height="12" rx="2.5" fill="#43a047" stroke="#0c0f14" stroke-width="1"/>${tip}</g>`;
+        }
+      }
+      const clusters = [];                                                        // switches sharing a box get one label
+      for (const [kind, o] of C.items) { if (kind !== 'switch' || o.level !== lv) continue; const c = clusters.find(c => c.some(q => Math.hypot(q.x - o.x, q.z - o.z) < 1.7)); if (c) c.push(o); else clusters.push([o]); }
+      for (const c of clusters) g += lab(X(c.reduce((a, q) => a + q.x, 0) / c.length), (+Y(Math.min(...c.map(q => q.z))) - 10).toFixed(1), c.map(q => q.id).join(', '));
+      const what = (kind, o) => kind === 'light' ? 'Light, ' + o.type : kind === 'switch' ? 'Switch, ' + o.mode : 'Outlet, ' + o.kind;
+      const rows = C.items.map(([kind, o]) => `<tr><td>${pesc(o.id)}</td><td>${pesc(what(kind, o))}</td><td>${pesc(o.room)}${o.level !== lv ? ' <i>(on the ' + pesc(o.levelName.toLowerCase()) + ' level, not drawn here)</i>' : ''}</td>`
+        + `<td>${kind === 'switch' ? pesc(o.controls.map(c => c.startsWith(lv + ':') ? c.split(':')[1] : tag(c)).join(', ')) : pesc(o.circuit)}</td></tr>`).join('');
+      const n = t => C.items.filter(i => i[0] === t).length, cnt = [[n('light'), 'light'], [n('switch'), 'switch'], [n('outlet'), 'outlet']].filter(c => c[0]).map(([c, t]) => c + ' ' + t + (c > 1 ? (t === 'switch' ? 'es' : 's') : '')).join(', ');
+      const fig = document.createElement('div'); fig.className = 'map cmap'; fig.dataset.cktlevel = lv; fig.dataset.ckt = lv + ':' + k;
+      fig.innerHTML = `<h3><span>${pesc(name)}, circuit ${pesc(title)}: ${cnt}</span> <button class="mprint" title="Choose what to include, check it on the diagram, then print or save as PDF">Print / PDF&hellip;</button></h3><div class="wrap">`
+        + `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${wpx.toFixed(0)} ${hpx.toFixed(0)}" role="img" aria-label="${pesc(name + ' circuit ' + k)}">${g}</svg>`
+        + `<table><thead><tr><th>ID</th><th>What</th><th>Where</th><th>Circuit / controls</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+      list.appendChild(fig);
+      fig.querySelector('.mprint').addEventListener('click', () => openPrint(fig, name + ' circuit ' + k.replace('/', '-'), CKT_ITEMS));
+      fig.querySelectorAll('.cdev').forEach(e => e.addEventListener('click', () => select(e.dataset.kind, e.dataset.key)));
+    }
+  }
+  document.querySelectorAll('[data-mapfilter]').forEach(b => b.addEventListener('change', () =>
+    list.querySelectorAll(`[data-cktlevel="${b.dataset.mapfilter}"]`).forEach(e => e.hidden = !b.checked)));
 }
 function syncMaps() {
   for (const [k, e] of Object.entries(mapSwEls)) { e.classList.toggle('on', switchByKey[k].on); mapRowEls[k].classList.toggle('on', switchByKey[k].on); }
