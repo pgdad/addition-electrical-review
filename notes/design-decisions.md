@@ -103,6 +103,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   east stair (hall); S21 with S8 at the media/kitchen door, kitchen side. Media lights are split: S5 runs L9
   and S24 runs L10 (hall door, with S6); companions S22 (L9), S25 (L10), S23 (fan) are on the media side of
   the media/kitchen wall at the door's north edge. S13 is on the west side of the media/balcony door. S10 with L17, L18, L24 and S13 with L29 stay as drawn (owner decision).
+- Kitchen (owner decision, Nov 12, 2026): counter outlet P27 added in the northeast corner on C4; fridge outlet K
+  and range receptacle E are on the north wall behind the appliances. The range is induction.
 - Doors drawn from A.3 on Nov 10, 2026. The hall/kitchen door opens into the kitchen, hinged on its west
   jamb, handle on the east (owner decision, Nov 12, 2026; it opened into the hall before).
 - Network switch 16 is powered from blind outlet H6, which becomes a duplex (owner decision, Nov 10, 2026).

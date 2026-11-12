@@ -2734,9 +2734,9 @@
    "levelName": "Second floor",
    "room": "Range receptacle",
    "kind": "appliance",
-   "x": 37.5,
+   "x": 36.92,
    "y": 10.96,
-   "z": 7.25,
+   "z": 4.63,
    "circuit": "C1, 50A 240V GFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
@@ -2775,7 +2775,7 @@
    "kind": "appliance",
    "x": 34.25,
    "y": 13.96,
-   "z": 7.25,
+   "z": 4.63,
    "circuit": "C6, 20A GFCI + AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
@@ -3023,6 +3023,19 @@
    "x": 41.83,
    "y": 14.16,
    "z": 7.5,
+   "circuit": "C4 counter, 20A GFCI + AFCI",
+   "source": "drawings/2-second-floor_v20.svg"
+  },
+  {
+   "key": "2:P27",
+   "id": "P27",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Kitchen counter, northeast corner, GFCI",
+   "kind": "counter",
+   "x": 42.2,
+   "y": 14.16,
+   "z": 4.5,
    "circuit": "C4 counter, 20A GFCI + AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },

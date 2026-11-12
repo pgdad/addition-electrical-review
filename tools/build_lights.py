@@ -217,6 +217,7 @@ OUTLETS = {
   ("P8 P9 P10 P21", "Family room", "wall", 1.5, "C12, 20A AFCI"),
   ("P11 P23 P24", "Balcony, weatherproof GFCI", "outdoor", 1.5, "C14 balcony, 20A GFCI"),
   ("P12 P13", "Kitchen counter, GFCI", "counter", 3.7, "C4 counter, 20A GFCI + AFCI"),
+  ("P27", "Kitchen counter, northeast corner, GFCI", "counter", 3.7, "C4 counter, 20A GFCI + AFCI"),
   ("P25 P26", "Kitchen counter south of the sink, GFCI", "counter", 3.7, "C4 counter, 20A GFCI + AFCI"),
   ("P14", "Kitchen island, GFCI", "counter", 3.0, "C5 kitchen, 20A GFCI + AFCI"),
   ("P15 P22", "Bath west wall, GFCI", "counter", 3.5, "C10 bath, 20A GFCI"),
@@ -466,7 +467,7 @@ def build():
                 src = {"3:P18": "S9"}.get(f"{lv}:{oid}", oid)      # P18 is drawn off the wall with a leader; it sits under the switches
                 x, z = to_ft(lv, *dev[lv][src]["pts"][0])
                 if f"{lv}:{oid}" == "3:P15": x = 48.0     # old house attic side of the wall (A.4 wall at 47.67 ft)
-                if lv == "2" and oid in ("P25", "P26"): x = 42.2   # drawn on the wall line; they are on the counter backsplash
+                if lv == "2" and oid in ("P25", "P26", "P27"): x = 42.2   # drawn on the wall line; they are on the counter backsplash
                 if (lv, oid) == ("G", "P21"): x, z = 43.3, 23.1  # outside face of the hallway south wall, west of the front door
                 if (lv, oid) == ("G", "P20"): x, z = 2.0, 0.3   # drawn below switch 7; it is on the north wall beside it
                 if lv == "G" and oid in ("H1", "H2"): z = 0.3   # drawn on the wall line; inside face of the north wall

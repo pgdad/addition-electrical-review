@@ -205,6 +205,9 @@ The PDF wins for geometry; these are the differences found.
   fridge (C6), DW/disposal (C7), microwave (C8) and WashTower (C9) as well as the counters; AFCI on every
   120 V, 15 and 20 A circuit except bath C10 and balcony C14; dual-function breakers where both apply.
   A fridge on GFCI can nuisance-trip; ask the electrician about a monitored or alarmed receptacle.
+- **Corner counter outlet** (owner decision, Nov 12, 2026): P27 added in the northeast corner on C4. P12 and P13
+  were about 6 ft apart along the wall, more than the 4 ft the counter rule allows; P27 splits that run.
+  Fridge outlet K and range receptacle E (induction range) are now drawn on the north wall behind the appliances.
 - **Counter receptacles**: the counter south of the sink (over the DW) now has P25 and P26 on counter
   circuit C4 (owner decision, Nov 10, 2026). Island P14: NEC 2023 no longer allows an island receptacle on the side below the
   countertop; it must be on or above the top or a listed pop-up. *should-fix*.
