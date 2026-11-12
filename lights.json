@@ -3672,6 +3672,19 @@
    "source": "drawings/3-third-floor_v32.svg"
   },
   {
+   "key": "3:H6",
+   "id": "H6",
+   "level": "3",
+   "levelName": "Third floor",
+   "room": "Blind outlet, stair casement, top left corner seen from inside (south end of the window head)",
+   "kind": "blind",
+   "x": -0.46,
+   "y": 27.11,
+   "z": 9.81,
+   "circuit": "C3 west office, 20A",
+   "source": "drawings/3-third-floor_v32.svg"
+  },
+  {
    "key": "3:H3",
    "id": "H3",
    "level": "3",

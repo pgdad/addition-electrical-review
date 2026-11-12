@@ -249,6 +249,7 @@ OUTLETS = {
   ("P15", "Old house attic side of the wall", "wall", 1.5, "C6 sink and attics, 20A AFCI/GFCI"),
   ("P16 P17", "Near the sink, GFCI", "counter", 3.7, "C6 sink and attics, 20A AFCI/GFCI"),
   ("H1 H2", "Blind outlet, west office south windows, high", "blind", 6.5, "C3 west office, 20A"),
+  ("H6", "Blind outlet, stair casement, top left corner seen from inside (south end of the window head)", "blind", 6.5, "C3 west office, 20A"),
   ("H3 H4 H5", "Blind outlet, east office windows, high", "blind", 6.5, "C5 east office perimeter, 20A"),
  ],
  "S": [

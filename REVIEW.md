@@ -243,8 +243,9 @@ The PDF wins for geometry; these are the differences found.
 - Windows are now drawn from A.4 (Nov 12, 2026), in blue with their sizes like the other sheets: three 2846 on
   the west office south wall, two 3050 on the east office north wall, one 2850 on the east office south wall,
   and a 2036 casement on the stair west wall, about 7.5 to 9.5 ft from the north end of that wall. The casement
-  was not on the sheet before and has no blind outlet, while the owner's rule is a powered blind on every window;
-  ask the owner whether it gets one.
+  was not on the sheet before. Blind outlet H6 (owner decision, Nov 12, 2026) is at its top left corner seen
+  from inside, the south end of the window head, on C3. It is above the stair, so check with the electrician
+  that the box can be reached for service from a tread or landing.
 
 ### Lighting control
 - Every light has a switch: L1/L2 on S1+S2, L3 to L5 on S3, L6 on S4, L7 on S5, L8 on S6, L9 on S7, and

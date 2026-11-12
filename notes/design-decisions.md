@@ -35,7 +35,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   each side. No blinds on the second-floor sauna window or the balcony doors.
 - Third-floor windows (A.4), drawn Nov 12, 2026: three 2846 on the west office south wall, two 3050 on the east
   office north wall, one 2850 on the east office south wall, and a 2036 casement on the stair west wall. The
-  stair casement has no blind outlet; open question whether it gets a blind.
+  stair casement gets blind outlet H6 at its top left corner seen from inside, the south end of the window head
+  (owner decision, Nov 12, 2026), on C3.
 - Network: cable modem under the garage stairs -> media converter -> fiber up to rack R1 on the third floor.
   Two fiber runs share one smurf tube up the riser (item 1 converter, item 18 under-stair switch).
   Fiber from R1 out to small 5/8-port PoE switches near APs, cameras and computers.
