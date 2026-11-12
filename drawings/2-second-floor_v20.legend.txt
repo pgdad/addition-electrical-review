@@ -223,9 +223,9 @@ No blinds: sauna window, balcony doors
 C1 E range, 50A 240V, GFCI
 C2 G sauna heater, 50A 240V
 C3 Spare, 15A AFCI (J moved to C15)
-C4 P12, P13, P25-P27 counter, 20A GFCI + AFCI
-C5 P7, P14 kitchen, 20A GFCI + AFCI
-C6 K fridge, 20A GFCI + AFCI
+C4 P12, P13, P27 counter, 20A GFCI + AFCI
+C5 P7, P14, P25, P26 kitchen, 20A GFCI + AFCI
+C6 K fridge, P28 above it, 20A GFCI + AFCI
 C7 M DW and disposal, 20A GFCI + AFCI
 C8 N microwave, 20A GFCI + AFCI
 C9 W WashTower, 30A 240V, GFCI
@@ -305,3 +305,6 @@ S27, controller T). C16 = all the rest: hall, media room, both stairs, under-sta
 Circuits (owner agreed, Nov 12, 2026): bath fan switch S18 and island controller T on C15; stair light controllers D on C16;
 sauna light driver J on C15 (C3 is a spare). If a second-floor subpanel is added, its feeder is F2 (125A) from MP.
 Nov 12, 2026 (owner): sauna light driver J moved from C3 to lighting circuit C15. C3 is now a spare.
+P28
+Nov 12, 2026 (owner): counter outlets P25, P26 moved from C4 to C5, so C4 = P12, P13, P27 and C5 = P7, P14, P25, P26.
+New outlet P28 on fridge circuit C6: high on the north wall above the refrigerator (about 6.5 ft, confirm against the fridge height).

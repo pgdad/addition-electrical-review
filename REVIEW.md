@@ -204,7 +204,7 @@ The PDF wins for geometry; these are the differences found.
 ### Code-oriented checks (check with the electrician/inspector)
 - **Bathroom**: C10 (bidet F, P15, P22) as a 20 A GFCI circuit for this one bathroom works. P15/P22 are
   within 3 ft of the vanity at the SW corner. L20 is noted wet rated. Confirm the exhaust fan circuit.
-- **Kitchen circuits**: two small-appliance circuits exist (C4 counter, C5 P7 and island P14), fridge,
+- **Kitchen circuits**: two small-appliance circuits exist (C4: P12, P13, P27; C5: P7, island P14, P25, P26, rebalanced by the owner Nov 12, 2026), fridge,
   microwave/hood and DW/disposal have their own. Check DW plus disposal on one 20 A against nameplates.
   GFCI/AFCI scope is now marked on the drawing (owner decision, Nov 10, 2026): GFCI on the range (C1),
   fridge (C6), DW/disposal (C7), microwave (C8) and WashTower (C9) as well as the counters; AFCI on every
@@ -213,8 +213,9 @@ The PDF wins for geometry; these are the differences found.
 - **Corner counter outlet** (owner decision, Nov 12, 2026): P27 added in the northeast corner on C4. P12 and P13
   were about 6 ft apart along the wall, more than the 4 ft the counter rule allows; P27 splits that run.
   Fridge outlet K and range receptacle E (induction range) are now drawn on the north wall behind the appliances.
-- **Counter receptacles**: the counter south of the sink (over the DW) now has P25 and P26 on counter
-  circuit C4 (owner decision, Nov 10, 2026). Island P14: NEC 2023 no longer allows an island receptacle on the side below the
+- **Counter receptacles**: the counter south of the sink (over the DW) now has P25 and P26 (owner decision, Nov 10, 2026; moved
+  to circuit C5 on Nov 12, 2026). Outlet P28 (Nov 12, 2026) is high on the north wall above the fridge, on fridge
+  circuit C6; check with the electrician that it stays reachable once the fridge and any cabinet above are in. Island P14: NEC 2023 no longer allows an island receptacle on the side below the
   countertop; it must be on or above the top or a listed pop-up. *should-fix*.
 - **Wall receptacle spacing** (6 ft from a door edge, 12 ft apart) measures long in a few places: kitchen north
   wall west of the hall door (7.8 ft of wall, none), family room stub south of the balcony door (7 ft to P9),

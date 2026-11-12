@@ -130,6 +130,9 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   (L13-L20, L22, L24, L36-L39); C16 = all the rest (hall, media room, both stairs, under-stair, balcony:
   L1-L12, L23, L25-L35, L40). L22 (W/D closet) and L24 (balcony light on family-room switch S10) are put on C15
   so no switch spans both circuits; that part is the reviewer's reading, not stated by the owner.
+- Kitchen circuits (owner decision, Nov 12, 2026): counter outlets P25, P26 moved from C4 to C5, so C4 = P12, P13,
+  P27 and C5 = P7, P14, P25, P26. New outlet P28 on fridge circuit C6, high on the north wall above the
+  refrigerator (height about 6.5 ft is the reviewer's assumption; set it from the fridge and cabinet heights).
 - Circuit assignments (owner agreed, Nov 12, 2026): bath fan switch S18 and island controller T on C15; stair
   light controllers D on C16; sauna light driver J on C15 too (owner decision, Nov 12, 2026; moved from
   its own C3, which is now a spare). Feeders are numbered F: F1 is the 60 A

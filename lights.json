@@ -2919,8 +2919,21 @@
    "levelName": "Second floor",
    "room": "Fridge",
    "kind": "appliance",
-   "x": 34.25,
+   "x": 33.59,
    "y": 13.96,
+   "z": 4.63,
+   "circuit": "C6, 20A GFCI + AFCI",
+   "source": "drawings/2-second-floor_v20.svg"
+  },
+  {
+   "key": "2:P28",
+   "id": "P28",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Kitchen north wall, high above the refrigerator",
+   "kind": "wall",
+   "x": 34.96,
+   "y": 16.96,
    "z": 4.63,
    "circuit": "C6, 20A GFCI + AFCI",
    "source": "drawings/2-second-floor_v20.svg"
@@ -3195,7 +3208,7 @@
    "x": 42.2,
    "y": 14.16,
    "z": 11.76,
-   "circuit": "C4 counter, 20A GFCI + AFCI",
+   "circuit": "C5 kitchen, 20A GFCI + AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
@@ -3208,7 +3221,7 @@
    "x": 42.2,
    "y": 14.16,
    "z": 12.59,
-   "circuit": "C4 counter, 20A GFCI + AFCI",
+   "circuit": "C5 kitchen, 20A GFCI + AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {
