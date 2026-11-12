@@ -240,6 +240,11 @@ The PDF wins for geometry; these are the differences found.
   power items A to E amber.
 - Cross-level pairs agree: S8 with second-floor S3, S9 with S15, S10 with S17.
 - L7: see the mismatch table.
+- Windows are now drawn from A.4 (Nov 12, 2026), in blue with their sizes like the other sheets: three 2846 on
+  the west office south wall, two 3050 on the east office north wall, one 2850 on the east office south wall,
+  and a 2036 casement on the stair west wall, about 7.5 to 9.5 ft from the north end of that wall. The casement
+  was not on the sheet before and has no blind outlet, while the owner's rule is a powered blind on every window;
+  ask the owner whether it gets one.
 
 ### Lighting control
 - Every light has a switch: L1/L2 on S1+S2, L3 to L5 on S3, L6 on S4, L7 on S5, L8 on S6, L9 on S7, and

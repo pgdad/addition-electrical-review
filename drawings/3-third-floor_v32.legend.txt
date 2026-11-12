@@ -153,3 +153,12 @@ Aux: S2 (main S1); S8, S9, S10 at the top of the stair (mains are second-floor S
 (traveler + neutral) between the two boxes of each pair; S8, S9 and S10 each need their own traveler down the stair.
 Colours follow the key (Nov 10, 2026): blind outlets H1-H5 teal; network items, APs and sensors purple; power items A-E amber.
 Wall jack 6 is renamed 14 (6 stays the empty rack opening). P21: mount within 5.5 ft of the floor so it counts toward wall spacing.
+2846
+2846
+2846
+3050
+3050
+2850
+2036
+Windows (A.4), drawn Nov 12, 2026 in blue like the other sheets: three 2846 on the west office south wall, two 3050 on the
+east office north wall, one 2850 on the east office south wall, and a 2036 casement on the stair west wall (no blind outlet).
