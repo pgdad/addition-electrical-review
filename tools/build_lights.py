@@ -566,5 +566,17 @@ if __name__ == "__main__":
         s2, n = re.subn(r'(<script id="lights-data" type="application/json">).*?(</script>)',
                         lambda m: m.group(1) + "\n" + block + "\n" + m.group(2), s, flags=re.S)
         assert n == 1, "data block not found in lights-3d.html"
+        # written notes for the PDF report: the owner's decisions, plus the open findings and load estimate from the review
+        rev = (ROOT / "REVIEW.md").read_text()
+        def section(title):
+            m = re.search(r"^## " + re.escape(title) + r".*?(?=^## |\Z)", rev, flags=re.S | re.M)
+            assert m, title
+            return m.group(0).strip()
+        notes = dict(decisions=(ROOT / "notes" / "design-decisions.md").read_text(),
+                     findings=section("Open findings"), load=section("Load estimate"))
+        nblock = json.dumps(notes, separators=(",", ":")).replace("</", "<\\/")
+        s2, n = re.subn(r'(<script id="notes-data" type="application/json">).*?(</script>)',
+                        lambda m: m.group(1) + "\n" + nblock + "\n" + m.group(2), s2, flags=re.S)
+        assert n == 1, "notes block not found in lights-3d.html"
         html.write_text(s2)
     print(len(data["lights"]), "lights,", len(data["switches"]), "switches")
