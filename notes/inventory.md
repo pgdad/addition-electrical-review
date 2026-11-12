@@ -8,7 +8,7 @@ Counted from `lights.json` (built from the drawings). Quantities only; models ar
 | Level | Switch | Ports | Where |
 |-------|--------|-------|-------|
 | Garage | 2 | 8-port PoE + fiber | Southwest corner |
-| Garage | 7 | 8-port PoE + fiber (9 ports needed with cameras 8 and 9 and jacks 22: see REVIEW.md) | Northwest corner |
+| Garage | 7 | 16-port PoE + fiber | Northwest corner |
 | Garage | 18 | 8-port PoE + fiber | Under the stair |
 | Second floor | 8 | 16-port PoE + fiber | Media closet |
 | Second floor | 16 | 8-port PoE + fiber | Family room southeast corner |
@@ -16,7 +16,7 @@ Counted from `lights.json` (built from the drawings). Quantities only; models ar
 | Third floor | Fiber aggregation switch in R1 | Not set; at least 7 fiber (SFP) ports | Rack R1 |
 | Shed | 1 | Not set; 2 PoE devices (camera, AP) plus fiber in | North wall |
 
-Totals by size: five 8-port, one 16-port, three not yet sized.
+Totals by size: four 8-port, two 16-port, three not yet sized.
 
 ## Light switches (51)
 
@@ -69,7 +69,7 @@ fiber from the garage modem to R1.
 | Garage | 21, north wall by outlet P22 | 4 |
 | Garage | 22, north wall between EV1 and EV2 | 2 |
 | Second floor | 7, projector wall | 4 |
-| Second floor | 17, media room west wall | 2 |
+| Second floor | 17, media room south wall, high by H3 | 2 |
 | Third floor | 4, floor box by R2 | 2 |
 | Third floor | 5, floor box by B1 | 2 |
 | Third floor | 14, west office south wall | 2 |

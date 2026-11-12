@@ -278,7 +278,7 @@ HALL_OUTLETS = {"P14", "P15", "P16", "P17"}
 NETWORK = {
  "G": [
   ("2", "switch", "8-port PoE switch with a fiber port", "Garage southwest corner, high beside outlet P13", 7.0, "Feeds cameras 3 and 4, outdoor AP 5, AP 6 and jacks 11"),
-  ("7", "switch", "8-port PoE switch with a fiber port", "Garage northwest corner, north wall, beside outlet P20", 7.0, "Feeds cameras 8 and 9, sensor 12 and jacks 21"),
+  ("7", "switch", "16-port PoE switch with a fiber port", "Garage northwest corner, north wall, beside outlet P20", 7.0, "Feeds cameras 8 and 9, sensor 12 and jacks 21 and 22"),
   ("18", "switch", "8-port PoE switch with a fiber port", "Under the garage stairs", 3.0, "Fiber to the third-floor rack R1"),
   ("5", "ap", "Outdoor AP", "Outside the garage south wall, facing south", 9.0, "Outdoor copper run; surge protector SP1"),
   ("6", "ap", "UniFi wall AP", "Garage, mid west wall", 7.0, ""),
@@ -355,7 +355,7 @@ CABLES["2"] = [
    ("3",  "Cat6", 3, [(19.96, 15.71)], _W8 + "east above the media ceiling, then north into the hall ceiling"),
    ("7",  "Cat6A", 15, [(13.49, 15.71)], _W8 + "east above the media ceiling, north to the projector wall, down inside it", None, 4),
    ("14", "Cat6", 10, [(2.19, 16.5), (20.9, 16.5)], "From SP1 at switch 8 east along the media south wall, out to the balcony, along the wall to the doorbell"),
-   ("17", "Cat6A", 0, [(3.9, 15.71)], _W8 + "east to the media west wall, north above the ceiling, down inside the wall to the jack plate", None, 2),
+   ("17", "Cat6A", 0, [(2.19, 16.5), (6.57, 16.5)], _W8 + "east above the ceiling along the media south wall, down inside the wall to the jack plate high beside H3", None, 2),
   ]),
   ("16", [
    ("15", "Cat6A", 21, [(28.75, 23.2)], _E16 + "west above the family room ceiling, then north to the AP"),
@@ -389,7 +389,7 @@ JACKS = {
        ("14", "Two wall jacks, west office south wall, east of the windows", 1.5, "Two jacks, data only, no PoE")],
 }
 JACKS["2"] = [("7", "Four PoE jacks on the projector wall (media north wall)", 1.5, "Four jacks, PoE available (15 W each assumed)"),
-              ("17", "Two Ethernet jacks on the media room west wall, between outlets P3 and P4, for AV equipment", 1.5, "Two jacks, data only, no PoE")]
+              ("17", "Two Ethernet jacks high on the media room south wall, beside blind outlet H3", 7.5, "Two jacks, data only, no PoE")]
 JACKS["G"] = [("21", "Four Ethernet jacks on the north wall by outlet P22, near switch 7", 1.5, "Four jacks, data only, no PoE"),
               ("22", "Two Ethernet jacks on the north wall between EV chargers EV1 and EV2, one for each charger", 4.0, "Two jacks, data only, no PoE"),
               ("11", "Two PoE jacks at 7 ft, inside the garage on the east face of the short wall between the overhead doors", 7.0, "Two jacks, PoE available (15 W each assumed); indoors, so no surge protector needed")]

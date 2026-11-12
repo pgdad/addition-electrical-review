@@ -94,7 +94,7 @@ Devices
 4 Outdoor camera, facing south
 5 Outdoor AP, facing south
 6 UniFi wall AP, mid west wall
-7 PoE switch (8-port + fiber), northwest corner
+7 PoE switch (16-port + fiber), northwest corner
 8 Outdoor camera, north wall
 9 Ceiling camera, 3D printer area
 10 Ceiling camera, WashTower
@@ -191,7 +191,7 @@ L1-L8 moved 2 ft north (Nov 10, 2026): rows now 7.2 and 16.7 ft from the north w
 G2 ground bar and SP2 moved just south of the west window, 5 ft from switch 7. G2 has spare positions for
 surge protectors on outdoor Ethernet cables added later.
 P20
-P20 High outlet on the north wall beside switch 7 (C1, GFCI), for the switch. Switch 7 is an 8-port PoE switch.
+P20 High outlet on the north wall beside switch 7 (C1, GFCI), for the switch. Switch 7 is a 16-port PoE switch.
 Door between the garage and the hallway (A.2): 2868 solid core, 30 min rated, hinged on its north jamb, swings into
 the garage; 2 steps down on the garage side. S1 and S3 are a two-gang on the garage side at its south (latch) edge.
 Door between the hallway and the old house (A.2): 3068 in the hallway east wall, 16.6 to 19.6 ft from the north wall,
@@ -215,3 +215,4 @@ Shed feeder: lay a second conduit beside the feeder conduit for the fiber to she
 F1 Feeder to shed subpanel A, 60A 240V, 2-pole breaker in MP (owner agreed, Nov 12, 2026). Feeders are numbered F, not C.
 22
 22 Two Ethernet jacks (data only), north wall between EV1 and EV2, about 4 ft high, one per charger; wired to switch 7 (Nov 12, 2026).
+Switch 7 is now a 16-port PoE switch with a fiber port (owner decision, Nov 12, 2026): 9 copper ports are used.

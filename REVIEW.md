@@ -341,7 +341,7 @@ ceiling AP 21 W (PoE+), PoE doorbell 10 W, ESP32 presence sensor 3 W, spare PoE 
 | Switch | Devices assumed on it | PoE ports | Estimated W | Comment |
 |--------|-----------------------|-----------|-------------|---------|
 | Garage 2 (SW) | cameras 3, 4; outdoor AP 5; AP 6; jacks 11 (2) | 6 | 75 | Needs 8 PoE ports, about 100 W and a fiber (SFP) port. |
-| Garage 7 (NW) | camera 8; camera 9; sensor 12; jacks 21 (4, no PoE); jacks 22 (2, no PoE, at the EV chargers) | 3 (9 ports in all) | 16 | Nine ports with the two cameras: one more than the 8-port switch the owner chose. Use a 16-port here, or move a camera to switch 2. The fiber uplink needs an SFP port besides. |
+| Garage 7 (NW) | camera 8; camera 9; sensor 12; jacks 21 (4, no PoE); jacks 22 (2, no PoE, at the EV chargers) | 3 (9 ports in all) | 16 | 16-port PoE switch with a fiber port (owner decision, Nov 12, 2026). Seven ports spare. |
 | Garage 18 (under stair) | camera 10; sensors 13, 14, 15, 19, 20; AP 17; doorbell 16 | 8 | 44 | 8 PoE ports plus SFP. Too many ports for a 5-port. |
 | Second floor 8 (SW closet) | sensors 1, 3, 5, 6; AP 9; doorbell 14; jacks 7 (4); jacks 17 (2, no PoE) | 10 (12 ports in all) | 95 (35 if the jacks draw no PoE) | 16-port PoE switch with a fiber port (owner decision). Four ports spare. |
 | Second floor 16 (family SE corner) | sensors 2, 4, 10, 11, 12, 13; AP 15 | 7 | 39 | New (owner decision): 8-port PoE switch with a fiber port. One port spare. |
@@ -353,11 +353,10 @@ Total is about 290 to 320 W. Budgets are fine if each switch is picked for port 
 ### Ethernet jacks added on Nov 12, 2026 (owner decision)
 - Third floor: floor boxes 4 and 5 and wall jack 14 each become two jacks. R1's main switch now has 15 copper
   ports in the plan, so size it as a 24-port, not a 16-port.
-- Second floor: jacks 17 (two) on the media room west wall between P3 and P4, for AV equipment, on switch 8. The
-  owner did not name the wall; the west wall is the reviewer's pick because it is the short run from the closet.
+- Second floor: jacks 17 (two) high on the media room south wall beside blind outlet H3 (owner decision), about
+  7.5 ft up, on switch 8.
 - Garage: jacks 22 (two) on the north wall between EV1 and EV2, about 4 ft high, one per charger, on switch 7.
-  With cameras 8 and 9, switch 7 then needs nine copper ports: one more than an 8-port. Use a 16-port switch
-  there or move one camera to switch 2 (six ports used).
+  Switch 7 is now a 16-port PoE switch with a fiber port (owner decision), which covers its nine ports.
 
 ### Third-floor Ethernet plan (confirmed by the owner, Nov 10, 2026)
 Every third-floor AP, presence sensor and Ethernet jack (jacks are data only, no PoE) is a home run from one PoE switch in rack R1 (network item 1).
@@ -426,7 +425,7 @@ doorbell; new switch 16 (8-port, family room southeast corner) takes the east ha
 | 8 | 5 | Sensor 3, hall ceiling at the media door | Cat6 | 45 ft | 3 W |
 | 8 | 6-9 | Jacks 7 (four), projector wall | 4 x Cat6A | 4 x 45 ft | 60 W |
 | 8 | 10 | Doorbell 14, balcony (via SP1 on GB1) | Cat6 | 40 ft | 10 W |
-| 8 | 11-12 | Jacks 17 (two), media west wall between P3 and P4 (added Nov 12, 2026) | 2 x Cat6A | 2 x 30 ft | none |
+| 8 | 11-12 | Jacks 17 (two), high on the media south wall by H3 (added Nov 12, 2026) | 2 x Cat6A | 2 x 20 ft | none |
 | 16 (family SE) | 1 | AP 15, kitchen/family ceiling | Cat6A | 25 ft | 21 W |
 | 16 | 2 | Sensor 12, near the balcony door | Cat6 | 25 ft | 3 W |
 | 16 | 3 | Sensor 13, bath ceiling | Cat6 | 15 ft | 3 W |
@@ -467,8 +466,8 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 - Sensor 12 moved from switch 2 to switch 7: it is 11 ft from 7 and 19 ft from 2, and 7 has spare ports.
 - Cameras 3, 4, 8, 9 and 10 also land on these switches (see the PoE table) but are not drawn on the page.
 - Jacks 21 (owner decision) are four data-only jacks on the north wall by computer outlet P22. Switch 7 is
-  an 8-port PoE switch (owner decision) with its own high outlet P20 beside it on network circuit C1.
-  With cameras 8 and 9 it uses 7 of the 8 ports, so the fiber uplink needs a separate SFP port. Jacks 11 are
+  a 16-port PoE switch with a fiber port (owner decision, Nov 12, 2026; was 8-port) with its own high outlet P20
+  beside it on network circuit C1. With cameras 8 and 9 and jacks 22 it uses 9 ports. Jacks 11 are
   the other jacks on this level. The drawing calls those PoE jacks, so 15 W each is
   allowed for. They are inside the garage, on the east face of the short wall between the doors (owner
   decision, Nov 10, 2026), so they need no surge protector.

@@ -69,11 +69,11 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Switch 18 is an 8-port PoE switch with a fiber port (owner decision, Nov 10, 2026).
 - S2 is on the west wall near the SW corner, directly west of where it was first drawn (owner decision, Nov 10, 2026).
 - Ethernet jacks added (owner decision, Nov 12, 2026), two jacks per location: third-floor floor boxes 4 and 5 and
-  wall jack 14 become doubles; second-floor jacks 17 on the media room west wall between P3 and P4 for AV
-  equipment (wall is the reviewer's pick, not named by the owner), on switch 8; garage jacks 22 on the north wall
-  between EV1 and EV2 at about 4 ft, on switch 7. Open point: switch 7 then needs 9 copper ports with cameras 8, 9.
+  wall jack 14 become doubles; second-floor jacks 17 high on the media room south wall beside blind outlet H3
+  (about 7.5 ft), on switch 8; garage jacks 22 on the north wall between EV1 and EV2 at about 4 ft, on switch 7.
+  Switch 7 is a 16-port PoE switch with a fiber port (owner decision, Nov 12, 2026; was 8-port).
 - Ethernet jacks 21 (owner decision, Nov 10, 2026): four data-only jacks on the north wall near switch 7, by
-  outlet C. Switch 7 is an 8-port PoE switch with high outlet P20 beside it on C1. Ground bar G2 (with SP2) sits just south of the west window, about 5 ft from switch 7, and is the
+  outlet C. Switch 7 (16-port since Nov 12, 2026) has high outlet P20 beside it on C1. Ground bar G2 (with SP2) sits just south of the west window, about 5 ft from switch 7, and is the
   bar for surge protectors on outdoor Ethernet cables added later.
 - PoE jacks 11 are inside the garage, on the east face of the short north-south wall between the overhead
   doors (owner decision, Nov 10, 2026).

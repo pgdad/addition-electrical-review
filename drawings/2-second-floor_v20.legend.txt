@@ -309,4 +309,4 @@ P28
 Nov 12, 2026 (owner): counter outlets P25, P26 moved from C4 to C5, so C4 = P12, P13, P27 and C5 = P7, P14, P25, P26.
 New outlet P28 on fridge circuit C6: high on the north wall above the refrigerator (about 6.5 ft, confirm against the fridge height).
 17
-17 Two Ethernet jacks (data only), media room west wall between P3 and P4, for AV equipment; wired to switch 8 (Nov 12, 2026).
+17 Two Ethernet jacks (data only), high on the media room south wall beside blind outlet H3; wired to switch 8 (Nov 12, 2026).

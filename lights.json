@@ -3871,13 +3871,13 @@
    "level": "G",
    "levelName": "Garage and hallway",
    "kind": "switch",
-   "name": "8-port PoE switch with a fiber port",
+   "name": "16-port PoE switch with a fiber port",
    "room": "Garage northwest corner, north wall, beside outlet P20",
    "x": 1.2,
    "y": 7.0,
    "z": 1.2,
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Feeds cameras 8 and 9, sensor 12 and jacks 21",
+   "note": "Feeds cameras 8 and 9, sensor 12 and jacks 21 and 22",
    "fiber": "G:F7"
   },
   {
@@ -4184,10 +4184,10 @@
    "levelName": "Second floor",
    "kind": "jack",
    "name": "Ethernet jack",
-   "room": "Two Ethernet jacks on the media room west wall, between outlets P3 and P4, for AV equipment",
-   "x": 4.61,
-   "y": 11.96,
-   "z": 6.88,
+   "room": "Two Ethernet jacks high on the media room south wall, beside blind outlet H3",
+   "x": 6.56,
+   "y": 17.96,
+   "z": 15.47,
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Two jacks, data only, no PoE",
    "cable": "2:C17"
@@ -5896,8 +5896,8 @@
    "poeW": 0,
    "count": 2,
    "port": "11-12",
-   "lengthFt": 30,
-   "route": "Up from switch 8 in the closet, east to the media west wall, north above the ceiling, down inside the wall to the jack plate",
+   "lengthFt": 20,
+   "route": "Up from switch 8 in the closet, east above the ceiling along the media south wall, down inside the wall to the jack plate high beside H3",
    "points": [
     [
      2.19,
@@ -5910,19 +5910,24 @@
      15.71
     ],
     [
-     3.9,
+     2.19,
      19.06,
-     15.71
+     16.5
     ],
     [
-     4.61,
+     6.57,
      19.06,
-     6.88
+     16.5
     ],
     [
-     4.61,
-     11.96,
-     6.88
+     6.56,
+     19.06,
+     15.47
+    ],
+    [
+     6.56,
+     17.96,
+     15.47
     ]
    ]
   },
