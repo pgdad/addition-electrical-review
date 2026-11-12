@@ -1149,6 +1149,24 @@
    "note": "Ceiling above the second leg (third-floor ceiling height)"
   },
   {
+   "key": "2:L40",
+   "id": "L40",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "West stair, corner landing",
+   "x": 2.94,
+   "y": 28.41,
+   "z": 3.34,
+   "type": "ceiling",
+   "switches": [
+    "2:S17",
+    "3:S10"
+   ],
+   "circuit": "C15/C16 lighting, 15A (split not given on v20)",
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Ceiling above the landing where the stair turns (third-floor ceiling height)"
+  },
+  {
    "key": "3:L1",
    "id": "L1",
    "level": "3",
@@ -2063,7 +2081,8 @@
    "y": 14.46,
    "z": 3.25,
    "controls": [
-    "2:L35"
+    "2:L35",
+    "2:L40"
    ],
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "3:S10",
@@ -2233,7 +2252,8 @@
    "y": 24.61,
    "z": 15.49,
    "controls": [
-    "2:L35"
+    "2:L35",
+    "2:L40"
    ],
    "source": "drawings/3-third-floor_v32.svg",
    "pairWith": "2:S17",

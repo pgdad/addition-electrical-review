@@ -236,7 +236,7 @@ C13 P16-P20 under stairs, by S7, 20A AFCI
 C14 P11, P23, P24 balcony, 20A GFCI
 C15, C16 Lighting, 15A AFCI
 L35
-S17 L35 west stair ceiling, bottom (top 3rd fl S10)
+S17 L35, L40 west stair ceiling, bottom (top 3rd fl S10)
 S17
 CO1
 SD1
@@ -297,3 +297,5 @@ T
 Nov 12, 2026: island floor lights L36 (north), L37 (east), L38 (south), L39 (west): low-voltage dimmable lights in the
 island toe kick, about 4 in. above the floor, one centred on each side. Fed from dimming controller T inside the island
 (Matter, same kind as D; lighting circuit C15/C16). Switch S27, below S8 and S9 by the hall door, controls all four.
+L40
+Nov 12, 2026: second west stair ceiling light L40 above the corner landing, on the same switches as L35 (S17 + 3rd-floor S10).

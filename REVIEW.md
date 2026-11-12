@@ -141,7 +141,7 @@ The PDF wins for geometry; these are the differences found.
 ### Consistency
 - All plotted IDs have legend rows and the reverse; IDs are unique on this level.
 - Cross-level pairs agree in both directions: S3 with third-floor S8 (L7), S4 with garage S8 (L8),
-  S15 with third-floor S9 (L33, L34), S16 with garage S9 (L30 to L32), S17 with third-floor S10 (L35).
+  S15 with third-floor S9 (L33, L34), S16 with garage S9 (L30 to L32), S17 with third-floor S10 (L35, L40).
 - Resolved (Nov 10, 2026): S3, S15, S17 and S19 are a four-gang row on the hall south wall at the stair foot,
   with P1 just east of them; controllers D are on the hall north wall at the stair foot.
 - Resolved (Nov 10, 2026): H4 was plotted on the balcony door opening; it is now above the east end of the

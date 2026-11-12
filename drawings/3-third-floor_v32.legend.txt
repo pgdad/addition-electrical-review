@@ -120,7 +120,7 @@ L9  Short track light in the open space north of S4.  S7 at the north end of tha
 Switches in smart bulb mode: lights keep constant power, switch dims them over Matter or Home Assistant.
 S8  Stair riser lights, top of the stairs beside S1. Pairs with S3 at the bottom, on the second floor.
 S9  Stair wall lights (L33, L34 on the 2nd floor), top of the stairs. Pairs with S15 at the bottom.
-S10  L35 ceiling light, west stair second leg (2nd floor), top of the stairs. Pairs with S17 at the bottom.
+S10  L35, L40 west stair ceiling lights (2nd floor), top of the stairs. Pairs with S17 at the bottom.
 Circuits (proposed)
 C1  20A dedicated: A (R2 rack).
 C2  20A dedicated: B (R4 rack).

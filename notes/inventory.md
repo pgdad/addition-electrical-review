@@ -30,15 +30,15 @@ Totals by size: five 8-port, one 16-port, three not yet sized.
 
 The 15 aux switches each need a traveler to their main switch (15 three-way pairs).
 
-## Light fixtures (70 entries)
+## Light fixtures (71 entries)
 
 | Level | Ceiling | Wall | Outdoor | Stair riser runs | Under-cabinet | Low-voltage | Total |
 |-------|---------|------|---------|------------------|---------------|---------------------|-------|
 | Garage / hallway | 11 | 0 | 5 | 0 | 0 | 0 | 16 |
-| Second floor | 16 | 11 | 4 | 2 | 1 | 5 | 39 |
+| Second floor | 17 | 11 | 4 | 2 | 1 | 5 | 40 |
 | Third floor | 9 | 1 | 0 | 0 | 0 | 0 | 10 |
 | Shed | 2 | 1 | 1 | 0 | 0 | 1 | 5 |
-| **Total** | **38** | **13** | **10** | **2** | **1** | **6** | **70** |
+| **Total** | **39** | **13** | **10** | **2** | **1** | **6** | **71** |
 
 The two riser runs are counted as one entry each (one light per riser: 17 risers on the garage stair,
 16 on the west stair). They are listed on the second-floor sheet.

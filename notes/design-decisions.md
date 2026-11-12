@@ -128,6 +128,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   switch S27 below S8/S9 by the hall door.
 - West stair to the 3rd floor: wall lights L33 (north leg) and L34 (west leg) on S15 (bottom) + 3rd-floor S9 (top);
   L35 ceiling light over the west (second) leg on S17 (bottom, above S15) + 3rd-floor S10 (top).
+  L40 (owner, Nov 12, 2026): second ceiling light, above the corner landing where the stair turns, on the same
+  switches as L35. The landing position is proposed, not confirmed by the owner.
   Stair wall lights are separate from the riser lights, with switches at both ends.
 - East stair wall lights L30-L32 on S16 (top, by S4) + garage F (bottom).
 - GFCI/AFCI (owner decision, Nov 10, 2026): GFCI on every kitchen and laundry circuit including the range,
@@ -160,7 +162,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   wall east of the door; S11 is mounted low (3 ft) for children and stays a
   dimmer in smart-bulb mode, so L10 must be a smart fixture or take a smart lamp. Attic outlet P15 is on the old house attic
   side of the wall.
-- Lights L1-L9 on S1-S7, L10 on S11; stair risers S8; stair wall lights S9; L35 (2nd-floor stair ceiling) S10.
+- Lights L1-L9 on S1-S7, L10 on S11; stair risers S8; stair wall lights S9; L35, L40 (2nd-floor stair ceiling) S10.
 
 - Ethernet (confirmed by the owner, Nov 10, 2026): APs 2, 3 and presence sensors 7 to 13 are home runs
   from one PoE switch in rack R1: Cat6A to the APs, Cat6 to the sensors, plus data-only (non-PoE) Cat6A runs to
