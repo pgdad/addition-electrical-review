@@ -901,10 +901,10 @@
    "z": 7.09,
    "type": "low-voltage",
    "switches": [],
-   "circuit": "C3 (driver J, 15A)",
+   "circuit": "C15 lighting, 15A AFCI (via driver J)",
    "source": "drawings/2-second-floor_v20.svg",
    "control": "Sauna heater control (no wall switch)",
-   "note": "Sauna rated, DC from driver J in the W/D closet"
+   "note": "Sauna rated, DC from driver J on the bath north wall"
   },
   {
    "key": "2:L22",
@@ -2883,7 +2883,7 @@
    "x": 41.5,
    "y": 15.46,
    "z": 17.26,
-   "circuit": "C3, 15A AFCI",
+   "circuit": "C15 lighting, 15A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
   {

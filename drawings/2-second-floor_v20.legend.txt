@@ -171,7 +171,7 @@ H2
 E Range, 50A 240V receptacle
 F Bidet GFCI
 G Sauna heater, 50A 240V, per its manual
-J Sauna light driver, 15A, bath north wall
+J Sauna light driver, on C15, bath north wall
 &#160;&#160;&#160;(dashed: low-voltage DC run to sauna)
 K Fridge, 20A
 M DW and disposal, 20A
@@ -222,7 +222,7 @@ H5, H6 Family, each side of the 3050s
 No blinds: sauna window, balcony doors
 C1 E range, 50A 240V, GFCI
 C2 G sauna heater, 50A 240V
-C3 J sauna light driver, 15A, AFCI
+C3 Spare, 15A AFCI (J moved to C15)
 C4 P12, P13, P25-P27 counter, 20A GFCI + AFCI
 C5 P7, P14 kitchen, 20A GFCI + AFCI
 C6 K fridge, 20A GFCI + AFCI
@@ -303,4 +303,5 @@ Nov 12, 2026: sauna heater G moved to the sauna west wall, just south of the thi
 Lighting split (owner, Nov 12, 2026): C15 = kitchen, family room, bath and shower: L13-L20, L22, L24, L36-L39 (S8-S12, S21, S26,
 S27, controller T). C16 = all the rest: hall, media room, both stairs, under-stair, balcony: L1-L12, L23, L25-L35, L40.
 Circuits (owner agreed, Nov 12, 2026): bath fan switch S18 and island controller T on C15; stair light controllers D on C16;
-sauna light driver J stays on its own circuit C3. If a second-floor subpanel is added, its feeder is F2 (125A) from MP.
+sauna light driver J on C15 (C3 is a spare). If a second-floor subpanel is added, its feeder is F2 (125A) from MP.
+Nov 12, 2026 (owner): sauna light driver J moved from C3 to lighting circuit C15. C3 is now a spare.
