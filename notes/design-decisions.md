@@ -11,6 +11,9 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   Which end is the aux is confirmed by the owner (Nov 10, 2026): garage S2 (main S1), S7 (main S4), S8 (main 2F S4),
   S9 (main 2F S16); second floor S19 (S1), S20 (S2), S21 (S8), S22 (S5), S23 (S6), S25 (S24), S26 (S10);
   third floor S2 (S1), S8 (2F S3), S9 (2F S15), S10 (2F S17). The shed has no 3-way pairs.
+- Network cabling split (owner decision, Nov 14, 2026): the electrician installs the empty network conduits, with a
+  box or low-voltage ring at each device and a pull string in each conduit. The owner supplies, pulls, terminates and
+  tests all copper (Ethernet) and fiber cables. Conduit size and type are still to be agreed with the electrician.
 - Wall lights removed (owner decision, Nov 14, 2026; the plans before this are tagged v1.0 in git): second-floor
   hall wall lights L1-L6 and stair wall lights L30-L32 (east stair), L33, L34 (west stair) are removed, together
   with their switches: second floor S1, S2, S19, S20, S15, S16, garage S9 and third-floor S9. The IDs are not
