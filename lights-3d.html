@@ -887,6 +887,121 @@ const PAGE_URL = 'https://pgdad.github.io/addition-electrical-review/';
 const PAGE_QR = ['111111100101000010111101101111111','100000100100000100100000101000001','101110101010101110011100001011101','101110101100000100110010001011101','101110101101111111001001001011101','100000101011000000110010001000001','111111101010101010101010101111111','000000001111101010011100000000000','101111100100111011010011101111100','100001010111010011110101001101101','000001110010111111000110000010110','000111010110110101110110101011110','100110111001101010000010110011011','101000011001010101100111101001111','101000101011000111001010111101110','100111010110100100011110011001100','010111110110010101110011110110001','110001000001111010111101011101101','001001111111101100101010101110100','101111000110011110001100010111101','101110100110001100100010110011011','111010000100111111010001001001001','101001101010011001001100000010110','101000000100001010011110100101111','101100100011111001001010111110000','000000001100010011111010100010101','111111100001000101000101101010110','100000101100001111100111100011111','101110101111000110011010111111011','101110101110111100111101010011111','101110101101001110101111101101100','100000100100000100001100000011100','111111101111110101000011111100010'];
 const qrSvg = () => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 ${PAGE_QR.length + 8} ${PAGE_QR.length + 8}" shape-rendering="crispEdges"><rect x="-4" y="-4" width="100%" height="100%" fill="#fff"/>`
   + PAGE_QR.map((r, y) => [...r].map((c, x) => c === '1' ? `<rect x="${x}" y="${y}" width="1" height="1" fill="#000"/>` : '').join('')).join('') + '</svg>';
+// ---------- report part: location sheets for network switches and PoE presence sensors, with step-by-step cable routes ----------
+const ftin = v => { const n = Math.round(Math.abs(v) * 12); return `${v < 0 ? '-' : ''}${Math.floor(n / 12)}'-${n % 12}"`; };
+const LOC_DATUM = { G: [0, 0, 'the outside northwest corner of the garage'], 2: [0, 0, 'the outside northwest corner of the addition (directly above the garage northwest corner)'],
+  3: [0, 0, 'the outside northwest corner of the addition (directly above the garage northwest corner)'], S: [-12, 45, 'the outside northwest corner of the sauna/shed building'] };
+const locE = v => v < -0.04 ? ftin(-v) + ' W' : ftin(v) + ' E', locS = v => v < -0.04 ? ftin(-v) + ' N' : ftin(v) + ' S';
+const locFloor = (lv, x) => lv === 'G' ? (x > W ? F.hallway : 0) : lv === '2' ? F.second : lv === '3' ? F.third : 0;
+const locFloorName = (lv, x) => lv === 'G' ? (x > W ? 'hallway floor' : 'garage slab') : lv === '2' ? 'second floor' : lv === '3' ? 'third floor' : 'shed floor';
+function locWalls(lv, x, z) {                       // nearest east-west wall line and nearest north-south wall line of the plan
+  const P = PLAN[lv], segs = [...P.segs]; let ns = null, ew = null;
+  for (const q of P.solid) q.forEach((p, i) => { const r = q[(i + 1) % q.length]; segs.push([p[0], p[1], r[0], r[1]]); });
+  for (const [a, b, c, d] of segs) {
+    if (Math.abs(b - d) < 0.05 && x >= Math.min(a, c) - 0.6 && x <= Math.max(a, c) + 0.6) { const dd = z - b; if (!ns || Math.abs(dd) < Math.abs(ns)) ns = dd; }
+    if (Math.abs(a - c) < 0.05 && z >= Math.min(b, d) - 0.6 && z <= Math.max(b, d) + 0.6) { const dd = x - a; if (!ew || Math.abs(dd) < Math.abs(ew)) ew = dd; }
+  }
+  return [ns === null ? null : [Math.abs(ns), ns >= 0 ? 'north' : 'south'], ew === null ? null : [Math.abs(ew), ew >= 0 ? 'west' : 'east']];
+}
+function locWallText(lv, N, mount) {
+  const ws = locWalls(lv, N.x, N.z).filter(Boolean).sort((a, b) => a[0] - b[0]); if (!ws.length) return '';
+  const far = w => `${ftin(w[0])} from the wall line to the ${w[1]}`;
+  if (mount !== 'ceiling' && ws[0][0] < 1.5) return `On the wall to the ${ws[0][1]}` + (ws[1] ? '; ' + far(ws[1]) : '');
+  return ws.map(far).join('; ') + (mount === 'wall' ? '. Not on a wall line of the plan: confirm the mounting surface with the owner' : '');
+}
+function locSteps(pts, lv, world) {                 // turn-by-turn text for a 3D polyline [x, height, z]
+  const d0 = LOC_DATUM[lv], out = [];
+  const hgt = (y, x) => { if (!world) return `${ftin(y - locFloor(lv, 0))} above the ${lv === 'G' ? 'garage slab' : locFloorName(lv, x)}` + (lv === 'G' && x > W ? ` (${ftin(y - F.hallway)} above the hallway floor)` : '');
+    if (y < 0) return `${ftin(-y)} below grade (trench)`;
+    return y >= F.third ? `${ftin(y - F.third)} above the third floor` : y >= F.second ? `${ftin(y - F.second)} above the second floor` : `${ftin(y)} above the garage slab`; };
+  for (let i = 1; i < pts.length; i++) {
+    const [ax, ay, az] = pts[i - 1], [bx, by, bz] = pts[i], dx = bx - ax, dy = by - ay, dz = bz - az, m = [];
+    if (Math.abs(dx) >= 0.08) m.push(`${dx > 0 ? 'east' : 'west'} ${ftin(Math.abs(dx))}`);
+    if (Math.abs(dz) >= 0.08) m.push(`${dz > 0 ? 'south' : 'north'} ${ftin(Math.abs(dz))}`);
+    const horiz = m.length > 0, v = Math.abs(dy) >= 0.08;
+    if (!horiz && !v) continue;
+    let s = horiz ? m.join(' and ') : '';
+    if (v) s += (horiz ? ', ' + (dy > 0 ? 'rising' : 'dropping') + ' ' : (dy > 0 ? 'up ' : 'down ')) + `${ftin(Math.abs(dy))} to ${hgt(by, bx)}`;
+    if (horiz) s += ` (to ${locE(bx - d0[0])}, ${locS(bz - d0[1])})`;
+    out.push(s);
+  }
+  return out;
+}
+function locPages() {
+  const PRE = { switch: 'SW ', sensor: 'PS ' }, cabs = Object.values(cableByKey), fibs = Object.values(fiberByKey), esc = pesc, hex = c => '#' + c.toString(16).padStart(6, '0');
+  const tag = N => /^Rack R1/.test(N.name) ? 'R1' : (PRE[N.kind] || '') + N.id;
+  const mountOf = N => N.y - locFloor(N.level, N.x) >= 8.5 ? 'ceiling' : 'wall';
+  const coord = (lv, N) => `<td>${ftin(N.x - LOC_DATUM[lv][0])}</td><td>${ftin(N.z - LOC_DATUM[lv][1])}</td><td>${ftin(N.y - locFloor(lv, N.x))} above the ${locFloorName(lv, N.x)}</td>`;
+  let h = `<div class="rp-text"><h1>Network switch and presence sensor locations, with cable routing</h1>`
+    + `<p>These pages are written for the cabling contractor. They give the position of every network switch and every PoE presence sensor, the switch port each sensor is wired to, and a step-by-step route for each Ethernet and fiber cable. Each level has one location plan followed by its tables.</p>`
+    + `<h3>How positions are given</h3><ul>`
+    + `<li><b>E</b> and <b>S</b> are horizontal distances east and south of that level's datum corner, measured along the building (the plans are drawn north up, and the walls run north-south and east-west). The datum is named at the top of each level's tables and marked with a cross on its plan. The plan has a grid line every 5 ft from the datum.</li>`
+    + `<li><b>Height</b> is to the centre of the device above the finished floor it stands over. The hallway floor is ${ftin(F.hallway)} above the garage slab, the second floor ${ftin(F.second)} and the third floor ${ftin(F.third)} above it.</li>`
+    + `<li><b>Wall distances</b> are to the wall lines of the plan: the outside face of exterior walls and the centre line of partitions.</li>`
+    + `<li><b>Accuracy:</b> the dimensions are scaled from the device plans, which are drawn roughly to scale. Treat them as good to about 6 in. Where the description names a feature (a door, a window, an outlet, a corner), the description governs; confirm each box position with the owner at the walk-through before closing walls.</li></ul>`
+    + `<h3>Cables</h3><ul>`
+    + `<li><b>Presence sensors:</b> one Cat6 cable each, home-run with no splices from the listed switch port to the sensor. Each sensor draws about 3 W of PoE. Leave about 3 ft of slack at the sensor and 6 ft at the switch, and label both ends with the switch and port (for example "SW 7 / port 1") and the sensor number.</li>`
+    + `<li><b>Switch uplinks:</b> one duplex single-mode (OS2) fiber with LC connectors from each network switch to the fiber aggregation switch in rack R1 on the third floor. Use pre-terminated cable or pull it through innerduct with a pull string, respect the cable's minimum bend radius, and leave about 10 ft coiled at R1 and 6 ft at the switch.</li>`
+    + `<li><b>Routes:</b> the Ethernet routes are proposed. The end points, the switch and the port are fixed; the path between them may be adjusted to suit the framing. Listed lengths are estimates that include the vertical drops; allow about 15% extra.</li>`
+    + `<li><b>Heights along a route</b> are the planned level of the run. A height at or above the ceiling of the level means the run is in the joist or attic space above that ceiling.</li></ul>`
+    + `<h3>Points to check with the electrician and the inspector</h3><ul>`
+    + `<li>Keep Ethernet out of boxes and raceways that hold power wiring. Use a different stud bay from power cables for drops, keep about 12 in from long parallel power runs, and cross power cables at right angles.</li>`
+    + `<li>Use riser-rated cable (CMR, OFNR for fiber) for runs between floors, and firestop every hole through a top plate, floor or rated wall.</li>`
+    + `<li>The shed fiber runs underground in its own conduit; confirm its separation from the power feeder F1 in the shared trench.</li>`
+    + `<li>Network switch 18 and the main panel are both drawn under the garage stair. If the panel moves (review finding 1), confirm the switch position before pulling cable to it.</li>`
+    + `<li>Access points, cameras, doorbells and Ethernet jacks are not on these sheets; their cables are listed in the network switch port tables.</li></ul></div>`;
+  for (const [lv, name] of LEVELS) {
+    const sws = NETS.filter(n => n.level === lv && n.kind === 'switch'), sens = NETS.filter(n => n.level === lv && n.kind === 'sensor'); if (!sws.length && !sens.length) continue;
+    const P = PLAN[lv], { x0, z0, wpx, hpx, K } = mapGeo[lv], X = x => ((x - x0) * K).toFixed(1), Y = z => ((z - z0) * K).toFixed(1), D = LOC_DATUM[lv];
+    let g = '';
+    for (let fx = Math.ceil((x0 - D[0]) / 5) * 5; D[0] + fx <= x0 + wpx / K; fx += 5) g += `<line x1="${X(D[0] + fx)}" y1="14" x2="${X(D[0] + fx)}" y2="${hpx.toFixed(0)}" stroke="#2c3442" stroke-width="${fx ? 0.6 : 1.2}"/><text x="${X(D[0] + fx)}" y="10" text-anchor="middle" font-size="9" fill="#8d99ab">${fx}' E</text>`;
+    for (let fz = Math.ceil((z0 - D[1]) / 5) * 5; D[1] + fz <= z0 + hpx / K; fz += 5) g += `<line x1="0" y1="${Y(D[1] + fz)}" x2="${wpx.toFixed(0)}" y2="${Y(D[1] + fz)}" stroke="#2c3442" stroke-width="${fz ? 0.6 : 1.2}"/><text x="3" y="${(+Y(D[1] + fz) - 2).toFixed(1)}" font-size="9" fill="#8d99ab">${fz}' S</text>`;
+    g += planBase(P, X, Y);
+    const dx = +X(D[0]), dy = +Y(D[1]);
+    g += `<path d="M${dx - 9} ${dy}H${dx + 9}M${dx} ${dy - 9}V${dy + 9}" stroke="#ff7043" stroke-width="2"/><circle cx="${dx}" cy="${dy}" r="4" fill="none" stroke="#ff7043" stroke-width="1.5"/><text x="${dx + 8}" y="${dy - 6}" font-size="10" font-weight="700" fill="#ff7043">Datum 0, 0</text>`;
+    const mine = new Set([...sws, ...sens].map(n => n.key));
+    for (const C of cabs) if (C.level === lv && netByKey[C.to].kind === 'sensor') g += `<polyline points="${C.points.map(p => X(p[0]) + ',' + Y(p[2])).join(' ')}" fill="none" stroke="${hex(NET_COLOR.sensor)}" stroke-width="1.3" stroke-dasharray="6 3" opacity="0.85"/>`;
+    for (const Fb of fibs) if (Fb.plan[lv]) g += `<polyline points="${Fb.plan[lv].map(p => X(p[0]) + ',' + Y(p[1])).join(' ')}" fill="none" stroke="${hex(FIBER_COLOR)}" stroke-width="2" opacity="0.9"/>`;
+    const boxes = [], hit = b => boxes.some(o => b[0] < o[2] && o[0] < b[2] && b[1] < o[3] && o[1] < b[3]);
+    for (const N of [...sws, ...sens]) {
+      const x = +X(N.x), y = +Y(N.z), c = hex(NET_COLOR[N.kind]);
+      g += N.kind === 'switch' ? `<rect x="${x - 7}" y="${y - 7}" width="14" height="14" transform="rotate(45 ${x} ${y})" fill="${c}" stroke="#0c0f14" stroke-width="0.8"/>` : `<path d="M${x} ${y - 7}L${x + 7} ${y + 5}L${x - 7} ${y + 5}Z" fill="${c}" stroke="#0c0f14" stroke-width="0.8"/>`;
+      boxes.push([x - 9, y - 9, x + 9, y + 9]);
+    }
+    for (const N of [...sws, ...sens]) {
+      const x = +X(N.x), y = +Y(N.z), c = hex(NET_COLOR[N.kind]), t1 = tag(N), t2 = `${ftin(N.x - D[0])} E, ${ftin(N.z - D[1])} S`, w = t2.length * 4.6 + 6;
+      const tries = [[x, y + 20], [x, y - 24], [x + w / 2 + 12, y - 2], [x - w / 2 - 12, y - 2], [x + w / 2 + 12, y + 22], [x - w / 2 - 12, y - 26], [x + w / 2 + 12, y - 26], [x - w / 2 - 12, y + 22], [x, y + 44], [x, y - 48]];
+      const fit = tries.map(([cx, cy]) => [Math.min(Math.max(cx, w / 2 + 2), wpx - w / 2 - 2), Math.min(Math.max(cy, 24), hpx - 14)]);
+      const [cx, cy] = fit.find(([a, b]) => !hit([a - w / 2, b - 10, a + w / 2, b + 12])) || fit[0];
+      boxes.push([cx - w / 2, cy - 10, cx + w / 2, cy + 12]);
+      g += `<rect x="${(cx - w / 2).toFixed(1)}" y="${(cy - 10).toFixed(1)}" width="${w.toFixed(1)}" height="22" rx="2" fill="#141820" opacity="0.88"/><text x="${cx.toFixed(1)}" y="${cy.toFixed(1)}" text-anchor="middle" font-size="11" font-weight="700" fill="${c}" stroke="#141820" stroke-width="3" paint-order="stroke">${esc(t1)}</text>`
+        + `<text x="${cx.toFixed(1)}" y="${(cy + 10).toFixed(1)}" text-anchor="middle" font-size="8.5" fill="#e6e9ee" stroke="#141820" stroke-width="3" paint-order="stroke">${esc(t2)}</text>`;
+    }
+    const tmp = document.createElement('div'); tmp.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${wpx.toFixed(0)} ${hpx.toFixed(0)}">${g}</svg>`;
+    const port = hpx > wpx, leg = [...(sws.length ? [LEG.nsw] : []), ...(sens.length ? [LEG.sensor, [LEG.poe[0], 'Ethernet run to a presence sensor (PoE)']] : []), LEG.fiber,
+      [(x, y) => `<path d="M${x - 7} ${y}H${x + 7}M${x} ${y - 7}V${y + 7}" stroke="#ff7043" stroke-width="2"/>`, 'Datum corner'], [(x, y) => `<line x1="${x - 10}" y1="${y}" x2="${x + 10}" y2="${y}" stroke="#2c3442" stroke-width="1.5"/>`, 'Grid, 5 ft from the datum'],
+      LEG.wall, LEG.part, LEG.dash, ...(P.windows ? [LEG.win] : [])];
+    h += `<div class="rp-img ${port ? 'port' : 'land'}"><h2>${esc(name)}: location plan for network switches and presence sensors (E, S in feet and inches from the datum)</h2>${tmp.firstChild.outerHTML.replace('<svg ', '<svg class="main" ')}${legendSvg(leg, port ? 700 : 1000)}</div>`;
+    // tables
+    h += `<div class="rp-text"><h2>${esc(name)}: switch and sensor locations</h2><p><b>Datum:</b> ${esc(D[2])}. E = east of it, S = south of it.</p>`;
+    if (sws.length) h += `<h3>Network switches</h3><table><thead><tr><th>ID</th><th>Device</th><th>E</th><th>S</th><th>Height</th><th>Position</th><th>Notes</th></tr></thead><tbody>`
+      + sws.map(N => `<tr><td style="white-space:nowrap">${esc(tag(N))}</td><td>${esc(N.name)}</td>${coord(lv, N)}<td>${esc(N.room)}. ${esc(locWallText(lv, N, 'wall'))}</td><td>${esc(N.note || '')}</td></tr>`).join('') + '</tbody></table>';
+    if (sens.length) h += `<h3>PoE presence sensors</h3><table><thead><tr><th>ID</th><th>Mount</th><th>E</th><th>S</th><th>Height</th><th>Position</th><th>Switch / port</th><th>Cable</th></tr></thead><tbody>`
+      + sens.map(N => { const C = cabs.find(c => c.to === N.key), m = mountOf(N);
+          return `<tr><td style="white-space:nowrap">${esc(tag(N))}</td><td>${m}</td>${coord(lv, N)}<td>${esc(N.room)}. ${esc(locWallText(lv, N, m))}</td><td>${C ? esc(tag(netByKey[C.from])) + ' / port ' + C.port : 'not assigned'}</td><td>${C ? `${C.cable}, PoE ${C.poeW} W, about ${C.lengthFt} ft` : ''}</td></tr>`; }).join('') + '</tbody></table>';
+    const runs = cabs.filter(c => c.level === lv && netByKey[c.to].kind === 'sensor'), lf = fibs.filter(f => netByKey[f.from].level === lv);
+    if (runs.length) {
+      h += `<h3>Ethernet routes to the presence sensors (proposed)</h3>`;
+      for (const Wn of NETS.filter(n => n.kind === 'switch')) { const mineRuns = runs.filter(c => c.from === Wn.key); if (!mineRuns.length) continue;
+        h += `<p><b>From ${esc(tag(Wn))}</b> (${esc(Wn.room)}; ${ftin(Wn.x - D[0])} E, ${ftin(Wn.z - D[1])} S):</p><ul>`
+          + mineRuns.map(C => { const N = netByKey[C.to]; return `<li><b>${esc(tag(N))}</b>, port ${C.port}, ${C.cable}, about ${C.lengthFt} ft. ${esc(C.route)}. Steps from the switch: ${locSteps(C.points, lv, false).map((s, i) => `(${i + 1}) ${esc(s)}`).join('; ')}. Ends at ${esc(tag(N))}, ${ftin(N.y - locFloor(lv, N.x))} above the ${locFloorName(lv, N.x)}.</li>`; }).join('') + '</ul>'; }
+    }
+    if (lf.length) h += `<h3>Fiber uplinks starting on this level</h3><p>E and S in these steps are from the garage northwest corner datum${lv === 'S' ? ' (the shed plan uses its own datum; the shed northwest corner is 12\'-0" west and 45\'-0" south of the garage datum)' : ''}.</p><ul>`
+      + lf.map(Fb => { const A = netByKey[Fb.from], B = netByKey[Fb.to]; return `<li><b>${esc(tag(A))} to ${esc(tag(B))}, ${esc(B.name.replace(/^Rack R1: /, ''))}</b> (${esc(B.levelName)}, ${esc(B.room)}): ${esc(Fb.cable)}, about ${Fb.lengthFt} ft. ${esc(Fb.route)}. Steps: ${locSteps(Fb.points, 'G', true).map((s, i) => `(${i + 1}) ${esc(s)}`).join('; ')}.</li>`; }).join('') + '</ul>';
+    h += '</div>';
+  }
+  return h;
+}
 function buildReport(parts) {
   const rep = document.getElementById('report'), lightTypes = lv => [...new Set(DATA.lights.filter(l => l.level === lv).map(l => l.type))];
   const img = (title, svgEl, legend) => { const vb = svgEl.viewBox.baseVal, s = svgEl.cloneNode(true); s.removeAttribute('width'); s.removeAttribute('height'); s.setAttribute('class', 'main');
@@ -898,6 +1013,7 @@ function buildReport(parts) {
     + (parts.maps ? `<li>Level plans: ${LEVELS.map(l => pesc(l[1])).join(', ')}, each followed by its switch and cable tables</li>` : '')
     + (parts.circuits ? `<li>Circuit diagrams: ${document.querySelectorAll('#cktlist .cmap').length} circuits, one page each, followed by the device tables for each level</li>` : '')
     + (parts.switches ? `<li>Network switch diagrams: ${document.querySelectorAll('#netlist .cmap').length} switches, one page each, followed by the port tables for each level</li>` : '')
+    + (parts.locate ? '<li>Location sheets for the cabling contractor: every network switch and PoE presence sensor with its position, switch port and step-by-step cable route</li>' : '')
     + (parts.notes ? '<li>Written notes: owner decisions and instructions, open findings, load estimate</li>' : '') + (parts.inventory ? '<li>Inventory</li>' : '') + '</ul>'
     + `<div class="rp-qr">${qrSvg()}<div>Interactive 3D model and the latest version of these plans:</div><div class="url">${pesc(PAGE_URL)}</div></div></div>`;
   if (parts.maps) for (const [lv, name] of LEVELS) {
@@ -929,13 +1045,14 @@ function buildReport(parts) {
     }
     h += `<div class="rp-text"><h2>${pesc(name)}: network switch ports</h2>` + figs.map(f => `<h3>${pesc(f.querySelector('h3 span').textContent)}</h3>` + f.querySelector('table').outerHTML).join('') + '</div>';
   }
+  if (parts.locate) h += locPages();
   if (parts.notes) h += `<div class="rp-text"><h1>Written notes</h1>${mdToHtml(NOTES.decisions || '')}</div><div class="rp-text">${mdToHtml(NOTES.findings || '')}${mdToHtml(NOTES.load || '')}</div>`;
   if (parts.inventory) h += `<div class="rp-text">${document.getElementById('inventory').innerHTML.replace('<h3>Inventory</h3>', '<h1>Inventory</h1>')}</div>`;
   rep.innerHTML = h;
 }
 document.getElementById('mkreport').onclick = () => {
   if (printFig) closePrint();
-  const dlg = document.getElementById('printdlg'), PARTS = [['maps', 'Level plans with their switch and cable tables'], ['circuits', 'Circuit diagrams with their device tables'], ['switches', 'Network switch diagrams with their port tables'], ['notes', 'Written notes: owner decisions, open findings, load estimate'], ['inventory', 'Inventory']];
+  const dlg = document.getElementById('printdlg'), PARTS = [['maps', 'Level plans with their switch and cable tables'], ['circuits', 'Circuit diagrams with their device tables'], ['switches', 'Network switch diagrams with their port tables'], ['locate', 'Switch and presence sensor location sheets with cable routes (for the cabling contractor)'], ['notes', 'Written notes: owner decisions, open findings, load estimate'], ['inventory', 'Inventory']];
   dlg.innerHTML = `<h4>Full report (PDF)</h4><div class="muted">Every diagram goes on its own page in colour with a legend; text and tables go on separate pages. Plans are landscape, the shed is portrait.</div>`
     + PARTS.map(([k, t]) => `<label class="chk"><input type="checkbox" data-rk="${k}" checked> ${t}</label>`).join('')
     + `<div class="btns"><button id="rp-go" style="margin-left:auto">Create report / Save as PDF</button><button id="rp-x">Close</button></div><p>In the print window choose "Save as PDF" as the destination and leave the layout setting alone; the report sets the orientation of each page itself.</p>`;
