@@ -132,8 +132,7 @@ The PDF wins for geometry; these are the differences found.
 - **Smoke/CO**: A.2 note 9 requires hardwired interconnected alarms and shows a smoke and a CO alarm in the
   hallway. Now drawn as SD1 and CO1 on the hallway ceiling (about 2.5 ft north of the A.2 spot to clear
   other symbols). Check with the inspector whether the garage itself needs a heat alarm.
-- **Grounding**: G3 is a new ground bar under the stair by switch 18 for SP3 (doorbell 16); bond it to the
-  service ground at MP with a short, straight conductor. G and G2 are noted as bonded to the addition ground. Check that this means the service
+- **Grounding**: SP3 and ground bar G3 (doorbell 16) were removed (owner decision, Nov 14, 2026). G and G2 are noted as bonded to the addition ground. Check that this means the service
   grounding electrode system (intersystem bonding termination), and that the coax entry at device 1 has its
   ground block bonded to the same point.
 
@@ -433,7 +432,7 @@ doorbell; new switch 16 (8-port, family room southeast corner) takes the east ha
 | 8 | 4 | Sensor 6, media ceiling | Cat6 | 35 ft | 3 W |
 | 8 | 5 | Sensor 3, hall ceiling at the media door | Cat6 | 45 ft | 3 W |
 | 8 | 6-9 | Jacks 7 (four), projector wall | 4 x Cat6A | 4 x 45 ft | 60 W |
-| 8 | 10 | Doorbell 14, balcony (via SP1 on GB1) | Cat6 | 40 ft | 10 W |
+| 8 | 10 | Doorbell 14, balcony | Cat6 | 40 ft | 10 W |
 | 8 | 11-12 | Jacks 17 (two), high on the media south wall by H3 (added Nov 12, 2026) | 2 x Cat6A | 2 x 20 ft | none |
 | 16 (family SE) | 1 | AP 15, kitchen/family ceiling | Cat6A | 25 ft | 21 W |
 | 16 | 2 | Sensor 12, near the balcony door | Cat6 | 25 ft | 3 W |
@@ -474,7 +473,7 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 | 18 | 4 | Sensor 20, hallway landing | Cat6 | 25 ft | 3 W |
 | 18 | 5 | Sensor 19, hallway east wall | Cat6 | 30 ft | 3 W |
 | 18 | 6 | Sensor 15, over the doorway | Cat6 | 45 ft | 3 W |
-| 18 | 7 | Doorbell 16, front door east side (via SP3 on G3) | Cat6 | 50 ft | 10 W |
+| 18 | 7 | Doorbell 16, front door east side | Cat6 | 50 ft | 10 W |
 | 18 | 8 | Camera 10, ceiling by the WashTower | Cat6 | 30 ft | 5 W |
 
 - Sensor 12 moved from switch 2 to switch 7: it is 11 ft from 7 and 19 ft from 2, and 7 has spare ports.
@@ -497,9 +496,9 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 |-----|-----------|
 | Garage cameras 3, 4, AP 5 | Yes, SP1 on G |
 | Garage camera 8 | Yes, SP2 on G2 |
-| Garage doorbell 16 | Yes, SP3 at the switch 18 end, on ground bar G3 (bonded to the service ground at MP) |
+| Garage doorbell 16 | No. SP3 and G3 removed (owner decision, Nov 14, 2026). The run is under the hallway roof; a surge on it would reach switch 18 |
 | Garage jacks 11 | Indoor (east face of the wall between the doors), not needed |
-| Second-floor doorbell 14 | Yes, SP1 at the switch 8 end on ground bar GB1, bonded to garage ground bar G below |
+| Second-floor doorbell 14 | No. SP1 and GB1 removed (owner decision, Nov 14, 2026). A surge on it would reach switch 8 |
 | Shed camera 2 | Yes, SP on G |
 | Shed AP 3 | Indoor, not needed |
 
@@ -525,8 +524,8 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
    If trolley openers stay, keep O1/O2 as ordinary GFCI wall receptacles at the jambs.
 3. **Which switch feeds hallway AP 17?** Answered (Nov 10, 2026): switch 18, about 6 ft away. That brings 18 to 8 PoE devices, so it
    must be an 8-port PoE+ switch with a fiber uplink.
-4. **Does doorbell 16 get a surge protector?** Resolved (owner decision, Nov 10, 2026): SP3 is drawn at the
-   switch 18 end, bonded to the service ground at MP. Second-floor doorbell 14 now has SP1 on ground bar GB1 as well.
+4. **Does doorbell 16 get a surge protector?** Resolved (owner decision, Nov 14, 2026): no. The video doorbells
+   16 and 14 have no surge protector and no ground bar; SP3, G3, SP1 (second floor) and GB1 were removed. This replaces the Nov 10 decision.
 5. **Are all four outside garage lights OK on S3?** Answered (Nov 10, 2026): yes, one switch is what the owner wants. They work as one scene and smart fixtures can still
    be grouped or scheduled. Add the same scene to S7 so they can be controlled from the hallway side.
 6. **Blind outlets in the gaps between the west-office south windows?** Answered (Nov 10, 2026): no. Earlier advice, not in the gaps: A.4 shows about

@@ -102,7 +102,7 @@ Devices
 13 Presence sensor, east half
 14 Hall sensor, north wall, faces south
 15 Presence sensor, over doorway
-16 PoE video doorbell, surge SP3
+16 PoE video doorbell
 A W/D: 120V (C9) + 240V 30A (C15) + gas stub
 B Outdoor outlet, AirGradient, C2 GFCI, WR
 P22 Computers, printers outlet, C8 20A GFCI
@@ -139,7 +139,7 @@ C4 O1-O4 20A GFCI
 C5, C6 EV1, EV2 60A
 Grounding and surge (new)
 P13 High outlet beside switch 2 (C1, GFCI)
-G, G2, G3 Ground bars (SW, NW, stair), bonded
+G, G2 Ground bars (SW, NW), bonded
 SP1 Surge, cameras 3, 4 and AP 5
 SP2 Surge, camera 8, on G2
 O3, O4 Ceiling outlets, trolley openers, centered on each door, GFCI
@@ -175,10 +175,9 @@ MS1-MS4 Hardwired 240V 30A connections, one per mini-split condenser, at the fou
 MS1, MS2 north wall (24, 27.5 ft); MS3, MS4 west wall under the stair. C11-C14 30A 240V each, with disconnects
 P18, P19 Outdoor 125V 20A GFCI weather-resistant service outlets on C2: P18 north wall by MS1, P19 west wall by MS4
 Indoor mini-split units are fed from their condensers; no outlets for them.
-SP3
 Windows (blue), sizes from A.2: two 2840 on the north wall, centred 13.7 and 29.7 ft from the west wall;
 one 2840 (tempered) on the west wall, centred 3 ft from the north wall.
-SP3 Surge protector for PoE doorbell 16, at the switch 18 end of its cable, on ground bar G3.
+SP3 (surge protector for doorbell 16) removed (Nov 14, 2026).
 H1
 H2
 H3
@@ -197,8 +196,7 @@ Door between the hallway and the old house (A.2): 3068 in the hallway east wall,
 hinged on its north jamb, swings into the hallway. S4 and S5 are a two-gang on the east wall at its south (latch) edge.
 Front door from the hallway to the deck (A.2): 3068 in the hallway south wall, hinged on its west jamb, swings into
 the hallway. Its latch side is east, next to S4 and S5.
-G3
-G3 Ground bar under the stair by switch 18, bonded to the service ground at MP; SP3 lands on it.
+G3 (ground bar under the stair for SP3) removed (Nov 14, 2026).
 Doorbell 16 moved to the east (latch) side of the front door; L13 centred over the door. 16 is wired to switch 18 (PoE).
 P21
 P21 Outdoor GFCI weather-resistant outlet with an in-use cover, outside the hallway south wall just west of the front
@@ -217,3 +215,4 @@ F1 Feeder to shed subpanel A, 60A 240V, 2-pole breaker in MP (owner agreed, Nov 
 Switch 7 is now a 16-port PoE switch with a fiber port (owner decision, Nov 12, 2026): 9 copper ports are used.
 Cameras 3, 4 are wired to switch 2, cameras 8, 9 to switch 7 and camera 10 to switch 18 (owner decision, Nov 12, 2026).
 Removed (Nov 14, 2026, owner decision): stair-foot switch S9 and the east stair wall lights L30-L32 it controlled. S8 (riser lights) stays.
+Nov 14, 2026 (owner decision): no surge protector or ground bar on the video doorbell. SP3 and G3 removed.

@@ -3580,7 +3580,7 @@
    "y": 5.08,
    "z": 23.78,
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Outdoor copper run: surge protector SP3 on ground bar G3 at switch 18",
+   "note": "Outdoor copper run, no surge protector (owner decision, Nov 14, 2026)",
    "cable": "G:C16"
   },
   {
@@ -3818,7 +3818,7 @@
    "y": 15.46,
    "z": 15.71,
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "West half of the floor, the projector jacks and doorbell 14 (via SP1 on GB1)",
+   "note": "West half of the floor, the projector jacks and doorbell 14",
    "fiber": "2:F8"
   },
   {
@@ -3848,7 +3848,7 @@
    "y": 14.46,
    "z": 19.47,
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "Outdoor copper run: surge protector SP1 on ground bar GB1 at switch 8",
+   "note": "Outdoor copper run, no surge protector (owner decision, Nov 14, 2026)",
    "cable": "2:C14"
   },
   {
@@ -5459,7 +5459,7 @@
    "count": 1,
    "port": "7",
    "lengthFt": 50,
-   "route": "From SP3 at switch 18 with the hallway bundle down the east wall, out through the south wall beside the front door",
+   "route": "From switch 18 with the hallway bundle down the east wall, out through the south wall beside the front door",
    "points": [
     [
      41.15,
@@ -5854,7 +5854,7 @@
    "count": 1,
    "port": "10",
    "lengthFt": 40,
-   "route": "From SP1 at switch 8 east along the media south wall, out to the balcony, along the wall to the doorbell",
+   "route": "From switch 8 east along the media south wall, out to the balcony, along the wall to the doorbell",
    "points": [
     [
      2.19,

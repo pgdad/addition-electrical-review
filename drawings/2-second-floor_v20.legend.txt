@@ -62,7 +62,7 @@ Power (amber)
 11 Sensor near hallway entry door
 12 Sensor near balcony door
 13 Bath ceiling sensor
-14 PoE doorbell, north of balcony door, SP1
+14 PoE doorbell, north of balcony door
 15 UniFi ceiling AP, kitchen/family border
 A Projector wall, 4 outlets
 B Motorized screen, smart control
@@ -231,13 +231,11 @@ CO1 Carbon monoxide alarm, hall ceiling, beside SD1
 Hardwired, interconnected, battery backup (A.2 note 9); on a lighting circuit, confirm with electrician
 S18
 S18 Bath fan, its own on/off switch, just below S11
-SP1
-GB1
 GFCI and AFCI (NEC 2023): GFCI on every kitchen and laundry circuit including the range, fridge, dishwasher/disposal,
 microwave and WashTower; AFCI on every 120V 15A and 20A circuit except bath C10 and balcony C14. Use dual-function
 breakers where both apply. Sauna heater C2 per its manual. Confirm with the electrician and inspector.
-SP1 Surge protector for PoE doorbell 14, at the switch 8 end of its cable in the SW closet, on ground bar GB1.
-GB1 Ground bar in the SW closet by switch 8, bonded down to garage ground bar G in the corner directly below.
+SP1 (surge protector for doorbell 14) removed (Nov 14, 2026).
+GB1 (ground bar in the SW closet for SP1) removed (Nov 14, 2026).
 S21
 S22
 S23
@@ -295,3 +293,4 @@ New outlet P28 on fridge circuit C6: high on the north wall above the refrigerat
 17 Two Ethernet jacks (data only), high on the media room south wall beside blind outlet H3; wired to switch 8 (Nov 12, 2026).
 Removed (Nov 14, 2026, owner decision): hall wall lights L1-L6 and stair wall lights L30-L34, with their switches S1, S2, S19, S20, S15, S16.
 The stairs keep riser lights L7, L8 and west stair ceiling lights L35, L40. The hall now has no light of its own: check with the electrician.
+Nov 14, 2026 (owner decision): no surge protector or ground bar on the video doorbell. SP1 and GB1 removed.
