@@ -929,15 +929,15 @@ function locSteps(pts, lv, world) {                 // turn-by-turn text for a 3
   return out;
 }
 function locPages() {
-  const PRE = { switch: 'SW ', sensor: 'PS ', jack: 'J ' }, cabs = Object.values(cableByKey), fibs = Object.values(fiberByKey), esc = pesc, hex = c => '#' + c.toString(16).padStart(6, '0');
+  const PRE = { switch: 'SW ', sensor: 'PS ', jack: 'J ', ap: 'AP ', camera: 'CAM ', doorbell: 'DB ' }, cabs = Object.values(cableByKey), fibs = Object.values(fiberByKey), esc = pesc, hex = c => '#' + c.toString(16).padStart(6, '0');
   const tag = N => /^Rack R1/.test(N.name) ? 'R1' : (PRE[N.kind] || '') + N.id;
-  const mountOf = N => N.y - locFloor(N.level, N.x) >= 8.5 ? 'ceiling' : 'wall';
-  const coord = (lv, N) => `<td>${ftin(N.x - LOC_DATUM[lv][0])}</td><td>${ftin(N.z - LOC_DATUM[lv][1])}</td><td>${ftin(N.y - locFloor(lv, N.x))} above the ${locFloorName(lv, N.x)}</td>`;
-  let h = `<div class="rp-text"><h1>Network switch, presence sensor and Ethernet jack locations, with conduit routing</h1>`
-    + `<p>These pages give the position of every network switch, every PoE presence sensor and every Ethernet jack location, and a step-by-step route for the conduit to each one. Each level has one location plan followed by its tables.</p>`
+  const mountOf = N => N.y - locFloor(N.level, N.x) >= 8.5 || /ceiling/i.test(N.name + ' ' + N.room) ? 'ceiling' : 'wall';
+  const coord = (lv, N) => `<td>${locE(N.x - LOC_DATUM[lv][0]).replace(' E', '')}</td><td>${locS(N.z - LOC_DATUM[lv][1]).replace(' S', '')}</td><td>${ftin(N.y - locFloor(lv, N.x))} above the ${locFloorName(lv, N.x)}</td>`;
+  let h = `<div class="rp-text"><h1>Network device locations, with conduit routing</h1>`
+    + `<p>These pages give the position of every network switch, PoE presence sensor, Ethernet jack location, Wi-Fi access point, camera and doorbell, and a step-by-step route for the conduit to each one. Each level has one location plan followed by its tables.</p>`
     + `<h3>Who does what</h3><ul>`
-    + `<li><b>Electrician:</b> installs the empty network conduits along the routes on these pages, with a box or low-voltage ring at each switch, sensor and jack position, and a pull string left in every conduit. The electrician does not supply, pull, terminate or test any network cable.</li>`
-    + `<li><b>Owner:</b> supplies and pulls all copper (Ethernet) and fiber cables after the conduits are in, and terminates, labels and tests them. The owner also supplies and mounts the switches, sensors and jack plates.</li>`
+    + `<li><b>Electrician:</b> installs the empty network conduits along the routes on these pages, with a box or low-voltage ring at each device position, and a pull string left in every conduit. The electrician does not supply, pull, terminate or test any network cable.</li>`
+    + `<li><b>Owner:</b> supplies and pulls all copper (Ethernet) and fiber cables after the conduits are in, and terminates, labels and tests them. The owner also supplies and mounts the switches, sensors, jack plates, access points, cameras, doorbells and surge protectors.</li>`
     + `<li>The switch port, cable type, PoE and cable length columns are the owner's own reference for pulling cable. They are not part of the electrician's work, except that they show how many cables each conduit has to carry.</li></ul>`
     + `<h3>How positions are given</h3><ul>`
     + `<li><b>E</b> and <b>S</b> are horizontal distances east and south of that level's datum corner, measured along the building (the plans are drawn north up, and the walls run north-south and east-west). The datum is named at the top of each level's tables and marked with a cross on its plan. The plan has a grid line every 5 ft from the datum.</li>`
@@ -947,6 +947,8 @@ function locPages() {
     + `<h3>Conduits (electrician)</h3><ul>`
     + `<li><b>Presence sensors:</b> one conduit run from the listed network switch to each sensor, ending in a box or low-voltage ring at the sensor position. Runs that leave a switch together may share one larger trunk conduit and branch off at a pull box, as long as every sensor is reached; the step lists show where runs share a path.</li>`
     + `<li><b>Ethernet jacks:</b> one conduit run from the listed network switch to each jack location, sized for the number of cables in the table (two or four), ending in a box big enough for that many jacks. Wall jacks get a wall box at the listed height; the two third-floor floor locations get a floor box flush with the finished floor.</li>`
+    + `<li><b>Access points, cameras and doorbells:</b> one conduit run from the listed network switch to each device, ending in a box or low-voltage ring at the listed position (ceiling or wall, as the table says).</li>`
+    + `<li><b>Outdoor devices</b> (marked "outdoor" in the tables): the conduit goes through the exterior wall to a weatherproof box at the device, with the penetration sealed. Each outdoor copper run gets a surge protector at the switch end, on the ground bar named in the table. To confirm with the electrician: the ground bars and their bonding are electrical work; the owner fits the surge protectors.</li>`
     + `<li><b>Switch uplinks:</b> one conduit path from each network switch to rack R1 on the third floor for its fiber. The garage, hallway and shed uplinks share the riser on the garage north wall; they may share one conduit from where they meet.</li>`
     + `<li><b>Routes:</b> the end points are fixed. The path between them is proposed and may be adjusted to suit the framing; tell the owner about any change, because it changes the cable lengths.</li>`
     + `<li><b>Pulling:</b> leave a pull string in every conduit, use sweep bends (no sharp elbows, since fiber and Cat6 have a minimum bend radius), and add a pull box where a run would otherwise have more than two 90 degree bends or be longer than about 100 ft. Mark each conduit end with the device it serves (for example "PS 12").</li>`
@@ -955,6 +957,7 @@ function locPages() {
     + `<h3>Cables (owner)</h3><ul>`
     + `<li><b>Presence sensors:</b> one Cat6 cable each, home-run with no splices from the listed switch port to the sensor. Each sensor draws about 3 W of PoE. Leave about 3 ft of slack at the sensor and 6 ft at the switch, and label both ends with the switch and port and the sensor number.</li>`
     + `<li><b>Ethernet jacks:</b> one Cat6A cable per jack (two or four per location), home-run with no splices from the listed switch ports to a keystone jack in the box. Label each jack with its switch and port.</li>`
+    + `<li><b>Access points, cameras and doorbells:</b> one cable each (Cat6A to access points, Cat6 to cameras and doorbells), home-run from the listed switch port, PoE as listed. Outdoor runs pass through their surge protector at the switch end.</li>`
     + `<li><b>Switch uplinks:</b> one duplex single-mode (OS2) fiber with LC connectors from each network switch to the fiber aggregation switch in rack R1. Leave about 10 ft coiled at R1 and 6 ft at the switch.</li>`
     + `<li>Listed lengths are estimates that include the vertical drops; allow about 15% extra.</li></ul>`
     + `<h3>Points to check with the electrician and the inspector</h3><ul>`
@@ -962,9 +965,9 @@ function locPages() {
     + `<li>Firestop every conduit penetration through a top plate, floor or rated wall (electrician). The owner uses riser-rated cable (CMR, OFNR for fiber) between floors.</li>`
     + `<li>The shed fiber conduit runs underground, separate from the power feeder F1; confirm the separation in the shared trench and use sweeps at both ends so fiber can be pulled.</li>`
     + `<li>Network switch 18 and the main panel are both drawn under the garage stair. If the panel moves (review finding 1), confirm the switch position before running conduit to it.</li>`
-    + `<li>Access points, cameras and doorbells are not on these sheets; their runs are listed in the network switch port tables.</li></ul></div>`;
+    + `</ul></div>`;
   for (const [lv, name] of LEVELS) {
-    const sws = NETS.filter(n => n.level === lv && n.kind === 'switch'), sens = NETS.filter(n => n.level === lv && n.kind === 'sensor'), jks = NETS.filter(n => n.level === lv && n.kind === 'jack'); if (!sws.length && !sens.length && !jks.length) continue;
+    const sws = NETS.filter(n => n.level === lv && n.kind === 'switch'), sens = NETS.filter(n => n.level === lv && n.kind === 'sensor'), jks = NETS.filter(n => n.level === lv && n.kind === 'jack'), oth = NETS.filter(n => n.level === lv && ['ap', 'camera', 'doorbell'].includes(n.kind)); if (!sws.length && !sens.length && !jks.length && !oth.length) continue;
     const P = PLAN[lv], { x0, z0, wpx, hpx, K } = mapGeo[lv], X = x => ((x - x0) * K).toFixed(1), Y = z => ((z - z0) * K).toFixed(1), D = LOC_DATUM[lv];
     let g = '';
     for (let fx = Math.ceil((x0 - D[0]) / 5) * 5; D[0] + fx <= x0 + wpx / K; fx += 5) g += `<line x1="${X(D[0] + fx)}" y1="14" x2="${X(D[0] + fx)}" y2="${hpx.toFixed(0)}" stroke="#2c3442" stroke-width="${fx ? 0.6 : 1.2}"/><text x="${X(D[0] + fx)}" y="10" text-anchor="middle" font-size="9" fill="#8d99ab">${fx}' E</text>`;
@@ -972,17 +975,20 @@ function locPages() {
     g += planBase(P, X, Y);
     const dx = +X(D[0]), dy = +Y(D[1]);
     g += `<path d="M${dx - 9} ${dy}H${dx + 9}M${dx} ${dy - 9}V${dy + 9}" stroke="#ff7043" stroke-width="2"/><circle cx="${dx}" cy="${dy}" r="4" fill="none" stroke="#ff7043" stroke-width="1.5"/><text x="${dx + 8}" y="${dy - 6}" font-size="10" font-weight="700" fill="#ff7043">Datum 0, 0</text>`;
-    const isEnd = k => k === 'sensor' || k === 'jack', cnt = C => (C.count > 1 ? C.count + ' x ' : '');
-    for (const C of cabs) if (C.level === lv && isEnd(netByKey[C.to].kind)) g += `<polyline points="${C.points.map(p => X(p[0]) + ',' + Y(p[2])).join(' ')}" fill="none" stroke="${hex(NET_COLOR[netByKey[C.to].kind])}" stroke-width="1.3" stroke-dasharray="${netByKey[C.to].kind === 'jack' ? '2 3' : '6 3'}" opacity="0.85"/>`;
+    const isEnd = k => k !== 'switch', cnt = C => (C.count > 1 ? C.count + ' x ' : '');
+    for (const C of cabs) if (C.level === lv && isEnd(netByKey[C.to].kind)) g += `<polyline points="${C.points.map(p => X(p[0]) + ',' + Y(p[2])).join(' ')}" fill="none" stroke="${hex(NET_COLOR[netByKey[C.to].kind])}" stroke-width="1.3" stroke-dasharray="${C.poeW ? '6 3' : '2 3'}" opacity="0.85"/>`;
     for (const Fb of fibs) if (Fb.plan[lv]) g += `<polyline points="${Fb.plan[lv].map(p => X(p[0]) + ',' + Y(p[1])).join(' ')}" fill="none" stroke="${hex(FIBER_COLOR)}" stroke-width="2" opacity="0.9"/>`;
     const boxes = [[dx - 10, dy - 18, dx + 78, dy + 10]], hit = b => boxes.some(o => b[0] < o[2] && o[0] < b[2] && b[1] < o[3] && o[1] < b[3]);
-    for (const N of [...sws, ...sens, ...jks]) {
+    for (const N of [...sws, ...sens, ...jks, ...oth]) {
       const x = +X(N.x), y = +Y(N.z), c = hex(NET_COLOR[N.kind]);
-      g += N.kind === 'jack' ? `<rect x="${x - 5}" y="${y - 5}" width="10" height="10" fill="#141820" stroke="${c}" stroke-width="2"/>` : N.kind === 'switch' ? `<rect x="${x - 7}" y="${y - 7}" width="14" height="14" transform="rotate(45 ${x} ${y})" fill="${c}" stroke="#0c0f14" stroke-width="0.8"/>` : `<path d="M${x} ${y - 7}L${x + 7} ${y + 5}L${x - 7} ${y + 5}Z" fill="${c}" stroke="#0c0f14" stroke-width="0.8"/>`;
+      g += N.kind === 'ap' ? `<circle cx="${x}" cy="${y}" r="7.5" fill="#141820" stroke="${c}" stroke-width="1.4"/><circle cx="${x}" cy="${y}" r="3.5" fill="${c}"/>`
+        : N.kind === 'camera' ? `<rect x="${x - 7}" y="${y - 5}" width="14" height="10" rx="2" fill="${c}" stroke="#0c0f14" stroke-width="0.8"/><circle cx="${x}" cy="${y}" r="2.6" fill="#141820"/>`
+        : N.kind === 'doorbell' ? `<rect x="${x - 4}" y="${y - 6}" width="8" height="12" rx="2" fill="${c}" stroke="#0c0f14" stroke-width="0.8"/>`
+        : N.kind === 'jack' ? `<rect x="${x - 5}" y="${y - 5}" width="10" height="10" fill="#141820" stroke="${c}" stroke-width="2"/>` : N.kind === 'switch' ? `<rect x="${x - 7}" y="${y - 7}" width="14" height="14" transform="rotate(45 ${x} ${y})" fill="${c}" stroke="#0c0f14" stroke-width="0.8"/>` : `<path d="M${x} ${y - 7}L${x + 7} ${y + 5}L${x - 7} ${y + 5}Z" fill="${c}" stroke="#0c0f14" stroke-width="0.8"/>`;
       boxes.push([x - 9, y - 9, x + 9, y + 9]);
     }
-    for (const N of [...sws, ...sens, ...jks]) {
-      const x = +X(N.x), y = +Y(N.z), c = hex(NET_COLOR[N.kind]), t1 = tag(N), t2 = `${ftin(N.x - D[0])} E, ${ftin(N.z - D[1])} S`, w = t2.length * 4.6 + 6;
+    for (const N of [...sws, ...sens, ...jks, ...oth]) {
+      const x = +X(N.x), y = +Y(N.z), c = hex(NET_COLOR[N.kind]), t1 = tag(N), t2 = `${locE(N.x - D[0])}, ${locS(N.z - D[1])}`, w = t2.length * 4.6 + 6;
       const tries = [[x, y + 20], [x, y - 24], [x + w / 2 + 12, y - 2], [x - w / 2 - 12, y - 2], [x + w / 2 + 12, y + 22], [x - w / 2 - 12, y - 26], [x + w / 2 + 12, y - 26], [x - w / 2 - 12, y + 22], [x, y + 44], [x, y - 48]];
       const fit = tries.map(([cx, cy]) => [Math.min(Math.max(cx, w / 2 + 2), wpx - w / 2 - 2), Math.min(Math.max(cy, 24), hpx - 14)]);
       const [cx, cy] = fit.find(([a, b]) => !hit([a - w / 2, b - 10, a + w / 2, b + 12])) || fit[0];
@@ -991,12 +997,13 @@ function locPages() {
         + `<text x="${cx.toFixed(1)}" y="${(cy + 10).toFixed(1)}" text-anchor="middle" font-size="8.5" fill="#e6e9ee" stroke="#141820" stroke-width="3" paint-order="stroke">${esc(t2)}</text>`;
     }
     const tmp = document.createElement('div'); tmp.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${wpx.toFixed(0)} ${hpx.toFixed(0)}">${g}</svg>`;
-    const port = hpx > wpx, leg = [...(sws.length ? [LEG.nsw] : []), ...(sens.length ? [LEG.sensor, [LEG.poe[0], 'Conduit route to a presence sensor']] : []), ...(jks.length ? [LEG.jack, [LEG.data[0], 'Conduit route to an Ethernet jack location']] : []), LEG.fiber,
+    const port = hpx > wpx, leg = [...(sws.length ? [LEG.nsw] : []), ...(sens.length ? [LEG.sensor] : []), ...(jks.length ? [LEG.jack] : []), ...(oth.some(n => n.kind === 'ap') ? [LEG.ap] : []), ...(oth.some(n => n.kind === 'camera') ? [LEG.cam] : []), ...(oth.some(n => n.kind === 'doorbell') ? [LEG.bell] : []),
+      ...(sens.length + jks.length + oth.length ? [[LEG.poe[0], 'Conduit route, PoE run (colour of the device)'], [LEG.data[0], 'Conduit route, data-only run']] : []), LEG.fiber,
       [(x, y) => `<path d="M${x - 7} ${y}H${x + 7}M${x} ${y - 7}V${y + 7}" stroke="#ff7043" stroke-width="2"/>`, 'Datum corner'], [(x, y) => `<line x1="${x - 10}" y1="${y}" x2="${x + 10}" y2="${y}" stroke="#2c3442" stroke-width="1.5"/>`, 'Grid, 5 ft from the datum'],
       LEG.wall, LEG.part, LEG.dash, ...(P.windows ? [LEG.win] : [])];
-    h += `<div class="rp-img ${port ? 'port' : 'land'}"><h2>${esc(name)}: location plan for network switches, presence sensors and Ethernet jacks (E, S in feet and inches from the datum)</h2>${tmp.firstChild.outerHTML.replace('<svg ', '<svg class="main" ')}${legendSvg(leg, port ? 700 : 1000)}</div>`;
+    h += `<div class="rp-img ${port ? 'port' : 'land'}"><h2>${esc(name)}: location plan for all network devices (E, S in feet and inches from the datum)</h2>${tmp.firstChild.outerHTML.replace('<svg ', '<svg class="main" ')}${legendSvg(leg, port ? 700 : 1000)}</div>`;
     // tables
-    h += `<div class="rp-text"><h2>${esc(name)}: switch, sensor and jack locations</h2><p><b>Datum:</b> ${esc(D[2])}. E = east of it, S = south of it.</p>`;
+    h += `<div class="rp-text"><h2>${esc(name)}: network device locations</h2><p><b>Datum:</b> ${esc(D[2])}. E = east of it, S = south of it.</p>`;
     if (sws.length) h += `<h3>Network switches</h3><table><thead><tr><th>ID</th><th>Device</th><th>E</th><th>S</th><th>Height</th><th>Position</th><th>Notes</th></tr></thead><tbody>`
       + sws.map(N => `<tr><td style="white-space:nowrap">${esc(tag(N))}</td><td>${esc(N.name)}</td>${coord(lv, N)}<td>${esc(N.room)}. ${esc(locWallText(lv, N, 'wall'))}</td><td>${esc(N.note || '')}</td></tr>`).join('') + '</tbody></table>';
     if (sens.length) h += `<h3>PoE presence sensors</h3><table><thead><tr><th>ID</th><th>Mount</th><th>E</th><th>S</th><th>Height</th><th>Position</th><th>Switch / port (owner)</th><th>Cable (owner)</th></tr></thead><tbody>`
@@ -1005,9 +1012,12 @@ function locPages() {
     if (jks.length) h += `<h3>Ethernet jack locations</h3><table><thead><tr><th>ID</th><th>Jacks</th><th>Mount</th><th>E</th><th>S</th><th>Height</th><th>Position</th><th>Switch / ports (owner)</th><th>Cables (owner)</th></tr></thead><tbody>`
       + jks.map(N => { const C = cabs.find(c => c.to === N.key), fl = N.y - locFloor(lv, N.x) < 0.5, m = fl ? 'floor box' : 'wall';
           return `<tr><td style="white-space:nowrap">${esc(tag(N))}</td><td>${C ? C.count || 1 : ''}</td><td>${m}</td><td>${ftin(N.x - D[0])}</td><td>${ftin(N.z - D[1])}</td><td>${fl ? 'flush with the ' + locFloorName(lv, N.x) : ftin(N.y - locFloor(lv, N.x)) + ' above the ' + locFloorName(lv, N.x)}</td><td>${esc(N.room)}. ${esc(locWallText(lv, N, fl ? 'ceiling' : 'wall'))}</td><td>${C ? esc(tag(netByKey[C.from])) + ' / ports ' + C.port : 'not assigned'}</td><td>${C ? `${cnt(C)}${C.cable}, ${C.poeW ? 'PoE available' : 'data only'}, about ${C.lengthFt} ft each` : ''}</td></tr>`; }).join('') + '</tbody></table>';
+    if (oth.length) h += `<h3>Access points, cameras and doorbells</h3><table><thead><tr><th>ID</th><th>Device</th><th>Mount</th><th>E</th><th>S</th><th>Height</th><th>Position</th><th>Switch / port (owner)</th><th>Cable (owner)</th></tr></thead><tbody>`
+      + oth.map(N => { const C = cabs.find(c => c.to === N.key), out = /^Outside|^Balcony/.test(N.room), m = out ? 'outdoor wall' : mountOf(N);
+          return `<tr><td style="white-space:nowrap">${esc(tag(N))}</td><td>${esc(N.name)}</td><td>${m}</td>${coord(lv, N)}<td>${esc(N.room)}. ${esc(locWallText(lv, N, out ? 'outdoor' : m))}${N.note ? '. ' + esc(N.note) : ''}</td><td>${C ? esc(tag(netByKey[C.from])) + ' / port ' + C.port : 'not assigned'}</td><td>${C ? `${C.cable}, PoE ${C.poeW} W, about ${C.lengthFt} ft` : ''}</td></tr>`; }).join('') + '</tbody></table>';
     const runs = cabs.filter(c => c.level === lv && isEnd(netByKey[c.to].kind)), lf = fibs.filter(f => netByKey[f.from].level === lv);
     if (runs.length) {
-      h += `<h3>Conduit routes to the presence sensors and Ethernet jacks (proposed; electrician installs conduit, owner pulls the cable)</h3>`;
+      h += `<h3>Conduit routes to the devices (proposed; electrician installs conduit, owner pulls the cable)</h3>`;
       for (const Wn of NETS.filter(n => n.kind === 'switch')) { const mineRuns = runs.filter(c => c.from === Wn.key); if (!mineRuns.length) continue;
         h += `<p><b>From ${esc(tag(Wn))}</b> (${esc(Wn.room)}; ${ftin(Wn.x - D[0])} E, ${ftin(Wn.z - D[1])} S):</p><ul>`
           + mineRuns.map(C => { const N = netByKey[C.to]; const fl = N.kind === 'jack' && N.y - locFloor(lv, N.x) < 0.5; return `<li><b>${esc(tag(N))}</b>, port${C.count > 1 ? 's' : ''} ${C.port}, ${cnt(C)}${C.cable}${C.count > 1 ? ' in one conduit' : ''}, about ${C.lengthFt} ft${C.count > 1 ? ' each' : ''}. ${esc(C.route)}. Steps from the switch: ${locSteps(C.points, lv, false).map((s, i) => `(${i + 1}) ${esc(s)}`).join('; ')}. Ends at ${esc(tag(N))}, ${fl ? 'flush with the ' + locFloorName(lv, N.x) : ftin(N.y - locFloor(lv, N.x)) + ' above the ' + locFloorName(lv, N.x)}.</li>`; }).join('') + '</ul>'; }
@@ -1029,7 +1039,7 @@ function buildReport(parts) {
     + (parts.maps ? `<li>Level plans: ${LEVELS.map(l => pesc(l[1])).join(', ')}, each followed by its switch and cable tables</li>` : '')
     + (parts.circuits ? `<li>Circuit diagrams: ${document.querySelectorAll('#cktlist .cmap').length} circuits, one page each, followed by the device tables for each level</li>` : '')
     + (parts.switches ? `<li>Network switch diagrams: ${document.querySelectorAll('#netlist .cmap').length} switches, one page each, followed by the port tables for each level</li>` : '')
-    + (parts.locate ? '<li>Location sheets for network switches, PoE presence sensors and Ethernet jacks: positions and step-by-step conduit routes for the electrician; the owner pulls all copper and fiber cable</li>' : '')
+    + (parts.locate ? '<li>Location sheets for all network devices (switches, presence sensors, Ethernet jacks, access points, cameras, doorbells): positions and step-by-step conduit routes for the electrician; the owner pulls all copper and fiber cable</li>' : '')
     + (parts.notes ? '<li>Written notes: owner decisions and instructions, open findings, load estimate</li>' : '') + (parts.inventory ? '<li>Inventory</li>' : '') + '</ul>'
     + `<div class="rp-qr">${qrSvg()}<div>Interactive 3D model and the latest version of these plans:</div><div class="url">${pesc(PAGE_URL)}</div></div></div>`;
   if (parts.maps) for (const [lv, name] of LEVELS) {
@@ -1068,7 +1078,7 @@ function buildReport(parts) {
 }
 document.getElementById('mkreport').onclick = () => {
   if (printFig) closePrint();
-  const dlg = document.getElementById('printdlg'), PARTS = [['maps', 'Level plans with their switch and cable tables'], ['circuits', 'Circuit diagrams with their device tables'], ['switches', 'Network switch diagrams with their port tables'], ['locate', 'Switch, presence sensor and Ethernet jack location sheets with conduit routes (electrician installs conduit, owner pulls cable)'], ['notes', 'Written notes: owner decisions, open findings, load estimate'], ['inventory', 'Inventory']];
+  const dlg = document.getElementById('printdlg'), PARTS = [['maps', 'Level plans with their switch and cable tables'], ['circuits', 'Circuit diagrams with their device tables'], ['switches', 'Network switch diagrams with their port tables'], ['locate', 'Network device location sheets with conduit routes (electrician installs conduit, owner pulls cable)'], ['notes', 'Written notes: owner decisions, open findings, load estimate'], ['inventory', 'Inventory']];
   dlg.innerHTML = `<h4>Full report (PDF)</h4><div class="muted">Every diagram goes on its own page in colour with a legend; text and tables go on separate pages. Plans are landscape, the shed is portrait.</div>`
     + PARTS.map(([k, t]) => `<label class="chk"><input type="checkbox" data-rk="${k}" checked> ${t}</label>`).join('')
     + `<div class="btns"><button id="rp-go" style="margin-left:auto">Create report / Save as PDF</button><button id="rp-x">Close</button></div><p>In the print window choose "Save as PDF" as the destination and leave the layout setting alone; the report sets the orientation of each page itself.</p>`;
