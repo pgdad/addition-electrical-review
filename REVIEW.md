@@ -25,6 +25,7 @@ The owner settled most of the earlier findings on Nov 10, 2026; they are listed 
 | 1 | must-fix | Main panel MP is drawn on the north wall inside the footprint of the garage stair (x 36.7 to 39.7 ft). The stair soffit there is roughly 5 to 6 ft above the slab, below the 6.5 ft headroom a panel's working space needs. A.2 also shows a wall along the south side of that stair, so MP, the WashTower, modem 1, switch 18 and P1/P2 would be inside a 3'4" wide enclosed under-stair space. | garage v20: MP, W/D, 1, 18, L14 |
 | 2 | nice-to-have | Garage: nothing by the overhead doors controls L1 to L8 (S2 is on the west wall near the SW corner). A scene button between the doors would cover it. | garage v20: S2 |
 | 3 | nice-to-have | Second floor: motorized screen B covers the balcony door when it is down, and the exterior stair is unlit at the bottom. | second floor v20: B |
+| 4 | must-fix | Second floor: after the wall lights were removed (owner decision, Nov 14, 2026) the hall has no light of its own, and the east stair is lit only by riser lights L8. A hallway and a stairway each need a wall-switched light (NEC 210.70(A)(2)); check with the electrician/inspector whether riser lights count for the stairs, and add a switched hall light (ceiling lights would do). | second floor v20: hall, L7, L8 |
 
 ## PDF vs drawing geometry mismatches
 
@@ -49,8 +50,8 @@ The PDF wins for geometry; these are the differences found.
 - Every plotted ID has a legend row and every legend row has a symbol. MP is now labelled at the red bar.
 - IDs are unique. Resolved (Nov 10, 2026): outlet C is renamed P22 and drawn red; stair-foot switches E and F
   are renamed S8 and S9 and drawn green.
-- Cross-level pairs agree: S8 pairs with second-floor S4 (riser lights L8) and S9 with second-floor S16
-  (wall lights L30 to L32) on both drawings and in the notes.
+- Cross-level pairs agree: S8 pairs with second-floor S4 (riser lights L8) on both drawings and in the notes.
+  S9 and the east stair wall lights L30 to L32 were removed (owner decision, Nov 14, 2026).
 - Circuits (resolved): lighting is now C10 (15 A) and also feeds stair controllers D and alarms SD1/CO1;
   B is on C2, C on new dedicated C8, A on new laundry circuit C9.
 - Windows are now drawn from A.2: two 2840 units on the north wall (x 12.3 to 15.0 ft and 28.3 to 31.0 ft)
@@ -82,8 +83,8 @@ The PDF wins for geometry; these are the differences found.
   hinged on its west jamb and swinging into the hallway.
 - Resolved (owner decision, Nov 10, 2026): doorbell 16 is on the east (latch) side of the front door, and
   L13 is centred over the door to make room for it.
-- Resolved (Nov 10, 2026): S8 and S9 are a two-gang on the hallway west wall between the landing and the garage
-  door, clear of the door opening.
+- Resolved (Nov 10, 2026): S8 is on the hallway west wall between the landing and the garage
+  door, clear of the door opening (S9 beside it was removed Nov 14, 2026).
 - *nice-to-have*: nothing by the overhead doors controls L1 to L8 except S2 on the west wall near the SW corner.
   A scene button at jack location 11 between the doors would cover both.
 - Overhead doors: the doors are 16080. An open 8 ft door sits about 8.5 ft up and reaches about 9.5 ft back
@@ -141,8 +142,10 @@ The PDF wins for geometry; these are the differences found.
 ### Consistency
 - All plotted IDs have legend rows and the reverse; IDs are unique on this level.
 - Cross-level pairs agree in both directions: S3 with third-floor S8 (L7), S4 with garage S8 (L8),
-  S15 with third-floor S9 (L33, L34), S16 with garage S9 (L30 to L32), S17 with third-floor S10 (L35, L40).
-- Resolved (Nov 10, 2026): S3, S15, S17 and S19 are a four-gang row on the hall south wall at the stair foot,
+  S17 with third-floor S10 (L35, L40).
+- Removed (owner decision, Nov 14, 2026): hall wall lights L1 to L6 and stair wall lights L30 to L34, with their
+  switches S1, S2, S19, S20, S15, S16, garage S9 and third-floor S9. The IDs are not reused.
+- Resolved (Nov 10, 2026; updated Nov 14, 2026): S3 and S17 are a two-gang on the hall south wall at the stair foot,
   with P1 just east of them; controllers D are on the hall north wall at the stair foot.
 - Resolved (Nov 10, 2026): H4 was plotted on the balcony door opening; it is now above the east end of the
   east 3020 window.
@@ -150,24 +153,29 @@ The PDF wins for geometry; these are the differences found.
 
 ### Lighting control
 - Every light has a control. L21 (sauna) has no wall switch by design; it is on the heater control.
+- *must-fix* (Nov 14, 2026): with wall lights L1 to L6 removed, the hall (37 ft long, between the two stairs) has no
+  light at all; it would be lit only by spill from the stairs and the rooms. With L30 to L32 removed, the east stair
+  has only riser lights L8 (S4 + garage S8); the west stair keeps risers L7 and ceiling lights L35, L40. Check with
+  the electrician/inspector: NEC 210.70(A)(2) asks for a wall-switched lighting outlet in hallways and stairways,
+  with a switch at each floor level for the stairs. Suggestion: two or three hall ceiling lights on a 3-way pair
+  at the two stair ends, and confirm that the riser lights are accepted as the stair lighting.
 - Kitchen island floor lights (Nov 12, 2026): L36-L39 are low-voltage dimmable toe-kick lights, one on each side
   of the island, on new switch S27 below S8/S9 by the hall door, through dimming controller T inside the island.
   The switch and controller are my proposal; the owner asked only for the lights. Check with the electrician: the
   controller needs an accessible, ventilated spot in the island, and its supply comes up through the floor with
   the feed for island outlet P14.
-- Stair pairs have a switch at each end: S3/S15/S17 at the foot of the west stair (x 10.6 to 12.1 ft, stair
-  foot at x 9.6 ft) and S4/S16 at the head of the east stair (x 31.6 to 33.1 ft, first riser at x 33.8 ft).
+- Stair pairs have a switch at each end: S3/S17 at the foot of the west stair (stair
+  foot at x 9.6 ft) and S4 at the head of the east stair (first riser at x 33.8 ft).
 - 3-way pairs use an Inovelli main switch plus an Inovelli aux switch with a traveler (owner decision, Nov 10, 2026).
-  All 15 pairs are covered: garage S1/S2, S4/S7; stairs S8/S4, S9/S16, S3/S8, S15/S9, S17/S10; second floor
-  S1/S19, S2/S20, S8/S21, S5/S22, S6/S23, S24/S25, S10/S26; third floor S1/S2. The aux end of each pair is
-  listed on each drawing and is confirmed by the owner: the five stair mains are kept together in the second-floor gang.
+  All 11 pairs are covered: garage S1/S2, S4/S7; stairs S8/S4, S3/S8, S17/S10; second floor
+  S8/S21, S5/S22, S6/S23, S24/S25, S10/S26; third floor S1/S2. The aux end of each pair is
+  listed on each drawing and is confirmed by the owner: the three stair mains are kept together in the second-floor gang.
   *Check with the electrician:* a 3-conductor cable (traveler plus neutral) between the two boxes of each
-  pair, one traveler per pair (five separate travelers on the stair runs), the aux neutral taken from the
+  pair, one traveler per pair (three separate travelers on the stair runs), the aux neutral taken from the
   same circuit as its main, and each main switch set to "aux switch" multi-way mode. The aux model must
   be the one Inovelli lists for the White Series; an ordinary 3-way toggle will not work with it.
 - Companion switches (owner decision, Nov 10, 2026):
-  - Hall: S19 pairs with S1 (L1 to L3) at the foot of the west stair, and S20 pairs with S2 (L4 to L6) at the
-    head of the east stair. Each stair end lights its own half of the hall.
+  - Hall: S19 and S20 (companions to S1, S2) were removed on Nov 14, 2026 together with hall wall lights L1 to L6.
   - Kitchen: S21 pairs with S8 (L13 to L15) on the kitchen side of the media/kitchen door, at its latch edge.
   - Media: L9 and L10 are on separate switches (owner decision): S5 runs L9 and new S24 runs L10, both by
     the hall door with S6. Their companions S22 (L9), S25 (L10) and S23 (fan L11, on/off) are a three-gang
@@ -221,7 +229,7 @@ The PDF wins for geometry; these are the differences found.
   wall west of the hall door (7.8 ft of wall, none), family room stub south of the balcony door (7 ft to P9),
   media north wall between P3 and A (13 ft), and 6.5 ft from door edges to P6 and P7. *should-fix* at rough-in.
 - **Lighting circuits split (owner decision, Nov 12, 2026)**: C15 carries the kitchen, family room and bath/shower
-  lights (L13-L20, L22, L24, L36-L39), C16 all the rest (L1-L12, L23, L25-L35, L40). Every switch stays on one
+  lights (L13-L20, L22, L24, L36-L39), C16 all the rest (L7-L12, L23, L25-L29, L35, L40). Every switch stays on one
   circuit. Both are far below 15 A with LED loads.
 - **Circuit assignments (owner agreed, Nov 12, 2026)**: bath fan switch S18 and island controller T are on C15,
   stair light controllers D on C16, sauna light driver J also on C15 (owner decision, Nov 12, 2026; C3 is now
@@ -249,7 +257,8 @@ The PDF wins for geometry; these are the differences found.
 - Resolved (Nov 10, 2026): the wall Ethernet jack is renamed 14, so ID 6 is only the empty rack opening.
 - Resolved (Nov 10, 2026): colours now follow the key. Blind outlets are teal, network items purple and
   power items A to E amber.
-- Cross-level pairs agree: S8 with second-floor S3, S9 with S15, S10 with S17.
+- Cross-level pairs agree: S8 with second-floor S3, S10 with S17. S9 was removed on Nov 14, 2026 with
+  the stair wall lights L33, L34; S10 moved up beside S8.
 - L7: see the mismatch table.
 - Windows are now drawn from A.4 (Nov 12, 2026), in blue with their sizes like the other sheets: three 2846 on
   the west office south wall, two 3050 on the east office north wall, one 2850 on the east office south wall,
@@ -264,7 +273,7 @@ The PDF wins for geometry; these are the differences found.
 - S1 (top of stairs) and S2 (by the shared door) are at the two ends of the west office. Good.
 - Accepted (owner decision, Nov 10, 2026): the east office keeps one switch, S3 at the shared door, although
   the attic passage is a second entry; L6 stays on S4 (office side) and L8 on S6 (small attic side).
-- Accepted (owner decision): the four switches at the top of the stairs (S1, S8, S9, S10) stay separate.
+- Accepted (owner decision): the switches at the top of the stairs (S1, S8, S10; S9 removed Nov 14, 2026) stay separate.
 - S5 is on the closet's north edge by its door and is a plain on/off switch, and L7 is marked on the drawing
   as an ordinary, non-smart light (owner decision).
 - Reading nook (owner decision): L10 is a wall-mounted, cool-to-the-touch LED on the nook's north wall,
@@ -549,6 +558,7 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 
 **Must-fix**
 1. MP under the garage stair: headroom and working space (garage).
+4. Second-floor hall has no light and the east stair only riser lights, after the wall lights were removed (second floor).
 
 **Nice-to-have**
 2. Scene button between the overhead doors for L1 to L8 (garage).

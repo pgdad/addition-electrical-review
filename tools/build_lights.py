@@ -47,7 +47,6 @@ LIGHTS = {
   "L14": ("Under the garage stairs", "ceiling", lambda x, z: east_stair_h(x) - 1.0, G_LIGHT_CCT, "Mounted on the stair soffit; height follows the stair"),
  },
  "2": {
-  **{f"L{i}": ("Hall", "wall", 6.5, L2_CCT, "North wall") for i in range(1, 7)},
   "L7":  ("West stair up to 3rd floor", "riser", None, L2_CCT, "Riser lights; 14 drawn for 16 risers"),
   "L8":  ("East stair down to garage", "riser", None, L2_CCT, "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17)"),
   "L9":  ("Media room", "ceiling", 9.0, L2_CCT, ""),
@@ -75,11 +74,6 @@ LIGHTS = {
   "L27": ("Under the west stair", "ceiling", lambda x, z: west_leg_h(z) - 1.0, L2_CCT, "On the stair soffit"),
   "L28": ("Balcony, west end", "outdoor", 8.0, L2_CCT, "High wall light"),
   "L29": ("Balcony, by family door", "outdoor", 8.0, L2_CCT, "High wall light"),
-  "L30": ("East stair down to garage", "wall", lambda x, z: east_stair_h(x) + 6.5, L2_CCT, "6.5 ft above the tread below it"),
-  "L31": ("East stair down to garage", "wall", lambda x, z: east_stair_h(x) + 6.5, L2_CCT, "6.5 ft above the tread below it"),
-  "L32": ("East stair down to garage", "wall", lambda x, z: east_stair_h(x) + 6.5, L2_CCT, "6.5 ft above the tread below it"),
-  "L33": ("West stair, north leg", "wall", lambda x, z: west_north_leg_h(x) + 6.5, L2_CCT, "6.5 ft above the tread below it"),
-  "L34": ("West stair, west leg", "wall", lambda x, z: west_leg_h(z) + 6.5, L2_CCT, "6.5 ft above the tread below it"),
   "L35": ("West stair, west leg", "ceiling", lambda x, z: F3 + 7.8, L2_CCT, "Ceiling above the second leg (third-floor ceiling height)"),
   "L40": ("West stair, corner landing", "ceiling", lambda x, z: F3 + 7.8, L2_CCT, "Ceiling above the landing where the stair turns (third-floor ceiling height)"),
  },
@@ -124,9 +118,6 @@ SWITCHES = {
  ("G", "S5"): ("Hallway east wall, south (latch) edge of the old-house door, two-gang with S4", k("G", "L13")),
  ("G", "S6"): ("Garage, at the under-stair space", k("G", "L14")),
  ("G", "S8"):  ("Hallway west wall at the foot of the stairs, north of the garage door", k("2", "L8")),
- ("G", "S9"):  ("Hallway west wall at the foot of the stairs, north of the garage door", k("2", "L30", "L31", "L32")),
- ("2", "S1"): ("Hall, south wall", rng("2", 1, 3)),
- ("2", "S2"): ("Hall, south wall", rng("2", 4, 6)),
  ("2", "S3"): ("Hall, foot of the west stair", k("2", "L7")),
  ("2", "S4"): ("Hall, head of the east stair", k("2", "L8")),
  ("2", "S5"): ("Media room, by the hall door", k("2", "L9")),
@@ -139,8 +130,6 @@ SWITCHES = {
  ("2", "S10"): ("Family room, by the balcony door", k("2", "L17", "L18", "L24")),
  ("2", "S11"): ("Bath, by its door", k("2", "L19", "L20")),
  ("2", "S18"): ("Bath, by its door (fan only, no light)", []),
- ("2", "S19"): ("Hall, foot of the west stair (companion to S1)", rng("2", 1, 3)),
- ("2", "S20"): ("Hall, head of the east stair (companion to S2)", rng("2", 4, 6)),
  ("2", "S21"): ("Kitchen side of the media/kitchen door, latch edge (companion to S8)", k("2", "L13", "L14", "L15")),
  ("2", "S22"): ("Media room, east wall at the north edge of the kitchen door (companion to S5)", k("2", "L9")),
  ("2", "S25"): ("Media room, east wall at the north edge of the kitchen door (companion to S24)", k("2", "L10")),
@@ -149,8 +138,6 @@ SWITCHES = {
  ("2", "S12"): ("Kitchen side of the W/D closet", k("2", "L22")),
  ("2", "S13"): ("Media room, west (latch) side of the balcony door, below the window", k("2", "L23", "L28", "L29")),
  ("2", "S14"): ("Media room west wall, beside AP 9", rng("2", 25, 27)),
- ("2", "S15"): ("Hall, foot of the west stair", k("2", "L33", "L34")),
- ("2", "S16"): ("Hall, head of the east stair", k("2", "L30", "L31", "L32")),
  ("2", "S17"): ("Hall, foot of the west stair", k("2", "L35", "L40")),
  ("3", "S1"): ("West office, top of the stairs", k("3", "L1", "L2")),
  ("3", "S2"): ("West office, by the shared door", k("3", "L1", "L2")),
@@ -160,7 +147,6 @@ SWITCHES = {
  ("3", "S6"): ("Small attic, by the old-house entry", k("3", "L8")),
  ("3", "S7"): ("Sink nook, north end", k("3", "L9")),
  ("3", "S8"): ("West office, top of the stairs", k("2", "L7")),
- ("3", "S9"): ("West office, top of the stairs", k("2", "L33", "L34")),
  ("3", "S10"): ("West office, top of the stairs", k("2", "L35", "L40")),
  ("3", "S11"): ("West office, beside the reading nook door, mounted low at 3 ft", k("3", "L10")),
  ("S", "S1"): ("Dressing room, inside the porch door", k("S", "L2")),
@@ -171,18 +157,18 @@ SWITCHES = {
 # 3-way pairs (one colour per pair in the model)
 PAIRS = [
  (["G:S1", "G:S2"], "#ff8a3d"), (["G:S4", "G:S7"], "#4dd0e1"),
- (["G:S8", "2:S4"], "#ffd54f"), (["G:S9", "2:S16"], "#ba68c8"),
- (["2:S3", "3:S8"], "#81c784"), (["2:S15", "3:S9"], "#f06292"),
+ (["G:S8", "2:S4"], "#ffd54f"),
+ (["2:S3", "3:S8"], "#81c784"),
  (["2:S17", "3:S10"], "#64b5f6"), (["3:S1", "3:S2"], "#e57373"),
- (["2:S1", "2:S19"], "#aed581"), (["2:S2", "2:S20"], "#4db6ac"), (["2:S8", "2:S21"], "#ffb74d"),
+ (["2:S8", "2:S21"], "#ffb74d"),
  (["2:S5", "2:S22"], "#9575cd"), (["2:S6", "2:S23"], "#a1887f"), (["2:S24", "2:S25"], "#f48fb1"), (["2:S10", "2:S26"], "#90caf9"),
 ]
 # One switch of every 3-way pair is an Inovelli aux switch (owner decision, Nov 10, 2026); the other is the
 # Inovelli main switch that holds the load (or runs the smart bulbs). A traveler runs between the two boxes.
-AUX = {"G:S2", "G:S7", "G:S8", "G:S9", "3:S8", "3:S9", "3:S10", "3:S2",
-       "2:S19", "2:S20", "2:S21", "2:S22", "2:S23", "2:S25", "2:S26"}
+AUX = {"G:S2", "G:S7", "G:S8", "3:S8", "3:S10", "3:S2",
+       "2:S21", "2:S22", "2:S23", "2:S25", "2:S26"}
 assert all(sum(m in AUX for m in members) == 1 for members, _ in PAIRS)
-HALL_SWITCHES = {"G:S4", "G:S5", "G:S7", "G:S8", "G:S9"}   # stand on the raised hallway floor
+HALL_SWITCHES = {"G:S4", "G:S5", "G:S7", "G:S8"}   # stand on the raised hallway floor
 
 # ---- outlets: (ids, description, kind, height above the floor in ft, circuit). Heights are assumptions:
 # 1.5 ft wall, 3.7 ft counter, ceiling height for ceiling outlets, 7 ft or so for blind outlets.
@@ -503,7 +489,7 @@ def build():
     for lv, rows in OUTLETS.items():
         for ids, desc, kind, h, cct in rows:
             for oid in ids.split():
-                src = {"3:P18": "S9"}.get(f"{lv}:{oid}", oid)      # P18 is drawn off the wall with a leader; it sits under the switches
+                src = {"3:P18": "S10"}.get(f"{lv}:{oid}", oid)      # P18 is drawn off the wall with a leader; it sits under the switches
                 x, z = to_ft(lv, *dev[lv][src]["pts"][0])
                 if f"{lv}:{oid}" == "3:P15": x = 48.0     # old house attic side of the wall (A.4 wall at 47.67 ft)
                 if lv == "2" and oid in ("P25", "P26", "P27"): x = 42.2   # drawn on the wall line; they are on the counter backsplash

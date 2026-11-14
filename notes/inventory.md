@@ -1,4 +1,4 @@
-# Inventory (Nov 10, 2026)
+# Inventory (Nov 14, 2026)
 
 Counted from `lights.json` (built from the drawings). Quantities only; models are the owner's standards
 (Inovelli White Series switches, Govee dimmable lights, UniFi network gear).
@@ -18,27 +18,28 @@ Counted from `lights.json` (built from the drawings). Quantities only; models ar
 
 Totals by size: four 8-port, two 16-port, three not yet sized.
 
-## Light switches (51)
+## Light switches (43)
 
 | Level | Dimmer (smart-bulb mode) | On/off | Aux | Total |
 |-------|--------------------------|--------|-----|-------|
-| Garage / hallway | 5 | 0 | 4 | 9 |
-| Second floor | 16 | 4 | 7 | 27 |
-| Third floor | 6 | 1 | 4 | 11 |
+| Garage / hallway | 5 | 0 | 3 | 8 |
+| Second floor | 12 | 4 | 5 | 21 |
+| Third floor | 6 | 1 | 3 | 10 |
 | Shed | 4 | 0 | 0 | 4 |
-| **Total** | **31** | **5** | **15** | **51** |
+| **Total** | **27** | **5** | **11** | **43** |
 
-The 15 aux switches each need a traveler to their main switch (15 three-way pairs).
+The 11 aux switches each need a traveler to their main switch (11 three-way pairs).
+The hall and stair wall lights and their 8 switches were removed on Nov 14, 2026.
 
-## Light fixtures (71 entries)
+## Light fixtures (60 entries)
 
 | Level | Ceiling | Wall | Outdoor | Stair riser runs | Under-cabinet | Low-voltage | Total |
 |-------|---------|------|---------|------------------|---------------|---------------------|-------|
 | Garage / hallway | 11 | 0 | 5 | 0 | 0 | 0 | 16 |
-| Second floor | 17 | 11 | 4 | 2 | 1 | 5 | 40 |
+| Second floor | 17 | 0 | 4 | 2 | 1 | 5 | 29 |
 | Third floor | 9 | 1 | 0 | 0 | 0 | 0 | 10 |
 | Shed | 2 | 1 | 1 | 0 | 0 | 1 | 5 |
-| **Total** | **39** | **13** | **10** | **2** | **1** | **6** | **71** |
+| **Total** | **39** | **2** | **10** | **2** | **1** | **6** | **60** |
 
 The two riser runs are counted as one entry each (one light per riser: 17 risers on the garage stair,
 16 on the west stair). They are listed on the second-floor sheet.

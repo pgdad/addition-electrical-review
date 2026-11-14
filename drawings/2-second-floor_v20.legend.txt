@@ -71,12 +71,6 @@ D Stair lights, 2 Matter controllers
 Windows (blue), sizes from A.3
 Hall 2 x 2840, sauna 4030 tempered, media 2 x 3020 and a 3068 door, family 2 x 3050
 Closet door on media wall per A.3; range by fridge; sink and DW north of W/D
-L1
-L2
-L3
-L4
-L5
-L6
 L7
 L8
 L9
@@ -96,8 +90,6 @@ L21
 L22
 L23
 L24
-S1
-S2
 S3
 S4
 S5
@@ -109,16 +101,9 @@ S10
 S11
 S12
 S13
-L30
-L31
-L32
-L33
-L34
-S15
-S16
 Lighting (pink), dimmable Govee
 Switches (green), Inovelli; S6, S9, S11, S18 on/off, not dimmers
-L1-L6 Hall wall lights on the north wall
+L1-L6 Hall wall lights: removed (Nov 14, 2026)
 L7 Stair up, light mid each riser
 L8 Stair down, light mid each riser, all 17 to garage floor
 L9, L10 Media ceiling at 25% and 75% of width
@@ -133,7 +118,7 @@ L20 Shower, wet rated
 L21 Sauna, sauna rated, on heater control
 L22 W/D
 L23, L24 Balcony wall lights by each door
-S1, S2 Hall 2-gang: L1-L3, L4-L6 (with S19, S20)
+S1, S2, S19, S20 Hall light switches: removed
 S3 Stair up risers, bottom (top on 3rd fl)
 S4 Stair down risers, top (bottom on garage lvl)
 S5 Media ceiling L9, by hall door (L10 on S24)
@@ -199,10 +184,10 @@ L29
 S14
 L25-L27 Under the stairs up, north/south run
 L28, L29 Balcony, high wall lights
-L30-L32 East stair wall lights; L33, L34 west stair, one per leg (S16, S15)
+L30-L34 Stair wall lights: removed (Nov 14, 2026)
 S14 Under-stair lights, beside AP 9
-S15 West stair wall lights, bottom (top on 3rd fl S9)
-S16 East stair wall lights, top (bottom garage S9)
+S15 West stair wall light switch: removed
+S16 East stair wall light switch: removed
 L28, L29 on S13 (my call)
 Outlets (red), blind outlets (teal)
 Circuits
@@ -253,8 +238,6 @@ microwave and WashTower; AFCI on every 120V 15A and 20A circuit except bath C10 
 breakers where both apply. Sauna heater C2 per its manual. Confirm with the electrician and inspector.
 SP1 Surge protector for PoE doorbell 14, at the switch 8 end of its cable in the SW closet, on ground bar GB1.
 GB1 Ground bar in the SW closet by switch 8, bonded down to garage ground bar G in the corner directly below.
-S19
-S20
 S21
 S22
 S23
@@ -278,8 +261,8 @@ family/bath wall. P25, P26 counter outlets south of the sink (C4). Sauna light d
 16 PoE switch (8-port + fiber), high in the family room southeast corner, powered from H6 (duplex). Switch 8: 16-port PoE.
 Both switches uplink by fiber to the third-floor switch in R1.
 3-way pairs (Nov 10, 2026): one switch of each pair is an Inovelli aux switch, with a traveler wire to the Inovelli main switch.
-Aux: S19 (main S1), S20 (S2), S21 (S8), S22 (S5), S23 (S6), S25 (S24), S26 (S10). Stair switches S3, S4, S15, S16, S17 are
-the mains; their aux switches are garage S8 (S4), S9 (S16) and third-floor S8 (S3), S9 (S15), S10 (S17).
+Aux: S21 (main S8), S22 (S5), S23 (S6), S25 (S24), S26 (S10). Stair switches S3, S4, S17 are
+the mains; their aux switches are garage S8 (S4) and third-floor S8 (S3), S10 (S17).
 Run 3-conductor cable (traveler + neutral) between the two boxes of each pair; one traveler per pair.
 West stair foot (Nov 10, 2026): S3, S15, S17 and S19 are one four-gang row on the hall south wall; outlet P1 moved just east
 of them. Stair light controllers D are on the hall north wall at the stair foot. Garage stair-foot switches E, F are now S8, S9.
@@ -301,7 +284,7 @@ L40
 Nov 12, 2026: second west stair ceiling light L40 above the corner landing, on the same switches as L35 (S17 + 3rd-floor S10).
 Nov 12, 2026: sauna heater G moved to the sauna west wall, just south of the thin line near the north end of the room.
 Lighting split (owner, Nov 12, 2026): C15 = kitchen, family room, bath and shower: L13-L20, L22, L24, L36-L39 (S8-S12, S21, S26,
-S27, controller T). C16 = all the rest: hall, media room, both stairs, under-stair, balcony: L1-L12, L23, L25-L35, L40.
+S27, controller T). C16 = all the rest: hall, media room, both stairs, under-stair, balcony: L7-L12, L23, L25-L29, L35, L40.
 Circuits (owner agreed, Nov 12, 2026): bath fan switch S18 and island controller T on C15; stair light controllers D on C16;
 sauna light driver J on C15 (C3 is a spare). If a second-floor subpanel is added, its feeder is F2 (125A) from MP.
 Nov 12, 2026 (owner): sauna light driver J moved from C3 to lighting circuit C15. C3 is now a spare.
@@ -310,3 +293,5 @@ Nov 12, 2026 (owner): counter outlets P25, P26 moved from C4 to C5, so C4 = P12,
 New outlet P28 on fridge circuit C6: high on the north wall above the refrigerator (about 6.5 ft, confirm against the fridge height).
 17
 17 Two Ethernet jacks (data only), high on the media room south wall beside blind outlet H3; wired to switch 8 (Nov 12, 2026).
+Removed (Nov 14, 2026, owner decision): hall wall lights L1-L6 and stair wall lights L30-L34, with their switches S1, S2, S19, S20, S15, S16.
+The stairs keep riser lights L7, L8 and west stair ceiling lights L35, L40. The hall now has no light of its own: check with the electrician.

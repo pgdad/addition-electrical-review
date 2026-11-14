@@ -11,6 +11,12 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   Which end is the aux is confirmed by the owner (Nov 10, 2026): garage S2 (main S1), S7 (main S4), S8 (main 2F S4),
   S9 (main 2F S16); second floor S19 (S1), S20 (S2), S21 (S8), S22 (S5), S23 (S6), S25 (S24), S26 (S10);
   third floor S2 (S1), S8 (2F S3), S9 (2F S15), S10 (2F S17). The shed has no 3-way pairs.
+- Wall lights removed (owner decision, Nov 14, 2026; the plans before this are tagged v1.0 in git): second-floor
+  hall wall lights L1-L6 and stair wall lights L30-L32 (east stair), L33, L34 (west stair) are removed, together
+  with their switches: second floor S1, S2, S19, S20, S15, S16, garage S9 and third-floor S9. The IDs are not
+  reused. S17 moved next to S3 (two-gang at the west stair foot); third-floor S10 moved up beside S8. Older notes
+  below still mention the removed items. Left: riser lights L7, L8 and west stair ceiling lights L35, L40; the
+  hall has no light of its own (see REVIEW.md finding 4).
 - Owner decisions, Nov 10, 2026 (second round):
   - Garage switch 2 is an 8-port PoE switch with a fiber port. Switch 18 feeds AP 17.
   - Renames: garage stair-foot switches E, F are now S8, S9 (two-gang on the hallway west wall just north of the

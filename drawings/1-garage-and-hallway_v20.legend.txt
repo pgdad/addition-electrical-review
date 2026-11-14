@@ -34,7 +34,6 @@ A
 B
 P22
 D
-S9
 S8
 W/D
 L1
@@ -108,7 +107,7 @@ A W/D: 120V (C9) + 240V 30A (C15) + gas stub
 B Outdoor outlet, AirGradient, C2 GFCI, WR
 P22 Computers, printers outlet, C8 20A GFCI
 D Stair lights, 2 Matter controllers, on C10
-S8, S9 3-way aux switches, stair foot (S9: wall lights)
+S8 3-way aux switch, stair foot (riser lights); S9 removed
 Mini-splits on A.2 left off; power is MS1-MS4
 17 UniFi wall AP, hallway north wall, on switch 18
 18 PoE switch (8-port + fiber), fiber to 3rd fl
@@ -205,8 +204,8 @@ P21
 P21 Outdoor GFCI weather-resistant outlet with an in-use cover, outside the hallway south wall just west of the front
 door, serving the deck. On hallway circuit C7.   Switch 18 is an 8-port PoE switch with a fiber port.
 3-way pairs (Nov 10, 2026): one switch of each pair is an Inovelli aux switch, with a traveler wire to the Inovelli main switch.
-Aux: S2 (main S1), S7 (main S4), S8 (main is second-floor S4), S9 (main is second-floor S16). Run 3-conductor cable
-(traveler + neutral) between the two boxes of each pair; S8 and S9 each need their own traveler up the stair.
+Aux: S2 (main S1), S7 (main S4), S8 (main is second-floor S4). Run 3-conductor cable
+(traveler + neutral) between the two boxes of each pair; S8 needs its traveler up the stair.
 MP
 Renamed (Nov 10, 2026): stair-foot switches E, F are now S8, S9 (green), a two-gang on the hallway west wall just north of
 the garage door, clear of the door opening. Outlet C is now P22 (red). MP is labelled at the red bar; its location is still open.
@@ -217,3 +216,4 @@ F1 Feeder to shed subpanel A, 60A 240V, 2-pole breaker in MP (owner agreed, Nov 
 22 Two Ethernet jacks (data only), north wall between EV1 and EV2, about 4 ft high, one per charger; wired to switch 7 (Nov 12, 2026).
 Switch 7 is now a 16-port PoE switch with a fiber port (owner decision, Nov 12, 2026): 9 copper ports are used.
 Cameras 3, 4 are wired to switch 2, cameras 8, 9 to switch 7 and camera 10 to switch 18 (owner decision, Nov 12, 2026).
+Removed (Nov 14, 2026, owner decision): stair-foot switch S9 and the east stair wall lights L30-L32 it controlled. S8 (riser lights) stays.

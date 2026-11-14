@@ -77,7 +77,6 @@ L8
 L9
 S1
 S8
-S9
 S5
 S10
 S2
@@ -119,7 +118,7 @@ L8  Old house attic.  S6 on the small attic side of the entry, just north of it.
 L9  Short track light in the open space north of S4.  S7 at the north end of that space.
 Switches in smart bulb mode: lights keep constant power, switch dims them over Matter or Home Assistant.
 S8  Stair riser lights, top of the stairs beside S1. Pairs with S3 at the bottom, on the second floor.
-S9  Stair wall lights (L33, L34 on the 2nd floor), top of the stairs. Pairs with S15 at the bottom.
+S9  Removed (Nov 14, 2026) together with the stair wall lights L33, L34.
 S10  L35, L40 west stair ceiling lights (2nd floor), top of the stairs. Pairs with S17 at the bottom.
 Circuits (proposed)
 C1  20A dedicated: A (R2 rack).
@@ -141,7 +140,7 @@ reading nook
 L10  Children's reading nook: wall-mounted, cool-to-the-touch LED on its north wall east of the door (low ceiling).  S11 on the office side, just west of the nook door, mounted low (3 ft) for children; dimmer in smart-bulb mode, so L10 is a smart fixture or lamp.
 Nook: thin wall on the line of the rack-strip west wall; small door in its north wall. P5 moved east of the door; P4 moved to the office side of its wall.
 P18
-P18  West office wall outlet on the wall below the S1, S8, S9, S10 switch stack at the top of the stairs (C3).
+P18  West office wall outlet on the wall below the S1, S8, S10 switch stack at the top of the stairs (C3).
 P19
 P20
 P21
@@ -150,8 +149,8 @@ P21  West office, mid north wall, on the sloped ceiling just above the low (5 ft
 P5 moved further east along its wall, toward the shared door.
 Closet: door in its north edge, off the top stair landing (dashed gap); thin line marks that edge on the 3D/2D page.
 3-way pairs (Nov 10, 2026): one switch of each pair is an Inovelli aux switch, with a traveler wire to the Inovelli main switch.
-Aux: S2 (main S1); S8, S9, S10 at the top of the stair (mains are second-floor S3, S15, S17). Run 3-conductor cable
-(traveler + neutral) between the two boxes of each pair; S8, S9 and S10 each need their own traveler down the stair.
+Aux: S2 (main S1); S8, S10 at the top of the stair (mains are second-floor S3, S17). Run 3-conductor cable
+(traveler + neutral) between the two boxes of each pair; S8 and S10 each need their own traveler down the stair.
 Colours follow the key (Nov 10, 2026): blind outlets H1-H5 teal; network items, APs and sensors purple; power items A-E amber.
 Wall jack 6 is renamed 14 (6 stays the empty rack opening). P21: mount within 5.5 ft of the floor so it counts toward wall spacing.
 2846
@@ -163,3 +162,4 @@ Wall jack 6 is renamed 14 (6 stays the empty rack opening). P21: mount within 5.
 2036
 Windows (A.4), drawn Nov 12, 2026 in blue like the other sheets: three 2846 on the west office south wall, two 3050 on the
 east office north wall, one 2850 on the east office south wall, and a 2036 casement on the stair west wall. Blind outlet H6 at its top left corner seen from inside (south end, C3).
+Removed (Nov 14, 2026, owner decision): S9 and the west stair wall lights L33, L34 it controlled. S10 moved up beside S8.

@@ -302,114 +302,6 @@
    "note": "Mounted on the stair soffit; height follows the stair"
   },
   {
-   "key": "2:L1",
-   "id": "L1",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Hall",
-   "x": 11.43,
-   "y": 16.96,
-   "z": 0.67,
-   "type": "wall",
-   "switches": [
-    "2:S1",
-    "2:S19"
-   ],
-   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
-   "source": "drawings/2-second-floor_v20.svg",
-   "note": "North wall"
-  },
-  {
-   "key": "2:L2",
-   "id": "L2",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Hall",
-   "x": 16.02,
-   "y": 16.96,
-   "z": 0.67,
-   "type": "wall",
-   "switches": [
-    "2:S1",
-    "2:S19"
-   ],
-   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
-   "source": "drawings/2-second-floor_v20.svg",
-   "note": "North wall"
-  },
-  {
-   "key": "2:L3",
-   "id": "L3",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Hall",
-   "x": 20.18,
-   "y": 16.96,
-   "z": 0.67,
-   "type": "wall",
-   "switches": [
-    "2:S1",
-    "2:S19"
-   ],
-   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
-   "source": "drawings/2-second-floor_v20.svg",
-   "note": "North wall"
-  },
-  {
-   "key": "2:L4",
-   "id": "L4",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Hall",
-   "x": 23.93,
-   "y": 16.96,
-   "z": 0.67,
-   "type": "wall",
-   "switches": [
-    "2:S2",
-    "2:S20"
-   ],
-   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
-   "source": "drawings/2-second-floor_v20.svg",
-   "note": "North wall"
-  },
-  {
-   "key": "2:L5",
-   "id": "L5",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Hall",
-   "x": 27.26,
-   "y": 16.96,
-   "z": 0.67,
-   "type": "wall",
-   "switches": [
-    "2:S2",
-    "2:S20"
-   ],
-   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
-   "source": "drawings/2-second-floor_v20.svg",
-   "note": "North wall"
-  },
-  {
-   "key": "2:L6",
-   "id": "L6",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Hall",
-   "x": 32.26,
-   "y": 16.96,
-   "z": 0.67,
-   "type": "wall",
-   "switches": [
-    "2:S2",
-    "2:S20"
-   ],
-   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
-   "source": "drawings/2-second-floor_v20.svg",
-   "note": "North wall"
-  },
-  {
    "key": "2:L7",
    "id": "L7",
    "level": "2",
@@ -1041,96 +933,6 @@
    "note": "High wall light"
   },
   {
-   "key": "2:L30",
-   "id": "L30",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "East stair down to garage",
-   "x": 34.59,
-   "y": 15.2,
-   "z": 0.67,
-   "type": "wall",
-   "switches": [
-    "G:S9",
-    "2:S16"
-   ],
-   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
-   "source": "drawings/2-second-floor_v20.svg",
-   "note": "6.5 ft above the tread below it"
-  },
-  {
-   "key": "2:L31",
-   "id": "L31",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "East stair down to garage",
-   "x": 37.84,
-   "y": 12.58,
-   "z": 0.67,
-   "type": "wall",
-   "switches": [
-    "G:S9",
-    "2:S16"
-   ],
-   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
-   "source": "drawings/2-second-floor_v20.svg",
-   "note": "6.5 ft above the tread below it"
-  },
-  {
-   "key": "2:L32",
-   "id": "L32",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "East stair down to garage",
-   "x": 40.17,
-   "y": 10.71,
-   "z": 0.67,
-   "type": "wall",
-   "switches": [
-    "G:S9",
-    "2:S16"
-   ],
-   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
-   "source": "drawings/2-second-floor_v20.svg",
-   "note": "6.5 ft above the tread below it"
-  },
-  {
-   "key": "2:L33",
-   "id": "L33",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "West stair, north leg",
-   "x": 7.27,
-   "y": 18.86,
-   "z": 0.67,
-   "type": "wall",
-   "switches": [
-    "2:S15",
-    "3:S9"
-   ],
-   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
-   "source": "drawings/2-second-floor_v20.svg",
-   "note": "6.5 ft above the tread below it"
-  },
-  {
-   "key": "2:L34",
-   "id": "L34",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "West stair, west leg",
-   "x": 0.36,
-   "y": 23.67,
-   "z": 7.05,
-   "type": "wall",
-   "switches": [
-    "2:S15",
-    "3:S9"
-   ],
-   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
-   "source": "drawings/2-second-floor_v20.svg",
-   "note": "6.5 ft above the tread below it"
-  },
-  {
    "key": "2:L35",
    "id": "L35",
    "level": "2",
@@ -1583,66 +1385,6 @@
    "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
-   "key": "G:S9",
-   "id": "S9",
-   "level": "G",
-   "levelName": "Garage and hallway",
-   "room": "Hallway west wall at the foot of the stairs, north of the garage door",
-   "x": 43.4,
-   "y": 5.08,
-   "z": 3.54,
-   "controls": [
-    "2:L30",
-    "2:L31",
-    "2:L32"
-   ],
-   "source": "drawings/1-garage-and-hallway_v20.svg",
-   "pairWith": "2:S16",
-   "pairColor": "#ba68c8",
-   "role": "aux",
-   "mode": "Inovelli aux switch, traveler to the main switch"
-  },
-  {
-   "key": "2:S1",
-   "id": "S1",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Hall, south wall",
-   "x": 23.93,
-   "y": 14.46,
-   "z": 3.25,
-   "controls": [
-    "2:L1",
-    "2:L2",
-    "2:L3"
-   ],
-   "source": "drawings/2-second-floor_v20.svg",
-   "pairWith": "2:S19",
-   "pairColor": "#aed581",
-   "role": "main",
-   "mode": "smart-bulb dimmer"
-  },
-  {
-   "key": "2:S2",
-   "id": "S2",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Hall, south wall",
-   "x": 25.43,
-   "y": 14.46,
-   "z": 3.25,
-   "controls": [
-    "2:L4",
-    "2:L5",
-    "2:L6"
-   ],
-   "source": "drawings/2-second-floor_v20.svg",
-   "pairWith": "2:S20",
-   "pairColor": "#4db6ac",
-   "role": "main",
-   "mode": "smart-bulb dimmer"
-  },
-  {
    "key": "2:S3",
    "id": "S3",
    "level": "2",
@@ -1851,46 +1593,6 @@
    "circuit": "C15 lighting, 15A AFCI"
   },
   {
-   "key": "2:S19",
-   "id": "S19",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Hall, foot of the west stair (companion to S1)",
-   "x": 14.6,
-   "y": 14.46,
-   "z": 3.25,
-   "controls": [
-    "2:L1",
-    "2:L2",
-    "2:L3"
-   ],
-   "source": "drawings/2-second-floor_v20.svg",
-   "pairWith": "2:S1",
-   "pairColor": "#aed581",
-   "role": "aux",
-   "mode": "Inovelli aux switch, traveler to the main switch"
-  },
-  {
-   "key": "2:S20",
-   "id": "S20",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Hall, head of the east stair (companion to S2)",
-   "x": 31.59,
-   "y": 14.46,
-   "z": 2.0,
-   "controls": [
-    "2:L4",
-    "2:L5",
-    "2:L6"
-   ],
-   "source": "drawings/2-second-floor_v20.svg",
-   "pairWith": "2:S2",
-   "pairColor": "#4db6ac",
-   "role": "aux",
-   "mode": "Inovelli aux switch, traveler to the main switch"
-  },
-  {
    "key": "2:S21",
    "id": "S21",
    "level": "2",
@@ -2034,51 +1736,12 @@
    "mode": "smart-bulb dimmer"
   },
   {
-   "key": "2:S15",
-   "id": "S15",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Hall, foot of the west stair",
-   "x": 11.85,
-   "y": 14.46,
-   "z": 3.25,
-   "controls": [
-    "2:L33",
-    "2:L34"
-   ],
-   "source": "drawings/2-second-floor_v20.svg",
-   "pairWith": "3:S9",
-   "pairColor": "#f06292",
-   "role": "main",
-   "mode": "smart-bulb dimmer"
-  },
-  {
-   "key": "2:S16",
-   "id": "S16",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Hall, head of the east stair",
-   "x": 31.59,
-   "y": 14.46,
-   "z": 3.0,
-   "controls": [
-    "2:L30",
-    "2:L31",
-    "2:L32"
-   ],
-   "source": "drawings/2-second-floor_v20.svg",
-   "pairWith": "G:S9",
-   "pairColor": "#ba68c8",
-   "role": "main",
-   "mode": "smart-bulb dimmer"
-  },
-  {
    "key": "2:S17",
    "id": "S17",
    "level": "2",
    "levelName": "Second floor",
    "room": "Hall, foot of the west stair",
-   "x": 13.27,
+   "x": 11.85,
    "y": 14.46,
    "z": 3.25,
    "controls": [
@@ -2225,25 +1888,6 @@
    "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
-   "key": "3:S9",
-   "id": "S9",
-   "level": "3",
-   "levelName": "Third floor",
-   "room": "West office, top of the stairs",
-   "x": 5.59,
-   "y": 24.61,
-   "z": 14.44,
-   "controls": [
-    "2:L33",
-    "2:L34"
-   ],
-   "source": "drawings/3-third-floor_v32.svg",
-   "pairWith": "2:S15",
-   "pairColor": "#f06292",
-   "role": "aux",
-   "mode": "Inovelli aux switch, traveler to the main switch"
-  },
-  {
    "key": "3:S10",
    "id": "S10",
    "level": "3",
@@ -2251,7 +1895,7 @@
    "room": "West office, top of the stairs",
    "x": 5.59,
    "y": 24.61,
-   "z": 15.49,
+   "z": 14.44,
    "controls": [
     "2:L35",
     "2:L40"
