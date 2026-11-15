@@ -639,7 +639,7 @@
    ],
    "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "Ceiling fan with light"
+   "note": "Big Ass Fans Haiku L 52 in. smart ceiling fan with LED light; powered straight from the line, not through S6"
   },
   {
    "key": "2:L12",
@@ -1672,7 +1672,7 @@
    "pairWith": "2:S23",
    "pairColor": "#a1887f",
    "role": "main",
-   "mode": "on/off"
+   "mode": "smart dimmer with no load connected: the fan is powered straight from the line, the switch only signals Home Assistant"
   },
   {
    "key": "2:S7",

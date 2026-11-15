@@ -5,6 +5,10 @@ Items marked (proposed) were the designer's suggestion and are not yet confirmed
 The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 
 ## Whole building
+- Media fan L11 and switch S6 (owner decision, Nov 15, 2026): L11 is a Big Ass Fans Haiku L 52 in. smart fan with
+  light. S6 is an Inovelli Smart Dimmer with nothing on its load terminal: line feeds both the switch and the fan,
+  the fan stays powered, and S6 (with aux S23) only signals Home Assistant. This replaces the Nov 9 decision
+  that S6 is a plain on/off switch. Details in notes/devices.md.
 - Low-voltage lights (owner decision, Nov 15, 2026): they need no wall switch, because their Matter controllers
   should not be powered off. Two controlled segments per stairway, one controller for the second-floor hallway,
   one for the kitchen island, one per media room light; power supplies as the electrician decides. Details and the
@@ -39,7 +43,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Lighting standard: dimmable Govee ceiling lights; Inovelli White Series wall switches in smart-bulb mode
   (switches send scene/automation commands; the bulbs stay powered).
   Exception (owner decision, Nov 9, 2026): switches on non-smart loads are plain on/off, not dimmers and not
-  smart-bulb mode: second-floor S6 (media fan and its light), S9 (under-cabinet L16), S11 (bath L19, L20) and S18 (bath fan, its own switch below S11),
+  smart-bulb mode: second-floor S9 (under-cabinet L16), S11 (bath L19, L20) and S18 (bath fan, its own switch below S11),
   and third-floor S5 (closet light L7).
 - Smoke/CO alarms: hardwired, interconnected, battery backup (A.2 note 9), drawn at the architect's
   locations as SD#/CO#: garage hallway SD1 + CO1, second-floor hall SD1 + CO1, third-floor west office SD1.

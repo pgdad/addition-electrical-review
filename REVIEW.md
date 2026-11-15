@@ -180,7 +180,7 @@ The PDF wins for geometry; these are the differences found.
   - Hall: S19 and S20 (companions to S1, S2) were removed on Nov 14, 2026 together with hall wall lights L1 to L6.
   - Kitchen: S21 pairs with S8 (L13 to L15) on the kitchen side of the media/kitchen door, at its latch edge.
   - Media: L9 and L10 are on separate switches (owner decision): S5 runs L9 and new S24 runs L10, both by
-    the hall door with S6. Their companions S22 (L9), S25 (L10) and S23 (fan L11, on/off) are a three-gang
+    the hall door with S6. Their companions S22 (L9), S25 (L10) and S23 (fan L11, signal only) are a three-gang
     on the media side of the media/kitchen wall at the door's north edge. That is the hinge side, but the
     door opens into the kitchen, so the switches stay clear.
   - S13 moved to the west (latch) side of the media/balcony door (owner decision). A.3 shows only about
@@ -209,10 +209,14 @@ The PDF wins for geometry; these are the differences found.
   allows automatic control for exterior stairs in many readings; the inspector decides), fixtures and sensors listed
   for wet locations, and that the sensors sit clear of the mini-split condensers MS3, MS4 under the stair so the
   fans do not trigger them. Consider putting L28 on the same sensors so the whole stair comes on together.
-- Resolved (owner decision): S6 (media fan and its light), S9 (under-cabinet L16) and S11 (bath L19, L20, fan)
-  are now plain on/off switches, not dimmers and not smart-bulb mode.
+- Resolved (owner decision): S9 (under-cabinet L16) and S11 (bath L19, L20, fan)
+  are plain on/off switches, not dimmers and not smart-bulb mode.
+- Resolved (owner decision, Nov 15, 2026): media fan L11 is a smart fan with light powered straight from the line.
+  S6 is an Inovelli dimmer with no load connected and only signals Home Assistant (aux S23 keeps its traveler).
+  Check with the electrician: S6 needs a neutral, the capped load terminal should be labeled, and whether a
+  service disconnect for the fan other than the breaker is wanted.
 - Resolved (owner decision): the bath fan has its own on/off switch S18 below S11; S11 runs L19 and L20 only.
-- *nice-to-have*: S6 and S11 are on/off switches that cut power to the L11 fan light, L19 and L20, so use
+- *nice-to-have*: S11 is an on/off switch that cuts power to L19 and L20, so use
   ordinary (non-smart) lamps there. With the fan now on S18, S11 could go back to the standard smart-bulb
   dimmer if you prefer.
 

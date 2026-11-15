@@ -23,10 +23,12 @@ Totals by size: four 8-port, two 16-port, three not yet sized.
 | Level | Dimmer (smart-bulb mode) | On/off | Aux | Outdoor motion sensor | Total |
 |-------|--------------------------|--------|-----|-----------------------|-------|
 | Garage / hallway | 5 | 0 | 3 | 2 | 10 |
-| Second floor | 13 | 4 | 7 | 0 | 24 |
+| Second floor | 14 | 3 | 7 | 0 | 24 |
 | Third floor | 6 | 1 | 3 | 0 | 10 |
 | Shed | 4 | 0 | 0 | 0 | 4 |
-| **Total** | **28** | **5** | **13** | **2** | **48** |
+| **Total** | **29** | **4** | **13** | **2** | **48** |
+
+Second-floor S6 (media fan L11) is a dimmer with no load connected; it only signals Home Assistant (Nov 15, 2026).
 
 The two motion sensors (garage sheet S10, S11) run the exterior stair lights L17, L18 (Nov 15, 2026).
 

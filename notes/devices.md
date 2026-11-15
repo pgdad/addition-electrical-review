@@ -72,8 +72,8 @@ Thread / Matter, 120 V. Specifications are copied from the product pages on Nov 
 
 | Device | Product | Used for | Specifications from the product page |
 |--------|---------|----------|--------------------------------------|
-| Smart dimmer | [White Series 2-in-1 Smart Dimmer, VTM31-SN](https://inovelli.com/products/thread-matter-white-series-smart-2-1-on-off-dimmer-switch) | The 28 dimmer positions (smart-bulb mode) | Max 600 W incandescent, 300 W LED, 150 W CFL; lighting only, not for fans, outlets or other motor loads; smart-bulb mode; works with or without a neutral (no neutral: bypass needed, no energy monitoring); multi-way with the Aux switch; UL certified E528330 |
-| Smart on/off | [White Series Smart On/Off Switch, VTM30-SN](https://inovelli.com/products/thread-matter-white-series-smart-on-off-switch-w-humidity) | The 5 on/off positions | Max 1500 W general purpose, 960 W incandescent, 300 W LED/CFL; may run any fan or outlet within the load limit; built-in temperature and humidity sensors; neutral wire required; ETL certified |
+| Smart dimmer | [White Series 2-in-1 Smart Dimmer, VTM31-SN](https://inovelli.com/products/thread-matter-white-series-smart-2-1-on-off-dimmer-switch) | The 29 dimmer positions (28 in smart-bulb mode, plus media fan switch S6 with no load) | Max 600 W incandescent, 300 W LED, 150 W CFL; lighting only, not for fans, outlets or other motor loads; smart-bulb mode; works with or without a neutral (no neutral: bypass needed, no energy monitoring); multi-way with the Aux switch; UL certified E528330 |
+| Smart on/off | [White Series Smart On/Off Switch, VTM30-SN](https://inovelli.com/products/thread-matter-white-series-smart-on-off-switch-w-humidity) | The 4 on/off positions | Max 1500 W general purpose, 960 W incandescent, 300 W LED/CFL; may run any fan or outlet within the load limit; built-in temperature and humidity sensors; neutral wire required; ETL certified |
 | Smart fan switch | [White Series Smart Fan Switch, VTM35-SN](https://inovelli.com/products/thread-matter-white-series-smart-fan-switch-3-speed-ceiling-on-off-exhaust) | Not assigned on the drawings; see the next part | Max 2.5 A, no more than 2 fans; AC motors only, DC motors not supported; not for lighting; no neutral: low and medium speed only and not usable on an exhaust fan; ETL certified 5027290 |
 | Aux switch | [Inovelli Add-On (Aux) Switch](https://inovelli.com/products/white-series-add-on-aux-switch) | The 13 aux positions (owner to confirm these are bought) | Not a smart switch; needs a traveler to its main switch; works with or without a neutral; UL certified E528330 |
 
@@ -100,10 +100,7 @@ What to check, with the electrician:
   drawing change.
 - The drawings show one bath fan (second floor, switch S18). A separate shower fan is not on the drawings; the
   owner should say whether there is one and where its switch goes.
-- The media room fan L11 is a ceiling fan and light combination (owner, Nov 15, 2026), drawn on one on/off
-  switch (second floor S6 with aux S23) for both. The Smart Fan switch can not run a light, so it does not fit
-  there unless the fan and its light get separate feeds; for a fan and light on one feed Inovelli points to its
-  Fan/Light Canopy Module. To settle with the owner and the electrician.
+- The media room fan L11 does not use the Smart Fan switch; see "Media room ceiling fan" below.
 
 ## Govee lights
 
@@ -119,7 +116,7 @@ powered all the time.
 
 Owner decisions (Nov 15, 2026):
 
-- Media room: L9 and L10 are this Govee light. L11 is a ceiling fan and light combination, not a Govee light.
+- Media room: L9 and L10 are this Govee light. L11 is a ceiling fan and light combination (see "Media room ceiling fan").
 - Third-floor east office: all three ceiling lights L3, L4, L5 are this Govee light.
 - All five are the round model.
 
@@ -153,3 +150,35 @@ Check with the electrician/inspector and the owner:
   or use plain lights on the wired sensors. This is the owner's call.
 - The pages state no UL or ETL listing for these lights. Ask the electrician to confirm the listing mark on
   the units, and that each is rated for a wet location where it is exposed to rain.
+
+## Media room ceiling fan (L11)
+
+Owner decision, Nov 15, 2026. Specifications are copied from the Amazon listing on Nov 15, 2026.
+
+| Device | Product | Used for | Specifications from the product page |
+|--------|---------|----------|--------------------------------------|
+| Ceiling fan with light | [Big Ass Fans Haiku L 52 in. Smart Ceiling Fan with LED Light, white](https://www.amazon.com/dp/B01DVSBQZA) | Media room L11 | 120 V; 20 W; brushless DC motor; 7 fan speeds; LED light with 16 dimming levels; built-in Wi-Fi, app, remote, Alexa and Google; for rooms up to 15 x 15 ft; universal mount with 5 in. downrod for 8 to 9 ft ceilings; indoor; cETLus (Intertek), Energy Star; Matter support not stated on the listing |
+
+### How the switch is wired (important)
+
+Switch S6 is an Inovelli Smart Dimmer, but **nothing is connected to its load terminal**.
+
+- Line (with neutral and ground) goes to switch S6 **and** straight on to the fan/light. Both are powered from
+  the line all the time.
+- The load terminal of S6 is left empty and capped. The switch never cuts or dims the power to the fan.
+- S6 only signals Home Assistant when it is pressed. Home Assistant then controls the fan and its light through
+  the smart control built into the fan.
+- Aux switch S23 keeps its traveler to S6, so both switches send the same signals.
+
+Check with the electrician/inspector and the owner:
+
+- The Inovelli page says the dimmer works without a neutral only with a bypass at the load. With no load at
+  all, the switch needs the neutral wire in its box, so run a neutral to S6.
+- The fan has a DC motor and its own electronics, so it must never be put on a dimmed or speed-controlled feed.
+  Label the capped load terminal and the fan feed so nobody connects them later.
+- The fan can not be switched off at the wall. Ask the electrician whether a means to cut its power for
+  servicing other than the breaker is wanted (for example a plain switch out of the way).
+- The listing states Wi-Fi, Alexa and Google control. It does not state Matter. The owner should confirm how
+  Home Assistant reaches this fan (Matter or the fan's own Wi-Fi integration) before the walls are closed.
+- With no load, S6 should be set so its paddle only sends button events (smart-bulb mode or the equivalent
+  setting); the owner sets this when pairing.

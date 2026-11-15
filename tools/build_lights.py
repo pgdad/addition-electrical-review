@@ -56,7 +56,7 @@ LIGHTS = {
   "L43": ("Hall", "ceiling", 9.0, L2_CCT, "Hall ceiling light, east (owner decision, Nov 15, 2026)"),
   "L9":  ("Media room", "ceiling", 9.0, L2_CCT, ""),
   "L10": ("Media room", "ceiling", 9.0, L2_CCT, ""),
-  "L11": ("Media room", "ceiling", 8.2, L2_CCT, "Ceiling fan with light"),
+  "L11": ("Media room", "ceiling", 8.2, L2_CCT, "Big Ass Fans Haiku L 52 in. smart ceiling fan with LED light; powered straight from the line, not through S6"),
   "L12": ("Media closet (under west stair)", "ceiling", 7.5, L2_CCT, "Toward the east wall; shelves go on the west wall"),
   "L13": ("Kitchen", "ceiling", 9.0, L2_CCT, ""),
   "L14": ("Kitchen", "ceiling", 9.0, L2_CCT, ""),
@@ -506,7 +506,7 @@ def build():
         if key in pair_of and len(pair_of[key][2]) > 1: rec["group"] = pair_of[key][2]     # 4-way: the other two switches
         if key in pair_of: rec["role"] = "aux" if key in AUX else "main"
         if key in MOTION: rec["motion"] = True
-        rec["mode"] = "outdoor motion sensor, wired in parallel with the other one, on from dusk to dawn only" if key in MOTION else "Inovelli aux switch, traveler to the main switch" if key in AUX else "on/off" if key in ("2:S6", "2:S9", "2:S11", "2:S18", "2:S23", "3:S5") else "smart-bulb dimmer"
+        rec["mode"] = "outdoor motion sensor, wired in parallel with the other one, on from dusk to dawn only" if key in MOTION else "Inovelli aux switch, traveler to the main switch" if key in AUX else "smart dimmer with no load connected: the fan is powered straight from the line, the switch only signals Home Assistant" if key == "2:S6" else "on/off" if key in ("2:S9", "2:S11", "2:S18", "2:S23", "3:S5") else "smart-bulb dimmer"
         if key == "2:S18": rec["circuit"] = "C15 lighting, 15A AFCI"      # bath fan, with the bath lights (owner agreed, Nov 12, 2026)
         switches.append(rec)
     outlets = []
