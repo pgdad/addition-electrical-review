@@ -409,10 +409,11 @@ are drawn on `lights-3d.html` (3D and the third-floor 2D map, "Ethernet runs" fi
 - The riser starts on the north wall under the garage stair (x 37 to 41 ft). Directly above is the east
   stairwell and then the east office north wall. R1 is at x 24 ft, z 14 ft on the third floor, so the run
   needs about 20 ft of horizontal travel on the third floor. See the open question for a route.
+- Network switch heights are ranges set by the owner on Nov 15, 2026 (see `notes/design-decisions.md`); the cable and fiber lengths below use the middle of each range.
 - Owner decision (Nov 10, 2026): every network switch uplinks by fiber to the aggregation switch that sits
   with the main switch in R1. The six uplinks are now drawn on `lights-3d.html` (orange lines) and listed
   in `lights.json` under `fibers`; they are not yet on the SVG drawings. Estimated lengths with 15 ft of
-  slack: garage 18 about 75 ft, garage 7 about 110 ft, garage 2 about 130 ft, shed 1 about 185 ft (buried
+  slack: garage 18 about 80 ft, garage 7 about 115 ft, garage 2 about 130 ft, shed 1 about 185 ft (buried
   conduit to the garage SW corner, then with the switch 2 fiber), second-floor 16 about 45 ft (up the family room southeast corner into the third-floor floor framing, then
   west and north to R1), second-floor 8 about 50 ft (straight up
   into R1 from below the rack strip). Pre-terminated duplex single-mode (OS2) LC works for all of them.
@@ -426,7 +427,7 @@ doorbell; new switch 16 (8-port, family room southeast corner) takes the east ha
 
 | Switch | Port | Device | Cable | Length | PoE |
 |--------|------|--------|-------|--------|-----|
-| 8 (SW closet) | 1 | AP 9, media west wall | Cat6A | 25 ft | 13 W |
+| 8 (SW closet) | 1 | AP 9, media west wall | Cat6A | 20 ft | 13 W |
 | 8 | 2 | Sensor 1, west stair landing | Cat6 | 30 ft | 3 W |
 | 8 | 3 | Sensor 5, media ceiling | Cat6 | 25 ft | 3 W |
 | 8 | 4 | Sensor 6, media ceiling | Cat6 | 35 ft | 3 W |
@@ -457,22 +458,22 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 
 | Switch | Port | Device | Cable | Length | PoE |
 |--------|------|--------|-------|--------|-----|
-| 2 (SW corner) | 1 | Outdoor AP 5 (via SP1) | Cat6A | 20 ft | 13 W |
+| 2 (SW corner) | 1 | Outdoor AP 5 (via SP1) | Cat6A | 15 ft | 13 W |
 | 2 | 2 | AP 6, west wall | Cat6A | 25 ft | 13 W |
 | 2 | 3-4 | Jacks 11 (two), between the doors | 2 x Cat6A | 2 x 35 ft | 30 W |
 | 2 | 5 | Camera 3, outside the southwest corner (via SP1) | Cat6 | 15 ft | 8 W |
 | 2 | 6 | Camera 4, outside the south wall (via SP1) | Cat6 | 15 ft | 8 W |
-| 7 (NW corner) | 1 | Sensor 12, ceiling west half | Cat6 | 25 ft | 3 W |
-| 7 | 2-5 | Jacks 21 (four), north wall by outlet P22 | 4 x Cat6A | 4 x 25 ft | none |
-| 7 | 6-7 | Jacks 22 (two), north wall between EV1 and EV2 (added Nov 12, 2026) | 2 x Cat6A | 2 x 35 ft | none |
-| 7 | 8 | Camera 8, outside the north wall (via SP2 on G2) | Cat6 | 20 ft | 8 W |
-| 7 | 9 | Camera 9, ceiling, 3D printer area | Cat6 | 30 ft | 5 W |
+| 7 (NW corner) | 1 | Sensor 12, ceiling west half | Cat6 | 30 ft | 3 W |
+| 7 | 2-5 | Jacks 21 (four), north wall by outlet P22 | 4 x Cat6A | 4 x 30 ft | none |
+| 7 | 6-7 | Jacks 22 (two), north wall between EV1 and EV2 (added Nov 12, 2026) | 2 x Cat6A | 2 x 40 ft | none |
+| 7 | 8 | Camera 8, outside the north wall (via SP2 on G2) | Cat6 | 25 ft | 8 W |
+| 7 | 9 | Camera 9, ceiling, 3D printer area | Cat6 | 35 ft | 5 W |
 | 18 (under stair) | 1 | AP 17, hallway north wall | Cat6A | 25 ft | 13 W |
-| 18 | 2 | Sensor 13, ceiling east half | Cat6 | 30 ft | 3 W |
-| 18 | 3 | Sensor 14, hallway north wall | Cat6 | 20 ft | 3 W |
+| 18 | 2 | Sensor 13, ceiling east half | Cat6 | 35 ft | 3 W |
+| 18 | 3 | Sensor 14, hallway north wall | Cat6 | 25 ft | 3 W |
 | 18 | 4 | Sensor 20, hallway landing | Cat6 | 25 ft | 3 W |
 | 18 | 5 | Sensor 19, hallway east wall | Cat6 | 30 ft | 3 W |
-| 18 | 6 | Sensor 15, over the doorway | Cat6 | 45 ft | 3 W |
+| 18 | 6 | Sensor 15, over the doorway | Cat6 | 50 ft | 3 W |
 | 18 | 7 | Doorbell 16, front door east side | Cat6 | 50 ft | 10 W |
 | 18 | 8 | Camera 10, ceiling by the WashTower | Cat6 | 30 ft | 5 W |
 
