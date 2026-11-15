@@ -100,8 +100,10 @@ What to check, with the electrician:
   drawing change.
 - The drawings show one bath fan (second floor, switch S18). A separate shower fan is not on the drawings; the
   owner should say whether there is one and where its switch goes.
-- The media room fan (second floor S6 with aux S23) is drawn as one on/off switch for the fan and its light.
-  The Smart Fan switch can not run a light, so it fits there only if the fan has no light on that feed.
+- The media room fan L11 is a ceiling fan and light combination (owner, Nov 15, 2026), drawn on one on/off
+  switch (second floor S6 with aux S23) for both. The Smart Fan switch can not run a light, so it does not fit
+  there unless the fan and its light get separate feeds; for a fan and light on one feed Inovelli points to its
+  Fan/Light Canopy Module. To settle with the owner and the electrician.
 
 ## Govee lights
 
@@ -113,13 +115,13 @@ powered all the time.
 
 | Device | Product | Used for | Specifications from the product page |
 |--------|---------|----------|--------------------------------------|
-| Ceiling light | [Govee 18-Inch Ceiling Light Pro, H1250 (round) or H1252 (square)](https://us.govee.com/products/govee-18-inch-ceiling-light-pro?variant=47293730095289) | Media room: 2 lights. Third-floor east office: the same or a similar light | 120 V; 55 W; 4800 lm; 2700K-6500K white plus color; 200 LEDs; Bluetooth, Wi-Fi and Matter; indoor; sized by Govee for rooms of 20 to 30 square metres (about 215 to 320 sq ft) |
+| Ceiling light | [Govee 18-Inch Ceiling Light Pro, round, H1250](https://us.govee.com/products/govee-18-inch-ceiling-light-pro?variant=47293730095289) | Media room L9 and L10 (2 lights). Third-floor east office L3, L4, L5 (3 lights). 5 in all | 120 V; 55 W; 4800 lm; 2700K-6500K white plus color; 200 LEDs; Bluetooth, Wi-Fi and Matter; indoor; sized by Govee for rooms of 20 to 30 square metres (about 215 to 320 sq ft) |
 
-To settle with the owner:
+Owner decisions (Nov 15, 2026):
 
-- The drawings show three ceiling lights in the media room (L9, L10, L11) and three in the east office
-  (L3, L4, L5). Which two media room positions get this light, and how many go in the east office, is not set.
-- Whether the linked variant is the round or the square one could not be read from the page.
+- Media room: L9 and L10 are this Govee light. L11 is a ceiling fan and light combination, not a Govee light.
+- Third-floor east office: all three ceiling lights L3, L4, L5 are this Govee light.
+- All five are the round model.
 
 ### Outdoor wall lights (candidates; the mix is not chosen yet)
 
