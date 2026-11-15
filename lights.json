@@ -247,12 +247,12 @@
    "z": 7.0,
    "type": "outdoor",
    "switches": [
-    "G:S9",
+    "G:S11",
     "G:S10"
    ],
    "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Motion controlled by sensors S9 and S10, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads"
+   "note": "Motion controlled by sensors S10 and S11, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads"
   },
   {
    "key": "G:L18",
@@ -265,12 +265,12 @@
    "z": 12.5,
    "type": "outdoor",
    "switches": [
-    "G:S9",
+    "G:S11",
     "G:S10"
    ],
    "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Motion controlled by sensors S9 and S10, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads, 13 ft above grade"
+   "note": "Motion controlled by sensors S10 and S11, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads, 13 ft above grade"
   },
   {
    "key": "G:L12",
@@ -531,6 +531,63 @@
      2.17
     ]
    ]
+  },
+  {
+   "key": "2:L41",
+   "id": "L41",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Hall",
+   "x": 11.6,
+   "y": 19.46,
+   "z": 1.67,
+   "type": "ceiling",
+   "switches": [
+    "2:S28",
+    "2:S29",
+    "2:S30"
+   ],
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Hall ceiling light, west (owner decision, Nov 15, 2026)"
+  },
+  {
+   "key": "2:L42",
+   "id": "L42",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Hall",
+   "x": 22.26,
+   "y": 19.46,
+   "z": 1.67,
+   "type": "ceiling",
+   "switches": [
+    "2:S28",
+    "2:S29",
+    "2:S30"
+   ],
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Hall ceiling light, middle (owner decision, Nov 15, 2026)"
+  },
+  {
+   "key": "2:L43",
+   "id": "L43",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Hall",
+   "x": 31.84,
+   "y": 19.46,
+   "z": 1.67,
+   "type": "ceiling",
+   "switches": [
+    "2:S28",
+    "2:S29",
+    "2:S30"
+   ],
+   "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Hall ceiling light, east (owner decision, Nov 15, 2026)"
   },
   {
    "key": "2:L9",
@@ -1404,8 +1461,8 @@
    "mode": "smart-bulb dimmer"
   },
   {
-   "key": "G:S9",
-   "id": "S9",
+   "key": "G:S11",
+   "id": "S11",
    "level": "G",
    "levelName": "Garage and hallway",
    "room": "Outside, foot of the exterior stair, on the garage west wall (outdoor motion sensor)",
@@ -1490,6 +1547,78 @@
    "pairColor": "#ffd54f",
    "role": "main",
    "mode": "smart-bulb dimmer"
+  },
+  {
+   "key": "2:S28",
+   "id": "S28",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Hall, west end at the foot of the west stair, beside S3 and S17",
+   "x": 13.27,
+   "y": 14.46,
+   "z": 3.25,
+   "controls": [
+    "2:L41",
+    "2:L42",
+    "2:L43"
+   ],
+   "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S29",
+   "pairColor": "#dce775",
+   "group": [
+    "2:S29",
+    "2:S30"
+   ],
+   "role": "main",
+   "mode": "smart-bulb dimmer"
+  },
+  {
+   "key": "2:S29",
+   "id": "S29",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Hall, east end at the head of the east stair, beside S4",
+   "x": 31.67,
+   "y": 14.46,
+   "z": 3.0,
+   "controls": [
+    "2:L41",
+    "2:L42",
+    "2:L43"
+   ],
+   "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S28",
+   "pairColor": "#dce775",
+   "group": [
+    "2:S28",
+    "2:S30"
+   ],
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
+  },
+  {
+   "key": "2:S30",
+   "id": "S30",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "Media room, west (latch) side of the hall door, below S6",
+   "x": 18.1,
+   "y": 14.46,
+   "z": 7.42,
+   "controls": [
+    "2:L41",
+    "2:L42",
+    "2:L43"
+   ],
+   "source": "drawings/2-second-floor_v20.svg",
+   "pairWith": "2:S28",
+   "pairColor": "#dce775",
+   "group": [
+    "2:S28",
+    "2:S29"
+   ],
+   "role": "aux",
+   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "2:S5",

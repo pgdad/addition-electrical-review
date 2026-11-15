@@ -41,8 +41,8 @@ LIGHTS = {
   "L10": ("Hallway", "ceiling", HALL_FLOOR + 8.33, G_LIGHT_CCT, ""),
   "L11": ("Outside, left (west) door", "outdoor", 6.5, G_LIGHT_CCT, "Mounted on the balcony pier"),
   "L15": ("Outside, left (west) door", "outdoor", 6.5, G_LIGHT_CCT, "Mounted on the balcony pier"),
-  "L17": ("Exterior stair, foot, on the garage west wall", "outdoor", 7.0, G_LIGHT_CCT, "Motion controlled by sensors S9 and S10, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads"),
-  "L18": ("Exterior stair, mid-run, on the west wall", "outdoor", 13.0, G_LIGHT_CCT, "Motion controlled by sensors S9 and S10, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads, 13 ft above grade"),
+  "L17": ("Exterior stair, foot, on the garage west wall", "outdoor", 7.0, G_LIGHT_CCT, "Motion controlled by sensors S10 and S11, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads"),
+  "L18": ("Exterior stair, mid-run, on the west wall", "outdoor", 13.0, G_LIGHT_CCT, "Motion controlled by sensors S10 and S11, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads, 13 ft above grade"),
   "L12": ("Outside, right (east) door", "outdoor", 6.5, G_LIGHT_CCT, ""),
   "L16": ("Outside, right (east) door", "outdoor", 6.5, G_LIGHT_CCT, ""),
   "L13": ("Outside, deck door", "outdoor", HALL_FLOOR + 6.5, G_LIGHT_CCT, ""),
@@ -51,6 +51,9 @@ LIGHTS = {
  "2": {
   "L7":  ("West stair up to 3rd floor", "riser", None, L2_CCT, "Riser lights; 14 drawn for 16 risers"),
   "L8":  ("East stair down to garage", "riser", None, L2_CCT, "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17)"),
+  "L41": ("Hall", "ceiling", 9.0, L2_CCT, "Hall ceiling light, west (owner decision, Nov 15, 2026)"),
+  "L42": ("Hall", "ceiling", 9.0, L2_CCT, "Hall ceiling light, middle (owner decision, Nov 15, 2026)"),
+  "L43": ("Hall", "ceiling", 9.0, L2_CCT, "Hall ceiling light, east (owner decision, Nov 15, 2026)"),
   "L9":  ("Media room", "ceiling", 9.0, L2_CCT, ""),
   "L10": ("Media room", "ceiling", 9.0, L2_CCT, ""),
   "L11": ("Media room", "ceiling", 8.2, L2_CCT, "Ceiling fan with light"),
@@ -119,11 +122,14 @@ SWITCHES = {
  ("G", "S7"): ("Hallway, west wall by the garage door", k("G", "L9", "L10")),
  ("G", "S5"): ("Hallway east wall, south (latch) edge of the old-house door, two-gang with S4", k("G", "L13")),
  ("G", "S6"): ("Garage, at the under-stair space", k("G", "L14")),
- ("G", "S9"): ("Outside, foot of the exterior stair, on the garage west wall (outdoor motion sensor)", k("G", "L17", "L18")),
+ ("G", "S11"): ("Outside, foot of the exterior stair, on the garage west wall (outdoor motion sensor)", k("G", "L17", "L18")),
  ("G", "S10"): ("Outside, top landing of the exterior stair at balcony level (outdoor motion sensor)", k("G", "L17", "L18")),
  ("G", "S8"):  ("Hallway west wall at the foot of the stairs, north of the garage door", k("2", "L8")),
  ("2", "S3"): ("Hall, foot of the west stair", k("2", "L7")),
  ("2", "S4"): ("Hall, head of the east stair", k("2", "L8")),
+ ("2", "S28"): ("Hall, west end at the foot of the west stair, beside S3 and S17", rng("2", 41, 43)),
+ ("2", "S29"): ("Hall, east end at the head of the east stair, beside S4", rng("2", 41, 43)),
+ ("2", "S30"): ("Media room, west (latch) side of the hall door, below S6", rng("2", 41, 43)),
  ("2", "S5"): ("Media room, by the hall door", k("2", "L9")),
  ("2", "S24"): ("Media room, by the hall door, between S5 and S6", k("2", "L10")),
  ("2", "S6"): ("Media room, by the hall door", k("2", "L11")),
@@ -165,14 +171,15 @@ PAIRS = [
  (["2:S3", "3:S8"], "#81c784"),
  (["2:S17", "3:S10"], "#64b5f6"), (["3:S1", "3:S2"], "#e57373"),
  (["2:S8", "2:S21"], "#ffb74d"),
+ (["2:S28", "2:S29", "2:S30"], "#dce775"),      # 4-way: one main and two aux switches
  (["2:S5", "2:S22"], "#9575cd"), (["2:S6", "2:S23"], "#a1887f"), (["2:S24", "2:S25"], "#f48fb1"), (["2:S10", "2:S26"], "#90caf9"),
 ]
 # One switch of every 3-way pair is an Inovelli aux switch (owner decision, Nov 10, 2026); the other is the
 # Inovelli main switch that holds the load (or runs the smart bulbs). A traveler runs between the two boxes.
-MOTION = {"G:S9", "G:S10"}       # outdoor motion sensors for the exterior stair lights (not wall switches)
+MOTION = {"G:S11", "G:S10"}       # outdoor motion sensors for the exterior stair lights (not wall switches)
 AUX = {"G:S2", "G:S7", "G:S8", "3:S8", "3:S10", "3:S2",
-       "2:S21", "2:S22", "2:S23", "2:S25", "2:S26"}
-assert all(sum(m in AUX for m in members) == 1 for members, _ in PAIRS)
+       "2:S21", "2:S22", "2:S23", "2:S25", "2:S26", "2:S29", "2:S30"}
+assert all(sum(m in AUX for m in members) == len(members) - 1 for members, _ in PAIRS)
 HALL_SWITCHES = {"G:S4", "G:S5", "G:S7", "G:S8"}   # stand on the raised hallway floor
 
 # ---- outlets: (ids, description, kind, height above the floor in ft, circuit). Heights are assumptions:
@@ -481,20 +488,22 @@ def build():
             lights.append(rec)
     pair_of = {}
     for members, color in PAIRS:
-        for m in members: pair_of[m] = ([x for x in members if x != m][0], color)
+        main = [x for x in members if x not in AUX][0]
+        for m in members: pair_of[m] = (main if m in AUX else [x for x in members if x in AUX][0], color, [x for x in members if x != m])
     for (lv, sid), (room, ctl) in SWITCHES.items():
         key = f"{lv}:{sid}"
         src = sid
         x, z = to_ft(lv, *dev[lv][src]["pts"][0])
         base = HALL_FLOOR if key in HALL_SWITCHES else FLOOR[lv]
-        y = base + {"3:S11": 3.0, "G:S9": 7.0, "G:S10": F2 + 7.0}.get(key, 4.0)    # S11 is low so children can reach it; S9, S10 are outdoor motion sensors about 7 ft above the stair
-        if key in MOTION: x, z = -0.3, (6.3 if sid == "S9" else 19.0)   # outside face of the west wall: stair foot and top landing
+        y = base + {"3:S11": 3.0, "G:S11": 7.0, "G:S10": F2 + 7.0}.get(key, 4.0)    # S11 is low so children can reach it; S10, S11 are outdoor motion sensors about 7 ft above the stair
+        if key in MOTION: x, z = -0.3, (6.3 if sid == "S11" else 19.0)   # outside face of the west wall: stair foot and top landing
         if key in ("G:S4", "G:S5"): x, z = 47.4, (20.0 if sid == "S4" else 20.5)  # two-gang on the east wall, just south of the door jamb at 19.6 ft
         if key in ("G:S1", "G:S3"): x, z = 42.2, (9.1 if sid == "S1" else 9.6)   # two-gang on the wall, just south of the door jamb at 8.7 ft
         if key == "3:S6": x = 47.4                      # sheet draws the small attic narrower than A.4; keep S6 on its east wall
         rec = dict(key=key, id=sid, level=lv, levelName=LEVEL_NAME[lv], room=room, x=x, y=round(y, 2), z=z,
                    controls=ctl, source=SOURCE[lv])
-        if key in pair_of: rec["pairWith"], rec["pairColor"] = pair_of[key]
+        if key in pair_of: rec["pairWith"], rec["pairColor"] = pair_of[key][:2]
+        if key in pair_of and len(pair_of[key][2]) > 1: rec["group"] = pair_of[key][2]     # 4-way: the other two switches
         if key in pair_of: rec["role"] = "aux" if key in AUX else "main"
         if key in MOTION: rec["motion"] = True
         rec["mode"] = "outdoor motion sensor, wired in parallel with the other one, on from dusk to dawn only" if key in MOTION else "Inovelli aux switch, traveler to the main switch" if key in AUX else "on/off" if key in ("2:S6", "2:S9", "2:S11", "2:S18", "2:S23", "3:S5") else "smart-bulb dimmer"

@@ -19,7 +19,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   with their switches: second floor S1, S2, S19, S20, S15, S16, garage S9 and third-floor S9. The IDs are not
   reused. S17 moved next to S3 (two-gang at the west stair foot); third-floor S10 moved up beside S8. Older notes
   below still mention the removed items. Left: riser lights L7, L8 and west stair ceiling lights L35, L40; the
-  hall has no light of its own (see REVIEW.md finding 4).
+  hall had no light of its own until ceiling lights L41-L43 were added on Nov 15, 2026.
 - Owner decisions, Nov 10, 2026 (second round):
   - Garage switch 2 is an 8-port PoE switch with a fiber port. Switch 18 feeds AP 17.
   - Renames: garage stair-foot switches E, F are now S8, S9 (two-gang on the hallway west wall just north of the
@@ -122,7 +122,7 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 - Exterior stair lights (owner decision, Nov 15, 2026): the stair from grade up to the balcony is lit by outdoor
   lights and is motion controlled. Placement is proposed, not yet confirmed by the owner: two wall lights on the
   west wall, L17 at the foot and L18 mid-run, about 7 ft above the treads, on lighting circuit C10; two outdoor
-  motion sensors, S9 at the foot and S10 at the top landing, wired in parallel so either one turns on both
+  motion sensors, S11 at the foot and S10 at the top landing, wired in parallel so either one turns on both
   lights, dusk to dawn only. No wall switch. Balcony light L28 at the top stays on switch S13.
 - Windows (A.2), drawn Nov 10, 2026: two 2840 on the north wall, centred 13'8" and 29'8" from the west
   corner; one 2840 tempered on the west wall, centred 3'0" from the north corner.
@@ -177,6 +177,10 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   Nov 14, 2026; this replaces the Nov 10 decision).
 - Ethernet jacks 7 on the projector wall are 1 to 2 ft below the ceiling (owner decision, Nov 15, 2026); the
   electrician sets the exact height.
+- Hall ceiling lights (owner decision, Nov 15, 2026): ceiling lights in the second-floor hall on 4-way switches,
+  one at each end of the hall and one inside the media room near the west edge of the hall door. Drawn as
+  L41, L42, L43 with S28 (west end, main), S29 (east end, aux) and S30 (media room, aux), on C16. The number
+  and spacing of the lights and the choice of main switch are proposed, not yet confirmed by the owner.
 - Media closet (owner decision, Nov 15, 2026): shelves go on the closet west wall, so L12 and the under-stair
   lights L25-L27 are toward the east wall. The closet door opens into the media room. S7 (L12) is on the media
   side, north of the door, where S14 was. S14 (L25-L27) is inside the closet at the east edge of the doorless

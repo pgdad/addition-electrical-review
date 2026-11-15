@@ -218,8 +218,8 @@ Removed (Nov 14, 2026, owner decision): stair-foot switch S9 and the east stair 
 Nov 14, 2026 (owner decision): no surge protector or ground bar on the video doorbell. SP3 and G3 removed.
 L17
 L18
-S9
+S11
 S10
 L17, L18 Outdoor wall lights over the exterior stair, on the west wall: L17 at the foot, L18 mid-run, about 7 ft above the treads. C10.
-S9, S10 Outdoor motion sensors: S9 at the stair foot, S10 at the top landing (balcony level). Either one turns on L17 and L18.
-Nov 15, 2026 (owner decision): exterior stair lights L17, L18 added, motion controlled (S9, S10), no wall switch.
+S10, S11 Outdoor motion sensors: S11 at the stair foot, S10 at the top landing (balcony level). Either one turns on L17 and L18.
+Nov 15, 2026 (owner decision): exterior stair lights L17, L18 added, motion controlled (S10, S11), no wall switch.

@@ -18,30 +18,30 @@ Counted from `lights.json` (built from the drawings). Quantities only; models ar
 
 Totals by size: four 8-port, two 16-port, three not yet sized.
 
-## Light switches (43) and outdoor motion sensors (2)
+## Light switches (46) and outdoor motion sensors (2)
 
 | Level | Dimmer (smart-bulb mode) | On/off | Aux | Outdoor motion sensor | Total |
 |-------|--------------------------|--------|-----|-----------------------|-------|
 | Garage / hallway | 5 | 0 | 3 | 2 | 10 |
-| Second floor | 12 | 4 | 5 | 0 | 21 |
+| Second floor | 13 | 4 | 7 | 0 | 24 |
 | Third floor | 6 | 1 | 3 | 0 | 10 |
 | Shed | 4 | 0 | 0 | 0 | 4 |
-| **Total** | **27** | **5** | **11** | **2** | **45** |
+| **Total** | **28** | **5** | **13** | **2** | **48** |
 
-The two motion sensors (garage sheet S9, S10) run the exterior stair lights L17, L18 (Nov 15, 2026).
+The two motion sensors (garage sheet S10, S11) run the exterior stair lights L17, L18 (Nov 15, 2026).
 
-The 11 aux switches each need a traveler to their main switch (11 three-way pairs).
+The 13 aux switches each need a traveler to their main switch (11 three-way pairs and one 4-way set: second-floor hall S28 with aux S29 and S30).
 The hall and stair wall lights and their 8 switches were removed on Nov 14, 2026.
 
-## Light fixtures (62 entries)
+## Light fixtures (65 entries)
 
 | Level | Ceiling | Wall | Outdoor | Stair riser runs | Under-cabinet | Low-voltage | Total |
 |-------|---------|------|---------|------------------|---------------|---------------------|-------|
 | Garage / hallway | 11 | 0 | 7 | 0 | 0 | 0 | 18 |
-| Second floor | 17 | 0 | 4 | 2 | 1 | 5 | 29 |
+| Second floor | 20 | 0 | 4 | 2 | 1 | 5 | 32 |
 | Third floor | 9 | 1 | 0 | 0 | 0 | 0 | 10 |
 | Shed | 2 | 1 | 1 | 0 | 0 | 1 | 5 |
-| **Total** | **39** | **2** | **12** | **2** | **1** | **6** | **62** |
+| **Total** | **42** | **2** | **12** | **2** | **1** | **6** | **65** |
 
 The two riser runs are counted as one entry each (one light per riser: 17 risers on the garage stair,
 16 on the west stair). They are listed on the second-floor sheet.
