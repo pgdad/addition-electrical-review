@@ -102,3 +102,52 @@ What to check, with the electrician:
   owner should say whether there is one and where its switch goes.
 - The media room fan (second floor S6 with aux S23) is drawn as one on/off switch for the fan and its light.
   The Smart Fan switch can not run a light, so it fits there only if the fan has no light on that feed.
+
+## Govee lights
+
+Govee smart lights chosen by the owner (owner, Nov 15, 2026). Specifications are copied from the product pages on
+Nov 15, 2026. The plan already puts Govee lights on Inovelli dimmers in smart-bulb mode, which keeps the lights
+powered all the time.
+
+### Indoor ceiling lights
+
+| Device | Product | Used for | Specifications from the product page |
+|--------|---------|----------|--------------------------------------|
+| Ceiling light | [Govee 18-Inch Ceiling Light Pro, H1250 (round) or H1252 (square)](https://us.govee.com/products/govee-18-inch-ceiling-light-pro?variant=47293730095289) | Media room: 2 lights. Third-floor east office: the same or a similar light | 120 V; 55 W; 4800 lm; 2700K-6500K white plus color; 200 LEDs; Bluetooth, Wi-Fi and Matter; indoor; sized by Govee for rooms of 20 to 30 square metres (about 215 to 320 sq ft) |
+
+To settle with the owner:
+
+- The drawings show three ceiling lights in the media room (L9, L10, L11) and three in the east office
+  (L3, L4, L5). Which two media room positions get this light, and how many go in the east office, is not set.
+- Whether the linked variant is the round or the square one could not be read from the page.
+
+### Outdoor wall lights (candidates; the mix is not chosen yet)
+
+The owner will use some combination of these three for the balcony, the stairs and the garage doors.
+
+| Device | Product | Specifications from the product page |
+|--------|---------|--------------------------------------|
+| Up/down wall light | [Govee Outdoor UpDown Wall Light, H7076](https://us.govee.com/products/govee-outdoor-up-down-wall-lights) | 24 V at the light; 24 W; 1200 lm; 2700K-6500K white plus color, up, down and side light; IP66; power source listed as AC; Matter support not stated |
+| Wall light | [Govee Outdoor Wall Light, H7075](https://us.govee.com/products/govee-outdoor-wall-light) | 120 V, hardwired to a junction box; 24 W; 1500 lm; 2700K-6500K white plus color; IP65; -4 to 113 F; Wi-Fi; Matter support not stated |
+| Wall light Pro | [Govee Outdoor Wall Light Pro, H3751](https://us.govee.com/products/govee-outdoor-wall-light-pro) | 24 V at the light, hardwired; 25 W; 2000 lm; tunable white plus color, 72 zones; IP67; -4 to 113 F; Bluetooth, Wi-Fi and Matter; the page sells a 2-pack with Govee motion sensor H5129 |
+
+Outdoor light positions on the drawings that these could fill:
+
+| Area | Lights on the drawings | Count |
+|------|------------------------|-------|
+| Garage overhead doors | Garage L11, L12, L15, L16 | 4 |
+| Garage deck door | Garage L13 | 1 |
+| Exterior stair | Garage L17, L18 | 2 |
+| Balcony | Second floor L23, L24, L28, L29 | 4 |
+
+Check with the electrician/inspector and the owner:
+
+- The UpDown light and the Pro are listed at 24 V at the light. Find out from the manuals whether each has a
+  built-in driver fed with 120 V at the junction box or a separate power adapter, and where an adapter would sit.
+- Only the Pro lists Matter. If every light must be on Matter, the other two need to be confirmed with Govee.
+- The exterior stair lights L17, L18 are drawn on motion sensors S10, S11 that cut their power. A smart light
+  that loses power drops off the network and takes time to come back on. Either keep these two lights powered
+  and let a motion sensor trigger them through the smart home (the Pro is sold with Govee motion sensor H5129),
+  or use plain lights on the wired sensors. This is the owner's call.
+- The pages state no UL or ETL listing for these lights. Ask the electrician to confirm the listing mark on
+  the units, and that each is rated for a wet location where it is exposed to rain.
