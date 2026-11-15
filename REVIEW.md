@@ -24,7 +24,7 @@ The owner settled most of the earlier findings on Nov 10, 2026; they are listed 
 |---|------|---------|-------|
 | 1 | must-fix | Main panel MP is drawn on the north wall inside the footprint of the garage stair (x 36.7 to 39.7 ft). The stair soffit there is roughly 5 to 6 ft above the slab, below the 6.5 ft headroom a panel's working space needs. A.2 also shows a wall along the south side of that stair, so MP, the WashTower, modem 1, switch 18 and P1/P2 would be inside a 3'4" wide enclosed under-stair space. | garage v20: MP, W/D, 1, 18, L14 |
 | 2 | nice-to-have | Garage: nothing by the overhead doors controls L1 to L8 (S2 is on the west wall near the SW corner). A scene button between the doors would cover it. | garage v20: S2 |
-| 3 | nice-to-have | Second floor: motorized screen B covers the balcony door when it is down, and the exterior stair is unlit at the bottom. | second floor v20: B |
+| 3 | nice-to-have | Second floor: motorized screen B covers the balcony door when it is down. (The exterior stair is now lit: garage sheet L17, L18 on motion sensors S9, S10, Nov 15, 2026.) | second floor v20: B |
 | 4 | must-fix | Second floor: after the wall lights were removed (owner decision, Nov 14, 2026) the hall has no light of its own, and the east stair is lit only by riser lights L8. A hallway and a stairway each need a wall-switched light (NEC 210.70(A)(2)); check with the electrician/inspector whether riser lights count for the stairs, and add a switched hall light (ceiling lights would do). | second floor v20: hall, L7, L8 |
 
 ## PDF vs drawing geometry mismatches
@@ -199,8 +199,13 @@ The PDF wins for geometry; these are the differences found.
   - A.3 draws the sauna door opening into the sauna. Sauna doors normally open outward; check the heater
     manual and the inspector.
   - S5/S6 (latch side of the media door) and S11/S18 (latch side of the bath door) are well placed.
-- *nice-to-have*: the exterior stair from grade to the balcony (16 risers) has only L28 at the top landing,
-  which is what the residential code asks for, but the bottom is unlit. A step light or a light at the foot helps.
+- Resolved (owner decision, Nov 15, 2026): the exterior stair from grade to the balcony (16 risers) is now lit by
+  two outdoor wall lights on the garage sheet, L17 at the foot and L18 mid-run, turned on by outdoor motion sensors
+  S9 (foot) and S10 (top landing). L28 still lights the top landing from switch S13. Points to check with the
+  electrician/inspector: whether motion-only control is accepted for exterior stair lighting (the residential code
+  allows automatic control for exterior stairs in many readings; the inspector decides), fixtures and sensors listed
+  for wet locations, and that the sensors sit clear of the mini-split condensers MS3, MS4 under the stair so the
+  fans do not trigger them. Consider putting L28 on the same sensors so the whole stair comes on together.
 - Resolved (owner decision): S6 (media fan and its light), S9 (under-cabinet L16) and S11 (bath L19, L20, fan)
   are now plain on/off switches, not dimmers and not smart-bulb mode.
 - Resolved (owner decision): the bath fan has its own on/off switch S18 below S11; S11 runs L19 and L20 only.
@@ -562,7 +567,7 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 
 **Nice-to-have**
 2. Scene button between the overhead doors for L1 to L8 (garage).
-3. Screen B over the balcony door; light at the foot of the exterior stair (second floor).
+3. Screen B over the balcony door (second floor). The exterior stair light is done (L17, L18 on the garage sheet, Nov 15, 2026).
 
 ## Settled on Nov 10, 2026 (owner decisions)
 

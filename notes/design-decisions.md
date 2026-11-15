@@ -119,6 +119,11 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   PoE doorbell 16 has no surge protector and no ground bar: SP3 and G3 were removed (owner decision,
   Nov 14, 2026; this replaces the Nov 10 decision). The doorbell is on the east
   (latch) side of the front door and is wired to switch 18; L13 is centred over the door.
+- Exterior stair lights (owner decision, Nov 15, 2026): the stair from grade up to the balcony is lit by outdoor
+  lights and is motion controlled. Placement is proposed, not yet confirmed by the owner: two wall lights on the
+  west wall, L17 at the foot and L18 mid-run, about 7 ft above the treads, on lighting circuit C10; two outdoor
+  motion sensors, S9 at the foot and S10 at the top landing, wired in parallel so either one turns on both
+  lights, dusk to dawn only. No wall switch. Balcony light L28 at the top stays on switch S13.
 - Windows (A.2), drawn Nov 10, 2026: two 2840 on the north wall, centred 13'8" and 29'8" from the west
   corner; one 2840 tempered on the west wall, centred 3'0" from the north corner.
 

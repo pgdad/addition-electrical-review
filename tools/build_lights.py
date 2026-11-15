@@ -41,6 +41,8 @@ LIGHTS = {
   "L10": ("Hallway", "ceiling", HALL_FLOOR + 8.33, G_LIGHT_CCT, ""),
   "L11": ("Outside, left (west) door", "outdoor", 6.5, G_LIGHT_CCT, "Mounted on the balcony pier"),
   "L15": ("Outside, left (west) door", "outdoor", 6.5, G_LIGHT_CCT, "Mounted on the balcony pier"),
+  "L17": ("Exterior stair, foot, on the garage west wall", "outdoor", 7.0, G_LIGHT_CCT, "Motion controlled by sensors S9 and S10, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads"),
+  "L18": ("Exterior stair, mid-run, on the west wall", "outdoor", 13.0, G_LIGHT_CCT, "Motion controlled by sensors S9 and S10, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads, 13 ft above grade"),
   "L12": ("Outside, right (east) door", "outdoor", 6.5, G_LIGHT_CCT, ""),
   "L16": ("Outside, right (east) door", "outdoor", 6.5, G_LIGHT_CCT, ""),
   "L13": ("Outside, deck door", "outdoor", HALL_FLOOR + 6.5, G_LIGHT_CCT, ""),
@@ -117,6 +119,8 @@ SWITCHES = {
  ("G", "S7"): ("Hallway, west wall by the garage door", k("G", "L9", "L10")),
  ("G", "S5"): ("Hallway east wall, south (latch) edge of the old-house door, two-gang with S4", k("G", "L13")),
  ("G", "S6"): ("Garage, at the under-stair space", k("G", "L14")),
+ ("G", "S9"): ("Outside, foot of the exterior stair, on the garage west wall (outdoor motion sensor)", k("G", "L17", "L18")),
+ ("G", "S10"): ("Outside, top landing of the exterior stair at balcony level (outdoor motion sensor)", k("G", "L17", "L18")),
  ("G", "S8"):  ("Hallway west wall at the foot of the stairs, north of the garage door", k("2", "L8")),
  ("2", "S3"): ("Hall, foot of the west stair", k("2", "L7")),
  ("2", "S4"): ("Hall, head of the east stair", k("2", "L8")),
@@ -165,6 +169,7 @@ PAIRS = [
 ]
 # One switch of every 3-way pair is an Inovelli aux switch (owner decision, Nov 10, 2026); the other is the
 # Inovelli main switch that holds the load (or runs the smart bulbs). A traveler runs between the two boxes.
+MOTION = {"G:S9", "G:S10"}       # outdoor motion sensors for the exterior stair lights (not wall switches)
 AUX = {"G:S2", "G:S7", "G:S8", "3:S8", "3:S10", "3:S2",
        "2:S21", "2:S22", "2:S23", "2:S25", "2:S26"}
 assert all(sum(m in AUX for m in members) == 1 for members, _ in PAIRS)
@@ -464,6 +469,7 @@ def build():
                 z = round(sum(p[2] for p in points) / len(points), 2)
             else:
                 x, z = pts_ft[0]
+                if (lv, lid) in (("G", "L17"), ("G", "L18")): x, z = -0.3, (7.0 if lid == "L17" else 12.5)   # outside face of the west wall, above the exterior stair
                 y = round(h(x, z) if callable(h) else FLOOR[lv] + h, 2)
             key = f"{lv}:{lid}"
             rec = dict(key=key, id=lid, level=lv, levelName=LEVEL_NAME[lv], room=room, x=x, y=y, z=z,
@@ -480,7 +486,8 @@ def build():
         src = sid
         x, z = to_ft(lv, *dev[lv][src]["pts"][0])
         base = HALL_FLOOR if key in HALL_SWITCHES else FLOOR[lv]
-        y = base + {"3:S11": 3.0}.get(key, 4.0)    # S11 is low so children can reach it
+        y = base + {"3:S11": 3.0, "G:S9": 7.0, "G:S10": F2 + 7.0}.get(key, 4.0)    # S11 is low so children can reach it; S9, S10 are outdoor motion sensors about 7 ft above the stair
+        if key in MOTION: x, z = -0.3, (6.3 if sid == "S9" else 19.0)   # outside face of the west wall: stair foot and top landing
         if key in ("G:S4", "G:S5"): x, z = 47.4, (20.0 if sid == "S4" else 20.5)  # two-gang on the east wall, just south of the door jamb at 19.6 ft
         if key in ("G:S1", "G:S3"): x, z = 42.2, (9.1 if sid == "S1" else 9.6)   # two-gang on the wall, just south of the door jamb at 8.7 ft
         if key == "3:S6": x = 47.4                      # sheet draws the small attic narrower than A.4; keep S6 on its east wall
@@ -488,7 +495,8 @@ def build():
                    controls=ctl, source=SOURCE[lv])
         if key in pair_of: rec["pairWith"], rec["pairColor"] = pair_of[key]
         if key in pair_of: rec["role"] = "aux" if key in AUX else "main"
-        rec["mode"] = "Inovelli aux switch, traveler to the main switch" if key in AUX else "on/off" if key in ("2:S6", "2:S9", "2:S11", "2:S18", "2:S23", "3:S5") else "smart-bulb dimmer"
+        if key in MOTION: rec["motion"] = True
+        rec["mode"] = "outdoor motion sensor, wired in parallel with the other one, on from dusk to dawn only" if key in MOTION else "Inovelli aux switch, traveler to the main switch" if key in AUX else "on/off" if key in ("2:S6", "2:S9", "2:S11", "2:S18", "2:S23", "3:S5") else "smart-bulb dimmer"
         if key == "2:S18": rec["circuit"] = "C15 lighting, 15A AFCI"      # bath fan, with the bath lights (owner agreed, Nov 12, 2026)
         switches.append(rec)
     outlets = []

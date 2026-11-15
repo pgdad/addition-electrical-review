@@ -237,6 +237,42 @@
    "note": "Mounted on the balcony pier"
   },
   {
+   "key": "G:L17",
+   "id": "L17",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "room": "Exterior stair, foot, on the garage west wall",
+   "x": -0.3,
+   "y": 7.0,
+   "z": 7.0,
+   "type": "outdoor",
+   "switches": [
+    "G:S9",
+    "G:S10"
+   ],
+   "circuit": "C10 garage lighting, 15A",
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "note": "Motion controlled by sensors S9 and S10, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads"
+  },
+  {
+   "key": "G:L18",
+   "id": "L18",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "room": "Exterior stair, mid-run, on the west wall",
+   "x": -0.3,
+   "y": 13.0,
+   "z": 12.5,
+   "type": "outdoor",
+   "switches": [
+    "G:S9",
+    "G:S10"
+   ],
+   "circuit": "C10 garage lighting, 15A",
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "note": "Motion controlled by sensors S9 and S10, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads, 13 ft above grade"
+  },
+  {
    "key": "G:L12",
    "id": "L12",
    "level": "G",
@@ -1365,6 +1401,40 @@
    ],
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "mode": "smart-bulb dimmer"
+  },
+  {
+   "key": "G:S9",
+   "id": "S9",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "room": "Outside, foot of the exterior stair, on the garage west wall (outdoor motion sensor)",
+   "x": -0.3,
+   "y": 7.0,
+   "z": 6.3,
+   "controls": [
+    "G:L17",
+    "G:L18"
+   ],
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "motion": true,
+   "mode": "outdoor motion sensor, wired in parallel with the other one, on from dusk to dawn only"
+  },
+  {
+   "key": "G:S10",
+   "id": "S10",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "room": "Outside, top landing of the exterior stair at balcony level (outdoor motion sensor)",
+   "x": -0.3,
+   "y": 17.46,
+   "z": 19.0,
+   "controls": [
+    "G:L17",
+    "G:L18"
+   ],
+   "source": "drawings/1-garage-and-hallway_v20.svg",
+   "motion": true,
+   "mode": "outdoor motion sensor, wired in parallel with the other one, on from dusk to dawn only"
   },
   {
    "key": "G:S8",
