@@ -1101,7 +1101,7 @@ function buildReport(parts) {
   if (parts.notes) h += `<div class="rp-text rp-notes"><h1 data-th="Written notes">Written notes</h1>${mdToHtml(NOTES.decisions || '')}</div><div class="rp-text rp-notes">${mdToHtml(NOTES.findings || '')}${mdToHtml(NOTES.load || '')}</div>`;
   if (parts.inventory) h += `<div class="rp-text" data-th="Inventory">${document.getElementById('inventory').innerHTML.replace('<h3>Inventory</h3>', '<h1>Inventory</h1>')}</div>`;
   rep.innerHTML = h;
-  for (const e of rep.querySelectorAll('.rp-notes h2, .rp-notes h3')) { e.dataset.toc = e.textContent; if (e.tagName === 'H3') e.dataset.tl = 3; }
+  for (const e of rep.querySelectorAll('.rp-notes h2, .rp-notes h3')) { e.dataset.toc = e.textContent; if (e.tagName === 'H3' && e.parentNode.querySelector('h2')) e.dataset.tl = 3; }
   tocFill(rep);
 }
 document.getElementById('mkreport').onclick = () => {
