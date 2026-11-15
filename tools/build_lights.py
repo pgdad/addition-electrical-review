@@ -609,7 +609,8 @@ if __name__ == "__main__":
             assert m, title
             return m.group(0).strip()
         notes = dict(decisions=(ROOT / "notes" / "design-decisions.md").read_text(),
-                     findings=section("Open findings"), load=section("Load estimate"))
+                     findings=section("Open findings"), load=section("Load estimate"),
+                     devices=(ROOT / "notes" / "devices.md").read_text())
         nblock = json.dumps(notes, separators=(",", ":")).replace("</", "<\\/")
         s2, n = re.subn(r'(<script id="notes-data" type="application/json">).*?(</script>)',
                         lambda m: m.group(1) + "\n" + nblock + "\n" + m.group(2), s2, flags=re.S)

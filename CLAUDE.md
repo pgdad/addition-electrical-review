@@ -10,6 +10,7 @@ You are reviewing a homeowner's electrical, lighting and low-voltage design for 
   green = switches (S#), pink = lights (L#), amber = power/panels/equipment (amber pills SD#/CO# = smoke and CO alarms),
   red = outlets (P#, O#, EV#), teal = blind outlets (H#), purple = network (numbers), blue = windows.
 - drawings/*.legend.txt: every text label pulled out of each SVG (quick to grep).
+- notes/devices.md: the specific products the owner has already bought, with links.
 - notes/design-decisions.md: the owner's decisions, what is only proposed, and open questions.
 
 Use `pdftotext`/`pdftoppm` (poppler) to read the PDFs if available; otherwise read them directly.
