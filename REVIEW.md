@@ -437,7 +437,7 @@ doorbell; new switch 16 (8-port, family room southeast corner) takes the east ha
 | 8 | 3 | Sensor 5, media ceiling | Cat6 | 25 ft | 3 W |
 | 8 | 4 | Sensor 6, media ceiling | Cat6 | 35 ft | 3 W |
 | 8 | 5 | Sensor 3, hall ceiling at the media door | Cat6 | 45 ft | 3 W |
-| 8 | 6-9 | Jacks 7 (four), projector wall | 4 x Cat6A | 4 x 45 ft | 60 W |
+| 8 | 6-9 | Jacks 7 (four), high on the projector wall | 4 x Cat6A | 4 x 35 ft | 60 W |
 | 8 | 10 | Doorbell 14, balcony | Cat6 | 40 ft | 10 W |
 | 8 | 11-12 | Jacks 17 (two), high on the media south wall by H3 (added Nov 12, 2026) | 2 x Cat6A | 2 x 20 ft | none |
 | 16 (family SE) | 1 | AP 15, kitchen/family ceiling | Cat6A | 25 ft | 21 W |

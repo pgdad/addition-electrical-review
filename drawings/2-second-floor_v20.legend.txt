@@ -55,7 +55,7 @@ Power (amber)
 3 Hall ceiling sensor, media door
 4 Hall ceiling sensor, kitchen door
 5, 6 Media ceiling sensors
-7 Projector wall, 4 PoE jacks
+7 Projector wall, 4 PoE jacks, high
 8 PoE switch (16-port), SW closet
 9 UniFi wall AP, media west wall
 10 Kitchen sensor, sink and DW
@@ -297,3 +297,4 @@ Nov 14, 2026 (owner decision): no surge protector or ground bar on the video doo
 Nov 15, 2026 (owner decision): closet lights L12 and L25-L27 moved toward the east wall (shelves go on the closet west wall).
 Closet door now opens into the media room. S7 moved to the media side north of the door (where S14 was). S14 is now inside the
 closet, at the east edge of the doorless opening to the under-stair space (opening position and width assumed: about 2 ft).
+Nov 15, 2026 (owner decision): Ethernet jacks 7 on the projector wall are 1 to 2 ft below the ceiling.

@@ -394,7 +394,7 @@ JACKS = {
        ("5", "Two floor jacks, west edge of the east clipped strip, across from B1", 0.1, "Two jacks, data only, no PoE"),
        ("14", "Two wall jacks, west office south wall, east of the windows", 1.5, "Two jacks, data only, no PoE")],
 }
-JACKS["2"] = [("7", "Four PoE jacks on the projector wall (media north wall)", 1.5, "Four jacks, PoE available (15 W each assumed)"),
+JACKS["2"] = [("7", "Four PoE jacks high on the projector wall (media north wall)", 7.5, "Four jacks, PoE available (15 W each assumed)"),
               ("17", "Two Ethernet jacks high on the media room south wall, beside blind outlet H3", 7.5, "Two jacks, data only, no PoE")]
 JACKS["G"] = [("21", "Four Ethernet jacks on the north wall by outlet P22, near switch 7", 1.5, "Four jacks, data only, no PoE"),
               ("22", "Two Ethernet jacks on the north wall between EV chargers EV1 and EV2, one for each charger", 4.0, "Two jacks, data only, no PoE"),
@@ -413,6 +413,7 @@ CABLES["3"][0][1].extend([
 SWITCH_MOUNT = {("G", "7"): ("floor", 1.0, 2.0, None), ("G", "2"): ("ceiling", 1.0, 2.0, G_CEIL), ("G", "18"): ("floor", 0.5, 1.5, None),
                 ("2", "8"): ("ceiling", 1.0, 2.0, 7.5), ("2", "16"): ("ceiling", 1.0, 2.0, 9.0),      # 8: media closet ceiling under the west stair
                 ("3", "1"): ("rack", None, None, None), ("S", "1"): ("ceiling", 1.0, 2.0, 8.0)}
+JACK_MOUNT = {("2", "7"): ("ceiling", 1.0, 2.0, 9.0)}     # projector-wall jacks, 1 to 2 ft below the 9 ft media room ceiling (owner decision, Nov 15, 2026)
 HALL_NET = {"17", "14", "15", "16", "19", "20"}
 # presence sensors (PoE ESP32 units): level -> [(item numbers, where, height above the floor in ft, assumed)]
 SENSORS = {
@@ -520,7 +521,7 @@ def build():
             x, z = to_ft(lv, *dev[lv][nid]["pts"][0])
             if (lv, nid) == ("G", "21"): z = 0.3            # drawn below C to clear it; it is on the north wall
             base = HALL_FLOOR if (lv == "G" and nid in HALL_NET) else FLOOR[lv]
-            sm = SWITCH_MOUNT.get((lv, nid)) if kind == "switch" else None
+            sm = SWITCH_MOUNT.get((lv, nid)) if kind == "switch" else JACK_MOUNT.get((lv, nid)) if kind == "jack" else None
             if kind == "switch": assert sm, f"no mounting height range for switch {lv}:{nid}"
             if sm and sm[0] == "floor": h = (sm[1] + sm[2]) / 2
             if sm and sm[0] == "ceiling": h = sm[3] - (sm[1] + sm[2]) / 2

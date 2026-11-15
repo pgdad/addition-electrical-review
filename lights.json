@@ -3982,12 +3982,17 @@
    "levelName": "Second floor",
    "kind": "jack",
    "name": "Ethernet jack",
-   "room": "Four PoE jacks on the projector wall (media north wall)",
+   "room": "Four PoE jacks high on the projector wall (media north wall)",
    "x": 13.49,
-   "y": 11.96,
+   "y": 17.96,
    "z": 4.56,
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Four jacks, PoE available (15 W each assumed)",
+   "mountRef": "ceiling",
+   "mountRange": [
+    1.0,
+    2.0
+   ],
    "cable": "2:C7"
   },
   {
@@ -5916,7 +5921,7 @@
    "poeW": 60,
    "count": 4,
    "port": "6-9",
-   "lengthFt": 45,
+   "lengthFt": 35,
    "route": "Up from switch 8 in the closet, east above the media ceiling, north to the projector wall, down inside it",
    "points": [
     [
@@ -5941,7 +5946,7 @@
     ],
     [
      13.49,
-     11.96,
+     17.96,
      4.56
     ]
    ]

@@ -175,6 +175,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   and balcony C14.
 - PoE doorbell 14 has no surge protector and no ground bar: SP1 and GB1 were removed (owner decision,
   Nov 14, 2026; this replaces the Nov 10 decision).
+- Ethernet jacks 7 on the projector wall are 1 to 2 ft below the ceiling (owner decision, Nov 15, 2026); the
+  electrician sets the exact height.
 - Media closet (owner decision, Nov 15, 2026): shelves go on the closet west wall, so L12 and the under-stair
   lights L25-L27 are toward the east wall. The closet door opens into the media room. S7 (L12) is on the media
   side, north of the door, where S14 was. S14 (L25-L27) is inside the closet at the east edge of the doorless
