@@ -108,7 +108,7 @@ L7 Stair up, light mid each riser
 L8 Stair down, light mid each riser, all 17 to garage floor
 L9, L10 Media ceiling at 25% and 75% of width
 L11 Media ceiling fan with light, center
-L12 Closet
+L12 Closet, east side
 L13, L14 Kitchen ceiling
 L15 Island pendant
 L16 Kitchen under-cabinet, east counter
@@ -123,7 +123,7 @@ S3 Stair up risers, bottom (top on 3rd fl)
 S4 Stair down risers, top (bottom on garage lvl)
 S5 Media ceiling L9, by hall door (L10 on S24)
 S6 Media fan and its light, beside S5 (on/off)
-S7 Closet, media side of its door
+S7 Closet light, media side, north of its door
 S8 Kitchen ceiling and pendant, by hall door (S21)
 S9 Under-cabinet, beside S8 (on/off)
 S10 Family, by balcony door (L17, L18, L24)
@@ -182,10 +182,10 @@ L27
 L28
 L29
 S14
-L25-L27 Under the stairs up, north/south run
+L25-L27 Under the stairs up, along the east wall
 L28, L29 Balcony, high wall lights
 L30-L34 Stair wall lights: removed (Nov 14, 2026)
-S14 Under-stair lights, beside AP 9
+S14 Under-stair lights, inside the closet
 S15 West stair wall light switch: removed
 S16 East stair wall light switch: removed
 L28, L29 on S13 (my call)
@@ -200,7 +200,7 @@ P12, P13, P25-P27 Counter GFCI
 P14 Island GFCI
 P15, P22 Bath west wall, GFCI
 P16-P18 Under the stairs up
-P19, P20 Media, by S7
+P19, P20 Media, by the closet door
 H1, H2 Hall windows, high
 H3, H4 Media, each side of the 3020s
 H5, H6 Family, each side of the 3050s
@@ -217,7 +217,7 @@ C9 W WashTower, 30A 240V, GFCI
 C10 F, P15, P22 bath, 20A GFCI
 C11 A, B, C, P3-P6 media, 20A AFCI
 C12 P1, P2, P8-P10, P21, H1-H6, 20A AFCI
-C13 P16-P20 under stairs, by S7, 20A AFCI
+C13 P16-P20 under stairs, by closet door, 20A AFCI
 C14 P11, P23, P24 balcony, 20A GFCI
 C15, C16 Lighting, 15A AFCI (split: see note)
 L35
@@ -294,3 +294,6 @@ New outlet P28 on fridge circuit C6: high on the north wall above the refrigerat
 Removed (Nov 14, 2026, owner decision): hall wall lights L1-L6 and stair wall lights L30-L34, with their switches S1, S2, S19, S20, S15, S16.
 The stairs keep riser lights L7, L8 and west stair ceiling lights L35, L40. The hall now has no light of its own: check with the electrician.
 Nov 14, 2026 (owner decision): no surge protector or ground bar on the video doorbell. SP1 and GB1 removed.
+Nov 15, 2026 (owner decision): closet lights L12 and L25-L27 moved toward the east wall (shelves go on the closet west wall).
+Closet door now opens into the media room. S7 moved to the media side north of the door (where S14 was). S14 is now inside the
+closet, at the east edge of the doorless opening to the under-stair space (opening position and width assumed: about 2 ft).

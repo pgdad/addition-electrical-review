@@ -590,15 +590,16 @@
    "level": "2",
    "levelName": "Second floor",
    "room": "Media closet (under west stair)",
-   "x": 1.27,
+   "x": 2.61,
    "y": 17.96,
-   "z": 13.01,
+   "z": 14.09,
    "type": "ceiling",
    "switches": [
     "2:S7"
    ],
    "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
-   "source": "drawings/2-second-floor_v20.svg"
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Toward the east wall; shelves go on the west wall"
   },
   {
    "key": "2:L13",
@@ -889,16 +890,16 @@
    "level": "2",
    "levelName": "Second floor",
    "room": "Under the west stair",
-   "x": 0.77,
-   "y": 15.26,
-   "z": 6.0,
+   "x": 3.02,
+   "y": 14.29,
+   "z": 4.88,
    "type": "ceiling",
    "switches": [
     "2:S14"
    ],
    "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "On the stair soffit"
+   "note": "On the stair soffit, toward the east wall"
   },
   {
    "key": "2:L26",
@@ -906,16 +907,16 @@
    "level": "2",
    "levelName": "Second floor",
    "room": "Under the west stair",
-   "x": 0.77,
-   "y": 17.08,
-   "z": 8.09,
+   "x": 3.02,
+   "y": 16.17,
+   "z": 7.05,
    "type": "ceiling",
    "switches": [
     "2:S14"
    ],
    "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "On the stair soffit"
+   "note": "On the stair soffit, toward the east wall"
   },
   {
    "key": "2:L27",
@@ -923,16 +924,16 @@
    "level": "2",
    "levelName": "Second floor",
    "room": "Under the west stair",
-   "x": 0.77,
-   "y": 18.88,
-   "z": 10.17,
+   "x": 3.02,
+   "y": 17.98,
+   "z": 9.13,
    "type": "ceiling",
    "switches": [
     "2:S14"
    ],
    "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "On the stair soffit"
+   "note": "On the stair soffit, toward the east wall"
   },
   {
    "key": "2:L28",
@@ -1549,10 +1550,10 @@
    "id": "S7",
    "level": "2",
    "levelName": "Second floor",
-   "room": "Media room, by the closet door",
-   "x": 4.02,
+   "room": "Media room, north (latch) side of the closet door",
+   "x": 4.61,
    "y": 14.46,
-   "z": 16.51,
+   "z": 12.17,
    "controls": [
     "2:L12"
    ],
@@ -1793,10 +1794,10 @@
    "id": "S14",
    "level": "2",
    "levelName": "Second floor",
-   "room": "Media room west wall, beside AP 9",
-   "x": 4.61,
+   "room": "Inside the media closet, at the east edge of the opening to the under-stair space",
+   "x": 2.98,
    "y": 14.46,
-   "z": 12.17,
+   "z": 12.72,
    "controls": [
     "2:L25",
     "2:L26",
@@ -2542,9 +2543,9 @@
    "levelName": "Second floor",
    "room": "Media closet outlet",
    "kind": "wall",
-   "x": 2.86,
+   "x": 0.94,
    "y": 11.96,
-   "z": 13.52,
+   "z": 13.68,
    "circuit": "C11 media, 20A AFCI",
    "source": "drawings/2-second-floor_v20.svg"
   },
