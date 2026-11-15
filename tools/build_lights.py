@@ -264,7 +264,7 @@ HALL_OUTLETS = {"P14", "P15", "P16", "P17"}
 NETWORK = {
  "G": [
   ("2", "switch", "8-port PoE switch with a fiber port", "Garage southwest corner, high beside outlet P13", 7.0, "Feeds cameras 3 and 4, outdoor AP 5, AP 6 and jacks 11"),
-  ("7", "switch", "16-port PoE switch with a fiber port", "Garage northwest corner, north wall, beside outlet P20", 7.0, "Feeds cameras 8 and 9, sensor 12 and jacks 21 and 22"),
+  ("7", "switch", "16-port PoE switch with a fiber port", "Garage northwest corner, north wall, low on the wall (outlet P20 is high on the same wall)", 7.0, "Feeds cameras 8 and 9, sensor 12 and jacks 21 and 22"),
   ("18", "switch", "8-port PoE switch with a fiber port", "Under the garage stairs", 3.0, "Fiber to the third-floor rack R1"),
   ("5", "ap", "Outdoor AP", "Outside the garage south wall, facing south", 9.0, "Outdoor copper run; surge protector SP1"),
   ("6", "ap", "UniFi wall AP", "Garage, mid west wall", 7.0, ""),
@@ -402,6 +402,12 @@ CABLES["3"][0][1].extend([
   ("5",  "Cat6A", 0, [(24.05, 16.12)], _F + " to the far floor box", -0.6, 2),
   ("14", "Cat6A", 0, [(24.05, 12.7), (14.12, 12.7)], "West bundle with sensor 13 above the west office ceiling, then south and down inside the south wall", None, 2),
 ])
+# Network switch mounting heights (owner decision, Nov 15, 2026): a range in ft from the floor or down from the
+# ceiling, for the electrician to adjust. (reference, low, high, ceiling height above the floor used for the model).
+# The model and the cable lengths use the middle of the range.
+SWITCH_MOUNT = {("G", "7"): ("floor", 1.0, 2.0, None), ("G", "2"): ("ceiling", 1.0, 2.0, G_CEIL), ("G", "18"): ("floor", 0.5, 1.5, None),
+                ("2", "8"): ("ceiling", 1.0, 2.0, 7.5), ("2", "16"): ("ceiling", 1.0, 2.0, 9.0),      # 8: media closet ceiling under the west stair
+                ("3", "1"): ("rack", None, None, None), ("S", "1"): ("ceiling", 1.0, 2.0, 8.0)}
 HALL_NET = {"17", "14", "15", "16", "19", "20"}
 # presence sensors (PoE ESP32 units): level -> [(item numbers, where, height above the floor in ft, assumed)]
 SENSORS = {
@@ -506,9 +512,15 @@ def build():
             x, z = to_ft(lv, *dev[lv][nid]["pts"][0])
             if (lv, nid) == ("G", "21"): z = 0.3            # drawn below C to clear it; it is on the north wall
             base = HALL_FLOOR if (lv == "G" and nid in HALL_NET) else FLOOR[lv]
+            sm = SWITCH_MOUNT.get((lv, nid)) if kind == "switch" else None
+            if kind == "switch": assert sm, f"no mounting height range for switch {lv}:{nid}"
+            if sm and sm[0] == "floor": h = (sm[1] + sm[2]) / 2
+            if sm and sm[0] == "ceiling": h = sm[3] - (sm[1] + sm[2]) / 2
             rec = dict(key=f"{lv}:N{nid}", id=nid, level=lv, levelName=LEVEL_NAME[lv], kind=kind, name=name, room=where,
                        x=x, y=round(base + h, 2), z=z, source=SOURCE[lv])
             if note: rec["note"] = note
+            if sm: rec["mountRef"] = sm[0]
+            if sm and sm[1] is not None: rec["mountRange"] = [sm[1], sm[2]]
             if kind == "sensor": rec["mount"] = "ceiling" if h >= 8.9 else "wall"   # ceiling units sit at ceiling height; the rest are high on a wall
             network.append(rec)
     # Ethernet runs (proposed): home runs from the level's switch, routed above the ceiling at ROUTE_H, with

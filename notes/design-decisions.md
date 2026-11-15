@@ -39,6 +39,11 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   and third-floor S5 (closet light L7).
 - Smoke/CO alarms: hardwired, interconnected, battery backup (A.2 note 9), drawn at the architect's
   locations as SD#/CO#: garage hallway SD1 + CO1, second-floor hall SD1 + CO1, third-floor west office SD1.
+- Network switch mounting heights (owner decision, Nov 15, 2026), as ranges the electrician adjusts on site:
+  garage switch 7 at 1 to 2 ft above the floor, switch 2 at 1 to 2 ft below the ceiling, switch 18 at
+  1/2 to 1 1/2 ft above the floor; second-floor switches 8 and 16 at 1 to 2 ft below the ceiling; the
+  third-floor switches are in server rack R1 under the vaulted ceiling; shed switch 1 at 1 to 2 ft below
+  the ceiling. (The owner's message named switch 7 twice; the 1/2 to 1 1/2 ft range is taken to be switch 18.)
 - Presence sensors are mostly PoE ESP32 units; normally they drive the lights, wall switches are the fallback.
 - Blinds: powered smart blinds on every window, outlets high near window tops (H# items); double windows get one
   each side. No blinds on the second-floor sauna window or the balcony doors.

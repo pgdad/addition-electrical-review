@@ -3503,10 +3503,15 @@
    "name": "8-port PoE switch with a fiber port",
    "room": "Garage southwest corner, high beside outlet P13",
    "x": 1.2,
-   "y": 7.0,
+   "y": 7.92,
    "z": 20.75,
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "note": "Feeds cameras 3 and 4, outdoor AP 5, AP 6 and jacks 11",
+   "mountRef": "ceiling",
+   "mountRange": [
+    1.0,
+    2.0
+   ],
    "fiber": "G:F2"
   },
   {
@@ -3516,12 +3521,17 @@
    "levelName": "Garage and hallway",
    "kind": "switch",
    "name": "16-port PoE switch with a fiber port",
-   "room": "Garage northwest corner, north wall, beside outlet P20",
+   "room": "Garage northwest corner, north wall, low on the wall (outlet P20 is high on the same wall)",
    "x": 1.2,
-   "y": 7.0,
+   "y": 1.5,
    "z": 1.2,
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "note": "Feeds cameras 8 and 9, sensor 12 and jacks 21 and 22",
+   "mountRef": "floor",
+   "mountRange": [
+    1.0,
+    2.0
+   ],
    "fiber": "G:F7"
   },
   {
@@ -3533,10 +3543,15 @@
    "name": "8-port PoE switch with a fiber port",
    "room": "Under the garage stairs",
    "x": 41.15,
-   "y": 3.0,
+   "y": 1.0,
    "z": 1.46,
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "note": "Fiber to the third-floor rack R1",
+   "mountRef": "floor",
+   "mountRange": [
+    0.5,
+    1.5
+   ],
    "fiber": "G:F18"
   },
   {
@@ -3815,10 +3830,15 @@
    "name": "16-port PoE switch with a fiber port",
    "room": "Media closet, southwest",
    "x": 2.19,
-   "y": 15.46,
+   "y": 16.46,
    "z": 15.71,
    "source": "drawings/2-second-floor_v20.svg",
    "note": "West half of the floor, the projector jacks and doorbell 14",
+   "mountRef": "ceiling",
+   "mountRange": [
+    1.0,
+    2.0
+   ],
    "fiber": "2:F8"
   },
   {
@@ -3830,10 +3850,15 @@
    "name": "8-port PoE switch with a fiber port",
    "room": "Family room, southeast corner, high by blind outlet H6",
    "x": 35.25,
-   "y": 17.46,
+   "y": 17.96,
    "z": 23.1,
    "source": "drawings/2-second-floor_v20.svg",
    "note": "East half of the floor; powered from blind outlet H6, which becomes a duplex (owner decision)",
+   "mountRef": "ceiling",
+   "mountRange": [
+    1.0,
+    2.0
+   ],
    "fiber": "2:F16"
   },
   {
@@ -4071,7 +4096,8 @@
    "y": 23.61,
    "z": 14.16,
    "source": "drawings/3-third-floor_v32.svg",
-   "note": "Every other network switch uplinks here by fiber; fiber in from the garage modem"
+   "note": "Every other network switch uplinks here by fiber; fiber in from the garage modem",
+   "mountRef": "rack"
   },
   {
    "key": "3:N2",
@@ -4260,10 +4286,15 @@
    "name": "PoE switch",
    "room": "Shed north wall",
    "x": -3.0,
-   "y": 5.0,
+   "y": 6.5,
    "z": 54.64,
    "source": "drawings/4-sauna-shed_v6.svg",
    "note": "Fiber in from the garage",
+   "mountRef": "ceiling",
+   "mountRange": [
+    1.0,
+    2.0
+   ],
    "fiber": "S:F1"
   },
   {
@@ -4819,12 +4850,12 @@
    "poeW": 13,
    "count": 1,
    "port": "1",
-   "lengthFt": 20,
+   "lengthFt": 15,
    "route": "Up from switch 2, east along the south wall, out through the wall to the AP (surge protector SP1)",
    "points": [
     [
      1.2,
-     7.0,
+     7.92,
      20.75
     ],
     [
@@ -4863,7 +4894,7 @@
    "points": [
     [
      1.2,
-     7.0,
+     7.92,
      20.75
     ],
     [
@@ -4897,7 +4928,7 @@
    "points": [
     [
      1.2,
-     7.0,
+     7.92,
      20.75
     ],
     [
@@ -4941,7 +4972,7 @@
    "points": [
     [
      1.2,
-     7.0,
+     7.92,
      20.75
     ],
     [
@@ -4980,7 +5011,7 @@
    "points": [
     [
      1.2,
-     7.0,
+     7.92,
      20.75
     ],
     [
@@ -5014,12 +5045,12 @@
    "poeW": 3,
    "count": 1,
    "port": "1",
-   "lengthFt": 25,
+   "lengthFt": 30,
    "route": "Up from switch 7, east along the north wall, then out across the ceiling",
    "points": [
     [
      1.2,
-     7.0,
+     1.5,
      1.2
     ],
     [
@@ -5053,12 +5084,12 @@
    "poeW": 0,
    "count": 4,
    "port": "2-5",
-   "lengthFt": 25,
+   "lengthFt": 30,
    "route": "Up from switch 7, a few feet east inside the north wall, down to the jack plates",
    "points": [
     [
      1.2,
-     7.0,
+     1.5,
      1.2
     ],
     [
@@ -5092,12 +5123,12 @@
    "poeW": 0,
    "count": 2,
    "port": "6-7",
-   "lengthFt": 35,
+   "lengthFt": 40,
    "route": "Up from switch 7, east along the north wall above the window, down inside the wall to the jack plate between the chargers",
    "points": [
     [
      1.2,
-     7.0,
+     1.5,
      1.2
     ],
     [
@@ -5131,12 +5162,12 @@
    "poeW": 8,
    "count": 1,
    "port": "8",
-   "lengthFt": 20,
+   "lengthFt": 25,
    "route": "From SP2 on G2 east along the north wall, out through the wall to the camera",
    "points": [
     [
      1.2,
-     7.0,
+     1.5,
      1.2
     ],
     [
@@ -5170,12 +5201,12 @@
    "poeW": 5,
    "count": 1,
    "port": "9",
-   "lengthFt": 30,
+   "lengthFt": 35,
    "route": "Up from switch 7, east along the north wall, then south across the ceiling",
    "points": [
     [
      1.2,
-     7.0,
+     1.5,
      1.2
     ],
     [
@@ -5214,7 +5245,7 @@
    "points": [
     [
      41.15,
-     3.0,
+     1.0,
      1.46
     ],
     [
@@ -5248,12 +5279,12 @@
    "poeW": 3,
    "count": 1,
    "port": "2",
-   "lengthFt": 30,
+   "lengthFt": 35,
    "route": "Up from switch 18, out of the under-stair space, west across the garage ceiling",
    "points": [
     [
      41.15,
-     3.0,
+     1.0,
      1.46
     ],
     [
@@ -5287,12 +5318,12 @@
    "poeW": 3,
    "count": 1,
    "port": "3",
-   "lengthFt": 20,
+   "lengthFt": 25,
    "route": "Up from switch 18, east through the stair wall to the hallway north wall",
    "points": [
     [
      41.15,
-     3.0,
+     1.0,
      1.46
     ],
     [
@@ -5331,7 +5362,7 @@
    "points": [
     [
      41.15,
-     3.0,
+     1.0,
      1.46
     ],
     [
@@ -5370,7 +5401,7 @@
    "points": [
     [
      41.15,
-     3.0,
+     1.0,
      1.46
     ],
     [
@@ -5409,12 +5440,12 @@
    "poeW": 3,
    "count": 1,
    "port": "6",
-   "lengthFt": 45,
+   "lengthFt": 50,
    "route": "Hallway bundle: east to the hallway east wall, south along it, then west to the doorway",
    "points": [
     [
      41.15,
-     3.0,
+     1.0,
      1.46
     ],
     [
@@ -5463,7 +5494,7 @@
    "points": [
     [
      41.15,
-     3.0,
+     1.0,
      1.46
     ],
     [
@@ -5512,7 +5543,7 @@
    "points": [
     [
      41.15,
-     3.0,
+     1.0,
      1.46
     ],
     [
@@ -5551,7 +5582,7 @@
    "points": [
     [
      -3.0,
-     5.0,
+     6.5,
      54.64
     ],
     [
@@ -5585,7 +5616,7 @@
    "points": [
     [
      -3.0,
-     5.0,
+     6.5,
      54.64
     ],
     [
@@ -5619,12 +5650,12 @@
    "poeW": 13,
    "count": 1,
    "port": "1",
-   "lengthFt": 25,
+   "lengthFt": 20,
    "route": "Up from switch 8 in the closet, north in the closet wall, drop to the AP on the media west wall",
    "points": [
     [
      2.19,
-     15.46,
+     16.46,
      15.71
     ],
     [
@@ -5663,7 +5694,7 @@
    "points": [
     [
      2.19,
-     15.46,
+     16.46,
      15.71
     ],
     [
@@ -5702,7 +5733,7 @@
    "points": [
     [
      2.19,
-     15.46,
+     16.46,
      15.71
     ],
     [
@@ -5741,7 +5772,7 @@
    "points": [
     [
      2.19,
-     15.46,
+     16.46,
      15.71
     ],
     [
@@ -5780,7 +5811,7 @@
    "points": [
     [
      2.19,
-     15.46,
+     16.46,
      15.71
     ],
     [
@@ -5819,7 +5850,7 @@
    "points": [
     [
      2.19,
-     15.46,
+     16.46,
      15.71
     ],
     [
@@ -5858,7 +5889,7 @@
    "points": [
     [
      2.19,
-     15.46,
+     16.46,
      15.71
     ],
     [
@@ -5902,7 +5933,7 @@
    "points": [
     [
      2.19,
-     15.46,
+     16.46,
      15.71
     ],
     [
@@ -5946,7 +5977,7 @@
    "points": [
     [
      35.25,
-     17.46,
+     17.96,
      23.1
     ],
     [
@@ -5985,7 +6016,7 @@
    "points": [
     [
      35.25,
-     17.46,
+     17.96,
      23.1
     ],
     [
@@ -6024,7 +6055,7 @@
    "points": [
     [
      35.25,
-     17.46,
+     17.96,
      23.1
     ],
     [
@@ -6063,7 +6094,7 @@
    "points": [
     [
      35.25,
-     17.46,
+     17.96,
      23.1
     ],
     [
@@ -6102,7 +6133,7 @@
    "points": [
     [
      35.25,
-     17.46,
+     17.96,
      23.1
     ],
     [
@@ -6141,7 +6172,7 @@
    "points": [
     [
      35.25,
-     17.46,
+     17.96,
      23.1
     ],
     [
@@ -6180,7 +6211,7 @@
    "points": [
     [
      35.25,
-     17.46,
+     17.96,
      23.1
     ],
     [
@@ -6212,7 +6243,7 @@
    "from": "G:N18",
    "to": "3:N1",
    "cable": "Fiber, duplex single-mode (OS2), LC",
-   "lengthFt": 75,
+   "lengthFt": 80,
    "route": "Up from switch 18 to the riser beside it, up the north wall to the third-floor north eave, west, then south above the office wall to R1",
    "levels": [
     "3",
@@ -6255,7 +6286,7 @@
    "points": [
     [
      41.15,
-     3.0,
+     1.0,
      1.46
     ],
     [
@@ -6295,7 +6326,7 @@
    "from": "G:N7",
    "to": "3:N1",
    "cable": "Fiber, duplex single-mode (OS2), LC",
-   "lengthFt": 110,
+   "lengthFt": 115,
    "route": "East along the garage north wall to the riser, then up and across the third floor to R1",
    "levels": [
     "3",
@@ -6342,7 +6373,7 @@
    "points": [
     [
      1.2,
-     7.0,
+     1.5,
      1.2
     ],
     [
@@ -6438,7 +6469,7 @@
    "points": [
     [
      1.2,
-     7.0,
+     7.92,
      20.75
     ],
     [
@@ -6554,7 +6585,7 @@
    "points": [
     [
      -3.0,
-     5.0,
+     6.5,
      54.64
     ],
     [
@@ -6658,7 +6689,7 @@
    "points": [
     [
      35.25,
-     17.46,
+     17.96,
      23.1
     ],
     [
@@ -6728,7 +6759,7 @@
    "points": [
     [
      2.19,
-     15.46,
+     16.46,
      15.71
     ],
     [
