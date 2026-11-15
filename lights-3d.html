@@ -75,10 +75,20 @@
     body.printing .map th { font-weight:600; } body.printing .map tr { break-inside:avoid; }
   }
   #report { display:none; }
-  @page rport { size:portrait; margin:12mm; } @page rland { size:landscape; margin:10mm; }
+  /* Letter paper is fixed so that the page numbers in the table of contents (measured in tocFill) hold */
+  @page rport { size:letter portrait; margin:12mm; @bottom-center { content:"Page " counter(page) " of " counter(pages); font:9px system-ui, sans-serif; color:#444; } }
+  @page rland { size:letter landscape; margin:10mm; @bottom-center { content:"Page " counter(page) " of " counter(pages); font:9px system-ui, sans-serif; color:#444; } }
   @media print {
     body.reporting > :not(#report) { display:none !important; }
     body.reporting #report { display:block; color:#000; background:#fff; font-size:11px; line-height:1.4; }
+  }
+  /* measuring pass for the table of contents: each text block is laid out as page-sized columns (Letter portrait less the 12 mm margins) */
+  #report.measure { display:block; position:absolute; left:0; top:0; visibility:hidden; width:191.9mm; font-size:11px; line-height:1.4; }
+  #report.measure .rp-text { width:191.9mm; height:255.4mm; column-width:191.9mm; column-gap:0; column-fill:auto; }
+  #report .toc-r { display:flex; align-items:baseline; gap:1.5mm; margin:0.5mm 0; break-inside:avoid; } #report .toc-r a { color:inherit; text-decoration:none; }
+  #report .toc-r.l1 { font-weight:600; margin-top:2.2mm; } #report .toc-r.l2 { padding-left:5mm; } #report .toc-r.l3 { padding-left:10mm; margin:0.2mm 0; }
+  #report .toc-r i { flex:1 1 auto; border-bottom:1px dotted #888; min-width:8mm; } #report .toc-r b { font-weight:inherit; font-variant-numeric:tabular-nums; min-width:9mm; text-align:right; }
+  @media all {
     #report .rp-text { page:rport; break-before:page; }
     #report .rp-img { break-before:page; break-inside:avoid; display:flex; flex-direction:column; overflow:hidden; }
     #report .rp-img.land { page:rland; height:184mm; } #report .rp-img.port { page:rport; height:244mm; }
@@ -935,7 +945,7 @@ function locPages() {
   const lowCeil = N => N.kind === 'ap' && mountOf(N) === 'ceiling' && N.y - locFloor(N.level, N.x) < 8.5;   // ceiling AP under a low ceiling: no height is given, "on the ceiling" is enough (owner, Nov 14, 2026)
   const stepsTo = (C, N, lv) => { let st = locSteps(C.points, lv, false); if (lowCeil(N)) st = st.filter((t, i) => !(i === st.length - 1 && /^(up|down) /.test(t))).map(t => /^(up|down) /.test(t) ? 'up into the space above the ceiling' : t); return st; };
   const coord = (lv, N) => `<td>${locE(N.x - LOC_DATUM[lv][0]).replace(' E', '')}</td><td>${locS(N.z - LOC_DATUM[lv][1]).replace(' S', '')}</td><td>${lowCeil(N) ? 'on the ceiling' : ftin(N.y - locFloor(lv, N.x)) + ' above the ' + locFloorName(lv, N.x)}</td>`;
-  let h = `<div class="rp-text"><h1>Network device locations, with conduit routing</h1>`
+  let h = `<div class="rp-text"${tocAttr('Who does what, how positions are given, conduit and cable instructions', 1, 'Network device locations, with conduit routing')}><h1>Network device locations, with conduit routing</h1>`
     + `<p>These pages give the position of every network switch, PoE presence sensor, Ethernet jack location, Wi-Fi access point, camera and doorbell, and a step-by-step route for the conduit to each one. Each level has one location plan followed by its tables.</p>`
     + `<h3>Who does what</h3><ul>`
     + `<li><b>Electrician:</b> installs the empty network conduits along the routes on these pages, with a box or low-voltage ring at each device position, and a pull string left in every conduit. The electrician does not supply, pull, terminate or test any network cable.</li>`
@@ -1003,9 +1013,9 @@ function locPages() {
       ...(sens.length + jks.length + oth.length ? [[LEG.poe[0], 'Conduit route, PoE run (colour of the device)'], [LEG.data[0], 'Conduit route, data-only run']] : []), LEG.fiber,
       [(x, y) => `<path d="M${x - 7} ${y}H${x + 7}M${x} ${y - 7}V${y + 7}" stroke="#ff7043" stroke-width="2"/>`, 'Datum corner'], [(x, y) => `<line x1="${x - 10}" y1="${y}" x2="${x + 10}" y2="${y}" stroke="#2c3442" stroke-width="1.5"/>`, 'Grid, 5 ft from the datum'],
       LEG.wall, LEG.part, LEG.dash, ...(P.windows ? [LEG.win] : [])];
-    h += `<div class="rp-img ${port ? 'port' : 'land'}"><h2>${esc(name)}: location plan for all network devices (E, S in feet and inches from the datum)</h2>${tmp.firstChild.outerHTML.replace('<svg ', '<svg class="main" ')}${legendSvg(leg, port ? 700 : 1000)}</div>`;
+    h += `<div class="rp-img ${port ? 'port' : 'land'}"${tocAttr(name + ': location plan for all network devices')}><h2>${esc(name)}: location plan for all network devices (E, S in feet and inches from the datum)</h2>${tmp.firstChild.outerHTML.replace('<svg ', '<svg class="main" ')}${legendSvg(leg, port ? 700 : 1000)}</div>`;
     // tables
-    h += `<div class="rp-text"><h2>${esc(name)}: network device locations</h2><p><b>Datum:</b> ${esc(D[2])}. E = east of it, S = south of it.</p>`;
+    h += `<div class="rp-text"${tocAttr(name + ': device positions and conduit routes')}><h2>${esc(name)}: network device locations</h2><p><b>Datum:</b> ${esc(D[2])}. E = east of it, S = south of it.</p>`;
     if (sws.length) h += `<h3>Network switches</h3><table><thead><tr><th>ID</th><th>Device</th><th>E</th><th>S</th><th>Height</th><th>Position</th><th>Notes</th></tr></thead><tbody>`
       + sws.map(N => `<tr><td style="white-space:nowrap">${esc(tag(N))}</td><td>${esc(N.name)}</td>${coord(lv, N)}<td>${esc(N.room)}. ${esc(locWallText(lv, N, 'wall'))}</td><td>${esc(N.note || '')}</td></tr>`).join('') + '</tbody></table>';
     if (sens.length) h += `<h3>PoE presence sensors</h3><table><thead><tr><th>ID</th><th>Mount</th><th>E</th><th>S</th><th>Height</th><th>Position</th><th>Switch / port (owner)</th><th>Cable (owner)</th></tr></thead><tbody>`
@@ -1030,53 +1040,69 @@ function locPages() {
   }
   return h;
 }
+const tocAttr = (title, n, head) => ` data-toc="${pesc(title)}"${n > 1 ? ` data-tn="${n}"` : ''}${head ? ` data-th="${pesc(head)}"` : ''}`;   // marks a report element as a contents entry (n = pages it spans, head = section heading printed above it)
+function tocFill(rep) {                             // builds the table of contents and measures the page every entry lands on
+  const box = rep.querySelector('#rp-toc'), ents = [...rep.querySelectorAll('[data-toc], [data-th]')];
+  ents.forEach((e, i) => { if (!e.id) e.id = 'rp-t' + i; });
+  const rows = []; for (const e of ents) { if (e.dataset.th) rows.push([1, e.dataset.th, e]); if (e.dataset.toc) rows.push([+(e.dataset.tl || 2), e.dataset.toc, e]); }
+  box.innerHTML = rows.map(([l, t, e], i) => `<div class="toc-r l${l}"><a href="#${e.id}">${pesc(t)}</a><i></i><b data-ti="${i}">000</b></div>`).join('');
+  rep.classList.add('measure');
+  const pageOf = new Map(); let page = 1;
+  for (const blk of rep.children) {
+    if (blk.classList.contains('rp-img')) { pageOf.set(blk, page); page += 1; continue; }
+    const r0 = blk.getBoundingClientRect(), w = r0.width, col = el => Math.max(0, Math.floor((el.getBoundingClientRect().left - r0.left + 1) / w));
+    pageOf.set(blk, page); for (const e of blk.querySelectorAll('[data-toc], [data-th]')) pageOf.set(e, page + col(e));
+    page += Math.max(1, Math.ceil((blk.scrollWidth - 1) / w));
+  }
+  rep.classList.remove('measure');
+  rows.forEach(([l, t, e], i) => { const p = pageOf.get(e), n = l > 1 ? +(e.dataset.tn || 1) : 1; box.querySelector(`[data-ti="${i}"]`).textContent = n > 1 ? `${p}-${p + n - 1}` : p; });
+  rep.dataset.pages = page - 1;
+}
 function buildReport(parts) {
   const rep = document.getElementById('report'), lightTypes = lv => [...new Set(DATA.lights.filter(l => l.level === lv).map(l => l.type))];
-  const img = (title, svgEl, legend) => { const vb = svgEl.viewBox.baseVal, s = svgEl.cloneNode(true); s.removeAttribute('width'); s.removeAttribute('height'); s.setAttribute('class', 'main');
-    return `<div class="rp-img ${vb.width >= vb.height ? 'land' : 'port'}"><h2>${pesc(title)}</h2>${s.outerHTML}${legendSvg(legend, vb.width >= vb.height ? 1000 : 700)}</div>`; };
+  let h1c = 0, h1s = 0;
+  const img = (title, svgEl, legend, toc = '') => { const vb = svgEl.viewBox.baseVal, s = svgEl.cloneNode(true); s.removeAttribute('width'); s.removeAttribute('height'); s.setAttribute('class', 'main');
+    return `<div class="rp-img ${vb.width >= vb.height ? 'land' : 'port'}"${toc}><h2>${pesc(title)}</h2>${s.outerHTML}${legendSvg(legend, vb.width >= vb.height ? 1000 : 700)}</div>`; };
   const today = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
   const ckFigs = lv => [...document.querySelectorAll(`#cktlist .cmap[data-cktlevel="${lv}"]`)];
   let h = `<div class="rp-text"><h1>Laine addition: electrical, lighting and network report</h1><p class="muted">Generated ${pesc(today)} from the device plans (drawings v20 / v20 / v32 / v6) and the owner's design decisions.</p>`
-    + `<p>Every diagram is on its own page, north up, with its legend below it. Tables and written notes are on separate pages. Code items in this report are points to check with the electrician and the inspector, not rulings.</p><h3>Contents</h3><ul>`
-    + (parts.maps ? `<li>Level plans: ${LEVELS.map(l => pesc(l[1])).join(', ')}, each followed by its switch and cable tables</li>` : '')
-    + (parts.circuits ? `<li>Circuit diagrams: ${document.querySelectorAll('#cktlist .cmap').length} circuits, one page each, followed by the device tables for each level</li>` : '')
-    + (parts.switches ? `<li>Network switch diagrams: ${document.querySelectorAll('#netlist .cmap').length} switches, one page each, followed by the port tables for each level</li>` : '')
-    + (parts.locate ? '<li>Location sheets for all network devices (switches, presence sensors, Ethernet jacks, access points, cameras, doorbells): positions and step-by-step conduit routes for the electrician; the owner pulls all copper and fiber cable</li>' : '')
-    + (parts.notes ? '<li>Written notes: owner decisions and instructions, open findings, load estimate</li>' : '') + (parts.inventory ? '<li>Inventory</li>' : '') + '</ul>'
+    + `<p>Every diagram is on its own page, north up, with its legend below it. Tables and written notes are on separate pages. Code items in this report are points to check with the electrician and the inspector, not rulings.</p><h3>Contents</h3><div id="rp-toc"></div>`
     + `<div class="rp-qr">${qrSvg()}<div>Interactive 3D model and the latest version of these plans:</div><div class="url">${pesc(PAGE_URL)}</div></div></div>`;
   if (parts.maps) for (const [lv, name] of LEVELS) {
     const fig = mapFigs[lv], kinds = new Set(NETS.filter(n => n.level === lv).map(n => n.kind)), outs = (DATA.outlets || []).filter(o => o.level === lv);
     const leg = [...lightTypes(lv).map(LEG.light), LEG.sw, LEG.wire, LEG.outlet, ...(outs.some(o => o.kind === 'blind') ? [LEG.blind] : []), ...(outs.some(o => o.kind === 'hardwired' || o.kind === 'appliance') ? [LEG.hard] : []),
       ...(kinds.has('ap') ? [LEG.ap] : []), ...(kinds.has('switch') ? [LEG.nsw] : []), ...(kinds.has('sensor') ? [LEG.sensor] : []), ...(kinds.has('jack') ? [LEG.jack] : []), ...(kinds.has('doorbell') ? [LEG.bell] : []), ...(kinds.has('camera') ? [LEG.cam] : []),
       ...(fig.querySelector('.mcable') ? [LEG.poe, LEG.data, LEG.fiber] : []), LEG.wall, LEG.part, LEG.dash, ...(PLAN[lv].windows ? [LEG.win] : [])];
-    h += img(name + ': switches, lights, outlets and network', fig.querySelector('svg'), leg);
-    h += `<div class="rp-text"><h2>${pesc(name)}: light switches</h2>` + [...fig.querySelectorAll('table')].map((t, i) => (i ? `<h2>${pesc(name)}: network cables</h2>` : '') + t.outerHTML).join('') + '</div>';
+    h += img(name + ': switches, lights, outlets and network', fig.querySelector('svg'), leg, tocAttr(name + ': plan of switches, lights, outlets and network', 1, lv === LEVELS[0][0] ? 'Level plans' : ''));
+    h += `<div class="rp-text"${tocAttr(name + ': light switch and network cable tables')}><h2>${pesc(name)}: light switches</h2>` + [...fig.querySelectorAll('table')].map((t, i) => (i ? `<h2>${pesc(name)}: network cables</h2>` : '') + t.outerHTML).join('') + '</div>';
   }
   if (parts.circuits) for (const [lv, name] of LEVELS) {
     const figs = ckFigs(lv); if (!figs.length) continue;
-    for (const fig of figs) {
+    for (const fig of figs) { const toc = fig === figs[0] ? tocAttr(`${name}: ${figs.length} circuit diagram${figs.length > 1 ? 's, one per page' : ''}`, figs.length, h1c++ ? '' : 'Circuit diagrams') : '';
       const has = k => fig.querySelector(`.cdev[data-kind="${k}"]`), mine = new Set([...fig.querySelectorAll('.cdev[data-kind="light"]')].map(e => lightByKey[e.dataset.key].type));
       const ok = [...fig.querySelectorAll('.cdev[data-kind="outlet"]')].map(e => outletByKey[e.dataset.key].kind);
       const leg = [...[...mine].map(LEG.light), ...(has('switch') ? [[LEG.sw[0], 'Light switch']] : []), ...(ok.some(k => !(k in OUTLET_COLOR)) ? [LEG.outlet] : []), ...(ok.includes('blind') ? [LEG.blind] : []),
         ...(ok.some(k => k === 'hardwired' || k === 'appliance') ? [LEG.hard] : []), LEG.other, LEG.wall, LEG.part, LEG.dash, ...(PLAN[lv].windows ? [LEG.win] : [])];
-      h += img(fig.querySelector('h3 span').textContent, fig.querySelector('svg'), leg);
+      h += img(fig.querySelector('h3 span').textContent, fig.querySelector('svg'), leg, toc);
     }
-    h += `<div class="rp-text"><h2>${pesc(name)}: devices by circuit</h2>` + figs.map(f => `<h3>${pesc(f.querySelector('h3 span').textContent)}</h3>` + f.querySelector('table').outerHTML).join('') + '</div>';
+    h += `<div class="rp-text"${tocAttr(name + ': devices by circuit')}><h2>${pesc(name)}: devices by circuit</h2>` + figs.map(f => `<h3>${pesc(f.querySelector('h3 span').textContent)}</h3>` + f.querySelector('table').outerHTML).join('') + '</div>';
   }
   if (parts.switches) for (const [lv, name] of LEVELS) {
     const figs = [...document.querySelectorAll(`#netlist .cmap[data-cktlevel="${lv}"]`)]; if (!figs.length) continue;
-    for (const fig of figs) {
+    for (const fig of figs) { const toc = fig === figs[0] ? tocAttr(`${name}: ${figs.length} network switch diagram${figs.length > 1 ? 's, one per page' : ''}`, figs.length, h1s++ ? '' : 'Network switch diagrams') : '';
       const kinds = new Set([...fig.querySelectorAll('.cdev')].map(e => netByKey[e.dataset.key].kind)), W = netByKey[fig.dataset.netsw], cabs = Object.values(cableByKey).filter(c => c.from === W.key);
       const leg = [LEG.nsw, ...(kinds.has('ap') ? [LEG.ap] : []), ...(kinds.has('sensor') ? [LEG.sensor] : []), ...(kinds.has('jack') ? [LEG.jack] : []), ...(kinds.has('doorbell') ? [LEG.bell] : []), ...(kinds.has('camera') ? [LEG.cam] : []),
         ...(cabs.some(c => c.poeW) ? [LEG.poe] : []), ...(cabs.some(c => !c.poeW) ? [LEG.data] : []), LEG.fiber, [LEG.other[0], 'Network device on another switch'], LEG.wall, LEG.part, LEG.dash, ...(PLAN[lv].windows ? [LEG.win] : [])];
-      h += img(fig.querySelector('h3 span').textContent, fig.querySelector('svg'), leg);
+      h += img(fig.querySelector('h3 span').textContent, fig.querySelector('svg'), leg, toc);
     }
-    h += `<div class="rp-text"><h2>${pesc(name)}: network switch ports</h2>` + figs.map(f => `<h3>${pesc(f.querySelector('h3 span').textContent)}</h3>` + f.querySelector('table').outerHTML).join('') + '</div>';
+    h += `<div class="rp-text"${tocAttr(name + ': network switch port tables')}><h2>${pesc(name)}: network switch ports</h2>` + figs.map(f => `<h3>${pesc(f.querySelector('h3 span').textContent)}</h3>` + f.querySelector('table').outerHTML).join('') + '</div>';
   }
   if (parts.locate) h += locPages();
-  if (parts.notes) h += `<div class="rp-text"><h1>Written notes</h1>${mdToHtml(NOTES.decisions || '')}</div><div class="rp-text">${mdToHtml(NOTES.findings || '')}${mdToHtml(NOTES.load || '')}</div>`;
-  if (parts.inventory) h += `<div class="rp-text">${document.getElementById('inventory').innerHTML.replace('<h3>Inventory</h3>', '<h1>Inventory</h1>')}</div>`;
+  if (parts.notes) h += `<div class="rp-text rp-notes"><h1 data-th="Written notes">Written notes</h1>${mdToHtml(NOTES.decisions || '')}</div><div class="rp-text rp-notes">${mdToHtml(NOTES.findings || '')}${mdToHtml(NOTES.load || '')}</div>`;
+  if (parts.inventory) h += `<div class="rp-text" data-th="Inventory">${document.getElementById('inventory').innerHTML.replace('<h3>Inventory</h3>', '<h1>Inventory</h1>')}</div>`;
   rep.innerHTML = h;
+  for (const e of rep.querySelectorAll('.rp-notes h2, .rp-notes h3')) { e.dataset.toc = e.textContent; if (e.tagName === 'H3') e.dataset.tl = 3; }
+  tocFill(rep);
 }
 document.getElementById('mkreport').onclick = () => {
   if (printFig) closePrint();
