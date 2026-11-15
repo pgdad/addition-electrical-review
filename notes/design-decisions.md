@@ -5,6 +5,10 @@ Items marked (proposed) were the designer's suggestion and are not yet confirmed
 The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 
 ## Whole building
+- Low-voltage lights (owner decision, Nov 15, 2026): they need no wall switch, because their Matter controllers
+  should not be powered off. Two controlled segments per stairway, one controller for the second-floor hallway,
+  one for the kitchen island, one per media room light; power supplies as the electrician decides. Details and the
+  purchased products are in notes/devices.md. The drawings are not yet changed for this.
 - Service: 400A, entering at main panel MP on the garage north wall, just east of the W/D under the stairs.
 - 3-way pairs (owner decision, Nov 10, 2026): in every 3-way pair, on all floors, one switch is an Inovelli
   aux switch and the other is the Inovelli main switch; a traveler wire runs between the two boxes.

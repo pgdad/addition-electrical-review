@@ -14,7 +14,35 @@ added to this section.
 
 The linked step-light variant is the 3000K one. The page also offers 2700K, 3500K, 4000K and 5000K.
 
-## Load on each controller
+## Control and power (owner, Nov 15, 2026)
+
+- No wall switch is needed for the low-voltage lights. The Matter controllers that run them should not be
+  powered off, so they stay powered all the time and the lights are controlled through Matter.
+- Each stairway has two independently controlled segments of lights, so two controllers per stairway.
+- The second-floor hallway has one controller for all its low-voltage lights.
+- The kitchen island lights all share a single controller.
+- Each media room low-voltage light has its own controller.
+- The power supplies can be arranged as the electrician decides (for example one supply per controller, or one
+  supply shared by several controllers).
+
+| Area | Controllers |
+|------|-------------|
+| Garage stair (risers L8) | 2, one per segment |
+| West stair (risers L7) | 2, one per segment |
+| Second-floor hallway | 1 |
+| Kitchen island (L36-L39) | 1 |
+| Media room | 1 per light |
+
+Not yet on the drawings (to settle with the owner):
+
+- The drawings show no low-voltage lights in the second-floor hallway or the media room, so their number and
+  positions, and the number of media room controllers, are not known yet.
+- The drawings still show wall switches for the riser lights (second floor S3 and S4, garage S8, third floor S8)
+  and for the island lights (S27). With this note those switches are no longer needed to power the lights; whether
+  to remove them or keep them as Matter scene buttons is the owner's call.
+- Where each stairway is split into its two segments is not set.
+
+## Load on each run
 
 | Run | Lights | Load at 0.6 W each | Current at 24 V |
 |-----|--------|--------------------|-----------------|
@@ -22,7 +50,8 @@ The linked step-light variant is the 3000K one. The page also offers 2700K, 3500
 | West stair risers L7 | 16 | 9.6 W | 0.40 A |
 | Island floor lights L36-L39 | 4 | 2.4 W | 0.10 A |
 
-Each run is far below the controller's 12 A limit. The power supply size is still to be checked against these
+Each run is far below the controller's 12 A limit, and each stair run will be split over two controllers.
+The power supply size and arrangement are the electrician's decision; the size is still to be checked against these
 loads once its model is known.
 
 ## Check with the electrician/inspector
