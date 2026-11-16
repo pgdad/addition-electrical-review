@@ -5,6 +5,10 @@ Items marked (proposed) were the designer's suggestion and are not yet confirmed
 The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 
 ## Whole building
+- Low-voltage floor-level lights (owner decision, Nov 16, 2026): media room L44, L45 on the south wall, about 6 in.
+  above the floor, at about 25% and 75% of the room width, on one Matter controller U. Hall L46-L51 on the hall
+  north wall, one run on one Matter controller V. No wall switches. Six hall lights, their 4 ft spacing and the
+  controller positions are proposed, not yet confirmed. Circuit C16.
 - Media fan L11 and switch S6 (owner decision, Nov 15, 2026): L11 is a Big Ass Fans Haiku L 52 in. smart fan with
   light. S6 is an Inovelli Smart Dimmer with nothing on its load terminal: line feeds both the switch and the fan,
   the fan stays powered, and S6 (with aux S23) only signals Home Assistant. This replaces the Nov 9 decision

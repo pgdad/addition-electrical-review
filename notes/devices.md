@@ -8,8 +8,8 @@ added to this section.
 
 | Device | Product | Used for | Specifications from the product page |
 |--------|---------|----------|--------------------------------------|
-| Low-voltage light | [GekPower 4 inch Linear Step Light, white, 24V 0.6W, 3000K](https://gekpower.com/products/4-inch-linear-step-light-24v-0-6w-cct2-7k-3k-3-5k-4k-5k-white?variant=47782360154349) | Stair riser lights L7 and L8, island floor lights L36-L39 | Model VBD-COB-24V-100L-xxxx-STP4-White; 24 V DC; 0.6 W; 100 lm; dimmable; IP20 (indoor); 94 x 22 x 9.7 mm; 2 ft lead; certification not stated |
-| Matter controller | [MiBoxer SMZ2 Matter over Thread LED dimmer](https://www.ledbe.com/miboxer-smz2-matter-over-thread-led-dimmer.html) | Stair light controllers D, island controller T | 12-24 V DC in; 12 A max output; single-color or dual-white mode; Matter over Thread and 2.4 GHz remote; IP20; 74.5 x 36 x 17 mm; CE, EMC, RED; UL listing not stated |
+| Low-voltage light | [GekPower 4 inch Linear Step Light, white, 24V 0.6W, 3000K](https://gekpower.com/products/4-inch-linear-step-light-24v-0-6w-cct2-7k-3k-3-5k-4k-5k-white?variant=47782360154349) | Stair riser lights L7 and L8, island floor lights L36-L39, media room floor lights L44 and L45, hall floor lights L46-L51 | Model VBD-COB-24V-100L-xxxx-STP4-White; 24 V DC; 0.6 W; 100 lm; dimmable; IP20 (indoor); 94 x 22 x 9.7 mm; 2 ft lead; certification not stated |
+| Matter controller | [MiBoxer SMZ2 Matter over Thread LED dimmer](https://www.ledbe.com/miboxer-smz2-matter-over-thread-led-dimmer.html) | Stair light controllers D, island controller T, media room controller U, hall controller V | 12-24 V DC in; 12 A max output; single-color or dual-white mode; Matter over Thread and 2.4 GHz remote; IP20; 74.5 x 36 x 17 mm; CE, EMC, RED; UL listing not stated |
 | 24 V power supply | [Amazon item B07W93ZGWL](https://www.amazon.com/dp/B07W93ZGWL) | Feeds each controller | Not read: the Amazon page could not be opened from here. Owner to give the brand, model and wattage |
 
 The linked step-light variant is the 3000K one. The page also offers 2700K, 3500K, 4000K and 5000K.
@@ -21,7 +21,8 @@ The linked step-light variant is the 3000K one. The page also offers 2700K, 3500
 - Each stairway has two independently controlled segments of lights, so two controllers per stairway.
 - The second-floor hallway has one controller for all its low-voltage lights.
 - The kitchen island lights all share a single controller.
-- Each media room low-voltage light has its own controller.
+- The two media room low-voltage lights L44 and L45 share one controller, U (owner, Nov 16, 2026; this replaces
+  the earlier note of one controller per light).
 - The power supplies can be arranged as the electrician decides (for example one supply per controller, or one
   supply shared by several controllers).
 
@@ -29,14 +30,17 @@ The linked step-light variant is the 3000K one. The page also offers 2700K, 3500
 |------|-------------|
 | Garage stair (risers L8) | 2, one per segment |
 | West stair (risers L7) | 2, one per segment |
-| Second-floor hallway | 1 |
+| Second-floor hallway (L46-L51) | 1 (V) |
 | Kitchen island (L36-L39) | 1 |
-| Media room | 1 per light |
+| Media room (L44, L45) | 1 (U) |
 
 Not yet on the drawings (to settle with the owner):
 
-- The drawings show no low-voltage lights in the second-floor hallway or the media room, so their number and
-  positions, and the number of media room controllers, are not known yet.
+- Placed on Nov 16, 2026: media room lights L44 and L45 on the south wall, about 6 in. above the floor, at about
+  25% and 75% of the room width; hall lights L46-L51 on the hall north wall at the same height, about 4 ft apart.
+  Six hall lights is a proposal: the hall floor between the two stairs is about 24 ft long, and at 100 lm each a
+  4 ft spacing gives an even wash along the floor. Five (about 5 ft apart) would also work if a dimmer look is
+  wanted. The positions of controllers U and V are proposed too.
 - The drawings still show wall switches for the riser lights (second floor S3 and S4, garage S8, third floor S8)
   and for the island lights (S27). With this note those switches are no longer needed to power the lights; whether
   to remove them or keep them as Matter scene buttons is the owner's call.
@@ -49,6 +53,8 @@ Not yet on the drawings (to settle with the owner):
 | Garage stair risers L8 | 17 | 10.2 W | 0.43 A |
 | West stair risers L7 | 16 | 9.6 W | 0.40 A |
 | Island floor lights L36-L39 | 4 | 2.4 W | 0.10 A |
+| Media room floor lights L44, L45 | 2 | 1.2 W | 0.05 A |
+| Hall floor lights L46-L51 | 6 | 3.6 W | 0.15 A |
 
 Each run is far below the controller's 12 A limit, and each stair run will be split over two controllers.
 The power supply size and arrangement are the electrician's decision; the size is still to be checked against these

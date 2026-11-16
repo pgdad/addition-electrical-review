@@ -152,6 +152,11 @@ The PDF wins for geometry; these are the differences found.
 
 ### Lighting control
 - Every light has a control. L21 (sauna) has no wall switch by design; it is on the heater control.
+- Floor-level lights (owner decision, Nov 16, 2026): media room L44, L45 (south wall, one Matter controller U) and
+  hall L46 to L51 (north wall, one run on Matter controller V), all about 6 in. above the floor, with no wall switch
+  by design: they are controlled through Matter only. Six hall lights and the controller positions are my proposal.
+  Check with the electrician that controllers U and V and their 24 V supplies stay reachable, and that these lights
+  are not counted as the required switched lighting (the hall has L41 to L43 and the media room L9, L10 for that).
 - Hall lighting (owner decision, Nov 15, 2026): three ceiling lights L41, L42, L43 along the hall, about 10 ft apart,
   on a 4-way set: S28 at the west end (main, beside S3 and S17 at the west stair foot), S29 at the east end beside S4
   at the head of the east stair (aux), and S30 in the media room on the west (latch) side of the hall door, below S6

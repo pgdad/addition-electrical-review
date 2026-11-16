@@ -1,4 +1,4 @@
-# Inventory (Nov 15, 2026)
+# Inventory (Nov 16, 2026)
 
 Counted from `lights.json` (built from the drawings). Quantities only; models are the owner's standards
 (Inovelli White Series switches, Govee dimmable lights, UniFi network gear).
@@ -35,19 +35,20 @@ The two motion sensors (garage sheet S10, S11) run the exterior stair lights L17
 The 13 aux switches each need a traveler to their main switch (11 three-way pairs and one 4-way set: second-floor hall S28 with aux S29 and S30).
 The hall and stair wall lights and their 8 switches were removed on Nov 14, 2026.
 
-## Light fixtures (65 entries)
+## Light fixtures (73 entries)
 
 | Level | Ceiling | Wall | Outdoor | Stair riser runs | Under-cabinet | Low-voltage | Total |
 |-------|---------|------|---------|------------------|---------------|---------------------|-------|
 | Garage / hallway | 11 | 0 | 7 | 0 | 0 | 0 | 18 |
-| Second floor | 20 | 0 | 4 | 2 | 1 | 5 | 32 |
+| Second floor | 20 | 0 | 4 | 2 | 1 | 13 | 40 |
 | Third floor | 9 | 1 | 0 | 0 | 0 | 0 | 10 |
 | Shed | 2 | 1 | 1 | 0 | 0 | 1 | 5 |
-| **Total** | **42** | **2** | **12** | **2** | **1** | **6** | **65** |
+| **Total** | **42** | **2** | **12** | **2** | **1** | **14** | **73** |
 
 The two riser runs are counted as one entry each (one light per riser: 17 risers on the garage stair,
 16 on the west stair). They are listed on the second-floor sheet.
-Low-voltage: the two sauna lights (second floor L21, shed L1) and the four island floor lights L36-L39 (Nov 12, 2026).
+Low-voltage: the two sauna lights (second floor L21, shed L1) the four island floor lights L36-L39 (Nov 12, 2026),
+and the media room and hall floor-level lights L44-L51 (Nov 16, 2026), which have no wall switch.
 
 ## Presence sensors (23)
 
