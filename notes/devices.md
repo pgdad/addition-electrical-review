@@ -188,3 +188,30 @@ Check with the electrician/inspector and the owner:
   Home Assistant reaches this fan (Matter or the fan's own Wi-Fi integration) before the walls are closed.
 - With no load, S6 should be set so its paddle only sends button events (smart-bulb mode or the equivalent
   setting); the owner sets this when pairing.
+
+## 15 A wall outlets
+
+Owner decision, Nov 16, 2026. Specifications are copied from the Amazon listing on Nov 16, 2026.
+
+| Device | Product | Used for | Specifications from the product page |
+|--------|---------|----------|--------------------------------------|
+| Smart wall outlet | [Eve Energy Outlet (Matter)](https://www.amazon.com/dp/B0CT62FC6W) | 15 A wall outlets (which positions is not set yet) | In-wall duplex outlet; 15 A; 120 V; the two outlets are controlled separately; power meter (combined value for both outlets); Matter over Thread, needs a Thread border router; local control, no cloud; needs line, neutral and ground in the wall box; copper or copper-clad wire only; dry indoor locations only; UL certified; 3 wire nuts included |
+
+To settle with the owner:
+
+- Which outlets on the drawings get this smart outlet (all general-purpose indoor outlets, or only some) is not
+  set, so no count is given yet.
+
+Check with the electrician/inspector:
+
+- The listing says dry indoor locations only. That rules it out for the outdoor outlets, and it should be
+  checked for the garage, the bath, the sauna area and the shed before any are used there.
+- It is not a GFCI outlet. Where GFCI protection is required (kitchen, bath, garage, laundry, outdoors) it has
+  to come from the breaker or an upstream GFCI device.
+- The listing does not say whether it is tamper-resistant. Ask whether the inspector requires tamper-resistant
+  outlets at these positions (NEC 406.12) and whether this model qualifies.
+- Many of the general outlet circuits on the plan are 20 A. A 15 A duplex outlet is normally allowed on a 20 A
+  circuit, but ask the electrician to confirm, including whether this outlet may feed further outlets
+  downstream. It has wire leads (wire nuts included), so box fill should be checked too.
+- An outlet that can be switched off remotely should not feed equipment that must stay on: the network
+  switches, the Matter controllers' power supplies, the fridge, and the smoke/CO alarms.
