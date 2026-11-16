@@ -23,7 +23,7 @@ The linked step-light variant is the 3000K one. The page also offers 2700K, 3500
   the east stair, second-floor D for the west stair.
 - West stair split: the lower segment is every riser light east of the landing in the northwest corner (the
   north leg, 7 lights); the upper segment is the rest (the west leg, 9 lights).
-- East stair split: the lowest 7 riser lights on one controller, the other 10 on the second.
+- East stair split: the top 8 riser lights on one controller, the other 9 on the second.
 - The second-floor hallway has one controller for all its low-voltage lights.
 - The kitchen island lights all share a single controller.
 - The two media room low-voltage lights L44 and L45 share one controller, U (owner, Nov 16, 2026; this replaces
@@ -33,7 +33,7 @@ The linked step-light variant is the 3000K one. The page also offers 2700K, 3500
 
 | Area | Controllers |
 |------|-------------|
-| East (garage) stair (risers L8) | 2 (D, garage sheet): lowest 7 lights; the other 10 |
+| East (garage) stair (risers L8) | 2 (D, garage sheet): top 8 lights; the other 9 |
 | West stair (risers L7) | 2 (D, second-floor sheet): north leg 7 lights; west leg 9 lights |
 | Second-floor hallway (L46-L51) | 1 (V) |
 | Kitchen island (L36-L39) | 1 |
@@ -47,16 +47,16 @@ Placement notes:
 - East stair (Nov 16, 2026): switches S4 and garage S8 no longer run riser lights L8; they now run the new stair
   ceiling lights L52, L53. The west stair riser-light switches (second floor S3, third floor S8) were
   removed on Nov 16, 2026, and so was the island light switch S27. No low-voltage light has a wall switch now.
-- The east stair "lowest 7" is read here as the 2 garage door steps, the 2 hallway steps and the first 3 risers
-  of the flight. The owner should correct this if the 7 are counted differently.
+- The east stair lower segment of 9 is the 2 garage door steps, the 2 hallway steps and the first 5 risers of the
+  13-riser flight; the upper segment is the top 8 risers of the flight.
 - The second-floor sheet now shows all 16 west stair riser lights (it showed 14 before Nov 16, 2026).
 
 ## Load on each run
 
 | Run | Lights | Load at 0.6 W each | Current at 24 V |
 |-----|--------|--------------------|-----------------|
-| East stair risers L8, lower segment | 7 | 4.2 W | 0.18 A |
-| East stair risers L8, upper segment | 10 | 6.0 W | 0.25 A |
+| East stair risers L8, lower segment | 9 | 5.4 W | 0.23 A |
+| East stair risers L8, upper segment | 8 | 4.8 W | 0.20 A |
 | West stair risers L7, north leg | 7 | 4.2 W | 0.18 A |
 | West stair risers L7, west leg | 9 | 5.4 W | 0.23 A |
 | Island floor lights L36-L39 | 4 | 2.4 W | 0.10 A |
@@ -90,8 +90,8 @@ Thread / Matter, 120 V. Specifications are copied from the product pages on Nov 
 | Smart fan switch | [White Series Smart Fan Switch, VTM35-SN](https://inovelli.com/products/thread-matter-white-series-smart-fan-switch-3-speed-ceiling-on-off-exhaust) | Not assigned on the drawings; see the next part | Max 2.5 A, no more than 2 fans; AC motors only, DC motors not supported; not for lighting; no neutral: low and medium speed only and not usable on an exhaust fan; ETL certified 5027290 |
 | Aux switch | [Inovelli Add-On (Aux) Switch](https://inovelli.com/products/white-series-add-on-aux-switch) | The 12 aux positions (owner to confirm these are bought) | Not a smart switch; needs a traveler to its main switch; works with or without a neutral; UL certified E528330 |
 
-The switch counts are from the drawings (see the inventory). The two outdoor motion sensors are not Inovelli
-switches.
+The switch counts are from the drawings (see the inventory). The two outdoor motion sensors were removed on
+Nov 16, 2026.
 
 ## Smart Fan switch on the shower and bathroom exhaust fans (to be checked)
 
@@ -139,9 +139,10 @@ Owner decisions (Nov 15, 2026):
 The owner will use some combination of these three for the balcony, the stairs and the garage doors. Which
 model goes where has not been decided and is left open (owner, Nov 16, 2026).
 
-For the exterior stair lights L17, L18, which work from motion sensors, the owner notes (Nov 16, 2026) that two
-of the three support motion sensors: the Outdoor Wall Light (H7075) and the Outdoor Wall Light Pro (H3751). The
-stair lights will be one of these two.
+The exterior stair lights L17, L18 are motion controlled. Two of the three have integrated motion control
+(owner, Nov 16, 2026): the Outdoor Wall Light (H7075) and the Outdoor Wall Light Pro (H3751). The stair lights
+will be one of these two, so no separate motion sensors are installed: sensors S10 and S11 were removed from
+the garage sheet on Nov 16, 2026, and the lights stay powered all the time.
 
 | Device | Product | Specifications from the product page |
 |--------|---------|--------------------------------------|
@@ -163,11 +164,10 @@ Check with the electrician/inspector and the owner:
 - The UpDown light and the Pro are listed at 24 V at the light. Find out from the manuals whether each has a
   built-in driver fed with 120 V at the junction box or a separate power adapter, and where an adapter would sit.
 - Only the Pro lists Matter. If every light must be on Matter, the other two need to be confirmed with Govee.
-- The exterior stair lights L17, L18 are drawn on motion sensors S10, S11 that cut their power. A smart light
-  that loses power drops off the network and takes time to come back on. The H7075 and the H3751 support motion
-  sensors (owner, Nov 16, 2026), so once the model is chosen, check how its motion sensor connects: if the light
-  stays powered and the sensor only signals it, S10 and S11 on the garage sheet change from power-cutting sensors
-  to that kind, and the drawing note should be updated then.
+- The exterior stair lights L17, L18 rely on the motion control built into the lights. The product pages read
+  on Nov 15, 2026 did not describe it (the Pro page offers a 2-pack with a separate Govee motion sensor H5129),
+  so confirm on the chosen model that the sensing is in the light, that it covers the whole stair from the two
+  light positions, and whether the inspector accepts it as the control for exterior stair lighting.
 - The pages state no UL or ETL listing for these lights. Ask the electrician to confirm the listing mark on
   the units, and that each is rated for a wet location where it is exposed to rain.
 

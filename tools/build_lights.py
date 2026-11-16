@@ -41,8 +41,8 @@ LIGHTS = {
   "L10": ("Hallway", "ceiling", HALL_FLOOR + 8.33, G_LIGHT_CCT, ""),
   "L11": ("Outside, left (west) door", "outdoor", 6.5, G_LIGHT_CCT, "Mounted on the balcony pier"),
   "L15": ("Outside, left (west) door", "outdoor", 6.5, G_LIGHT_CCT, "Mounted on the balcony pier"),
-  "L17": ("Exterior stair, foot, on the garage west wall", "outdoor", 7.0, G_LIGHT_CCT, "Motion controlled by sensors S10 and S11, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads"),
-  "L18": ("Exterior stair, mid-run, on the west wall", "outdoor", 13.0, G_LIGHT_CCT, "Motion controlled by sensors S10 and S11, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads, 13 ft above grade"),
+  "L17": ("Exterior stair, foot, on the garage west wall", "outdoor", 7.0, G_LIGHT_CCT, "Govee light with integrated motion control, always powered, no wall switch or separate sensor (owner decision, Nov 16, 2026). About 7 ft above the treads"),
+  "L18": ("Exterior stair, mid-run, on the west wall", "outdoor", 13.0, G_LIGHT_CCT, "Govee light with integrated motion control, always powered, no wall switch or separate sensor (owner decision, Nov 16, 2026). About 7 ft above the treads, 13 ft above grade"),
   "L12": ("Outside, right (east) door", "outdoor", 6.5, G_LIGHT_CCT, ""),
   "L16": ("Outside, right (east) door", "outdoor", 6.5, G_LIGHT_CCT, ""),
   "L13": ("Outside, deck door", "outdoor", HALL_FLOOR + 6.5, G_LIGHT_CCT, ""),
@@ -50,7 +50,7 @@ LIGHTS = {
  },
  "2": {
   "L7":  ("West stair up to 3rd floor", "riser", None, L2_CCT, "One light mid each riser, 16 in all: 7 on the north leg (east of the northwest landing) on one Matter controller, 9 on the west leg on the second; no wall switch"),
-  "L8":  ("East stair down to garage", "riser", None, L2_CCT, "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17); the lowest 7 lights on one Matter controller, the other 10 on the second; no wall switch"),
+  "L8":  ("East stair down to garage", "riser", None, L2_CCT, "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17); the top 8 lights on one Matter controller, the other 9 on the second; no wall switch"),
   "L41": ("Hall", "ceiling", 9.0, L2_CCT, "Hall ceiling light, west (owner decision, Nov 15, 2026)"),
   "L42": ("Hall", "ceiling", 9.0, L2_CCT, "Hall ceiling light, middle (owner decision, Nov 15, 2026)"),
   "L43": ("Hall", "ceiling", 9.0, L2_CCT, "Hall ceiling light, east (owner decision, Nov 15, 2026)"),
@@ -132,8 +132,6 @@ SWITCHES = {
  ("G", "S7"): ("Hallway, west wall by the garage door", k("G", "L9", "L10")),
  ("G", "S5"): ("Hallway east wall, south (latch) edge of the old-house door, two-gang with S4", k("G", "L13")),
  ("G", "S6"): ("Garage, at the under-stair space", k("G", "L14")),
- ("G", "S11"): ("Outside, foot of the exterior stair, on the garage west wall (outdoor motion sensor)", k("G", "L17", "L18")),
- ("G", "S10"): ("Outside, top landing of the exterior stair at balcony level (outdoor motion sensor)", k("G", "L17", "L18")),
  ("G", "S8"):  ("Hallway west wall at the foot of the stairs, north of the garage door", k("2", "L52", "L53")),
  ("2", "S4"): ("Hall, head of the east stair", k("2", "L52", "L53")),
  ("2", "S28"): ("Hall, west end at the foot of the west stair, beside S17", rng("2", 41, 43)),
@@ -183,7 +181,7 @@ PAIRS = [
 ]
 # One switch of every 3-way pair is an Inovelli aux switch (owner decision, Nov 10, 2026); the other is the
 # Inovelli main switch that holds the load (or runs the smart bulbs). A traveler runs between the two boxes.
-MOTION = {"G:S11", "G:S10"}       # outdoor motion sensors for the exterior stair lights (not wall switches)
+MOTION = set()                    # the outdoor motion sensors G:S10, G:S11 were removed on Nov 16, 2026
 AUX = {"G:S2", "G:S7", "G:S8", "3:S10", "3:S2",
        "2:S21", "2:S22", "2:S23", "2:S25", "2:S26", "2:S29", "2:S30"}
 assert all(sum(m in AUX for m in members) == len(members) - 1 for members, _ in PAIRS)
@@ -198,7 +196,7 @@ OUTLETS = {
   ("A", "W/D outlets under the stairs: 120V 20A and 240V 30A, plus a gas stub, so either WashTower model fits", "appliance", 3.0, "C9 laundry 20A 120V GFCI and C15 dryer 30A 240V"),
   ("B", "Outdoor outlet, AirGradient, GFCI weather-resistant", "outdoor", 1.5, "C2, 20A GFCI"),
   ("P22", "Computers and printers outlet, GFCI", "wall", 1.5, "C8 dedicated, 20A GFCI"),
-  ("D", "East stair riser-light Matter controllers, 2 (feed second-floor L8: lowest 7 lights, the other 10)", "hardwired", 1.0, G_LIGHT_CCT),
+  ("D", "East stair riser-light Matter controllers, 2 (feed second-floor L8: top 8 lights, the other 9)", "hardwired", 1.0, G_LIGHT_CCT),
   ("P1 P2", "Under the stairs, network gear, GFCI", "wall", 1.5, "C1 dedicated, 20A GFCI"),
   ("P13", "High outlet beside network switch 2, GFCI", "wall", 7.0, "C1 dedicated, 20A GFCI"),
   ("P20", "High outlet on the north wall beside network switch 7, GFCI", "wall", 7.0, "C1 dedicated, 20A GFCI"),
@@ -493,6 +491,7 @@ def build():
             rec = dict(key=key, id=lid, level=lv, levelName=LEVEL_NAME[lv], room=room, x=x, y=y, z=z,
                        type=typ, switches=controlled_by.get(key, []), circuit=cct, source=SOURCE[lv])
             if key == "2:L21": rec["control"] = "Sauna heater control (no wall switch)"
+            if key in ("G:L17", "G:L18"): rec["control"] = "Motion control built into the light (no wall switch)"
             _m = {"L7": "D", "L8": "D", "L36": "T", "L37": "T", "L38": "T", "L39": "T", "L44": "U", "L45": "U"}
             _m.update({"L%d" % i: "V" for i in range(46, 52)})
             if lv == "2" and lid in _m: rec["control"] = ("Two Matter controllers D, one per segment (no wall switch)" if lid in ("L7", "L8") else "Matter controller %s (no wall switch)" % _m[lid])

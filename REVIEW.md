@@ -24,7 +24,7 @@ The owner settled most of the earlier findings on Nov 10, 2026; they are listed 
 |---|------|---------|-------|
 | 1 | must-fix | Main panel MP is drawn on the north wall inside the footprint of the garage stair (x 36.7 to 39.7 ft). The stair soffit there is roughly 5 to 6 ft above the slab, below the 6.5 ft headroom a panel's working space needs. A.2 also shows a wall along the south side of that stair, so MP, the WashTower, modem 1, switch 18 and P1/P2 would be inside a 3'4" wide enclosed under-stair space. | garage v20: MP, W/D, 1, 18, L14 |
 | 2 | nice-to-have | Garage: nothing by the overhead doors controls L1 to L8 (S2 is on the west wall near the SW corner). A scene button between the doors would cover it. | garage v20: S2 |
-| 3 | nice-to-have | Second floor: motorized screen B covers the balcony door when it is down. (The exterior stair is now lit: garage sheet L17, L18 on motion sensors S10, S11, Nov 15, 2026.) | second floor v20: B |
+| 3 | nice-to-have | Second floor: motorized screen B covers the balcony door when it is down. (The exterior stair is now lit: garage sheet L17, L18, Govee lights with integrated motion control; sensors S10, S11 removed Nov 16, 2026.) | second floor v20: B |
 | 4 | resolved | Second floor: the hall has ceiling lights L41-L43 on 4-way switches S28, S29, S30 (owner decision, Nov 15, 2026), and the east stair has ceiling lights L52, L53 on the 3-way pair S4 and garage S8 (owner decision, Nov 16, 2026). The electrician sets the exact light positions over the flight on site. | second floor v20: L52, L53, S4; garage v20: S8 |
 
 ## PDF vs drawing geometry mismatches
@@ -155,7 +155,7 @@ The PDF wins for geometry; these are the differences found.
   lights (risers L7, L8, island L36-L39, media room L44, L45, hall L46-L51) have no wall switch by design either
   (owner decision, Nov 15-16, 2026): they run from Matter controllers D, T, U, V. Each stair has two controllers D
   (owner decision, Nov 16, 2026): west stair L7 split at the northwest landing (north leg 7 lights, west leg 9), east
-  stair L8 split into the lowest 7 lights and the other 10. The second-floor sheet now shows all 16 L7 lights.
+  stair L8 split into the top 8 lights and the other 9. The second-floor sheet now shows all 16 L7 lights.
 - Floor-level lights (owner decision, Nov 16, 2026): media room L44, L45 (south wall, one Matter controller U) and
   hall L46 to L51 (north wall, one run on Matter controller V), all about 6 in. above the floor, with no wall switch
   by design: they are controlled through Matter only. Six hall lights and the controller positions were confirmed by the owner (Nov 16, 2026).
@@ -215,12 +215,13 @@ The PDF wins for geometry; these are the differences found.
     manual and the inspector.
   - S5/S6 (latch side of the media door) and S11/S18 (latch side of the bath door) are well placed.
 - Resolved (owner decision, Nov 15, 2026): the exterior stair from grade to the balcony (16 risers) is now lit by
-  two outdoor wall lights on the garage sheet, L17 at the foot and L18 mid-run, turned on by outdoor motion sensors
-  S11 (foot) and S10 (top landing). L28 still lights the top landing from switch S13. Points to check with the
-  electrician/inspector: whether motion-only control is accepted for exterior stair lighting (the residential code
-  allows automatic control for exterior stairs in many readings; the inspector decides), fixtures and sensors listed
-  for wet locations, and that the sensors sit clear of the mini-split condensers MS3, MS4 under the stair so the
-  fans do not trigger them. Consider putting L28 on the same sensors so the whole stair comes on together.
+  two outdoor wall lights on the garage sheet, L17 at the foot and L18 mid-run. They are Govee lights with integrated motion
+  control and stay powered all the time; the separate sensors S10, S11 were removed on Nov 16, 2026 (owner decision).
+  L28 still lights the top landing from switch S13. Points to check with the electrician/inspector: whether
+  motion-only control is accepted for exterior stair lighting (the residential code allows automatic control for
+  exterior stairs in many readings; the inspector decides), fixtures listed for wet locations, that the built-in
+  sensing covers the whole stair including the top landing, and that the mini-split condensers MS3, MS4 under the
+  stair do not trigger it.
 - Resolved (owner decision): S9 (under-cabinet L16) and S11 (bath L19, L20, fan)
   are plain on/off switches, not dimmers and not smart-bulb mode.
 - Resolved (owner decision, Nov 15, 2026): media fan L11 is a smart fan with light powered straight from the line.

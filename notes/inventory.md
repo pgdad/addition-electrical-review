@@ -18,19 +18,19 @@ Counted from `lights.json` (built from the drawings). Quantities only; models ar
 
 Totals by size: four 8-port, two 16-port, three not yet sized.
 
-## Light switches (43) and outdoor motion sensors (2)
+## Light switches (43)
 
-| Level | Dimmer (smart-bulb mode) | On/off | Aux | Outdoor motion sensor | Total |
-|-------|--------------------------|--------|-----|-----------------------|-------|
-| Garage / hallway | 5 | 0 | 3 | 2 | 10 |
-| Second floor | 12 | 3 | 7 | 0 | 22 |
-| Third floor | 6 | 1 | 2 | 0 | 9 |
-| Shed | 4 | 0 | 0 | 0 | 4 |
-| **Total** | **27** | **4** | **12** | **2** | **45** |
+| Level | Dimmer (smart-bulb mode) | On/off | Aux | Total |
+|-------|--------------------------|--------|-----|-------|
+| Garage / hallway | 5 | 0 | 3 | 8 |
+| Second floor | 12 | 3 | 7 | 22 |
+| Third floor | 6 | 1 | 2 | 9 |
+| Shed | 4 | 0 | 0 | 4 |
+| **Total** | **27** | **4** | **12** | **43** |
 
 Second-floor S6 (media fan L11) is a dimmer with no load connected; it only signals Home Assistant (Nov 15, 2026).
 
-The two motion sensors (garage sheet S10, S11) run the exterior stair lights L17, L18 (Nov 15, 2026).
+The two outdoor motion sensors (garage sheet S10, S11) were removed on Nov 16, 2026: the exterior stair lights L17, L18 have integrated motion control.
 
 The 12 aux switches each need a traveler to their main switch (10 three-way pairs and one 4-way set: second-floor hall S28 with aux S29 and S30).
 The hall and stair wall lights and their 8 switches were removed on Nov 14, 2026.

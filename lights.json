@@ -246,13 +246,11 @@
    "y": 7.0,
    "z": 7.0,
    "type": "outdoor",
-   "switches": [
-    "G:S11",
-    "G:S10"
-   ],
+   "switches": [],
    "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Motion controlled by sensors S10 and S11, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads"
+   "control": "Motion control built into the light (no wall switch)",
+   "note": "Govee light with integrated motion control, always powered, no wall switch or separate sensor (owner decision, Nov 16, 2026). About 7 ft above the treads"
   },
   {
    "key": "G:L18",
@@ -264,13 +262,11 @@
    "y": 13.0,
    "z": 12.5,
    "type": "outdoor",
-   "switches": [
-    "G:S11",
-    "G:S10"
-   ],
+   "switches": [],
    "circuit": "C10 garage lighting, 15A",
    "source": "drawings/1-garage-and-hallway_v20.svg",
-   "note": "Motion controlled by sensors S10 and S11, no wall switch (owner decision, Nov 15, 2026). About 7 ft above the treads, 13 ft above grade"
+   "control": "Motion control built into the light (no wall switch)",
+   "note": "Govee light with integrated motion control, always powered, no wall switch or separate sensor (owner decision, Nov 16, 2026). About 7 ft above the treads, 13 ft above grade"
   },
   {
    "key": "G:L12",
@@ -449,7 +445,7 @@
    "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "control": "Two Matter controllers D, one per segment (no wall switch)",
-   "note": "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17); the lowest 7 lights on one Matter controller, the other 10 on the second; no wall switch",
+   "note": "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17); the top 8 lights on one Matter controller, the other 9 on the second; no wall switch",
    "points": [
     [
      40.79,
@@ -1627,40 +1623,6 @@
    "mode": "smart-bulb dimmer"
   },
   {
-   "key": "G:S11",
-   "id": "S11",
-   "level": "G",
-   "levelName": "Garage and hallway",
-   "room": "Outside, foot of the exterior stair, on the garage west wall (outdoor motion sensor)",
-   "x": -0.3,
-   "y": 7.0,
-   "z": 6.3,
-   "controls": [
-    "G:L17",
-    "G:L18"
-   ],
-   "source": "drawings/1-garage-and-hallway_v20.svg",
-   "motion": true,
-   "mode": "outdoor motion sensor, wired in parallel with the other one, on from dusk to dawn only"
-  },
-  {
-   "key": "G:S10",
-   "id": "S10",
-   "level": "G",
-   "levelName": "Garage and hallway",
-   "room": "Outside, top landing of the exterior stair at balcony level (outdoor motion sensor)",
-   "x": -0.3,
-   "y": 17.46,
-   "z": 19.0,
-   "controls": [
-    "G:L17",
-    "G:L18"
-   ],
-   "source": "drawings/1-garage-and-hallway_v20.svg",
-   "motion": true,
-   "mode": "outdoor motion sensor, wired in parallel with the other one, on from dusk to dawn only"
-  },
-  {
    "key": "G:S8",
    "id": "S8",
    "level": "G",
@@ -2342,7 +2304,7 @@
    "id": "D",
    "level": "G",
    "levelName": "Garage and hallway",
-   "room": "East stair riser-light Matter controllers, 2 (feed second-floor L8: lowest 7 lights, the other 10)",
+   "room": "East stair riser-light Matter controllers, 2 (feed second-floor L8: top 8 lights, the other 9)",
    "kind": "hardwired",
    "x": 41.67,
    "y": 1.0,

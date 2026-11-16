@@ -327,6 +327,6 @@ Nov 16, 2026 (owner decision): east stair ceiling lights L52, L53 added over the
 Nov 16, 2026 (owner decision): switches S3 and 3rd-floor S8 removed. West stair riser lights L7 are Matter control only.
 Nov 16, 2026 (owner decision): switch S27 removed. Island floor lights L36-L39 are Matter control only, through controller T.
 Nov 16, 2026 (owner decision): 4 stair light Matter controllers, 2 per stair. West stair L7 (controllers D here): north leg, east of the
-NW landing, 7 lights; the rest, 9 lights. East stair L8 (controllers D on the garage sheet): lowest 7 lights; the other 10.
+NW landing, 7 lights; the rest, 9 lights. East stair L8 (controllers D on the garage sheet): top 8 lights; the other 9.
 L7 now shows all 16 riser lights (2 added on the west leg). Confirmed by the owner: hall floor lights L46-L51 with controllers U, V;
 east stair ceiling lights L52, L53; hall ceiling lights L41-L43 with S28 as main.

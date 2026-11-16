@@ -5,15 +5,18 @@ Items marked (proposed) were the designer's suggestion and are not yet confirmed
 The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 
 ## Whole building
+- Exterior stair motion sensors removed (owner decision, Nov 16, 2026): the Govee lights for L17, L18 have
+  integrated motion control, so no separate sensors are installed. Garage-sheet S10 and S11 are gone; the two
+  lights stay powered all the time on C10 and have no wall switch.
 - Stair riser-light controllers (owner decision, Nov 16, 2026): four Matter controllers, two per stairway. West
   stair L7: the lower segment is every riser light east of the landing in the northwest corner (north leg, 7
   lights), the upper segment is the rest (west leg, 9 lights); controllers D on the second-floor sheet. East stair
-  L8: the lowest 7 lights on one controller, the other 10 on the second; controllers D on the garage sheet. The
+  L8: the top 8 lights on one controller, the other 9 on the second (changed later on Nov 16, 2026); controllers D on the garage sheet. The
   second-floor sheet now shows all 16 west stair riser lights.
 - Confirmed by the owner (Nov 16, 2026): hall floor lights L46-L51 (six, north wall) with controllers U and V as
   placed; east stair ceiling lights L52, L53 as placed; hall ceiling lights L41-L43 with S28 as the main switch.
 - Still open by owner decision (Nov 16, 2026): which Govee outdoor light goes at each outdoor position (the
-  exterior stair lights will be the H7075 or the H3751, which support motion sensors); which 15 A outlets get the
+  exterior stair lights will be the H7075 or the H3751, which have integrated motion control); which 15 A outlets get the
   Eve smart outlet (decided at the last minute). There will be separate shower and bathroom fans; the electrician
   decides them. The 24 V supplies are Mean Well XLG-75-24-A.
 - West stair riser-light switches removed (owner decision, Nov 16, 2026): second-floor S3 and third-floor S8 are
@@ -150,9 +153,9 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   (latch) side of the front door and is wired to switch 18; L13 is centred over the door.
 - Exterior stair lights (owner decision, Nov 15, 2026): the stair from grade up to the balcony is lit by outdoor
   lights and is motion controlled. Placement is proposed, not yet confirmed by the owner: two wall lights on the
-  west wall, L17 at the foot and L18 mid-run, about 7 ft above the treads, on lighting circuit C10; two outdoor
-  motion sensors, S11 at the foot and S10 at the top landing, wired in parallel so either one turns on both
-  lights, dusk to dawn only. No wall switch. Balcony light L28 at the top stays on switch S13.
+  west wall, L17 at the foot and L18 mid-run, about 7 ft above the treads, on lighting circuit C10. The two outdoor
+  motion sensors S10, S11 first drawn for them were removed on Nov 16, 2026 (motion control is in the lights).
+  No wall switch. Balcony light L28 at the top stays on switch S13.
 - Windows (A.2), drawn Nov 10, 2026: two 2840 on the north wall, centred 13'8" and 29'8" from the west
   corner; one 2840 tempered on the west wall, centred 3'0" from the north corner.
 
