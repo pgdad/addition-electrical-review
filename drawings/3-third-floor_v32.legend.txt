@@ -1,2 +1,165 @@
-
+Third floor, from sheet A.4 (north up, roughly to scale)
+R1
+R2
+A
+R3
+E
+R4
+B
+R5
+6
+B1
+B2
+B3
+B4
+B5
+OFFICE (WEST)
+18'11" x 12'4"
+OFFICE (EAST)
+14'0" wide, one room
+over the family room
+clipped
+clipped
+stairs
+down 16R
+closet
+attic
+attic
+small
+attic
+old house
+attic
+1
+4
+5
+C
+D
+SK
+P1
+P4
+P5
+P6
+P7
+P8
+P9
+P10
+P11
+P12
+P13
+P14
+P15
+P16
+P17
+H1
+H2
+H3
+H4
+H5
+H6
+2
+3
+14
+7
+8
+9
+10
+11
+12
+13
+L1
+L2
+L3
+L4
+L5
+L6
+L7
+L8
+L9
+S1
+S5
+S10
+S2
+S3
+S4
+S6
+S7
+Thick lines: exterior walls. Thin gray: knee walls (5 ft). Blue: windows.
+Dashed: clipped-ceiling strips. West strip: racks. East strip: bookshelves.
+Sheet A.4, north up, roughly to scale. Overall 42'6" wide.
+Arrow: passage across from R1, east through the small attic to the entry in the wall to the old house attic.
+R1 to R5: rack openings behind the west clipped strip. 6: same-size opening, no rack.
+B1 to B5 bookshelves. SK: sink with RO tap, flush to the south wall of its space; amber dot: leak sensor.
+Network
+1  R1: main network stack and fiber distribution; fiber in from the garage modem entry.
+2  UniFi AP, ceiling, east office.   3  UniFi AP, wall, west office east wall, south of the door.
+4  Two floor Ethernet jacks, east edge of the west clipped strip, across from R2.
+5  Two floor Ethernet jacks, west edge of the east clipped strip, across from B1.
+14  Two wall Ethernet jacks (was 6), west office south wall, east of the windows.
+7  PoE presence sensor, wall, west office east wall, north of the door, facing west.
+8  PoE presence sensor, same wall and spot, east office side, facing east.
+9, 10  PoE presence sensors, wall, east office north wall, one each side of the windows.
+11, 12  PoE presence sensors, wall, east office south wall, one each side of the window.
+13  PoE presence sensor, wall, south wall at the top of the stairs, facing north down the stairs.
+Power
+A  20A duplex outlet inside R2.   B  20A duplex outlet inside R4.   E  Spare 20A home run, boxed in R3 (dashed).
+C, D  Floor power outlets, about 2.5 ft south of floor Ethernet jacks 4 and 5.
+P1, P4, P5  West office wall outlets: east wall near S2, south jog wall, south wall east of the nook door. P2, P3 removed.
+P6 to P12  East office wall outlets: north wall (2), west knee wall, clipped strip edges (2), south wall (2).
+P13, P14  Small attic, north and south ends.   P15  Old house attic side of the wall, just north of the doorway.
+P16  Beside S7.   P17  Just north of S4, above the sink.   Both GFCI, near the sink (SK).
+H1 to H6  High outlets near window tops for smart blinds: W office south (2), E office north (2), E office south (1), stair (1).
+Lighting (proposed): Govee dimmable ceiling lights, Inovelli White Series switches
+L1, L2  West office, one in each half, level.  S1 at the top of the stairs, S2 by the office door (3-way pair).
+L3, L4, L5  East office, north, middle and south.  S3 on the east side of the shared door.
+L6  Small attic.  S4 in the east office, just north of the attic passage.
+L7  Closet at the top of the stairs, ordinary (non-smart) light.  S5 (on/off, not a dimmer) on the closet's north edge, east of its door.
+L8  Old house attic.  S6 on the small attic side of the entry, just north of it.
+L9  Short track light in the open space north of S4.  S7 at the north end of that space.
+Switches in smart bulb mode: lights keep constant power, switch dims them over Matter or Home Assistant.
+S8  Removed (Nov 16, 2026). Stair riser lights are Matter control only.
+S9  Removed (Nov 14, 2026) together with the stair wall lights L33, L34.
+S10  L35, L40 west stair ceiling lights (2nd floor), top of the stairs. Pairs with S17 at the bottom.
+Circuits (proposed)
+C1  20A dedicated: A (R2 rack).
+C2  20A dedicated: B (R4 rack).
+C3  20A west office: P1, P4, P5, P18 to P21, H1, H2, H6.
+C4  20A east office desks: C, D, P8, P9, P10.
+C5  20A east office perimeter: P6, P7, P11, P12, H3, H4, H5.
+C6  20A sink and attics: P16, P17 (GFCI), P13, P14, P15. Dual AFCI/GFCI breaker.
+C7  15A lighting: L1 to L10.
+C8  20A spare home run E to a box in R3, reachable for R1, R3 or R5 later.
+AFCI breakers on C3 to C8 per code; confirm racks C1, C2 with the electrician and inspector.
+SD1
+Smoke alarm (added from sheet A.4)
+SD1  Smoke alarm, west office ceiling.
+Hardwired, interconnected, battery backup (A.2 note 9); on a lighting circuit, confirm with electrician.
+L10
+S11
+reading nook
+L10  Children's reading nook: wall-mounted, cool-to-the-touch LED on its north wall east of the door (low ceiling).  S11 on the office side, just west of the nook door, mounted low (3 ft) for children; dimmer in smart-bulb mode, so L10 is a smart fixture or lamp.
+Nook: thin wall on the line of the rack-strip west wall; small door in its north wall. P5 moved east of the door; P4 moved to the office side of its wall.
+P18
+P18  West office wall outlet on the wall below the S1, S10 switch stack at the top of the stairs (C3).
+P19
+P20
+P21
+P19  West office south wall, mid-wall under the windows (C3).   P20  West office north wall at the northwest corner (C3).
+P21  West office, mid north wall, on the sloped ceiling just above the low (5 ft) wall (C3). Keep it within 5.5 ft of the floor so it counts.
+P5 moved further east along its wall, toward the shared door.
+Closet: door in its north edge, off the top stair landing (dashed gap); thin line marks that edge on the 3D/2D page.
+3-way pairs (Nov 10, 2026): one switch of each pair is an Inovelli aux switch, with a traveler wire to the Inovelli main switch.
+Aux: S2 (main S1); S10 at the top of the stair (main is second-floor S17). Run 3-conductor cable
+(traveler + neutral) between the two boxes of each pair; S10 needs its traveler down the stair.
+Colours follow the key (Nov 10, 2026): blind outlets H1-H5 teal; network items, APs and sensors purple; power items A-E amber.
+Wall jack 6 is renamed 14 (6 stays the empty rack opening). P21: mount within 5.5 ft of the floor so it counts toward wall spacing.
+2846
+2846
+2846
+3050
+3050
+2850
+2036
+Windows (A.4), drawn Nov 12, 2026 in blue like the other sheets: three 2846 on the west office south wall, two 3050 on the
+east office north wall, one 2850 on the east office south wall, and a 2036 casement on the stair west wall. Blind outlet H6 at its top left corner seen from inside (south end, C3).
+Removed (Nov 14, 2026, owner decision): S9 and the west stair wall lights L33, L34 it controlled. S10 moved up beside S8.
 Nov 16, 2026 (owner decision): switch S8 removed. West stair riser lights L7 (2nd-floor sheet) are Matter control only, no wall switch.
