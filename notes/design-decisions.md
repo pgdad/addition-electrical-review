@@ -5,29 +5,40 @@ Items marked (proposed) were the designer's suggestion and are not yet confirmed
 The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 
 ## Whole building
+- Stair riser-light controllers (owner decision, Nov 16, 2026): four Matter controllers, two per stairway. West
+  stair L7: the lower segment is every riser light east of the landing in the northwest corner (north leg, 7
+  lights), the upper segment is the rest (west leg, 9 lights); controllers D on the second-floor sheet. East stair
+  L8: the lowest 7 lights on one controller, the other 10 on the second; controllers D on the garage sheet. The
+  second-floor sheet now shows all 16 west stair riser lights.
+- Confirmed by the owner (Nov 16, 2026): hall floor lights L46-L51 (six, north wall) with controllers U and V as
+  placed; east stair ceiling lights L52, L53 as placed; hall ceiling lights L41-L43 with S28 as the main switch.
+- Still open by owner decision (Nov 16, 2026): which Govee outdoor light goes at each outdoor position (the
+  exterior stair lights will be the H7075 or the H3751, which support motion sensors); which 15 A outlets get the
+  Eve smart outlet (decided at the last minute). There will be separate shower and bathroom fans; the electrician
+  decides them. The 24 V supplies are Mean Well XLG-75-24-A.
 - West stair riser-light switches removed (owner decision, Nov 16, 2026): second-floor S3 and third-floor S8 are
   gone; riser lights L7 are Matter control only. The stair keeps ceiling lights L35, L40 on S17 and third-floor S10.
 - East stair ceiling lights (owner decision, Nov 16, 2026): two ceiling lights L52, L53 over the flight from the
   garage to the second floor, on the existing 3-way pair second-floor S4 (main) and garage S8 (aux). Riser lights
-  L8 are now Matter control only. Light positions are proposed; the electrician sets them on site. Circuit C16.
+  L8 are now Matter control only. Light positions confirmed by the owner (Nov 16, 2026). Circuit C16.
 - Low-voltage floor-level lights (owner decision, Nov 16, 2026): media room L44, L45 on the south wall, about 6 in.
   above the floor, at about 25% and 75% of the room width, on one Matter controller U. Hall L46-L51 on the hall
   north wall, one run on one Matter controller V. No wall switches. Six hall lights, their 4 ft spacing and the
-  controller positions are proposed, not yet confirmed. Circuit C16.
+  controller positions were confirmed by the owner (Nov 16, 2026). Circuit C16.
 - Media fan L11 and switch S6 (owner decision, Nov 15, 2026): L11 is a Big Ass Fans Haiku L 52 in. smart fan with
   light. S6 is an Inovelli Smart Dimmer with nothing on its load terminal: line feeds both the switch and the fan,
   the fan stays powered, and S6 (with aux S23) only signals Home Assistant. This replaces the Nov 9 decision
   that S6 is a plain on/off switch. Details in notes/devices.md.
 - Low-voltage lights (owner decision, Nov 15, 2026): they need no wall switch, because their Matter controllers
   should not be powered off. Two controlled segments per stairway, one controller for the second-floor hallway,
-  one for the kitchen island, one per media room light; power supplies as the electrician decides. Details and the
-  purchased products are in notes/devices.md. The drawings are not yet changed for this.
+  one for the kitchen island, one for the two media room lights (changed Nov 16, 2026); power supplies as the electrician decides. Details and the
+  purchased products are in notes/devices.md.
 - Service: 400A, entering at main panel MP on the garage north wall, just east of the W/D under the stairs.
 - 3-way pairs (owner decision, Nov 10, 2026): in every 3-way pair, on all floors, one switch is an Inovelli
   aux switch and the other is the Inovelli main switch; a traveler wire runs between the two boxes.
   Which end is the aux is confirmed by the owner (Nov 10, 2026): garage S2 (main S1), S7 (main S4), S8 (main 2F S4),
   S9 (main 2F S16); second floor S19 (S1), S20 (S2), S21 (S8), S22 (S5), S23 (S6), S25 (S24), S26 (S10);
-  third floor S2 (S1), S8 (2F S3), S9 (2F S15), S10 (2F S17). The shed has no 3-way pairs.
+  third floor S2 (S1), S10 (2F S17); third-floor S8 and S9 were removed later (Nov 14 and 16, 2026). The shed has no 3-way pairs.
 - Network cabling split (owner decision, Nov 14, 2026): the electrician installs the empty network conduits, with a
   box or low-voltage ring at each device and a pull string in each conduit. The owner supplies, pulls, terminates and
   tests all copper (Ethernet) and fiber cables. Conduit size and type are still to be agreed with the electrician.

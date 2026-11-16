@@ -343,15 +343,15 @@
    "level": "2",
    "levelName": "Second floor",
    "room": "West stair up to 3rd floor",
-   "x": 4.5,
-   "y": 15.54,
-   "z": 4.93,
+   "x": 4.18,
+   "y": 15.59,
+   "z": 4.91,
    "type": "riser",
    "switches": [],
    "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
-   "control": "Matter controller D (no wall switch)",
-   "note": "Riser lights; 14 drawn for 16 risers; no wall switch, controlled through Matter",
+   "control": "Two Matter controllers D, one per segment (no wall switch)",
+   "note": "One light mid each riser, 16 in all: 7 on the north leg (east of the northwest landing) on one Matter controller, 9 on the west leg on the second; no wall switch",
    "points": [
     [
      4.55,
@@ -390,18 +390,28 @@
     ],
     [
      1.92,
-     15.65,
-     4.92
+     15.2,
+     4.4
     ],
     [
      1.92,
-     16.55,
-     5.95
+     15.83,
+     5.13
     ],
     [
      1.92,
-     17.45,
-     6.99
+     16.46,
+     5.85
+    ],
+    [
+     1.92,
+     17.09,
+     6.57
+    ],
+    [
+     1.92,
+     17.72,
+     7.3
     ],
     [
      1.92,
@@ -410,18 +420,18 @@
     ],
     [
      1.92,
-     19.25,
-     9.06
+     18.98,
+     8.75
     ],
     [
      1.92,
-     20.14,
-     10.09
+     19.61,
+     9.47
     ],
     [
      1.92,
      20.24,
-     11.12
+     10.2
     ]
    ]
   },
@@ -438,8 +448,8 @@
    "switches": [],
    "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
-   "control": "Matter controller D (no wall switch)",
-   "note": "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17); no wall switch, controlled through Matter",
+   "control": "Two Matter controllers D, one per segment (no wall switch)",
+   "note": "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17); the lowest 7 lights on one Matter controller, the other 10 on the second; no wall switch",
    "points": [
     [
      40.79,
@@ -2328,6 +2338,19 @@
    "source": "drawings/1-garage-and-hallway_v20.svg"
   },
   {
+   "key": "G:D",
+   "id": "D",
+   "level": "G",
+   "levelName": "Garage and hallway",
+   "room": "East stair riser-light Matter controllers, 2 (feed second-floor L8: lowest 7 lights, the other 10)",
+   "kind": "hardwired",
+   "x": 41.67,
+   "y": 1.0,
+   "z": 3.11,
+   "circuit": "C10 garage lighting, 15A",
+   "source": "drawings/1-garage-and-hallway_v20.svg"
+  },
+  {
    "key": "G:P1",
    "id": "P1",
    "level": "G",
@@ -2839,7 +2862,7 @@
    "id": "D",
    "level": "2",
    "levelName": "Second floor",
-   "room": "Stair light Matter controllers, two per stairway (feed riser lights L7, L8), hall north wall at the west stair foot",
+   "room": "West stair riser-light Matter controllers, 2 (feed L7: north leg 7 lights, west leg 9 lights), hall north wall at the west stair foot",
    "kind": "hardwired",
    "x": 9.61,
    "y": 11.46,

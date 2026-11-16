@@ -153,21 +153,23 @@ The PDF wins for geometry; these are the differences found.
 ### Lighting control
 - Every light has a control. L21 (sauna) has no wall switch by design; it is on the heater control. The low-voltage
   lights (risers L7, L8, island L36-L39, media room L44, L45, hall L46-L51) have no wall switch by design either
-  (owner decision, Nov 15-16, 2026): they run from Matter controllers D, T, U, V.
+  (owner decision, Nov 15-16, 2026): they run from Matter controllers D, T, U, V. Each stair has two controllers D
+  (owner decision, Nov 16, 2026): west stair L7 split at the northwest landing (north leg 7 lights, west leg 9), east
+  stair L8 split into the lowest 7 lights and the other 10. The second-floor sheet now shows all 16 L7 lights.
 - Floor-level lights (owner decision, Nov 16, 2026): media room L44, L45 (south wall, one Matter controller U) and
   hall L46 to L51 (north wall, one run on Matter controller V), all about 6 in. above the floor, with no wall switch
-  by design: they are controlled through Matter only. Six hall lights and the controller positions are my proposal.
+  by design: they are controlled through Matter only. Six hall lights and the controller positions were confirmed by the owner (Nov 16, 2026).
   Check with the electrician that controllers U and V and their 24 V supplies stay reachable, and that these lights
   are not counted as the required switched lighting (the hall has L41 to L43 and the media room L9, L10 for that).
 - Hall lighting (owner decision, Nov 15, 2026): three ceiling lights L41, L42, L43 along the hall, about 10 ft apart,
   on a 4-way set: S28 at the west end (main, beside S17 at the west stair foot), S29 at the east end beside S4
   at the head of the east stair (aux), and S30 in the media room on the west (latch) side of the hall door, below S6
-  (aux). Light positions and which switch is the main are my proposal. With Inovelli switches a 4-way set is one main
+  (aux). Light positions and S28 as the main were confirmed by the owner (Nov 16, 2026). With Inovelli switches a 4-way set is one main
   switch and two aux switches on one traveler; check the traveler routing with the electrician.
 - Resolved (owner decision, Nov 16, 2026): the east stair now has two ceiling lights, L52 and L53, over the flight
   down to the garage, on the existing 3-way pair S4 (head, main) and garage S8 (foot, aux). The riser lights L8
   are now Matter control only, with no wall switch. The west stair keeps risers L7 and ceiling lights L35, L40.
-  Light positions over the flight are my proposal; the electrician sets them and the mounting height on site.
+  Light positions were confirmed by the owner (Nov 16, 2026); the electrician sets the mounting height on site.
 - Resolved (owner decision, Nov 16, 2026): second-floor S3 and third-floor S8, which ran the west stair riser
   lights L7, are removed. L7 is Matter control only. The west stair keeps its switched ceiling lights L35, L40 on
   S17 (foot) and third-floor S10 (top).
@@ -278,8 +280,8 @@ The PDF wins for geometry; these are the differences found.
 - Resolved (Nov 10, 2026): the wall Ethernet jack is renamed 14, so ID 6 is only the empty rack opening.
 - Resolved (Nov 10, 2026): colours now follow the key. Blind outlets are teal, network items purple and
   power items A to E amber.
-- Cross-level pairs agree: S8 with second-floor S3, S10 with S17. S9 was removed on Nov 14, 2026 with
-  the stair wall lights L33, L34; S10 moved up beside S8.
+- Cross-level pairs agree: S10 with second-floor S17. S9 was removed on Nov 14, 2026 with the stair wall lights
+  L33, L34, and S8 on Nov 16, 2026 (riser lights are Matter control only).
 - L7: see the mismatch table.
 - Windows are now drawn from A.4 (Nov 12, 2026), in blue with their sizes like the other sheets: three 2846 on
   the west office south wall, two 3050 on the east office north wall, one 2850 on the east office south wall,

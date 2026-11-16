@@ -110,7 +110,7 @@ P16  Beside S7.   P17  Just north of S4, above the sink.   Both GFCI, near the s
 H1 to H6  High outlets near window tops for smart blinds: W office south (2), E office north (2), E office south (1), stair (1).
 Lighting (proposed): Govee dimmable ceiling lights, Inovelli White Series switches
 L1, L2  West office, one in each half, level.  S1 at the top of the stairs, S2 by the office door (3-way pair).
-L3, L4, L5  East office, north, middle and south.  S3 on the east side of the shared door.
+L3, L4, L5  East office, north, middle and south: Govee 18 in. Ceiling Light Pro, round.  S3 on the east side of the shared door.
 L6  Small attic.  S4 in the east office, just north of the attic passage.
 L7  Closet at the top of the stairs, ordinary (non-smart) light.  S5 (on/off, not a dimmer) on the closet's north edge, east of its door.
 L8  Old house attic.  S6 on the small attic side of the entry, just north of it.
@@ -163,3 +163,4 @@ Windows (A.4), drawn Nov 12, 2026 in blue like the other sheets: three 2846 on t
 east office north wall, one 2850 on the east office south wall, and a 2036 casement on the stair west wall. Blind outlet H6 at its top left corner seen from inside (south end, C3).
 Removed (Nov 14, 2026, owner decision): S9 and the west stair wall lights L33, L34 it controlled. S10 moved up beside S8.
 Nov 16, 2026 (owner decision): switch S8 removed. West stair riser lights L7 (2nd-floor sheet) are Matter control only, no wall switch.
+Nov 16, 2026 (owner decision): east office lights L3, L4, L5 are Govee 18-Inch Ceiling Light Pro, round (H1250).

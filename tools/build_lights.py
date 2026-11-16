@@ -28,7 +28,7 @@ def west_north_leg_h(x):     # 2nd -> 3rd, first leg rises going west from x=9.6
 
 def west_leg_h(z):           # second leg rises going south from z=4.4 to z=10.2 (8 risers)
     z = min(max(z, 4.4), 10.2)
-    return F2 + 4.41 + (z - 4.4) / 5.8 * 5.04
+    return F2 + 4.41 + (z - 4.4) / 5.8 * 5.04   # the 9th riser, at z=10.2, steps onto the third floor
 
 # ---- light metadata: id -> (room, type, height rule, circuit, note) --------------------------------
 # height rule: number = ft above that level's floor; callable(x, z) = absolute ft.
@@ -49,8 +49,8 @@ LIGHTS = {
   "L14": ("Under the garage stairs", "ceiling", lambda x, z: east_stair_h(x) - 1.0, G_LIGHT_CCT, "Mounted on the stair soffit; height follows the stair"),
  },
  "2": {
-  "L7":  ("West stair up to 3rd floor", "riser", None, L2_CCT, "Riser lights; 14 drawn for 16 risers; no wall switch, controlled through Matter"),
-  "L8":  ("East stair down to garage", "riser", None, L2_CCT, "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17); no wall switch, controlled through Matter"),
+  "L7":  ("West stair up to 3rd floor", "riser", None, L2_CCT, "One light mid each riser, 16 in all: 7 on the north leg (east of the northwest landing) on one Matter controller, 9 on the west leg on the second; no wall switch"),
+  "L8":  ("East stair down to garage", "riser", None, L2_CCT, "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17); the lowest 7 lights on one Matter controller, the other 10 on the second; no wall switch"),
   "L41": ("Hall", "ceiling", 9.0, L2_CCT, "Hall ceiling light, west (owner decision, Nov 15, 2026)"),
   "L42": ("Hall", "ceiling", 9.0, L2_CCT, "Hall ceiling light, middle (owner decision, Nov 15, 2026)"),
   "L43": ("Hall", "ceiling", 9.0, L2_CCT, "Hall ceiling light, east (owner decision, Nov 15, 2026)"),
@@ -198,6 +198,7 @@ OUTLETS = {
   ("A", "W/D outlets under the stairs: 120V 20A and 240V 30A, plus a gas stub, so either WashTower model fits", "appliance", 3.0, "C9 laundry 20A 120V GFCI and C15 dryer 30A 240V"),
   ("B", "Outdoor outlet, AirGradient, GFCI weather-resistant", "outdoor", 1.5, "C2, 20A GFCI"),
   ("P22", "Computers and printers outlet, GFCI", "wall", 1.5, "C8 dedicated, 20A GFCI"),
+  ("D", "East stair riser-light Matter controllers, 2 (feed second-floor L8: lowest 7 lights, the other 10)", "hardwired", 1.0, G_LIGHT_CCT),
   ("P1 P2", "Under the stairs, network gear, GFCI", "wall", 1.5, "C1 dedicated, 20A GFCI"),
   ("P13", "High outlet beside network switch 2, GFCI", "wall", 7.0, "C1 dedicated, 20A GFCI"),
   ("P20", "High outlet on the north wall beside network switch 7, GFCI", "wall", 7.0, "C1 dedicated, 20A GFCI"),
@@ -227,7 +228,7 @@ OUTLETS = {
   ("F", "Bidet outlet, GFCI", "wall", 1.5, "C10 bath, 20A GFCI"),
   ("G", "Sauna heater, hardwired per its manual", "hardwired", 1.0, "C2, 50A 240V"),
   ("J", "Sauna light driver (feeds L21)", "hardwired", 5.0, "C15 lighting, 15A AFCI"),
-  ("D", "Stair light Matter controllers, two per stairway (feed riser lights L7, L8), hall north wall at the west stair foot", "hardwired", 1.0, "C16 lighting, 15A AFCI"),
+  ("D", "West stair riser-light Matter controllers, 2 (feed L7: north leg 7 lights, west leg 9 lights), hall north wall at the west stair foot", "hardwired", 1.0, "C16 lighting, 15A AFCI"),
   ("U", "Media room floor-light Matter controller (feeds L44, L45), low on the south wall between the two lights", "hardwired", 1.0, "C16 lighting, 15A AFCI"),
   ("V", "Hall floor-light Matter controller (feeds L46-L51), hall north wall beside stair controllers D", "hardwired", 1.0, "C16 lighting, 15A AFCI"),
   ("T", "Island floor-light dimming controller (feeds L36-L39), inside the island", "hardwired", 1.0, "C15 lighting, 15A AFCI"),
@@ -494,7 +495,7 @@ def build():
             if key == "2:L21": rec["control"] = "Sauna heater control (no wall switch)"
             _m = {"L7": "D", "L8": "D", "L36": "T", "L37": "T", "L38": "T", "L39": "T", "L44": "U", "L45": "U"}
             _m.update({"L%d" % i: "V" for i in range(46, 52)})
-            if lv == "2" and lid in _m: rec["control"] = "Matter controller %s (no wall switch)" % _m[lid]
+            if lv == "2" and lid in _m: rec["control"] = ("Two Matter controllers D, one per segment (no wall switch)" if lid in ("L7", "L8") else "Matter controller %s (no wall switch)" % _m[lid])
             if note: rec["note"] = note
             if points: rec["points"] = points
             lights.append(rec)

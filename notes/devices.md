@@ -10,7 +10,7 @@ added to this section.
 |--------|---------|----------|--------------------------------------|
 | Low-voltage light | [GekPower 4 inch Linear Step Light, white, 24V 0.6W, 3000K](https://gekpower.com/products/4-inch-linear-step-light-24v-0-6w-cct2-7k-3k-3-5k-4k-5k-white?variant=47782360154349) | Stair riser lights L7 and L8, island floor lights L36-L39, media room floor lights L44 and L45, hall floor lights L46-L51 | Model VBD-COB-24V-100L-xxxx-STP4-White; 24 V DC; 0.6 W; 100 lm; dimmable; IP20 (indoor); 94 x 22 x 9.7 mm; 2 ft lead; certification not stated |
 | Matter controller | [MiBoxer SMZ2 Matter over Thread LED dimmer](https://www.ledbe.com/miboxer-smz2-matter-over-thread-led-dimmer.html) | Stair light controllers D, island controller T, media room controller U, hall controller V | 12-24 V DC in; 12 A max output; single-color or dual-white mode; Matter over Thread and 2.4 GHz remote; IP20; 74.5 x 36 x 17 mm; CE, EMC, RED; UL listing not stated |
-| 24 V power supply | [Amazon item B07W93ZGWL](https://www.amazon.com/dp/B07W93ZGWL) | Feeds each controller | Not read: the Amazon page could not be opened from here. Owner to give the brand, model and wattage |
+| 24 V power supply | [Mean Well XLG-75-24-A LED power supply](https://www.amazon.com/dp/B07W93ZGWL) | Feeds the controllers (owner confirmed, Nov 16, 2026) | From the listing title, read Nov 16, 2026: 74.4 W; 24 V output (adjustable 16.8-24 V); 3.1 A; constant voltage and constant current; output current adjustable by a built-in potentiometer; metal case with wire leads; input 100-305 V AC. Listing marks and enclosure rating not read: check the label or the Mean Well datasheet |
 
 The linked step-light variant is the 3000K one. The page also offers 2700K, 3500K, 4000K and 5000K.
 
@@ -18,7 +18,12 @@ The linked step-light variant is the 3000K one. The page also offers 2700K, 3500
 
 - No wall switch is needed for the low-voltage lights. The Matter controllers that run them should not be
   powered off, so they stay powered all the time and the lights are controlled through Matter.
-- Each stairway has two independently controlled segments of lights, so two controllers per stairway.
+- Each stairway has two independently controlled segments of lights, so two controllers per stairway, four
+  stair controllers in all (owner, Nov 16, 2026). On the drawings they are the two D symbols: garage sheet D for
+  the east stair, second-floor D for the west stair.
+- West stair split: the lower segment is every riser light east of the landing in the northwest corner (the
+  north leg, 7 lights); the upper segment is the rest (the west leg, 9 lights).
+- East stair split: the lowest 7 riser lights on one controller, the other 10 on the second.
 - The second-floor hallway has one controller for all its low-voltage lights.
 - The kitchen island lights all share a single controller.
 - The two media room low-voltage lights L44 and L45 share one controller, U (owner, Nov 16, 2026; this replaces
@@ -28,37 +33,39 @@ The linked step-light variant is the 3000K one. The page also offers 2700K, 3500
 
 | Area | Controllers |
 |------|-------------|
-| Garage stair (risers L8) | 2, one per segment |
-| West stair (risers L7) | 2, one per segment |
+| East (garage) stair (risers L8) | 2 (D, garage sheet): lowest 7 lights; the other 10 |
+| West stair (risers L7) | 2 (D, second-floor sheet): north leg 7 lights; west leg 9 lights |
 | Second-floor hallway (L46-L51) | 1 (V) |
 | Kitchen island (L36-L39) | 1 |
 | Media room (L44, L45) | 1 (U) |
 
-Not yet on the drawings (to settle with the owner):
+Placement notes:
 
 - Placed on Nov 16, 2026: media room lights L44 and L45 on the south wall, about 6 in. above the floor, at about
   25% and 75% of the room width; hall lights L46-L51 on the hall north wall at the same height, about 4 ft apart.
-  Six hall lights is a proposal: the hall floor between the two stairs is about 24 ft long, and at 100 lm each a
-  4 ft spacing gives an even wash along the floor. Five (about 5 ft apart) would also work if a dimmer look is
-  wanted. The positions of controllers U and V are proposed too.
+  The six hall lights and the positions of controllers U and V were confirmed by the owner on Nov 16, 2026.
 - East stair (Nov 16, 2026): switches S4 and garage S8 no longer run riser lights L8; they now run the new stair
   ceiling lights L52, L53. The west stair riser-light switches (second floor S3, third floor S8) were
   removed on Nov 16, 2026, and so was the island light switch S27. No low-voltage light has a wall switch now.
-- Where each stairway is split into its two segments is not set.
+- The east stair "lowest 7" is read here as the 2 garage door steps, the 2 hallway steps and the first 3 risers
+  of the flight. The owner should correct this if the 7 are counted differently.
+- The second-floor sheet now shows all 16 west stair riser lights (it showed 14 before Nov 16, 2026).
 
 ## Load on each run
 
 | Run | Lights | Load at 0.6 W each | Current at 24 V |
 |-----|--------|--------------------|-----------------|
-| Garage stair risers L8 | 17 | 10.2 W | 0.43 A |
-| West stair risers L7 | 16 | 9.6 W | 0.40 A |
+| East stair risers L8, lower segment | 7 | 4.2 W | 0.18 A |
+| East stair risers L8, upper segment | 10 | 6.0 W | 0.25 A |
+| West stair risers L7, north leg | 7 | 4.2 W | 0.18 A |
+| West stair risers L7, west leg | 9 | 5.4 W | 0.23 A |
 | Island floor lights L36-L39 | 4 | 2.4 W | 0.10 A |
 | Media room floor lights L44, L45 | 2 | 1.2 W | 0.05 A |
 | Hall floor lights L46-L51 | 6 | 3.6 W | 0.15 A |
 
-Each run is far below the controller's 12 A limit, and each stair run will be split over two controllers.
-The power supply size and arrangement are the electrician's decision; the size is still to be checked against these
-loads once its model is known.
+Each run is far below the controller's 12 A limit. All seven runs together are 27 W (about 1.1 A at 24 V), so
+any one 74.4 W Mean Well supply has room to spare for the runs it feeds. How many supplies there are and where
+they sit is the electrician's decision.
 
 ## Low-voltage lights: check with the electrician/inspector
 
@@ -67,8 +74,8 @@ loads once its model is known.
 - The controllers and the step lights are IP20, for dry indoor places only. They are not assumed for the sauna
   lights (second floor L21, shed L1), which stay on control unit J.
 - Each controller and its power supply must stay reachable after the walls and the island are closed.
-- That these products serve the riser lights and the island floor lights is taken from the earlier notes
-  (controllers D and T are "Matter" controllers); the owner should confirm.
+- The Mean Well supply has a constant-current stage with an adjustable limit. For these lights it should run as
+  a plain 24 V constant-voltage supply; ask the electrician to check the potentiometer setting.
 
 ## Inovelli White Series smart switches
 
@@ -104,8 +111,9 @@ What to check, with the electrician:
 - If a fan fails any condition above, use the Smart On/Off switch for it. Its humidity sensor can also turn the
   fan on by itself. The drawings already show the bath fan switch S18 as an on/off switch, so this needs no
   drawing change.
-- The drawings show one bath fan (second floor, switch S18). A separate shower fan is not on the drawings; the
-  owner should say whether there is one and where its switch goes.
+- There will be separate shower and bathroom fans (owner, Nov 16, 2026). The electrician decides the fans, their
+  positions and their switches. The drawings still show one bath fan switch (second floor S18); the shower fan
+  and its switch are not drawn until the electrician has decided.
 - The media room fan L11 does not use the Smart Fan switch; see "Media room ceiling fan" below.
 
 ## Govee lights
@@ -126,9 +134,14 @@ Owner decisions (Nov 15, 2026):
 - Third-floor east office: all three ceiling lights L3, L4, L5 are this Govee light.
 - All five are the round model.
 
-### Outdoor wall lights (candidates; the mix is not chosen yet)
+### Outdoor wall lights (candidates; the selection is left open)
 
-The owner will use some combination of these three for the balcony, the stairs and the garage doors.
+The owner will use some combination of these three for the balcony, the stairs and the garage doors. Which
+model goes where has not been decided and is left open (owner, Nov 16, 2026).
+
+For the exterior stair lights L17, L18, which work from motion sensors, the owner notes (Nov 16, 2026) that two
+of the three support motion sensors: the Outdoor Wall Light (H7075) and the Outdoor Wall Light Pro (H3751). The
+stair lights will be one of these two.
 
 | Device | Product | Specifications from the product page |
 |--------|---------|--------------------------------------|
@@ -151,9 +164,10 @@ Check with the electrician/inspector and the owner:
   built-in driver fed with 120 V at the junction box or a separate power adapter, and where an adapter would sit.
 - Only the Pro lists Matter. If every light must be on Matter, the other two need to be confirmed with Govee.
 - The exterior stair lights L17, L18 are drawn on motion sensors S10, S11 that cut their power. A smart light
-  that loses power drops off the network and takes time to come back on. Either keep these two lights powered
-  and let a motion sensor trigger them through the smart home (the Pro is sold with Govee motion sensor H5129),
-  or use plain lights on the wired sensors. This is the owner's call.
+  that loses power drops off the network and takes time to come back on. The H7075 and the H3751 support motion
+  sensors (owner, Nov 16, 2026), so once the model is chosen, check how its motion sensor connects: if the light
+  stays powered and the sensor only signals it, S10 and S11 on the garage sheet change from power-cutting sensors
+  to that kind, and the drawing note should be updated then.
 - The pages state no UL or ETL listing for these lights. Ask the electrician to confirm the listing mark on
   the units, and that each is rated for a wet location where it is exposed to rain.
 
@@ -195,12 +209,12 @@ Owner decision, Nov 16, 2026. Specifications are copied from the Amazon listing 
 
 | Device | Product | Used for | Specifications from the product page |
 |--------|---------|----------|--------------------------------------|
-| Smart wall outlet | [Eve Energy Outlet (Matter)](https://www.amazon.com/dp/B0CT62FC6W) | 15 A wall outlets (which positions is not set yet) | In-wall duplex outlet; 15 A; 120 V; the two outlets are controlled separately; power meter (combined value for both outlets); Matter over Thread, needs a Thread border router; local control, no cloud; needs line, neutral and ground in the wall box; copper or copper-clad wire only; dry indoor locations only; UL certified; 3 wire nuts included |
+| Smart wall outlet | [Eve Energy Outlet (Matter)](https://www.amazon.com/dp/B0CT62FC6W) | A selection of the 15 A wall outlets, to be chosen late in the job | In-wall duplex outlet; 15 A; 120 V; the two outlets are controlled separately; power meter (combined value for both outlets); Matter over Thread, needs a Thread border router; local control, no cloud; needs line, neutral and ground in the wall box; copper or copper-clad wire only; dry indoor locations only; UL certified; 3 wire nuts included |
 
 To settle with the owner:
 
-- Which outlets on the drawings get this smart outlet (all general-purpose indoor outlets, or only some) is not
-  set, so no count is given yet.
+- The Eve outlets go on a selection of the 15 A outlets. The owner will pick them at the last minute (owner,
+  Nov 16, 2026), so no positions or count are given and the drawings do not mark them.
 
 Check with the electrician/inspector:
 

@@ -67,7 +67,7 @@ Power (amber)
 A Projector wall, 4 outlets
 B Motorized screen, smart control
 C Closet outlet
-D Stair lights, 2 Matter controllers
+D West stair riser lights L7, 2 Matter controllers
 Windows (blue), sizes from A.3
 Hall 2 x 2840, sauna 4030 tempered, media 2 x 3020 and a 3068 door, family 2 x 3050
 Closet door on media wall per A.3; range by fridge; sink and DW north of W/D
@@ -103,7 +103,7 @@ S13
 Lighting (pink), dimmable Govee
 Switches (green), Inovelli; S9, S11, S18 on/off, not dimmers
 L1-L6 Hall wall lights: removed (Nov 14, 2026)
-L7 Stair up, light mid each riser
+L7 Stair up, light mid each riser, all 16
 L8 Stair down, light mid each riser, all 17 to garage floor
 L9, L10 Media ceiling at 25% and 75% of width
 L11 Media ceiling fan with light, center
@@ -262,7 +262,7 @@ Aux: S21 (main S8), S22 (S5), S23 (S6), S25 (S24), S26 (S10). Stair switches S4,
 the mains; their aux switches are garage S8 (S4) and third-floor S10 (S17).
 Run 3-conductor cable (traveler + neutral) between the two boxes of each pair; one traveler per pair.
 West stair foot (Nov 10, 2026): S3, S15, S17 and S19 are one four-gang row on the hall south wall; outlet P1 moved just east
-of them. Stair light controllers D are on the hall north wall at the stair foot. Garage stair-foot switches E, F are now S8, S9.
+of them. West stair light controllers D are on the hall north wall at the stair foot. Garage stair-foot switches E, F are now S8, S9.
 Note to the electrician: a 125 A subpanel on this floor would replace about 24 home runs through the rated garage ceiling
 with one feeder. Island outlet P14: position left to the builder/electrician.
 P27
@@ -324,5 +324,9 @@ L52
 L53
 Nov 16, 2026 (owner decision): east stair ceiling lights L52, L53 added over the flight down to the garage, on the existing
 3-way pair S4 (head, main) and garage S8 (foot, aux). Riser lights L8 are now Matter control only, no wall switch. C16.
-Nov 16, 2026 (owner decision): switch S3 removed. West stair riser lights L7 are Matter control only, no wall switch (3rd-floor S8 removed too).
+Nov 16, 2026 (owner decision): switches S3 and 3rd-floor S8 removed. West stair riser lights L7 are Matter control only.
 Nov 16, 2026 (owner decision): switch S27 removed. Island floor lights L36-L39 are Matter control only, through controller T.
+Nov 16, 2026 (owner decision): 4 stair light Matter controllers, 2 per stair. West stair L7 (controllers D here): north leg, east of the
+NW landing, 7 lights; the rest, 9 lights. East stair L8 (controllers D on the garage sheet): lowest 7 lights; the other 10.
+L7 now shows all 16 riser lights (2 added on the west leg). Confirmed by the owner: hall floor lights L46-L51 with controllers U, V;
+east stair ceiling lights L52, L53; hall ceiling lights L41-L43 with S28 as main.
