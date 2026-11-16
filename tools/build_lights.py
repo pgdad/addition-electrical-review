@@ -49,7 +49,7 @@ LIGHTS = {
   "L14": ("Under the garage stairs", "ceiling", lambda x, z: east_stair_h(x) - 1.0, G_LIGHT_CCT, "Mounted on the stair soffit; height follows the stair"),
  },
  "2": {
-  "L7":  ("West stair up to 3rd floor", "riser", None, L2_CCT, "Riser lights; 14 drawn for 16 risers"),
+  "L7":  ("West stair up to 3rd floor", "riser", None, L2_CCT, "Riser lights; 14 drawn for 16 risers; no wall switch, controlled through Matter"),
   "L8":  ("East stair down to garage", "riser", None, L2_CCT, "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17); no wall switch, controlled through Matter"),
   "L41": ("Hall", "ceiling", 9.0, L2_CCT, "Hall ceiling light, west (owner decision, Nov 15, 2026)"),
   "L42": ("Hall", "ceiling", 9.0, L2_CCT, "Hall ceiling light, middle (owner decision, Nov 15, 2026)"),
@@ -135,7 +135,6 @@ SWITCHES = {
  ("G", "S11"): ("Outside, foot of the exterior stair, on the garage west wall (outdoor motion sensor)", k("G", "L17", "L18")),
  ("G", "S10"): ("Outside, top landing of the exterior stair at balcony level (outdoor motion sensor)", k("G", "L17", "L18")),
  ("G", "S8"):  ("Hallway west wall at the foot of the stairs, north of the garage door", k("2", "L52", "L53")),
- ("2", "S3"): ("Hall, foot of the west stair", k("2", "L7")),
  ("2", "S4"): ("Hall, head of the east stair", k("2", "L52", "L53")),
  ("2", "S28"): ("Hall, west end at the foot of the west stair, beside S3 and S17", rng("2", 41, 43)),
  ("2", "S29"): ("Hall, east end at the head of the east stair, beside S4", rng("2", 41, 43)),
@@ -166,7 +165,6 @@ SWITCHES = {
  ("3", "S5"): ("Top stair landing, north edge of the closet by its door", k("3", "L7")),
  ("3", "S6"): ("Small attic, by the old-house entry", k("3", "L8")),
  ("3", "S7"): ("Sink nook, north end", k("3", "L9")),
- ("3", "S8"): ("West office, top of the stairs", k("2", "L7")),
  ("3", "S10"): ("West office, top of the stairs", k("2", "L35", "L40")),
  ("3", "S11"): ("West office, beside the reading nook door, mounted low at 3 ft", k("3", "L10")),
  ("S", "S1"): ("Dressing room, inside the porch door", k("S", "L2")),
@@ -178,7 +176,7 @@ SWITCHES = {
 PAIRS = [
  (["G:S1", "G:S2"], "#ff8a3d"), (["G:S4", "G:S7"], "#4dd0e1"),
  (["G:S8", "2:S4"], "#ffd54f"),
- (["2:S3", "3:S8"], "#81c784"),
+
  (["2:S17", "3:S10"], "#64b5f6"), (["3:S1", "3:S2"], "#e57373"),
  (["2:S8", "2:S21"], "#ffb74d"),
  (["2:S28", "2:S29", "2:S30"], "#dce775"),      # 4-way: one main and two aux switches
@@ -187,7 +185,7 @@ PAIRS = [
 # One switch of every 3-way pair is an Inovelli aux switch (owner decision, Nov 10, 2026); the other is the
 # Inovelli main switch that holds the load (or runs the smart bulbs). A traveler runs between the two boxes.
 MOTION = {"G:S11", "G:S10"}       # outdoor motion sensors for the exterior stair lights (not wall switches)
-AUX = {"G:S2", "G:S7", "G:S8", "3:S8", "3:S10", "3:S2",
+AUX = {"G:S2", "G:S7", "G:S8", "3:S10", "3:S2",
        "2:S21", "2:S22", "2:S23", "2:S25", "2:S26", "2:S29", "2:S30"}
 assert all(sum(m in AUX for m in members) == len(members) - 1 for members, _ in PAIRS)
 HALL_SWITCHES = {"G:S4", "G:S5", "G:S7", "G:S8"}   # stand on the raised hallway floor

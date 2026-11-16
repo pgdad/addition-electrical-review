@@ -5,6 +5,8 @@ Items marked (proposed) were the designer's suggestion and are not yet confirmed
 The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
 
 ## Whole building
+- West stair riser-light switches removed (owner decision, Nov 16, 2026): second-floor S3 and third-floor S8 are
+  gone; riser lights L7 are Matter control only. The stair keeps ceiling lights L35, L40 on S17 and third-floor S10.
 - East stair ceiling lights (owner decision, Nov 16, 2026): two ceiling lights L52, L53 over the flight from the
   garage to the second floor, on the existing 3-way pair second-floor S4 (main) and garage S8 (aux). Riser lights
   L8 are now Matter control only. Light positions are proposed; the electrician sets them on site. Circuit C16.

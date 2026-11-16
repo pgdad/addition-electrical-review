@@ -347,13 +347,10 @@
    "y": 15.54,
    "z": 4.93,
    "type": "riser",
-   "switches": [
-    "2:S3",
-    "3:S8"
-   ],
+   "switches": [],
    "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "Riser lights; 14 drawn for 16 risers",
+   "note": "Riser lights; 14 drawn for 16 risers; no wall switch, controlled through Matter",
    "points": [
     [
      4.55,
@@ -1667,24 +1664,6 @@
    "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
-   "key": "2:S3",
-   "id": "S3",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Hall, foot of the west stair",
-   "x": 10.44,
-   "y": 14.46,
-   "z": 3.25,
-   "controls": [
-    "2:L7"
-   ],
-   "source": "drawings/2-second-floor_v20.svg",
-   "pairWith": "3:S8",
-   "pairColor": "#81c784",
-   "role": "main",
-   "mode": "smart-bulb dimmer"
-  },
-  {
    "key": "2:S4",
    "id": "S4",
    "level": "2",
@@ -2223,24 +2202,6 @@
    ],
    "source": "drawings/3-third-floor_v32.svg",
    "mode": "smart-bulb dimmer"
-  },
-  {
-   "key": "3:S8",
-   "id": "S8",
-   "level": "3",
-   "levelName": "Third floor",
-   "room": "West office, top of the stairs",
-   "x": 5.59,
-   "y": 24.61,
-   "z": 13.45,
-   "controls": [
-    "2:L7"
-   ],
-   "source": "drawings/3-third-floor_v32.svg",
-   "pairWith": "2:S3",
-   "pairColor": "#81c784",
-   "role": "aux",
-   "mode": "Inovelli aux switch, traveler to the main switch"
   },
   {
    "key": "3:S10",

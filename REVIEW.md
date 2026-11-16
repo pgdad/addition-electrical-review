@@ -140,7 +140,7 @@ The PDF wins for geometry; these are the differences found.
 
 ### Consistency
 - All plotted IDs have legend rows and the reverse; IDs are unique on this level.
-- Cross-level pairs agree in both directions: S3 with third-floor S8 (L7), S4 with garage S8 (L52, L53),
+- Cross-level pairs agree in both directions: S4 with garage S8 (L52, L53),
   S17 with third-floor S10 (L35, L40).
 - Removed (owner decision, Nov 14, 2026): hall wall lights L1 to L6 and stair wall lights L30 to L34, with their
   switches S1, S2, S19, S20, S15, S16, garage S9 and third-floor S9. The IDs are not reused.
@@ -166,18 +166,18 @@ The PDF wins for geometry; these are the differences found.
   down to the garage, on the existing 3-way pair S4 (head, main) and garage S8 (foot, aux). The riser lights L8
   are now Matter control only, with no wall switch. The west stair keeps risers L7 and ceiling lights L35, L40.
   Light positions over the flight are my proposal; the electrician sets them and the mounting height on site.
-- *nice-to-have*: the west stair riser lights L7 are still drawn on S3 and third-floor S8. Under the owner's
-  no-wall-switch note for low-voltage lights those two switches are no longer needed for L7; the owner decides
-  whether to remove them or keep them as scene buttons.
+- Resolved (owner decision, Nov 16, 2026): second-floor S3 and third-floor S8, which ran the west stair riser
+  lights L7, are removed. L7 is Matter control only. The west stair keeps its switched ceiling lights L35, L40 on
+  S17 (foot) and third-floor S10 (top).
 - Kitchen island floor lights (Nov 12, 2026): L36-L39 are low-voltage dimmable toe-kick lights, one on each side
   of the island, on new switch S27 below S8/S9 by the hall door, through dimming controller T inside the island.
   The switch and controller are my proposal; the owner asked only for the lights. Check with the electrician: the
   controller needs an accessible, ventilated spot in the island, and its supply comes up through the floor with
   the feed for island outlet P14.
-- Stair pairs have a switch at each end: S3/S17 at the foot of the west stair (stair
+- Stair pairs have a switch at each end: S17 at the foot of the west stair (stair
   foot at x 9.6 ft) and S4 at the head of the east stair (first riser at x 33.8 ft).
 - 3-way pairs use an Inovelli main switch plus an Inovelli aux switch with a traveler (owner decision, Nov 10, 2026).
-  All 11 pairs and the one 4-way set (second-floor hall S28 main, S29 and S30 aux) are covered: garage S1/S2, S4/S7; stairs S8/S4, S3/S8, S17/S10; second floor
+  All 10 pairs and the one 4-way set (second-floor hall S28 main, S29 and S30 aux) are covered: garage S1/S2, S4/S7; stairs S8/S4, S17/S10; second floor
   S8/S21, S5/S22, S6/S23, S24/S25, S10/S26; third floor S1/S2. The aux end of each pair is
   listed on each drawing and is confirmed by the owner: the three stair mains are kept together in the second-floor gang.
   *Check with the electrician:* a 3-conductor cable (traveler plus neutral) between the two boxes of each
@@ -292,7 +292,7 @@ The PDF wins for geometry; these are the differences found.
 - S1 (top of stairs) and S2 (by the shared door) are at the two ends of the west office. Good.
 - Accepted (owner decision, Nov 10, 2026): the east office keeps one switch, S3 at the shared door, although
   the attic passage is a second entry; L6 stays on S4 (office side) and L8 on S6 (small attic side).
-- Accepted (owner decision): the switches at the top of the stairs (S1, S8, S10; S9 removed Nov 14, 2026) stay separate.
+- Accepted (owner decision): the switches at the top of the stairs (S1, S10; S9 removed Nov 14, 2026, S8 removed Nov 16, 2026) stay separate.
 - S5 is on the closet's north edge by its door and is a plain on/off switch, and L7 is marked on the drawing
   as an ordinary, non-smart light (owner decision).
 - Reading nook (owner decision): L10 is a wall-mounted, cool-to-the-touch LED on the nook's north wall,

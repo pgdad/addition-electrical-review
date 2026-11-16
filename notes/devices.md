@@ -42,8 +42,8 @@ Not yet on the drawings (to settle with the owner):
   4 ft spacing gives an even wash along the floor. Five (about 5 ft apart) would also work if a dimmer look is
   wanted. The positions of controllers U and V are proposed too.
 - East stair (Nov 16, 2026): switches S4 and garage S8 no longer run riser lights L8; they now run the new stair
-  ceiling lights L52, L53. The drawings still show wall switches for the west stair riser lights L7 (second
-  floor S3, third floor S8) and for the island lights (S27). With this note those switches are no longer needed to power the lights; whether
+  ceiling lights L52, L53. The west stair riser-light switches (second floor S3, third floor S8) were
+  removed on Nov 16, 2026. The drawings still show a wall switch for the island lights (S27). With this note those switches are no longer needed to power the lights; whether
   to remove them or keep them as Matter scene buttons is the owner's call.
 - Where each stairway is split into its two segments is not set.
 
@@ -79,10 +79,10 @@ Thread / Matter, 120 V. Specifications are copied from the product pages on Nov 
 
 | Device | Product | Used for | Specifications from the product page |
 |--------|---------|----------|--------------------------------------|
-| Smart dimmer | [White Series 2-in-1 Smart Dimmer, VTM31-SN](https://inovelli.com/products/thread-matter-white-series-smart-2-1-on-off-dimmer-switch) | The 29 dimmer positions (28 in smart-bulb mode, plus media fan switch S6 with no load) | Max 600 W incandescent, 300 W LED, 150 W CFL; lighting only, not for fans, outlets or other motor loads; smart-bulb mode; works with or without a neutral (no neutral: bypass needed, no energy monitoring); multi-way with the Aux switch; UL certified E528330 |
+| Smart dimmer | [White Series 2-in-1 Smart Dimmer, VTM31-SN](https://inovelli.com/products/thread-matter-white-series-smart-2-1-on-off-dimmer-switch) | The 28 dimmer positions (27 in smart-bulb mode, plus media fan switch S6 with no load) | Max 600 W incandescent, 300 W LED, 150 W CFL; lighting only, not for fans, outlets or other motor loads; smart-bulb mode; works with or without a neutral (no neutral: bypass needed, no energy monitoring); multi-way with the Aux switch; UL certified E528330 |
 | Smart on/off | [White Series Smart On/Off Switch, VTM30-SN](https://inovelli.com/products/thread-matter-white-series-smart-on-off-switch-w-humidity) | The 4 on/off positions | Max 1500 W general purpose, 960 W incandescent, 300 W LED/CFL; may run any fan or outlet within the load limit; built-in temperature and humidity sensors; neutral wire required; ETL certified |
 | Smart fan switch | [White Series Smart Fan Switch, VTM35-SN](https://inovelli.com/products/thread-matter-white-series-smart-fan-switch-3-speed-ceiling-on-off-exhaust) | Not assigned on the drawings; see the next part | Max 2.5 A, no more than 2 fans; AC motors only, DC motors not supported; not for lighting; no neutral: low and medium speed only and not usable on an exhaust fan; ETL certified 5027290 |
-| Aux switch | [Inovelli Add-On (Aux) Switch](https://inovelli.com/products/white-series-add-on-aux-switch) | The 13 aux positions (owner to confirm these are bought) | Not a smart switch; needs a traveler to its main switch; works with or without a neutral; UL certified E528330 |
+| Aux switch | [Inovelli Add-On (Aux) Switch](https://inovelli.com/products/white-series-add-on-aux-switch) | The 12 aux positions (owner to confirm these are bought) | Not a smart switch; needs a traveler to its main switch; works with or without a neutral; UL certified E528330 |
 
 The switch counts are from the drawings (see the inventory). The two outdoor motion sensors are not Inovelli
 switches.
