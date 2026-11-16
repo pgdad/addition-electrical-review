@@ -35,15 +35,15 @@ The two motion sensors (garage sheet S10, S11) run the exterior stair lights L17
 The 13 aux switches each need a traveler to their main switch (11 three-way pairs and one 4-way set: second-floor hall S28 with aux S29 and S30).
 The hall and stair wall lights and their 8 switches were removed on Nov 14, 2026.
 
-## Light fixtures (73 entries)
+## Light fixtures (75 entries)
 
 | Level | Ceiling | Wall | Outdoor | Stair riser runs | Under-cabinet | Low-voltage | Total |
 |-------|---------|------|---------|------------------|---------------|---------------------|-------|
 | Garage / hallway | 11 | 0 | 7 | 0 | 0 | 0 | 18 |
-| Second floor | 20 | 0 | 4 | 2 | 1 | 13 | 40 |
+| Second floor | 22 | 0 | 4 | 2 | 1 | 13 | 42 |
 | Third floor | 9 | 1 | 0 | 0 | 0 | 0 | 10 |
 | Shed | 2 | 1 | 1 | 0 | 0 | 1 | 5 |
-| **Total** | **42** | **2** | **12** | **2** | **1** | **14** | **73** |
+| **Total** | **44** | **2** | **12** | **2** | **1** | **14** | **75** |
 
 The two riser runs are counted as one entry each (one light per riser: 17 risers on the garage stair,
 16 on the west stair). They are listed on the second-floor sheet.

@@ -107,7 +107,7 @@ A W/D: 120V (C9) + 240V 30A (C15) + gas stub
 B Outdoor outlet, AirGradient, C2 GFCI, WR
 P22 Computers, printers outlet, C8 20A GFCI
 D Stair lights, 2 Matter controllers, on C10
-S8 3-way aux switch, stair foot (riser lights); S9 removed
+S8 3-way aux switch, stair foot (stair ceiling lights L52, L53); S9 removed
 Mini-splits on A.2 left off; power is MS1-MS4
 17 UniFi wall AP, hallway north wall, on switch 18
 18 PoE switch (8-port + fiber), fiber to 3rd fl
@@ -156,7 +156,7 @@ SD1 Smoke alarm, hallway ceiling
 CO1 Carbon monoxide alarm, hallway ceiling, beside SD1
 Hardwired, interconnected, battery backup (A.2 note 9); on a lighting circuit, confirm with electrician
 Stair riser lights (small pink dots): one mid each riser from the garage floor to the 2nd floor
-2 garage door steps + 2 hallway steps + 13-riser flight = 17; one run with 2nd-floor L8, on S8 + 2nd-floor S4, controllers D
+2 garage door steps + 2 hallway steps + 13-riser flight = 17; one run with 2nd-floor L8, Matter control only (no wall switch), controllers D
 Circuits added, GFCI (Nov 2026)
 C8 P22 (computers, printers) 20A dedicated, GFCI
 C9 A laundry 20A 120V, GFCI. C15 A dryer 30A 240V. Both run, plus a gas stub, so either WashTower fits.
@@ -223,3 +223,4 @@ S10
 L17, L18 Outdoor wall lights over the exterior stair, on the west wall: L17 at the foot, L18 mid-run, about 7 ft above the treads. C10.
 S10, S11 Outdoor motion sensors: S11 at the stair foot, S10 at the top landing (balcony level). Either one turns on L17 and L18.
 Nov 15, 2026 (owner decision): exterior stair lights L17, L18 added, motion controlled (S10, S11), no wall switch.
+Nov 16, 2026 (owner decision): S8 now runs east stair ceiling lights L52, L53 (2nd-floor sheet) with 2nd-floor S4; riser lights are Matter only.

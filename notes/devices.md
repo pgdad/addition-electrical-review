@@ -41,8 +41,9 @@ Not yet on the drawings (to settle with the owner):
   Six hall lights is a proposal: the hall floor between the two stairs is about 24 ft long, and at 100 lm each a
   4 ft spacing gives an even wash along the floor. Five (about 5 ft apart) would also work if a dimmer look is
   wanted. The positions of controllers U and V are proposed too.
-- The drawings still show wall switches for the riser lights (second floor S3 and S4, garage S8, third floor S8)
-  and for the island lights (S27). With this note those switches are no longer needed to power the lights; whether
+- East stair (Nov 16, 2026): switches S4 and garage S8 no longer run riser lights L8; they now run the new stair
+  ceiling lights L52, L53. The drawings still show wall switches for the west stair riser lights L7 (second
+  floor S3, third floor S8) and for the island lights (S27). With this note those switches are no longer needed to power the lights; whether
   to remove them or keep them as Matter scene buttons is the owner's call.
 - Where each stairway is split into its two segments is not set.
 

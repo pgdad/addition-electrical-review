@@ -437,13 +437,10 @@
    "y": 5.15,
    "z": 3.04,
    "type": "riser",
-   "switches": [
-    "G:S8",
-    "2:S4"
-   ],
+   "switches": [],
    "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17)",
+   "note": "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17); no wall switch, controlled through Matter",
    "points": [
     [
      40.79,
@@ -640,6 +637,42 @@
    "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
    "note": "Big Ass Fans Haiku L 52 in. smart ceiling fan with LED light; powered straight from the line, not through S6"
+  },
+  {
+   "key": "2:L52",
+   "id": "L52",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "East stair down to the garage, ceiling over the upper part of the flight",
+   "x": 35.34,
+   "y": 19.46,
+   "z": 0.75,
+   "type": "ceiling",
+   "switches": [
+    "G:S8",
+    "2:S4"
+   ],
+   "circuit": "C16 lighting, 15A",
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Ceiling light over the stair; the electrician sets the exact position and height on site"
+  },
+  {
+   "key": "2:L53",
+   "id": "L53",
+   "level": "2",
+   "levelName": "Second floor",
+   "room": "East stair down to the garage, ceiling over the lower part of the flight",
+   "x": 39.83,
+   "y": 19.46,
+   "z": 0.75,
+   "type": "ceiling",
+   "switches": [
+    "G:S8",
+    "2:S4"
+   ],
+   "circuit": "C16 lighting, 15A",
+   "source": "drawings/2-second-floor_v20.svg",
+   "note": "Ceiling light over the stair; the electrician sets the exact position and height on site"
   },
   {
    "key": "2:L12",
@@ -1624,7 +1657,8 @@
    "y": 5.08,
    "z": 4.58,
    "controls": [
-    "2:L8"
+    "2:L52",
+    "2:L53"
    ],
    "source": "drawings/1-garage-and-hallway_v20.svg",
    "pairWith": "2:S4",
@@ -1660,7 +1694,8 @@
    "y": 14.46,
    "z": 3.0,
    "controls": [
-    "2:L8"
+    "2:L52",
+    "2:L53"
    ],
    "source": "drawings/2-second-floor_v20.svg",
    "pairWith": "G:S8",

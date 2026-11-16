@@ -120,7 +120,7 @@ L22 W/D
 L23, L24 Balcony wall lights by each door
 S1, S2, S19, S20 Hall light switches: removed
 S3 Stair up risers, bottom (top on 3rd fl)
-S4 Stair down risers, top (bottom on garage lvl)
+S4 East stair ceiling L52, L53, top (bottom: garage S8)
 S5 Media ceiling L9, by hall door (L10 on S24)
 S6 Media fan and its light, beside S5 (dimmer, no load)
 S7 Closet light, media side, north of its door
@@ -322,3 +322,7 @@ Nov 16, 2026 (owner decision): low-voltage floor-level lights, about 6 in. above
 Media room south wall: L44 and L45 at about 25% and 75% of the room width, on one Matter controller U (low on the south wall
 between them; position proposed). Hall north wall: L46-L51, six lights about 4 ft apart on one run (number proposed), on one
 Matter controller V beside stair controllers D. Circuit C16.
+L52
+L53
+Nov 16, 2026 (owner decision): east stair ceiling lights L52, L53 added over the flight down to the garage, on the existing
+3-way pair S4 (head, main) and garage S8 (foot, aux). Riser lights L8 are now Matter control only, no wall switch. C16.

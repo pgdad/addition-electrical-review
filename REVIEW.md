@@ -25,7 +25,7 @@ The owner settled most of the earlier findings on Nov 10, 2026; they are listed 
 | 1 | must-fix | Main panel MP is drawn on the north wall inside the footprint of the garage stair (x 36.7 to 39.7 ft). The stair soffit there is roughly 5 to 6 ft above the slab, below the 6.5 ft headroom a panel's working space needs. A.2 also shows a wall along the south side of that stair, so MP, the WashTower, modem 1, switch 18 and P1/P2 would be inside a 3'4" wide enclosed under-stair space. | garage v20: MP, W/D, 1, 18, L14 |
 | 2 | nice-to-have | Garage: nothing by the overhead doors controls L1 to L8 (S2 is on the west wall near the SW corner). A scene button between the doors would cover it. | garage v20: S2 |
 | 3 | nice-to-have | Second floor: motorized screen B covers the balcony door when it is down. (The exterior stair is now lit: garage sheet L17, L18 on motion sensors S10, S11, Nov 15, 2026.) | second floor v20: B |
-| 4 | should-fix | Second floor: the hall now has ceiling lights L41-L43 on 4-way switches S28, S29, S30 (owner decision, Nov 15, 2026), which settles the hall. The east stair is still lit only by riser lights L8 (plus spill from L43 at its head). Check with the electrician/inspector whether that meets NEC 210.70(A)(2) for the stairway. | second floor v20: L8, L43 |
+| 4 | resolved | Second floor: the hall has ceiling lights L41-L43 on 4-way switches S28, S29, S30 (owner decision, Nov 15, 2026), and the east stair has ceiling lights L52, L53 on the 3-way pair S4 and garage S8 (owner decision, Nov 16, 2026). The electrician sets the exact light positions over the flight on site. | second floor v20: L52, L53, S4; garage v20: S8 |
 
 ## PDF vs drawing geometry mismatches
 
@@ -50,7 +50,7 @@ The PDF wins for geometry; these are the differences found.
 - Every plotted ID has a legend row and every legend row has a symbol. MP is now labelled at the red bar.
 - IDs are unique. Resolved (Nov 10, 2026): outlet C is renamed P22 and drawn red; stair-foot switches E and F
   are renamed S8 and S9 and drawn green.
-- Cross-level pairs agree: S8 pairs with second-floor S4 (riser lights L8) on both drawings and in the notes.
+- Cross-level pairs agree: S8 pairs with second-floor S4 (east stair ceiling lights L52, L53) on both drawings and in the notes.
   S9 and the east stair wall lights L30 to L32 were removed (owner decision, Nov 14, 2026).
 - Circuits (resolved): lighting is now C10 (15 A) and also feeds stair controllers D and alarms SD1/CO1;
   B is on C2, C on new dedicated C8, A on new laundry circuit C9.
@@ -140,7 +140,7 @@ The PDF wins for geometry; these are the differences found.
 
 ### Consistency
 - All plotted IDs have legend rows and the reverse; IDs are unique on this level.
-- Cross-level pairs agree in both directions: S3 with third-floor S8 (L7), S4 with garage S8 (L8),
+- Cross-level pairs agree in both directions: S3 with third-floor S8 (L7), S4 with garage S8 (L52, L53),
   S17 with third-floor S10 (L35, L40).
 - Removed (owner decision, Nov 14, 2026): hall wall lights L1 to L6 and stair wall lights L30 to L34, with their
   switches S1, S2, S19, S20, S15, S16, garage S9 and third-floor S9. The IDs are not reused.
@@ -162,10 +162,13 @@ The PDF wins for geometry; these are the differences found.
   at the head of the east stair (aux), and S30 in the media room on the west (latch) side of the hall door, below S6
   (aux). Light positions and which switch is the main are my proposal. With Inovelli switches a 4-way set is one main
   switch and two aux switches on one traveler; check the traveler routing with the electrician.
-- *should-fix*: with L30 to L32 removed, the east stair has only riser lights L8 (S4 + garage S8), plus spill from
-  L43 at its head; the west stair keeps risers L7 and ceiling lights L35, L40. Check with the electrician/inspector
-  that riser lights are accepted as the stair lighting (NEC 210.70(A)(2) asks for a wall-switched lighting outlet
-  in stairways, with a switch at each floor level).
+- Resolved (owner decision, Nov 16, 2026): the east stair now has two ceiling lights, L52 and L53, over the flight
+  down to the garage, on the existing 3-way pair S4 (head, main) and garage S8 (foot, aux). The riser lights L8
+  are now Matter control only, with no wall switch. The west stair keeps risers L7 and ceiling lights L35, L40.
+  Light positions over the flight are my proposal; the electrician sets them and the mounting height on site.
+- *nice-to-have*: the west stair riser lights L7 are still drawn on S3 and third-floor S8. Under the owner's
+  no-wall-switch note for low-voltage lights those two switches are no longer needed for L7; the owner decides
+  whether to remove them or keep them as scene buttons.
 - Kitchen island floor lights (Nov 12, 2026): L36-L39 are low-voltage dimmable toe-kick lights, one on each side
   of the island, on new switch S27 below S8/S9 by the hall door, through dimming controller T inside the island.
   The switch and controller are my proposal; the owner asked only for the lights. Check with the electrician: the
@@ -577,7 +580,7 @@ are drawn on `lights-3d.html` and listed in `lights.json` under `cables`.
 1. MP under the garage stair: headroom and working space (garage).
 
 **Should-fix**
-4. East stair is lit only by riser lights L8; the hall now has ceiling lights L41-L43 (second floor).
+None open. Finding 4 (east stair lighting) is resolved: ceiling lights L52, L53 on S4 and garage S8 (Nov 16, 2026).
 
 **Nice-to-have**
 2. Scene button between the overhead doors for L1 to L8 (garage).
