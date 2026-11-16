@@ -350,6 +350,7 @@
    "switches": [],
    "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
+   "control": "Matter controller D (no wall switch)",
    "note": "Riser lights; 14 drawn for 16 risers; no wall switch, controlled through Matter",
    "points": [
     [
@@ -437,6 +438,7 @@
    "switches": [],
    "circuit": "C16 lighting, 15A AFCI (hall, media room, stairs, balcony)",
    "source": "drawings/2-second-floor_v20.svg",
+   "control": "Matter controller D (no wall switch)",
    "note": "One light mid each riser from the garage floor up: 2 garage door steps, 2 hallway steps, 13-riser flight (17); no wall switch, controlled through Matter",
    "points": [
     [
@@ -753,6 +755,7 @@
    "switches": [],
    "circuit": "C16 lighting, 15A (via Matter controller U)",
    "source": "drawings/2-second-floor_v20.svg",
+   "control": "Matter controller U (no wall switch)",
    "note": "Step light about 6 in. above the floor, low-voltage, dimmable; no wall switch, controlled through Matter"
   },
   {
@@ -768,6 +771,7 @@
    "switches": [],
    "circuit": "C16 lighting, 15A (via Matter controller U)",
    "source": "drawings/2-second-floor_v20.svg",
+   "control": "Matter controller U (no wall switch)",
    "note": "Step light about 6 in. above the floor, low-voltage, dimmable; no wall switch, controlled through Matter"
   },
   {
@@ -783,6 +787,7 @@
    "switches": [],
    "circuit": "C16 lighting, 15A (via Matter controller V)",
    "source": "drawings/2-second-floor_v20.svg",
+   "control": "Matter controller V (no wall switch)",
    "note": "Step light about 6 in. above the floor, low-voltage, dimmable; one run of six, no wall switch, controlled through Matter"
   },
   {
@@ -798,6 +803,7 @@
    "switches": [],
    "circuit": "C16 lighting, 15A (via Matter controller V)",
    "source": "drawings/2-second-floor_v20.svg",
+   "control": "Matter controller V (no wall switch)",
    "note": "Step light about 6 in. above the floor, low-voltage, dimmable; one run of six, no wall switch, controlled through Matter"
   },
   {
@@ -813,6 +819,7 @@
    "switches": [],
    "circuit": "C16 lighting, 15A (via Matter controller V)",
    "source": "drawings/2-second-floor_v20.svg",
+   "control": "Matter controller V (no wall switch)",
    "note": "Step light about 6 in. above the floor, low-voltage, dimmable; one run of six, no wall switch, controlled through Matter"
   },
   {
@@ -828,6 +835,7 @@
    "switches": [],
    "circuit": "C16 lighting, 15A (via Matter controller V)",
    "source": "drawings/2-second-floor_v20.svg",
+   "control": "Matter controller V (no wall switch)",
    "note": "Step light about 6 in. above the floor, low-voltage, dimmable; one run of six, no wall switch, controlled through Matter"
   },
   {
@@ -843,6 +851,7 @@
    "switches": [],
    "circuit": "C16 lighting, 15A (via Matter controller V)",
    "source": "drawings/2-second-floor_v20.svg",
+   "control": "Matter controller V (no wall switch)",
    "note": "Step light about 6 in. above the floor, low-voltage, dimmable; one run of six, no wall switch, controlled through Matter"
   },
   {
@@ -858,6 +867,7 @@
    "switches": [],
    "circuit": "C16 lighting, 15A (via Matter controller V)",
    "source": "drawings/2-second-floor_v20.svg",
+   "control": "Matter controller V (no wall switch)",
    "note": "Step light about 6 in. above the floor, low-voltage, dimmable; one run of six, no wall switch, controlled through Matter"
   },
   {
@@ -870,12 +880,11 @@
    "y": 10.81,
    "z": 8.92,
    "type": "low-voltage",
-   "switches": [
-    "2:S27"
-   ],
+   "switches": [],
    "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath), via dimming controller T in the island",
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"
+   "control": "Matter controller T (no wall switch)",
+   "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable; no wall switch, controlled through Matter"
   },
   {
    "key": "2:L37",
@@ -887,12 +896,11 @@
    "y": 10.81,
    "z": 11.49,
    "type": "low-voltage",
-   "switches": [
-    "2:S27"
-   ],
+   "switches": [],
    "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath), via dimming controller T in the island",
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"
+   "control": "Matter controller T (no wall switch)",
+   "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable; no wall switch, controlled through Matter"
   },
   {
    "key": "2:L38",
@@ -904,12 +912,11 @@
    "y": 10.81,
    "z": 14.05,
    "type": "low-voltage",
-   "switches": [
-    "2:S27"
-   ],
+   "switches": [],
    "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath), via dimming controller T in the island",
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"
+   "control": "Matter controller T (no wall switch)",
+   "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable; no wall switch, controlled through Matter"
   },
   {
    "key": "2:L39",
@@ -921,12 +928,11 @@
    "y": 10.81,
    "z": 11.49,
    "type": "low-voltage",
-   "switches": [
-    "2:S27"
-   ],
+   "switches": [],
    "circuit": "C15 lighting, 15A AFCI (kitchen, family room, bath), via dimming controller T in the island",
    "source": "drawings/2-second-floor_v20.svg",
-   "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"
+   "control": "Matter controller T (no wall switch)",
+   "note": "Toe-kick light about 4 in. above the floor, low-voltage, dimmable; no wall switch, controlled through Matter"
   },
   {
    "key": "2:L16",
@@ -1687,7 +1693,7 @@
    "id": "S28",
    "level": "2",
    "levelName": "Second floor",
-   "room": "Hall, west end at the foot of the west stair, beside S3 and S17",
+   "room": "Hall, west end at the foot of the west stair, beside S17",
    "x": 13.27,
    "y": 14.46,
    "z": 3.25,
@@ -1857,24 +1863,6 @@
    ],
    "source": "drawings/2-second-floor_v20.svg",
    "mode": "on/off"
-  },
-  {
-   "key": "2:S27",
-   "id": "S27",
-   "level": "2",
-   "levelName": "Second floor",
-   "room": "Kitchen, by the hall door, below S9",
-   "x": 31.59,
-   "y": 14.46,
-   "z": 6.42,
-   "controls": [
-    "2:L36",
-    "2:L37",
-    "2:L38",
-    "2:L39"
-   ],
-   "source": "drawings/2-second-floor_v20.svg",
-   "mode": "smart-bulb dimmer"
   },
   {
    "key": "2:S10",
@@ -2851,7 +2839,7 @@
    "id": "D",
    "level": "2",
    "levelName": "Second floor",
-   "room": "Stair light controllers, 2 Matter controllers (feed riser lights L7, L8), hall north wall at the west stair foot",
+   "room": "Stair light Matter controllers, two per stairway (feed riser lights L7, L8), hall north wall at the west stair foot",
    "kind": "hardwired",
    "x": 9.61,
    "y": 11.46,

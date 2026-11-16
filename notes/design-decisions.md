@@ -120,7 +120,8 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   from the north wall.
 - Blind outlets H1-H3 (owner decision, Nov 10, 2026): one high beside the top of each garage window, on its
   left seen from inside (H1, H2 west of the north windows, H3 south of the west window), on C2.
-- Stairs garage -> 2nd floor: riser lights (L8 on the 2nd-floor drawing) on 3-way E (bottom) + 2nd-floor S4 (top).
+- Stairs garage -> 2nd floor: riser lights (L8 on the 2nd-floor drawing), Matter control only since Nov 16, 2026
+  (garage S8 and 2nd-floor S4 now run stair ceiling lights L52, L53).
   One light in every riser from the garage floor up (owner decision, Nov 9, 2026): 2 garage door steps,
   2 hallway steps and the 13-riser flight, 17 in all, as one run.
   Stair wall lights L30-L32 on 3-way F (bottom, just north of E) + 2nd-floor S16 (top).
@@ -160,14 +161,13 @@ The drawing legends in ../drawings/*.legend.txt are the device-by-device detail.
   southeast corner. Every network switch has a fiber connection to the third-floor switch in R1.
 - Second-floor Ethernet (confirmed by the owner, Nov 10, 2026): west half, projector jacks and doorbell on switch 8;
   east half on switch 16. Details in REVIEW.md ("Second-floor Ethernet plan").
-- Lights: L1-L6 hall (S1, S2); L7 stair-up risers (S3 bottom + 3rd-floor S8 top); L8 stair-down risers
-  (S4 + garage E); L9-L11 media (S5, S6); L12 media closet (S7); L13-L15 kitchen (S8); L16 under-cabinet (S9);
+- Lights: L1-L6 hall (S1, S2); L7 stair-up risers and L8 stair-down risers (Matter control only since Nov 16, 2026); L9-L11 media (S5, S6); L12 media closet (S7); L13-L15 kitchen (S8); L16 under-cabinet (S9);
   L17, L18, L24 family/balcony (S10); L19, L20 bath (S11), bath fan on its own switch S18; L21 sauna on the heater control (DC from
   driver J); L22 W/D closet (S12); L23 balcony (S13); L25-L29 per legend.
 - Kitchen island floor lights (owner, Nov 12, 2026): L36-L39, four low-voltage dimmable lights in the island toe
   kick, one centred on each side (north, east, south, west), about 4 in. above the floor. Proposed, not yet confirmed
-  by the owner: dimming controller T inside the island (Matter, same kind as stair controller D) and their own
-  switch S27 below S8/S9 by the hall door.
+  by the owner: dimming controller T inside the island (Matter, same kind as stair controller D). Their switch S27
+  was removed on Nov 16, 2026 (owner decision): Matter control only.
 - Lighting circuits (owner decision, Nov 12, 2026): C15 = everything in the kitchen, family room and bath/shower
   (L13-L20, L22, L24, L36-L39); C16 = all the rest (hall, media room, both stairs, under-stair, balcony:
   L1-L12, L23, L25-L35, L40). L22 (W/D closet) and L24 (balcony light on family-room switch S10) are put on C15

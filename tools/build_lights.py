@@ -71,10 +71,10 @@ LIGHTS = {
   "L49": ("Hall, north wall, light 4 of 6 from the west", "low-voltage", 0.5, "C16 lighting, 15A (via Matter controller V)", "Step light about 6 in. above the floor, low-voltage, dimmable; one run of six, no wall switch, controlled through Matter"),
   "L50": ("Hall, north wall, light 5 of 6 from the west", "low-voltage", 0.5, "C16 lighting, 15A (via Matter controller V)", "Step light about 6 in. above the floor, low-voltage, dimmable; one run of six, no wall switch, controlled through Matter"),
   "L51": ("Hall, north wall, light 6 of 6 from the west", "low-voltage", 0.5, "C16 lighting, 15A (via Matter controller V)", "Step light about 6 in. above the floor, low-voltage, dimmable; one run of six, no wall switch, controlled through Matter"),
-  "L36": ("Kitchen island, north side", "low-voltage", 0.35, "C15/C16 lighting, 15A (via dimming controller T in the island)", "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"),
-  "L37": ("Kitchen island, east side", "low-voltage", 0.35, "C15/C16 lighting, 15A (via dimming controller T in the island)", "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"),
-  "L38": ("Kitchen island, south side", "low-voltage", 0.35, "C15/C16 lighting, 15A (via dimming controller T in the island)", "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"),
-  "L39": ("Kitchen island, west side", "low-voltage", 0.35, "C15/C16 lighting, 15A (via dimming controller T in the island)", "Toe-kick light about 4 in. above the floor, low-voltage, dimmable"),
+  "L36": ("Kitchen island, north side", "low-voltage", 0.35, "C15/C16 lighting, 15A (via dimming controller T in the island)", "Toe-kick light about 4 in. above the floor, low-voltage, dimmable; no wall switch, controlled through Matter"),
+  "L37": ("Kitchen island, east side", "low-voltage", 0.35, "C15/C16 lighting, 15A (via dimming controller T in the island)", "Toe-kick light about 4 in. above the floor, low-voltage, dimmable; no wall switch, controlled through Matter"),
+  "L38": ("Kitchen island, south side", "low-voltage", 0.35, "C15/C16 lighting, 15A (via dimming controller T in the island)", "Toe-kick light about 4 in. above the floor, low-voltage, dimmable; no wall switch, controlled through Matter"),
+  "L39": ("Kitchen island, west side", "low-voltage", 0.35, "C15/C16 lighting, 15A (via dimming controller T in the island)", "Toe-kick light about 4 in. above the floor, low-voltage, dimmable; no wall switch, controlled through Matter"),
   "L16": ("Kitchen, east counter", "under-cabinet", 4.5, L2_CCT, "Strip under the upper cabinets"),
   "L17": ("Family room", "ceiling", 9.0, L2_CCT, "Flat 9 ft ceiling under the third-floor east office"),
   "L18": ("Family room", "ceiling", 9.0, L2_CCT, "Flat 9 ft ceiling under the third-floor east office"),
@@ -136,7 +136,7 @@ SWITCHES = {
  ("G", "S10"): ("Outside, top landing of the exterior stair at balcony level (outdoor motion sensor)", k("G", "L17", "L18")),
  ("G", "S8"):  ("Hallway west wall at the foot of the stairs, north of the garage door", k("2", "L52", "L53")),
  ("2", "S4"): ("Hall, head of the east stair", k("2", "L52", "L53")),
- ("2", "S28"): ("Hall, west end at the foot of the west stair, beside S3 and S17", rng("2", 41, 43)),
+ ("2", "S28"): ("Hall, west end at the foot of the west stair, beside S17", rng("2", 41, 43)),
  ("2", "S29"): ("Hall, east end at the head of the east stair, beside S4", rng("2", 41, 43)),
  ("2", "S30"): ("Media room, west (latch) side of the hall door, below S6", rng("2", 41, 43)),
  ("2", "S5"): ("Media room, by the hall door", k("2", "L9")),
@@ -145,7 +145,6 @@ SWITCHES = {
  ("2", "S7"): ("Media room, north (latch) side of the closet door", k("2", "L12")),
  ("2", "S8"): ("Kitchen, by the hall door", k("2", "L13", "L14", "L15")),
  ("2", "S9"): ("Kitchen, by the hall door", k("2", "L16")),
- ("2", "S27"): ("Kitchen, by the hall door, below S9", k("2", "L36", "L37", "L38", "L39")),
  ("2", "S10"): ("Family room, by the balcony door", k("2", "L17", "L18", "L24")),
  ("2", "S11"): ("Bath, by its door", k("2", "L19", "L20")),
  ("2", "S18"): ("Bath, by its door (fan only, no light)", []),
@@ -228,7 +227,7 @@ OUTLETS = {
   ("F", "Bidet outlet, GFCI", "wall", 1.5, "C10 bath, 20A GFCI"),
   ("G", "Sauna heater, hardwired per its manual", "hardwired", 1.0, "C2, 50A 240V"),
   ("J", "Sauna light driver (feeds L21)", "hardwired", 5.0, "C15 lighting, 15A AFCI"),
-  ("D", "Stair light controllers, 2 Matter controllers (feed riser lights L7, L8), hall north wall at the west stair foot", "hardwired", 1.0, "C16 lighting, 15A AFCI"),
+  ("D", "Stair light Matter controllers, two per stairway (feed riser lights L7, L8), hall north wall at the west stair foot", "hardwired", 1.0, "C16 lighting, 15A AFCI"),
   ("U", "Media room floor-light Matter controller (feeds L44, L45), low on the south wall between the two lights", "hardwired", 1.0, "C16 lighting, 15A AFCI"),
   ("V", "Hall floor-light Matter controller (feeds L46-L51), hall north wall beside stair controllers D", "hardwired", 1.0, "C16 lighting, 15A AFCI"),
   ("T", "Island floor-light dimming controller (feeds L36-L39), inside the island", "hardwired", 1.0, "C15 lighting, 15A AFCI"),
@@ -493,6 +492,9 @@ def build():
             rec = dict(key=key, id=lid, level=lv, levelName=LEVEL_NAME[lv], room=room, x=x, y=y, z=z,
                        type=typ, switches=controlled_by.get(key, []), circuit=cct, source=SOURCE[lv])
             if key == "2:L21": rec["control"] = "Sauna heater control (no wall switch)"
+            _m = {"L7": "D", "L8": "D", "L36": "T", "L37": "T", "L38": "T", "L39": "T", "L44": "U", "L45": "U"}
+            _m.update({"L%d" % i: "V" for i in range(46, 52)})
+            if lv == "2" and lid in _m: rec["control"] = "Matter controller %s (no wall switch)" % _m[lid]
             if note: rec["note"] = note
             if points: rec["points"] = points
             lights.append(rec)

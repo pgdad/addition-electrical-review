@@ -144,21 +144,23 @@ The PDF wins for geometry; these are the differences found.
   S17 with third-floor S10 (L35, L40).
 - Removed (owner decision, Nov 14, 2026): hall wall lights L1 to L6 and stair wall lights L30 to L34, with their
   switches S1, S2, S19, S20, S15, S16, garage S9 and third-floor S9. The IDs are not reused.
-- Resolved (Nov 10, 2026; updated Nov 14, 2026): S3 and S17 are a two-gang on the hall south wall at the stair foot,
+- Resolved (Nov 10, 2026; updated Nov 16, 2026): S17 and S28 are on the hall south wall at the stair foot (S3 removed Nov 16, 2026),
   with P1 just east of them; controllers D are on the hall north wall at the stair foot.
 - Resolved (Nov 10, 2026): H4 was plotted on the balcony door opening; it is now above the east end of the
   east 3020 window.
 - *nice-to-have*: motorized screen B is plotted at the balcony door. When it is down it covers the door.
 
 ### Lighting control
-- Every light has a control. L21 (sauna) has no wall switch by design; it is on the heater control.
+- Every light has a control. L21 (sauna) has no wall switch by design; it is on the heater control. The low-voltage
+  lights (risers L7, L8, island L36-L39, media room L44, L45, hall L46-L51) have no wall switch by design either
+  (owner decision, Nov 15-16, 2026): they run from Matter controllers D, T, U, V.
 - Floor-level lights (owner decision, Nov 16, 2026): media room L44, L45 (south wall, one Matter controller U) and
   hall L46 to L51 (north wall, one run on Matter controller V), all about 6 in. above the floor, with no wall switch
   by design: they are controlled through Matter only. Six hall lights and the controller positions are my proposal.
   Check with the electrician that controllers U and V and their 24 V supplies stay reachable, and that these lights
   are not counted as the required switched lighting (the hall has L41 to L43 and the media room L9, L10 for that).
 - Hall lighting (owner decision, Nov 15, 2026): three ceiling lights L41, L42, L43 along the hall, about 10 ft apart,
-  on a 4-way set: S28 at the west end (main, beside S3 and S17 at the west stair foot), S29 at the east end beside S4
+  on a 4-way set: S28 at the west end (main, beside S17 at the west stair foot), S29 at the east end beside S4
   at the head of the east stair (aux), and S30 in the media room on the west (latch) side of the hall door, below S6
   (aux). Light positions and which switch is the main are my proposal. With Inovelli switches a 4-way set is one main
   switch and two aux switches on one traveler; check the traveler routing with the electrician.
@@ -170,8 +172,8 @@ The PDF wins for geometry; these are the differences found.
   lights L7, are removed. L7 is Matter control only. The west stair keeps its switched ceiling lights L35, L40 on
   S17 (foot) and third-floor S10 (top).
 - Kitchen island floor lights (Nov 12, 2026): L36-L39 are low-voltage dimmable toe-kick lights, one on each side
-  of the island, on new switch S27 below S8/S9 by the hall door, through dimming controller T inside the island.
-  The switch and controller are my proposal; the owner asked only for the lights. Check with the electrician: the
+  of the island, through dimming controller T inside the island. Switch S27 was removed on Nov 16, 2026 (owner
+  decision): the lights are Matter control only. The controller position is my proposal. Check with the electrician: the
   controller needs an accessible, ventilated spot in the island, and its supply comes up through the floor with
   the feed for island outlet P14.
 - Stair pairs have a switch at each end: S17 at the foot of the west stair (stair
@@ -248,7 +250,7 @@ The PDF wins for geometry; these are the differences found.
   wall west of the hall door (7.8 ft of wall, none), family room stub south of the balcony door (7 ft to P9),
   media north wall between P3 and A (13 ft), and 6.5 ft from door edges to P6 and P7. *should-fix* at rough-in.
 - **Lighting circuits split (owner decision, Nov 12, 2026)**: C15 carries the kitchen, family room and bath/shower
-  lights (L13-L20, L22, L24, L36-L39), C16 all the rest (L7-L12, L23, L25-L29, L35, L40-L43). Every switch stays on one
+  lights (L13-L20, L22, L24, L36-L39), C16 all the rest (L7-L12, L23, L25-L29, L35, L40-L53). Every switch stays on one
   circuit. Both are far below 15 A with LED loads.
 - **Circuit assignments (owner agreed, Nov 12, 2026)**: bath fan switch S18 and island controller T are on C15,
   stair light controllers D on C16, sauna light driver J also on C15 (owner decision, Nov 12, 2026; C3 is now
@@ -596,8 +598,9 @@ None open. Finding 4 (east stair lighting) is resolved: ceiling lights L52, L53 
   are now S8 and S9 (green).
 - S8 and S9 (formerly E, F) are a two-gang on the hallway west wall just north of the garage door, out of the
   door opening.
-- Second floor: S3, S15, S17 and S19 are one four-gang row on the hall south wall at the foot of the west
-  stair (P1 moved just east of them); stair light controllers D are on the hall north wall at the stair foot.
+- Second floor: S17 and S28 are on the hall south wall at the foot of the west stair, with P1 just east of
+  them (S3, S15 and S19, once in the same row, have been removed); stair light controllers D are on the hall
+  north wall at the stair foot.
 - Third-floor sheet colours follow the key: blind outlets teal, network purple, power items A to E amber.
   Shapes that used to render black (racks, bookshelves, sensors) now take their colours.
 - Shed site sketch label now reads "Shed east wall in line with garage west wall".

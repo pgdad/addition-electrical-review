@@ -272,16 +272,15 @@ L36
 L37
 L38
 L39
-S27
 T
 Nov 12, 2026: island floor lights L36 (north), L37 (east), L38 (south), L39 (west): low-voltage dimmable lights in the
 island toe kick, about 4 in. above the floor, one centred on each side. Fed from dimming controller T inside the island
-(Matter, same kind as D; lighting circuit C15). Switch S27, below S8 and S9 by the hall door, controls all four.
+(Matter, same kind as D; lighting circuit C15). Switch S27 removed (Nov 16, 2026): Matter control only.
 L40
 Nov 12, 2026: second west stair ceiling light L40 above the corner landing, on the same switches as L35 (S17 + 3rd-floor S10).
 Nov 12, 2026: sauna heater G moved to the sauna west wall, just south of the thin line near the north end of the room.
 Lighting split (owner, Nov 12, 2026): C15 = kitchen, family room, bath and shower: L13-L20, L22, L24, L36-L39 (S8-S12, S21, S26,
-S27, controller T). C16 = all the rest: hall, media room, both stairs, under-stair, balcony: L7-L12, L23, L25-L29, L35, L40-L51.
+controller T). C16 = all the rest: hall, media room, both stairs, under-stair, balcony: L7-L12, L23, L25-L29, L35, L40-L53.
 Circuits (owner agreed, Nov 12, 2026): bath fan switch S18 and island controller T on C15; stair light controllers D on C16;
 sauna light driver J on C15 (C3 is a spare). If a second-floor subpanel is added, its feeder is F2 (125A) from MP.
 Nov 12, 2026 (owner): sauna light driver J moved from C3 to lighting circuit C15. C3 is now a spare.
@@ -304,7 +303,7 @@ S28
 S29
 S30
 Nov 15, 2026 (owner decision): hall ceiling lights L41, L42, L43 added, on a 4-way set of switches: S28 at the west end
-(main, beside S3 and S17), S29 at the east end beside S4 (aux), S30 in the media room west of the hall door (aux). C16.
+(main, beside S17), S29 at the east end beside S4 (aux), S30 in the media room west of the hall door (aux). C16.
 Media fan (owner, Nov 15, 2026): L11 is a Big Ass Fans Haiku L 52 in. smart fan with light. S6 is an Inovelli dimmer with no load wire:
 line and neutral go to both S6 and the fan, so the fan stays powered; S6 only signals Home Assistant. Aux S23 as before.
 L44
@@ -326,3 +325,4 @@ L53
 Nov 16, 2026 (owner decision): east stair ceiling lights L52, L53 added over the flight down to the garage, on the existing
 3-way pair S4 (head, main) and garage S8 (foot, aux). Riser lights L8 are now Matter control only, no wall switch. C16.
 Nov 16, 2026 (owner decision): switch S3 removed. West stair riser lights L7 are Matter control only, no wall switch (3rd-floor S8 removed too).
+Nov 16, 2026 (owner decision): switch S27 removed. Island floor lights L36-L39 are Matter control only, through controller T.

@@ -18,15 +18,15 @@ Counted from `lights.json` (built from the drawings). Quantities only; models ar
 
 Totals by size: four 8-port, two 16-port, three not yet sized.
 
-## Light switches (44) and outdoor motion sensors (2)
+## Light switches (43) and outdoor motion sensors (2)
 
 | Level | Dimmer (smart-bulb mode) | On/off | Aux | Outdoor motion sensor | Total |
 |-------|--------------------------|--------|-----|-----------------------|-------|
 | Garage / hallway | 5 | 0 | 3 | 2 | 10 |
-| Second floor | 13 | 3 | 7 | 0 | 23 |
+| Second floor | 12 | 3 | 7 | 0 | 22 |
 | Third floor | 6 | 1 | 2 | 0 | 9 |
 | Shed | 4 | 0 | 0 | 0 | 4 |
-| **Total** | **28** | **4** | **12** | **2** | **46** |
+| **Total** | **27** | **4** | **12** | **2** | **45** |
 
 Second-floor S6 (media fan L11) is a dimmer with no load connected; it only signals Home Assistant (Nov 15, 2026).
 
